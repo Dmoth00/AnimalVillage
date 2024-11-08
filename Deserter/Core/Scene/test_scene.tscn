@@ -371,7 +371,7 @@ data = PackedVector3Array(-13.0046, 2, 26.0111, -12.0037, 2, 26.0111, -13.0006, 
 background_mode = 1
 background_color = Color(0, 0.0158333, 0.05, 1)
 ambient_light_source = 2
-ambient_light_color = Color(0.0855, 0.111625, 0.19, 1)
+ambient_light_color = Color(3.00817e-09, 0.058377, 0.131806, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2kf5i"]
 
@@ -760,24 +760,27 @@ bones/18/rotation = Quaternion(-6.23375e-08, 0.707107, 8.40202e-08, 0.707107)
 bones/18/scale = Vector3(1, 1, 1)
 
 [node name="fl" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D"]
-transform = Transform3D(-1, 9.6932e-09, 1.80687e-05, 1.74515e-05, 0.259669, 0.965698, -4.68253e-06, 0.965698, -0.259669, -3.25572e-09, 1.81147, 0.228489)
+transform = Transform3D(-1, 9.69609e-09, 1.80688e-05, 1.74515e-05, 0.259669, 0.965698, -4.68254e-06, 0.965698, -0.259669, -3.25528e-09, 1.81148, 0.228488)
 bone_name = "Flashlight"
 bone_idx = 13
 
 [node name="fl_light" type="SpotLight3D" parent="Player/CharArm/Skeleton3D/fl"]
 transform = Transform3D(1, 1.75093e-05, 4.67386e-06, -1.71269e-08, 0.258819, -0.965926, -1.81223e-05, 0.965926, 0.258819, 0, 0.535, 0)
-light_color = Color(1, 1, 0.898039, 1)
-light_energy = 2.0
+light_color = Color(0.962076, 0.982619, 0.739209, 1)
+light_energy = 3.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
-spot_attenuation = 1.8025
-spot_angle_attenuation = 0.353553
+spot_attenuation = 2.0
+spot_angle_attenuation = 0.125
 
 [node name="fl_shad" type="OmniLight3D" parent="Player/CharArm/Skeleton3D/fl"]
 transform = Transform3D(1, 1.77942e-05, 4.64405e-06, -1.19673e-07, 0.258819, -0.965926, -1.83899e-05, 0.965926, 0.258819, 0, 1.5, -0.3)
 light_energy = 0.1
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
+shadow_blur = 2.0
 
 [node name="charMesh" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D"]
 mesh = SubResource("ArrayMesh_l1c7g")
@@ -804,4 +807,4 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 
 light_energy = 0.5
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
-spot_angle_attenuation = 4.0
+spot_angle_attenuation = 2.54912

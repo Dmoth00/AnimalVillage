@@ -93,9 +93,9 @@ func flashlight():
 		fl_mat.emission_energy_multiplier=0
 		fl=false
 	else:
-		fl_l.light_energy=1.5
+		fl_l.light_energy=3
 		fl_shad.light_energy=0.1
-		fl_spot.light_energy=0.3
+		fl_spot.light_energy=0.5
 		fl_mat.emission_energy_multiplier=1
 		fl=true
 	pass
