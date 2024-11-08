@@ -23,6 +23,7 @@ var fl=true
 @onready var fl_shad=$CharArm/Skeleton3D/fl/fl_shad
 @onready var fl_mat=$CharArm/Skeleton3D/charMesh.get_surface_override_material(3)
 @onready var fl_spot=$fl_spot
+@onready var fl_glare=$CharArm/Skeleton3D/fl/fl_glare
 
 func _physics_process(delta):
 	
@@ -91,11 +92,13 @@ func flashlight():
 		fl_shad.light_energy=0
 		fl_spot.light_energy=0.1
 		fl_mat.emission_energy_multiplier=0
+		fl_glare.visible=false
 		fl=false
 	else:
 		fl_l.light_energy=3
 		fl_shad.light_energy=0.1
 		fl_spot.light_energy=0.5
 		fl_mat.emission_energy_multiplier=1
+		fl_glare.visible=true
 		fl=true
 	pass

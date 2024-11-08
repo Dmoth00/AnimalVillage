@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://c3jojreh43ci2"]
+[gd_scene load_steps=67 format=4 uid="uid://c3jojreh43ci2"]
 
 [ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/textures/WallTex00.png" id="1_5cerg"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/textures/Bricktex00.png" id="2_bceww"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cqx2owak5jma3" path="res://Assets/textures/WallTex00a.png" id="8_mreq4"]
 [ext_resource type="Script" path="res://Core/Player/Player.gd" id="9_3udj6"]
 [ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Actors/Rabbit_CharTex01.png" id="10_g5gnd"]
+[ext_resource type="Texture2D" uid="uid://b384gp0diw5i7" path="res://Assets/textures/GlareTex.png" id="10_yatut"]
 [ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Actors/Rabbit_MetalTex.png" id="11_83m73"]
+[ext_resource type="Script" path="res://Core/Player/fl_glare.gd" id="11_qvr1w"]
 [ext_resource type="Animation" uid="uid://d022mr4re3mjo" path="res://Assets/Actors/player_anim/CharAim_Reload.res" id="12_7jfx7"]
 [ext_resource type="Animation" uid="uid://vbjtl7iiotly" path="res://Assets/Actors/player_anim/CharAnim_Aim.res" id="13_76y2h"]
 [ext_resource type="Animation" uid="uid://dh3ihrtsgvp2a" path="res://Assets/Actors/player_anim/CharAnim_AimStop.res" id="14_4f47g"]
@@ -374,6 +376,18 @@ ambient_light_source = 2
 ambient_light_color = Color(3.00817e-09, 0.058377, 0.131806, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2kf5i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pk4j4"]
+transparency = 1
+blend_mode = 1
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("10_yatut")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_72oh8"]
+material = SubResource("StandardMaterial3D_pk4j4")
+size = Vector2(2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5md"]
 resource_name = "MatChar"
@@ -781,6 +795,11 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 shadow_blur = 2.0
+
+[node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl"]
+transform = Transform3D(1, 4.54747e-13, 1.02318e-12, 9.09495e-13, 1, 5.96046e-08, -4.20641e-12, -2.98023e-08, 1, -1.08388e-06, 0.678579, -0.0636005)
+mesh = SubResource("QuadMesh_72oh8")
+script = ExtResource("11_qvr1w")
 
 [node name="charMesh" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D"]
 mesh = SubResource("ArrayMesh_l1c7g")
