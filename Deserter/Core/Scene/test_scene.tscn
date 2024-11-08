@@ -779,13 +779,14 @@ bone_name = "Flashlight"
 bone_idx = 13
 
 [node name="fl_light" type="SpotLight3D" parent="Player/CharArm/Skeleton3D/fl"]
-transform = Transform3D(1, 1.75093e-05, 4.67386e-06, -1.71269e-08, 0.258819, -0.965926, -1.81223e-05, 0.965926, 0.258819, 0, 0.535, 0)
+transform = Transform3D(1, 1.57291e-05, 9.03563e-06, -3.9466e-08, 0.5, -0.866026, -1.81396e-05, 0.866026, 0.5, 0, 0.535, 0)
 light_color = Color(0.962076, 0.982619, 0.739209, 1)
 light_energy = 3.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_attenuation = 2.0
+spot_angle = 30.0
 spot_angle_attenuation = 0.125
 
 [node name="fl_shad" type="OmniLight3D" parent="Player/CharArm/Skeleton3D/fl"]
@@ -797,7 +798,7 @@ shadow_enabled = true
 shadow_blur = 2.0
 
 [node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl"]
-transform = Transform3D(1, 4.54747e-13, 1.02318e-12, 9.09495e-13, 1, 5.96046e-08, -4.20641e-12, -2.98023e-08, 1, -1.08388e-06, 0.678579, -0.0636005)
+transform = Transform3D(1, 1.36424e-12, 2.50111e-12, 1.81899e-12, 1, 8.9407e-08, -8.6402e-12, -5.96046e-08, 1, 2.8576e-06, 0.594269, 0.155253)
 mesh = SubResource("QuadMesh_72oh8")
 script = ExtResource("11_qvr1w")
 
