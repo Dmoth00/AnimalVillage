@@ -5,8 +5,11 @@ var runMod = 1.0
 
 var state=0
 var can_move=true
+
+#gun variables
 var can_shoot=false
 var aiming=false
+var firet=0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -16,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var direction=Vector3.ZERO
 var input_dir=Vector2.ZERO
 var ldir=Vector3.FORWARD
+
 
 #flashlight stuff
 var fl=true
@@ -54,11 +58,28 @@ func _process(delta):
 		ldir=ldir.slerp(direction,delta*10).normalized()
 		mesh.look_at(transform.origin+ldir)
 	
-	#animation for movement
-	if state==0:
-		if velocity.length()>SPEED: anim.play("CharAnim_Run",0.5,1.3)
-		else: if velocity.length()>0: anim.play("CharAnim_Walk",0.5,1.5)
-		else: anim.play("CharAnim_Stand",0.5,1.0)
+	match state:
+		0:
+			#animation for movement
+			if velocity.length()>SPEED: anim.play("CharAnim_Run",0.5,1.3)
+			else: if velocity.length()>0: anim.play("CharAnim_Walk",0.5,1.5)
+			else: anim.play("CharAnim_Stand",0.5,1.0)
+			
+			#aim engaged
+			if aiming:
+				state=1
+				anim.play("CharAnim_Aim",0.5,1.5)
+		1:
+			#shoot timer
+			if aiming:
+				firet=min(1,firet+delta)
+				if firet==1:
+					can_shoot=true
+			#un-aim
+			else:
+				state=0
+				can_shoot=false
+				firet=0.0
 
 func _input(event):
 	if can_move:
@@ -73,18 +94,12 @@ func _input(event):
 		if event.is_action_pressed("gp_aim"): aiming=true
 		if event.is_action_released("gp_aim"): aiming=false
 		
-		match state:
-			0:
-				#aim engaged
-				if aiming:
-					state=1
-					anim.play("CharAnim_Aim",0.5,1.5)
-			1:
-				#un-aim
-				if !aiming:
-					state=0
-					can_shoot=false
+		#fire imput
+		if event.is_action_pressed("gp_fire"): shoot()
 
+func shoot():
+	firet=0.0
+	anim.play("CharAnim_Shoot",0.1,1)
 
 func flashlight():
 	if fl:
