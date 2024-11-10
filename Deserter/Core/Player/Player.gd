@@ -147,6 +147,7 @@ func flashlight():
 		fl=true
 	pass
 
-
 func _on_collision_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Harm"):
+		pass
 	pass # Replace with function body.
