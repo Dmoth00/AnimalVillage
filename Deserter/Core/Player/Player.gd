@@ -3,13 +3,15 @@ extends CharacterBody3D
 const SPEED = 4.0
 var runMod = 1.0
 
-var state=0
-var can_move=true
+var state=2
+var can_move=false
+var vulnerable=false
+
 
 #gun variables
 var can_shoot=false
 var aiming=false
-var firet=0.0
+var firet=0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -28,6 +30,12 @@ var fl=true
 @onready var fl_mat=$CharArm/Skeleton3D/charMesh.get_surface_override_material(3)
 @onready var fl_spot=$fl_spot
 @onready var fl_glare=$CharArm/Skeleton3D/fl/fl_glare
+
+#miscelaneous variables
+var t=0.0
+
+func _ready() -> void:
+	anim.play("CharAnim_Awake",1,1)
 
 func _physics_process(delta):
 	
@@ -53,7 +61,7 @@ func _physics_process(delta):
 func _process(delta):
 	
 	#face direction
-	if direction:
+	if direction and can_move:
 		direction=(direction+Vector3(0.01,0,0.01)).normalized()
 		ldir=ldir.slerp(direction,delta*10).normalized()
 		mesh.look_at(transform.origin+ldir)
@@ -71,36 +79,56 @@ func _process(delta):
 				anim.play("CharAnim_Aim",0.5,1.5)
 		1:
 			#shoot timer
-			if aiming:
-				firet=min(1,firet+delta*2)
-				if firet==1:
+			firet=max(0,firet-delta)
+			if firet==0:
+				can_move=true
+				if aiming:
 					can_shoot=true
-			#un-aim
-			else:
+				#un-aim
+				else:
+					state=0
+					can_shoot=false
+					firet=0.5
+		2:
+			#AWAKE ANIM
+			t+=delta
+			if t>5:
+				t=0
 				state=0
-				can_shoot=false
-				firet=0.0
+				can_move=true
+				vulnerable=true
 
 func _input(event):
 	if can_move:
 		#flashlight input
 		if event.is_action_pressed("gp_fl"): flashlight()
 		
-		#run input
-		if event.is_action_pressed("gp_run"): runMod=1.8
-		if event.is_action_released("gp_run"): runMod=1.0
-		
-		#aim input
-		if event.is_action_pressed("gp_aim"): aiming=true
-		if event.is_action_released("gp_aim"): aiming=false
-		
 		#fire imput
 		if event.is_action_pressed("gp_fire"): shoot()
+		
+		#reload imput
+		if event.is_action_pressed("gp_reload"): _reload()
+		
+	#run input
+	if event.is_action_pressed("gp_run"): runMod=1.8
+	if event.is_action_released("gp_run"): runMod=1.0
+	
+	#aim input
+	if event.is_action_pressed("gp_aim"): aiming=true
+	if event.is_action_released("gp_aim"): aiming=false
+
 
 func shoot():
 		if can_shoot:
-			firet=0.0
+			can_move=false
+			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
+
+func _reload():
+		if can_shoot:
+			can_move=false
+			firet=1.0
+			anim.play("CharAim_Reload",0.1,1)
 
 func flashlight():
 	if fl:
@@ -118,3 +146,7 @@ func flashlight():
 		fl_glare.visible=true
 		fl=true
 	pass
+
+
+func _on_collision_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
