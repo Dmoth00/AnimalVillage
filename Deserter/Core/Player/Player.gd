@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var anim=get_node("anim")
 var direction=Vector3.ZERO
 var input_dir=Vector2.ZERO
-var ldir=Vector3.FORWARD
+var ldir=Vector3.BACK
 
 
 #flashlight stuff
@@ -72,7 +72,7 @@ func _process(delta):
 		1:
 			#shoot timer
 			if aiming:
-				firet=min(1,firet+delta)
+				firet=min(1,firet+delta*2)
 				if firet==1:
 					can_shoot=true
 			#un-aim
@@ -98,8 +98,9 @@ func _input(event):
 		if event.is_action_pressed("gp_fire"): shoot()
 
 func shoot():
-	firet=0.0
-	anim.play("CharAnim_Shoot",0.1,1)
+		if can_shoot:
+			firet=0.0
+			anim.play("CharAnim_Shoot",0.1,1)
 
 func flashlight():
 	if fl:
