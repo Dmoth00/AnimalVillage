@@ -3737,7 +3737,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_0b6iv")
 surface_material_override/3 = SubResource("StandardMaterial3D_myy3m")
 
 [node name="fl" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D"]
-transform = Transform3D(-1, 9.69791e-09, 1.80688e-05, 1.74515e-05, 0.259669, 0.965698, -4.68254e-06, 0.965698, -0.259669, 3.85213e-09, 1.77082, 0.228488)
+transform = Transform3D(-0.286869, 0.252576, 0.924073, 0.913933, 0.361261, 0.184978, -0.287111, 0.897606, -0.334472, 0.219114, 1.46033, 0.235862)
 bone_name = "Flashlight"
 bone_idx = 13
 
