@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0gfqqav411g5"
-path.s3tc="res://.godot/imported/Rabbit_CharTex01.png-9598e5f0995099b7fd02c51daec64274.s3tc.ctex"
-path.etc2="res://.godot/imported/Rabbit_CharTex01.png-9598e5f0995099b7fd02c51daec64274.etc2.ctex"
+path.s3tc="res://.godot/imported/Rabbit_CharTex01.png-e6c18514aacc3d915c31f5f5f497e94c.s3tc.ctex"
+path.etc2="res://.godot/imported/Rabbit_CharTex01.png-e6c18514aacc3d915c31f5f5f497e94c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -15,8 +15,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Actors/Rabbit_CharTex01.png"
-dest_files=["res://.godot/imported/Rabbit_CharTex01.png-9598e5f0995099b7fd02c51daec64274.s3tc.ctex", "res://.godot/imported/Rabbit_CharTex01.png-9598e5f0995099b7fd02c51daec64274.etc2.ctex"]
+source_file="res://Assets/Actors/Player/Rabbit_CharTex01.png"
+dest_files=["res://.godot/imported/Rabbit_CharTex01.png-e6c18514aacc3d915c31f5f5f497e94c.s3tc.ctex", "res://.godot/imported/Rabbit_CharTex01.png-e6c18514aacc3d915c31f5f5f497e94c.etc2.ctex"]
 
 [params]
 

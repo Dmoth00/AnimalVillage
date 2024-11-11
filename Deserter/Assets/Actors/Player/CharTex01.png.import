@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrbt5wylvadj"
-path.s3tc="res://.godot/imported/Rabbit_MetalTex.png-4c2951a69db18bcd77faee19f08c6239.s3tc.ctex"
-path.etc2="res://.godot/imported/Rabbit_MetalTex.png-4c2951a69db18bcd77faee19f08c6239.etc2.ctex"
+uid="uid://b15snsygxcvw"
+path.s3tc="res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.s3tc.ctex"
+path.etc2="res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "dbf0ec3b7aee85dbe6a8c8eee1620cd2"
-}
 
 [deps]
 
-source_file="res://Assets/Actors/Rabbit_MetalTex.png"
-dest_files=["res://.godot/imported/Rabbit_MetalTex.png-4c2951a69db18bcd77faee19f08c6239.s3tc.ctex", "res://.godot/imported/Rabbit_MetalTex.png-4c2951a69db18bcd77faee19f08c6239.etc2.ctex"]
+source_file="res://Assets/Actors/Player/CharTex01.png"
+dest_files=["res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.s3tc.ctex", "res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.etc2.ctex"]
 
 [params]
 

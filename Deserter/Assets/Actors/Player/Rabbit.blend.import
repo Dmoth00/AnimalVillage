@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://tc0jclklxd8a"
-path="res://.godot/imported/Rabbit.blend-22bd16693419a2c65f17065adda6c83a.scn"
+valid=false
 
 [deps]
 
-source_file="res://Assets/Actors/Rabbit.blend"
-dest_files=["res://.godot/imported/Rabbit.blend-22bd16693419a2c65f17065adda6c83a.scn"]
+source_file="res://Assets/Actors/Player/Rabbit.blend"
 
 [params]
 
