@@ -3848,7 +3848,7 @@ environment = SubResource("Environment_d7kkn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
 script = ExtResource("9_3udj6")
 
-[node name="col" type="CollisionShape3D" parent="Player"]
+[node name="moveCol" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_2kf5i")
 
