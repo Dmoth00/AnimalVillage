@@ -16,6 +16,15 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://LetterFull.png"
 config/icon="res://icon.svg"
 
+[autoload]
+
+NewVars="*res://new_vars.gd"
+
+[global_group]
+
+Fade="Mesh instances that use ghostfade"
+Player=""
+
 [input]
 
 gp_up={
