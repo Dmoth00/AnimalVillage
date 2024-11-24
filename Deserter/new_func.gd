@@ -1,16 +1,13 @@
 extends Node
 
-func get_children_recursive(node : Node):
-# warning-ignore:unassigned_variable
-	var children : Array
-	var grandchildren : Array
-	for n in node.get_children():
-		children.push_back(n)
-		if n.get_child_count() > 0:
-			grandchildren = get_children_recursive(n)
-		for g in grandchildren:
-			children.push_back(g)
-	return children
+func get_all_children(node) -> Array:
+	var nodes : Array = []
+	for N in node.get_children():
+		if N.get_child_count() > 0:
+			nodes.append(N)
+			nodes.append_array(get_all_children(N))
+		else: nodes.append(N)
+	return nodes
 
 func nearest_in_group (group : String, center : Vector3):
 	var total = get_tree().get_nodes_in_group(group)

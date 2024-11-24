@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://c3jojreh43ci2"]
+[gd_scene load_steps=90 format=4 uid="uid://c3jojreh43ci2"]
 
 [ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/Textures/WallTex00.png" id="1_5cerg"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/Bricktex00.png" id="2_bceww"]
@@ -576,6 +576,10 @@ billboard_mode = 1
 [sub_resource type="QuadMesh" id="QuadMesh_72oh8"]
 material = SubResource("StandardMaterial3D_pk4j4")
 size = Vector2(2, 2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ptv7y"]
+radius = 1.5
+height = 4.2
 
 [sub_resource type="Animation" id="Animation_pspmf"]
 resource_name = "CharAim_Reload"
@@ -3809,10 +3813,6 @@ _data = {
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6qgug"]
 radius = 0.6
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ptv7y"]
-radius = 1.5
-height = 5.5
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxyrv"]
 resource_name = "DHeadMat"
 cull_mode = 2
@@ -3863,13 +3863,14 @@ bind/6/name = &"Head.005"
 bind/6/bone = -1
 bind/6/pose = Transform3D(1, -1.50996e-07, -3.56026e-08, 1.50996e-07, 1, 2.38419e-07, 3.56026e-08, -1.78814e-07, 1, -10, -1.50996e-06, -3.56026e-07)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qvxvb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxiqp"]
 render_priority = 0
 shader = ExtResource("15_4w00y")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/specular = 0.0
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 1.0
+shader_parameter/alpha = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/texture_albedo = ExtResource("15_gmomc")
@@ -4370,6 +4371,10 @@ _data = {
 "Dhead_5": SubResource("Animation_au1nl")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1biwt"]
+radius = 0.925831
+height = 2.29545
+
 [node name="TestScene" type="Node3D"]
 
 [node name="hotelRooms" type="Node3D" parent="."]
@@ -4599,6 +4604,14 @@ transform = Transform3D(-8.60075e-08, 0.999675, -0.0255085, 3.78511e-07, 0.02550
 bone_name = "Gun"
 bone_idx = 10
 
+[node name="GhostDetect" type="Area3D" parent="Player/CharArm"]
+transform = Transform3D(-2.5, 0, 2.18557e-07, 0, 2.5, 0, -2.18557e-07, 0, -2.5, 1.35387e-07, 1.72849, -1.54865)
+script = ExtResource("15_w630k")
+
+[node name="col" type="CollisionShape3D" parent="Player/CharArm/GhostDetect"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.86444e-15, 0, 0.855578)
+shape = SubResource("CapsuleShape3D_ptv7y")
+
 [node name="cam" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.507538, 0.861629, 0, -0.861629, 0.507538, 0, 5, 2.5)
 fov = 89.9
@@ -4623,14 +4636,7 @@ autoplay = "CharAnim_Awake"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_6qgug")
 
-[node name="GhostDetect" type="Area3D" parent="Player"]
-script = ExtResource("15_w630k")
-
-[node name="col" type="CollisionShape3D" parent="Player/GhostDetect"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 1.30131)
-shape = SubResource("CapsuleShape3D_ptv7y")
-
-[node name="DeadHead" type="Node3D" parent="."]
+[node name="DeadHead" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 11)
 
 [node name="DheadArm" type="Node3D" parent="DeadHead"]
@@ -4654,14 +4660,14 @@ bones/2/name = "Head.001"
 bones/2/parent = 0
 bones/2/rest = Transform3D(1, -1.78814e-07, 3.56027e-08, -3.56026e-08, 3.57628e-07, 1, -1.78814e-07, -1, 3.57628e-07, 2, 0, -3.01992e-07)
 bones/2/enabled = true
-bones/2/position = Vector3(-5.96046e-07, -4.26232e-15, 2.84217e-13)
+bones/2/position = Vector3(-4.76837e-07, -4.26232e-15, 2.84217e-13)
 bones/2/rotation = Quaternion(-0.707107, 7.58077e-08, 5.06328e-08, 0.707107)
 bones/2/scale = Vector3(0, 0, 0)
 bones/3/name = "Head.002"
 bones/3/parent = 0
 bones/3/rest = Transform3D(1, -1.19209e-07, 3.56026e-08, -3.56026e-08, 3.57628e-07, 1, -1.19209e-07, -1, 3.57628e-07, 4, 0, -6.03983e-07)
 bones/3/enabled = true
-bones/3/position = Vector3(-2.38419e-07, 5.68621e-15, 2.27374e-13)
+bones/3/position = Vector3(-4.76837e-07, 5.68621e-15, 2.27374e-13)
 bones/3/rotation = Quaternion(-0.707107, 5.47343e-08, 2.95594e-08, 0.707107)
 bones/3/scale = Vector3(0, 0, 0)
 bones/4/name = "Head.003"
@@ -4675,7 +4681,7 @@ bones/5/name = "Head.004"
 bones/5/parent = 0
 bones/5/rest = Transform3D(1, -2.38419e-07, 3.56027e-08, -3.56026e-08, 3.57628e-07, 1, -2.38419e-07, -1, 3.57628e-07, 8, 0, -1.20797e-06)
 bones/5/enabled = true
-bones/5/position = Vector3(-4.76837e-07, 1.13724e-14, 2.27374e-13)
+bones/5/position = Vector3(0, 1.13724e-14, 2.27374e-13)
 bones/5/rotation = Quaternion(-0.707107, 9.68811e-08, 7.17062e-08, 0.707107)
 bones/5/scale = Vector3(0, 0, 0)
 bones/6/name = "Head.005"
@@ -4689,8 +4695,13 @@ bones/6/scale = Vector3(0, 0, 0)
 [node name="DHeadMesh" type="MeshInstance3D" parent="DeadHead/DheadArm/Skeleton3D" groups=["Fade"]]
 mesh = SubResource("ArrayMesh_pn84i")
 skin = SubResource("Skin_0hf38")
-surface_material_override/0 = SubResource("ShaderMaterial_qvxvb")
+surface_material_override/0 = SubResource("ShaderMaterial_sxiqp")
 script = ExtResource("17_scvhp")
+
+[node name="DHeadMesh2" type="MeshInstance3D" parent="DeadHead/DheadArm/Skeleton3D"]
+cast_shadow = 3
+mesh = SubResource("ArrayMesh_pn84i")
+skin = SubResource("Skin_0hf38")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DeadHead"]
 libraries = {
@@ -4698,4 +4709,10 @@ libraries = {
 }
 autoplay = "Dhead_0"
 
+[node name="col" type="CollisionShape3D" parent="DeadHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00605, 0)
+shape = SubResource("CapsuleShape3D_1biwt")
+
+[connection signal="body_entered" from="Player/CharArm/GhostDetect" to="Player/CharArm/GhostDetect" method="_on_body_entered"]
+[connection signal="body_exited" from="Player/CharArm/GhostDetect" to="Player/CharArm/GhostDetect" method="_on_body_exited"]
 [connection signal="body_entered" from="Player/collision" to="Player" method="_on_collision_body_entered"]
