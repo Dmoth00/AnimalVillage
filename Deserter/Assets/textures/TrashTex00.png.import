@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wuwgjld2hdth"
-path.s3tc="res://.godot/imported/TrashTex00.png-aa8e5758575c08bad9f064b073409317.s3tc.ctex"
-path.etc2="res://.godot/imported/TrashTex00.png-aa8e5758575c08bad9f064b073409317.etc2.ctex"
+path.s3tc="res://.godot/imported/TrashTex00.png-42b12b0f24065cd5bc4fcaae8c3850ae.s3tc.ctex"
+path.etc2="res://.godot/imported/TrashTex00.png-42b12b0f24065cd5bc4fcaae8c3850ae.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/TrashTex00.png"
-dest_files=["res://.godot/imported/TrashTex00.png-aa8e5758575c08bad9f064b073409317.s3tc.ctex", "res://.godot/imported/TrashTex00.png-aa8e5758575c08bad9f064b073409317.etc2.ctex"]
+source_file="res://Assets/textures/TrashTex00.png"
+dest_files=["res://.godot/imported/TrashTex00.png-42b12b0f24065cd5bc4fcaae8c3850ae.s3tc.ctex", "res://.godot/imported/TrashTex00.png-42b12b0f24065cd5bc4fcaae8c3850ae.etc2.ctex"]
 
 [params]
 

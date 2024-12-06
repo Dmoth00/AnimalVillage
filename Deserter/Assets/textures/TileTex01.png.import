@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://t13s3neg8kfe"
-path.s3tc="res://.godot/imported/TileTex01.png-c578aec06966a550bd63cc4e4e2d065c.s3tc.ctex"
-path.etc2="res://.godot/imported/TileTex01.png-c578aec06966a550bd63cc4e4e2d065c.etc2.ctex"
+path.s3tc="res://.godot/imported/TileTex01.png-f282dd34fe88fe0a99c9b59892944fa6.s3tc.ctex"
+path.etc2="res://.godot/imported/TileTex01.png-f282dd34fe88fe0a99c9b59892944fa6.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/TileTex01.png"
-dest_files=["res://.godot/imported/TileTex01.png-c578aec06966a550bd63cc4e4e2d065c.s3tc.ctex", "res://.godot/imported/TileTex01.png-c578aec06966a550bd63cc4e4e2d065c.etc2.ctex"]
+source_file="res://Assets/textures/TileTex01.png"
+dest_files=["res://.godot/imported/TileTex01.png-f282dd34fe88fe0a99c9b59892944fa6.s3tc.ctex", "res://.godot/imported/TileTex01.png-f282dd34fe88fe0a99c9b59892944fa6.etc2.ctex"]
 
 [params]
 

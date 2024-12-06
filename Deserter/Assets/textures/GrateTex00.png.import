@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqlc7myjvsinq"
-path="res://.godot/imported/GrateTex00.png-7689c905439687a143c5840f2b8514e5.ctex"
+path="res://.godot/imported/GrateTex00.png-66f8000bfe8683c7e733468db4e982a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/GrateTex00.png"
-dest_files=["res://.godot/imported/GrateTex00.png-7689c905439687a143c5840f2b8514e5.ctex"]
+source_file="res://Assets/textures/GrateTex00.png"
+dest_files=["res://.godot/imported/GrateTex00.png-66f8000bfe8683c7e733468db4e982a8.ctex"]
 
 [params]
 

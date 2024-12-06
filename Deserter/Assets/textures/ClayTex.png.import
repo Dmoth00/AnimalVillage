@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://spljdbm2yq37"
-path="res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.ctex"
+path="res://.godot/imported/ClayTex.png-28fa5c839dfef51d67383b43bfc8288f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ClayTex.png"
-dest_files=["res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.ctex"]
+source_file="res://Assets/textures/ClayTex.png"
+dest_files=["res://.godot/imported/ClayTex.png-28fa5c839dfef51d67383b43bfc8288f.ctex"]
 
 [params]
 

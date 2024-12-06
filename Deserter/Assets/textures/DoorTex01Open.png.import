@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhynofrdvtpvt"
-path="res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.ctex"
+path="res://.godot/imported/DoorTex01Open.png-4abb8baf0b2cb82915ab009913ca7f5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/DoorTex01Open.png"
-dest_files=["res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.ctex"]
+source_file="res://Assets/textures/DoorTex01Open.png"
+dest_files=["res://.godot/imported/DoorTex01Open.png-4abb8baf0b2cb82915ab009913ca7f5f.ctex"]
 
 [params]
 

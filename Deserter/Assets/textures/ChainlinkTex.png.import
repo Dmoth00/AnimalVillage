@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk86hrcscxwop"
-path="res://.godot/imported/ChainlinkTex.png-1b0ee79d0ecb9db18933d88dd93ba445.ctex"
+path="res://.godot/imported/ChainlinkTex.png-e5ae7945f3ac0a94f9a671ce52ac7ff5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ChainlinkTex.png"
-dest_files=["res://.godot/imported/ChainlinkTex.png-1b0ee79d0ecb9db18933d88dd93ba445.ctex"]
+source_file="res://Assets/textures/ChainlinkTex.png"
+dest_files=["res://.godot/imported/ChainlinkTex.png-e5ae7945f3ac0a94f9a671ce52ac7ff5.ctex"]
 
 [params]
 

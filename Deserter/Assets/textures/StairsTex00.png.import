@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4jpcdrpiln4o"
-path.s3tc="res://.godot/imported/StairsTex00.png-a895a5e363e428fa43c3b37034f5c05f.s3tc.ctex"
-path.etc2="res://.godot/imported/StairsTex00.png-a895a5e363e428fa43c3b37034f5c05f.etc2.ctex"
+path.s3tc="res://.godot/imported/StairsTex00.png-129b6bc3229a5597b79fab3e2312f12b.s3tc.ctex"
+path.etc2="res://.godot/imported/StairsTex00.png-129b6bc3229a5597b79fab3e2312f12b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/StairsTex00.png"
-dest_files=["res://.godot/imported/StairsTex00.png-a895a5e363e428fa43c3b37034f5c05f.s3tc.ctex", "res://.godot/imported/StairsTex00.png-a895a5e363e428fa43c3b37034f5c05f.etc2.ctex"]
+source_file="res://Assets/textures/StairsTex00.png"
+dest_files=["res://.godot/imported/StairsTex00.png-129b6bc3229a5597b79fab3e2312f12b.s3tc.ctex", "res://.godot/imported/StairsTex00.png-129b6bc3229a5597b79fab3e2312f12b.etc2.ctex"]
 
 [params]
 

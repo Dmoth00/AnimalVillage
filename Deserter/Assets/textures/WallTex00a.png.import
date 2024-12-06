@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqx2owak5jma3"
-path.s3tc="res://.godot/imported/WallTex00a.png-9211728d8fa03e6c8eee85be9ae86362.s3tc.ctex"
-path.etc2="res://.godot/imported/WallTex00a.png-9211728d8fa03e6c8eee85be9ae86362.etc2.ctex"
+path.s3tc="res://.godot/imported/WallTex00a.png-91dfba8d1604858a98fdf485b1e6380b.s3tc.ctex"
+path.etc2="res://.godot/imported/WallTex00a.png-91dfba8d1604858a98fdf485b1e6380b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/WallTex00a.png"
-dest_files=["res://.godot/imported/WallTex00a.png-9211728d8fa03e6c8eee85be9ae86362.s3tc.ctex", "res://.godot/imported/WallTex00a.png-9211728d8fa03e6c8eee85be9ae86362.etc2.ctex"]
+source_file="res://Assets/textures/WallTex00a.png"
+dest_files=["res://.godot/imported/WallTex00a.png-91dfba8d1604858a98fdf485b1e6380b.s3tc.ctex", "res://.godot/imported/WallTex00a.png-91dfba8d1604858a98fdf485b1e6380b.etc2.ctex"]
 
 [params]
 

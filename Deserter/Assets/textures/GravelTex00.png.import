@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://n7e1i4cp8wi2"
-path.s3tc="res://.godot/imported/GravelTex00.png-4ba0f34eaf5a29d72ac28e1bf693d193.s3tc.ctex"
-path.etc2="res://.godot/imported/GravelTex00.png-4ba0f34eaf5a29d72ac28e1bf693d193.etc2.ctex"
+path.s3tc="res://.godot/imported/GravelTex00.png-d3b1bea09b7134ae2ff23ff18b53793c.s3tc.ctex"
+path.etc2="res://.godot/imported/GravelTex00.png-d3b1bea09b7134ae2ff23ff18b53793c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/GravelTex00.png"
-dest_files=["res://.godot/imported/GravelTex00.png-4ba0f34eaf5a29d72ac28e1bf693d193.s3tc.ctex", "res://.godot/imported/GravelTex00.png-4ba0f34eaf5a29d72ac28e1bf693d193.etc2.ctex"]
+source_file="res://Assets/textures/GravelTex00.png"
+dest_files=["res://.godot/imported/GravelTex00.png-d3b1bea09b7134ae2ff23ff18b53793c.s3tc.ctex", "res://.godot/imported/GravelTex00.png-d3b1bea09b7134ae2ff23ff18b53793c.etc2.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dupqb2hsk61un"
-path.s3tc="res://.godot/imported/CarpetTex.png-fd89f4371c04d47683b1a0f8fb3c3cb7.s3tc.ctex"
-path.etc2="res://.godot/imported/CarpetTex.png-fd89f4371c04d47683b1a0f8fb3c3cb7.etc2.ctex"
+path.s3tc="res://.godot/imported/CarpetTex.png-4da8140fd7dd1bfe07ba4243d11e1281.s3tc.ctex"
+path.etc2="res://.godot/imported/CarpetTex.png-4da8140fd7dd1bfe07ba4243d11e1281.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/CarpetTex.png"
-dest_files=["res://.godot/imported/CarpetTex.png-fd89f4371c04d47683b1a0f8fb3c3cb7.s3tc.ctex", "res://.godot/imported/CarpetTex.png-fd89f4371c04d47683b1a0f8fb3c3cb7.etc2.ctex"]
+source_file="res://Assets/textures/CarpetTex.png"
+dest_files=["res://.godot/imported/CarpetTex.png-4da8140fd7dd1bfe07ba4243d11e1281.s3tc.ctex", "res://.godot/imported/CarpetTex.png-4da8140fd7dd1bfe07ba4243d11e1281.etc2.ctex"]
 
 [params]
 
