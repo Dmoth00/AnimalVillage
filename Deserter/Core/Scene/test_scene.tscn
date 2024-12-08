@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://c3jojreh43ci2"]
+[gd_scene load_steps=91 format=4 uid="uid://c3jojreh43ci2"]
 
 [ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/Textures/WallTex00.png" id="1_5cerg"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/Bricktex00.png" id="2_bceww"]
@@ -16,6 +16,7 @@
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="15_4w00y"]
 [ext_resource type="Texture2D" uid="uid://dtinj7oq4if1y" path="res://Assets/Actors/Enemies/DHeadTex00.png" id="15_gmomc"]
 [ext_resource type="Script" path="res://Core/Player/ghost_detect.gd" id="15_w630k"]
+[ext_resource type="Script" path="res://Core/Enemy/dead_head.gd" id="16_6jjch"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="17_scvhp"]
 [ext_resource type="Animation" uid="uid://chnrg7uomgre3" path="res://Assets/Actors/Player/player_anim/CharAnim_Shoot.res" id="20_cs8vx"]
 
@@ -4613,7 +4614,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 6.8644
 shape = SubResource("CapsuleShape3D_ptv7y")
 
 [node name="cam" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.507538, 0.861629, 0, -0.861629, 0.507538, 0, 5, 2.5)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 5, 2.5)
 fov = 89.9
 
 [node name="fl_spot" type="SpotLight3D" parent="Player"]
@@ -4636,8 +4637,9 @@ autoplay = "CharAnim_Awake"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_6qgug")
 
-[node name="DeadHead" type="StaticBody3D" parent="."]
+[node name="DeadHead" type="StaticBody3D" parent="." groups=["Harm"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 11)
+script = ExtResource("16_6jjch")
 
 [node name="DheadArm" type="Node3D" parent="DeadHead"]
 

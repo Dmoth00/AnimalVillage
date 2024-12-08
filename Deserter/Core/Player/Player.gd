@@ -148,6 +148,7 @@ func flashlight():
 	pass
 
 func _on_collision_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Harm"):
+	if body.is_in_group("Harm") and vulnerable:
+		
 		pass
 	pass # Replace with function body.

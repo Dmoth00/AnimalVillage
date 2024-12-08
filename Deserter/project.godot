@@ -24,6 +24,7 @@ NewFunc="*res://new_func.gd"
 
 Fade="Mesh instances that use ghostfade"
 Player=""
+Harm="Harms player on colission"
 
 [input]
 
