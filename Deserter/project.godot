@@ -24,6 +24,7 @@ NewFunc="*res://new_func.gd"
 
 Fade="Mesh instances that use ghostfade"
 Player=""
+Harm="Things that hurt the player"
 
 [input]
 

@@ -5,7 +5,6 @@ var runMod = 1.0
 
 var state=2
 var can_move=false
-var vulnerable=false
 
 
 #gun variables
@@ -18,6 +17,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var mesh=get_node("CharArm")
 @onready var anim=get_node("anim")
+@onready var col=get_node("collision/col")
 var direction=Vector3.ZERO
 var input_dir=Vector2.ZERO
 var ldir=Vector3.BACK
@@ -31,11 +31,18 @@ var fl=true
 @onready var fl_spot=$fl_spot
 @onready var fl_glare=$CharArm/Skeleton3D/fl/fl_glare
 
+#timers
+@onready var awake_timer=$awake_timer
+@onready var vul_timer=$vul_timer
+@onready var can_move_timer=$can_move_timer
+
 #miscelaneous variables
 var t=0.0
 
 func _ready() -> void:
+	flashlight()
 	anim.play("CharAnim_Awake",1,1)
+	awake_timer.start(5.0)
 
 func _physics_process(delta):
 	
@@ -53,8 +60,8 @@ func _physics_process(delta):
 		velocity.z = direction.z * SPEED*runMod
 	#deacceleration
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 32*delta)
+		velocity.z = move_toward(velocity.z, 0, 32*delta)
 	
 	move_and_slide()
 
@@ -90,13 +97,10 @@ func _process(delta):
 					can_shoot=false
 					firet=0.5
 		2:
-			#AWAKE ANIM
-			t+=delta
-			if t>5:
-				t=0
+			if can_move:
 				state=0
-				can_move=true
-				vulnerable=true
+			pass
+			#AWAKE ANIM
 
 func _input(event):
 	if can_move:
@@ -104,7 +108,7 @@ func _input(event):
 		if event.is_action_pressed("gp_fl"): flashlight()
 		
 		#fire imput
-		if event.is_action_pressed("gp_fire"): shoot()
+		if event.is_action_pressed("gp_fire"): _shoot()
 		
 		#reload imput
 		if event.is_action_pressed("gp_reload"): _reload()
@@ -117,8 +121,7 @@ func _input(event):
 	if event.is_action_pressed("gp_aim"): aiming=true
 	if event.is_action_released("gp_aim"): aiming=false
 
-
-func shoot():
+func _shoot():
 		if can_shoot:
 			can_move=false
 			firet=0.5
@@ -147,7 +150,37 @@ func flashlight():
 		fl=true
 	pass
 
+func _hurt(other : Node3D):
+	print("Ouch!")
+	state=2
+	can_move=false
+	can_move_timer.start(1.0)
+	col.set_deferred("disabled",true)
+	vul_timer.start(3.0)
+	anim.play("CharAnim_Hurt")
+	mesh.look_at(other.global_transform.origin)
+	var d = other.global_position.direction_to(global_position)
+	var hspd = 12
+	velocity.x=d.x*hspd
+	velocity.z=d.z*hspd
+	pass
+
 func _on_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Harm"):
+		_hurt(body)
 		pass
+	pass # Replace with function body.
+
+#timers
+
+func _on_can_move_timer() -> void: can_move=true
+
+func _on_vul_timer() -> void:
+	col.disabled=false
+	print("Vulnerable")
+
+func _on_awake_timer() -> void:
+	can_move=true
+	vul_timer.start(0.25)
+	flashlight()
 	pass # Replace with function body.
