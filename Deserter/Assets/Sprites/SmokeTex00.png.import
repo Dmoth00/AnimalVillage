@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b384gp0diw5i7"
-path.s3tc="res://.godot/imported/GlareTex.png-bc59c5edf81340e36e5f9bf6fc951fb1.s3tc.ctex"
-path.etc2="res://.godot/imported/GlareTex.png-bc59c5edf81340e36e5f9bf6fc951fb1.etc2.ctex"
+uid="uid://b0tsbgwhdfc2r"
+path.s3tc="res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex"
+path.etc2="res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/GlareTex.png"
-dest_files=["res://.godot/imported/GlareTex.png-bc59c5edf81340e36e5f9bf6fc951fb1.s3tc.ctex", "res://.godot/imported/GlareTex.png-bc59c5edf81340e36e5f9bf6fc951fb1.etc2.ctex"]
+source_file="res://Assets/Sprites/SmokeTex00.png"
+dest_files=["res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex", "res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.etc2.ctex"]
 
 [params]
 

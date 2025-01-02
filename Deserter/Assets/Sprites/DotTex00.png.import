@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgyg7kcy7c2gl"
-path="res://.godot/imported/ManholeTex.png-e3f3927daf8c524daf6189855456df29.ctex"
+uid="uid://cslm4xewmf02t"
+path="res://.godot/imported/DotTex00.png-68a6eb1c743b02291d1b5e14ffaa038c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Textures/ManholeTex.png"
-dest_files=["res://.godot/imported/ManholeTex.png-e3f3927daf8c524daf6189855456df29.ctex"]
+source_file="res://Assets/Sprites/DotTex00.png"
+dest_files=["res://.godot/imported/DotTex00.png-68a6eb1c743b02291d1b5e14ffaa038c.ctex"]
 
 [params]
 

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs5yehc1vvx4u"
-path.s3tc="res://.godot/imported/Bricktex00.png-66f8fde7d67070df09a1faad18cee205.s3tc.ctex"
-path.etc2="res://.godot/imported/Bricktex00.png-66f8fde7d67070df09a1faad18cee205.etc2.ctex"
+path.s3tc="res://.godot/imported/Bricktex00.png-7064c08d1c1b8ef77ad80ff1a2dff0f6.s3tc.ctex"
+path.etc2="res://.godot/imported/Bricktex00.png-7064c08d1c1b8ef77ad80ff1a2dff0f6.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/Bricktex00.png"
-dest_files=["res://.godot/imported/Bricktex00.png-66f8fde7d67070df09a1faad18cee205.s3tc.ctex", "res://.godot/imported/Bricktex00.png-66f8fde7d67070df09a1faad18cee205.etc2.ctex"]
+source_file="res://Assets/Textures/Bricktex00.png"
+dest_files=["res://.godot/imported/Bricktex00.png-7064c08d1c1b8ef77ad80ff1a2dff0f6.s3tc.ctex", "res://.godot/imported/Bricktex00.png-7064c08d1c1b8ef77ad80ff1a2dff0f6.etc2.ctex"]
 
 [params]
 

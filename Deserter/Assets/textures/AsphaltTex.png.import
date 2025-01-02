@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://td3lpmel5hph"
-path.s3tc="res://.godot/imported/AsphaltTex.png-dcec3d6829e0bf6187b68c321e02a434.s3tc.ctex"
-path.etc2="res://.godot/imported/AsphaltTex.png-dcec3d6829e0bf6187b68c321e02a434.etc2.ctex"
+path.s3tc="res://.godot/imported/AsphaltTex.png-952ad845c01c6865f266210554af61bc.s3tc.ctex"
+path.etc2="res://.godot/imported/AsphaltTex.png-952ad845c01c6865f266210554af61bc.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/textures/AsphaltTex.png"
-dest_files=["res://.godot/imported/AsphaltTex.png-dcec3d6829e0bf6187b68c321e02a434.s3tc.ctex", "res://.godot/imported/AsphaltTex.png-dcec3d6829e0bf6187b68c321e02a434.etc2.ctex"]
+source_file="res://Assets/Textures/AsphaltTex.png"
+dest_files=["res://.godot/imported/AsphaltTex.png-952ad845c01c6865f266210554af61bc.s3tc.ctex", "res://.godot/imported/AsphaltTex.png-952ad845c01c6865f266210554af61bc.etc2.ctex"]
 
 [params]
 
