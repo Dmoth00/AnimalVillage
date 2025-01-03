@@ -12,6 +12,7 @@ var can_shoot=false
 var aiming=false
 var firet=0.5
 @onready var muzzle=$CharArm/muzzleflash
+@onready var smoke=$smokeSFX
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -125,6 +126,8 @@ func _input(event):
 func _shoot():
 		if can_shoot:
 			muzzle.act()
+			smoke.global_position=muzzle.global_position
+			smoke.emitting=true
 			can_move=false
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)

@@ -9,63 +9,6 @@
 [ext_resource type="Script" path="res://Core/Player/ghost_detect.gd" id="6_wgdaj"]
 [ext_resource type="Script" path="res://Core/Player/muzzleflash.gd" id="6_xlrk8"]
 
-[sub_resource type="Gradient" id="Gradient_qdkc6"]
-offsets = PackedFloat32Array(0, 0.0104712, 0.418848, 0.727749, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.963351, 0.963351, 0.963351, 1, 0.2, 0.2, 0.2, 0.741176, 0, 0, 0, 0.545098, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qi422"]
-gradient = SubResource("Gradient_qdkc6")
-
-[sub_resource type="Curve" id="Curve_ue0v6"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.899543, 9.89011), 0.0, 0.0, 0, 0, Vector2(1, 40.6593), 132.777, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_hdbp3"]
-curve = SubResource("Curve_ue0v6")
-
-[sub_resource type="Curve" id="Curve_x5m2u"]
-max_value = 2.0
-_data = [Vector2(0, 0.527472), 0.0, 0.557625, 0, 0, Vector2(1, 2), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_kc64i"]
-curve = SubResource("Curve_x5m2u")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sstdq"]
-particle_flag_rotate_y = true
-particle_flag_damping_as_friction = true
-emission_shape_scale = Vector3(0, 0, 0)
-angle_min = -180.0
-angle_max = 180.0
-direction = Vector3(0, 1, 0)
-spread = 5.0
-initial_velocity_min = 3.0
-initial_velocity_max = 3.0
-angular_velocity_min = -5.00002
-angular_velocity_max = 4.99998
-gravity = Vector3(0, 0, 0)
-damping_min = 8.0
-damping_max = 16.0
-damping_curve = SubResource("CurveTexture_hdbp3")
-scale_min = 0.0
-scale_curve = SubResource("CurveTexture_kc64i")
-color_ramp = SubResource("GradientTexture1D_qi422")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spdjh"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-specular_mode = 2
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_h4h2g")
-billboard_mode = 2
-billboard_keep_scale = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_pxoup"]
-material = SubResource("StandardMaterial3D_spdjh")
-size = Vector2(0.4, 0.4)
-
 [sub_resource type="Animation" id="Animation_8cqw1"]
 resource_name = "CharAim_Reload"
 length = 1.66667
@@ -3525,18 +3468,62 @@ albedo_texture = SubResource("GradientTexture1D_oa4gr")
 radius = 1.5
 height = 4.2
 
+[sub_resource type="Gradient" id="Gradient_qdkc6"]
+offsets = PackedFloat32Array(0, 0.0104712, 0.418848, 0.727749, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.963351, 0.963351, 0.963351, 1, 0.2, 0.2, 0.2, 0.741176, 0, 0, 0, 0.545098, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qi422"]
+gradient = SubResource("Gradient_qdkc6")
+
+[sub_resource type="Curve" id="Curve_ue0v6"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.899543, 9.89011), 0.0, 0.0, 0, 0, Vector2(1, 40.6593), 132.777, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_hdbp3"]
+curve = SubResource("Curve_ue0v6")
+
+[sub_resource type="Curve" id="Curve_x5m2u"]
+min_value = 0.01
+_data = [Vector2(0, 0.281978), 0.0, -0.0760676, 0, 0, Vector2(1e-05, 0.303736), 0.0, 0.0, 0, 0, Vector2(1, 1.08154), -0.058784, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_kc64i"]
+curve = SubResource("Curve_x5m2u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sstdq"]
+particle_flag_damping_as_friction = true
+emission_shape_scale = Vector3(0, 0, 0)
+direction = Vector3(0, -1, 0)
+spread = 1.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+damping_curve = SubResource("CurveTexture_hdbp3")
+scale_curve = SubResource("CurveTexture_kc64i")
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 1.0
+color_ramp = SubResource("GradientTexture1D_qi422")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spdjh"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_h4h2g")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_pxoup"]
+material = SubResource("StandardMaterial3D_spdjh")
+size = Vector2(0.4, 0.4)
+
 [node name="Player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_g510n")
-
-[node name="smokeSFX" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0341946, 0.955177, 0.815636)
-gi_mode = 0
-emitting = false
-one_shot = true
-explosiveness = 0.49
-fixed_fps = 15
-process_material = SubResource("ParticleProcessMaterial_sstdq")
-draw_pass_1 = SubResource("QuadMesh_pxoup")
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -3775,6 +3762,18 @@ one_shot = true
 
 [node name="awake_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="smokeSFX" type="GPUParticles3D" parent="."]
+process_mode = 3
+transform = Transform3D(0.0199999, 3.0199e-09, -6.77058e-05, 3.01992e-09, -0.02, -2.23779e-16, -0.000677184, -1.02254e-10, -0.199999, 0.0341946, 0.955177, 0.815636)
+gi_mode = 0
+emitting = false
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.5
+fixed_fps = 15
+process_material = SubResource("ParticleProcessMaterial_sstdq")
+draw_pass_1 = SubResource("QuadMesh_pxoup")
 
 [connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]
 [connection signal="body_entered" from="CharArm/GhostDetect" to="CharArm/GhostDetect" method="_on_body_entered"]
