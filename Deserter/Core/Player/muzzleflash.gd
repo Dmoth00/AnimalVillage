@@ -15,7 +15,7 @@ func act():
 
 func _process(delta: float) -> void:
 	if col.a>0.0:
-		col.a = max(col.a-delta*8,0)
+		col.a = max(col.a-delta*4,0)
 		scale.z = col.a
 		mat.albedo_color= col
 	else: process_mode=PROCESS_MODE_DISABLED

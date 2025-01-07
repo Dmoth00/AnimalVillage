@@ -127,7 +127,7 @@ func _shoot():
 		if can_shoot:
 			muzzle.act()
 			smoke.global_position=muzzle.global_position
-			smoke.emitting=true
+			smoke.restart()
 			can_move=false
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
