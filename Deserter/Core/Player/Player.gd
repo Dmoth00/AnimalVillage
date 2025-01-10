@@ -28,9 +28,8 @@ var ldir=Vector3.BACK
 #flashlight stuff
 var fl=true
 @onready var fl_l=$CharArm/Skeleton3D/fl/fl_light
-@onready var fl_shad=$CharArm/Skeleton3D/fl/fl_shad
+@onready var fl_shad=$CharArm/fl_shad
 @onready var fl_mat=$CharArm/Skeleton3D/charMesh.get_surface_override_material(3)
-@onready var fl_spot=$fl_spot
 @onready var fl_glare=$CharArm/Skeleton3D/fl/fl_glare
 
 #timers
@@ -126,8 +125,9 @@ func _input(event):
 func _shoot():
 		if can_shoot:
 			muzzle.act()
-			smoke.global_position=muzzle.global_position
+			smoke.look_at_from_position(muzzle.global_position,muzzle.global_position+ldir,Vector3.UP)
 			smoke.restart()
+			fl_shad.flash()
 			can_move=false
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
@@ -141,15 +141,13 @@ func _reload():
 func flashlight():
 	if fl:
 		fl_l.light_energy=0
-		fl_shad.light_energy=0
-		fl_spot.light_energy=0.1
+		fl_shad.act(false)
 		fl_mat.emission_energy_multiplier=0
 		fl_glare.visible=false
 		fl=false
 	else:
-		fl_l.light_energy=3
-		fl_shad.light_energy=0.1
-		fl_spot.light_energy=0.5
+		fl_l.light_energy=8
+		fl_shad.act(true)
 		fl_mat.emission_energy_multiplier=1
 		fl_glare.visible=true
 		fl=true
