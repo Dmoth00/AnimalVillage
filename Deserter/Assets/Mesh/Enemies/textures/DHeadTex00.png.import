@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvrbt5wylvadj"
-path.s3tc="res://.godot/imported/Rabbit_MetalTex.png-62195af52b74f3f1d231f8d90db16d4a.s3tc.ctex"
-path.etc2="res://.godot/imported/Rabbit_MetalTex.png-62195af52b74f3f1d231f8d90db16d4a.etc2.ctex"
+uid="uid://70fnj7tuj2ig"
+path.s3tc="res://.godot/imported/DHeadTex00.png-ce61daca78bed26706c6590808899041.s3tc.ctex"
+path.etc2="res://.godot/imported/DHeadTex00.png-ce61daca78bed26706c6590808899041.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "dbf0ec3b7aee85dbe6a8c8eee1620cd2"
-}
 
 [deps]
 
-source_file="res://Assets/Actors/Player/Rabbit_MetalTex.png"
-dest_files=["res://.godot/imported/Rabbit_MetalTex.png-62195af52b74f3f1d231f8d90db16d4a.s3tc.ctex", "res://.godot/imported/Rabbit_MetalTex.png-62195af52b74f3f1d231f8d90db16d4a.etc2.ctex"]
+source_file="res://Assets/Mesh/Enemies/textures/DHeadTex00.png"
+dest_files=["res://.godot/imported/DHeadTex00.png-ce61daca78bed26706c6590808899041.s3tc.ctex", "res://.godot/imported/DHeadTex00.png-ce61daca78bed26706c6590808899041.etc2.ctex"]
 
 [params]
 

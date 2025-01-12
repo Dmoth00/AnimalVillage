@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b2810i5o0oo65"
-path="res://.godot/imported/Rabbit.blend-7e28e0b2d65d0e817cb066c93bff3fd7.scn"
+uid="uid://dpl0jfh2ioa1a"
+path="res://.godot/imported/props00.blend-1b0b6e872e69316b619b59c74f24befd.scn"
 
 [deps]
 
-source_file="res://Assets/Actors/Player/Rabbit.blend"
-dest_files=["res://.godot/imported/Rabbit.blend-7e28e0b2d65d0e817cb066c93bff3fd7.scn"]
+source_file="res://Assets/Mesh/Props/props00.blend"
+dest_files=["res://.godot/imported/props00.blend-1b0b6e872e69316b619b59c74f24befd.scn"]
 
 [params]
 

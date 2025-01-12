@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ou5667jp7wd4"
-path="res://.godot/imported/DeadHead.blend-69f17581443db9a80de187b1b2c72db4.scn"
+path="res://.godot/imported/DeadHead.blend-88f5118b845a68ffa75222cc71cbf24d.scn"
 
 [deps]
 
-source_file="res://Assets/Actors/Enemies/DeadHead.blend"
-dest_files=["res://.godot/imported/DeadHead.blend-69f17581443db9a80de187b1b2c72db4.scn"]
+source_file="res://Assets/Mesh/Enemies/DeadHead.blend"
+dest_files=["res://.godot/imported/DeadHead.blend-88f5118b845a68ffa75222cc71cbf24d.scn"]
 
 [params]
 

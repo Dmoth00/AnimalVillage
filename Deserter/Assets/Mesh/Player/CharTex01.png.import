@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b15snsygxcvw"
-path.s3tc="res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.s3tc.ctex"
-path.etc2="res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.etc2.ctex"
+path.s3tc="res://.godot/imported/CharTex01.png-8dfd03c1043796711f61db43df1c8e08.s3tc.ctex"
+path.etc2="res://.godot/imported/CharTex01.png-8dfd03c1043796711f61db43df1c8e08.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Actors/Player/CharTex01.png"
-dest_files=["res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.s3tc.ctex", "res://.godot/imported/CharTex01.png-04c687c34596822c8836280bf70b9f4a.etc2.ctex"]
+source_file="res://Assets/Mesh/Player/CharTex01.png"
+dest_files=["res://.godot/imported/CharTex01.png-8dfd03c1043796711f61db43df1c8e08.s3tc.ctex", "res://.godot/imported/CharTex01.png-8dfd03c1043796711f61db43df1c8e08.etc2.ctex"]
 
 [params]
 

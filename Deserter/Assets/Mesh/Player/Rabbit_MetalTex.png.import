@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqsj14ou4hm04"
-path.s3tc="res://.godot/imported/MetalTex.png-4d03491dab8245fe50c78cae12805407.s3tc.ctex"
-path.etc2="res://.godot/imported/MetalTex.png-4d03491dab8245fe50c78cae12805407.etc2.ctex"
+uid="uid://bvrbt5wylvadj"
+path.s3tc="res://.godot/imported/Rabbit_MetalTex.png-f9348b4d66f2153c5ec3fdab4ac31454.s3tc.ctex"
+path.etc2="res://.godot/imported/Rabbit_MetalTex.png-f9348b4d66f2153c5ec3fdab4ac31454.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "dbf0ec3b7aee85dbe6a8c8eee1620cd2"
+}
 
 [deps]
 
-source_file="res://Assets/Actors/Player/MetalTex.png"
-dest_files=["res://.godot/imported/MetalTex.png-4d03491dab8245fe50c78cae12805407.s3tc.ctex", "res://.godot/imported/MetalTex.png-4d03491dab8245fe50c78cae12805407.etc2.ctex"]
+source_file="res://Assets/Mesh/Player/Rabbit_MetalTex.png"
+dest_files=["res://.godot/imported/Rabbit_MetalTex.png-f9348b4d66f2153c5ec3fdab4ac31454.s3tc.ctex", "res://.godot/imported/Rabbit_MetalTex.png-f9348b4d66f2153c5ec3fdab4ac31454.etc2.ctex"]
 
 [params]
 

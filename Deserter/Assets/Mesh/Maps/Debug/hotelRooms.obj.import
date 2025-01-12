@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://brtpyw3ck2wqr"
-path="res://.godot/imported/hotelRooms.obj-ee3354a759e37b8426cc0bff0b312f1a.scn"
+path="res://.godot/imported/hotelRooms.obj-60d862fe1b21af854cdcbbfc2d2e1d9f.scn"
 
 [deps]
 
-source_file="res://Assets/Maps/Debug/hotelRooms.obj"
-dest_files=["res://.godot/imported/hotelRooms.obj-ee3354a759e37b8426cc0bff0b312f1a.scn"]
+source_file="res://Assets/Mesh/Maps/Debug/hotelRooms.obj"
+dest_files=["res://.godot/imported/hotelRooms.obj-60d862fe1b21af854cdcbbfc2d2e1d9f.scn"]
 
 [params]
 

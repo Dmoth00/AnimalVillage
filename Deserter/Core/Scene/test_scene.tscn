@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cqx2owak5jma3" path="res://Assets/Textures/WallTex00a.png" id="8_mreq4"]
 [ext_resource type="PackedScene" uid="uid://bk8qmk3lhqr8t" path="res://Core/Player/player.tscn" id="9_mdrf7"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="15_4w00y"]
-[ext_resource type="Texture2D" uid="uid://dtinj7oq4if1y" path="res://Assets/Actors/Enemies/DHeadTex00.png" id="15_gmomc"]
+[ext_resource type="Texture2D" uid="uid://dtinj7oq4if1y" path="res://Assets/Mesh/Enemies/DHeadTex00.png" id="15_gmomc"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="17_scvhp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h6hv"]

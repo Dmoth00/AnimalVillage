@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtinj7oq4if1y"
-path.s3tc="res://.godot/imported/DHeadTex00.png-1d8ee16a8b8aeff4754c719887de55af.s3tc.ctex"
-path.etc2="res://.godot/imported/DHeadTex00.png-1d8ee16a8b8aeff4754c719887de55af.etc2.ctex"
+uid="uid://dqsj14ou4hm04"
+path.s3tc="res://.godot/imported/MetalTex.png-8d2049857528efba6b98de866ca2ede3.s3tc.ctex"
+path.etc2="res://.godot/imported/MetalTex.png-8d2049857528efba6b98de866ca2ede3.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Actors/Enemies/DHeadTex00.png"
-dest_files=["res://.godot/imported/DHeadTex00.png-1d8ee16a8b8aeff4754c719887de55af.s3tc.ctex", "res://.godot/imported/DHeadTex00.png-1d8ee16a8b8aeff4754c719887de55af.etc2.ctex"]
+source_file="res://Assets/Mesh/Player/MetalTex.png"
+dest_files=["res://.godot/imported/MetalTex.png-8d2049857528efba6b98de866ca2ede3.s3tc.ctex", "res://.godot/imported/MetalTex.png-8d2049857528efba6b98de866ca2ede3.etc2.ctex"]
 
 [params]
 

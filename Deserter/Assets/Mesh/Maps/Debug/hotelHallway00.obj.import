@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bfhs6r5x16ih1"
-path="res://.godot/imported/hotelHallway00.obj-619c95e0834951f40df8c6754a25027a.scn"
+path="res://.godot/imported/hotelHallway00.obj-886ca18e4fa27e21d7b9454e6c30ef10.scn"
 
 [deps]
 
-source_file="res://Assets/Maps/Debug/hotelHallway00.obj"
-dest_files=["res://.godot/imported/hotelHallway00.obj-619c95e0834951f40df8c6754a25027a.scn"]
+source_file="res://Assets/Mesh/Maps/Debug/hotelHallway00.obj"
+dest_files=["res://.godot/imported/hotelHallway00.obj-886ca18e4fa27e21d7b9454e6c30ef10.scn"]
 
 [params]
 
