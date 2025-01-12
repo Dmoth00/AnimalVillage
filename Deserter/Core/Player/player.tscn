@@ -3734,13 +3734,13 @@ surface_material_override/2 = SubResource("StandardMaterial3D_0b6iv")
 surface_material_override/3 = SubResource("StandardMaterial3D_myy3m")
 
 [node name="fl" type="BoneAttachment3D" parent="CharArm/Skeleton3D"]
-transform = Transform3D(-1, 9.69791e-09, 1.80688e-05, 1.74515e-05, 0.259669, 0.965698, -4.68254e-06, 0.965698, -0.259669, -3.25528e-09, 1.81148, 0.228488)
+transform = Transform3D(-1, 9.69609e-09, 1.80688e-05, 1.74515e-05, 0.259669, 0.965698, -4.68254e-06, 0.965698, -0.259669, -3.25528e-09, 1.81148, 0.228488)
 bone_name = "Flashlight"
 bone_idx = 13
 
 [node name="fl_light" type="SpotLight3D" parent="CharArm/Skeleton3D/fl"]
 transform = Transform3D(1, 1.57291e-05, 9.03563e-06, -3.9466e-08, 0.5, -0.866026, -1.81396e-05, 0.866026, 0.5, 0, 0.55, 0)
-light_color = Color(0.962076, 0.982619, 0.739209, 1)
+light_color = Color(0.98, 0.914667, 0.735, 1)
 light_energy = 0.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -3753,7 +3753,6 @@ spot_angle_attenuation = 0.25
 
 [node name="fl_glare" type="MeshInstance3D" parent="CharArm/Skeleton3D/fl"]
 transform = Transform3D(1, 1.36424e-12, 3.52429e-12, 1.81899e-12, 1, 8.9407e-08, -9.43601e-12, -8.9407e-08, 1, 0.0215513, 0.5, -4.76837e-07)
-visible = false
 mesh = SubResource("QuadMesh_72oh8")
 script = ExtResource("5_xk2l6")
 
@@ -3778,15 +3777,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5lkss")
 script = ExtResource("6_xlrk8")
 
 [node name="GhostDetect" type="Area3D" parent="CharArm"]
-transform = Transform3D(-2.5, 0, 2.18557e-07, 0, 2.5, 0, -2.18557e-07, 0, -2.5, 1.35387e-07, 1.72849, -1.54865)
+transform = Transform3D(-2.5, 0, 3.77489e-07, 0, 2.5, 0, -3.77489e-07, 0, -2.5, 0, 2.5, 0)
 script = ExtResource("6_wgdaj")
 
 [node name="col" type="CollisionShape3D" parent="CharArm/GhostDetect"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.80491e-14, 0.286923, 1.48256)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2)
 shape = SubResource("CapsuleShape3D_ptv7y")
 
 [node name="fl_shad" type="OmniLight3D" parent="CharArm"]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.0801498, 2.38459, -2.35747)
+light_color = Color(0.960784, 0.984314, 0.737255, 1)
 light_energy = 0.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
@@ -3824,6 +3824,7 @@ one_shot = true
 
 [node name="fl_spot" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 6.3573e-08, 2.77887e-15, 0, -4.37114e-08, 1, 6.3573e-08, -1, -4.37114e-08, 0, 5, 0)
+light_color = Color(0.960784, 0.984314, 0.737255, 1)
 light_energy = 0.05
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0

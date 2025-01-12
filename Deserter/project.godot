@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-NewFunc="*res://new_func.gd"
+NewFunc="*res://Data/new_func.gd"
+Gvars="*res://Data/gvars.gd"
 
 [global_group]
 
