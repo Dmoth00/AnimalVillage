@@ -161,7 +161,8 @@ func _hurt(other : Node3D):
 	col.set_deferred("disabled",true)
 	vul_timer.start(3.0)
 	anim.play("CharAnim_Hurt")
-	mesh.look_at(other.global_transform.origin)
+	mesh.look_at(other.global_position)
+	ldir=(other.global_position-global_position).normalized()
 	var d = other.global_position.direction_to(global_position)
 	var hspd = 12
 	velocity.x=d.x*hspd

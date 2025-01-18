@@ -1,9 +1,13 @@
 extends MeshInstance3D
 
-@onready var seen = false
-@onready var mat = self.get_surface_override_material(0)
+
 var t=1.0
 var n=0
+@onready var seen = false
+@onready var mat
+
+func _ready() -> void:
+	mat = self.get_surface_override_material(0)
 
 func _process(delta: float) -> void:
 	if seen: n=1

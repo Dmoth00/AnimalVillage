@@ -3739,7 +3739,7 @@ bone_name = "Flashlight"
 bone_idx = 13
 
 [node name="fl_light" type="SpotLight3D" parent="CharArm/Skeleton3D/fl"]
-transform = Transform3D(1, 1.57291e-05, 9.03563e-06, -3.9466e-08, 0.5, -0.866026, -1.81396e-05, 0.866026, 0.5, 0, 0.55, 0)
+transform = Transform3D(1, 1.57291e-05, 9.03562e-06, -3.94634e-08, 0.5, -0.866026, -1.81396e-05, 0.866026, 0.5, 1.09139e-11, 0.55, 0)
 light_color = Color(0.98, 0.914667, 0.735, 1)
 light_energy = 0.0
 light_indirect_energy = 0.0
