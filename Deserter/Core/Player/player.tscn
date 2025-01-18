@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://bk8qmk3lhqr8t"]
+[gd_scene load_steps=61 format=4 uid="uid://bk8qmk3lhqr8t"]
 
 [ext_resource type="Script" path="res://Core/Player/Player.gd" id="1_g510n"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="2_h4h2g"]
@@ -3480,8 +3480,11 @@ shading_mode = 0
 albedo_texture = SubResource("GradientTexture1D_oa4gr")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ptv7y"]
-radius = 1.5
-height = 6.0
+radius = 4.0
+height = 15.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ke7wv"]
+radius = 5.0
 
 [sub_resource type="Curve" id="Curve_o27m6"]
 _data = [Vector2(0.0182648, 1), 0.0, -0.0668502, 0, 0, Vector2(0.502283, 0.835165), -0.84556, -0.84556, 0, 0, Vector2(1, 0.010989), 0.0501375, 0.0, 0, 0]
@@ -3739,7 +3742,7 @@ bone_name = "Flashlight"
 bone_idx = 13
 
 [node name="fl_light" type="SpotLight3D" parent="CharArm/Skeleton3D/fl"]
-transform = Transform3D(1, 1.57291e-05, 9.03562e-06, -3.94634e-08, 0.5, -0.866026, -1.81396e-05, 0.866026, 0.5, 1.09139e-11, 0.55, 0)
+transform = Transform3D(1, 0, 0, 0, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1.45519e-11, 0.55, 0)
 light_color = Color(0.98, 0.914667, 0.735, 1)
 light_energy = 0.0
 light_indirect_energy = 0.0
@@ -3747,7 +3750,7 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 shadow_enabled = true
 spot_range = 12.0
-spot_attenuation = 2.0
+spot_attenuation = 4.0
 spot_angle = 25.0
 spot_angle_attenuation = 0.25
 
@@ -3777,12 +3780,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5lkss")
 script = ExtResource("6_xlrk8")
 
 [node name="GhostDetect" type="Area3D" parent="CharArm"]
-transform = Transform3D(-2.5, 0, 3.77489e-07, 0, 2.5, 0, -3.77489e-07, 0, -2.5, 0, 2.5, 0)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 2.5, 0)
 script = ExtResource("6_wgdaj")
 
 [node name="col" type="CollisionShape3D" parent="CharArm/GhostDetect"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2)
+transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, -1.85034e-07, 0, 3.48942)
 shape = SubResource("CapsuleShape3D_ptv7y")
+
+[node name="col2" type="CollisionShape3D" parent="CharArm/GhostDetect"]
+transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("SphereShape3D_ke7wv")
 
 [node name="fl_shad" type="OmniLight3D" parent="CharArm"]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.0801498, 2.38459, -2.35747)
@@ -3831,8 +3838,8 @@ light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 spot_range = 8.0
 spot_attenuation = 0.0
-spot_angle = 20.0
-spot_angle_attenuation = 2.54912
+spot_angle = 25.0
+spot_angle_attenuation = 5.0
 
 [connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]
 [connection signal="body_entered" from="CharArm/GhostDetect" to="CharArm/GhostDetect" method="_on_body_entered"]

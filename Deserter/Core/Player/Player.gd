@@ -27,6 +27,7 @@ var ldir=Vector3.BACK
 
 #flashlight stuff
 var fl=true
+@onready var gDetect=$CharArm/GhostDetect/col
 @onready var fl_l=$CharArm/Skeleton3D/fl/fl_light
 @onready var fl_shad=$CharArm/fl_shad
 @onready var fl_mat=$CharArm/Skeleton3D/charMesh.get_surface_override_material(3)
@@ -140,16 +141,23 @@ func _reload():
 
 func flashlight():
 	if fl:
+		#these are all visual
 		fl_l.light_energy=0
 		fl_shad.act(false)
 		fl_mat.emission_energy_multiplier=0
 		fl_glare.visible=false
+		#this affects ghost detection range
+		gDetect.disabled=true
+		#and set the flashlight to off
 		fl=false
 	else:
-		fl_l.light_energy=8
+		fl_l.light_energy=15
 		fl_shad.act(true)
 		fl_mat.emission_energy_multiplier=1
 		fl_glare.visible=true
+		#this affects ghost detection range
+		gDetect.disabled=false
+		#and set the flashlight to on
 		fl=true
 	pass
 
