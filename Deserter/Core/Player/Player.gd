@@ -50,7 +50,7 @@ func _physics_process(delta):
 	
 	# fall detection
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= 9.8 * delta
 	
 	# Input detection for direction
 	input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down").normalized()

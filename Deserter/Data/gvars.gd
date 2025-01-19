@@ -4,6 +4,7 @@ extends Node
 
 #player vars
 var blood : float
+var bloodMax : float
 var bloodBag : float
 const chamber : int = 6
 var gun : int = chamber
@@ -19,6 +20,8 @@ var items : Array
 
 #constants
 const wigl=Vector3(0.01,0,0.01)
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 #this will always happen at game start
 func _ready():
@@ -28,6 +31,7 @@ func _ready():
 func var_init():
 	
 	blood = 5.0
+	bloodMax = 6.0
 	bloodBag = 5.0
 	gun = chamber
 	bullets = 18

@@ -11,7 +11,7 @@ func get_all_children(node) -> Array:
 
 func nearest_in_group (group : String, center : Vector3):
 	var total = get_tree().get_nodes_in_group(group)
-	if total.empty():
+	if total.is_empty():
 		return null
 	
 	var nearest = total[0]

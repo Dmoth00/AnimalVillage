@@ -3223,10 +3223,12 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6qgug"]
-radius = 0.6
+radius = 0.4
+height = 1.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2kf5i"]
 radius = 0.3
+height = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5md"]
 resource_name = "MatChar"
@@ -3580,12 +3582,12 @@ libraries = {
 [node name="collision" type="Area3D" parent="."]
 
 [node name="col" type="CollisionShape3D" parent="collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_6qgug")
 disabled = true
 
 [node name="moveCol" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_2kf5i")
 
 [node name="CharArm" type="Node3D" parent="."]
@@ -3805,8 +3807,9 @@ omni_shadow_mode = 0
 script = ExtResource("4_uhih1")
 
 [node name="cam" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.507538, 0.861629, 0, -0.861629, 0.507538, 0, 5, 2.5)
-fov = 89.9
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 6, 0)
+v_offset = -2.0
+fov = 110.0
 
 [node name="smokeSFX" type="GPUParticles3D" parent="."]
 process_mode = 3
