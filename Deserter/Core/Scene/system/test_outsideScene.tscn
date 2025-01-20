@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://ceouidyrikhvq" path="res://Assets/Mesh/Maps/outsideMap.obj" id="1_5th8i"]
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="2_stap0"]
-[ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/Bricktex00.png" id="3_no80n"]
+[ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="3_no80n"]
 [ext_resource type="Texture2D" uid="uid://wuwgjld2hdth" path="res://Assets/Textures/TrashTex00.png" id="4_jvc3h"]
 [ext_resource type="Texture2D" uid="uid://td3lpmel5hph" path="res://Assets/Textures/AsphaltTex.png" id="5_vo0wd"]
 
