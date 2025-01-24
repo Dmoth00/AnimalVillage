@@ -22,6 +22,8 @@ var items : Array
 const wigl=Vector3(0.01,0,0.01)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+#debug
+var debug_mode = false
 
 #this will always happen at game start
 func _ready():
