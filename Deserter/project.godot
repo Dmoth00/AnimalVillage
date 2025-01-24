@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Animal Village Pocket"
-run/main_scene="res://Core/Scene/system/test_scene.tscn"
+run/main_scene="res://Core/Scene/system/init.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://LetterFull.png"
 config/icon="res://icon.svg"
@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 
 NewFunc="*res://Data/new_func.gd"
 gvars="*res://Data/gvars.gd"
+
+[display]
+
+window/size/viewport_width=1334
+window/size/viewport_height=750
+window/stretch/mode="viewport"
 
 [global_group]
 
