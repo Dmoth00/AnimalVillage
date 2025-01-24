@@ -42,4 +42,6 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_alyv1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.509342, 0.757223, 0.408882, -0.860564, 0.448177, 0.242005, 0, -0.475133, 0.879914, 0, 11.9712, 0)
+transform = Transform3D(0.707107, 0.298836, -0.640856, 0, 0.906308, 0.422618, 0.707107, -0.298836, 0.640856, 0, 11.9712, 0)
+shadow_enabled = true
+sky_mode = 1

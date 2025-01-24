@@ -9,7 +9,10 @@ extends Node3D
 var camdist
 var camangl
 
+@onready var db_sign=$GUI/db_text
+
 func _ready() -> void:
+	db_sign.visible=gvars.debug_mode
 	get_player()
 	reset_cam()
 	pass # Replace with function body.
@@ -35,7 +38,10 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	
 	#debug mode and actions
-	if event.is_action_pressed("db_toggle"): gvars.debug_mode=!gvars.debug_mode
+	if event.is_action_pressed("db_toggle"):
+		gvars.debug_mode=!gvars.debug_mode
+		db_sign.visible=gvars.debug_mode
+		
 	
 	if gvars.debug_mode:
 		#restart game

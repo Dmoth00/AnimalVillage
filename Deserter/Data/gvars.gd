@@ -44,6 +44,8 @@ func var_init():
 	kill_list = []
 	event_list = []
 	items=[]
+	
+	debug_mode=false
 	pass
 
 func reset():
