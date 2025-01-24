@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cijqvcwnffxrk"]
+[gd_scene load_steps=18 format=4 uid="uid://cijqvcwnffxrk"]
 
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_xlf0v"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="3_f8hfp"]
@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="5_1mi3s"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="6_cglyy"]
 [ext_resource type="Script" path="res://Core/Scene/intro/title_cam.gd" id="6_ee0h0"]
+[ext_resource type="Texture2D" uid="uid://cqe8b3j7okcu8" path="res://Assets/Sprites/RabbitHeadTex.png" id="7_4ov7u"]
 
 [sub_resource type="Environment" id="Environment_oh4tc"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
-background_energy_multiplier = 2.0
 ambient_light_source = 2
 ambient_light_color = Color(0.163836, 0.287898, 0.408007, 1)
+ambient_light_energy = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jna2b"]
 resource_name = "brickMat"
@@ -105,23 +106,33 @@ albedo_texture = ExtResource("5_1mi3s")
 uv1_scale = Vector3(0.8, 2, 0)
 uv1_offset = Vector3(0.15, 0.3, 0)
 
+[sub_resource type="QuadMesh" id="QuadMesh_2ty2o"]
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4pal"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("7_4ov7u")
+metallic_specular = 0.0
+uv1_offset = Vector3(0, 0.01, 0)
+
 [node name="TestOutsideScene" type="Node3D"]
 script = ExtResource("6_ee0h0")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.5, 0.75, -0.433013, 0, 0.5, 0.866025, 0.866025, -0.433013, 0.25, 0, 0, 0)
+[node name="sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 0.836517, -0.224144, 0, 0.258819, 0.965926, 0.866025, -0.482963, 0.129409, 0, 0, 0)
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_angular_distance = 20.0
 light_bake_mode = 0
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_oh4tc")
-
-[node name="Cam" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 3, 1.5)
+[node name="cam" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, -4.415, 1.5)
 fov = 110.0
+
+[node name="env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oh4tc")
 
 [node name="introwellMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
@@ -170,3 +181,8 @@ bbcode_enabled = true
 text = "[center]Animal  Village[/center]"
 scroll_active = false
 autowrap_mode = 0
+
+[node name="bun" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 0.208378, -1.18177, 0, 1.18177, 0.208378, 0, 1.5, -12)
+mesh = SubResource("QuadMesh_2ty2o")
+surface_material_override/0 = SubResource("StandardMaterial3D_h4pal")
