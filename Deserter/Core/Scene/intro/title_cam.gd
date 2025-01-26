@@ -41,4 +41,20 @@ func _process(delta: float) -> void:
 		print("intro end!")
 		
 func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("gp_activate"): _next()
+	
 	if event.is_action_pressed("db_restart"): gvars.reset()
+	
+func _next():
+	var next=load("res://Core/Scene/system/test_scene.tscn")
+	var par=get_parent()
+	
+	#ensure child survives
+	var scn=next.instantiate()
+	par.add_child(scn)
+	#and then self destruct
+	par.remove_child(self)
+	self.call_deferred("queue_free")
+
+	
+	pass
