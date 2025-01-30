@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cijqvcwnffxrk"]
+[gd_scene load_steps=29 format=4 uid="uid://cijqvcwnffxrk"]
 
 [ext_resource type="Texture2D" uid="uid://br5n7i564nhsm" path="res://Assets/Sprites/title_tex00.png" id="2_brg21"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_xlf0v"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://Core/Scene/intro/title_cam.gd" id="6_ee0h0"]
 [ext_resource type="Texture2D" uid="uid://cqe8b3j7okcu8" path="res://Assets/Sprites/RabbitHeadTex.png" id="7_4ov7u"]
 [ext_resource type="AudioStream" uid="uid://dbb00shrq7u12" path="res://Assets/Sounds/BGM/bgm_callings.mp3" id="8_qfkar"]
+[ext_resource type="Script" path="res://Core/Scene/intro/menu.gd" id="9_tc7yw"]
+[ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="10_i11kd"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="11_4simm"]
 
 [sub_resource type="Environment" id="Environment_oh4tc"]
 background_mode = 1
@@ -263,6 +266,77 @@ mesh = SubResource("ArrayMesh_ebsh4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4ckr")
 
-[node name="bgm" type="AudioStreamPlayer" parent="."]
+[node name="can" type="CanvasLayer" parent="."]
+script = ExtResource("9_tc7yw")
+
+[node name="menu" type="Control" parent="can"]
+layout_mode = 3
+anchor_left = 0.343
+anchor_top = 0.592
+anchor_right = 0.657
+anchor_bottom = 0.885
+offset_left = 216.438
+offset_top = 115.0
+offset_right = 0.562012
+offset_bottom = 1.24994
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="ColorRect" parent="can/menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.5
+offset_top = -160.0
+offset_right = 30.5
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="staticText" type="RichTextLabel" parent="can/menu"]
+layout_mode = 0
+offset_left = -187.0
+offset_top = -99.0
+offset_right = 183.0
+offset_bottom = 59.0
+theme_override_fonts/normal_font = ExtResource("10_i11kd")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]New
+Load
+Option
+Exit[/center]"
+
+[node name="point" type="TextureRect" parent="can/menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.453
+anchor_top = -1.009
+anchor_right = 0.403
+anchor_bottom = 0.63
+offset_left = -53.041
+offset_top = -13.046
+offset_right = -150.809
+offset_bottom = -107.78
+texture = ExtResource("11_4simm")
+
+[node name="fader" type="ColorRect" parent="can"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -52.0
+offset_top = -34.0
+offset_right = 51.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="bgm" type="AudioStreamPlayer" parent="can"]
 stream = ExtResource("8_qfkar")
 autoplay = true

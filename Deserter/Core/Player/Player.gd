@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 4.0
+const SPEED = 3.0
 var runMod = 1.0
 
 var state=2
@@ -58,12 +58,12 @@ func _physics_process(delta):
 	
 	#voluntary movement
 	if direction and state==0:
-		velocity.x = direction.x * SPEED*runMod
-		velocity.z = direction.z * SPEED*runMod
+		velocity.x = direction.x*SPEED*runMod
+		velocity.z = direction.z*SPEED*runMod
 	#deacceleration
 	else:
-		velocity.x = move_toward(velocity.x, 0, 32*delta)
-		velocity.z = move_toward(velocity.z, 0, 32*delta)
+		velocity.x = move_toward(velocity.x,0,32*delta)
+		velocity.z = move_toward(velocity.z,0,32*delta)
 	
 	move_and_slide()
 
@@ -78,7 +78,7 @@ func _process(delta):
 	match state:
 		0:
 			#animation for movement
-			if velocity.length()>SPEED: anim.play("CharAnim_Run",0.5,1.3)
+			if velocity.length()>4.0: anim.play("CharAnim_Run",0.5,1.3)
 			else: if velocity.length()>0: anim.play("CharAnim_Walk",0.5,1.5)
 			else: anim.play("CharAnim_Stand",0.5,1.0)
 			
@@ -116,7 +116,7 @@ func _input(event):
 		if event.is_action_pressed("gp_reload"): _reload()
 		
 	#run input
-	if event.is_action_pressed("gp_run"): runMod=1.8
+	if event.is_action_pressed("gp_run"): runMod=2.5
 	if event.is_action_released("gp_run"): runMod=1.0
 	
 	#aim input

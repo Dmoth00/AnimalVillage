@@ -9,7 +9,7 @@ extends Node3D
 @onready var tit2=$tit/title_mesh00.get_active_material(0)
 
 var t=0.0
-var next
+
 
 func _ready() -> void:
 	cam.global_position.y=3.0
@@ -18,8 +18,7 @@ func _ready() -> void:
 	tit2.albedo_color.a=0.0
 	tit1.albedo_color.a=0.0
 	sky.albedo_color.a=1.0
-	
-	next=load("res://Core/Scene/system/test_scene.tscn")
+
 
 
 func _process(delta: float) -> void:
@@ -43,21 +42,3 @@ func _process(delta: float) -> void:
 		set_process(false)
 		print("intro end!")
 		
-func _input(event):
-	if event.is_action_pressed("gp_activate"): _next(next)
-	
-	if event.is_action_pressed("db_restart"): gvars.reset()
-	
-func _next(n):
-	
-	var par=get_parent()
-	
-	#ensure child survives
-	var scn=n.instantiate()
-	par.add_child(scn)
-	#and then self destruct
-	par.remove_child(self)
-	self.call_deferred("queue_free")
-
-	
-	pass

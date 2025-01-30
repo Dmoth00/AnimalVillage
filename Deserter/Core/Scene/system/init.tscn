@@ -2,6 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://cijqvcwnffxrk" path="res://Core/Scene/intro/title.tscn" id="1_wct88"]
 
-[node name="GameMaster" type="Node3D"]
+[node name="GameMaster" type="Node3D" groups=["GM"]]
 
-[node name="TestOutsideScene" parent="." instance=ExtResource("1_wct88")]
+[node name="title" parent="." instance=ExtResource("1_wct88")]

@@ -3740,7 +3740,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_0b6iv")
 surface_material_override/3 = SubResource("StandardMaterial3D_myy3m")
 
 [node name="fl" type="BoneAttachment3D" parent="CharArm/Skeleton3D"]
-transform = Transform3D(-0.994981, -0.00774771, -0.099763, -0.0992553, -0.050035, 0.993803, -0.0126913, 0.998717, 0.0490148, -3.1e-06, 1.54332, 0.31237)
+transform = Transform3D(-0.994981, -0.00774772, -0.0997629, -0.0992552, -0.0500344, 0.993803, -0.0126913, 0.998717, 0.0490143, -3.1e-06, 1.54332, 0.312369)
 bone_name = "Flashlight"
 bone_idx = 13
 
@@ -3767,7 +3767,7 @@ mesh = SubResource("QuadMesh_v5k3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_r7alt")
 
 [node name="gun" type="BoneAttachment3D" parent="CharArm/Skeleton3D"]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 1.1133, 1.24115, 1.21113)
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 1.11329, 1.24115, 1.21113)
 bone_name = "Gun"
 bone_idx = 10
 
