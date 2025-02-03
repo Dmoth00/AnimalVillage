@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wtat04abkrxo"
-path.s3tc="res://.godot/imported/DoorTex01.png-7df21cdc01f986c3ee36962e3a4a4d86.s3tc.ctex"
-path.etc2="res://.godot/imported/DoorTex01.png-7df21cdc01f986c3ee36962e3a4a4d86.etc2.ctex"
+uid="uid://cqv7f0gawi267"
+path.s3tc="res://.godot/imported/WindowTex00.png-86c0992ae112ef639787705e90211ca9.s3tc.ctex"
+path.etc2="res://.godot/imported/WindowTex00.png-86c0992ae112ef639787705e90211ca9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/DoorTex01.png"
-dest_files=["res://.godot/imported/DoorTex01.png-7df21cdc01f986c3ee36962e3a4a4d86.s3tc.ctex", "res://.godot/imported/DoorTex01.png-7df21cdc01f986c3ee36962e3a4a4d86.etc2.ctex"]
+source_file="res://Assets/Textures/WindowTex00.png"
+dest_files=["res://.godot/imported/WindowTex00.png-86c0992ae112ef639787705e90211ca9.s3tc.ctex", "res://.godot/imported/WindowTex00.png-86c0992ae112ef639787705e90211ca9.etc2.ctex"]
 
 [params]
 
