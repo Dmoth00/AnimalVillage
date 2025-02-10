@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://se806ctw63n1"]
+[gd_scene load_steps=20 format=4 uid="uid://se806ctw63n1"]
 
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_g2b5u"]
 [ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_5405h"]
@@ -7,7 +7,9 @@
 [ext_resource type="Script" path="res://Core/Player/gp_cam.gd" id="4_mox8q"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_kgwx3"]
 [ext_resource type="PackedScene" uid="uid://bk8qmk3lhqr8t" path="res://Core/Player/player.tscn" id="6_yaxuv"]
+[ext_resource type="Script" path="res://Core/Player/fade.gd" id="7_6pfnv"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="7_f8our"]
+[ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Enemy/spider.tscn" id="10_7f8u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oxdp"]
 resource_name = "WallMat01"
@@ -178,7 +180,23 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="fade" type="ColorRect" parent="gp_cam/GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -4.0
+offset_right = 22.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_6pfnv")
+
 [node name="Player" parent="." instance=ExtResource("6_yaxuv")]
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = ExtResource("7_f8our")
+
+[node name="Spider" parent="." instance=ExtResource("10_7f8u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99225, 1.18779, -1.68732)

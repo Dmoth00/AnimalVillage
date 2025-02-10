@@ -1,8 +1,7 @@
-[gd_scene load_steps=57 format=4 uid="uid://c3jojreh43ci2"]
+[gd_scene load_steps=54 format=4 uid="uid://c3jojreh43ci2"]
 
 [ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/Textures/WallTex00.png" id="1_hoirm"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="2_8u161"]
-[ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="2_uc1gt"]
 [ext_resource type="Texture2D" uid="uid://dupqb2hsk61un" path="res://Assets/Textures/CarpetTex.png" id="3_lomc6"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="4_17g4r"]
 [ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="4_j1mu0"]
@@ -10,11 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://4jpcdrpiln4o" path="res://Assets/Textures/StairsTex00.png" id="6_bjlj4"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="7_t2rx4"]
 [ext_resource type="Texture2D" uid="uid://cqx2owak5jma3" path="res://Assets/Textures/WallTex00a.png" id="8_6r0gk"]
-[ext_resource type="PackedScene" uid="uid://bk8qmk3lhqr8t" path="res://Core/Player/player.tscn" id="9_ggr2e"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="10_k3jrx"]
 [ext_resource type="Texture2D" uid="uid://70fnj7tuj2ig" path="res://Assets/Mesh/Enemies/textures/DHeadTex00.png" id="11_228g2"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="12_jmlff"]
-[ext_resource type="Script" path="res://Core/Player/gp_cam.gd" id="14_h5awc"]
 [ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Enemy/spider.tscn" id="15_feoj3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h6hv"]
@@ -935,52 +932,6 @@ _data = {
 size = Vector3(1, 2, 1.5)
 
 [node name="TestScene" type="Node3D"]
-
-[node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 11)
-script = ExtResource("14_h5awc")
-
-[node name="cam" type="Camera3D" parent="gp_cam"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
-fov = 90.0
-
-[node name="GUI" type="CanvasLayer" parent="gp_cam"]
-
-[node name="test01" type="RichTextLabel" parent="gp_cam/GUI"]
-anchors_preset = -1
-anchor_right = 0.489
-anchor_bottom = 0.168
-offset_left = 51.0
-offset_top = 21.0
-offset_right = -2.328
-offset_bottom = 49.8
-theme_override_fonts/normal_font = ExtResource("2_uc1gt")
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "Blood: 5Lts"
-autowrap_mode = 1
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
-visible = false
-anchors_preset = -1
-anchor_right = 0.489
-anchor_bottom = 0.168
-offset_left = 39.0
-offset_top = 564.0
-offset_right = -296.328
-offset_bottom = 504.136
-theme_override_fonts/normal_font = ExtResource("2_uc1gt")
-theme_override_font_sizes/normal_font_size = 32
-bbcode_enabled = true
-text = "[debug mode]"
-autowrap_mode = 1
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="Player" parent="." instance=ExtResource("9_ggr2e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
 
 [node name="env" type="WorldEnvironment" parent="."]
 environment = ExtResource("4_17g4r")
