@@ -384,12 +384,7 @@ alpha_curve = SubResource("CurveTexture_4uh66")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaj2e"]
 transparency = 1
-cull_mode = 2
 depth_draw_mode = 1
-no_depth_test = true
-shading_mode = 0
-specular_mode = 2
-disable_ambient_light = true
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 albedo_texture = ExtResource("5_pxilg")
@@ -584,6 +579,7 @@ autostart = true
 process_mode = 3
 gi_mode = 0
 emitting = false
+amount = 24
 lifetime = 0.75
 one_shot = true
 explosiveness = 1.0
