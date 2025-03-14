@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://bk8qmk3lhqr8t"]
+[gd_scene load_steps=65 format=4 uid="uid://bk8qmk3lhqr8t"]
 
 [ext_resource type="Script" path="res://Core/Player/Player.gd" id="1_g510n"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="2_h4h2g"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="6_ougor"]
 [ext_resource type="Script" path="res://Core/Player/ghost_detect.gd" id="6_wgdaj"]
 [ext_resource type="Script" path="res://Core/Player/muzzleflash.gd" id="6_xlrk8"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="7_7wpyk"]
+[ext_resource type="Script" path="res://Core/Player/player_gunray.gd" id="9_i3b5d"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
@@ -3489,9 +3491,22 @@ height = 15.0
 [sub_resource type="SphereShape3D" id="SphereShape3D_ke7wv"]
 radius = 5.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvopy"]
+transparency = 1
+depth_draw_mode = 2
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("7_7wpyk")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_jg4q4"]
+material = SubResource("StandardMaterial3D_jvopy")
+size = Vector2(0.5, 0.5)
+
 [sub_resource type="Curve" id="Curve_o27m6"]
-_data = [Vector2(0.0182648, 1), 0.0, -0.0668502, 0, 0, Vector2(0.502283, 0.835165), -0.84556, -0.84556, 0, 0, Vector2(1, 0.010989), 0.0501375, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.010989), -1.56952, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_vgoir"]
 curve = SubResource("Curve_o27m6")
@@ -3523,7 +3538,7 @@ gradient = SubResource("Gradient_5sew4")
 [sub_resource type="Curve" id="Curve_x5m2u"]
 min_value = 0.01
 max_value = 4.0
-_data = [Vector2(1e-05, 0.303736), 0.142535, 0.372891, 0, 0, Vector2(1, 4), -0.514409, 0.0, 0, 0]
+_data = [Vector2(1e-05, 0.303736), 0.142535, 0.372891, 0, 0, Vector2(0.255708, 4), -0.514409, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_cpitq"]
@@ -3536,12 +3551,12 @@ angle_max = 90.0
 angle_curve = SubResource("CurveTexture_vsflr")
 direction = Vector3(0, 0, -1)
 spread = 10.0
-initial_velocity_min = 2.0
-initial_velocity_max = 2.0
+initial_velocity_min = 1.5
+initial_velocity_max = 1.5
 angular_velocity_min = -1.00002
 angular_velocity_max = 0.999984
 angular_velocity_curve = SubResource("CurveTexture_cnblu")
-gravity = Vector3(0, 2, 0)
+gravity = Vector3(0, 3, 0)
 damping_min = 4.0
 damping_max = 4.0
 scale_curve = SubResource("CurveTexture_cpitq")
@@ -3811,13 +3826,25 @@ omni_attenuation = 2.0
 omni_shadow_mode = 0
 script = ExtResource("4_uhih1")
 
+[node name="gunRay" type="RayCast3D" parent="CharArm"]
+transform = Transform3D(1, 1.77636e-14, 2.13163e-14, -1.77636e-14, 1, -1.05879e-21, -3.55271e-14, 2.0327e-21, 1, -0.0854863, 2.38794, -2.03909)
+target_position = Vector3(0, 0, -10)
+script = ExtResource("9_i3b5d")
+
+[node name="guy" type="MeshInstance3D" parent="CharArm/gunRay"]
+mesh = SubResource("QuadMesh_jg4q4")
+
+[node name="tray" type="Timer" parent="CharArm/gunRay"]
+wait_time = 0.1
+autostart = true
+
 [node name="smokeSFX" type="GPUParticles3D" parent="."]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341946, 0.955177, 0.815636)
 gi_mode = 0
 emitting = false
 amount = 4
-lifetime = 0.75
+lifetime = 2.0
 one_shot = true
 explosiveness = 0.9
 process_material = SubResource("ParticleProcessMaterial_sstdq")
@@ -3847,6 +3874,7 @@ spot_angle_attenuation = 5.0
 [connection signal="body_entered" from="collision" to="." method="_on_collision_body_entered"]
 [connection signal="body_entered" from="CharArm/GhostDetect" to="CharArm/GhostDetect" method="_on_body_entered"]
 [connection signal="body_exited" from="CharArm/GhostDetect" to="CharArm/GhostDetect" method="_on_body_exited"]
+[connection signal="timeout" from="CharArm/gunRay/tray" to="CharArm/gunRay" method="_timer"]
 [connection signal="timeout" from="can_move_timer" to="." method="_on_can_move_timer"]
 [connection signal="timeout" from="vul_timer" to="." method="_on_vul_timer"]
 [connection signal="timeout" from="awake_timer" to="." method="_on_awake_timer"]

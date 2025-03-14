@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Core/System/sfx_common.gd" id="6_yoctl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ue700"]
-radius = 0.45
+radius = 0.3
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_58g0j"]
 resource_name = "Spider_Cube_009"
