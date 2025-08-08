@@ -16,3 +16,6 @@ func _seen(obj : Node3D,vis : bool):
 		if i.is_in_group("Fade"):
 			i.seen=vis
 	pass
+
+func unsee_all():
+	for i in get_tree().get_nodes_in_group("Fade"): i.seen=false

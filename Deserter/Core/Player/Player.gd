@@ -148,7 +148,7 @@ func flashlight():
 		fl_mat.emission_energy_multiplier=0
 		fl_glare.visible=false
 		#this affects ghost detection range
-		gDetect.disabled=true
+		set_deferred("gDetect.disabled",true)
 		#and set the flashlight to off
 		fl=false
 	else:
@@ -168,6 +168,7 @@ func _death():
 	anim.play("CharAnim_KnockDown")
 	fl=true
 	flashlight()
+	gDetect.get_parent().unsee_all()
 	death_timer.start(5.0)
 
 func _hurt(other : Node3D):
