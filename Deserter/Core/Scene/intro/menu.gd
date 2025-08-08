@@ -36,7 +36,12 @@ func _input(event: InputEvent) -> void:
 func _act():
 	if t>0.5:
 		t=0.0
-		state=min(state+1,2)
+		if state==1:
+			match p_pos:
+				(0):state=2
+				(3):get_tree().quit()
+		
+		if state==0: state=1
 	
 func _next(n):
 	

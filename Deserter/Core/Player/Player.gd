@@ -37,6 +37,7 @@ var fl=true
 @onready var awake_timer=$awake_timer
 @onready var vul_timer=$vul_timer
 @onready var can_move_timer=$can_move_timer
+@onready var death_timer=$death_timer
 
 #miscelaneous variables
 var t=0.0
@@ -161,27 +162,43 @@ func flashlight():
 		fl=true
 	pass
 
+func _death():
+	print("Death.")
+	remove_from_group("Player")
+	anim.play("CharAnim_KnockDown")
+	fl=true
+	flashlight()
+	death_timer.start(5.0)
+
 func _hurt(other : Node3D):
-	print("Ouch!")
+	gvars.blood=max(gvars.blood-other.damage,0.0)
+	print(gvars.blood)
 	state=2
 	can_move=false
-	can_move_timer.start(1.0)
 	col.set_deferred("disabled",true)
-	vul_timer.start(3.0)
-	anim.play("CharAnim_Hurt")
 	mesh.look_at(other.global_position)
 	ldir=(other.global_position-global_position).normalized()
 	var d = other.global_position.direction_to(global_position)
 	var hspd = 12
 	velocity.x=d.x*hspd
 	velocity.z=d.z*hspd
-	pass
+	
+	if gvars.blood==0: _death()
+	else:
+		print("Ouch!")
+		if other.knockdown:
+			can_move_timer.start(2.0)
+			vul_timer.start(4.0)
+			anim.play("CharAnim_KnockDown")
+		else:
+			can_move_timer.start(1.0)
+			vul_timer.start(3.0)
+			anim.play("CharAnim_Hurt")
 
 func _on_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Harm"):
 		_hurt(body)
-		pass
-	pass # Replace with function body.
+
 
 #timers
 
@@ -195,4 +212,9 @@ func _on_awake_timer() -> void:
 	can_move=true
 	vul_timer.start(0.25)
 	flashlight()
+	pass # Replace with function body.
+
+
+func _on_death_timer() -> void:
+	gvars.reset()
 	pass # Replace with function body.
