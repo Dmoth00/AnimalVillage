@@ -80,7 +80,7 @@ func _process(delta):
 		0:
 			#animation for movement
 			if velocity.length()>4.0: anim.play("CharAnim_Run",0.5,1.3)
-			else: if velocity.length()>0: anim.play("CharAnim_Walk",0.5,1.5)
+			else: if velocity.length()>0: anim.play("CharAnim_Walk",0.5,1.7)
 			else: anim.play("CharAnim_Stand",0.5,1.0)
 			
 			#aim engaged
