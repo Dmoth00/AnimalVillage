@@ -17,13 +17,13 @@ var firet=0.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+#movement collision and animation
 @onready var mesh=get_node("CharArm")
 @onready var anim=get_node("anim")
 @onready var col=get_node("collision/col")
 var direction=Vector3.ZERO
 var input_dir=Vector2.ZERO
 var ldir=Vector3.BACK
-
 
 #flashlight stuff
 var fl=true
@@ -39,8 +39,14 @@ var fl=true
 @onready var can_move_timer=$can_move_timer
 @onready var death_timer=$death_timer
 
+#sounds
+@onready var snd_step=$anim/sndStep
+
 #miscelaneous variables
 var t=0.0
+
+
+#main processes
 
 func _ready() -> void:
 	flashlight()
@@ -124,11 +130,15 @@ func _input(event):
 	if event.is_action_pressed("gp_aim"): aiming=true
 	if event.is_action_released("gp_aim"): aiming=false
 
+#actions
+
 func _shoot():
 		if can_shoot:
 			muzzle.act()
-			smoke.look_at_from_position(muzzle.global_position,muzzle.global_position+ldir,Vector3.UP)
-			smoke.restart()
+			var smoke_dupe=smoke.duplicate()
+			add_child(smoke_dupe)
+			smoke_dupe.look_at_from_position(muzzle.global_position,muzzle.global_position+ldir,Vector3.UP)
+			smoke_dupe.restart()
 			fl_shad.flash()
 			can_move=false
 			firet=0.5
@@ -196,10 +206,15 @@ func _hurt(other : Node3D):
 			vul_timer.start(3.0)
 			anim.play("CharAnim_Hurt")
 
+func step():
+	snd_step.pitch_scale=0.5+randf()
+	snd_step.play()
+
+#collisions
+
 func _on_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Harm"):
 		_hurt(body)
-
 
 #timers
 
