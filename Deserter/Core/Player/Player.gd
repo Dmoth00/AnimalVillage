@@ -13,6 +13,7 @@ var aiming=false
 var firet=0.5
 @onready var muzzle=$CharArm/muzzleflash
 @onready var smoke=$smokeSFX
+@onready var hit_sfx=$CharArm/bloodSFX
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -41,6 +42,10 @@ var fl=true
 
 #sounds
 @onready var snd_step=$anim/sndStep
+@onready var snd_shoot=$anim/sndShoot
+@onready var snd_reload=$anim/sndReload
+@onready var snd_hit=$anim/sndHit
+@onready var snd_click=$anim/sndClick
 
 #miscelaneous variables
 var t=0.0
@@ -49,7 +54,7 @@ var t=0.0
 #main processes
 
 func _ready() -> void:
-	flashlight()
+	flashlight(true)
 	anim.play("CharAnim_Awake",1,1)
 	awake_timer.start(5.0)
 
@@ -143,14 +148,17 @@ func _shoot():
 			can_move=false
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
+			snd_shoot.play()
 
 func _reload():
 		if can_shoot:
 			can_move=false
 			firet=1.0
 			anim.play("CharAim_Reload",0.1,1)
+			snd_reload.play()
 
-func flashlight():
+func flashlight(mute = false):
+	if !mute: snd_click.play()
 	if fl:
 		#these are all visual
 		fl_l.light_energy=0
@@ -184,6 +192,8 @@ func _death():
 func _hurt(other : Node3D):
 	gvars.blood=max(gvars.blood-other.damage,0.0)
 	print(gvars.blood)
+	snd_hit.play()
+	hit_sfx.restart()
 	state=2
 	can_move=false
 	col.set_deferred("disabled",true)
