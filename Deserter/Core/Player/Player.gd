@@ -120,13 +120,14 @@ func _input(event):
 	if can_move:
 		#flashlight input
 		if event.is_action_pressed("gp_fl"): flashlight()
-		
-		#fire imput
-		if event.is_action_pressed("gp_fire") and can_shoot: _shoot()
-		
-		#reload imput
-		if event.is_action_pressed("gp_reload") and can_shoot: _reload()
-		
+	
+		if can_shoot:
+			#fire imput
+			if event.is_action_pressed("gp_fire"): _shoot()
+			#reload imput
+			if event.is_action_pressed("gp_reload"): _reload()
+	
+	
 	#run input
 	if event.is_action_pressed("gp_run"): runMod=2.5
 	if event.is_action_released("gp_run"): runMod=1.0

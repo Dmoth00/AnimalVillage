@@ -206,18 +206,21 @@ texture = ExtResource("9_8lbqu")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
+[node name="reload" type="RichTextLabel" parent="gp_cam/GUI/bullets"]
+layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.489
-anchor_bottom = 0.168
-offset_left = 39.0
-offset_top = 564.0
-offset_right = -296.328
-offset_bottom = 504.136
+anchor_left = 0.212
+anchor_right = 0.969
+anchor_bottom = 1.0
+offset_left = 0.155991
+offset_top = 69.0
+offset_right = -106.353
+offset_bottom = -20.0
+scale = Vector2(1.355, 1.355)
 theme_override_fonts/normal_font = ExtResource("5_kgwx3")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[debug mode]"
+text = "[center]RELOAD[/center]"
 autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
@@ -235,6 +238,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("7_6pfnv")
+
+[node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
+anchors_preset = -1
+anchor_right = 0.489
+anchor_bottom = 0.168
+offset_left = 39.0
+offset_top = 564.0
+offset_right = -222.593
+offset_bottom = 538.296
+theme_override_fonts/normal_font = ExtResource("5_kgwx3")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[debug mode]"
+autowrap_mode = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Player" parent="." instance=ExtResource("6_yaxuv")]
 

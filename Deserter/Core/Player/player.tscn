@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Core/Player/muzzleflash.gd" id="6_xlrk8"]
 [ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="7_7wpyk"]
 [ext_resource type="Script" path="res://Core/Player/player_gunray.gd" id="9_i3b5d"]
-[ext_resource type="Script" path="res://Core/Player/sfx_end.gd" id="14_u5df7"]
+[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="14_u5df7"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
