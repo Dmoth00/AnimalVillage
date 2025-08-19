@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://se806ctw63n1"]
+[gd_scene load_steps=24 format=4 uid="uid://se806ctw63n1"]
 
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_g2b5u"]
 [ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_5405h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="4_4jyly"]
 [ext_resource type="Script" path="res://Core/Player/gp_cam.gd" id="4_mox8q"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_kgwx3"]
+[ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="6_gajr5"]
 [ext_resource type="PackedScene" uid="uid://bk8qmk3lhqr8t" path="res://Core/Player/player.tscn" id="6_yaxuv"]
 [ext_resource type="Script" path="res://Core/System/GUI/gui_blood.gd" id="7_0t2kn"]
 [ext_resource type="Script" path="res://Core/Player/fade.gd" id="7_6pfnv"]
@@ -154,6 +155,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 fov = 90.0
 
 [node name="GUI" type="CanvasLayer" parent="gp_cam"]
+
+[node name="TextureRect" type="TextureRect" parent="gp_cam/GUI"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.192
+offset_top = -171.0
+offset_right = -1.0
+offset_bottom = -8.0
+grow_horizontal = 2
+texture = ExtResource("6_gajr5")
 
 [node name="blood" type="RichTextLabel" parent="gp_cam/GUI"]
 anchors_preset = -1
