@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://se806ctw63n1"]
+[gd_scene load_steps=23 format=4 uid="uid://se806ctw63n1"]
 
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_g2b5u"]
 [ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_5405h"]
@@ -7,7 +7,10 @@
 [ext_resource type="Script" path="res://Core/Player/gp_cam.gd" id="4_mox8q"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_kgwx3"]
 [ext_resource type="PackedScene" uid="uid://bk8qmk3lhqr8t" path="res://Core/Player/player.tscn" id="6_yaxuv"]
+[ext_resource type="Script" path="res://Core/System/GUI/gui_blood.gd" id="7_0t2kn"]
 [ext_resource type="Script" path="res://Core/Player/fade.gd" id="7_6pfnv"]
+[ext_resource type="Script" path="res://Core/System/GUI/gui_bullets.gd" id="8_yp6fl"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="9_8lbqu"]
 [ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Enemy/spider.tscn" id="10_7f8u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oxdp"]
@@ -163,13 +166,47 @@ offset_bottom = 49.8
 theme_override_fonts/normal_font = ExtResource("5_kgwx3")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
-text = "Blood: 5Lts"
+text = "Blood: 5.00 Lts"
 autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+script = ExtResource("7_0t2kn")
+
+[node name="bullets" type="RichTextLabel" parent="gp_cam/GUI"]
+anchors_preset = -1
+anchor_left = 0.55
+anchor_top = 0.003
+anchor_right = 1.0
+anchor_bottom = 0.168
+offset_left = 66.3
+offset_top = 25.75
+offset_right = 3.0
+offset_bottom = 55.0
+theme_override_fonts/normal_font = ExtResource("5_kgwx3")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Bullets: 018[/center]"
+autowrap_mode = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("8_yp6fl")
+
+[node name="chamber" type="TextureRect" parent="gp_cam/GUI/bullets"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.086
+anchor_right = 0.929
+anchor_bottom = 0.458
+offset_left = 460.818
+offset_top = 61.0
+offset_right = 208.127
+offset_bottom = 26.926
+scale = Vector2(-2, 2)
+texture = ExtResource("9_8lbqu")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
-visible = false
 anchors_preset = -1
 anchor_right = 0.489
 anchor_bottom = 0.168
@@ -186,6 +223,7 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="fade" type="ColorRect" parent="gp_cam/GUI"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

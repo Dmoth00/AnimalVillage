@@ -122,10 +122,10 @@ func _input(event):
 		if event.is_action_pressed("gp_fl"): flashlight()
 		
 		#fire imput
-		if event.is_action_pressed("gp_fire"): _shoot()
+		if event.is_action_pressed("gp_fire") and can_shoot: _shoot()
 		
 		#reload imput
-		if event.is_action_pressed("gp_reload"): _reload()
+		if event.is_action_pressed("gp_reload") and can_shoot: _reload()
 		
 	#run input
 	if event.is_action_pressed("gp_run"): runMod=2.5
@@ -138,7 +138,8 @@ func _input(event):
 #actions
 
 func _shoot():
-		if can_shoot:
+		if gvars.gun>0:
+			gvars.gun-=1
 			muzzle.act()
 			var smoke_dupe=smoke.duplicate()
 			add_child(smoke_dupe)
@@ -149,13 +150,22 @@ func _shoot():
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
 			snd_shoot.play()
+		else: snd_click.play()
 
 func _reload():
-		if can_shoot:
+		if gvars.bullets>0:
 			can_move=false
 			firet=1.0
 			anim.play("CharAim_Reload",0.1,1)
 			snd_reload.play()
+			var empt=gvars.chamber-gvars.gun
+			if gvars.bullets>empt:
+				gvars.bullets-=empt
+				gvars.gun=gvars.chamber
+			else:
+				gvars.gun+=gvars.bullets
+				gvars.bullets=0
+				
 
 func flashlight(mute = false):
 	if !mute: snd_click.play()

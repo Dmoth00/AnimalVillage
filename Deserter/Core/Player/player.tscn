@@ -3894,7 +3894,7 @@ mesh = SubResource("QuadMesh_v5k3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_r7alt")
 
 [node name="gun" type="BoneAttachment3D" parent="CharArm/Skeleton3D"]
-transform = Transform3D(-0.998959, 0.043569, -0.0135303, -0.0125566, 0.0225457, 0.999667, 0.0438596, 0.998796, -0.0219752, 0.0693619, 2.12767, 0.863024)
+transform = Transform3D(-0.998959, 0.0435691, -0.0135303, -0.0125565, 0.0225458, 0.999667, 0.0438596, 0.998796, -0.0219752, 0.069362, 2.12767, 0.863024)
 bone_name = "Gun"
 bone_idx = 10
 
