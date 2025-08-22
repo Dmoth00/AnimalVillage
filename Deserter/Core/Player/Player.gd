@@ -47,6 +47,10 @@ var fl=true
 @onready var snd_hit=$anim/sndHit
 @onready var snd_click=$anim/sndClick
 
+#actionable variables
+var interactables : Array
+@onready var act_sign=$act_sign
+
 #miscelaneous variables
 var t=0.0
 
@@ -83,6 +87,7 @@ func _process(delta):
 	
 	#face direction
 	if direction and can_move:
+		#I don't know how this works but it works
 		direction=(direction+Vector3(0.01,0,0.01)).normalized()
 		ldir=ldir.slerp(direction,delta*10).normalized()
 		mesh.look_at(transform.origin+ldir)
@@ -111,10 +116,14 @@ func _process(delta):
 					can_shoot=false
 					firet=0.5
 		2:
-			if can_move:
-				state=0
-			pass
+			if can_move: state=0
 			#AWAKE ANIM
+	
+	#interact sign
+	if can_move and interactables.size()>0:
+		act_sign.scale=act_sign.scale.lerp(Vector3.ONE,delta*12)
+	else: act_sign.scale=act_sign.scale.lerp(Vector3.ZERO,delta*12)
+	
 
 func _input(event):
 	if can_move:
@@ -166,7 +175,6 @@ func _reload():
 			else:
 				gvars.gun+=gvars.bullets
 				gvars.bullets=0
-
 
 func flashlight(mute = false):
 	if !mute: snd_click.play()
@@ -234,8 +242,13 @@ func step():
 #collisions
 
 func _on_collision_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Harm"):
-		_hurt(body)
+	if body.is_in_group("Harm"): _hurt(body)
+
+func _on_act_detect_in(area: Area3D) -> void:
+	if area.is_in_group("Act"): interactables.push_back(area)
+
+func _on_act_detect_out(area: Area3D) -> void:
+	if interactables.has(area): interactables.erase(area)
 
 #timers
 
@@ -249,9 +262,5 @@ func _on_awake_timer() -> void:
 	can_move=true
 	vul_timer.start(0.25)
 	flashlight()
-	pass # Replace with function body.
 
-
-func _on_death_timer() -> void:
-	gvars.reset()
-	pass # Replace with function body.
+func _on_death_timer() -> void: gvars.reset()

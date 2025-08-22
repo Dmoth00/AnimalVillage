@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://se806ctw63n1"]
+[gd_scene load_steps=17 format=4 uid="uid://se806ctw63n1"]
 
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_g2b5u"]
 [ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_5405h"]
@@ -123,6 +123,9 @@ ambient_light_source = 2
 ambient_light_color = Color(0.0481484, 0.0499156, 0.0980453, 1)
 ambient_light_energy = 4.7
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qqvh"]
+size = Vector3(2.04254, 2.46472, 1)
+
 [node name="StartRoom" type="Node3D"]
 
 [node name="meshSingleRoom" type="MeshInstance3D" parent="."]
@@ -144,3 +147,12 @@ environment = SubResource("Environment_28bf3")
 [node name="Spider" parent="." instance=ExtResource("10_7f8u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99225, 1.18779, -1.68732)
 damage = 1.0
+
+[node name="Actor" type="Area3D" parent="." groups=["Act"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.56639)
+collision_layer = 8
+collision_mask = 0
+
+[node name="col" type="CollisionShape3D" parent="Actor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123596, 0.732361, 0.569127)
+shape = SubResource("BoxShape3D_3qqvh")
