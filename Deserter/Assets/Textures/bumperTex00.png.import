@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2vmsvgnkrp8t"
-path.s3tc="res://.godot/imported/metalTex00.png-55554d4295d1842e5c851bbd149a7202.s3tc.ctex"
-path.etc2="res://.godot/imported/metalTex00.png-55554d4295d1842e5c851bbd149a7202.etc2.ctex"
+uid="uid://bn82xlxgi08bu"
+path.s3tc="res://.godot/imported/bumperTex00.png-36391b30821e93095273171c138447ef.s3tc.ctex"
+path.etc2="res://.godot/imported/bumperTex00.png-36391b30821e93095273171c138447ef.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/metalTex00.png"
-dest_files=["res://.godot/imported/metalTex00.png-55554d4295d1842e5c851bbd149a7202.s3tc.ctex", "res://.godot/imported/metalTex00.png-55554d4295d1842e5c851bbd149a7202.etc2.ctex"]
+source_file="res://Assets/Textures/bumperTex00.png"
+dest_files=["res://.godot/imported/bumperTex00.png-36391b30821e93095273171c138447ef.s3tc.ctex", "res://.godot/imported/bumperTex00.png-36391b30821e93095273171c138447ef.etc2.ctex"]
 
 [params]
 

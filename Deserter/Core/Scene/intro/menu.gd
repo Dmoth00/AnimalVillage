@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var next=load("res://Core/Scene/outside/start_room.tscn")
+@onready var player=load("res://Core/Player/gp_player.tscn")
 @onready var state=0
 @onready var t=0.0
 @onready var menu=$menu
@@ -49,7 +50,9 @@ func _next(n):
 	var tit=gm.get_child(0)
 	#ensure child survives
 	var scn=n.instantiate()
+	var p=player.instantiate()
 	gm.add_child(scn)
+	gm.add_child(p)
 	#and then self destruct
 	gm.remove_child(tit)
 	tit.call_deferred("queue_free")

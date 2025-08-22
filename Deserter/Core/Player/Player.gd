@@ -154,7 +154,7 @@ func _shoot():
 		else: snd_click.play()
 
 func _reload():
-		if gvars.bullets>0:
+		if gvars.bullets>0 and gvars.gun<gvars.chamber:
 			can_move=false
 			firet=1.0
 			anim.play("CharAim_Reload",0.1,1)
@@ -166,7 +166,7 @@ func _reload():
 			else:
 				gvars.gun+=gvars.bullets
 				gvars.bullets=0
-				
+
 
 func flashlight(mute = false):
 	if !mute: snd_click.play()
