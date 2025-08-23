@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://devcj660ww73a"]
+
+[ext_resource type="PackedScene" uid="uid://bvfxiwy233o60" path="res://Assets/Mesh/Maps/Debug/DebugMap.blend" id="1_yjk20"]
+[ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="2_3icqq"]
+[ext_resource type="Shader" uid="uid://cllyfxpbjdfes" path="res://Assets/Shaders/waterShader.tres" id="2_hnhji"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxsit"]
+render_priority = 0
+shader = ExtResource("2_hnhji")
+
+[node name="DebugMap" instance=ExtResource("1_yjk20")]
+
+[node name="SewerHallAWater" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_hxsit")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+environment = ExtResource("2_3icqq")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="3"]
+transform = Transform3D(0.0298738, 0.274429, 0.961143, -0.0148575, -0.961344, 0.274948, 0.999443, -0.0224939, -0.0246417, 2.95583, 2.18937, -2.98867)
+spot_range = 18.4732
