@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cltkr1bsqgxau"]
 
-[ext_resource type="Script" path="res://Core/act_exit.gd" id="1_amw21"]
+[ext_resource type="Script" path="res://Core/Actors/NPC/act_exit.gd" id="1_amw21"]
 [ext_resource type="AudioStream" uid="uid://dp3f8krjn8v6e" path="res://Assets/Sounds/Audio/snd_door.wav" id="3_tju4a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3qqvh"]
