@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var next=load("res://Core/Scene/outside/start_room.tscn")
-@onready var player=load("res://Core/Player/gp_player.tscn")
+@onready var next
+@onready var player
 @onready var state=0
 @onready var t=0.0
 @onready var menu=$menu
@@ -13,6 +13,9 @@ extends CanvasLayer
 func _ready() -> void:
 	menu.scale.y=0.0
 	fader.modulate.a=0.0
+	
+	player=load("res://Core/Actors/Player/gp_player.tscn")
+	next="uid://se806ctw63n1"
 
 func _process(delta: float) -> void:
 	t+=delta
@@ -49,7 +52,7 @@ func _next(n):
 	var gm=get_tree().get_first_node_in_group("GM")
 	var tit=gm.get_child(0)
 	#ensure child survives
-	var scn=n.instantiate()
+	var scn=load(n).instantiate()
 	var p=player.instantiate()
 	gm.add_child(scn)
 	gm.add_child(p)

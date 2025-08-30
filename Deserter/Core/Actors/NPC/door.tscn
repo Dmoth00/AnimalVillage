@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cltkr1bsqgxau"]
+
+[ext_resource type="Script" path="res://Core/act_exit.gd" id="1_amw21"]
+[ext_resource type="AudioStream" uid="uid://dp3f8krjn8v6e" path="res://Assets/Sounds/Audio/snd_door.wav" id="3_tju4a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qqvh"]
+size = Vector3(2.04254, 2.46472, 1)
+
+[node name="Door" type="Area3D" groups=["Act"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.56639)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_amw21")
+newMap = "uid://se806ctw63n1"
+sound = ExtResource("3_tju4a")
+
+[node name="col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123596, 0.732361, 0.569127)
+shape = SubResource("BoxShape3D_3qqvh")
+
+[node name="t" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[connection signal="timeout" from="t" to="." method="_on_t"]

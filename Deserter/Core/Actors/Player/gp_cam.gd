@@ -6,15 +6,19 @@ extends Node3D
 @onready var off_input = Vector2.ZERO
 @onready var cam = $cam
 
+
 var camdist
 var camangl
 
+#GUI stuff
 @onready var db_sign=$GUI/db_text
+@onready var fade=$GUI/fade
 
 func _ready() -> void:
 	db_sign.visible=gvars.debug_mode
 	get_player()
 	reset_cam()
+	fade_in(0.5)
 	pass # Replace with function body.
 
 func _physics_process(delta: float) -> void:
@@ -63,3 +67,13 @@ func reset_cam():
 	camdist = 6.0
 	camangl = -60.0
 	
+
+func fade_out (t : float):
+	fade.color.a=0.0
+	fade.inc=t
+	fade.set_process(true)
+
+func fade_in (t : float):
+	fade.color.a=1.0
+	fade.inc=t*-1
+	fade.set_process(true)

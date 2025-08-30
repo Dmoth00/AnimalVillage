@@ -1,8 +1,8 @@
 [gd_scene load_steps=85 format=4 uid="uid://be5ebusbps3xr"]
 
-[ext_resource type="Script" path="res://Core/Player/Player.gd" id="1_t11b6"]
+[ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
 [ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/Audio/snd_step2.wav" id="2_bflfw"]
-[ext_resource type="Script" path="res://Core/Player/gp_cam.gd" id="2_tag11"]
+[ext_resource type="Script" path="res://Core/Actors/Player/gp_cam.gd" id="2_tag11"]
 [ext_resource type="Script" path="res://Core/System/GUI/gui.gd" id="3_3djve"]
 [ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/Audio/snd_gun.wav" id="3_d38oi"]
 [ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="4_3xx5o"]
@@ -11,15 +11,15 @@
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_br8mc"]
 [ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="6_8qpvd"]
 [ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/Audio/snd_click.wav" id="6_ojwdx"]
-[ext_resource type="Script" path="res://Core/Player/fade.gd" id="7_0qvyp"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
 [ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_upbqn"]
 [ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_ksfv1"]
 [ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="9_810o2"]
-[ext_resource type="Script" path="res://Core/Player/fl_glare.gd" id="10_xeoby"]
-[ext_resource type="Script" path="res://Core/Player/muzzleflash.gd" id="11_yhk73"]
-[ext_resource type="Script" path="res://Core/Player/ghost_detect.gd" id="12_uhhel"]
-[ext_resource type="Script" path="res://Core/Player/fl_shad.gd" id="13_l6m7u"]
-[ext_resource type="Script" path="res://Core/Player/player_gunray.gd" id="14_lynxp"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fl_glare.gd" id="10_xeoby"]
+[ext_resource type="Script" path="res://Core/Actors/Player/muzzleflash.gd" id="11_yhk73"]
+[ext_resource type="Script" path="res://Core/Actors/Player/ghost_detect.gd" id="12_uhhel"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fl_shad.gd" id="13_l6m7u"]
+[ext_resource type="Script" path="res://Core/Actors/Player/player_gunray.gd" id="14_lynxp"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_d2n7a"]
 [ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
 [ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="18_blp5p"]
@@ -3640,6 +3640,18 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_3ux3p")
 size = Vector2(0.4, 0.4)
 
+[sub_resource type="QuadMesh" id="QuadMesh_a4lq6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwvwl"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+no_depth_test = true
+shading_mode = 0
+albedo_texture = ExtResource("18_blp5p")
+billboard_mode = 1
+billboard_keep_scale = true
+
 [sub_resource type="CurveTexture" id="CurveTexture_cpitq"]
 curve = SubResource("Curve_x5m2u")
 
@@ -3686,22 +3698,13 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_eu55w")
 size = Vector2(0.4, 0.4)
 
-[sub_resource type="QuadMesh" id="QuadMesh_a4lq6"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mwvwl"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-no_depth_test = true
-shading_mode = 0
-albedo_texture = ExtResource("18_blp5p")
-billboard_mode = 1
-billboard_keep_scale = true
-
 [node name="gp_player" type="Node3D" groups=["Keep"]]
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
 script = ExtResource("1_t11b6")
+
+[node name="SFX" type="AudioStreamPlayer" parent="Player"]
+volume_db = -8.0
 
 [node name="anim" type="AnimationPlayer" parent="Player"]
 libraries = {
@@ -3974,6 +3977,7 @@ target_position = Vector3(0, 0, -10)
 script = ExtResource("14_lynxp")
 
 [node name="guy" type="MeshInstance3D" parent="Player/CharArm/gunRay"]
+visible = false
 mesh = SubResource("QuadMesh_jg4q4")
 
 [node name="tray" type="Timer" parent="Player/CharArm/gunRay"]
@@ -3988,6 +3992,14 @@ one_shot = true
 explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_yp178")
 draw_pass_1 = SubResource("QuadMesh_668lg")
+
+[node name="act_sign" type="Node3D" parent="Player"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0897868, 1.22069, 0)
+
+[node name="act_mesh" type="MeshInstance3D" parent="Player/act_sign"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232416, 0.692173, 0)
+mesh = SubResource("QuadMesh_a4lq6")
+surface_material_override/0 = SubResource("StandardMaterial3D_mwvwl")
 
 [node name="smokeSFX" type="GPUParticles3D" parent="Player"]
 process_mode = 3
@@ -4025,14 +4037,6 @@ one_shot = true
 
 [node name="death_timer" type="Timer" parent="Player"]
 one_shot = true
-
-[node name="act_sign" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0897868, 1.22069, 0)
-
-[node name="act_mesh" type="MeshInstance3D" parent="Player/act_sign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232416, 0.692173, 0)
-mesh = SubResource("QuadMesh_a4lq6")
-surface_material_override/0 = SubResource("StandardMaterial3D_mwvwl")
 
 [node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 0)

@@ -129,7 +129,9 @@ func _input(event):
 	if can_move:
 		#flashlight input
 		if event.is_action_pressed("gp_fl"): flashlight()
-	
+		#action input
+		if event.is_action_pressed("gp_activate"): _act()
+		
 		if can_shoot:
 			#fire imput
 			if event.is_action_pressed("gp_fire"): _shoot()
@@ -146,6 +148,10 @@ func _input(event):
 	if event.is_action_released("gp_aim"): aiming=false
 
 #actions
+
+func _act():
+	if interactables.size()>0 and state==0:
+		interactables[0].act(self)
 
 func _shoot():
 		if gvars.gun>0:
