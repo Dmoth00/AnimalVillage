@@ -20,9 +20,8 @@ shader = ExtResource("2_hnhji")
 shape = SubResource("ConcavePolygonShape3D_fo0gs")
 
 [node name="return" parent="SewerHallA" index="1" instance=ExtResource("4_pfc7f")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -2, -21.7916)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -2, -22)
 newPosition = Vector3(0, 0, 4.5)
-newMap = "uid://se806ctw63n1"
 
 [node name="SewerHallAWater" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
