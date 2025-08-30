@@ -3732,6 +3732,7 @@ stream = ExtResource("6_ojwdx")
 volume_db = -12.0
 
 [node name="collision" type="Area3D" parent="Player"]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -4037,6 +4038,10 @@ one_shot = true
 
 [node name="death_timer" type="Timer" parent="Player"]
 one_shot = true
+
+[node name="StepRay" type="RayCast3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402583, 0)
+collision_mask = 5
 
 [node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 0)

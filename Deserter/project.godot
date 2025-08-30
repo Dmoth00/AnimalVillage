@@ -36,6 +36,7 @@ Camera="Is the gameplay camera's controller obj."
 Mortal="Can be harmed by player."
 Keep="Camera and player shorthand for scene transitions"
 Act="Objects that the player can activate."
+Water=""
 
 [input]
 

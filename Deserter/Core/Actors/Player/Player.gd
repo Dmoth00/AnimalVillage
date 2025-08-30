@@ -46,6 +46,7 @@ var fl=true
 @onready var snd_reload=$anim/sndReload
 @onready var snd_hit=$anim/sndHit
 @onready var snd_click=$anim/sndClick
+@onready var sfx=$SFX
 
 #actionable variables
 var interactables : Array
@@ -53,6 +54,7 @@ var interactables : Array
 
 #miscelaneous variables
 var t=0.0
+@onready var step_ray=$StepRay
 
 
 #main processes
@@ -242,8 +244,13 @@ func _hurt(other : Node3D):
 			anim.play("CharAnim_Hurt")
 
 func step():
-	snd_step.pitch_scale=0.5+randf()
-	snd_step.play()
+	if is_on_floor() and step_ray.is_colliding():
+		var other = step_ray.get_collider()
+		if other.is_in_group("Water"):
+			snd_step.stream=load("res://Assets/Sounds/Audio/snd_stepWater.wav")
+		else: snd_step.stream=load("res://Assets/Sounds/Audio/snd_step2.wav")
+		snd_step.pitch_scale=0.5+randf()
+		snd_step.play()
 
 #collisions
 
@@ -260,9 +267,7 @@ func _on_act_detect_out(area: Area3D) -> void:
 
 func _on_can_move_timer() -> void: can_move=true
 
-func _on_vul_timer() -> void:
-	col.disabled=false
-	print("Vulnerable")
+func _on_vul_timer() -> void: col.disabled=false
 
 func _on_awake_timer() -> void:
 	can_move=true
