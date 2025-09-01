@@ -14,6 +14,7 @@ var firet=0.5
 @onready var muzzle=$CharArm/muzzleflash
 @onready var smoke=$smokeSFX
 @onready var hit_sfx=$CharArm/bloodSFX
+@onready var gunray=$CharArm/gunRay
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -157,17 +158,27 @@ func _act():
 
 func _shoot():
 		if gvars.gun>0:
+			#remove the bullet
 			gvars.gun-=1
+			#muzzle flash
 			muzzle.act()
+			fl_shad.flash()
+			#smoke from the barrel
 			var smoke_dupe=smoke.duplicate()
 			add_child(smoke_dupe)
 			smoke_dupe.look_at_from_position(muzzle.global_position,muzzle.global_position+ldir,Vector3.UP)
 			smoke_dupe.restart()
-			fl_shad.flash()
+			#recoil
 			can_move=false
 			firet=0.5
 			anim.play("CharAnim_Shoot",0.1,1)
+			#bang
 			snd_shoot.play()
+			#and now we check if it hits
+			if gunray.is_colliding():
+				var hit=gunray.get_collider()
+				if hit.is_in_group("Mortal"):
+					hit._hurt(1.0+gvars.hatred/100)
 		else: snd_click.play()
 
 func _reload():

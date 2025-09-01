@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=4 uid="uid://cxinr3rqbem3j"]
+[gd_scene load_steps=21 format=4 uid="uid://cxinr3rqbem3j"]
 
 [ext_resource type="Script" path="res://Core/Actors/Enemy/spider.gd" id="1_u1usa"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="2_7rdk4"]
-[ext_resource type="Texture2D" uid="uid://4jpcdrpiln4o" path="res://Assets/Textures/StairsTex00.png" id="3_8mpsf"]
+[ext_resource type="Texture2D" uid="uid://dspr8u0bflwct" path="res://Assets/Textures/StairsTex00.png" id="3_8mpsf"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="4_0b4tr"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="5_pxilg"]
 [ext_resource type="Script" path="res://Core/System/sfx_common.gd" id="6_yoctl"]
+[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/Audio/snd_hit00.wav" id="7_o44b0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ue700"]
 radius = 0.3
@@ -363,8 +364,8 @@ curve = SubResource("Curve_cs4r7")
 [sub_resource type="Curve" id="Curve_esrmn"]
 min_value = 0.01
 max_value = 4.0
-_data = [Vector2(0, 0.0976925), 0.142535, 25.6061, 0, 0, Vector2(0.995434, 0.0538464), -0.129761, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0, 0.0976925), 0.142535, 25.6061, 0, 0, Vector2(0.0593607, 3.25462), 7.68185, 7.68185, 0, 0, Vector2(0.995434, 0.0538464), -0.129761, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_kc64i"]
 curve = SubResource("Curve_esrmn")
@@ -375,13 +376,13 @@ angle_min = -180.0
 angle_max = 180.0
 direction = Vector3(0, 1, 0)
 spread = 90.0
-initial_velocity_min = 8.0
-initial_velocity_max = 10.0
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
 angular_velocity_min = -90.0
 angular_velocity_max = 90.0
 gravity = Vector3(0, 0, 0)
-damping_min = 8.0
-damping_max = 32.0
+damping_min = 12.0
+damping_max = 16.0
 scale_curve = SubResource("CurveTexture_kc64i")
 scale_over_velocity_min = 1.0
 scale_over_velocity_max = 1.0
@@ -393,7 +394,7 @@ hue_variation_max = 0.05
 transparency = 2
 alpha_scissor_threshold = 0.229
 alpha_antialiasing_mode = 0
-blend_mode = 4
+depth_draw_mode = 1
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 albedo_texture = ExtResource("5_pxilg")
@@ -589,12 +590,15 @@ process_mode = 3
 gi_mode = 0
 emitting = false
 amount = 16
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
-trail_lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_sq3ao")
 draw_pass_1 = SubResource("QuadMesh_nkw6j")
 script = ExtResource("6_yoctl")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="bloodSFX"]
+stream = ExtResource("7_o44b0")
 
 [connection signal="timeout" from="re_target" to="." method="_on_re_target"]
 [connection signal="finished" from="bloodSFX" to="bloodSFX" method="_on_finished"]

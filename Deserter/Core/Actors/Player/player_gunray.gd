@@ -2,7 +2,7 @@ extends RayCast3D
 @onready var guy=$guy
 
 func _timer() -> void:
-	if is_colliding():
+	if is_colliding() and gvars.debug_mode:
 		guy.visible=true
 		guy.global_position=get_collision_point()
 	else: guy.visible=false

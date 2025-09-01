@@ -14,6 +14,7 @@ var dir = Vector3.ZERO
 var ldir = Vector3.FORWARD
 
 @onready var target = null
+@onready var re_target = $re_target
 
 var dis : float = 0.0
 
@@ -53,10 +54,19 @@ func _physics_process(delta):
 	anim.speed_scale=velocity.length()
 
 func _hurt(dmg : float):
-	vel=0
 	health -= dmg
 	gvars.hatred+=0.01
+	if health>0:
+		vel=0
+		target=null
+		re_target.start(1.0)
+	else:
+		var bld=get_node("bloodSFX").duplicate()
+		get_tree().get_first_node_in_group("GM").add_child(bld)
+		bld.transform=transform
+		bld.act()
+		call_deferred("queue_free")
 	
 func _on_re_target() -> void:
+	re_target.wait_time=0.2
 	target=NewFunc.nearest_in_group("Player",transform.origin)
-	pass # Replace with function body.
