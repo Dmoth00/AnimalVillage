@@ -9,6 +9,7 @@ extends Node3D
 
 var camdist
 var camangl
+var camoff = Vector2.ZERO
 
 #GUI stuff
 @onready var db_sign=$GUI/db_text
@@ -37,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	#rotation
 	rotation.x=move_toward(rotation.x,deg_to_rad(camangl),delta/2)
 	#zoom
-	cam.position.z=move_toward(cam.position.z,camdist,delta*2)
+	cam.position=cam.position.lerp(Vector3(camoff.x,camoff.y,camdist),delta*2)
 	
 func _input(event: InputEvent) -> void:
 	
@@ -66,6 +67,7 @@ func get_player(): player = get_tree().get_nodes_in_group("Player")[0]
 func reset_cam():
 	camdist = 6.0
 	camangl = -60.0
+	camoff = Vector2.ZERO
 	
 
 func fade_out (t : float):

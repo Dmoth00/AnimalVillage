@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk2ovlepfkv8b"]
+
+[ext_resource type="Script" path="res://Core/Scene/DEBUG/camera_trigger.gd" id="1_e3ixt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xw5hf"]
+size = Vector3(10.3177, 5, 5)
+
+[node name="CameraTrigger" type="Area3D"]
+script = ExtResource("1_e3ixt")
+
+[node name="col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0106201, 1.66675, 0.503296)
+shape = SubResource("BoxShape3D_xw5hf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

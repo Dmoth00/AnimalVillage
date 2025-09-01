@@ -46,7 +46,7 @@ default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(4, 4, 4)]
 operator = 5
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_iykcn"]
-constant = 0.95
+constant = 0.8
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_8yhpx"]
 output_port_for_preview = 0
@@ -157,7 +157,7 @@ void fragment() {
 
 
 // FloatConstant:22
-	float n_out22p0 = 0.950000;
+	float n_out22p0 = 0.800000;
 
 
 // VectorOp:20
@@ -173,7 +173,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(232.9, -33.5967)
+graph_offset = Vector2(171.873, -43.8279)
 modes/cull = 2
 modes/specular = 4
 nodes/fragment/0/position = Vector2(1300, 120)
