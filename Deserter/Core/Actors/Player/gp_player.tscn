@@ -3714,6 +3714,7 @@ libraries = {
 [node name="sndStep" type="AudioStreamPlayer" parent="Player/anim"]
 stream = ExtResource("2_bflfw")
 volume_db = -8.0
+max_polyphony = 2
 
 [node name="sndShoot" type="AudioStreamPlayer" parent="Player/anim"]
 stream = ExtResource("3_d38oi")
