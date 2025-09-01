@@ -810,7 +810,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0402222, 1.66675, 0.503296)
 shape = SubResource("BoxShape3D_xw5hf")
 
 [node name="DeadHead" type="StaticBody3D" parent="." groups=["Harm"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2.3938)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8.3938)
 
 [node name="DheadArm" type="Node3D" parent="DeadHead"]
 
@@ -866,7 +866,6 @@ bones/6/rotation = Quaternion(-0.707107, 1.25874e-08, -1.25874e-08, 0.707107)
 bones/6/scale = Vector3(0, 0, 0)
 
 [node name="DHeadMesh" type="MeshInstance3D" parent="DeadHead/DheadArm/Skeleton3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 mesh = SubResource("ArrayMesh_pn84i")
 skin = SubResource("Skin_0hf38")
 surface_material_override/0 = SubResource("ShaderMaterial_sxiqp")
@@ -879,6 +878,7 @@ autoplay = "Dhead_0"
 
 [node name="col" type="CollisionShape3D" parent="DeadHead"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00605, 0)
+visible = false
 shape = SubResource("BoxShape3D_kk1o3")
 
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
