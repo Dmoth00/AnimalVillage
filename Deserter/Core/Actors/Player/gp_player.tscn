@@ -3521,8 +3521,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hy5p8")
 
 [sub_resource type="Gradient" id="Gradient_m2sc7"]
-offsets = PackedFloat32Array(0, 0.133005, 0.275862, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.760784, 1, 1, 1, 0.352941, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.866995, 0.995074)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.521569, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_oa4gr"]
 gradient = SubResource("Gradient_m2sc7")
@@ -3931,7 +3931,7 @@ transform = Transform3D(1, 0, 6.98492e-10, 3.72529e-09, 1, 1.86265e-09, -1.57161
 
 [node name="muzzleflash" type="MeshInstance3D" parent="Player/CharArm"]
 process_mode = 4
-transform = Transform3D(0.05, 7.54979e-09, 7.54979e-08, 7.54979e-09, -0.05, -5.29396e-22, 7.54979e-09, 1.13999e-15, -0.5, -0.0854863, 2.38794, -2.03909)
+transform = Transform3D(0.101, 1.52506e-08, 1.50996e-07, 1.52506e-08, -0.101, -6.54333e-20, 1.52506e-08, 2.30278e-15, -1, -0.0854863, 2.38794, -2.03909)
 mesh = SubResource("ArrayMesh_20sml")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5lkss")
