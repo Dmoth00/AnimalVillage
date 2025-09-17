@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="4_yfk8p"]
 [ext_resource type="Texture2D" uid="uid://cqv7f0gawi267" path="res://Assets/Textures/WindowTex00.png" id="5_2xpog"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="6_dwpxu"]
-[ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bg_closedspace2.wav" id="7_7cxsk"]
+[ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="7_7cxsk"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="8_wyxtb"]
 [ext_resource type="Script" path="res://Core/Scene/DEBUG/camera_trigger.gd" id="9_f0fnk"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="10_5vwlp"]

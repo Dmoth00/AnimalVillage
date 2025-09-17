@@ -260,8 +260,8 @@ func step():
 	if is_on_floor() and step_ray.is_colliding():
 		var other = step_ray.get_collider()
 		if other.is_in_group("Water"):
-			snd_step.stream=load("res://Assets/Sounds/Audio/snd_stepWater.wav")
-		else: snd_step.stream=load("res://Assets/Sounds/Audio/snd_step2.wav")
+			snd_step.stream=load("res://Assets/Sounds/SFX/snd_stepWater.wav")
+		else: snd_step.stream=load("res://Assets/Sounds/SFX/snd_step2.wav")
 		snd_step.pitch_scale=0.5+randf()
 		snd_step.play()
 

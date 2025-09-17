@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1n0fgedvxp6h"
-path="res://.godot/imported/snd_woodCrash.wav-5c331fd3c088245a0395c98c0f10ea07.sample"
+path="res://.godot/imported/snd_woodCrash.wav-602247a62cb24ac15221d8ad373cca79.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Audio/snd_woodCrash.wav"
-dest_files=["res://.godot/imported/snd_woodCrash.wav-5c331fd3c088245a0395c98c0f10ea07.sample"]
+source_file="res://Assets/Sounds/SFX/snd_woodCrash.wav"
+dest_files=["res://.godot/imported/snd_woodCrash.wav-602247a62cb24ac15221d8ad373cca79.sample"]
 
 [params]
 

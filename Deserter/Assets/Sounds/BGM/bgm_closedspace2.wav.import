@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6578jps62lfy"
-path="res://.godot/imported/bg_closedspace2.wav-b15518bb1921a0f4e3bf552ac405d800.sample"
+path="res://.godot/imported/bgm_closedspace2.wav-d8452f35adca27e8a2f977395254ab61.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/BGM/bg_closedspace2.wav"
-dest_files=["res://.godot/imported/bg_closedspace2.wav-b15518bb1921a0f4e3bf552ac405d800.sample"]
+source_file="res://Assets/Sounds/BGM/bgm_closedspace2.wav"
+dest_files=["res://.godot/imported/bgm_closedspace2.wav-d8452f35adca27e8a2f977395254ab61.sample"]
 
 [params]
 

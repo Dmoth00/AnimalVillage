@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://m2d1275i2ekx"
-path="res://.godot/imported/snd_locked.wav-e2d7472680f69fbe99256e3aa5a032f4.sample"
+path="res://.godot/imported/snd_locked.wav-0db03028f0bdf8c99c222da9e7aabac4.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Audio/snd_locked.wav"
-dest_files=["res://.godot/imported/snd_locked.wav-e2d7472680f69fbe99256e3aa5a032f4.sample"]
+source_file="res://Assets/Sounds/SFX/snd_locked.wav"
+dest_files=["res://.godot/imported/snd_locked.wav-0db03028f0bdf8c99c222da9e7aabac4.sample"]
 
 [params]
 

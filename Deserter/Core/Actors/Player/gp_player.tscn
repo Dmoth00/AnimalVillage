@@ -1,16 +1,16 @@
 [gd_scene load_steps=85 format=4 uid="uid://be5ebusbps3xr"]
 
 [ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
-[ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/Audio/snd_step2.wav" id="2_bflfw"]
+[ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/SFX/snd_step2.wav" id="2_bflfw"]
 [ext_resource type="Script" path="res://Core/Actors/Player/gp_cam.gd" id="2_tag11"]
 [ext_resource type="Script" path="res://Core/System/GUI/gui.gd" id="3_3djve"]
-[ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/Audio/snd_gun.wav" id="3_d38oi"]
+[ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/SFX/snd_gun.wav" id="3_d38oi"]
 [ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="4_3xx5o"]
-[ext_resource type="AudioStream" uid="uid://cjo684508m8ct" path="res://Assets/Sounds/Audio/snd_reload.wav" id="4_mggiy"]
-[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/Audio/snd_hit00.wav" id="5_1l8rh"]
+[ext_resource type="AudioStream" uid="uid://cjo684508m8ct" path="res://Assets/Sounds/SFX/snd_reload.wav" id="4_mggiy"]
+[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="5_1l8rh"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_br8mc"]
 [ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="6_8qpvd"]
-[ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/Audio/snd_click.wav" id="6_ojwdx"]
+[ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/SFX/snd_click.wav" id="6_ojwdx"]
 [ext_resource type="Script" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
 [ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_upbqn"]
 [ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_ksfv1"]
@@ -4041,7 +4041,8 @@ one_shot = true
 one_shot = true
 
 [node name="StepRay" type="RayCast3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402583, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991951, 0)
+target_position = Vector3(0, -1.2, 0)
 collision_mask = 5
 
 [node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
