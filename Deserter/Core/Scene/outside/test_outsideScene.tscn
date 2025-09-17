@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://wuwgjld2hdth" path="res://Assets/Textures/TrashTex00.png" id="4_jvc3h"]
 [ext_resource type="Texture2D" uid="uid://td3lpmel5hph" path="res://Assets/Textures/AsphaltTex.png" id="5_vo0wd"]
 [ext_resource type="Shader" uid="uid://cllyfxpbjdfes" path="res://Assets/Shaders/waterShader.tres" id="6_boiqj"]
-[ext_resource type="ArrayMesh" uid="uid://cgyq0lci1j1ba" path="res://Core/Scene/outside/shedMesh.tres" id="7_ldy5j"]
+[ext_resource type="ArrayMesh" uid="uid://ceescsc2v154d" path="res://Core/Scene/outside/shedMesh.tres" id="7_ldy5j"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="10_0w2e6"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="10_i770g"]
 [ext_resource type="AudioStream" uid="uid://cw6bbnff2jvaw" path="res://Assets/Sounds/BGM/bgm_wind.wav" id="11_hwxvs"]
