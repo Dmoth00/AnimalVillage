@@ -225,8 +225,9 @@ data = PackedVector3Array(-8.0004, 0, 6.9998, -7.0002, 0, 5.9996, -7.0002, 0, 6.
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xejf2"]
 render_priority = 0
 shader = ExtResource("2_j0hud")
+shader_parameter/ColorParameter = Color(0.27, 0.1665, 0, 1)
+shader_parameter/Alpha = 0.939
 shader_parameter/current_speed = 1.0
-shader_parameter/ColorParameter = Color(0.094845, 0.057786, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d8drp"]
 _surfaces = [{
@@ -293,6 +294,7 @@ shape = SubResource("ConcavePolygonShape3D_fo0gs")
 [node name="SewerHallAWater" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8, 0)
 material_override = SubResource("ShaderMaterial_xejf2")
+cast_shadow = 0
 mesh = SubResource("ArrayMesh_qwl4k")
 skeleton = NodePath("")
 
@@ -309,7 +311,7 @@ environment = ExtResource("3_40i1d")
 
 [node name="BGM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kgeb4")
-volume_db = -5.0
+volume_db = -10.0
 pitch_scale = 0.8
 autoplay = true
 

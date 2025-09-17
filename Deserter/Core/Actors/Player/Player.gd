@@ -81,8 +81,8 @@ func _physics_process(delta):
 		velocity.z = direction.z*SPEED*runMod
 	#deacceleration
 	else:
-		velocity.x = move_toward(velocity.x,0,32*delta)
-		velocity.z = move_toward(velocity.z,0,32*delta)
+		velocity.x = move_toward(velocity.x,0,16*delta)
+		velocity.z = move_toward(velocity.z,0,16*delta)
 	
 	move_and_slide()
 
@@ -161,6 +161,7 @@ func _shoot():
 			#remove the bullet
 			gvars.gun-=1
 			#muzzle flash
+			muzzle.act()
 			fl_shad.flash()
 			#smoke from the barrel
 			var smoke_dupe=smoke.duplicate()
@@ -176,9 +177,6 @@ func _shoot():
 			#and now we check if it hits
 			if gunray.is_colliding():
 				var hit=gunray.get_collider()
-				var muzzle_length=gunray.global_position.distance_to(gunray.get_collision_point())
-				muzzle.act(muzzle_length)
-				print(muzzle_length)
 				if hit.is_in_group("Mortal"):
 					hit._hurt(1.0+gvars.hatred/100)
 		else: snd_click.play()

@@ -3521,11 +3521,12 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hy5p8")
 
 [sub_resource type="Gradient" id="Gradient_m2sc7"]
-offsets = PackedFloat32Array(0, 0.866995, 0.995074)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.521569, 1, 1, 1, 1)
+offsets = PackedFloat32Array(0.0147059, 0.117647, 0.514706, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.152941, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_oa4gr"]
 gradient = SubResource("Gradient_m2sc7")
+width = 64
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5lkss"]
 transparency = 1
@@ -3730,7 +3731,7 @@ volume_db = -6.0
 
 [node name="sndClick" type="AudioStreamPlayer" parent="Player/anim"]
 stream = ExtResource("6_ojwdx")
-volume_db = -12.0
+volume_db = -20.0
 
 [node name="collision" type="Area3D" parent="Player"]
 visible = false
@@ -4060,9 +4061,8 @@ script = ExtResource("3_3djve")
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.192
-offset_top = -171.0
 offset_right = -1.0
-offset_bottom = -8.0
+offset_bottom = 40.0
 grow_horizontal = 2
 texture = ExtResource("4_3xx5o")
 
@@ -4078,6 +4078,25 @@ theme_override_fonts/normal_font = ExtResource("5_br8mc")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "Blood: 5.00 Lts"
+autowrap_mode = 1
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="curse" type="RichTextLabel" parent="gp_cam/GUI/blood"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.075
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 45.9249
+offset_top = 66.0
+offset_right = -216.998
+offset_bottom = -19.8
+scale = Vector2(1.355, 1.355)
+theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Curse: 0.0%"
 autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false

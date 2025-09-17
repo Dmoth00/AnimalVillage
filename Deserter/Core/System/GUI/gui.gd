@@ -9,6 +9,10 @@ extends CanvasLayer
 @onready var cham=$bullets/chamber
 @onready var reload=$bullets/reload
 
+#curse meter variables
+@onready var curse=$blood/curse
+@onready var crs=gvars.hatred
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -22,3 +26,6 @@ func _process(delta: float) -> void:
 	else: reload.visible=true
 	bullets.text= "[center]Bullets: "+str(gvars.bullets).pad_zeros(3)+"[/center]"
 	
+	#curse meter
+	crs=lerp(crs,gvars.hatred,delta*4)
+	curse.text="Curse: "+str(snapped(crs,0.01)).pad_decimals(2)+"%"
