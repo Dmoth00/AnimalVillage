@@ -147,7 +147,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(169.282, 284.97)
 modes/diffuse = 2
 nodes/fragment/0/position = Vector2(1300, 120)
 nodes/fragment/3/node = SubResource("11")

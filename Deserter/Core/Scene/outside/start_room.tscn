@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=4 uid="uid://se806ctw63n1"]
+[gd_scene load_steps=20 format=4 uid="uid://se806ctw63n1"]
 
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_g2b5u"]
 [ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_5405h"]
 [ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="3_8s2wy"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="4_4jyly"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="6_fddy7"]
+[ext_resource type="Texture2D" uid="uid://bje7fqkehklpf" path="res://Assets/Sprites/ShadowTex.png" id="7_k5651"]
 [ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="10_7f8u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oxdp"]
@@ -124,6 +125,21 @@ ambient_light_source = 2
 ambient_light_color = Color(0.0481484, 0.0499156, 0.0980453, 1)
 ambient_light_energy = 4.7
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvikj"]
+transparency = 1
+blend_mode = 4
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+albedo_texture = ExtResource("7_k5651")
+
+[sub_resource type="QuadMesh" id="QuadMesh_7kjky"]
+material = SubResource("StandardMaterial3D_bvikj")
+flip_faces = true
+size = Vector2(1, 3)
+
 [node name="StartRoom" type="Node3D"]
 
 [node name="meshSingleRoom" type="MeshInstance3D" parent="."]
@@ -150,3 +166,7 @@ damage = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 newPosition = Vector3(0, -2, -21.5)
 newMap = "uid://devcj660ww73a"
+
+[node name="hole" type="MeshInstance3D" parent="Door"]
+transform = Transform3D(1, 3.77122e-08, -8.55243e-09, -3.77122e-08, 0.902172, -0.431377, -8.55243e-09, 0.431377, 0.902172, 1.13232e-08, 0.646516, 0.800663)
+mesh = SubResource("QuadMesh_7kjky")
