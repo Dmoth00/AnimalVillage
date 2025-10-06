@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cexpjwlp8gjyj"
-path.s3tc="res://.godot/imported/DoorTex00.png-dd2105266141b096e795232dff178bea.s3tc.ctex"
-path.etc2="res://.godot/imported/DoorTex00.png-dd2105266141b096e795232dff178bea.etc2.ctex"
+uid="uid://c6v5xp6sqmjns"
+path.s3tc="res://.godot/imported/RoofTilesTex00.png-acd3cea9ffd05ef1c5461f5fdc5984a9.s3tc.ctex"
+path.etc2="res://.godot/imported/RoofTilesTex00.png-acd3cea9ffd05ef1c5461f5fdc5984a9.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Mesh/Maps/Debug/textures/DoorTex00.png"
-dest_files=["res://.godot/imported/DoorTex00.png-dd2105266141b096e795232dff178bea.s3tc.ctex", "res://.godot/imported/DoorTex00.png-dd2105266141b096e795232dff178bea.etc2.ctex"]
+source_file="res://Assets/Textures/RoofTilesTex00.png"
+dest_files=["res://.godot/imported/RoofTilesTex00.png-acd3cea9ffd05ef1c5461f5fdc5984a9.s3tc.ctex", "res://.godot/imported/RoofTilesTex00.png-acd3cea9ffd05ef1c5461f5fdc5984a9.etc2.ctex"]
 
 [params]
 
