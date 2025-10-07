@@ -40,6 +40,7 @@ albedo_texture = ExtResource("3_u2rqv")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u8wyj"]
 resource_name = "AsphaltMat"
 cull_mode = 2
+albedo_color = Color(0.53, 0.53, 0.53, 1)
 albedo_texture = ExtResource("4_20ddx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iygct"]
@@ -502,13 +503,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0039978, 1.62463, 0.012756
 shape = SubResource("BoxShape3D_vjn71")
 
 [node name="ladder" type="MeshInstance3D" parent="Props/Area03"]
-transform = Transform3D(1, 0, 0, 0, 0.993959, 0.109752, 0, -0.109752, 0.993959, 26, -4.95788, -89.0229)
+transform = Transform3D(1, 0, 0, 0, 0.988266, 0.152745, 0, -0.152745, 0.988266, 26, -4.95788, -88.8306)
 mesh = SubResource("QuadMesh_1d2g1")
 skeleton = NodePath("../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 0.298836, -0.640857, 0, 0.906308, 0.422618, 0.707107, -0.298836, 0.640857, 0, 11.9712, 0)
 shadow_enabled = true
+shadow_normal_bias = 0.0
+shadow_blur = 2.0
 sky_mode = 1
 
 [node name="Door" parent="." instance=ExtResource("10_0w2e6")]
