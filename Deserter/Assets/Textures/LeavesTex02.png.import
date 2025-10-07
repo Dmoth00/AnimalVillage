@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh56wdnssuo7b"
-path.s3tc="res://.godot/imported/BarkTex01.png-b210c3ddbe249fcf9096fcde743c1cc6.s3tc.ctex"
-path.etc2="res://.godot/imported/BarkTex01.png-b210c3ddbe249fcf9096fcde743c1cc6.etc2.ctex"
+uid="uid://ck4u1gv0bd6v0"
+path.s3tc="res://.godot/imported/LeavesTex02.png-11f01abbb67b7fb662e67abebb455e62.s3tc.ctex"
+path.etc2="res://.godot/imported/LeavesTex02.png-11f01abbb67b7fb662e67abebb455e62.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/BarkTex01.png"
-dest_files=["res://.godot/imported/BarkTex01.png-b210c3ddbe249fcf9096fcde743c1cc6.s3tc.ctex", "res://.godot/imported/BarkTex01.png-b210c3ddbe249fcf9096fcde743c1cc6.etc2.ctex"]
+source_file="res://Assets/Textures/LeavesTex02.png"
+dest_files=["res://.godot/imported/LeavesTex02.png-11f01abbb67b7fb662e67abebb455e62.s3tc.ctex", "res://.godot/imported/LeavesTex02.png-11f01abbb67b7fb662e67abebb455e62.etc2.ctex"]
 
 [params]
 

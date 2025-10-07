@@ -4042,7 +4042,7 @@ one_shot = true
 one_shot = true
 
 [node name="StepRay" type="RayCast3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.991951, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15118, 0.00568676)
 target_position = Vector3(0, -1.2, 0)
 collision_mask = 5
 
@@ -4061,7 +4061,8 @@ script = ExtResource("3_3djve")
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.192
-offset_right = -1.0
+offset_left = -13.0
+offset_right = 22.0
 offset_bottom = 40.0
 grow_horizontal = 2
 texture = ExtResource("4_3xx5o")
