@@ -15,6 +15,9 @@ var camoff = Vector2.ZERO
 @onready var db_sign=$GUI/db_text
 @onready var fade=$GUI/fade
 
+#HUD sounds stuff
+@onready var sfx = $SFX
+
 func _ready() -> void:
 	db_sign.visible=gvars.debug_mode
 	get_player()
@@ -79,3 +82,7 @@ func fade_in (t : float):
 	fade.color.a=1.0
 	fade.inc=t*-1
 	fade.set_process(true)
+
+func stream_play(id : String):
+	sfx.stream=load(id)
+	sfx.play()

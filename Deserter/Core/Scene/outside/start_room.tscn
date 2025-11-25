@@ -160,7 +160,6 @@ environment = SubResource("Environment_dgbts")
 
 [node name="Spider" parent="." instance=ExtResource("10_7f8u5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99225, 1.18779, -1.68732)
-damage = 1.0
 
 [node name="Door" parent="." instance=ExtResource("6_fddy7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)

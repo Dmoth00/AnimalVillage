@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="7_o44b0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ue700"]
-radius = 0.3
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_58g0j"]
 resource_name = "Spider_Cube_009"
@@ -408,10 +407,9 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_nkw6j"]
 material = SubResource("StandardMaterial3D_qaj2e")
 
-[node name="Spider" type="CharacterBody3D" groups=["Act", "Harm", "Mortal"]]
+[node name="Spider" type="CharacterBody3D" groups=["Harm", "Mortal"]]
 collision_layer = 7
 script = ExtResource("1_u1usa")
-maxVelocity = 6.0
 
 [node name="col" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

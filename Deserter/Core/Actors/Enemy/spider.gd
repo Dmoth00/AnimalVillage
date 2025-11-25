@@ -3,8 +3,8 @@ extends CharacterBody3D
 #enemyvars
 @export var health = 1.0
 @export var damage = 0.0
-@export var alertDistance = 6.0
-@export var maxVelocity = 4.0
+@export var alertDistance = 4.0
+@export var maxVelocity = 6.0
 @export var knockdown = false
 @export var attack = false
 

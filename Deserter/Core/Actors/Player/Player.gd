@@ -267,6 +267,7 @@ func step():
 
 func _on_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Harm"): _hurt(body)
+	if body.is_in_group("Item"): body.act()
 
 func _on_act_detect_in(area: Area3D) -> void:
 	if area.is_in_group("Act"): interactables.push_back(area)

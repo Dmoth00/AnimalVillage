@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://cnqovkmyuiyoa"]
+[gd_scene load_steps=86 format=4 uid="uid://cnqovkmyuiyoa"]
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="2_stap0"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_uscwt"]
@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://dk3uhnlx3p6y7" path="res://Assets/Textures/DirtTex00.png" id="18_6t4u7"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="19_5a660"]
 [ext_resource type="Texture2D" uid="uid://butqks4tdlhms" path="res://Assets/Textures/BarkTex00.png" id="20_2bevh"]
+[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="23_c3uks"]
+[ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="24_e5xbk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osjy0"]
 resource_name = "GrassMat"
@@ -710,6 +712,67 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a0jrd")
 
+[sub_resource type="Curve" id="Curve_ka5fd"]
+_data = [Vector2(0, 0), 0.0, 0.0313509, 0, 0, Vector2(0.247967, 1), 0.0, 0.0, 0, 0, Vector2(0.325203, 0.759077), 0.0, 0.0, 0, 0, Vector2(0.392276, 1), 0.0, 0.0, 0, 0, Vector2(0.47561, 0.75416), 0.0, 0.0, 0, 0, Vector2(0.569106, 1), 0.0, 0.0, 0, 0, Vector2(0.656504, 0.719743), 0.0, 0.0, 0, 0, Vector2(0.75813, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 9
+
+[sub_resource type="CurveTexture" id="CurveTexture_ytral"]
+curve = SubResource("Curve_ka5fd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0uyt2"]
+emission_shape_scale = Vector3(1, 0.2, 1)
+emission_shape = 2
+emission_sphere_radius = 6.0
+velocity_pivot = Vector3(0, 1, 0)
+direction = Vector3(0, 0, 0)
+spread = 180.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -0.200022
+radial_velocity_max = 0.199978
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -1.0
+radial_accel_max = 0.999998
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 0.499998
+damping_min = 1.0
+damping_max = 2.0
+scale_curve = SubResource("CurveTexture_ytral")
+turbulence_noise_strength = 7.39
+turbulence_noise_speed_random = 1.35
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsh36"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+albedo_texture = ExtResource("23_c3uks")
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5j07x"]
+material = SubResource("StandardMaterial3D_qsh36")
+size = Vector2(1, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yt3jf"]
+
+[sub_resource type="Sky" id="Sky_ftvmk"]
+sky_material = SubResource("ProceduralSkyMaterial_yt3jf")
+
+[sub_resource type="Environment" id="Environment_vlxxc"]
+background_mode = 1
+background_color = Color(0.0553472, 0.214287, 0.365936, 1)
+sky = SubResource("Sky_ftvmk")
+ambient_light_source = 2
+ambient_light_color = Color(0.329412, 0.392157, 0.686275, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.5
+
 [node name="TestOutsideScene" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
@@ -888,9 +951,10 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2638, 0, -41.4266)
 
 [node name="Day" type="Node3D" parent="DayNight"]
+visible = false
 
 [node name="Sun" type="DirectionalLight3D" parent="DayNight/Day"]
-transform = Transform3D(0.906308, 0.298836, -0.298836, 0, 0.707107, 0.707106, 0.422618, -0.640856, 0.640857, 0, 11.9712, 0)
+transform = Transform3D(0.906308, 0.298836, -0.298836, 0, 0.707107, 0.707106, 0.422618, -0.640856, 0.640857, 0, 0, 0)
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
@@ -902,3 +966,28 @@ shadow_blur = 2.0
 sky_mode = 1
 
 [node name="Night" type="Node3D" parent="DayNight"]
+
+[node name="Fireflies" type="GPUParticles3D" parent="DayNight/Night"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.394101, 0)
+gi_mode = 0
+amount = 12
+lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_0uyt2")
+draw_pass_1 = SubResource("PlaneMesh_5j07x")
+
+[node name="Items" type="Node3D" parent="."]
+
+[node name="bullets1" parent="Items" instance=ExtResource("24_e5xbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.855162, 9.91547)
+
+[node name="bullets2" parent="Items" instance=ExtResource("24_e5xbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.66767, -0.853707, -7.2913)
+
+[node name="bullets3" parent="Items" instance=ExtResource("24_e5xbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.848055, -7.64389)
+
+[node name="bullets4" parent="Items" instance=ExtResource("24_e5xbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.848055, 8.87151)
+
+[node name="Env" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vlxxc")
