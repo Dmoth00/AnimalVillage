@@ -6,6 +6,8 @@ var n=0
 @onready var seen = false
 @onready var mat
 
+@onready var id = ""
+
 func _ready() -> void:
 	mat = self.get_surface_override_material(0)
 

@@ -20,8 +20,6 @@ func act(player : CharacterBody3D):
 	cam.fade_out(0.25)
 	get_node("t").start(0.75)
 
-
-
 func _on_t() -> void:
 	var g=get_tree().get_first_node_in_group("GM")
 	var keep=get_tree().get_first_node_in_group("Keep")
@@ -31,19 +29,13 @@ func _on_t() -> void:
 	var new=load(newMap).instantiate()
 	g.add_child(new)
 	
-
-	
 	p.transform.origin=newPosition
 	p.can_move=true
 	cam.global_position=p.global_position
 	cam.fade_in(0.5)
-	
 	
 		#play the door's sound
 	if sound:
 		var snd=p.get_node("SFX")
 		snd.stream = sound
 		snd.play()
-	
-	
-	

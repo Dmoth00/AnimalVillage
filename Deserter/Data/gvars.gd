@@ -52,3 +52,18 @@ func reset():
 	var_init()
 	# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
+
+
+#call on instancing new maps
+func assign_id(obj : Node):
+	var obj_list : Array = get_tree().get_nodes_in_group("Id")
+	for i in len(obj_list):
+		var gen_id = obj.name+str(i)
+		obj_list[i].id=gen_id
+		check_id(obj_list[i],gen_id)
+
+#check if the object should be dead
+func check_id(obj : Node,id : String):
+	if kill_list.has(id) or event_list.has(id):
+		print(id)
+		obj.queue_free()

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0m38vemtkmfs"
-path.s3tc="res://.godot/imported/CarpetTex01.png-762973c76513a63647c65c136f1d72a1.s3tc.ctex"
-path.etc2="res://.godot/imported/CarpetTex01.png-762973c76513a63647c65c136f1d72a1.etc2.ctex"
+uid="uid://dy2g4k4n1188k"
+path.s3tc="res://.godot/imported/graffiti_sun.png-00dfcfae42113abeb5e12c598a3a5341.s3tc.ctex"
+path.etc2="res://.godot/imported/graffiti_sun.png-00dfcfae42113abeb5e12c598a3a5341.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/CarpetTex01.png"
-dest_files=["res://.godot/imported/CarpetTex01.png-762973c76513a63647c65c136f1d72a1.s3tc.ctex", "res://.godot/imported/CarpetTex01.png-762973c76513a63647c65c136f1d72a1.etc2.ctex"]
+source_file="res://Assets/Sprites/graffiti_sun.png"
+dest_files=["res://.godot/imported/graffiti_sun.png-00dfcfae42113abeb5e12c598a3a5341.s3tc.ctex", "res://.godot/imported/graffiti_sun.png-00dfcfae42113abeb5e12c598a3a5341.etc2.ctex"]
 
 [params]
 

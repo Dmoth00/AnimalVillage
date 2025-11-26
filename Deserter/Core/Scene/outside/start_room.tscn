@@ -153,6 +153,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_y14cd")
 [node name="StaticBody3D" type="StaticBody3D" parent="meshSingleRoom"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_pcuhw")
 
 [node name="env" type="WorldEnvironment" parent="."]

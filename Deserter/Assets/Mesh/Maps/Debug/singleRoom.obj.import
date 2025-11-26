@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2h5le5d5g7l6"
+path="res://.godot/imported/singleRoom.obj-8ffe8918dd7114c516a9c608c839737f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/singleRoom.obj-8ffe8918dd7114c516a9c608c839737f.mesh"]
+
+source_file="res://Assets/Mesh/Maps/Debug/singleRoom.obj"
+dest_files=["res://.godot/imported/singleRoom.obj-8ffe8918dd7114c516a9c608c839737f.mesh", "res://.godot/imported/singleRoom.obj-8ffe8918dd7114c516a9c608c839737f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -66,7 +66,7 @@ func _hurt(dmg : float):
 		bld.transform=transform
 		bld.act()
 		call_deferred("queue_free")
-	
+
 func _on_re_target() -> void:
 	re_target.wait_time=0.2
 	target=NewFunc.nearest_in_group("Player",transform.origin)

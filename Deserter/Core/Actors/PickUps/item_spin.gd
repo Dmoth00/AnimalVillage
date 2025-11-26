@@ -2,6 +2,8 @@ extends Node3D
 @export var goods : String
 @export var amount : int = 1
 
+@onready var id = ""
+
 func _process(delta: float) -> void:
 	rotate_y(delta*PI)
 	pass

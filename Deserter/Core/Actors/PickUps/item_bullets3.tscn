@@ -1,27 +1,27 @@
 [gd_scene load_steps=8 format=3 uid="uid://c507kkemfblh5"]
 
 [ext_resource type="Script" path="res://Core/Actors/PickUps/item_spin.gd" id="1_74hlf"]
-[ext_resource type="PackedScene" uid="uid://b7615gutnvhtk" path="res://Assets/Mesh/Player/bullet_3.glb" id="2_ptndb"]
-[ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="3_6e86x"]
+[ext_resource type="ArrayMesh" uid="uid://4ei2mjgt761g" path="res://Assets/Mesh/Player/3bullets.obj" id="2_lt60n"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="3_jf2q7"]
+[ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="3_ssp4q"]
 [ext_resource type="Texture2D" uid="uid://dnfly7p0cne3y" path="res://Assets/Textures/BulletTex.png" id="4_d7dje"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dio4m"]
 radius = 0.3
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_anfxe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_faoov"]
 render_priority = 0
-shader = ExtResource("3_6e86x")
+shader = ExtResource("3_ssp4q")
 shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/specular = null
 shader_parameter/metallic = null
-shader_parameter/roughness = 1.0
+shader_parameter/roughness = null
 shader_parameter/alpha = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
 shader_parameter/texture_albedo = ExtResource("4_d7dje")
 
-[node name="item_bullets" type="StaticBody3D" groups=["Item"]]
+[node name="item_bullets" type="StaticBody3D" groups=["Id", "Item"]]
 collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_74hlf")
@@ -32,11 +32,8 @@ amount = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.608545, 0)
 shape = SubResource("SphereShape3D_dio4m")
 
-[node name="bullet_3" parent="." instance=ExtResource("2_ptndb")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.360619, 0)
-
-[node name="bulletMesh" parent="bullet_3" index="0" groups=["Fade"]]
-surface_material_override/0 = SubResource("ShaderMaterial_anfxe")
+[node name="3bullets" type="MeshInstance3D" parent="." groups=["Fade"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.359434, 0)
+mesh = ExtResource("2_lt60n")
+surface_material_override/0 = SubResource("ShaderMaterial_faoov")
 script = ExtResource("3_jf2q7")
-
-[editable path="bullet_3"]

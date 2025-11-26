@@ -407,7 +407,7 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_nkw6j"]
 material = SubResource("StandardMaterial3D_qaj2e")
 
-[node name="Spider" type="CharacterBody3D" groups=["Harm", "Mortal"]]
+[node name="Spider" type="CharacterBody3D" groups=["Harm", "Id", "Mortal"]]
 collision_layer = 7
 script = ExtResource("1_u1usa")
 

@@ -6,7 +6,6 @@ var runMod = 1.0
 var state=2
 var can_move=false
 
-
 #gun variables
 var can_shoot=false
 var aiming=false
@@ -56,7 +55,6 @@ var interactables : Array
 #miscelaneous variables
 var t=0.0
 @onready var step_ray=$StepRay
-
 
 #main processes
 
@@ -126,7 +124,6 @@ func _process(delta):
 	if can_move and interactables.size()>0:
 		act_sign.scale=act_sign.scale.lerp(Vector3.ONE,delta*12)
 	else: act_sign.scale=act_sign.scale.lerp(Vector3.ZERO,delta*12)
-	
 
 func _input(event):
 	if can_move:
