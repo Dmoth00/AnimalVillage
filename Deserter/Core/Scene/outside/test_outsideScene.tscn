@@ -982,16 +982,16 @@ draw_pass_1 = SubResource("PlaneMesh_5j07x")
 [node name="Items" type="Node3D" parent="."]
 
 [node name="bullets1" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.513549, 9.91547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.817817, 9.91547)
 
 [node name="bullets2" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.512094, -6.54359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.816362, -6.54359)
 
 [node name="bullets3" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.506442, -7.64389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.81071, -7.64389)
 
 [node name="bullets4" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.506442, 8.87151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.81071, 8.87151)
 
 [node name="bullets5" parent="Items" instance=ExtResource("24_e5xbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183711, -0.680805, 7.0163)

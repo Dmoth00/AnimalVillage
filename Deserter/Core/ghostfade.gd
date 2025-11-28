@@ -15,6 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if seen: n=1
 	else: n=-1
-	t=clampf(t+2*delta*n,0.0,1.0)
+	t=clampf(t+4*delta*n,0.0,1.0)
 	mat.set_shader_parameter("alpha",t)
 	pass

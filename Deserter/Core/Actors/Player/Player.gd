@@ -70,11 +70,11 @@ func _physics_process(delta):
 		velocity.y -= 9.8 * delta
 	
 	# Input detection for direction
-	input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down").normalized()
+	input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down")
 	direction = Vector3(input_dir.x,0,input_dir.y)
 	
 	#voluntary movement
-	if direction and state==0:
+	if direction.length()>0.5 and state==0:
 		velocity.x = direction.x*SPEED*runMod
 		velocity.z = direction.z*SPEED*runMod
 	#deacceleration
@@ -89,8 +89,8 @@ func _process(delta):
 	#face direction
 	if direction and can_move:
 		#I don't know how this works but it works
-		direction=(direction+Vector3(0.01,0,0.01)).normalized()
-		ldir=ldir.slerp(direction,delta*10).normalized()
+		var dire=(direction+Vector3(-0.01,0,0.01)).normalized()
+		ldir=ldir.slerp(dire,delta*10).normalized()
 		mesh.look_at(transform.origin+ldir)
 	
 	match state:
