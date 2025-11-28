@@ -9,7 +9,8 @@ var n=0
 @onready var id = ""
 
 func _ready() -> void:
-	mat = self.get_surface_override_material(0)
+	mat = self.get_surface_override_material(0).duplicate(false)
+	self.set_surface_override_material(0,mat)
 
 func _process(delta: float) -> void:
 	if seen: n=1

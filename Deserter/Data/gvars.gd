@@ -18,6 +18,9 @@ var kill_list : Array
 var event_list : Array
 var items : Array
 
+var night : bool
+var day :int
+
 #constants
 const wigl=Vector3(0.01,0,0.01)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -44,6 +47,9 @@ func var_init():
 	kill_list = []
 	event_list = []
 	items=[]
+	
+	night=true
+	day=0
 	
 	debug_mode=false
 	pass

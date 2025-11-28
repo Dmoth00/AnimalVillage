@@ -12,8 +12,6 @@ func act():
 	var cam=get_tree().get_first_node_in_group("Camera")
 	cam.stream_play("uid://vpb56tcq1h85")
 	var value = gvars.get(goods)
-	print(goods+": "+str(value))
 	value+=amount
 	gvars.set(goods,value)
-	print(goods+": "+str(gvars.get(goods)))
 	call_deferred("queue_free")

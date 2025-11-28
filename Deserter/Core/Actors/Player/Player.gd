@@ -174,8 +174,7 @@ func _shoot():
 			#and now we check if it hits
 			if gunray.is_colliding():
 				var hit=gunray.get_collider()
-				if hit.is_in_group("Mortal"):
-					hit._hurt(1.0+gvars.hatred/100)
+				if hit.is_in_group("Mortal"): hit._hurt(1.0+gvars.hatred/100)
 		else: snd_click.play()
 
 func _reload():

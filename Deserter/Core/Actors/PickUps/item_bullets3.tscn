@@ -4,12 +4,14 @@
 [ext_resource type="ArrayMesh" uid="uid://4ei2mjgt761g" path="res://Assets/Mesh/Player/3bullets.obj" id="2_lt60n"]
 [ext_resource type="Script" path="res://Core/ghostfade.gd" id="3_jf2q7"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="3_ssp4q"]
-[ext_resource type="Texture2D" uid="uid://dnfly7p0cne3y" path="res://Assets/Textures/BulletTex.png" id="4_d7dje"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dio4m"]
 radius = 0.3
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_faoov"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yqdb0"]
+load_path = "res://.godot/imported/BulletTex.png-8ca3da20a2091b3e764e3ad9d0c5e6c4.s3tc.ctex"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhuo2"]
 render_priority = 0
 shader = ExtResource("3_ssp4q")
 shader_parameter/albedo = Color(1, 1, 1, 1)
@@ -19,7 +21,7 @@ shader_parameter/roughness = null
 shader_parameter/alpha = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("4_d7dje")
+shader_parameter/texture_albedo = SubResource("CompressedTexture2D_yqdb0")
 
 [node name="item_bullets" type="StaticBody3D" groups=["Id", "Item"]]
 collision_layer = 6
@@ -35,5 +37,5 @@ shape = SubResource("SphereShape3D_dio4m")
 [node name="3bullets" type="MeshInstance3D" parent="." groups=["Fade"]]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.359434, 0)
 mesh = ExtResource("2_lt60n")
-surface_material_override/0 = SubResource("ShaderMaterial_faoov")
+surface_material_override/0 = SubResource("ShaderMaterial_vhuo2")
 script = ExtResource("3_jf2q7")

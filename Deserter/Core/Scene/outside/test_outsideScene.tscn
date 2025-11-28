@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://cnqovkmyuiyoa"]
+[gd_scene load_steps=87 format=4 uid="uid://cnqovkmyuiyoa"]
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="2_stap0"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_uscwt"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dk3uhnlx3p6y7" path="res://Assets/Textures/DirtTex00.png" id="18_6t4u7"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="19_5a660"]
 [ext_resource type="Texture2D" uid="uid://butqks4tdlhms" path="res://Assets/Textures/BarkTex00.png" id="20_2bevh"]
+[ext_resource type="Script" path="res://Core/Scene/outside/day_night.gd" id="23_b6s6f"]
 [ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="23_c3uks"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="24_e5xbk"]
 
@@ -754,10 +755,13 @@ diffuse_mode = 3
 specular_mode = 2
 albedo_texture = ExtResource("23_c3uks")
 disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5j07x"]
 material = SubResource("StandardMaterial3D_qsh36")
 size = Vector2(1, 1)
+orientation = 2
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yt3jf"]
 
@@ -949,9 +953,9 @@ autoplay = true
 
 [node name="DayNight" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2638, 0, -41.4266)
+script = ExtResource("23_b6s6f")
 
 [node name="Day" type="Node3D" parent="DayNight"]
-visible = false
 
 [node name="Sun" type="DirectionalLight3D" parent="DayNight/Day"]
 transform = Transform3D(0.906308, 0.298836, -0.298836, 0, 0.707107, 0.707106, 0.422618, -0.640856, 0.640857, 0, 0, 0)
@@ -978,16 +982,16 @@ draw_pass_1 = SubResource("PlaneMesh_5j07x")
 [node name="Items" type="Node3D" parent="."]
 
 [node name="bullets1" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.855162, 9.91547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.513549, 9.91547)
 
 [node name="bullets2" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.853707, -6.54359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.512094, -6.54359)
 
 [node name="bullets3" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.848055, -7.64389)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.506442, -7.64389)
 
 [node name="bullets4" parent="Items" instance=ExtResource("24_e5xbk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.848055, 8.87151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.506442, 8.87151)
 
 [node name="bullets5" parent="Items" instance=ExtResource("24_e5xbk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183711, -0.680805, 7.0163)
