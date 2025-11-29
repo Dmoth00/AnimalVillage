@@ -50,8 +50,8 @@ func _input(event: InputEvent) -> void:
 		gvars.debug_mode=!gvars.debug_mode
 		db_sign.visible=gvars.debug_mode
 		
-	
 	if gvars.debug_mode:
+		
 		#restart game
 		if event.is_action_pressed("db_restart"): gvars.reset()
 	

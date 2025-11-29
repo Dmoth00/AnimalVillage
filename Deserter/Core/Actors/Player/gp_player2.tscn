@@ -1,28 +1,28 @@
-[gd_scene load_steps=85 format=4 uid="uid://be5ebusbps3xr"]
+[gd_scene load_steps=85 format=4 uid="uid://8n63gxtdbfwi"]
 
-[ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
-[ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/SFX/snd_step2.wav" id="2_bflfw"]
-[ext_resource type="Script" path="res://Core/Actors/Player/gp_cam.gd" id="2_tag11"]
-[ext_resource type="Script" path="res://Core/System/GUI/gui.gd" id="3_3djve"]
-[ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/SFX/snd_gun.wav" id="3_d38oi"]
-[ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="4_3xx5o"]
-[ext_resource type="AudioStream" uid="uid://cjo684508m8ct" path="res://Assets/Sounds/SFX/snd_reload.wav" id="4_mggiy"]
-[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="5_1l8rh"]
-[ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_br8mc"]
-[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="6_8qpvd"]
-[ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/SFX/snd_click.wav" id="6_ojwdx"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
-[ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_upbqn"]
-[ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_ksfv1"]
-[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="9_810o2"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fl_glare.gd" id="10_xeoby"]
-[ext_resource type="Script" path="res://Core/Actors/Player/muzzleflash.gd" id="11_yhk73"]
-[ext_resource type="Script" path="res://Core/Actors/Player/ghost_detect.gd" id="12_uhhel"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fl_shad.gd" id="13_l6m7u"]
-[ext_resource type="Script" path="res://Core/Actors/Player/player_gunray.gd" id="14_lynxp"]
-[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_d2n7a"]
-[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
-[ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="18_blp5p"]
+[ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_5w380"]
+[ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/SFX/snd_step2.wav" id="2_plf6d"]
+[ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/SFX/snd_gun.wav" id="3_r8qyb"]
+[ext_resource type="AudioStream" uid="uid://cjo684508m8ct" path="res://Assets/Sounds/SFX/snd_reload.wav" id="4_06yc5"]
+[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="5_secxa"]
+[ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/SFX/snd_click.wav" id="6_wfwvp"]
+[ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_1o87i"]
+[ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_amwna"]
+[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="9_kuokw"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fl_glare.gd" id="10_cedul"]
+[ext_resource type="Script" path="res://Core/Actors/Player/muzzleflash.gd" id="11_c2tkm"]
+[ext_resource type="Script" path="res://Core/Actors/Player/ghost_detect.gd" id="12_pwshf"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fl_shad.gd" id="13_7mqcb"]
+[ext_resource type="Script" path="res://Core/Actors/Player/player_gunray.gd" id="14_jf00v"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="15_iiy2c"]
+[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_tmg8n"]
+[ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="17_ttu4a"]
+[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="18_vdosk"]
+[ext_resource type="Script" path="res://Core/Actors/Player/gp_cam.gd" id="19_htdk4"]
+[ext_resource type="Script" path="res://Core/System/GUI/gui.gd" id="20_aa0gu"]
+[ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="21_2ubhy"]
+[ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="22_h7105"]
+[ext_resource type="Script" path="res://Core/Actors/Player/fade.gd" id="23_2qajf"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
@@ -3286,7 +3286,7 @@ height = 1.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5k5md"]
 resource_name = "MatChar"
 cull_mode = 2
-albedo_texture = ExtResource("7_upbqn")
+albedo_texture = ExtResource("7_1o87i")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2j4d"]
@@ -3294,15 +3294,15 @@ resource_name = "MatEyes"
 transparency = 2
 alpha_scissor_threshold = 0.0
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("7_upbqn")
+albedo_texture = ExtResource("7_1o87i")
 roughness = 0.5
 emission_enabled = true
-emission_texture = ExtResource("7_upbqn")
+emission_texture = ExtResource("7_1o87i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5ywc"]
 resource_name = "MatMetal"
 cull_mode = 2
-albedo_texture = ExtResource("8_ksfv1")
+albedo_texture = ExtResource("8_amwna")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34mnw"]
 resource_name = "MatLight"
@@ -3438,7 +3438,7 @@ bind/18/pose = Transform3D(1, 1.35347e-14, 8.57308e-08, 2.62277e-14, -1, 2.32793
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hb5k"]
 resource_name = "MatChar"
 cull_mode = 2
-albedo_texture = ExtResource("7_upbqn")
+albedo_texture = ExtResource("7_1o87i")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vapp5"]
@@ -3446,15 +3446,15 @@ resource_name = "MatEyes"
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("7_upbqn")
+albedo_texture = ExtResource("7_1o87i")
 roughness = 0.5
 emission_enabled = true
-emission_texture = ExtResource("7_upbqn")
+emission_texture = ExtResource("7_1o87i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b6iv"]
 resource_name = "MatMetal"
 cull_mode = 2
-albedo_texture = ExtResource("8_ksfv1")
+albedo_texture = ExtResource("8_amwna")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myy3m"]
 resource_name = "MatLight"
@@ -3471,7 +3471,7 @@ cull_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("9_810o2")
+albedo_texture = ExtResource("9_kuokw")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_72oh8"]
@@ -3488,7 +3488,7 @@ depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("9_810o2")
+albedo_texture = ExtResource("9_kuokw")
 billboard_mode = 1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hy5p8"]
@@ -3551,7 +3551,7 @@ depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("6_8qpvd")
+albedo_texture = ExtResource("15_iiy2c")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_jg4q4"]
@@ -3630,7 +3630,7 @@ specular_mode = 2
 disable_ambient_light = true
 vertex_color_use_as_albedo = true
 albedo_color = Color(1, 0, 0, 1)
-albedo_texture = ExtResource("16_d2n7a")
+albedo_texture = ExtResource("16_tmg8n")
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -3649,7 +3649,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 no_depth_test = true
 shading_mode = 0
-albedo_texture = ExtResource("18_blp5p")
+albedo_texture = ExtResource("17_ttu4a")
 billboard_mode = 1
 billboard_keep_scale = true
 
@@ -3687,7 +3687,7 @@ diffuse_mode = 3
 specular_mode = 2
 disable_ambient_light = true
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("16_d2n7a")
+albedo_texture = ExtResource("16_tmg8n")
 disable_receive_shadows = true
 billboard_mode = 3
 billboard_keep_scale = true
@@ -3702,7 +3702,7 @@ size = Vector2(0.4, 0.4)
 [node name="gp_player" type="Node3D" groups=["Keep"]]
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
-script = ExtResource("1_t11b6")
+script = ExtResource("1_5w380")
 
 [node name="SFX" type="AudioStreamPlayer" parent="Player"]
 volume_db = -8.0
@@ -3713,24 +3713,24 @@ libraries = {
 }
 
 [node name="sndStep" type="AudioStreamPlayer" parent="Player/anim"]
-stream = ExtResource("2_bflfw")
+stream = ExtResource("2_plf6d")
 volume_db = -8.0
 max_polyphony = 2
 
 [node name="sndShoot" type="AudioStreamPlayer" parent="Player/anim"]
-stream = ExtResource("3_d38oi")
+stream = ExtResource("3_r8qyb")
 volume_db = -10.0
 
 [node name="sndReload" type="AudioStreamPlayer" parent="Player/anim"]
-stream = ExtResource("4_mggiy")
+stream = ExtResource("4_06yc5")
 volume_db = -6.0
 
 [node name="sndHit" type="AudioStreamPlayer" parent="Player/anim"]
-stream = ExtResource("5_1l8rh")
+stream = ExtResource("5_secxa")
 volume_db = -6.0
 
 [node name="sndClick" type="AudioStreamPlayer" parent="Player/anim"]
-stream = ExtResource("6_ojwdx")
+stream = ExtResource("6_wfwvp")
 volume_db = -20.0
 
 [node name="collision" type="Area3D" parent="Player"]
@@ -3916,7 +3916,7 @@ spot_angle_attenuation = 0.25
 [node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl"]
 transform = Transform3D(1, 1.36424e-12, 3.52429e-12, 1.81899e-12, 1, 8.9407e-08, -9.43601e-12, -8.9407e-08, 1, 0.0215513, 0.5, -4.76837e-07)
 mesh = SubResource("QuadMesh_72oh8")
-script = ExtResource("10_xeoby")
+script = ExtResource("10_cedul")
 
 [node name="fl_g2" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl/fl_glare"]
 mesh = SubResource("QuadMesh_v5k3p")
@@ -3936,7 +3936,7 @@ transform = Transform3D(0.101, 1.52506e-08, 1.50996e-07, 1.52506e-08, -0.101, -6
 mesh = SubResource("ArrayMesh_20sml")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5lkss")
-script = ExtResource("11_yhk73")
+script = ExtResource("11_c2tkm")
 
 [node name="ActDetect" type="Area3D" parent="Player/CharArm"]
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
@@ -3951,7 +3951,7 @@ shape = SubResource("BoxShape3D_xvvhj")
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 2.5, 0)
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("12_uhhel")
+script = ExtResource("12_pwshf")
 
 [node name="col" type="CollisionShape3D" parent="Player/CharArm/GhostDetect"]
 transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, -1.85034e-07, 0, 3.48942)
@@ -3972,12 +3972,12 @@ shadow_enabled = true
 omni_range = 6.0
 omni_attenuation = 2.0
 omni_shadow_mode = 0
-script = ExtResource("13_l6m7u")
+script = ExtResource("13_7mqcb")
 
 [node name="gunRay" type="RayCast3D" parent="Player/CharArm"]
 transform = Transform3D(1, 1.77636e-14, 2.13163e-14, -1.77636e-14, 1, -1.05879e-21, -3.55271e-14, 2.0327e-21, 1, -0.0854863, 2.38794, -2.03909)
 target_position = Vector3(0, 0, -10)
-script = ExtResource("14_lynxp")
+script = ExtResource("14_jf00v")
 
 [node name="guy" type="MeshInstance3D" parent="Player/CharArm/gunRay"]
 visible = false
@@ -4015,7 +4015,7 @@ one_shot = true
 explosiveness = 0.9
 process_material = SubResource("ParticleProcessMaterial_sstdq")
 draw_pass_1 = SubResource("QuadMesh_pxoup")
-script = ExtResource("17_mrb3d")
+script = ExtResource("18_vdosk")
 
 [node name="fl_spot" type="SpotLight3D" parent="Player"]
 transform = Transform3D(1, 6.3573e-08, 2.77886e-15, 0, -4.37114e-08, 1, 6.3573e-08, -1, -4.37114e-08, 0, 5, 0)
@@ -4048,14 +4048,14 @@ collision_mask = 5
 
 [node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 0)
-script = ExtResource("2_tag11")
+script = ExtResource("19_htdk4")
 
 [node name="cam" type="Camera3D" parent="gp_cam"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 fov = 90.0
 
 [node name="GUI" type="CanvasLayer" parent="gp_cam"]
-script = ExtResource("3_3djve")
+script = ExtResource("20_aa0gu")
 
 [node name="TextureRect" type="TextureRect" parent="gp_cam/GUI"]
 anchors_preset = -1
@@ -4065,7 +4065,7 @@ offset_left = -13.0
 offset_right = 22.0
 offset_bottom = 40.0
 grow_horizontal = 2
-texture = ExtResource("4_3xx5o")
+texture = ExtResource("21_2ubhy")
 
 [node name="blood" type="RichTextLabel" parent="gp_cam/GUI"]
 anchors_preset = -1
@@ -4075,7 +4075,7 @@ offset_left = 51.0
 offset_top = 21.0
 offset_right = -2.328
 offset_bottom = 49.8
-theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_fonts/normal_font = ExtResource("22_h7105")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "Blood: 5.00 Lts"
@@ -4094,7 +4094,7 @@ offset_top = 66.0
 offset_right = -216.998
 offset_bottom = -19.8
 scale = Vector2(1.355, 1.355)
-theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_fonts/normal_font = ExtResource("22_h7105")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Curse: 0.0%"
@@ -4112,7 +4112,7 @@ offset_left = 66.3
 offset_top = 25.75
 offset_right = 3.0
 offset_bottom = 55.0
-theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_fonts/normal_font = ExtResource("22_h7105")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Bullets: 018[/center]"
@@ -4131,7 +4131,7 @@ offset_top = 61.0
 offset_right = 208.127
 offset_bottom = 26.926
 scale = Vector2(-2, 2)
-texture = ExtResource("6_8qpvd")
+texture = ExtResource("15_iiy2c")
 expand_mode = 1
 stretch_mode = 1
 
@@ -4146,7 +4146,7 @@ offset_top = 69.0
 offset_right = -106.353
 offset_bottom = -20.0
 scale = Vector2(1.355, 1.355)
-theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_fonts/normal_font = ExtResource("22_h7105")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]RELOAD[/center]"
@@ -4165,7 +4165,7 @@ offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-script = ExtResource("7_0qvyp")
+script = ExtResource("23_2qajf")
 
 [node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
 anchors_preset = -1
@@ -4175,7 +4175,7 @@ offset_left = 39.0
 offset_top = 564.0
 offset_right = -222.593
 offset_bottom = 538.296
-theme_override_fonts/normal_font = ExtResource("5_br8mc")
+theme_override_fonts/normal_font = ExtResource("22_h7105")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[debug mode] "
