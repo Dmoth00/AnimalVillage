@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhynofrdvtpvt"
-path.s3tc="res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.s3tc.ctex"
-path.etc2="res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.etc2.ctex"
+uid="uid://c47f6xgvveo5o"
+path.s3tc="res://.godot/imported/MissingTex.png-42c123ce1e79dbe596209b41630be024.s3tc.ctex"
+path.etc2="res://.godot/imported/MissingTex.png-42c123ce1e79dbe596209b41630be024.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/DoorTex01Open.png"
-dest_files=["res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.s3tc.ctex", "res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.etc2.ctex"]
+source_file="res://Assets/Textures/MissingTex.png"
+dest_files=["res://.godot/imported/MissingTex.png-42c123ce1e79dbe596209b41630be024.s3tc.ctex", "res://.godot/imported/MissingTex.png-42c123ce1e79dbe596209b41630be024.etc2.ctex"]
 
 [params]
 

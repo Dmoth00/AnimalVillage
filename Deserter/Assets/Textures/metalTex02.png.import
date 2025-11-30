@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhynofrdvtpvt"
-path.s3tc="res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.s3tc.ctex"
-path.etc2="res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.etc2.ctex"
+uid="uid://05w110jstb0m"
+path.s3tc="res://.godot/imported/metalTex02.png-5231a1622ef5c28733e51059bfe58fe2.s3tc.ctex"
+path.etc2="res://.godot/imported/metalTex02.png-5231a1622ef5c28733e51059bfe58fe2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/DoorTex01Open.png"
-dest_files=["res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.s3tc.ctex", "res://.godot/imported/DoorTex01Open.png-73302687007b5310da7c9a094fd0fefb.etc2.ctex"]
+source_file="res://Assets/Textures/metalTex02.png"
+dest_files=["res://.godot/imported/metalTex02.png-5231a1622ef5c28733e51059bfe58fe2.s3tc.ctex", "res://.godot/imported/metalTex02.png-5231a1622ef5c28733e51059bfe58fe2.etc2.ctex"]
 
 [params]
 

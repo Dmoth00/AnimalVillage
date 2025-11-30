@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://x3jkdg64ktir" path="res://Assets/Sprites/graffiti_moon.png" id="8_oxb1u"]
 [ext_resource type="Texture2D" uid="uid://dy2g4k4n1188k" path="res://Assets/Sprites/graffiti_sun.png" id="9_d7ens"]
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="11_uwouh"]
-[ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/MetalTex.png" id="12_badp0"]
+[ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="12_badp0"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="13_n75cd"]
 [ext_resource type="Script" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
 [ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="14_5cl2f"]
@@ -203,7 +203,7 @@ environment = SubResource("Environment_dgbts")
 
 [node name="Door" parent="." instance=ExtResource("6_hwt6c")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 0, -1.96701e-07)
-newPosition = Vector3(-16.5, -2, -8.5)
+newPosition = Vector3(-15.5, 0, -6.5)
 newMap = "uid://devcj660ww73a"
 
 [node name="hole" type="MeshInstance3D" parent="Door"]
