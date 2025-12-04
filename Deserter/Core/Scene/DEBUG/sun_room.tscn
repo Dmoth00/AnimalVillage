@@ -277,11 +277,3 @@ stream = ExtResource("17_h2u1h")
 volume_db = -20.0
 pitch_scale = 0.5
 autoplay = true
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.366274, 0.930507, 0, -0.930507, -0.366274, -0.0442734, 4.32541, -4.95536)
-shadow_enabled = true
-spot_range = 6.16926
-spot_attenuation = 0.0
-spot_angle = 13.6627
-spot_angle_attenuation = 0.196146

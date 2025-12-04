@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3qayps03fd0w"
-path.s3tc="res://.godot/imported/woodFenceTex00a.png-91fc8575c2390118167b01b7f4dd2967.s3tc.ctex"
-path.etc2="res://.godot/imported/woodFenceTex00a.png-91fc8575c2390118167b01b7f4dd2967.etc2.ctex"
+uid="uid://crjgyq5g41hdl"
+path.s3tc="res://.godot/imported/WindowTex01.png-aabd03a8c2de092d3874a2e17be27f7c.s3tc.ctex"
+path.etc2="res://.godot/imported/WindowTex01.png-aabd03a8c2de092d3874a2e17be27f7c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/woodFenceTex00a.png"
-dest_files=["res://.godot/imported/woodFenceTex00a.png-91fc8575c2390118167b01b7f4dd2967.s3tc.ctex", "res://.godot/imported/woodFenceTex00a.png-91fc8575c2390118167b01b7f4dd2967.etc2.ctex"]
+source_file="res://Assets/Textures/WindowTex01.png"
+dest_files=["res://.godot/imported/WindowTex01.png-aabd03a8c2de092d3874a2e17be27f7c.s3tc.ctex", "res://.godot/imported/WindowTex01.png-aabd03a8c2de092d3874a2e17be27f7c.etc2.ctex"]
 
 [params]
 
