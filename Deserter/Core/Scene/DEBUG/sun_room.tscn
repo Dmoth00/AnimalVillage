@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://03pdrwthguwm"]
+[gd_scene load_steps=45 format=3 uid="uid://03pdrwthguwm"]
 
 [ext_resource type="ArrayMesh" uid="uid://c2h5le5d5g7l6" path="res://Assets/Mesh/Maps/Debug/singleRoom.obj" id="1_vyfoy"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_xst0b"]
@@ -12,10 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dy2g4k4n1188k" path="res://Assets/Sprites/graffiti_sun.png" id="9_d7ens"]
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="11_uwouh"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="12_badp0"]
+[ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/barrel_00.tscn" id="13_espa6"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="13_n75cd"]
 [ext_resource type="Script" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
 [ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="14_5cl2f"]
-[ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="14_uiayk"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="17_h2u1h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8o2w"]
@@ -122,18 +122,21 @@ roughness = 0.49
 material = SubResource("StandardMaterial3D_pyrut")
 size = Vector3(0.1, 0.15, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noq63"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qjgsx"]
+load_path = "res://.godot/imported/LightTex01.png-1b6b01aca2a69ba25024b580f7441a31.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7akko"]
 transparency = 1
 depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 0.39, 0.39, 1)
-albedo_texture = ExtResource("14_uiayk")
+albedo_texture = SubResource("CompressedTexture2D_qjgsx")
 billboard_mode = 1
 billboard_keep_scale = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_raexh"]
-material = SubResource("StandardMaterial3D_noq63")
+[sub_resource type="QuadMesh" id="QuadMesh_i654e"]
+material = SubResource("StandardMaterial3D_7akko")
 size = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ll0vh"]
@@ -193,6 +196,7 @@ shape = SubResource("ConcavePolygonShape3D_8yrnk")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="meshSingleRoom"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.49406, 0.936155, -6.53076e-08)
+collision_layer = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137939, 0, 0.51683)
@@ -240,6 +244,9 @@ mesh = SubResource("BoxMesh_f3vci")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgn4x")
 
+[node name="barrelMesh00" parent="props" instance=ExtResource("13_espa6")]
+transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 0, 0, 3.20436)
+
 [node name="activator" type="Area3D" parent="." groups=["Act"]]
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.942021, -4.42915)
 collision_layer = 8
@@ -261,7 +268,7 @@ mesh = SubResource("BoxMesh_w2rbr")
 
 [node name="light" type="MeshInstance3D" parent="activator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, -0.3)
-mesh = SubResource("QuadMesh_raexh")
+mesh = SubResource("QuadMesh_i654e")
 
 [node name="col" type="CollisionShape3D" parent="activator"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269753, 0.0769799, -0.196437)

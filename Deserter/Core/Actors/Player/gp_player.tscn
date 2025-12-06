@@ -3702,6 +3702,7 @@ size = Vector2(0.4, 0.4)
 [node name="gp_player" type="Node3D" groups=["Keep"]]
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
+collision_layer = 129
 script = ExtResource("1_t11b6")
 
 [node name="SFX" type="AudioStreamPlayer" parent="Player"]

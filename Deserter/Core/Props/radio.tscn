@@ -1,0 +1,135 @@
+[gd_scene load_steps=19 format=4 uid="uid://ctu8liuuy3hip"]
+
+[ext_resource type="Script" path="res://Core/Props/radio.gd" id="1_xnfba"]
+[ext_resource type="Texture2D" uid="uid://cnxftc8d7asaj" path="res://Assets/Mesh/Props/RadioTex00.png" id="2_pmcmy"]
+[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="3_3qkb5"]
+[ext_resource type="AudioStream" uid="uid://curxi0w66g7mh" path="res://Assets/Sounds/SFX/radio00.mp3" id="5_r0cfm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjk1"]
+resource_name = "MatRadio"
+cull_mode = 2
+albedo_texture = ExtResource("2_pmcmy")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_31xtw"]
+_surfaces = [{
+"aabb": AABB(-0.345, -0.000182912, -0.14, 0.7, 0.738479, 0.28),
+"format": 34359742465,
+"index_count": 108,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEACAALAAkACAAKAAsACgAPAAsACgAOAA8ADgANAA8ADgAMAA0ADAAJAA0ADAAIAAkACgAMAA4ACgAIAAwADwAJAAsADwANAAkAEAATABEAEAASABMAEgAXABMAEgAWABcAFgAVABcAFgAUABUAFAARABUAFAAQABEAEgAUABYAEgAQABQAFwARABMAFwAVABEA"),
+"name": "MatRadio",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("16OwvgDMP7koXA8+16Owvkby1j4oXA8+16OwvgDMP7koXA++16Owvkby1j4oXA++j8K1PgDMP7koXA8+j8K1Pkby1j4oXA8+j8K1PgDMP7koXA++j8K1Pkby1j4oXA++7DB+PAkWGT+cfq08AH8Su2tXDz+cfq086jB+PAkWGT+afq28EH8Su2tXDz+afq28lVqqPmBw5j6Rfq08D0ShPiTz0j6Rfq08lVqqPmBw5j6lfq28D0ShPiTz0j6lfq2800icvvgAPT+eMVA8vryhvjEoNz+eMVA800icvvgAPT9xMVC8vryhvjEoNz9xMVC8kW6aPVmQDz+FMVA86J6EPZS3CT+FMVA8kW6aPVmQDz+KMVC86J6EPZS3CT+KMVC8")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8y3wh"]
+resource_name = "props00_Cube"
+_surfaces = [{
+"aabb": AABB(-0.345, -0.000182912, -0.14, 0.7, 0.738479, 0.28),
+"attribute_data": PackedByteArray("AAAAAAAAgD8AAAA+AACAPmcbeD+ARmg9AAAAAHDyBj0V3Hg/wP98P2UbeD9h2n0/4UV5P8iCoT0AAAA+AAAAP60JgD+ARmg94UV5P2WLfT8X3Hg/wCGkPasJgD9h2n0///9/PwAAgD8AAMA+AACAPtIHgD8gjnQ9//9/P3DyBj16u34/wP98P9AHgD+/V30/qdp+P8iCoT0AAMA+AAAAP7EXeD8gjnQ9qdp+P2WLfT98u34/wCGkPa8XeD+/V30/0HpuPQDz/DvQem49APP8O9B6bj0A8/w70HpuPWBoEz3Qem49YGgTPdB6bj1gaBM90HpuPQDz/DvQem49APP8O9B6bj0A8/w70HpuPWBoEz3Qem49YGgTPdB6bj1gaBM9GIxsPwDz/DsYjGw/APP8OwAAwD4AAIA+GIxsP2BoEz0YjGw/YGgTPQAAID8AAIA+GIxsPwDz/DsYjGw/APP8OwAAwD4AAAA/GIxsP2BoEz0YjGw/YGgTPQAAID8AAAA/kEdePQDz/DsAAMA+AAAAAJBHXj0A8/w7kEdePWBoEz2QR149YGgTPQAAID8AAAAAkEdePQDz/DsAAMA+AABAP5BHXj0A8/w7kEdePWBoEz2QR149YGgTPQAAYD8AAAA/bHNsPwDz/Dtsc2w/APP8O2xzbD8A8/w7anNsP2BoEz1qc2w/YGgTPWpzbD9gaBM9bHNsPwDz/Dtsc2w/APP8O2xzbD8A8/w7anNsP2BoEz1qc2w/YGgTPWpzbD9gaBM9"),
+"format": 34359742487,
+"index_count": 108,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQAGQAjAB0AGQAfACMAHgAtACEAHgAqAC0ALAApAC8ALAAmACkAJAAbACcAJAAYABsAIAAlACsAIAAaACUALgAcACIALgAoABwAMQA7ADUAMQA3ADsANgBFADkANgBCAEUARABBAEcARAA+AEEAPAAzAD8APAAwADMAOAA9AEMAOAAyAD0ARgA0ADoARgBAADQA"),
+"material": SubResource("StandardMaterial3D_1hjk1"),
+"name": "MatRadio",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("16OwvgDMP7koXA8+16OwvgDMP7koXA8+16OwvgDMP7koXA8+16Owvkby1j4oXA8+16Owvkby1j4oXA8+16Owvkby1j4oXA8+16OwvgDMP7koXA++16OwvgDMP7koXA++16OwvgDMP7koXA++16Owvkby1j4oXA++16Owvkby1j4oXA++16Owvkby1j4oXA++j8K1PgDMP7koXA8+j8K1PgDMP7koXA8+j8K1PgDMP7koXA8+j8K1Pkby1j4oXA8+j8K1Pkby1j4oXA8+j8K1Pkby1j4oXA8+j8K1PgDMP7koXA++j8K1PgDMP7koXA++j8K1PgDMP7koXA++j8K1Pkby1j4oXA++j8K1Pkby1j4oXA++j8K1Pkby1j4oXA++7DB+PAkWGT+cfq087DB+PAkWGT+cfq087DB+PAkWGT+cfq08AH8Su2tXDz+cfq08AH8Su2tXDz+cfq08AH8Su2tXDz+cfq086jB+PAkWGT+afq286jB+PAkWGT+afq286jB+PAkWGT+afq28EH8Su2tXDz+afq28EH8Su2tXDz+afq28EH8Su2tXDz+afq28lVqqPmBw5j6Rfq08lVqqPmBw5j6Rfq08lVqqPmBw5j6Rfq08D0ShPiTz0j6Rfq08D0ShPiTz0j6Rfq08D0ShPiTz0j6Rfq08lVqqPmBw5j6lfq28lVqqPmBw5j6lfq28lVqqPmBw5j6lfq28D0ShPiTz0j6lfq28D0ShPiTz0j6lfq28D0ShPiTz0j6lfq2800icvvgAPT+eMVA800icvvgAPT+eMVA800icvvgAPT+eMVA8vryhvjEoNz+eMVA8vryhvjEoNz+eMVA8vryhvjEoNz+eMVA800icvvgAPT9xMVC800icvvgAPT9xMVC800icvvgAPT9xMVC8vryhvjEoNz9xMVC8vryhvjEoNz9xMVC8vryhvjEoNz9xMVC8kW6aPVmQDz+FMVA8kW6aPVmQDz+FMVA8kW6aPVmQDz+FMVA86J6EPZS3CT+FMVA86J6EPZS3CT+FMVA86J6EPZS3CT+FMVA8kW6aPVmQDz+KMVC8kW6aPVmQDz+KMVC8kW6aPVmQDz+KMVC86J6EPZS3CT+KMVC86J6EPZS3CT+KMVC86J6EPZS3CT+KMVC8/3//f////7//fwAA////vwAA/3///////3//f////7//f///////vwAA/3///////////////7//fwAA////vwAA/3///////////////7//f///////vwAA/3///////3//f////7//fwAA////v////3//f/+//3//f////7//f///////v////3//f/+//////////7//fwAA////v////3//f/+//////////7//f///////v////3//f/+//////0rXWVRK10tX////P0tXtCj///8//////0rXWVSzqErX////P0rXS1f///8//3//f0rXpatK10tX////P0tXtCj///8//3//f0rXpauzqErX////P0rXS1f///8//////0rXWVRLV7Qo////P7Qos6hLV1mU/////0rXWVSzqErX////P7Qos6hLV1mU/3//f0rXpatLV7Qo////P7Qos6hLV1mU/3//f0rXpauzqErX////P7Qos6hLV1mU/////0rXWVRK10tXxU3dbUtXtCj///8//////0rXWVSzqErX////P0rXS1dLV6Vr/3//f0rXpatK10tXrEXBb0tXtCj///8//3//f0rXpauzqErX////P0rXS1etTeNt/////0rXWVRLV7Qo////P7Qos6j///8//////0rXWVSzqErX////P7Qos6j///8//3//f0rXpatLV7Qo////P7Qos6j///8//3//f0rXpauzqErX////P7Qos6j///8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_31xtw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kofi"]
+size = Vector3(1, 0.957428, 1)
+
+[sub_resource type="Curve" id="Curve_h2vlq"]
+_data = [Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.995833, 0.021978), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_tq82r"]
+curve = SubResource("Curve_h2vlq")
+
+[sub_resource type="Curve" id="Curve_e1neu"]
+_data = [Vector2(0, 0.032967), 0.0, -0.0775695, 0, 0, Vector2(0.85, 0.967033), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_741ad"]
+curve = SubResource("Curve_e1neu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qy23a"]
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 0.2
+initial_velocity_max = 0.2
+gravity = Vector3(0, 1, 0)
+scale_curve = SubResource("CurveTexture_741ad")
+alpha_curve = SubResource("CurveTexture_tq82r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vw5go"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_3qkb5")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_lc8qr"]
+material = SubResource("StandardMaterial3D_vw5go")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4cl28"]
+load_path = "res://.godot/imported/LightTex01.png-1b6b01aca2a69ba25024b580f7441a31.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l80he"]
+transparency = 1
+depth_draw_mode = 2
+no_depth_test = true
+shading_mode = 0
+albedo_color = Color(1, 0.39, 0.39, 1)
+albedo_texture = SubResource("CompressedTexture2D_4cl28")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_10o23"]
+material = SubResource("StandardMaterial3D_l80he")
+size = Vector2(0.5, 0.5)
+
+[node name="Radio" type="StaticBody3D" groups=["Mortal"]]
+collision_mask = 0
+script = ExtResource("1_xnfba")
+
+[node name="RadioMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_8y3wh")
+skeleton = NodePath("")
+
+[node name="col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.191055, 0)
+shape = SubResource("BoxShape3D_8kofi")
+
+[node name="smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15223, 0)
+emitting = false
+amount = 4
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_qy23a")
+draw_pass_1 = SubResource("QuadMesh_lc8qr")
+
+[node name="light" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, -7.4506e-09, 0, 7.4506e-09, 0.5, 0.1, 0.1, 0.152)
+mesh = SubResource("QuadMesh_10o23")
+
+[node name="radio" type="AudioStreamPlayer3D" parent="light"]
+stream = ExtResource("5_r0cfm")
+attenuation_model = 1
+volume_db = -4.0
+autoplay = true
