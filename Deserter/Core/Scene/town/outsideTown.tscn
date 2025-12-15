@@ -1,4 +1,4 @@
-[gd_scene load_steps=193 format=4 uid="uid://cnqovkmyuiyoa"]
+[gd_scene load_steps=192 format=4 uid="uid://cnqovkmyuiyoa"]
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="1_l1gqs"]
 [ext_resource type="Texture2D" uid="uid://cw60ayuicrvxn" path="res://Assets/Textures/mossTex00.png" id="2_4evg6"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="17_ttwb5"]
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="18_kwl7p"]
 [ext_resource type="Texture2D" uid="uid://dk3uhnlx3p6y7" path="res://Assets/Textures/DirtTex00.png" id="19_81ea0"]
-[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/radio.tscn" id="20_1735p"]
 [ext_resource type="Texture2D" uid="uid://ddei2i7fcfchr" path="res://Assets/Textures/AsphaltTex00.png" id="20_a8jn3"]
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="21_6tasi"]
 [ext_resource type="Texture2D" uid="uid://dj1hj4oe5lrtf" path="res://Assets/Textures/shutterTex00.png" id="22_2adbu"]
@@ -2153,12 +2152,6 @@ light_volumetric_fog_energy = 0.0
 light_negative = true
 light_specular = 0.0
 light_bake_mode = 0
-
-[node name="Radio" parent="Props/Area03/wellMesh" instance=ExtResource("20_1735p")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15.3449, -3.31186, -3.8454)
-
-[node name="barrelMesh00" parent="Props/Area03/wellMesh" instance=ExtResource("26_gcgen")]
-transform = Transform3D(0.8, 0, 0, 0, -3.49691e-08, 0.8, 0, -0.8, -3.49691e-08, 15.3449, -3.31186, -2.58387)
 
 [node name="townMesh_00" type="MeshInstance3D" parent="Props/Area03"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.53832, 16.8786, -3.82982)
