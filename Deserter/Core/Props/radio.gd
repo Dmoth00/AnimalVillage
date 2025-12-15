@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var light=$light
 @onready var smoke=$smoke
+@onready var snd=$shock
 @onready var col=$col
 @onready var radio=$light/radio
 @export var stream : AudioStreamMP3
@@ -23,5 +24,6 @@ func _hurt(dmg : float):
 		light.queue_free()
 		smoke.emitting=true
 		col.disabled=true
+		snd.play()
 		set_deferred("process_mode","PROCESS_MODE_DISABLED")
 		pass
