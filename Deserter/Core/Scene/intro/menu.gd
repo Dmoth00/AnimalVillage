@@ -56,11 +56,12 @@ func _next(n):
 	var p=player.instantiate()
 	gm.add_child(scn)
 	gm.add_child(p)
+	gvars.assign_id(scn)
 	#and then self destruct
 	gm.remove_child(tit)
 	tit.call_deferred("queue_free")
 	
 func move_p(i : int):
-	p_pos=(p_pos+i)%4
+	p_pos=clamp(p_pos+i,0,3)
 	point.position.y=p_pos*40-120
 	pass

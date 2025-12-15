@@ -65,6 +65,8 @@ func _hurt(dmg : float):
 		get_tree().get_first_node_in_group("GM").add_child(bld)
 		bld.transform=transform
 		bld.act()
+		gvars.kill_list.append(id)
+		print(id)
 		call_deferred("queue_free")
 
 func _on_re_target() -> void:
