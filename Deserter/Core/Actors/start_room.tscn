@@ -1,27 +1,27 @@
 [gd_scene load_steps=20 format=4 uid="uid://se806ctw63n1"]
 
-[ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_017kb"]
-[ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_bvb77"]
-[ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="3_fo6u7"]
-[ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="4_85c3e"]
-[ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="5_3vhej"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="6_vs25i"]
-[ext_resource type="Texture2D" uid="uid://bje7fqkehklpf" path="res://Assets/Sprites/ShadowTex.png" id="7_nkc2k"]
+[ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="1_gr1jq"]
+[ext_resource type="Texture2D" uid="uid://diwquhn4foo6n" path="res://Assets/Textures/TileTex02.png" id="2_nbb4g"]
+[ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="3_7863b"]
+[ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="4_8tmut"]
+[ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="5_ck5n0"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="6_4aggo"]
+[ext_resource type="Texture2D" uid="uid://bje7fqkehklpf" path="res://Assets/Sprites/ShadowTex.png" id="7_p717p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oxdp"]
 resource_name = "WallMat01"
 cull_mode = 2
-albedo_texture = ExtResource("1_017kb")
+albedo_texture = ExtResource("1_gr1jq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrfnw"]
 resource_name = "TileMat02"
 cull_mode = 2
-albedo_texture = ExtResource("2_bvb77")
+albedo_texture = ExtResource("2_nbb4g")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33gvt"]
 resource_name = "GravelMat"
 cull_mode = 2
-albedo_texture = ExtResource("3_fo6u7")
+albedo_texture = ExtResource("3_7863b")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6da52"]
 _surfaces = [{
@@ -104,15 +104,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6da52")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fpor"]
-albedo_texture = ExtResource("1_017kb")
+albedo_texture = ExtResource("1_gr1jq")
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ko4v1"]
-albedo_texture = ExtResource("4_85c3e")
+albedo_texture = ExtResource("4_8tmut")
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y14cd"]
-albedo_texture = ExtResource("3_fo6u7")
+albedo_texture = ExtResource("3_7863b")
 metallic_specular = 0.0
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 
@@ -133,7 +133,7 @@ shading_mode = 0
 diffuse_mode = 3
 specular_mode = 2
 disable_ambient_light = true
-albedo_texture = ExtResource("7_nkc2k")
+albedo_texture = ExtResource("7_p717p")
 
 [sub_resource type="QuadMesh" id="QuadMesh_7kjky"]
 material = SubResource("StandardMaterial3D_bvikj")
@@ -159,10 +159,10 @@ shape = SubResource("ConcavePolygonShape3D_pcuhw")
 [node name="env" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dgbts")
 
-[node name="Spider" parent="." instance=ExtResource("5_3vhej")]
+[node name="Spider" parent="." instance=ExtResource("5_ck5n0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99225, 1.18779, -1.68732)
 
-[node name="Door" parent="." instance=ExtResource("6_vs25i")]
+[node name="Door" parent="." instance=ExtResource("6_4aggo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5)
 newPosition = Vector3(-6.5, 0, -14.5)
 newMap = "uid://devcj660ww73a"

@@ -21,7 +21,8 @@ var dis : float = 0.0
 @onready var mesh = $SpiderArm/Skeleton3D/SpiderMesh
 @onready var anim = $anim
 
-@onready var id = ""
+#@onready var id = ""
+@onready var id : String
 
 func _process(delta):
 	
@@ -66,7 +67,7 @@ func _hurt(dmg : float):
 		bld.transform=transform
 		bld.act()
 		gvars.kill_list.append(id)
-		print(id)
+		print(str(id)+" has died.")
 		call_deferred("queue_free")
 
 func _on_re_target() -> void:

@@ -28,7 +28,7 @@ func _on_t() -> void:
 	g.add_child(keep)
 	var new=load(newMap).instantiate()
 	g.add_child(new)
-	gvars.call_deferred("assign_id",new)
+	get_tree().get_first_node_in_group("Camera").kill_list(new)
 	p.transform.origin=newPosition
 	p.can_move=true
 	cam.global_position=p.global_position

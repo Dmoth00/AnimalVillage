@@ -63,11 +63,12 @@ func reset():
 #call on instancing new maps
 func assign_id(obj : Node):
 	var obj_list : Array = get_tree().get_nodes_in_group("Id")
-	for i in len(obj_list)-1:
-		var gen_id = obj.name+str(i)
-		obj_list[i].id=gen_id
-		print(gen_id)
-		check_id(obj_list[i],gen_id)
+	for i in len(obj_list):
+		var gen_id = obj.name+obj_list[i].name+str(i)
+		obj_list[i].set("id",gen_id)
+		if kill_list.has(obj_list[i].id) or event_list.has(obj_list[i].id):
+			obj_list[i].queue_free()
+
 
 #check if the object should be dead
 func check_id(obj : Node,id : String):

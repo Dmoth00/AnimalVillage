@@ -18,6 +18,10 @@ var camoff = Vector2.ZERO
 #HUD sounds stuff
 @onready var sfx = $SFX
 
+#pls dont judge
+@onready var timer= $t
+var stored_obj : Node
+
 func _ready() -> void:
 	db_sign.visible=gvars.debug_mode
 	get_player()
@@ -71,7 +75,6 @@ func reset_cam():
 	camdist = 6.0
 	camangl = -60.0
 	camoff = Vector2.ZERO
-	
 
 func fade_out (t : float):
 	fade.color.a=0.0
@@ -86,3 +89,12 @@ func fade_in (t : float):
 func stream_play(id : String):
 	sfx.stream=load(id)
 	sfx.play()
+
+func kill_list(obj : Node):
+	timer.start(0.1)
+	stored_obj=obj
+	pass
+
+func _death_time() -> void:
+	gvars.assign_id(stored_obj)
+	pass # Replace with function body.

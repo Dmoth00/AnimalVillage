@@ -14,4 +14,5 @@ func act():
 	var value = gvars.get(goods)
 	value+=amount
 	gvars.set(goods,value)
+	gvars.kill_list.append(id)
 	call_deferred("queue_free")

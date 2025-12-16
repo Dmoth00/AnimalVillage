@@ -4187,6 +4187,10 @@ drag_and_drop_selection_enabled = false
 [node name="SFX" type="AudioStreamPlayer" parent="gp_cam"]
 volume_db = -8.0
 
+[node name="t" type="Timer" parent="gp_cam"]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="Player/collision" to="Player" method="_on_collision_body_entered"]
 [connection signal="area_entered" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_in"]
 [connection signal="area_exited" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_out"]
@@ -4198,3 +4202,4 @@ volume_db = -8.0
 [connection signal="timeout" from="Player/vul_timer" to="Player" method="_on_vul_timer"]
 [connection signal="timeout" from="Player/awake_timer" to="Player" method="_on_awake_timer"]
 [connection signal="timeout" from="Player/death_timer" to="Player" method="_on_death_timer"]
+[connection signal="timeout" from="gp_cam/t" to="gp_cam" method="_death_time"]
