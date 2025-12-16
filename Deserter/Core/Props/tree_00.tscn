@@ -94,10 +94,12 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="tree0" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0658991, 0)
+visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_g3ahn")
 skeleton = NodePath("")
 
 [node name="leaves" type="MeshInstance3D" parent="."]
+visibility_range_end = 20.0
 mesh = SubResource("ArrayMesh_jxnfn")
 skeleton = NodePath("")
 
