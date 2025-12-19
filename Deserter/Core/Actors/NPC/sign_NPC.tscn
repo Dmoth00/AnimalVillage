@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=4 uid="uid://ctx66gk5ueifc"]
+
+[ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="1_wt511"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3stsl"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_wt511")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y5jdo"]
+_surfaces = [{
+"aabb": AABB(-0.4, -0.0407851, -0.0575821, 0.8, 1.08157, 0.120849),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAHAAMAAgAGAAcABgAFAAcABgAEAAUABAABAAUABAAAAAEAAgAEAAYAAgAAAAQABwABAAMABwAFAAEACAALAAkACAAKAAsACgAPAAsACgAOAA8ADgANAA8ADgAMAA0ADAAJAA0ADAAIAAkACgAMAA4ACgAIAAwADwAJAAsADwANAAkA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAD/f///AAAAAFf2//8AAAAA/39EewAAAABX9kR7AAD///9///8AAP//V/b//wAA////f0R7AAD//1f2RHsAAMdvAADWewAAx2///9Z7AADHbwAAAAAAAMdv//8AAAAAN5AAANZ7AAA3kP//1nsAADeQAAAAAAAAN5D//wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fj7hc"]
+resource_name = "props00_Cube_001"
+_surfaces = [{
+"aabb": AABB(-0.4, -0.0407851, -0.0575821, 0.8, 1.08157, 0.120849),
+"attribute_data": PackedByteArray("JYASwHKC5sNStmT9JYBIhXKC5sNStouvcoIU6XKCEbHsv2T9coIQsHKCEbHsv4uvVf8SwAj95sNStv//Vf9IhQj95sNStsOuCP0U6Qj9EbHsv///CP0QsAj9EbHsv8Ou///CxGmxwsT//17GgoDCxGmxwsSCgF7G///CxIWqwsT//yS5goDCxIWqwsSCgCS5///TrWmx063//0u+goDTrWmx062CgEu+///TrYWq063//xGxgoDTrYWq062CgBGx"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AgALAAUAAgAIAAsABgAVAAkABgASABUAFAARABcAFAAOABEADAADAA8ADAAAAAMABwANABMABwABAA0AFgAEAAoAFgAQAAQAGgAjAB0AGgAgACMAHgAtACEAHgAqAC0ALAApAC8ALAAmACkAJAAbACcAJAAYABsAHwAlACsAHwAZACUALgAcACIALgAoABwA"),
+"material": SubResource("StandardMaterial3D_3stsl"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(2.00803, 2.36375, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("AAD/f///AIAAAP9/////PwAA/3///wAAAABX9v//AIAAAFf2////vwAAV/b//wAAAAD/f0R7AAAAAP9/RHv/PwAA/39EewAAAABX9kR7AAAAAFf2RHv/vwAAV/ZEewAA////f///AID///9/////P////3////+///9X9v//AID//1f2////v///V/b///+/////f0R7AAD///9/RHv/P////39Ee/+///9X9kR7AAD//1f2RHv/v///V/ZEe/+/x28AANZ7/7/HbwAA1nuqKsdvAADWe6oqx2///9Z7/7/Hb///1ntU1cdv///We6oqx28AAAAAAADHbwAAAACqKsdvAAAAAKoqx2///wAAAADHb///AABU1cdv//8AAKoqN5AAANZ7/783kAAA1nuqKjeQAADWe1TVN5D//9Z7/783kP//1ntU1TeQ///We1TVN5AAAAAAAAA3kAAAAACqKjeQAAAAAFTVN5D//wAAAAA3kP//AABU1TeQ//8AAFTV/3///wAA/3//P/9//3///////3//P/9/////fwAA/3//P/9/////f////3//P/9//3///wAA/3//fwAA/3///////3//fwAA////fwAA/3//fwAA////f////3//fwAA/3//f6oqVNVUVaqq/3//f6qqqqpUVaqq/z//v6oqVNVUVaqq/z//v6qqqqpUVaqq/3//f6oqVNWqqlRV/3//f6qqqqqqqlRV/z//v6oqVNWqqlRV/z//v6qqqqqqqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_y5jdo")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
+height = 1.03426
+radius = 0.381755
+
+[node name="signMesh00" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_fj7hc")
+skeleton = NodePath("")
+
+[node name="collider" type="StaticBody3D" parent="." groups=["Act"]]
+
+[node name="col" type="CollisionShape3D" parent="collider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509007, 0)
+shape = SubResource("CylinderShape3D_0r147")
