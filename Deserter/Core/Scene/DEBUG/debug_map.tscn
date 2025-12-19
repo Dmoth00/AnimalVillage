@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="5_q6vm2"]
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="6_mkonh"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="7_y30fo"]
-[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/radio.tscn" id="8_lhxnv"]
+[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="8_lhxnv"]
 [ext_resource type="AudioStream" uid="uid://cwap4irwt087p" path="res://Assets/Sounds/SONG/radio01.mp3" id="9_cc1w7"]
-[ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/barrel_00.tscn" id="9_w4sne"]
+[ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="9_w4sne"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybnut"]
 resource_name = "WallMat00"

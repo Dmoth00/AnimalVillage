@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=4 uid="uid://ctu8liuuy3hip"]
 
-[ext_resource type="Script" path="res://Core/Props/radio.gd" id="1_xnfba"]
+[ext_resource type="Script" path="res://Core/Props/iteractibles/radio.gd" id="1_xnfba"]
 [ext_resource type="Texture2D" uid="uid://cnxftc8d7asaj" path="res://Assets/Mesh/Props/RadioTex00.png" id="2_pmcmy"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="3_3qkb5"]
 [ext_resource type="AudioStream" uid="uid://8xk3xa45q4uo" path="res://Assets/Sounds/SFX/snd_spark01.wav" id="4_ay24h"]

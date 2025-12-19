@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="13_n75cd"]
 [ext_resource type="Script" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
 [ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="14_5cl2f"]
-[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/radio.tscn" id="14_einu1"]
+[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="14_einu1"]
 [ext_resource type="AudioStream" uid="uid://btiic6xva354a" path="res://Assets/Sounds/SONG/Death_Serenade.mp3" id="15_053rg"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="17_h2u1h"]
 
