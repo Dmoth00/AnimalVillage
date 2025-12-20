@@ -2817,6 +2817,9 @@ mesh = ExtResource("39_dav5l")
 skeleton = NodePath("")
 surface_material_override/2 = SubResource("StandardMaterial3D_mkhi8")
 
+[node name="tree01" parent="Props/Area03/townMesh_01" instance=ExtResource("8_gd73w")]
+transform = Transform3D(1.04108, 0.45209, 0, -0.45209, 1.04108, 0, 0, 0, 1.135, -12.8748, 2.53528, -7.4003)
+
 [node name="HouseB" type="MeshInstance3D" parent="Props/Area03"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 9.66, -16.341, -5.135)
 visibility_range_end = 50.0
@@ -2877,18 +2880,24 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7234
 visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_rkcdw")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7faw1")
+surface_material_override/1 = SubResource("StandardMaterial3D_qevbg")
 
 [node name="hedgeMesh02" type="MeshInstance3D" parent="Props/Area03/HouseC"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7234, -0.78035, 4.72765)
 visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_rkcdw")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7faw1")
+surface_material_override/1 = SubResource("StandardMaterial3D_qevbg")
 
 [node name="hedgeMesh03" type="MeshInstance3D" parent="Props/Area03/HouseC"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.7234, -0.78035, 2.72765)
 visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_rkcdw")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7faw1")
+surface_material_override/1 = SubResource("StandardMaterial3D_qevbg")
 
 [node name="HouseD" type="MeshInstance3D" parent="Props/Area03"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -13.2276, -16.3413, -5.13472)
