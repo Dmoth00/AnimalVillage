@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://devcj660ww73a"]
+[gd_scene load_steps=19 format=4 uid="uid://devcj660ww73a"]
 
 [ext_resource type="AudioStream" uid="uid://c256xbb8ni7lg" path="res://Assets/Sounds/BGM/bgm_deep.wav" id="2_7tb52"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="3_40i1d"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="8_lhxnv"]
 [ext_resource type="AudioStream" uid="uid://cwap4irwt087p" path="res://Assets/Sounds/SONG/radio01.mp3" id="9_cc1w7"]
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="9_w4sne"]
+[ext_resource type="PackedScene" uid="uid://ctx66gk5ueifc" path="res://Core/Actors/NPC/sign_NPC.tscn" id="11_x2dcd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybnut"]
 resource_name = "WallMat00"
@@ -180,3 +181,6 @@ stream = ExtResource("9_cc1w7")
 
 [node name="barrelMesh00" parent="." instance=ExtResource("9_w4sne")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, -7.10543e-15, 0, 7.10543e-15, 0.8, 12.8884, -0.00143981, -12.9534)
+
+[node name="sign" parent="." instance=ExtResource("11_x2dcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.44274, 0, -12.9611)

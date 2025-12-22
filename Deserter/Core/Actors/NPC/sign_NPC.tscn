@@ -1,6 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://ctx66gk5ueifc"]
+[gd_scene load_steps=8 format=4 uid="uid://ctx66gk5ueifc"]
 
+[ext_resource type="Script" path="res://Core/Actors/NPC/act_sign.gd" id="1_pbq3f"]
 [ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="1_wt511"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
+height = 1.03426
+radius = 0.211068
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3stsl"]
 resource_name = "Material"
@@ -40,16 +45,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y5jdo")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_oyo7t"]
 height = 1.03426
-radius = 0.381755
+radius = 0.261786
 
-[node name="signMesh00" type="MeshInstance3D"]
+[node name="sign" type="Area3D" groups=["Act"]]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_pbq3f")
+
+[node name="col" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509007, 0.257845)
+shape = SubResource("CylinderShape3D_0r147")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_fj7hc")
 skeleton = NodePath("")
 
-[node name="collider" type="StaticBody3D" parent="." groups=["Act"]]
+[node name="signcol" type="StaticBody3D" parent="."]
+collision_mask = 0
 
-[node name="col" type="CollisionShape3D" parent="collider"]
+[node name="col2" type="CollisionShape3D" parent="signcol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509007, 0)
-shape = SubResource("CylinderShape3D_0r147")
+shape = SubResource("CylinderShape3D_oyo7t")

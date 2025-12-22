@@ -315,6 +315,7 @@ stream = ExtResource("15_053rg")
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.942021, -4.42915)
 collision_layer = 8
 collision_mask = 0
+monitoring = false
 script = ExtResource("13_tpkao")
 sound = ExtResource("14_5cl2f")
 
