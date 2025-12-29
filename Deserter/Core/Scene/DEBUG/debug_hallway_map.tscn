@@ -8,7 +8,7 @@
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="6_dwpxu"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="7_7cxsk"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="8_wyxtb"]
-[ext_resource type="Script" path="res://Core/Scene/DEBUG/camera_trigger.gd" id="9_f0fnk"]
+[ext_resource type="Script" path="res://Core/System/camera_trigger.gd" id="9_f0fnk"]
 [ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="10_5vwlp"]
 [ext_resource type="Texture2D" uid="uid://70fnj7tuj2ig" path="res://Assets/Mesh/Enemies/textures/DHeadTex00.png" id="11_v1deh"]
 

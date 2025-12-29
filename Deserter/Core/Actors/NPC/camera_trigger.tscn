@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bk2ovlepfkv8b"]
 
-[ext_resource type="Script" path="res://Core/Scene/DEBUG/camera_trigger.gd" id="1_e3ixt"]
+[ext_resource type="Script" path="res://Core/System/camera_trigger.gd" id="1_e3ixt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xw5hf"]
 size = Vector3(10.3177, 5, 5)
