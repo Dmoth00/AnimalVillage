@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cea8q5bd2ue6i"
-path.s3tc="res://.godot/imported/mossNmap01.png-20d48f08d4902a83af0e04e7ef015c9f.s3tc.ctex"
-path.etc2="res://.godot/imported/mossNmap01.png-20d48f08d4902a83af0e04e7ef015c9f.etc2.ctex"
+uid="uid://dn31q7clfraoq"
+path.s3tc="res://.godot/imported/LQCobbleNTex01.png-bf23115a50e8c53155c8901b9adb514b.s3tc.ctex"
+path.etc2="res://.godot/imported/LQCobbleNTex01.png-bf23115a50e8c53155c8901b9adb514b.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/mossNmap01.png"
-dest_files=["res://.godot/imported/mossNmap01.png-20d48f08d4902a83af0e04e7ef015c9f.s3tc.ctex", "res://.godot/imported/mossNmap01.png-20d48f08d4902a83af0e04e7ef015c9f.etc2.ctex"]
+source_file="res://Assets/Textures/LQCobbleNTex01.png"
+dest_files=["res://.godot/imported/LQCobbleNTex01.png-bf23115a50e8c53155c8901b9adb514b.s3tc.ctex", "res://.godot/imported/LQCobbleNTex01.png-bf23115a50e8c53155c8901b9adb514b.etc2.ctex"]
 
 [params]
 
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/Textures/mossNmap01.png"
+roughness/src_normal="res://Assets/Textures/LQCobbleNTex01.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

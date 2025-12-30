@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3m5okrexcbui"
-path.s3tc="res://.godot/imported/LQmetalTex01.png-8d97719739d15179c9937980500ed2f7.s3tc.ctex"
-path.etc2="res://.godot/imported/LQmetalTex01.png-8d97719739d15179c9937980500ed2f7.etc2.ctex"
+uid="uid://peanw7mahbvu"
+path.s3tc="res://.godot/imported/LQCobbleTex00.png-8f3db6ab87da54bb99d9c10f2f9aceff.s3tc.ctex"
+path.etc2="res://.godot/imported/LQCobbleTex00.png-8f3db6ab87da54bb99d9c10f2f9aceff.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/LQmetalTex01.png"
-dest_files=["res://.godot/imported/LQmetalTex01.png-8d97719739d15179c9937980500ed2f7.s3tc.ctex", "res://.godot/imported/LQmetalTex01.png-8d97719739d15179c9937980500ed2f7.etc2.ctex"]
+source_file="res://Assets/Textures/LQCobbleTex00.png"
+dest_files=["res://.godot/imported/LQCobbleTex00.png-8f3db6ab87da54bb99d9c10f2f9aceff.s3tc.ctex", "res://.godot/imported/LQCobbleTex00.png-8f3db6ab87da54bb99d9c10f2f9aceff.etc2.ctex"]
 
 [params]
 
