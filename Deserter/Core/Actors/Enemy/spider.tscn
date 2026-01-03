@@ -357,7 +357,7 @@ _data = {
 _data = [Vector2(0, 1), 0.0, -1.11525, 0, 0, Vector2(1, 0.010989), -0.895476, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_4uh66"]
+[sub_resource type="CurveTexture" id="CurveTexture_3gov8"]
 curve = SubResource("Curve_cs4r7")
 
 [sub_resource type="Curve" id="Curve_esrmn"]
@@ -366,7 +366,7 @@ max_value = 4.0
 _data = [Vector2(0, 0.0976925), 0.142535, 25.6061, 0, 0, Vector2(0.0593607, 3.25462), 7.68185, 7.68185, 0, 0, Vector2(0.995434, 0.0538464), -0.129761, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_kc64i"]
+[sub_resource type="CurveTexture" id="CurveTexture_fhji1"]
 curve = SubResource("Curve_esrmn")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sq3ao"]
@@ -382,14 +382,14 @@ angular_velocity_max = 90.0
 gravity = Vector3(0, 0, 0)
 damping_min = 12.0
 damping_max = 16.0
-scale_curve = SubResource("CurveTexture_kc64i")
+scale_curve = SubResource("CurveTexture_fhji1")
 scale_over_velocity_min = 1.0
 scale_over_velocity_max = 1.0
-alpha_curve = SubResource("CurveTexture_4uh66")
+alpha_curve = SubResource("CurveTexture_3gov8")
 hue_variation_min = -0.05
 hue_variation_max = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaj2e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qa1s"]
 transparency = 2
 alpha_scissor_threshold = 0.229
 alpha_antialiasing_mode = 0
@@ -405,7 +405,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_nkw6j"]
-material = SubResource("StandardMaterial3D_qaj2e")
+material = SubResource("StandardMaterial3D_3qa1s")
 
 [node name="Spider" type="CharacterBody3D" groups=["Harm", "Id", "Mortal"]]
 collision_layer = 7

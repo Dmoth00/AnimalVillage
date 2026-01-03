@@ -1,9 +1,11 @@
-[gd_scene load_steps=19 format=4 uid="uid://ctu8liuuy3hip"]
+[gd_scene load_steps=27 format=4 uid="uid://ctu8liuuy3hip"]
 
 [ext_resource type="Script" path="res://Core/Props/iteractibles/radio.gd" id="1_xnfba"]
 [ext_resource type="Texture2D" uid="uid://cnxftc8d7asaj" path="res://Assets/Mesh/Props/RadioTex00.png" id="2_pmcmy"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="3_3qkb5"]
 [ext_resource type="AudioStream" uid="uid://8xk3xa45q4uo" path="res://Assets/Sounds/SFX/snd_spark01.wav" id="4_ay24h"]
+[ext_resource type="Texture2D" uid="uid://bw54hqp4kiym" path="res://Assets/Sprites/lightningTex.png" id="5_erhwq"]
+[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="6_kmbfm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjk1"]
 resource_name = "MatRadio"
@@ -104,6 +106,53 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_l80he")
 size = Vector2(0.5, 0.5)
 
+[sub_resource type="Curve" id="Curve_mdt6v"]
+max_value = 2.0
+_data = [Vector2(0, 0.967083), 0.0, -1.91273, 0, 1, Vector2(0.501449, 0.00794578), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_n01wm"]
+curve = SubResource("Curve_mdt6v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_utkbp"]
+particle_flag_align_y = true
+emission_shape = 1
+emission_sphere_radius = 0.2
+direction = Vector3(0, 1, 0)
+spread = 60.0
+initial_velocity_min = 12.0
+initial_velocity_max = 12.0
+gravity = Vector3(0, -8, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+damping_min = 24.0
+damping_max = 24.0
+scale_curve = SubResource("CurveTexture_n01wm")
+turbulence_noise_scale = 2.0
+
+[sub_resource type="Curve" id="Curve_tt3jd"]
+_data = [Vector2(0, 0), 0.0, 22.7787, 0, 0, Vector2(0.0424403, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieknl"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("5_erhwq")
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_qxgtt"]
+material = SubResource("StandardMaterial3D_ieknl")
+size = 2.0
+sections = 24
+section_length = 0.25
+section_segments = 4
+curve = SubResource("Curve_tt3jd")
+
 [node name="Radio" type="StaticBody3D" groups=["Id", "Mortal"]]
 collision_mask = 0
 script = ExtResource("1_xnfba")
@@ -138,3 +187,15 @@ autoplay = true
 stream = ExtResource("4_ay24h")
 attenuation_model = 1
 volume_db = 4.0
+
+[node name="xplod" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269058, 0)
+emitting = false
+amount = 6
+one_shot = true
+explosiveness = 0.8
+trail_enabled = true
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_utkbp")
+draw_pass_1 = SubResource("RibbonTrailMesh_qxgtt")
+script = ExtResource("6_kmbfm")

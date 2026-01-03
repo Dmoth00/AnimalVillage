@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var light=$light
 @onready var smoke=$smoke
+@onready var xplod=$xplod
 @onready var snd=$spark
 @onready var col=$col
 @onready var radio=$light/radio
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 func _hurt(dmg : float):
 	if dmg>0.0:
 		get_node("spark").play()
+		xplod.emitting=true
 		gvars.kill_list.append(id)
 		print(str(id)+" has died.")
 		light.queue_free()
