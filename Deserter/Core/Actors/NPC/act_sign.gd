@@ -1,7 +1,7 @@
 extends Area3D
-var p
+@export var texts : Array[String]
+
 
 func act(player : CharacterBody3D) -> void:
-	p = player
-	print("hey! :)")
+	get_tree().get_first_node_in_group("TXT").act(texts)
 	pass

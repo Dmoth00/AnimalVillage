@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://be5ebusbps3xr"]
+[gd_scene load_steps=87 format=4 uid="uid://be5ebusbps3xr"]
 
 [ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
 [ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/SFX/snd_step2.wav" id="2_bflfw"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_d2n7a"]
 [ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
 [ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="18_blp5p"]
+[ext_resource type="Script" path="res://Core/Scene/system/text_box.gd" id="24_wugvc"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
@@ -3699,6 +3700,10 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_eu55w")
 size = Vector2(0.4, 0.4)
 
+[sub_resource type="Theme" id="Theme_txcvb"]
+default_font = ExtResource("5_br8mc")
+default_font_size = 32
+
 [node name="gp_player" type="Node3D" groups=["Keep"]]
 
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
@@ -4190,6 +4195,67 @@ volume_db = -8.0
 [node name="t" type="Timer" parent="gp_cam"]
 wait_time = 0.1
 one_shot = true
+
+[node name="TextBox" type="CanvasLayer" parent="gp_cam" node_paths=PackedStringArray("player") groups=["TXT"]]
+follow_viewport_enabled = true
+script = ExtResource("24_wugvc")
+player = NodePath("../../Player")
+
+[node name="Box" type="Control" parent="gp_cam/TextBox"]
+layout_mode = 3
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = 75.0
+offset_right = -140.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(527, 0)
+
+[node name="ColorRect" type="ColorRect" parent="gp_cam/TextBox/Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = 58.0
+offset_right = -137.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="gp_cam/TextBox/Box"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 58.0
+offset_right = -134.0
+offset_bottom = 3.0
+pivot_offset = Vector2(415, 85)
+border_color = Color(1, 1, 1, 1)
+border_width = 4.0
+editor_only = false
+
+[node name="Text" type="RichTextLabel" parent="gp_cam/TextBox/Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = 70.0
+offset_right = -150.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(400, 70)
+theme = SubResource("Theme_txcvb")
+bbcode_enabled = true
+text = "somebody please come rescue me"
+scroll_active = false
+scroll_following = true
+visible_characters_behavior = 1
 
 [connection signal="body_entered" from="Player/collision" to="Player" method="_on_collision_body_entered"]
 [connection signal="area_entered" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_in"]
