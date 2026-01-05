@@ -17,7 +17,7 @@
 [ext_resource type="Script" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
 [ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="14_5cl2f"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="14_einu1"]
-[ext_resource type="AudioStream" uid="uid://btiic6xva354a" path="res://Assets/Sounds/SONG/Death_Serenade.mp3" id="15_053rg"]
+[ext_resource type="AudioStream" uid="uid://c27obx0y23k6g" path="res://Assets/Sounds/SONG/radioCallingAllLines.mp3" id="16_xftri"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="17_h2u1h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8o2w"]
@@ -314,7 +314,7 @@ skeleton = NodePath("")
 
 [node name="Radio" parent="props/barrelMesh03" instance=ExtResource("14_einu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59417, 0)
-stream = ExtResource("15_053rg")
+stream = ExtResource("16_xftri")
 
 [node name="activator" type="Area3D" parent="." groups=["Act"]]
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.942021, -4.42915)
