@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6140nigs3ckp"
-path.s3tc="res://.godot/imported/LQgrateTex00.png-1aee3df1ae16e3a06ca0310131a49f09.s3tc.ctex"
-path.etc2="res://.godot/imported/LQgrateTex00.png-1aee3df1ae16e3a06ca0310131a49f09.etc2.ctex"
+uid="uid://obk7w30txwnp"
+path.s3tc="res://.godot/imported/ToiletTex00.png-07dd9974b4cd26eda591efb119db51bd.s3tc.ctex"
+path.etc2="res://.godot/imported/ToiletTex00.png-07dd9974b4cd26eda591efb119db51bd.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/LQgrateTex00.png"
-dest_files=["res://.godot/imported/LQgrateTex00.png-1aee3df1ae16e3a06ca0310131a49f09.s3tc.ctex", "res://.godot/imported/LQgrateTex00.png-1aee3df1ae16e3a06ca0310131a49f09.etc2.ctex"]
+source_file="res://Assets/Mesh/Props/ToiletTex00.png"
+dest_files=["res://.godot/imported/ToiletTex00.png-07dd9974b4cd26eda591efb119db51bd.s3tc.ctex", "res://.godot/imported/ToiletTex00.png-07dd9974b4cd26eda591efb119db51bd.etc2.ctex"]
 
 [params]
 

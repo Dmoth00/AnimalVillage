@@ -52,9 +52,6 @@ func refresh():
 	t=0.0
 	state=-1
 	
-
-	
-	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("gp_activate") and state==2:
 		tbox.visible_characters=0
