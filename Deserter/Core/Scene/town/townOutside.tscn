@@ -3003,7 +3003,7 @@ draw_pass_1 = SubResource("PlaneMesh_5j07x")
 
 [node name="BGM" type="AudioStreamPlayer" parent="DayNight"]
 stream = ExtResource("47_htxhq")
-volume_db = -5.0
+volume_db = -12.0
 pitch_scale = 0.8
 autoplay = true
 
@@ -3038,3 +3038,8 @@ newMap = "uid://devcj660ww73a"
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, -1, -70)
 newPosition = Vector3(0, 0, 3.5)
 newMap = "uid://dnhxjsvw8r042"
+
+[node name="Door3" parent="Exits" instance=ExtResource("49_76bhm")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 18, -1, -75.25)
+newPosition = Vector3(5.5, 0, -0.5)
+newMap = "uid://cu8qvygdlydcg"
