@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvujrdo5en34c"
-path.s3tc="res://.godot/imported/PaintingTex00.png-4aaeefc008c751e386687b5f2a6d40f1.s3tc.ctex"
-path.etc2="res://.godot/imported/PaintingTex00.png-4aaeefc008c751e386687b5f2a6d40f1.etc2.ctex"
+uid="uid://cxwutjuh7vqk4"
+path.s3tc="res://.godot/imported/WoodEdge00.png-2d9922a4fc7499e63c3bcc99bea43cbf.s3tc.ctex"
+path.etc2="res://.godot/imported/WoodEdge00.png-2d9922a4fc7499e63c3bcc99bea43cbf.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/PaintingTex00.png"
-dest_files=["res://.godot/imported/PaintingTex00.png-4aaeefc008c751e386687b5f2a6d40f1.s3tc.ctex", "res://.godot/imported/PaintingTex00.png-4aaeefc008c751e386687b5f2a6d40f1.etc2.ctex"]
+source_file="res://Assets/Textures/WoodEdge00.png"
+dest_files=["res://.godot/imported/WoodEdge00.png-2d9922a4fc7499e63c3bcc99bea43cbf.s3tc.ctex", "res://.godot/imported/WoodEdge00.png-2d9922a4fc7499e63c3bcc99bea43cbf.etc2.ctex"]
 
 [params]
 
