@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://cu8qvygdlydcg"]
+[gd_scene load_steps=81 format=4 uid="uid://cu8qvygdlydcg"]
 
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="1_ff10n"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="2_t628p"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7vdqj4xscaf" path="res://Assets/Mesh/Props/pillowTex.png" id="15_7lfnw"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="16_kebmt"]
 [ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/PaintingTex00.png" id="17_tt05a"]
+[ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="21_p1de7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yjf7"]
 resource_name = "MatBricks"
@@ -776,6 +777,14 @@ shadow_mesh = SubResource("ArrayMesh_cdchy")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4t5v7"]
 albedo_texture = ExtResource("17_tt05a")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2at5a"]
+albedo_texture = ExtResource("21_p1de7")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="QuadMesh" id="QuadMesh_sksy8"]
+material = SubResource("StandardMaterial3D_2at5a")
+size = Vector2(4, 4)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptgr5"]
 albedo_texture = ExtResource("4_27kle")
 
@@ -914,6 +923,10 @@ transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, 
 mesh = SubResource("ArrayMesh_mpymp")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_4t5v7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="props"]
+transform = Transform3D(0.681015, -0.73227, -3.20085e-08, -2.05428e-15, -4.37114e-08, 1, -0.73227, -0.681015, -2.97681e-08, 1.51065, 0.0341424, -4.08949)
+mesh = SubResource("QuadMesh_sksy8")
 
 [node name="exits" type="Node3D" parent="."]
 

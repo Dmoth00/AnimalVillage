@@ -3043,3 +3043,8 @@ newMap = "uid://dnhxjsvw8r042"
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 18, -1, -75.25)
 newPosition = Vector3(5.5, 0, -0.5)
 newMap = "uid://cu8qvygdlydcg"
+
+[node name="Door4" parent="Exits" instance=ExtResource("49_76bhm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.5, -1, -102)
+newPosition = Vector3(-9.5, 0, 11)
+newMap = "uid://dp3t4tnoa52o2"

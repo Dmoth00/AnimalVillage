@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://57f6qi0fgcq2"
-path.s3tc="res://.godot/imported/skyTex00a.png-7a69ea0d463c9dfa48a9718c61a6d9a8.s3tc.ctex"
-path.etc2="res://.godot/imported/skyTex00a.png-7a69ea0d463c9dfa48a9718c61a6d9a8.etc2.ctex"
+uid="uid://cksdmimtbywjh"
+path.s3tc="res://.godot/imported/PaintingTex01.png-f80608e41fd0afc165d709e1cf5b966a.s3tc.ctex"
+path.etc2="res://.godot/imported/PaintingTex01.png-f80608e41fd0afc165d709e1cf5b966a.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/skyTex00a.png"
-dest_files=["res://.godot/imported/skyTex00a.png-7a69ea0d463c9dfa48a9718c61a6d9a8.s3tc.ctex", "res://.godot/imported/skyTex00a.png-7a69ea0d463c9dfa48a9718c61a6d9a8.etc2.ctex"]
+source_file="res://Assets/Textures/PaintingTex01.png"
+dest_files=["res://.godot/imported/PaintingTex01.png-f80608e41fd0afc165d709e1cf5b966a.s3tc.ctex", "res://.godot/imported/PaintingTex01.png-f80608e41fd0afc165d709e1cf5b966a.etc2.ctex"]
 
 [params]
 
