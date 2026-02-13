@@ -31,7 +31,7 @@
 resource_name = "MatRiging"
 cull_mode = 2
 albedo_texture = ExtResource("1_e3ww0")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_truyp"]
 resource_name = "MatFloor"
@@ -43,7 +43,7 @@ roughness = 0.5
 resource_name = "MatWall"
 cull_mode = 2
 albedo_texture = ExtResource("3_eqwr2")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pqd6"]
 resource_name = "MatTiles"
@@ -55,13 +55,13 @@ roughness = 0.5
 resource_name = "MatWall02"
 cull_mode = 2
 albedo_texture = ExtResource("5_glojw")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvmtu"]
 resource_name = "MatBricks"
 cull_mode = 2
 albedo_texture = ExtResource("6_5p0py")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0cc8s"]
 _surfaces = [{
@@ -312,13 +312,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qma3f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25tvu"]
+cull_mode = 1
 albedo_texture = ExtResource("11_oxohw")
 metallic = 1.0
 metallic_specular = 1.0
+roughness = 0.39
 
-[sub_resource type="QuadMesh" id="QuadMesh_pxk5s"]
-material = SubResource("StandardMaterial3D_25tvu")
-flip_faces = true
+[sub_resource type="QuadMesh" id="QuadMesh_8ts41"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ekix"]
 resource_name = "MatSink"
@@ -840,6 +840,7 @@ mesh = SubResource("ArrayMesh_8ms6n")
 skeleton = NodePath("")
 
 [node name="Collision" type="StaticBody3D" parent="ButcherHouse1F"]
+visible = false
 
 [node name="colHouse" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
 shape = SubResource("ConcavePolygonShape3D_er46b")
@@ -907,10 +908,11 @@ transform = Transform3D(-0.93, 0, 8.13032e-08, 0, 0.93, 0, -8.13032e-08, 0, -0.9
 mesh = SubResource("ArrayMesh_reskb")
 skeleton = NodePath("")
 
-[node name="mirror" type="MeshInstance3D" parent="props/bedroom/sinkMesh"]
+[node name="Mirror" type="MeshInstance3D" parent="props/bedroom/sinkMesh"]
 transform = Transform3D(-1, -3.91443e-08, -7.81694e-08, 0, 0.894154, -0.447759, 8.74228e-08, -0.447759, -0.894154, 0, 1.47273, -0.70206)
-mesh = SubResource("QuadMesh_pxk5s")
-skeleton = NodePath("../../../exits/Door")
+material_override = SubResource("StandardMaterial3D_25tvu")
+mesh = SubResource("QuadMesh_8ts41")
+skeleton = NodePath("")
 
 [node name="bathtubMesh" type="MeshInstance3D" parent="props/bedroom"]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0.5109, 0, 1.5256)
@@ -920,7 +922,6 @@ skeleton = NodePath("")
 [node name="curtainMesh" type="MeshInstance3D" parent="props/bedroom/bathtubMesh"]
 transform = Transform3D(-4.06516e-08, 0, -0.93, 0, 0.93, 0, 0.93, 0, -4.06516e-08, -0.936292, 1.07172, 0.127318)
 mesh = SubResource("QuadMesh_i5y37")
-skeleton = NodePath("../../../exits/Door")
 
 [node name="GarbageBagMesh" type="MeshInstance3D" parent="props/bedroom/bathtubMesh"]
 transform = Transform3D(0.999281, 0.0379169, -1.06581e-14, -0.0379169, 0.999281, 0, 1.06504e-14, 4.04122e-16, 1, -0.0403786, 0.690421, 0.522147)
@@ -1024,3 +1025,13 @@ newMap = "uid://cnqovkmyuiyoa"
 [node name="hole" type="MeshInstance3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_rp0xk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2627, 2.04367, 2.49702)
+light_energy = 1.5
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 1.767
+shadow_enabled = true
+shadow_opacity = 0.8
+omni_range = 8.1446

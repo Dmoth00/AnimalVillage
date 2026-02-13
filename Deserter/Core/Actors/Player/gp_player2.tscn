@@ -3439,7 +3439,7 @@ bind/18/pose = Transform3D(1, 1.35347e-14, 8.57308e-08, 2.62277e-14, -1, 2.32793
 resource_name = "MatChar"
 cull_mode = 2
 albedo_texture = ExtResource("7_1o87i")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vapp5"]
 resource_name = "MatEyes"
@@ -3923,7 +3923,7 @@ mesh = SubResource("QuadMesh_v5k3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_r7alt")
 
 [node name="gun" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D"]
-transform = Transform3D(-0.998959, 0.0435691, -0.0135303, -0.0125565, 0.0225458, 0.999667, 0.0438596, 0.998796, -0.0219752, 0.069362, 2.12767, 0.863024)
+transform = Transform3D(-0.998959, 0.043569, -0.0135303, -0.0125566, 0.0225457, 0.999667, 0.0438596, 0.998796, -0.0219752, 0.0693619, 2.12767, 0.863024)
 bone_name = "Gun"
 bone_idx = 10
 
