@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=96 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -825,6 +825,53 @@ metallic_specular = 0.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5xxw"]
 albedo_texture = ExtResource("22_wo3tp")
 
+[sub_resource type="QuadMesh" id="QuadMesh_pl580"]
+size = Vector2(2, 2)
+center_offset = Vector3(0, 0.001, 0)
+orientation = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8rsa5"]
+load_path = "res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akwjj"]
+transparency = 2
+alpha_scissor_threshold = 0.205
+alpha_antialiasing_mode = 0
+blend_mode = 3
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+albedo_color = Color(1, 0, 0, 0.396078)
+albedo_texture = SubResource("CompressedTexture2D_8rsa5")
+texture_filter = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_6er1w"]
+size = Vector2(2, 2)
+center_offset = Vector3(0, 0.001, 0)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aolvm"]
+transparency = 2
+alpha_scissor_threshold = 0.205
+alpha_antialiasing_mode = 0
+blend_mode = 3
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(1, 0, 0, 0.345098)
+albedo_texture = SubResource("CompressedTexture2D_8rsa5")
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhhsv"]
+transparency = 2
+alpha_scissor_threshold = 0.205
+alpha_antialiasing_mode = 0
+blend_mode = 3
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_8rsa5")
+texture_filter = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptgr5"]
 albedo_texture = ExtResource("24_d0l35")
 
@@ -1016,6 +1063,43 @@ transform = Transform3D(0.4, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_t5xxw")
+
+[node name="bloodstains" type="Node3D" parent="props"]
+
+[node name="bloodstain00" type="MeshInstance3D" parent="props/bloodstains"]
+transform = Transform3D(0.668942, 0, 4.08053, 0, 4.135, 0, -4.08053, 0, 0.668942, -11.0259, 0, 1.7621)
+mesh = SubResource("QuadMesh_pl580")
+surface_material_override/0 = SubResource("StandardMaterial3D_akwjj")
+
+[node name="bloodstain01" type="MeshInstance3D" parent="props/bloodstains"]
+transform = Transform3D(-0.177049, 0, 10.4669, 0, 7.288, 0, -7.28585, 0, -0.254349, -6.28376, 0, -3.6957)
+mesh = SubResource("QuadMesh_6er1w")
+surface_material_override/0 = SubResource("StandardMaterial3D_aolvm")
+
+[node name="bloodstain02" type="MeshInstance3D" parent="props/bloodstains"]
+transform = Transform3D(0.798426, 0, -4.26592, 0, 4.34, 0, 4.26592, 0, 0.798426, 11.1869, 0, -7.65113)
+mesh = SubResource("QuadMesh_pl580")
+surface_material_override/0 = SubResource("StandardMaterial3D_lhhsv")
+
+[node name="livingroom" type="Node3D" parent="props"]
+
+[node name="GarbageBagBig" type="MeshInstance3D" parent="props/livingroom"]
+transform = Transform3D(-1.73825, 0, 0.989189, 0.847571, -1.03118, 1.48939, 0.510017, 1.71367, 0.896226, 12.2262, 0.653963, -7.55189)
+mesh = SubResource("ArrayMesh_2yecd")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cc72v")
+
+[node name="GarbageBagSml" type="MeshInstance3D" parent="props/livingroom/GarbageBagBig"]
+transform = Transform3D(0.442183, -0.040749, -0.229813, 0.109416, 0.471061, 0.127001, 0.206162, -0.162606, 0.425507, 0.519072, 0.0717325, -0.625703)
+mesh = SubResource("ArrayMesh_2yecd")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cc72v")
+
+[node name="GarbageBagSml2" type="MeshInstance3D" parent="props/livingroom/GarbageBagBig"]
+transform = Transform3D(0.0699007, -0.135574, 0.476165, 0.120088, -0.461884, -0.149136, 0.480305, 0.135214, -0.0320103, -0.12325, 0.83379, 0.267438)
+mesh = SubResource("ArrayMesh_2yecd")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cc72v")
 
 [node name="Door" parent="." instance=ExtResource("23_yp5ts")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -9.5, 0, 12)

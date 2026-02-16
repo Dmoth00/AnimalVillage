@@ -3440,7 +3440,7 @@ bind/18/pose = Transform3D(1, 1.35347e-14, 8.57308e-08, 2.62277e-14, -1, 2.32793
 resource_name = "MatChar"
 cull_mode = 2
 albedo_texture = ExtResource("7_upbqn")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vapp5"]
 resource_name = "MatEyes"
