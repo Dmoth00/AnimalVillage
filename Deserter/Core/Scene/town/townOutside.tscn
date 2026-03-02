@@ -2514,6 +2514,24 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ikrov")
 surface_material_override/1 = SubResource("StandardMaterial3D_qevbg")
 
+[node name="Items" type="Node3D" parent="Props/Area01"]
+visible = false
+
+[node name="bullets1" parent="Props/Area01/Items" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.817817, 9.91547)
+
+[node name="bullets2" parent="Props/Area01/Items" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.816362, -6.54359)
+
+[node name="bullets3" parent="Props/Area01/Items" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.81071, -7.64389)
+
+[node name="bullets4" parent="Props/Area01/Items" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.81071, 8.87151)
+
+[node name="bullets5" parent="Props/Area01/Items" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183711, -0.680805, 7.0163)
+
 [node name="Area02" type="Node3D" parent="Props"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 16.3024, -1.85511, -42.6952)
 
@@ -2872,6 +2890,27 @@ mesh = SubResource("ArrayMesh_wvapp")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qstn7")
 
+[node name="tree02" type="Node3D" parent="Props/Area03/HouseB"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.37114e-08, 0, -4.37114e-08, 1, -5.32701, -3.07882, -2.03648)
+
+[node name="tree0" type="MeshInstance3D" parent="Props/Area03/HouseB/tree02"]
+transform = Transform3D(1.2, 0, 0, 0, 0.8, 0, 0, 0, 1.2, 0, 0, 0)
+visibility_range_end = 50.0
+mesh = SubResource("ArrayMesh_yerwu")
+skeleton = NodePath("")
+
+[node name="leaves" type="MeshInstance3D" parent="Props/Area03/HouseB/tree02"]
+transform = Transform3D(1.2, 0, 0, 0, 0.584558, 0.270492, 0, -0.135246, 1.16912, 0, 1.56593, 0.0773239)
+visibility_range_end = 20.0
+mesh = SubResource("ArrayMesh_jxnfn")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Props/Area03/HouseB/tree02"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Area03/HouseB/tree02/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36138, 0)
+shape = SubResource("CylinderShape3D_a4cx0")
+
 [node name="HouseC" type="MeshInstance3D" parent="Props/Area03"]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 16.6573, -1.87511, -4.36838)
 visibility_range_end = 50.0
@@ -2984,6 +3023,9 @@ shape = SubResource("BoxShape3D_qigg3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7069, -0.177246, -9.78361)
 shape = SubResource("BoxShape3D_qigg3")
 
+[node name="bullets6" parent="Props/Area03" instance=ExtResource("48_pehij")]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 4.7346, -19.0212, -3.11869)
+
 [node name="DayNight" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2638, 0, -41.4266)
 script = ExtResource("45_hy35r")
@@ -3018,23 +3060,6 @@ stream = ExtResource("47_htxhq")
 volume_db = -12.0
 pitch_scale = 0.8
 autoplay = true
-
-[node name="Items" type="Node3D" parent="."]
-
-[node name="bullets1" parent="Items" instance=ExtResource("48_pehij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.13956, -0.817817, 9.91547)
-
-[node name="bullets2" parent="Items" instance=ExtResource("48_pehij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7812, -0.816362, -6.54359)
-
-[node name="bullets3" parent="Items" instance=ExtResource("48_pehij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.23047, -0.81071, -7.64389)
-
-[node name="bullets4" parent="Items" instance=ExtResource("48_pehij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.83526, -0.81071, 8.87151)
-
-[node name="bullets5" parent="Items" instance=ExtResource("48_pehij")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.183711, -0.680805, 7.0163)
 
 [node name="Env" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vlxxc")
