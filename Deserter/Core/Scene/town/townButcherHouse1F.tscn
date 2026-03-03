@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=118 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -18,15 +18,21 @@
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="14_w5oaj"]
 [ext_resource type="AudioStream" uid="uid://bwstlsq885g2r" path="res://Assets/Sounds/SFX/snd_flies.wav" id="15_16kem"]
 [ext_resource type="Texture2D" uid="uid://ct7btdrw0xqq5" path="res://Assets/Textures/mattressTex00.png" id="15_ql1uh"]
+[ext_resource type="Script" path="res://Core/Scene/town/bag.gd" id="16_t53ar"]
 [ext_resource type="Texture2D" uid="uid://ba7vdqj4xscaf" path="res://Assets/Mesh/Props/pillowTex.png" id="16_uff7g"]
 [ext_resource type="Texture2D" uid="uid://cp6kpt0ess18i" path="res://Assets/Textures/BedsheetTex.png" id="17_f61e0"]
+[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="17_kbekr"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="18_d1h5s"]
+[ext_resource type="Script" path="res://Core/System/sfx_common.gd" id="18_si76e"]
 [ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="19_1qs70"]
+[ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="19_nsahx"]
 [ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/PaintingTex00.png" id="20_p7g87"]
 [ext_resource type="Texture2D" uid="uid://cksdmimtbywjh" path="res://Assets/Textures/PaintingTex01.png" id="21_yq81h"]
 [ext_resource type="Texture2D" uid="uid://4624e6oyla7j" path="res://Assets/Textures/MissingTex01.png" id="22_wo3tp"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="23_yp5ts"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="24_d0l35"]
+[ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="28_k041o"]
+[ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="29_mlhb3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn0dh"]
 resource_name = "MatRiging"
@@ -218,9 +224,6 @@ size = Vector3(8.00647, 0.990662, 1.39819)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_imenv"]
 height = 1.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_6oese"]
-size = Vector3(2.3952, 1, 4.08096)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kb58f"]
 size = Vector3(2.7086, 0.974487, 4.59862)
@@ -433,6 +436,9 @@ normal_enabled = true
 normal_scale = 0.5
 normal_texture = ExtResource("14_eq1bu")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6oese"]
+size = Vector3(0.536056, 1, 4.08096)
+
 [sub_resource type="Animation" id="Animation_6rx1m"]
 resource_name = "bag_move"
 length = 5.0
@@ -449,6 +455,63 @@ tracks/0/keys = PackedFloat32Array(0.0333333, 1, 0, 0, 0, 1, 4, 1, 0, 0, 0, 1, 4
 _data = {
 "bag_move": SubResource("Animation_6rx1m")
 }
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xk1oq"]
+radius = 0.7
+
+[sub_resource type="Curve" id="Curve_eeonb"]
+_data = [Vector2(0, 1), 0.0, -1.11525, 0, 0, Vector2(1, 0.010989), -0.895476, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3gov8"]
+curve = SubResource("Curve_eeonb")
+
+[sub_resource type="Curve" id="Curve_5x1g2"]
+min_value = 0.01
+max_value = 4.0
+_data = [Vector2(0, 0.0976925), 0.142535, 25.6061, 0, 0, Vector2(0.0593607, 3.25462), 7.68185, 7.68185, 0, 0, Vector2(0.995434, 0.0538464), -0.129761, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fhji1"]
+curve = SubResource("Curve_5x1g2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_380r3"]
+emission_shape_scale = Vector3(0, 0, 0)
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 6.0
+initial_velocity_max = 8.0
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+damping_min = 12.0
+damping_max = 16.0
+scale_curve = SubResource("CurveTexture_fhji1")
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 1.0
+alpha_curve = SubResource("CurveTexture_3gov8")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qa1s"]
+transparency = 2
+alpha_scissor_threshold = 0.229
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
+albedo_texture = ExtResource("17_kbekr")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_kb4pn"]
+material = SubResource("StandardMaterial3D_3qa1s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6sb8"]
 resource_name = "WoodMat"
@@ -952,6 +1015,7 @@ mesh = SubResource("ArrayMesh_8ms6n")
 skeleton = NodePath("")
 
 [node name="Collision" type="StaticBody3D" parent="ButcherHouse1F"]
+collision_mask = 0
 
 [node name="colHouse" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
 shape = SubResource("ConcavePolygonShape3D_er46b")
@@ -967,10 +1031,6 @@ shape = SubResource("CylinderShape3D_imenv")
 [node name="chair2" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09296, 0.5, 7.39513)
 shape = SubResource("CylinderShape3D_imenv")
-
-[node name="bathtub" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3912, 0.715272, 1.74043)
-shape = SubResource("BoxShape3D_6oese")
 
 [node name="desk" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4849, 0.497925, 8.75188)
@@ -1050,14 +1110,6 @@ mesh = SubResource("ArrayMesh_2yecd")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_sufxt")
 
-[node name="anim" type="AnimationPlayer" parent="props/bedroom/bathtubMesh"]
-deterministic = true
-libraries = {
-"": SubResource("AnimationLibrary_2mnex")
-}
-autoplay = "bag_move"
-playback_auto_capture = false
-
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="props/bedroom/bathtubMesh"]
 stream = ExtResource("15_16kem")
 attenuation_model = 1
@@ -1066,6 +1118,46 @@ unit_size = 5.0
 max_db = -10.0
 pitch_scale = 0.7
 autoplay = true
+
+[node name="col" type="StaticBody3D" parent="props/bedroom/bathtubMesh"]
+collision_layer = 128
+collision_mask = 0
+
+[node name="bathtub" type="CollisionShape3D" parent="props/bedroom/bathtubMesh/col"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909284, 0.715272, 0.0922108)
+shape = SubResource("BoxShape3D_6oese")
+
+[node name="bag" type="StaticBody3D" parent="props/bedroom/bathtubMesh" groups=["Id", "Mortal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.7)
+collision_mask = 0
+script = ExtResource("16_t53ar")
+
+[node name="anim" type="AnimationPlayer" parent="props/bedroom/bathtubMesh/bag"]
+deterministic = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_2mnex")
+}
+autoplay = "bag_move"
+playback_auto_capture = false
+
+[node name="col" type="CollisionShape3D" parent="props/bedroom/bathtubMesh/bag"]
+shape = SubResource("SphereShape3D_xk1oq")
+
+[node name="bloodSFX" type="GPUParticles3D" parent="props/bedroom/bathtubMesh/bag"]
+process_mode = 3
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+gi_mode = 0
+emitting = false
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_380r3")
+draw_pass_1 = SubResource("QuadMesh_kb4pn")
+script = ExtResource("18_si76e")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="props/bedroom/bathtubMesh/bag/bloodSFX"]
+stream = ExtResource("19_nsahx")
 
 [node name="nightstandMesh" type="MeshInstance3D" parent="props/bedroom"]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.846991, 0, -7.63544)
@@ -1092,6 +1184,10 @@ transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, 
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_v5xat")
+
+[node name="Radio" parent="props/bedroom" instance=ExtResource("28_k041o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493, 0.82, -7.592)
+stream = ExtResource("29_mlhb3")
 
 [node name="corridor" type="Node3D" parent="props"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
@@ -1242,7 +1338,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2627, 2.04367, 2.49702)
 light_energy = 1.5
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
-light_specular = 1.767
+light_specular = 2.0
 shadow_enabled = true
-shadow_opacity = 0.8
+shadow_opacity = 0.95
 omni_range = 8.1446
+
+[connection signal="finished" from="props/bedroom/bathtubMesh/bag/bloodSFX" to="props/bedroom/bathtubMesh/bag/bloodSFX" method="_on_finished"]

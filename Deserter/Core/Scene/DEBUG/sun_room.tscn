@@ -235,7 +235,6 @@ surface_material_override/1 = SubResource("StandardMaterial3D_5wwdi")
 surface_material_override/2 = SubResource("StandardMaterial3D_37178")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="meshSingleRoom"]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D"]

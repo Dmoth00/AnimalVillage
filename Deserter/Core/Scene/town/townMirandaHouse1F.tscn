@@ -603,8 +603,8 @@ shadow_mesh = SubResource("ArrayMesh_xef1a")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6iij"]
 render_priority = 0
 shader = ExtResource("19_ytdwn")
-shader_parameter/ColorParameter = Color(0.43, 0.238435, 0.0817, 1)
-shader_parameter/Alpha = 0.919
+shader_parameter/ColorParameter = Color(0.43, 0.375605, 0.3311, 1)
+shader_parameter/Alpha = 0.778
 shader_parameter/current_speed = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layaa"]
