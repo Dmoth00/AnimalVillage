@@ -2475,7 +2475,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 2.09808e-05, 0, -4.19617e-05)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floorcollision"]
-visible = false
 shape = SubResource("ConcavePolygonShape3D_0w160")
 
 [node name="DayNight" type="Node3D" parent="."]
@@ -2539,9 +2538,10 @@ newPosition = Vector3(-9.5, 0, 11)
 newMap = "uid://dp3t4tnoa52o2"
 
 [node name="Area01" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="homebaseMesh_00" type="MeshInstance3D" parent="Area01"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.817562, 0.65747, -3.14806)
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.818, 0.657, -3.148)
 visibility_range_end = 50.0
 mesh = SubResource("ArrayMesh_b656b")
 skeleton = NodePath("")
