@@ -2537,6 +2537,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.5, 
 newPosition = Vector3(-9.5, 0, 11)
 newMap = "uid://dp3t4tnoa52o2"
 
+[node name="Door5" parent="Exits" instance=ExtResource("49_76bhm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1.4, -90)
+newPosition = Vector3(-1.5, 0, -7)
+newMap = "uid://r4glbon2f20k"
+sound = null
+
 [node name="Area01" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
