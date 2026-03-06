@@ -2,6 +2,7 @@ extends Area3D
 @export var newPosition : Vector3
 @export var newMap : String
 @export var sound : AudioStream
+@export var playBefore : bool = false
 
 @onready var cam : Node3D
 var p
@@ -19,6 +20,8 @@ func act(player : CharacterBody3D):
 	cam=get_tree().get_first_node_in_group("Camera")
 	cam.fade_out(0.25)
 	get_node("t").start(0.75)
+	#play noise
+	if playBefore: doorSound()
 
 func _on_t() -> void:
 	var g=get_tree().get_first_node_in_group("GM")
@@ -34,7 +37,10 @@ func _on_t() -> void:
 	cam.global_position=p.global_position
 	cam.fade_in(0.5)
 	
-		#play the door's sound
+	#play the door's sound
+	if playBefore==false: doorSound()
+
+func doorSound():
 	if sound:
 		var snd=p.get_node("SFX")
 		snd.stream = sound

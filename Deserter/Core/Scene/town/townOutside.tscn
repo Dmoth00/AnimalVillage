@@ -1,9 +1,10 @@
-[gd_scene load_steps=223 format=4 uid="uid://cnqovkmyuiyoa"]
+[gd_scene load_steps=224 format=4 uid="uid://cnqovkmyuiyoa"]
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="1_hdu2p"]
 [ext_resource type="Texture2D" uid="uid://cw60ayuicrvxn" path="res://Assets/Textures/mossTex00.png" id="2_4ee20"]
 [ext_resource type="Texture2D" uid="uid://bekxb2bhms6ma" path="res://Assets/Mesh/Maps/Debug/textures/metalTex00.png" id="3_bhbei"]
 [ext_resource type="Texture2D" uid="uid://cogmsokd1sgh8" path="res://Assets/Mesh/Maps/Debug/textures/BrickTex01.png" id="4_ad8jg"]
+[ext_resource type="AudioStream" uid="uid://boq5qiay7jonv" path="res://Assets/Sounds/SFX/snd_ladder00a.wav" id="5_1lhkq"]
 [ext_resource type="Texture2D" uid="uid://c6v5xp6sqmjns" path="res://Assets/Textures/RoofTilesTex00.png" id="5_ujdk7"]
 [ext_resource type="Texture2D" uid="uid://cexpjwlp8gjyj" path="res://Assets/Mesh/Maps/Debug/textures/DoorTex00.png" id="6_qkeqj"]
 [ext_resource type="PackedScene" uid="uid://bvebicqyn50di" path="res://Core/Props/outside/tree_00.tscn" id="7_vcjwr"]
@@ -2517,31 +2518,32 @@ environment = SubResource("Environment_vlxxc")
 
 [node name="Exits" type="Node" parent="."]
 
-[node name="Door" parent="Exits" instance=ExtResource("49_76bhm")]
+[node name="DoorHome" parent="Exits" instance=ExtResource("49_76bhm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1.75035)
 newPosition = Vector3(-6.5, 0, 13.5)
 newMap = "uid://devcj660ww73a"
 
-[node name="Door2" parent="Exits" instance=ExtResource("49_76bhm")]
+[node name="DoorShed" parent="Exits" instance=ExtResource("49_76bhm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34, -1, -70)
 newPosition = Vector3(0, 0, 3.5)
 newMap = "uid://dnhxjsvw8r042"
 
-[node name="Door3" parent="Exits" instance=ExtResource("49_76bhm")]
+[node name="DoorMiranda" parent="Exits" instance=ExtResource("49_76bhm")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 18, -1, -75.25)
 newPosition = Vector3(5.5, 0, -0.5)
 newMap = "uid://cu8qvygdlydcg"
 
-[node name="Door4" parent="Exits" instance=ExtResource("49_76bhm")]
+[node name="DoorButcher" parent="Exits" instance=ExtResource("49_76bhm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.5, -1, -102)
 newPosition = Vector3(-9.5, 0, 11)
 newMap = "uid://dp3t4tnoa52o2"
 
-[node name="Door5" parent="Exits" instance=ExtResource("49_76bhm")]
+[node name="Ladder" parent="Exits" instance=ExtResource("49_76bhm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, -1.4, -90)
 newPosition = Vector3(-1.5, 0, -7)
 newMap = "uid://r4glbon2f20k"
-sound = null
+sound = ExtResource("5_1lhkq")
+playBefore = true
 
 [node name="Area01" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
