@@ -1,0 +1,151 @@
+[gd_resource type="VisualShader" load_steps=15 format=3 uid="uid://7773l54mhof5"]
+
+[ext_resource type="Texture2D" uid="uid://bw47ndwcdq1kv" path="res://Assets/Sprites/SmokeTex00MASK.png" id="1_t3c37"]
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_wkxqn"]
+default_input_values = [1, Vector2(2, 2), 2, Vector2(0, 0)]
+function = 1
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_cgec0"]
+parameter_name = "Texture2DParameter"
+texture_type = 1
+texture_filter = 1
+texture_repeat = 1
+
+[sub_resource type="Curve" id="Curve_e0vtm"]
+_data = [Vector2(0.504207, 0), 0.0, 0.0, 0, 0, Vector2(0.688965, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nvo52"]
+curve = SubResource("Curve_e0vtm")
+
+[sub_resource type="VisualShaderNodeCurveTexture" id="VisualShaderNodeCurveTexture_jrjux"]
+output_port_for_preview = 0
+texture = SubResource("CurveTexture_nvo52")
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_xoqpm"]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_aakeu"]
+output_port_for_preview = 0
+texture = ExtResource("1_t3c37")
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_vi04v"]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_lthag"]
+parameter_name = "scissor_alpha"
+hint = 1
+min = -0.5
+max = 0.5
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_tq8gr"]
+parameter_name = "albedoTint"
+default_value_enabled = true
+default_value = Color(1, 0, 0, 1)
+
+[sub_resource type="VisualShaderNodeColorOp" id="VisualShaderNodeColorOp_ojd1n"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_q8mo7"]
+source = 5
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ourpn"]
+input_name = "uv"
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_back, diffuse_lambert, specular_disabled;
+
+uniform sampler2D Texture2DParameter : source_color, filter_nearest, repeat_enable;
+uniform vec4 albedoTint : source_color = vec4(1.000000, 0.000000, 0.000000, 1.000000);
+uniform float scissor_alpha : hint_range(-0.5, 0.5) = 0;
+uniform sampler2D tex_frg_2;
+uniform sampler2D curve_frg_12 : repeat_disable;
+
+
+
+void fragment() {
+// Input:9
+	vec2 n_out9p0 = UV;
+
+
+// UVFunc:10
+	vec2 n_in10p1 = vec2(2.00000, 2.00000);
+	vec2 n_in10p2 = vec2(0.00000, 0.00000);
+	vec2 n_out10p0 = (n_out9p0 - n_in10p2) * n_in10p1 + n_in10p2;
+
+
+	vec4 n_out8p0;
+// Texture2D:8
+	n_out8p0 = texture(Texture2DParameter, n_out10p0);
+
+
+// ColorParameter:5
+	vec4 n_out5p0 = albedoTint;
+
+
+// ColorOp:7
+	vec3 n_out7p0 = min(vec3(n_out8p0.xyz), vec3(n_out5p0.xyz));
+
+
+// FloatParameter:4
+	float n_out4p0 = scissor_alpha;
+
+
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+	vec3 n_out3p0;
+// ColorFunc:3
+	{
+		vec3 c = vec3(n_out2p0.xyz);
+		float max1 = max(c.r, c.g);
+		float max2 = max(max1, c.b);
+		n_out3p0 = vec3(max2, max2, max2);
+	}
+
+
+// VectorOp:13
+	vec3 n_out13p0 = vec3(n_out4p0) + n_out3p0;
+
+
+// CurveTexture:12
+	float n_out12p0 = texture(curve_frg_12, vec2(n_out13p0.x)).r;
+
+
+// Output:0
+	ALBEDO = n_out7p0;
+	ALPHA = n_out12p0;
+
+
+}
+"
+graph_offset = Vector2(-190.192, 514.948)
+modes/depth_draw = 1
+modes/specular = 2
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_aakeu")
+nodes/fragment/2/position = Vector2(-1240, 720)
+nodes/fragment/3/node = SubResource("VisualShaderNodeColorFunc_vi04v")
+nodes/fragment/3/position = Vector2(-980, 840)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatParameter_lthag")
+nodes/fragment/4/position = Vector2(-1100, 1260)
+nodes/fragment/5/node = SubResource("VisualShaderNodeColorParameter_tq8gr")
+nodes/fragment/5/position = Vector2(-440, 140)
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorOp_ojd1n")
+nodes/fragment/7/position = Vector2(0, 40)
+nodes/fragment/8/node = SubResource("VisualShaderNodeTexture_q8mo7")
+nodes/fragment/8/position = Vector2(-300, -160)
+nodes/fragment/9/node = SubResource("VisualShaderNodeInput_ourpn")
+nodes/fragment/9/position = Vector2(-960, -40)
+nodes/fragment/10/node = SubResource("VisualShaderNodeUVFunc_wkxqn")
+nodes/fragment/10/position = Vector2(-620, -40)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTexture2DParameter_cgec0")
+nodes/fragment/11/position = Vector2(-660, -420)
+nodes/fragment/12/node = SubResource("VisualShaderNodeCurveTexture_jrjux")
+nodes/fragment/12/position = Vector2(-300, 880)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVectorOp_xoqpm")
+nodes/fragment/13/position = Vector2(-660, 920)
+nodes/fragment/connections = PackedInt32Array(2, 0, 3, 0, 7, 0, 0, 0, 8, 0, 7, 0, 5, 0, 7, 1, 9, 0, 10, 0, 10, 0, 8, 0, 11, 0, 8, 2, 4, 0, 13, 0, 13, 0, 12, 0, 3, 0, 13, 1, 12, 0, 0, 1)

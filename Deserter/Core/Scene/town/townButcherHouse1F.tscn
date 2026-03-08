@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=123 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="28_k041o"]
 [ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="29_mlhb3"]
 [ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="32_vcefu"]
+[ext_resource type="Shader" uid="uid://7773l54mhof5" path="res://Core/Scene/town/bloodstainShader.tres" id="33_sn836"]
+[ext_resource type="Texture2D" uid="uid://57f6qi0fgcq2" path="res://Assets/Textures/skyTex00a.png" id="34_cyhia"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn0dh"]
 resource_name = "MatRiging"
@@ -924,36 +926,22 @@ size = Vector2(2, 2)
 center_offset = Vector3(0, 0.001, 0)
 orientation = 1
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8rsa5"]
-load_path = "res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akwjj"]
-transparency = 2
-alpha_scissor_threshold = 0.205
-alpha_antialiasing_mode = 0
-blend_mode = 3
-shading_mode = 0
-specular_mode = 2
-disable_ambient_light = true
-albedo_color = Color(1, 0, 0, 0.396078)
-albedo_texture = SubResource("CompressedTexture2D_8rsa5")
-texture_filter = 1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1h44"]
+render_priority = 0
+shader = ExtResource("33_sn836")
+shader_parameter/albedoTint = Color(0.599057, 1.43189e-06, 4.33177e-07, 1)
+shader_parameter/scissor_alpha = -0.143
+shader_parameter/Texture2DParameter = ExtResource("34_cyhia")
 
 [sub_resource type="QuadMesh" id="QuadMesh_6er1w"]
 size = Vector2(2, 2)
 center_offset = Vector3(0, 0.001, 0)
 orientation = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aolvm"]
-transparency = 2
-alpha_scissor_threshold = 0.205
-alpha_antialiasing_mode = 0
-blend_mode = 3
-shading_mode = 0
-specular_mode = 2
-albedo_color = Color(1, 0, 0, 0.345098)
-albedo_texture = SubResource("CompressedTexture2D_8rsa5")
-texture_filter = 1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0aa0s"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8rsa5"]
+load_path = "res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhhsv"]
 transparency = 2
@@ -1279,15 +1267,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 [node name="bloodstain00" type="MeshInstance3D" parent="props/bloodstains"]
 transform = Transform3D(0.668942, 0, 4.08053, 0, 4.135, 0, -4.08053, 0, 0.668942, -11.0259, 0, 1.7621)
 mesh = SubResource("QuadMesh_pl580")
-surface_material_override/0 = SubResource("StandardMaterial3D_akwjj")
+surface_material_override/0 = SubResource("ShaderMaterial_i1h44")
 
 [node name="bloodstain01" type="MeshInstance3D" parent="props/bloodstains"]
 transform = Transform3D(-0.177049, 0, 10.4669, 0, 7.288, 0, -7.28585, 0, -0.254349, -6.28376, 0, -3.6957)
+visible = false
 mesh = SubResource("QuadMesh_6er1w")
-surface_material_override/0 = SubResource("StandardMaterial3D_aolvm")
+surface_material_override/0 = SubResource("ShaderMaterial_0aa0s")
 
 [node name="bloodstain02" type="MeshInstance3D" parent="props/bloodstains"]
 transform = Transform3D(0.798426, 0, -4.26592, 0, 4.34, 0, 4.26592, 0, 0.798426, 11.1869, 0, -7.65113)
+visible = false
 mesh = SubResource("QuadMesh_pl580")
 surface_material_override/0 = SubResource("StandardMaterial3D_lhhsv")
 
