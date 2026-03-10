@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=119 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -7,8 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="5_glojw"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="6_5p0py"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="7_0oixp"]
+[ext_resource type="Texture2D" uid="uid://d3vocv0lmqlv8" path="res://Assets/Sprites/BloodAnim/blood04.png" id="7_x2vej"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="8_gq1q3"]
+[ext_resource type="Texture2D" uid="uid://dat72kia1bgsw" path="res://Assets/Sprites/BloodAnim/blood04nmap.png" id="8_nh72q"]
+[ext_resource type="Texture2D" uid="uid://ksb3rhxcjlw4" path="res://Assets/Sprites/BloodAnim/blood04orma.png" id="9_m2oai"]
 [ext_resource type="Texture2D" uid="uid://obk7w30txwnp" path="res://Assets/Mesh/Props/ToiletTex00.png" id="9_s6usw"]
+[ext_resource type="Texture2D" uid="uid://chnrwg57prfaq" path="res://Assets/Sprites/BloodAnim/blood04orm.png" id="10_sjge3"]
 [ext_resource type="Texture2D" uid="uid://q6uej0bvisg8" path="res://Assets/Mesh/Props/SinkTex00.png" id="10_yujg0"]
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="11_oxohw"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="12_fuw66"]
@@ -34,7 +38,6 @@
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="28_k041o"]
 [ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="29_mlhb3"]
 [ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="32_vcefu"]
-[ext_resource type="Shader" uid="uid://7773l54mhof5" path="res://Assets/Shaders/bloodstainShader.tres" id="33_sn836"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn0dh"]
 resource_name = "MatRiging"
@@ -46,7 +49,7 @@ metallic_specular = 0.0
 resource_name = "MatFloor"
 cull_mode = 2
 albedo_texture = ExtResource("2_x0amw")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5s21"]
 resource_name = "MatWall"
@@ -58,7 +61,7 @@ metallic_specular = 0.0
 resource_name = "MatTiles"
 cull_mode = 2
 albedo_texture = ExtResource("4_jgo28")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eutfq"]
 resource_name = "MatWall02"
@@ -920,49 +923,6 @@ shadow_mesh = SubResource("ArrayMesh_j6xoi")
 albedo_texture = ExtResource("13_jxc11")
 metallic_specular = 0.0
 
-[sub_resource type="QuadMesh" id="QuadMesh_pl580"]
-size = Vector2(2, 2)
-center_offset = Vector3(0, 0.001, 0)
-orientation = 1
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i1h44"]
-render_priority = 0
-shader = ExtResource("33_sn836")
-shader_parameter/uvScale = 6.0
-shader_parameter/speed = 0.323
-shader_parameter/scissor_alpha = -0.033
-shader_parameter/rough = 1.0
-
-[sub_resource type="QuadMesh" id="QuadMesh_6er1w"]
-size = Vector2(2, 2)
-center_offset = Vector3(0, 0.001, 0)
-orientation = 1
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8rsa5"]
-load_path = "res://.godot/imported/SmokeTex00.png-7b046365631039c42eaa608b72b5792d.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w50a7"]
-transparency = 2
-alpha_scissor_threshold = 0.507
-alpha_antialiasing_mode = 0
-blend_mode = 3
-shading_mode = 0
-specular_mode = 2
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = SubResource("CompressedTexture2D_8rsa5")
-texture_filter = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lhhsv"]
-transparency = 2
-alpha_scissor_threshold = 0.205
-alpha_antialiasing_mode = 0
-blend_mode = 3
-shading_mode = 0
-specular_mode = 2
-albedo_color = Color(1, 0, 0, 1)
-albedo_texture = SubResource("CompressedTexture2D_8rsa5")
-texture_filter = 1
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layaa"]
 resource_name = "Material"
 cull_mode = 2
@@ -1018,6 +978,7 @@ size = Vector2(1, 2)
 [node name="ButcherHouse1F" type="Node3D"]
 
 [node name="ButcherHouse1F" type="MeshInstance3D" parent="."]
+layers = 33
 mesh = SubResource("ArrayMesh_8ms6n")
 skeleton = NodePath("")
 
@@ -1098,6 +1059,7 @@ skeleton = NodePath("")
 
 [node name="bathtubMesh" type="MeshInstance3D" parent="props/bedroom"]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0.5109, 0, 1.5256)
+layers = 32
 mesh = SubResource("ArrayMesh_uh3f3")
 skeleton = NodePath("")
 
@@ -1177,11 +1139,13 @@ skeleton = NodePath("")
 
 [node name="bedMesh" type="MeshInstance3D" parent="props/bedroom"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.12626, 0, -6.87386)
+layers = 32
 mesh = SubResource("ArrayMesh_tresj")
 skeleton = NodePath("")
 
 [node name="bedMesh2" type="MeshInstance3D" parent="props/bedroom"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.87374, 0, -6.87386)
+layers = 32
 mesh = SubResource("ArrayMesh_tresj")
 skeleton = NodePath("")
 
@@ -1272,20 +1236,57 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="bloodstains" type="Node3D" parent="props"]
 
-[node name="bloodstain00" type="MeshInstance3D" parent="props/bloodstains"]
-transform = Transform3D(0.668942, 0, 4.08053, 0, 4.135, 0, -4.08053, 0, 0.668942, -11.0259, 0, 1.7621)
-mesh = SubResource("QuadMesh_pl580")
-surface_material_override/0 = SubResource("ShaderMaterial_i1h44")
+[node name="blood00" type="Decal" parent="props/bloodstains"]
+transform = Transform3D(-0.2451, 0.00458258, 0.969487, 0.262676, 0.962899, 0.0618567, -0.933234, 0.269822, -0.23721, -10.4893, 1.74387, -6.42998)
+layers = 33
+size = Vector3(9.38914, 4.56169, 8.8438)
+texture_albedo = ExtResource("7_x2vej")
+texture_normal = ExtResource("8_nh72q")
+texture_orm = ExtResource("9_m2oai")
+emission_energy = 0.0
+modulate = Color(1, 0, 0, 1)
+lower_fade = 0.0194112
+distance_fade_begin = 15.0
+cull_mask = 32
 
-[node name="bloodstain01" type="MeshInstance3D" parent="props/bloodstains"]
-transform = Transform3D(-0.177049, 0, 10.4669, 0, 7.288, 0, -7.28585, 0, -0.254349, -6.28376, 0, -3.6957)
-mesh = SubResource("QuadMesh_6er1w")
-surface_material_override/0 = SubResource("StandardMaterial3D_w50a7")
+[node name="blood01" type="Decal" parent="props/bloodstains"]
+transform = Transform3D(-0.999976, 0, 0.00682411, 0, 1, 0, -0.00682417, 0, -0.999977, -0.661405, 0.995727, -1.79476)
+size = Vector3(10.167, 2.74644, 9.84111)
+texture_albedo = ExtResource("7_x2vej")
+texture_normal = ExtResource("8_nh72q")
+texture_orm = ExtResource("10_sjge3")
+emission_energy = 0.0
+modulate = Color(1, 0, 0, 1)
+upper_fade = 0.5
+lower_fade = 0.0194112
+distance_fade_begin = 15.0
+cull_mask = 32
 
-[node name="bloodstain02" type="MeshInstance3D" parent="props/bloodstains"]
-transform = Transform3D(0.798426, 0, -4.26592, 0, 4.34, 0, 4.26592, 0, 0.798426, 11.1869, 0, -7.65113)
-mesh = SubResource("QuadMesh_pl580")
-surface_material_override/0 = SubResource("StandardMaterial3D_lhhsv")
+[node name="blood02" type="Decal" parent="props/bloodstains"]
+transform = Transform3D(-0.714045, 0, 0.700099, 0, 1, 0, -0.700099, 0, -0.714045, 12.6168, 0.190267, -7.485)
+size = Vector3(8.03878, 0.621205, 8.52672)
+texture_albedo = ExtResource("7_x2vej")
+texture_normal = ExtResource("8_nh72q")
+texture_orm = ExtResource("10_sjge3")
+emission_energy = 0.0
+modulate = Color(1, 0, 0, 1)
+normal_fade = 0.801
+upper_fade = 0.5
+lower_fade = 0.0194112
+distance_fade_begin = 15.0
+
+[node name="blood03" type="Decal" parent="props/bloodstains"]
+transform = Transform3D(0.0524408, 0.0497663, -0.997383, 0.262676, 0.962899, 0.0618567, 0.963458, -0.265233, 0.0374228, -12.0742, 1.44507, 1.57671)
+layers = 33
+size = Vector3(6.07263, 4.56169, 6.84366)
+texture_albedo = ExtResource("7_x2vej")
+texture_normal = ExtResource("8_nh72q")
+texture_orm = ExtResource("9_m2oai")
+emission_energy = 0.0
+modulate = Color(1, 0, 0, 1)
+lower_fade = 0.0194112
+distance_fade_begin = 15.0
+cull_mask = 32
 
 [node name="livingroom" type="Node3D" parent="props"]
 
@@ -1309,42 +1310,49 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cc72v")
 
 [node name="tableMesh" type="MeshInstance3D" parent="props/livingroom"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
+layers = 33
 mesh = SubResource("ArrayMesh_np6r3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5hpad")
 
 [node name="chairMesh03" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(-4.37114e-08, 0, 0.75, 0, 1, 0, -2, 0, -6.55671e-08, -1, 0, 0)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="chairMesh04" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(1.31134e-07, 0, -0.75, 0, 1, 0, 2, 0, 1.96701e-07, 1, 0, 0)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="chairMesh05" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(-1, 0, -6.55671e-08, 0, 1, 0, 1.74846e-07, 0, -1.5, 0.5, 0, 1)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="chairMesh06" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(-1, 0, -6.55671e-08, 0, 1, 0, 1.74846e-07, 0, -1.5, -0.5, 0, 1)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="chairMesh07" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(1, 0, 1.96701e-07, 0, 1, 0, -2.62268e-07, 0, 1.5, -0.5, 0, -1)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 
 [node name="chairMesh08" type="MeshInstance3D" parent="props/livingroom/tableMesh"]
 transform = Transform3D(1, 0, 1.96701e-07, 0, 1, 0, -2.62268e-07, 0, 1.5, 0.5, 0, -1)
+layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
