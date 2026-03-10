@@ -1,4 +1,4 @@
-[gd_scene load_steps=119 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=118 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -9,7 +9,6 @@
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="7_0oixp"]
 [ext_resource type="Texture2D" uid="uid://d3vocv0lmqlv8" path="res://Assets/Sprites/BloodAnim/blood04.png" id="7_x2vej"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="8_gq1q3"]
-[ext_resource type="Texture2D" uid="uid://dat72kia1bgsw" path="res://Assets/Sprites/BloodAnim/blood04nmap.png" id="8_nh72q"]
 [ext_resource type="Texture2D" uid="uid://ksb3rhxcjlw4" path="res://Assets/Sprites/BloodAnim/blood04orma.png" id="9_m2oai"]
 [ext_resource type="Texture2D" uid="uid://obk7w30txwnp" path="res://Assets/Mesh/Props/ToiletTex00.png" id="9_s6usw"]
 [ext_resource type="Texture2D" uid="uid://chnrwg57prfaq" path="res://Assets/Sprites/BloodAnim/blood04orm.png" id="10_sjge3"]
@@ -983,6 +982,7 @@ mesh = SubResource("ArrayMesh_8ms6n")
 skeleton = NodePath("")
 
 [node name="Collision" type="StaticBody3D" parent="ButcherHouse1F"]
+visible = false
 collision_mask = 0
 
 [node name="colHouse" type="CollisionShape3D" parent="ButcherHouse1F/Collision"]
@@ -1237,53 +1237,45 @@ surface_material_override/0 = SubResource("StandardMaterial3D_6qi7m")
 [node name="bloodstains" type="Node3D" parent="props"]
 
 [node name="blood00" type="Decal" parent="props/bloodstains"]
-transform = Transform3D(-0.2451, 0.00458258, 0.969487, 0.262676, 0.962899, 0.0618567, -0.933234, 0.269822, -0.23721, -10.4893, 1.74387, -6.42998)
+transform = Transform3D(-0.2451, 0.00458258, 0.969487, 0.262676, 0.962899, 0.0618567, -0.933234, 0.269822, -0.23721, -10.4957, 0.397276, -6.80732)
 layers = 33
-size = Vector3(9.38914, 4.56169, 8.8438)
+size = Vector3(9.38914, 1.76473, 8.8438)
 texture_albedo = ExtResource("7_x2vej")
-texture_normal = ExtResource("8_nh72q")
 texture_orm = ExtResource("9_m2oai")
 emission_energy = 0.0
-modulate = Color(1, 0, 0, 1)
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
 cull_mask = 32
 
 [node name="blood01" type="Decal" parent="props/bloodstains"]
-transform = Transform3D(-0.999976, 0, 0.00682411, 0, 1, 0, -0.00682417, 0, -0.999977, -0.661405, 0.995727, -1.79476)
-size = Vector3(10.167, 2.74644, 9.84111)
+transform = Transform3D(-0.996922, 0.0780937, 0.00680327, 0.0705175, 0.931333, -0.357277, -0.0342372, -0.355697, -0.933974, -1.38291, -0.333058, 0.539351)
+size = Vector3(10.167, 2.87728, 9.84111)
 texture_albedo = ExtResource("7_x2vej")
-texture_normal = ExtResource("8_nh72q")
 texture_orm = ExtResource("10_sjge3")
 emission_energy = 0.0
-modulate = Color(1, 0, 0, 1)
 upper_fade = 0.5
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
 cull_mask = 32
 
 [node name="blood02" type="Decal" parent="props/bloodstains"]
-transform = Transform3D(-0.714045, 0, 0.700099, 0, 1, 0, -0.700099, 0, -0.714045, 12.6168, 0.190267, -7.485)
-size = Vector3(8.03878, 0.621205, 8.52672)
+transform = Transform3D(-0.67322, -0.265956, 0.689957, 0.00610081, 0.931049, 0.364842, -0.739417, 0.249828, -0.625178, 12.0462, 0.621518, -7.50171)
+size = Vector3(7.69775, 3.20056, 7.05212)
 texture_albedo = ExtResource("7_x2vej")
-texture_normal = ExtResource("8_nh72q")
 texture_orm = ExtResource("10_sjge3")
 emission_energy = 0.0
-modulate = Color(1, 0, 0, 1)
-normal_fade = 0.801
 upper_fade = 0.5
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
+cull_mask = 32
 
 [node name="blood03" type="Decal" parent="props/bloodstains"]
-transform = Transform3D(0.0524408, 0.0497663, -0.997383, 0.262676, 0.962899, 0.0618567, 0.963458, -0.265233, 0.0374228, -12.0742, 1.44507, 1.57671)
+transform = Transform3D(0.0560416, 0.178327, -0.982374, 0.116778, 0.975996, 0.183831, 0.991576, -0.125022, 0.0338718, -11.1822, 0.81806, 1.47389)
 layers = 33
-size = Vector3(6.07263, 4.56169, 6.84366)
+size = Vector3(6.07263, 3.28133, 4.58882)
 texture_albedo = ExtResource("7_x2vej")
-texture_normal = ExtResource("8_nh72q")
 texture_orm = ExtResource("9_m2oai")
 emission_energy = 0.0
-modulate = Color(1, 0, 0, 1)
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
 cull_mask = 32

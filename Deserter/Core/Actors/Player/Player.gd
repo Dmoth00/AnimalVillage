@@ -59,6 +59,7 @@ var t=0.0
 #main processes
 
 func _ready() -> void:
+	set_floor_snap_length(1.0)
 	flashlight(true)
 	anim.play("CharAnim_Awake",1,1)
 	awake_timer.start(5.0)

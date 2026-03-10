@@ -3709,6 +3709,7 @@ default_font_size = 32
 [node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
 collision_layer = 129
 collision_mask = 129
+floor_constant_speed = true
 script = ExtResource("1_t11b6")
 
 [node name="SFX" type="AudioStreamPlayer" parent="Player"]
@@ -4049,7 +4050,7 @@ one_shot = true
 one_shot = true
 
 [node name="StepRay" type="RayCast3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15118, 0.00568676)
+transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 0.761634, 0.00568676)
 target_position = Vector3(0, -1.2, 0)
 collision_mask = 5
 
