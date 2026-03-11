@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://dp3t4tnoa52o2"]
+[gd_scene load_steps=117 format=4 uid="uid://dp3t4tnoa52o2"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_e3ww0"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="2_x0amw"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="5_glojw"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="6_5p0py"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="7_0oixp"]
-[ext_resource type="Texture2D" uid="uid://d3vocv0lmqlv8" path="res://Assets/Sprites/BloodAnim/blood04.png" id="7_x2vej"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="8_gq1q3"]
 [ext_resource type="Texture2D" uid="uid://obk7w30txwnp" path="res://Assets/Mesh/Props/ToiletTex00.png" id="9_s6usw"]
 [ext_resource type="Texture2D" uid="uid://q6uej0bvisg8" path="res://Assets/Mesh/Props/SinkTex00.png" id="10_yujg0"]
@@ -1245,6 +1244,7 @@ size = Vector3(7.88976, 5.71888, 6.29081)
 texture_albedo = ExtResource("33_l6x1w")
 texture_orm = ExtResource("34_aypxi")
 emission_energy = 0.0
+albedo_mix = 0.72
 normal_fade = 0.065
 upper_fade = 0.764736
 lower_fade = 0.00394171
@@ -1257,18 +1257,19 @@ size = Vector3(9.27393, 3.70949, 7.28446)
 texture_albedo = ExtResource("33_l6x1w")
 texture_orm = ExtResource("34_aypxi")
 emission_energy = 0.0
+albedo_mix = 0.75
 upper_fade = 1.07177
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
 cull_mask = 32
 
 [node name="blood02" type="Decal" parent="props/bloodstains"]
-transform = Transform3D(-0.67322, -0.265956, 0.689957, 0.00610081, 0.931049, 0.364842, -0.739417, 0.249828, -0.625178, 12.3652, 0.586512, -7.60804)
-size = Vector3(8.15405, 3.20056, 7.25165)
-texture_albedo = ExtResource("7_x2vej")
+transform = Transform3D(-0.67322, -0.265956, 0.689957, 0.00610081, 0.931049, 0.364842, -0.739417, 0.249828, -0.625178, 12.0383, 0.218012, -7.18131)
+size = Vector3(4.61831, 3.117, 4.43547)
+texture_albedo = ExtResource("33_l6x1w")
 texture_orm = ExtResource("34_aypxi")
 emission_energy = 0.0
-upper_fade = 0.5
+upper_fade = 0.0412346
 lower_fade = 0.0194112
 distance_fade_begin = 15.0
 cull_mask = 32
@@ -1280,6 +1281,7 @@ size = Vector3(5.07273, 3.6298, 5.69898)
 texture_albedo = ExtResource("33_l6x1w")
 texture_orm = ExtResource("34_aypxi")
 emission_energy = 0.0
+albedo_mix = 0.85
 upper_fade = 0.848528
 lower_fade = 0.909429
 distance_fade_begin = 15.0
