@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://dnhxjsvw8r042"]
+[gd_scene format=4 uid="uid://dnhxjsvw8r042"]
 
 [ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/Textures/WallTex00.png" id="1_wgf27"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="2_u8b6v"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://c4ndml3bu0hcb" path="res://Assets/Textures/ConeTex00.png" id="16_1tuv0"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="17_dibnk"]
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="18_0h20s"]
+[ext_resource type="Texture2D" uid="uid://dgsxakhcspft2" path="res://Assets/Sprites/BloodAnim/bloodstain00.png" id="19_k8gf7"]
+[ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="20_vct5l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjjod"]
 resource_name = "WallMat00"
@@ -441,10 +443,11 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rjvjg")
 
-[node name="TownElevator" type="Node3D"]
+[node name="TownElevator" type="Node3D" unique_id=1725885213]
 
-[node name="meshHotelRoom01" type="MeshInstance3D" parent="."]
+[node name="meshHotelRoom01" type="MeshInstance3D" parent="." unique_id=1475167128]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 3, 0.203687, 0)
+layers = 33
 mesh = SubResource("ArrayMesh_5whro")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_icr7g")
@@ -453,98 +456,113 @@ surface_material_override/2 = SubResource("StandardMaterial3D_df1ap")
 surface_material_override/3 = SubResource("StandardMaterial3D_j2g86")
 surface_material_override/4 = SubResource("StandardMaterial3D_f44u2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="meshHotelRoom01"]
+[node name="StaticBody3D" type="StaticBody3D" parent="meshHotelRoom01" unique_id=1283955008]
+visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D" unique_id=1315324340]
 shape = SubResource("ConcavePolygonShape3D_nbj13")
 
-[node name="shelfCol" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D"]
+[node name="shelfCol" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D" unique_id=707695324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51335, 0.578175, -0.83194)
 shape = SubResource("BoxShape3D_77cix")
 
-[node name="shelfCol2" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D"]
+[node name="shelfCol2" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D" unique_id=1039125424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51335, -1.42183, -0.83194)
 shape = SubResource("BoxShape3D_77cix")
 
-[node name="shelfCol3" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D"]
+[node name="shelfCol3" type="CollisionShape3D" parent="meshHotelRoom01/StaticBody3D" unique_id=1875295635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51335, -3.42182, -0.83194)
 shape = SubResource("BoxShape3D_77cix")
 
-[node name="Env" type="WorldEnvironment" parent="."]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=9586553]
 environment = ExtResource("12_yb4fs")
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1909265945]
 stream = ExtResource("13_gtbxk")
 pitch_scale = 0.8
 autoplay = true
 
-[node name="Door" parent="." instance=ExtResource("14_l84aw")]
+[node name="Door" parent="." unique_id=1106312177 instance=ExtResource("14_l84aw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 newPosition = Vector3(34, -1, -69.5)
 newMap = "uid://cnqovkmyuiyoa"
 
-[node name="hole" type="MeshInstance3D" parent="Door"]
+[node name="hole" type="MeshInstance3D" parent="Door" unique_id=1828309089]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 1.08716, 0.440853)
 mesh = SubResource("QuadMesh_8u5el")
 
-[node name="props00" type="Node3D" parent="."]
+[node name="props00" type="Node3D" parent="." unique_id=126912166]
 
-[node name="coneMesh" type="MeshInstance3D" parent="props00"]
+[node name="coneMesh" type="MeshInstance3D" parent="props00" unique_id=22876202]
 transform = Transform3D(0.760781, 0, 0.247413, 0, 0.8, 0, -0.247413, 0, 0.760781, 8.52525, 0.175, 2.51004)
 mesh = SubResource("ArrayMesh_5qlni")
 skeleton = NodePath("")
 
-[node name="coneMesh2" type="MeshInstance3D" parent="props00"]
+[node name="coneMesh2" type="MeshInstance3D" parent="props00" unique_id=1547578908]
 transform = Transform3D(0.79566, 0, -0.08322, 0, 0.8, 0, 0.08322, 0, 0.79566, 8.52525, 0.175, 3.47194)
 mesh = SubResource("ArrayMesh_5qlni")
 skeleton = NodePath("")
 
-[node name="shelfMesh" type="MeshInstance3D" parent="props00"]
+[node name="shelfMesh" type="MeshInstance3D" parent="props00" unique_id=1047466246]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.7143, 0, 0.563)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh"]
+[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh" unique_id=1142021033]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98752, 0, 0)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="shelfMesh2" type="MeshInstance3D" parent="props00"]
+[node name="shelfMesh2" type="MeshInstance3D" parent="props00" unique_id=1045606047]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.7143, 0, -1.437)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh2"]
+[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh2" unique_id=1587379827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98752, 0, 0)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="shelfMesh3" type="MeshInstance3D" parent="props00"]
+[node name="shelfMesh3" type="MeshInstance3D" parent="props00" unique_id=280463943]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -1.7143, 0, -3.437)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh3"]
+[node name="shelfMesh2" type="MeshInstance3D" parent="props00/shelfMesh3" unique_id=2026323195]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98752, 0, 0)
 mesh = SubResource("ArrayMesh_cjmws")
 skeleton = NodePath("")
 
-[node name="CleaverMesh" type="MeshInstance3D" parent="props00"]
+[node name="CleaverMesh" type="MeshInstance3D" parent="props00" unique_id=443421678]
 transform = Transform3D(2.85708e-08, -0.75, 3.27835e-08, 0.353455, -1.545e-08, -0.66149, 0.66149, 4.06491e-08, 0.353455, -3.01638, 1.51015, -5.64149)
 mesh = SubResource("ArrayMesh_csf4r")
 skeleton = NodePath("")
 
-[node name="CleaverMesh2" type="MeshInstance3D" parent="props00"]
+[node name="CleaverMesh2" type="MeshInstance3D" parent="props00" unique_id=806279292]
 transform = Transform3D(2.28852e-08, -0.75, 3.27835e-08, 0.318529, -1.99605e-08, -0.678999, 0.678999, 3.4642e-08, 0.318529, -1.89642, 1.69142, -5.64149)
 mesh = SubResource("ArrayMesh_npixm")
 skeleton = NodePath("")
 
-[node name="CleaverMesh3" type="MeshInstance3D" parent="props00"]
+[node name="CleaverMesh3" type="MeshInstance3D" parent="props00" unique_id=1857256840]
 transform = Transform3D(0.0376317, -0.996807, -0.0704275, 0.556364, 0.0794434, -0.827132, 0.830086, -0.00805689, 0.557577, 0.158014, 1.66271, -5.62302)
 mesh = SubResource("ArrayMesh_hm3tq")
 skeleton = NodePath("")
 
-[node name="CleaverMesh4" type="MeshInstance3D" parent="props00"]
+[node name="CleaverMesh4" type="MeshInstance3D" parent="props00" unique_id=155063844]
 transform = Transform3D(0.141464, 0.941421, 0.306129, -0.448964, 0.33662, -0.827719, -0.882281, -0.0203482, 0.470284, 1.12626, 1.37604, -5.64149)
 mesh = SubResource("ArrayMesh_7st38")
 skeleton = NodePath("")
+
+[node name="blood01" type="Decal" parent="props00" unique_id=1097312545]
+transform = Transform3D(0.99989605, 0, 0.014398485, 0, 1.0000008, 0, -0.014398545, 0, 0.99989736, -0.46872348, -0.008823611, -2.7176917)
+size = Vector3(6.998434, 3.4797606, 6.8598557)
+texture_albedo = ExtResource("19_k8gf7")
+texture_orm = ExtResource("20_vct5l")
+emission_energy = 0.0
+modulate = Color(0.115499996, 0.35, 0.15458329, 1)
+albedo_mix = 0.5
+normal_fade = 0.109
+upper_fade = 0.784581
+lower_fade = 1.0815
+distance_fade_begin = 15.0
+cull_mask = 32

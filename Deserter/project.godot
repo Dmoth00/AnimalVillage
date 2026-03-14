@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Animal Village Pocket"
-run/main_scene="res://Core/Scene/town/system/init.tscn"
+run/main_scene="res://Core/Scene/system/init.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="res://LetterFull.png"
 config/icon="res://icon.svg"

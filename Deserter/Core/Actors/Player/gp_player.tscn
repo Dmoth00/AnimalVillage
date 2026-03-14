@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_d2n7a"]
 [ext_resource type="Script" uid="uid://0ypkp5tol3lm" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
 [ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="18_blp5p"]
-[ext_resource type="Script" uid="uid://c333t87avorai" path="res://Core/Scene/town/system/text_box.gd" id="24_wugvc"]
+[ext_resource type="Script" uid="uid://c333t87avorai" path="res://Core/Scene/system/text_box.gd" id="24_wugvc"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
