@@ -2512,9 +2512,6 @@ volume_db = -12.0
 pitch_scale = 0.8
 autoplay = true
 
-[node name="Env" type="WorldEnvironment" parent="." unique_id=1115292933]
-environment = SubResource("Environment_vlxxc")
-
 [node name="Exits" type="Node" parent="." unique_id=1525033143]
 
 [node name="DoorHome" parent="Exits" unique_id=311693843 instance=ExtResource("49_76bhm")]
@@ -2543,6 +2540,9 @@ newPosition = Vector3(-1.5, 0, -7)
 newMap = "uid://r4glbon2f20k"
 sound = ExtResource("5_1lhkq")
 playBefore = true
+
+[node name="Env" type="WorldEnvironment" parent="." unique_id=1115292933]
+environment = SubResource("Environment_vlxxc")
 
 [node name="Area01" type="Node3D" parent="." unique_id=1242022250]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
