@@ -1,9 +1,9 @@
-[gd_scene load_steps=87 format=4 uid="uid://be5ebusbps3xr"]
+[gd_scene format=4 uid="uid://be5ebusbps3xr"]
 
-[ext_resource type="Script" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
+[ext_resource type="Script" uid="uid://b7daar5us86s2" path="res://Core/Actors/Player/Player.gd" id="1_t11b6"]
 [ext_resource type="AudioStream" uid="uid://b1gctw55pyhjn" path="res://Assets/Sounds/SFX/snd_step2.wav" id="2_bflfw"]
-[ext_resource type="Script" path="res://Core/Actors/Player/gp_cam.gd" id="2_tag11"]
-[ext_resource type="Script" path="res://Core/System/GUI/gui.gd" id="3_3djve"]
+[ext_resource type="Script" uid="uid://bi04nh5mcfyx0" path="res://Core/Actors/Player/gp_cam.gd" id="2_tag11"]
+[ext_resource type="Script" uid="uid://dhkfgik5ptxyh" path="res://Core/System/GUI/gui.gd" id="3_3djve"]
 [ext_resource type="AudioStream" uid="uid://blp431yalssxu" path="res://Assets/Sounds/SFX/snd_gun.wav" id="3_d38oi"]
 [ext_resource type="Texture2D" uid="uid://cx5qftis3fp21" path="res://Assets/Sprites/maskTex01.png" id="4_3xx5o"]
 [ext_resource type="AudioStream" uid="uid://cjo684508m8ct" path="res://Assets/Sounds/SFX/snd_reload.wav" id="4_mggiy"]
@@ -11,19 +11,19 @@
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="5_br8mc"]
 [ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="6_8qpvd"]
 [ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/SFX/snd_click.wav" id="6_ojwdx"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
+[ext_resource type="Script" uid="uid://cg2va24eva1ga" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
 [ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_upbqn"]
 [ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_ksfv1"]
 [ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="9_810o2"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fl_glare.gd" id="10_xeoby"]
-[ext_resource type="Script" path="res://Core/Actors/Player/muzzleflash.gd" id="11_yhk73"]
-[ext_resource type="Script" path="res://Core/Actors/Player/ghost_detect.gd" id="12_uhhel"]
-[ext_resource type="Script" path="res://Core/Actors/Player/fl_shad.gd" id="13_l6m7u"]
-[ext_resource type="Script" path="res://Core/Actors/Player/player_gunray.gd" id="14_lynxp"]
+[ext_resource type="Script" uid="uid://2wuovkdinqwb" path="res://Core/Actors/Player/fl_glare.gd" id="10_xeoby"]
+[ext_resource type="Script" uid="uid://dtvmxb2witns6" path="res://Core/Actors/Player/muzzleflash.gd" id="11_yhk73"]
+[ext_resource type="Script" uid="uid://vevddg0mrkeh" path="res://Core/Actors/Player/ghost_detect.gd" id="12_uhhel"]
+[ext_resource type="Script" uid="uid://bjj1r5h8r4dys" path="res://Core/Actors/Player/fl_shad.gd" id="13_l6m7u"]
+[ext_resource type="Script" uid="uid://tk1pbf2m1xmx" path="res://Core/Actors/Player/player_gunray.gd" id="14_lynxp"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="16_d2n7a"]
-[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
+[ext_resource type="Script" uid="uid://0ypkp5tol3lm" path="res://Core/System/sfx_end.gd" id="17_mrb3d"]
 [ext_resource type="Texture2D" uid="uid://bda88m0cfom18" path="res://Assets/Sprites/speechTex00.png" id="18_blp5p"]
-[ext_resource type="Script" path="res://Core/Scene/town/system/text_box.gd" id="24_wugvc"]
+[ext_resource type="Script" uid="uid://c333t87avorai" path="res://Core/Scene/town/system/text_box.gd" id="24_wugvc"]
 
 [sub_resource type="Animation" id="Animation_vbl1u"]
 resource_name = "CharAim_Reload"
@@ -3259,21 +3259,21 @@ length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ywsd4"]
 _data = {
-"CharAim_Reload": SubResource("Animation_vbl1u"),
-"CharAnim_Aim": SubResource("Animation_4xgai"),
-"CharAnim_AimStop": SubResource("Animation_astqj"),
-"CharAnim_Awake": SubResource("Animation_eoml8"),
-"CharAnim_Blink": SubResource("Animation_2ndqf"),
-"CharAnim_Hurt": SubResource("Animation_g7gn7"),
-"CharAnim_KnockDown": SubResource("Animation_bck50"),
-"CharAnim_Null": SubResource("Animation_frvpi"),
-"CharAnim_Recover": SubResource("Animation_2uai5"),
-"CharAnim_Run": SubResource("Animation_krth3"),
-"CharAnim_Shoot": SubResource("Animation_qsyvd"),
-"CharAnim_Stand": SubResource("Animation_8gqio"),
-"CharAnim_Walk": SubResource("Animation_70ch8"),
-"CharArmAction_CharArm": SubResource("Animation_1phoy"),
-"RESET": SubResource("Animation_v4vig")
+&"CharAim_Reload": SubResource("Animation_vbl1u"),
+&"CharAnim_Aim": SubResource("Animation_4xgai"),
+&"CharAnim_AimStop": SubResource("Animation_astqj"),
+&"CharAnim_Awake": SubResource("Animation_eoml8"),
+&"CharAnim_Blink": SubResource("Animation_2ndqf"),
+&"CharAnim_Hurt": SubResource("Animation_g7gn7"),
+&"CharAnim_KnockDown": SubResource("Animation_bck50"),
+&"CharAnim_Null": SubResource("Animation_frvpi"),
+&"CharAnim_Recover": SubResource("Animation_2uai5"),
+&"CharAnim_Run": SubResource("Animation_krth3"),
+&"CharAnim_Shoot": SubResource("Animation_qsyvd"),
+&"CharAnim_Stand": SubResource("Animation_8gqio"),
+&"CharAnim_Walk": SubResource("Animation_70ch8"),
+&"CharArmAction_CharArm": SubResource("Animation_1phoy"),
+&"RESET": SubResource("Animation_v4vig")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6qgug"]
@@ -3567,7 +3567,7 @@ point_count = 2
 curve = SubResource("Curve_o27m6")
 
 [sub_resource type="Curve" id="Curve_od1gm"]
-max_value = 7.5
+_limits = [0.0, 7.5, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 15.7205, 0, 0, Vector2(1, 7.5), 0.155599, 0.0, 0, 0]
 point_count = 2
 
@@ -3575,8 +3575,7 @@ point_count = 2
 curve = SubResource("Curve_od1gm")
 
 [sub_resource type="Curve" id="Curve_wp5h0"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, -360), 0.0, 1008.0, 0, 0, Vector2(0.484018, 3.95605), 0.0, 0.0, 0, 0, Vector2(1, 11.8682), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -3591,8 +3590,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.081, 0.0936667, 0.1, 1)
 gradient = SubResource("Gradient_5sew4")
 
 [sub_resource type="Curve" id="Curve_x5m2u"]
-min_value = 0.01
-max_value = 4.0
+_limits = [0.01, 4.0, 0.0, 1.0]
 _data = [Vector2(0, 1.23769), 0.142535, 14.7323, 0, 0, Vector2(0.255708, 4), -0.514409, 0.0, 0, 0]
 point_count = 2
 
@@ -3704,61 +3702,59 @@ size = Vector2(0.4, 0.4)
 default_font = ExtResource("5_br8mc")
 default_font_size = 32
 
-[node name="gp_player" type="Node3D" groups=["Keep"]]
+[node name="gp_player" type="Node3D" unique_id=1925675755 groups=["Keep"]]
 
-[node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1299854176 groups=["Player"]]
 collision_layer = 129
 collision_mask = 129
 floor_constant_speed = true
 script = ExtResource("1_t11b6")
 
-[node name="SFX" type="AudioStreamPlayer" parent="Player"]
+[node name="SFX" type="AudioStreamPlayer" parent="Player" unique_id=1468727575]
 volume_db = -8.0
 
-[node name="anim" type="AnimationPlayer" parent="Player"]
-libraries = {
-"": SubResource("AnimationLibrary_ywsd4")
-}
+[node name="anim" type="AnimationPlayer" parent="Player" unique_id=1838722669]
+libraries/ = SubResource("AnimationLibrary_ywsd4")
 
-[node name="sndStep" type="AudioStreamPlayer" parent="Player/anim"]
+[node name="sndStep" type="AudioStreamPlayer" parent="Player/anim" unique_id=1277531799]
 stream = ExtResource("2_bflfw")
 volume_db = -8.0
 max_polyphony = 2
 
-[node name="sndShoot" type="AudioStreamPlayer" parent="Player/anim"]
+[node name="sndShoot" type="AudioStreamPlayer" parent="Player/anim" unique_id=1884850738]
 stream = ExtResource("3_d38oi")
 volume_db = -10.0
 
-[node name="sndReload" type="AudioStreamPlayer" parent="Player/anim"]
+[node name="sndReload" type="AudioStreamPlayer" parent="Player/anim" unique_id=603976601]
 stream = ExtResource("4_mggiy")
 volume_db = -6.0
 
-[node name="sndHit" type="AudioStreamPlayer" parent="Player/anim"]
+[node name="sndHit" type="AudioStreamPlayer" parent="Player/anim" unique_id=2052755833]
 stream = ExtResource("5_1l8rh")
 volume_db = -6.0
 
-[node name="sndClick" type="AudioStreamPlayer" parent="Player/anim"]
+[node name="sndClick" type="AudioStreamPlayer" parent="Player/anim" unique_id=1329615643]
 stream = ExtResource("6_ojwdx")
 volume_db = -20.0
 
-[node name="collision" type="Area3D" parent="Player"]
+[node name="collision" type="Area3D" parent="Player" unique_id=530246482]
 visible = false
 collision_layer = 0
 collision_mask = 4
 
-[node name="col" type="CollisionShape3D" parent="Player/collision"]
+[node name="col" type="CollisionShape3D" parent="Player/collision" unique_id=1188556220]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_6qgug")
 disabled = true
 
-[node name="moveCol" type="CollisionShape3D" parent="Player"]
+[node name="moveCol" type="CollisionShape3D" parent="Player" unique_id=1502632075]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_2kf5i")
 
-[node name="CharArm" type="Node3D" parent="Player"]
+[node name="CharArm" type="Node3D" parent="Player" unique_id=1296335695]
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="Player/CharArm"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Player/CharArm" unique_id=336167379]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 animate_physical_bones = false
 bones/0/name = "Base"
@@ -3895,7 +3891,7 @@ bones/18/position = Vector3(2.14083e-09, 0.485952, 4.24986e-08)
 bones/18/rotation = Quaternion(-6.23375e-08, 0.707107, 8.40202e-08, 0.707107)
 bones/18/scale = Vector3(1, 1, 1)
 
-[node name="charMesh" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D"]
+[node name="charMesh" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D" unique_id=535900281]
 mesh = SubResource("ArrayMesh_l1c7g")
 skin = SubResource("Skin_2uvyp")
 surface_material_override/0 = SubResource("StandardMaterial3D_2hb5k")
@@ -3903,12 +3899,12 @@ surface_material_override/1 = SubResource("StandardMaterial3D_vapp5")
 surface_material_override/2 = SubResource("StandardMaterial3D_0b6iv")
 surface_material_override/3 = SubResource("StandardMaterial3D_myy3m")
 
-[node name="fl" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D"]
-transform = Transform3D(-0.286869, 0.252576, 0.924073, 0.913933, 0.361261, 0.184978, -0.287111, 0.897606, -0.334472, 0.219114, 1.46033, 0.235862)
+[node name="fl" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D" unique_id=444915680]
+transform = Transform3D(-0.2868694, 0.25257614, 0.92407316, 0.913933, 0.361261, 0.1849783, -0.2871105, 0.8976056, -0.3344724, 0.21911399, 1.460334, 0.23586199)
 bone_name = "Flashlight"
 bone_idx = 13
 
-[node name="fl_light" type="SpotLight3D" parent="Player/CharArm/Skeleton3D/fl"]
+[node name="fl_light" type="SpotLight3D" parent="Player/CharArm/Skeleton3D/fl" unique_id=1067170179]
 transform = Transform3D(1, 0, 0, 0, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1.45519e-11, 0.55, 0)
 light_color = Color(0.98, 0.914667, 0.735, 1)
 light_energy = 0.0
@@ -3921,24 +3917,24 @@ spot_attenuation = 4.0
 spot_angle = 25.0
 spot_angle_attenuation = 0.25
 
-[node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl"]
+[node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl" unique_id=529359748]
 transform = Transform3D(1, 1.36424e-12, 3.52429e-12, 1.81899e-12, 1, 8.9407e-08, -9.43601e-12, -8.9407e-08, 1, 0.0215513, 0.5, -4.76837e-07)
 mesh = SubResource("QuadMesh_72oh8")
 script = ExtResource("10_xeoby")
 
-[node name="fl_g2" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl/fl_glare"]
+[node name="fl_g2" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl/fl_glare" unique_id=62991529]
 mesh = SubResource("QuadMesh_v5k3p")
 surface_material_override/0 = SubResource("StandardMaterial3D_r7alt")
 
-[node name="gun" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D"]
-transform = Transform3D(-0.998959, 0.0435691, -0.0135303, -0.0125565, 0.0225458, 0.999667, 0.0438596, 0.998796, -0.0219752, 0.069362, 2.12767, 0.863024)
+[node name="gun" type="BoneAttachment3D" parent="Player/CharArm/Skeleton3D" unique_id=920498572]
+transform = Transform3D(-0.9989589, 0.043569088, -0.013530254, -0.012556501, 0.02254577, 0.999667, 0.04385961, 0.99879605, -0.021975242, 0.069361985, 2.1276667, 0.8630238)
 bone_name = "Gun"
 bone_idx = 10
 
-[node name="guntip" type="Node3D" parent="Player/CharArm/Skeleton3D/gun"]
+[node name="guntip" type="Node3D" parent="Player/CharArm/Skeleton3D/gun" unique_id=91197560]
 transform = Transform3D(1, 0, 6.98492e-10, 3.72529e-09, 1, 1.86265e-09, -1.57161e-09, 1.86265e-09, 1, 0.0322063, 1.18122, 0.234127)
 
-[node name="muzzleflash" type="MeshInstance3D" parent="Player/CharArm"]
+[node name="muzzleflash" type="MeshInstance3D" parent="Player/CharArm" unique_id=1977462152]
 process_mode = 4
 transform = Transform3D(0.101, 1.52506e-08, 1.50996e-07, 1.52506e-08, -0.101, -6.54333e-20, 1.52506e-08, 2.30278e-15, -1, -0.0854863, 2.38794, -2.03909)
 mesh = SubResource("ArrayMesh_20sml")
@@ -3946,30 +3942,30 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5lkss")
 script = ExtResource("11_yhk73")
 
-[node name="ActDetect" type="Area3D" parent="Player/CharArm"]
+[node name="ActDetect" type="Area3D" parent="Player/CharArm" unique_id=58991711]
 transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0, 0, 0)
 collision_layer = 0
 collision_mask = 8
 
-[node name="col" type="CollisionShape3D" parent="Player/CharArm/ActDetect"]
+[node name="col" type="CollisionShape3D" parent="Player/CharArm/ActDetect" unique_id=401579397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07291e-07, 1.94125, -1.54148)
 shape = SubResource("BoxShape3D_xvvhj")
 
-[node name="GhostDetect" type="Area3D" parent="Player/CharArm"]
+[node name="GhostDetect" type="Area3D" parent="Player/CharArm" unique_id=113843182]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 2.5, 0)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_uhhel")
 
-[node name="col" type="CollisionShape3D" parent="Player/CharArm/GhostDetect"]
+[node name="col" type="CollisionShape3D" parent="Player/CharArm/GhostDetect" unique_id=370555808]
 transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, -1.85034e-07, 0, 3.48942)
 shape = SubResource("CapsuleShape3D_ptv7y")
 
-[node name="col2" type="CollisionShape3D" parent="Player/CharArm/GhostDetect"]
+[node name="col2" type="CollisionShape3D" parent="Player/CharArm/GhostDetect" unique_id=212096965]
 transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("SphereShape3D_ke7wv")
 
-[node name="fl_shad" type="OmniLight3D" parent="Player/CharArm"]
+[node name="fl_shad" type="OmniLight3D" parent="Player/CharArm" unique_id=1607696165]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -0.0801498, 2.38459, -2.35747)
 light_color = Color(0.960784, 0.984314, 0.737255, 1)
 light_energy = 0.0
@@ -3982,20 +3978,20 @@ omni_attenuation = 2.0
 omni_shadow_mode = 0
 script = ExtResource("13_l6m7u")
 
-[node name="gunRay" type="RayCast3D" parent="Player/CharArm"]
+[node name="gunRay" type="RayCast3D" parent="Player/CharArm" unique_id=1370002915]
 transform = Transform3D(1, 1.77636e-14, 2.13163e-14, -1.77636e-14, 1, -1.05879e-21, -3.55271e-14, 2.0327e-21, 1, -0.0854863, 2.38794, -2.03909)
 target_position = Vector3(0, 0, -10)
 script = ExtResource("14_lynxp")
 
-[node name="guy" type="MeshInstance3D" parent="Player/CharArm/gunRay"]
+[node name="guy" type="MeshInstance3D" parent="Player/CharArm/gunRay" unique_id=2056907286]
 visible = false
 mesh = SubResource("QuadMesh_jg4q4")
 
-[node name="tray" type="Timer" parent="Player/CharArm/gunRay"]
+[node name="tray" type="Timer" parent="Player/CharArm/gunRay" unique_id=596420459]
 wait_time = 0.1
 autostart = true
 
-[node name="bloodSFX" type="GPUParticles3D" parent="Player/CharArm"]
+[node name="bloodSFX" type="GPUParticles3D" parent="Player/CharArm" unique_id=1213905460]
 transform = Transform3D(-2.5, 0, 2.18557e-07, 0, 2.5, 0, -2.18557e-07, 0, -2.5, 0, 2.37551, 0)
 emitting = false
 lifetime = 2.0
@@ -4004,15 +4000,15 @@ explosiveness = 0.75
 process_material = SubResource("ParticleProcessMaterial_yp178")
 draw_pass_1 = SubResource("QuadMesh_668lg")
 
-[node name="act_sign" type="Node3D" parent="Player"]
+[node name="act_sign" type="Node3D" parent="Player" unique_id=1988423190]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0.0897868, 1.22069, 0)
 
-[node name="act_mesh" type="MeshInstance3D" parent="Player/act_sign"]
+[node name="act_mesh" type="MeshInstance3D" parent="Player/act_sign" unique_id=821966971]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232416, 0.692173, 0)
 mesh = SubResource("QuadMesh_a4lq6")
 surface_material_override/0 = SubResource("StandardMaterial3D_mwvwl")
 
-[node name="smokeSFX" type="GPUParticles3D" parent="Player"]
+[node name="smokeSFX" type="GPUParticles3D" parent="Player" unique_id=725150621]
 process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0341946, 0.955177, 0.815636)
 gi_mode = 0
@@ -4025,7 +4021,7 @@ process_material = SubResource("ParticleProcessMaterial_sstdq")
 draw_pass_1 = SubResource("QuadMesh_pxoup")
 script = ExtResource("17_mrb3d")
 
-[node name="fl_spot" type="SpotLight3D" parent="Player"]
+[node name="fl_spot" type="SpotLight3D" parent="Player" unique_id=1715717609]
 transform = Transform3D(1, 6.3573e-08, 2.77886e-15, 0, -4.37114e-08, 1, 6.3573e-08, -1, -4.37114e-08, 0, 5, 0)
 light_color = Color(0.960784, 0.984314, 0.737255, 1)
 light_energy = 0.05
@@ -4037,35 +4033,35 @@ spot_attenuation = 0.0
 spot_angle = 25.0
 spot_angle_attenuation = 5.0
 
-[node name="can_move_timer" type="Timer" parent="Player"]
+[node name="can_move_timer" type="Timer" parent="Player" unique_id=226126968]
 one_shot = true
 
-[node name="vul_timer" type="Timer" parent="Player"]
+[node name="vul_timer" type="Timer" parent="Player" unique_id=1905256854]
 one_shot = true
 
-[node name="awake_timer" type="Timer" parent="Player"]
+[node name="awake_timer" type="Timer" parent="Player" unique_id=1686617930]
 one_shot = true
 
-[node name="death_timer" type="Timer" parent="Player"]
+[node name="death_timer" type="Timer" parent="Player" unique_id=197522796]
 one_shot = true
 
-[node name="StepRay" type="RayCast3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 0.761634, 0.00568676)
-target_position = Vector3(0, -1.2, 0)
+[node name="StepRay" type="RayCast3D" parent="Player" unique_id=727824333]
+transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 1.3157965, 0.00568676)
+target_position = Vector3(0, -1.5, 0)
 collision_mask = 5
 
-[node name="gp_cam" type="Node3D" parent="." groups=["Camera"]]
+[node name="gp_cam" type="Node3D" parent="." unique_id=1273085979 groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 0)
 script = ExtResource("2_tag11")
 
-[node name="cam" type="Camera3D" parent="gp_cam"]
+[node name="cam" type="Camera3D" parent="gp_cam" unique_id=680761952]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 fov = 90.0
 
-[node name="GUI" type="CanvasLayer" parent="gp_cam"]
+[node name="GUI" type="CanvasLayer" parent="gp_cam" unique_id=999527811]
 script = ExtResource("3_3djve")
 
-[node name="TextureRect" type="TextureRect" parent="gp_cam/GUI"]
+[node name="TextureRect" type="TextureRect" parent="gp_cam/GUI" unique_id=608692682]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.192
@@ -4075,7 +4071,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 texture = ExtResource("4_3xx5o")
 
-[node name="blood" type="RichTextLabel" parent="gp_cam/GUI"]
+[node name="blood" type="RichTextLabel" parent="gp_cam/GUI" unique_id=1265059162]
 anchors_preset = -1
 anchor_right = 0.489
 anchor_bottom = 0.168
@@ -4091,7 +4087,7 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="curse" type="RichTextLabel" parent="gp_cam/GUI/blood"]
+[node name="curse" type="RichTextLabel" parent="gp_cam/GUI/blood" unique_id=688331427]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.075
@@ -4110,7 +4106,7 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="bullets" type="RichTextLabel" parent="gp_cam/GUI"]
+[node name="bullets" type="RichTextLabel" parent="gp_cam/GUI" unique_id=1936359354]
 anchors_preset = -1
 anchor_left = 0.55
 anchor_top = 0.003
@@ -4128,7 +4124,7 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="chamber" type="TextureRect" parent="gp_cam/GUI/bullets"]
+[node name="chamber" type="TextureRect" parent="gp_cam/GUI/bullets" unique_id=141143904]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.086
@@ -4143,7 +4139,7 @@ texture = ExtResource("6_8qpvd")
 expand_mode = 1
 stretch_mode = 1
 
-[node name="reload" type="RichTextLabel" parent="gp_cam/GUI/bullets"]
+[node name="reload" type="RichTextLabel" parent="gp_cam/GUI/bullets" unique_id=1967997687]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.212
@@ -4162,7 +4158,7 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="fade" type="ColorRect" parent="gp_cam/GUI"]
+[node name="fade" type="ColorRect" parent="gp_cam/GUI" unique_id=1540474038]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -4175,7 +4171,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("7_0qvyp")
 
-[node name="db_text" type="RichTextLabel" parent="gp_cam/GUI"]
+[node name="db_text" type="RichTextLabel" parent="gp_cam/GUI" unique_id=1506073764]
 anchors_preset = -1
 anchor_right = 0.489
 anchor_bottom = 0.168
@@ -4191,19 +4187,19 @@ autowrap_mode = 1
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="SFX" type="AudioStreamPlayer" parent="gp_cam"]
+[node name="SFX" type="AudioStreamPlayer" parent="gp_cam" unique_id=1292531925]
 volume_db = -8.0
 
-[node name="t" type="Timer" parent="gp_cam"]
+[node name="t" type="Timer" parent="gp_cam" unique_id=1919430600]
 wait_time = 0.1
 one_shot = true
 
-[node name="TextBox" type="CanvasLayer" parent="gp_cam" node_paths=PackedStringArray("player") groups=["TXT"]]
+[node name="TextBox" type="CanvasLayer" parent="gp_cam" unique_id=1685002865 node_paths=PackedStringArray("player") groups=["TXT"]]
 follow_viewport_enabled = true
 script = ExtResource("24_wugvc")
 player = NodePath("../../Player")
 
-[node name="Box" type="Control" parent="gp_cam/TextBox"]
+[node name="Box" type="Control" parent="gp_cam/TextBox" unique_id=684866778]
 layout_mode = 3
 anchor_top = 0.5
 anchor_right = 1.0
@@ -4216,7 +4212,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(527, 0)
 
-[node name="ColorRect" type="ColorRect" parent="gp_cam/TextBox/Box"]
+[node name="ColorRect" type="ColorRect" parent="gp_cam/TextBox/Box" unique_id=1488350159]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -4226,7 +4222,7 @@ offset_top = 58.0
 offset_right = -137.0
 color = Color(0, 0, 0, 0.501961)
 
-[node name="ReferenceRect" type="ReferenceRect" parent="gp_cam/TextBox/Box"]
+[node name="ReferenceRect" type="ReferenceRect" parent="gp_cam/TextBox/Box" unique_id=323217079]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -4240,7 +4236,7 @@ border_color = Color(1, 1, 1, 1)
 border_width = 4.0
 editor_only = false
 
-[node name="Text" type="RichTextLabel" parent="gp_cam/TextBox/Box"]
+[node name="Text" type="RichTextLabel" parent="gp_cam/TextBox/Box" unique_id=1959775316]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
