@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=4 uid="uid://ctu8liuuy3hip"]
+[gd_scene format=4 uid="uid://ctu8liuuy3hip"]
 
-[ext_resource type="Script" path="res://Core/Props/iteractibles/radio.gd" id="1_xnfba"]
+[ext_resource type="Script" uid="uid://b3r7x3sf8yh3q" path="res://Core/Props/iteractibles/radio.gd" id="1_xnfba"]
 [ext_resource type="Texture2D" uid="uid://cnxftc8d7asaj" path="res://Assets/Mesh/Props/RadioTex00.png" id="2_pmcmy"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="3_3qkb5"]
 [ext_resource type="AudioStream" uid="uid://8xk3xa45q4uo" path="res://Assets/Sounds/SFX/snd_spark01.wav" id="4_ay24h"]
 [ext_resource type="Texture2D" uid="uid://bw54hqp4kiym" path="res://Assets/Sprites/lightningTex.png" id="5_erhwq"]
-[ext_resource type="Script" path="res://Core/System/sfx_end.gd" id="6_kmbfm"]
+[ext_resource type="Script" uid="uid://0ypkp5tol3lm" path="res://Core/System/sfx_end.gd" id="6_kmbfm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hjk1"]
 resource_name = "MatRadio"
@@ -94,6 +94,7 @@ load_path = "res://.godot/imported/LightTex01.png-1b6b01aca2a69ba25024b580f7441a
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l80he"]
 transparency = 1
+blend_mode = 1
 depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
@@ -107,7 +108,7 @@ material = SubResource("StandardMaterial3D_l80he")
 size = Vector2(0.5, 0.5)
 
 [sub_resource type="Curve" id="Curve_mdt6v"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 0.967083), 0.0, -1.91273, 0, 1, Vector2(0.501449, 0.00794578), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -153,19 +154,19 @@ section_length = 0.25
 section_segments = 4
 curve = SubResource("Curve_tt3jd")
 
-[node name="Radio" type="StaticBody3D" groups=["Id", "Mortal"]]
+[node name="Radio" type="StaticBody3D" unique_id=471549432 groups=["Id", "Mortal"]]
 collision_mask = 0
 script = ExtResource("1_xnfba")
 
-[node name="RadioMesh" type="MeshInstance3D" parent="."]
+[node name="RadioMesh" type="MeshInstance3D" parent="." unique_id=57457357]
 mesh = SubResource("ArrayMesh_8y3wh")
 skeleton = NodePath("")
 
-[node name="col" type="CollisionShape3D" parent="."]
+[node name="col" type="CollisionShape3D" parent="." unique_id=976799912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.191055, 0)
 shape = SubResource("BoxShape3D_8kofi")
 
-[node name="smoke" type="GPUParticles3D" parent="."]
+[node name="smoke" type="GPUParticles3D" parent="." unique_id=740792087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15223, 0)
 emitting = false
 amount = 4
@@ -173,22 +174,22 @@ lifetime = 1.5
 process_material = SubResource("ParticleProcessMaterial_qy23a")
 draw_pass_1 = SubResource("QuadMesh_lc8qr")
 
-[node name="light" type="MeshInstance3D" parent="."]
+[node name="light" type="MeshInstance3D" parent="." unique_id=1944907016]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, -7.4506e-09, 0, 7.4506e-09, 0.5, 0.1, 0.1, 0.152)
 mesh = SubResource("QuadMesh_10o23")
 
-[node name="radio" type="AudioStreamPlayer3D" parent="light"]
+[node name="radio" type="AudioStreamPlayer3D" parent="light" unique_id=1256445509]
 attenuation_model = 1
 volume_db = -6.0
 max_db = -6.0
 autoplay = true
 
-[node name="spark" type="AudioStreamPlayer3D" parent="."]
+[node name="spark" type="AudioStreamPlayer3D" parent="." unique_id=1214399680]
 stream = ExtResource("4_ay24h")
 attenuation_model = 1
 volume_db = 4.0
 
-[node name="xplod" type="GPUParticles3D" parent="."]
+[node name="xplod" type="GPUParticles3D" parent="." unique_id=1988935143]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269058, 0)
 emitting = false
 amount = 6

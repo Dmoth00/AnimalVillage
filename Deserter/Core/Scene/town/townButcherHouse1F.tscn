@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bgin35yteec1w" path="res://Assets/Sprites/BloodAnim/bloodstain01orm.png" id="36_3s3q6"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="37_fax6o"]
 [ext_resource type="Texture2D" uid="uid://pytubnchn32o" path="res://Assets/Textures/ChainlinkTex00.png" id="38_5s8gf"]
+[ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="39_h7sxr"]
 [ext_resource type="PackedScene" uid="uid://bsv6andn65p8i" path="res://Core/Actors/NPC/Villagers/butcher.tscn" id="41_jxhvh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gn0dh"]
@@ -1422,11 +1423,52 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_yaqaj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptgr5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alf65"]
+resource_name = "MatMetal"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("39_h7sxr")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ukws5"]
+_surfaces = [{
+"aabb": AABB(-0.5, -0.001309875, -0.49999997, 1, 0.9989937, 1),
+"format": 34896613377,
+"index_count": 192,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAACAAQAAwAEAAIAAAAFAAEAAwAGAAQAAAAEAAcABQAAAAgABwAIAAAABwAEAAkACQAEAAYABwAKAAgABwAJAAoABQAIAAsADAAIAAoADAAKAAkABQALAA0ABQANAAEADgALAAgADgANAAsADAAPAAgADgAIAA8ADAAJABAADwAMABAADwARAA4ADgARAA0ADwAQABIADwASABEAEwASABAAEwARABIACQAUABAAEwAQABQACQAVABQACQAGABUAFQAWABQAFQAGABcAFAAWABgAFAAYABMAFQAZABYAFQAXABkAGQAYABYABgAaABcAGQAXABoABgADABoAGQAbABgAGQAaABsAHAAYABsAHAAbABoAHAAdABgAHAAaAB4AHwAaAAMAHwAeABoAAwABAB8ADQAfAAEAIAAeAB8AIAAcAB4ADQAgAB8AIAAdABwADQAhACAAIAAhAB0AIQAYAB0ADQARACEAIQATABgAEwAhABEA"),
+"name": "MatMetal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("SyBTAP9/AACIIf//iCEAAAAA////fwAA+wn///l/AACIIf//ed4AAF45AABeOQAA+in//9PXAABeOQAAo8YAAP9/UwD/fwAA/3//////AAD/f1MAs98AAP9/UwBLIAAAo8YAAKPGAAD/f///AAAAAKPGAABeOQAAs99TAP9/AAB53v//ed4AAHne//+IIQAA//////9/AAD89f//+X8AAF7X//9d1wAA+3////H1AAC1vrEKtr4AAEtBsQq2vgAAmNlgCv9/AAD/f2AKmNkAAGYmYAr/fwAA/39gCv9/AAD/f2AKZiYAALW+sQpMQQAAS0GxCkxBAAAQKf//hCkAAPt///8CCgAAdNb//5koAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gdfpy"]
+resource_name = "props00_Cube_018"
+_surfaces = [{
+"aabb": AABB(-0.5, -0.001309875, -0.49999997, 1, 0.9989937, 1),
+"attribute_data": PackedByteArray("/3+l/4kxJwb/fycGbTT//1/HKPsjrh/fgarw+RPGrN9nQZH2j1RVztdikvZSLJ3cbTT//9oZJwaJMScGmRml/w3F/GKf1W+MnLj/f5/VZnRFJicGTEFK9bBBJwZmJpv1Aox034Gq8Pkjrh/fr4h5/LBBJwb/f5v1/38nBkxBSvX/f6X/iTEnBm00////fycGX8co+yusFN8TxqzfBqge+8x8feGPVFXOzHwNwNdikvZtNP//2hknBpkZpf+JMScGK6wBnZmbjnOcuP9/mpuYi0UmJwZMQUr1Ziab9eRAJwZOjS/fBqge+y2K0/wrrBTf5EAnBv9/m/VMQUr1/38nBv9/pf9QyCcGbMX///9/JwZjP0v80mjC3q9AiN7TZVb8Uiwsu49UVc5SLJ3cR0YYpmzF///B4icGrOGl/1DIJwYrrAGdn9VvjDXEAp2cuP9/pdYnBo64SvVw05v1l7onBgKMdN/TZVb8r4h5/NJowt6XuicG/3+b9Y64SvX/fycG/3+l/3PHJwb/fycGbMX//2M/S/xEY57ev2ZN/K9AiN64Zxemj1RVzkdGGKbMfA3AbMX//8HiJwZzxycGrOGl/6XWJwaOuEr1MbonBnDTm/VOjS/fv2ZN/ERjnt4titP8MbonBv9/m/X/fycGjrhK9Q3F/GKZm45zA639Ypy4/38="),
+"format": 34896613399,
+"index_count": 192,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0A"),
+"material": SubResource("StandardMaterial3D_alf65"),
+"name": "MatMetal",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 128,
+"vertex_data": PackedByteArray("SyBTAP9//M2IIf//iCH8zQAA////f/zNXjkAAF45/M3/f///AADMPhAp//+EKdo+iCH//4gh2z77f///AgrLPl45AABeORDB/39TAP9/EMH/f1MASyAQwUsgUwD/fxDBXjkAAF45IfL/f///AAAh8ogh//+IISHy/39TAEsgIfL/f2AKZiaRwZjZYAr/f5HB/39gCv9/kcG1vrEKTEGRwft///8CCtAAS0GxCkxB9AAQKf//hCm7AP9/YApmJggB+wn///l/BTKIIf//iCE3MhAp//+EKTsyAAD///9/AzIQKf//hCnHAmYmYAr/f4gC+wn///l/wAJLQbEKTEGZArPfUwD/f+8Ded7//4gh7wOjxgAAXjnvA///////f+8D/3///wAAR/Z01v//mSgz9vt///8CCkn2ed7//4ghMvajxgAAXjkYwf9/UwD/fxjBs99TAP9/GMH/f1MASyAYwaPGAABeOcIE/3///wAAwAT/f1MASyDABHne//+IIcAE/39gCpjZucFmJmAK/3+5wf9/YAr/f7nBS0GxCra+ucH7f///Agq7j7W+sQpMQb2P/39gCmYmv4901v//mSi6j/z1///5f6Hded7//4gh3d3//////3+e3XTW//+ZKOLddNb//5koErGY2WAK/38OsbW+sQpMQQ+x/PX///l/EbFLIFMA/39Qsogh//953lCyXjkAAKPGULIAAP///39Qsv9//////80J+in//9PXswn7f///8fXMCYgh//953rYJXjkAAKPGP8H/f1MA/38/wUsgUwD/fz/B/39TALPfP8FeOQAAo8awjv9//////7CO/39TALPfsI6IIf//ed6wjv9/YAqY2cPBmNlgCv9/w8G1vrEKtr7Dwf9/YAr/f8PB+3////H1xARLQbEKtr60BP9/YAqY2bcE+in//9PXwQT7Cf//+X8VIogh//953j8iAAD///9/GSL6Kf//09c9Ivop///T19sDZiZgCv9/AgRLQbEKtr77A/sJ///5f+ADs99TAP9/ywJ53v//ed7EAv//////f8QCo8YAAKPGywL/f/////8kwV7X//9d1yvBed7//3neK8H7f///8fUkwaPGAACjxkfB/39TAP9/R8H/f1MAs99HwbPfUwD/f0fBo8YAAKPGzgD/f//////WAHne//953tYA/39TALPfzgD7f///8fUg8bW+sQq2vhrxXtf//13XH/H/f2AKmNkc8fz1///5f9vNed7//3ne7s1e1///Xdfwzf//////f9rNXtf//13XAM+Y2WAK/38Fz/z1///5fwHPtb6xCra+BM//f2AKZiaHwWYmYAr/f4fBS0GxCkxBh8H/f2AK/3+HwTp0Gfs8dCD7O3Qf+zt0HPt27+1ev++AX8Tvil9u791e0iB+b9Igfm/SIH5v0iB+b7N3zf6td8b+r3fH/rF3yv587bRafO20WnzttFp87bRaVJMIhl2T2oVbk9CFXJPohWbazjSO2h41ktomNWTayjRHsjeEMbJkhEOyQoQ2slyEFAPKthIDybYUA8q2EwPJtgfFEAoQxSMKBsUOChHFJQrQILhv0CC4b9AguG/QILhvFgG3kyEBwZMhAcGTIQHBkz3twlo97cJaPe3CWj3twlqrnUvdNp2d3AydX9zPnX/dw9CIIaXQSyHF0IshotBGIWSJ0+/NifvvtYny73aJ2u/yb6D29W+Y9vNvnfb0b5r2EsUlCgXFDAoRxSUKB8UPCsQgfG/EIHxvxCB8b8QgfG8+W4XgKluS4DZbiuAuW4/gee3GWnntxlp57cZaee3GWi3r+YDL6maB3+pQgSDrCIGe0D8htNBqIaDQQyGz0GghQsoLg2rKzoJiytqCR8oCg0gEx8xJBMjMSATHzEoEyMy+735fnO86X5rvNl/B74RfwiC1b8IgtW/CILVvwiC1bzgGH+5MBiHuUwYi7ikGHe4bgcD3mIFg9zCBsPd7gXb3ftr+NG/a3zRt2t00f9r/NO+ETfR1hHD02oRT9JKEaPRA7bFaQO2xWkDtsVpA7bFa")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ukws5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7sxr"]
 albedo_texture = ExtResource("24_d0l35")
 
 [sub_resource type="QuadMesh" id="QuadMesh_rp0xk"]
-material = SubResource("StandardMaterial3D_ptgr5")
+material = SubResource("StandardMaterial3D_h7sxr")
 flip_faces = true
 size = Vector2(1, 2)
 
@@ -1896,6 +1938,11 @@ skeleton = NodePath("")
 [node name="curtain_big" type="MeshInstance3D" parent="props/livingroom/curtains/curtains" unique_id=745072123]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_cy36p")
+skeleton = NodePath("")
+
+[node name="bucketMesh00" type="MeshInstance3D" parent="props/livingroom" unique_id=1505930517]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 3.5, 0, -7.5)
+mesh = SubResource("ArrayMesh_gdfpy")
 skeleton = NodePath("")
 
 [node name="Door" parent="." unique_id=101980460 instance=ExtResource("23_yp5ts")]
