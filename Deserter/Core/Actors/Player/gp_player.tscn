@@ -3718,8 +3718,8 @@ libraries/ = SubResource("AnimationLibrary_ywsd4")
 
 [node name="sndStep" type="AudioStreamPlayer" parent="Player/anim" unique_id=1277531799]
 stream = ExtResource("2_bflfw")
-volume_db = -8.0
-max_polyphony = 2
+volume_db = -8.5
+mix_target = 1
 
 [node name="sndShoot" type="AudioStreamPlayer" parent="Player/anim" unique_id=1884850738]
 stream = ExtResource("3_d38oi")

@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 3.0
+@export var grav = 980
 var runMod = 1.0
 
 var state=2
@@ -15,8 +16,6 @@ var firet=0.5
 @onready var hit_sfx=$CharArm/bloodSFX
 @onready var gunray=$CharArm/gunRay
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 #movement collision and animation
 @onready var mesh=get_node("CharArm")
@@ -68,7 +67,7 @@ func _physics_process(delta):
 	
 	# fall detection
 	if not is_on_floor():
-		velocity.y -= 9.8 * delta
+		velocity.y -= grav * delta
 	
 	# Input detection for direction
 	input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down")
