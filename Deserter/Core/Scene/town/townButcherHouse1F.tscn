@@ -1515,7 +1515,7 @@ environment = ExtResource("7_0oixp")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1523691916]
 stream = ExtResource("8_gq1q3")
-pitch_scale = 0.8
+pitch_scale = 0.9
 autoplay = true
 
 [node name="props" type="Node3D" parent="." unique_id=143068219]
@@ -2041,5 +2041,14 @@ shape = SubResource("BoxShape3D_33i4x")
 
 [node name="Butcher" parent="." unique_id=2074839347 instance=ExtResource("41_jxhvh")]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 12, 0, -2)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1242193858]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.188707, 6.6698885, -2.0701756)
+light_color = Color(1, 0.050000012, 0, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_bake_mode = 0
+spot_range = 8.585643
+spot_angle = 38.679764
 
 [connection signal="finished" from="props/bedroom/bathtubMesh/bag/bloodSFX" to="props/bedroom/bathtubMesh/bag/bloodSFX" method="_on_finished"]

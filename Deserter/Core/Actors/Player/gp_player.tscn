@@ -3705,7 +3705,7 @@ default_font_size = 32
 [node name="gp_player" type="Node3D" unique_id=1925675755 groups=["Keep"]]
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1299854176 groups=["Player"]]
-collision_layer = 129
+collision_layer = 4225
 collision_mask = 129
 floor_constant_speed = true
 script = ExtResource("1_t11b6")
@@ -3979,8 +3979,8 @@ omni_shadow_mode = 0
 script = ExtResource("13_l6m7u")
 
 [node name="gunRay" type="RayCast3D" parent="Player/CharArm" unique_id=1370002915]
-transform = Transform3D(1, 1.77636e-14, 2.13163e-14, -1.77636e-14, 1, -1.05879e-21, -3.55271e-14, 2.0327e-21, 1, -0.0854863, 2.38794, -2.03909)
-target_position = Vector3(0, 0, -10)
+transform = Transform3D(1, 1.77636e-14, 2.1316282e-14, -1.77636e-14, 1, -1.05879e-21, -4.2632564e-14, 2.0326998e-21, 1, -0.08548638, 2.38794, -1.1219705)
+target_position = Vector3(0, 0, -10.5)
 script = ExtResource("14_lynxp")
 
 [node name="guy" type="MeshInstance3D" parent="Player/CharArm/gunRay" unique_id=2056907286]

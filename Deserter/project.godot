@@ -172,6 +172,10 @@ gp_rleft={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_13="unique to player"
+
 [rendering]
 
 renderer/rendering_method="mobile"
