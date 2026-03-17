@@ -1515,7 +1515,6 @@ environment = ExtResource("7_0oixp")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1523691916]
 stream = ExtResource("8_gq1q3")
-pitch_scale = 0.9
 autoplay = true
 
 [node name="props" type="Node3D" parent="." unique_id=143068219]
@@ -2039,8 +2038,9 @@ shape = SubResource("BoxShape3D_8f1tb")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10.8895, 1, -5.907)
 shape = SubResource("BoxShape3D_33i4x")
 
-[node name="Butcher" parent="." unique_id=2074839347 instance=ExtResource("41_jxhvh")]
+[node name="Butcher" parent="." unique_id=2074839347 groups=["Act"] instance=ExtResource("41_jxhvh")]
 transform = Transform3D(0.7071067, 0, -0.7071067, 0, 1, 0, 0.7071067, 0, 0.7071067, 12, 0, -2)
+collision_layer = 9
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1242193858]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 11.188707, 6.6698885, -2.0701756)

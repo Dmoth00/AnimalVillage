@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b3r7x3sf8yh3q" path="res://Core/Props/iteractibles/radio.gd" id="1_xnfba"]
 [ext_resource type="Texture2D" uid="uid://cnxftc8d7asaj" path="res://Assets/Mesh/Props/RadioTex00.png" id="2_pmcmy"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="3_3qkb5"]
+[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="4_1o1n3"]
 [ext_resource type="AudioStream" uid="uid://8xk3xa45q4uo" path="res://Assets/Sounds/SFX/snd_spark01.wav" id="4_ay24h"]
 [ext_resource type="Texture2D" uid="uid://bw54hqp4kiym" path="res://Assets/Sprites/lightningTex.png" id="5_erhwq"]
 [ext_resource type="Script" uid="uid://0ypkp5tol3lm" path="res://Core/System/sfx_end.gd" id="6_kmbfm"]
@@ -89,17 +90,19 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_lc8qr"]
 material = SubResource("StandardMaterial3D_vw5go")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4cl28"]
-load_path = "res://.godot/imported/LightTex01.png-1b6b01aca2a69ba25024b580f7441a31.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l80he"]
 transparency = 1
-blend_mode = 1
 depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
 albedo_color = Color(1, 0.39, 0.39, 1)
-albedo_texture = SubResource("CompressedTexture2D_4cl28")
+albedo_texture = ExtResource("4_1o1n3")
+albedo_texture_force_srgb = true
 billboard_mode = 1
 billboard_keep_scale = true
 

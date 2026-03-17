@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="1_hdu2p"]
 [ext_resource type="Texture2D" uid="uid://cw60ayuicrvxn" path="res://Assets/Textures/mossTex00.png" id="2_4ee20"]
+[ext_resource type="Texture2D" uid="uid://b384gp0diw5i7" path="res://Assets/Sprites/GlareTex.png" id="2_d8q1e"]
 [ext_resource type="Texture2D" uid="uid://bekxb2bhms6ma" path="res://Assets/Mesh/Maps/Debug/textures/metalTex00.png" id="3_bhbei"]
 [ext_resource type="Texture2D" uid="uid://cogmsokd1sgh8" path="res://Assets/Mesh/Maps/Debug/textures/BrickTex01.png" id="4_ad8jg"]
 [ext_resource type="AudioStream" uid="uid://boq5qiay7jonv" path="res://Assets/Sounds/SFX/snd_ladder00a.wav" id="5_1lhkq"]
@@ -47,7 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://ck4u1gv0bd6v0" path="res://Assets/Textures/LeavesTex02.png" id="43_35jrv"]
 [ext_resource type="Texture2D" uid="uid://3qayps03fd0w" path="res://Assets/Textures/woodFenceTex00a.png" id="44_wm6d6"]
 [ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/town/day_night.gd" id="45_hy35r"]
-[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="46_7rtud"]
 [ext_resource type="AudioStream" uid="uid://cw6bbnff2jvaw" path="res://Assets/Sounds/BGM/bgm_wind.wav" id="47_htxhq"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="48_pehij"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="49_76bhm"]
@@ -95,7 +95,7 @@ cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 2
-albedo_texture = ExtResource("46_7rtud")
+albedo_texture = ExtResource("2_d8q1e")
 disable_receive_shadows = true
 billboard_mode = 1
 billboard_keep_scale = true

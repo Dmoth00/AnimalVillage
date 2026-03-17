@@ -6,7 +6,7 @@ extends CanvasLayer
 @onready var tbox = $Box/Text
 @onready var t = 0.0
 
-@onready var text_queue : Array[String]
+@onready var text_queue : Array
 
 
 func _ready() -> void:
@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 			if t>=1.0:
 				state=1
 				t=0.0
-				print("window opened successfully")
+			
 		1: 
 			t+=delta*4
 			if t>=0.1:
@@ -38,23 +38,34 @@ func _process(delta: float) -> void:
 
 	pass
 
-func act(display_text : Array[String]):
+func act(display_text : Array):
 	if state==-1:
+		t=0.0
 		text_queue=display_text.duplicate()
-		if text_queue.size()>0: box.text=text_queue[0]
-		text_queue.pop_front()
+		if !text_queue.is_empty(): 
+			if typeof(text_queue[0])==TYPE_STRING: tbox.text=text_queue.pop_front()
 		state=0
-		player.can_move=false
+		player.inputOff=true
 
 func refresh():
 	box.scale.x=0.0
 	tbox.visible_characters=0
 	t=0.0
 	state=-1
+	player.inputOff=false
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("gp_activate") and state==2:
 		tbox.visible_characters=0
+		if !text_queue.is_empty(): 
+			match typeof(text_queue[0]):
+				TYPE_STRING:
+					tbox.text=text_queue.pop_front()
+					state=1
+				
+				_:state=3
+		else: state=3
+		
 		
 	if event.is_action("gp_run") and state==1: t+=0.1
 	

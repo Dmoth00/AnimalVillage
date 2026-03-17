@@ -176,6 +176,10 @@ gp_rleft={
 
 3d_physics/layer_13="unique to player"
 
+[physics]
+
+3d/default_gravity=10.0
+
 [rendering]
 
 renderer/rendering_method="mobile"
