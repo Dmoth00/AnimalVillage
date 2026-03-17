@@ -14,7 +14,8 @@
 [ext_resource type="Script" uid="uid://cg2va24eva1ga" path="res://Core/Actors/Player/fade.gd" id="7_0qvyp"]
 [ext_resource type="Texture2D" uid="uid://b0gfqqav411g5" path="res://Assets/Mesh/Player/Rabbit_CharTex01.png" id="7_upbqn"]
 [ext_resource type="Texture2D" uid="uid://bvrbt5wylvadj" path="res://Assets/Mesh/Player/Rabbit_MetalTex.png" id="8_ksfv1"]
-[ext_resource type="Texture2D" uid="uid://bn1tdyow5wpa8" path="res://Assets/Sprites/LightTex02.png" id="9_810o2"]
+[ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="9_eur5v"]
+[ext_resource type="Texture2D" uid="uid://b384gp0diw5i7" path="res://Assets/Sprites/GlareTex.png" id="9_xkr0p"]
 [ext_resource type="Script" uid="uid://2wuovkdinqwb" path="res://Core/Actors/Player/fl_glare.gd" id="10_xeoby"]
 [ext_resource type="Script" uid="uid://dtvmxb2witns6" path="res://Core/Actors/Player/muzzleflash.gd" id="11_yhk73"]
 [ext_resource type="Script" uid="uid://vevddg0mrkeh" path="res://Core/Actors/Player/ghost_detect.gd" id="12_uhhel"]
@@ -3472,7 +3473,7 @@ cull_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("9_810o2")
+albedo_texture = ExtResource("9_eur5v")
 billboard_mode = 1
 
 [sub_resource type="QuadMesh" id="QuadMesh_72oh8"]
@@ -3489,7 +3490,7 @@ depth_draw_mode = 2
 no_depth_test = true
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0)
-albedo_texture = ExtResource("9_810o2")
+albedo_texture = ExtResource("9_xkr0p")
 billboard_mode = 1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_hy5p8"]
@@ -3918,7 +3919,7 @@ spot_angle = 25.0
 spot_angle_attenuation = 0.25
 
 [node name="fl_glare" type="MeshInstance3D" parent="Player/CharArm/Skeleton3D/fl" unique_id=529359748]
-transform = Transform3D(1, 1.36424e-12, 3.52429e-12, 1.81899e-12, 1, 8.9407e-08, -9.43601e-12, -8.9407e-08, 1, 0.0215513, 0.5, -4.76837e-07)
+transform = Transform3D(1, 1.36424e-12, 3.52429e-12, 1.81899e-12, 1, 8.9407e-08, -9.43601e-12, -8.9407e-08, 1, 0.02, 0.4, 0)
 mesh = SubResource("QuadMesh_72oh8")
 script = ExtResource("10_xeoby")
 
@@ -4258,6 +4259,8 @@ visible_characters_behavior = 1
 [connection signal="body_entered" from="Player/collision" to="Player" method="_on_collision_body_entered"]
 [connection signal="area_entered" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_in"]
 [connection signal="area_exited" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_out"]
+[connection signal="body_entered" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_in"]
+[connection signal="body_exited" from="Player/CharArm/ActDetect" to="Player" method="_on_act_detect_out"]
 [connection signal="body_entered" from="Player/CharArm/GhostDetect" to="Player/CharArm/GhostDetect" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/CharArm/GhostDetect" to="Player/CharArm/GhostDetect" method="_on_body_exited"]
 [connection signal="timeout" from="Player/CharArm/gunRay/tray" to="Player/CharArm/gunRay" method="_timer"]

@@ -11,11 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://ct7btdrw0xqq5" path="res://Assets/Textures/mattressTex00.png" id="9_hsi6s"]
 [ext_resource type="Texture2D" uid="uid://ba7vdqj4xscaf" path="res://Assets/Mesh/Props/pillowTex.png" id="10_if7jo"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="11_vyb4u"]
-[ext_resource type="AudioStream" uid="uid://c5akr2ll65us1" path="res://Assets/Sounds/BGM/bgm_water0.wav" id="12_6oa3a"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="13_x5ayt"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="14_ploh8"]
 [ext_resource type="Texture2D" uid="uid://dgsxakhcspft2" path="res://Assets/Sprites/BloodAnim/bloodstain00.png" id="15_hsi6s"]
 [ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="16_if7jo"]
+[ext_resource type="AudioStream" uid="uid://mx00qtru1px1" path="res://Assets/Sounds/BGM/bgm_deep2.wav" id="17_imlu4"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="17_wmjwy"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="18_imlu4"]
 [ext_resource type="Texture2D" uid="uid://pytubnchn32o" path="res://Assets/Textures/ChainlinkTex00.png" id="19_t1l0l"]
@@ -548,14 +548,12 @@ cull_mask = 32
 
 [node name="pile01" type="MeshInstance3D" parent="OddHouse" unique_id=432422061]
 transform = Transform3D(-0.25881904, 0, 0.9659258, 0, 1, 0, -0.9659258, 0, -0.25881904, -1.1234968, 0.01, -0.9316585)
-layers = 33
 mesh = SubResource("ArrayMesh_igw6g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kt83a")
 
 [node name="pile02" type="MeshInstance3D" parent="OddHouse" unique_id=1140891066]
 transform = Transform3D(0.98531866, 0, -0.1707252, 0, 1, 0, 0.1707252, 0, 0.98531866, 3.5263186, 0.01, -3.4572322)
-layers = 33
 mesh = SubResource("ArrayMesh_igw6g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_kt83a")
@@ -621,8 +619,8 @@ shape = SubResource("BoxShape3D_0s7n5")
 environment = ExtResource("5_vyb4u")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1742106016]
-stream = ExtResource("12_6oa3a")
-volume_db = -30.0
+stream = ExtResource("17_imlu4")
+pitch_scale = 0.5
 autoplay = true
 
 [node name="Door" parent="." unique_id=939250942 instance=ExtResource("13_x5ayt")]

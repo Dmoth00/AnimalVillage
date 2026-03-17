@@ -1,7 +1,7 @@
-[gd_scene load_steps=87 format=4 uid="uid://cu8qvygdlydcg"]
+[gd_scene format=4 uid="uid://cu8qvygdlydcg"]
 
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="1_ff10n"]
-[ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="2_t628p"]
+[ext_resource type="AudioStream" uid="uid://heylfjse1rfy" path="res://Assets/Sounds/BGM/bgm_closedspace.wav" id="2_tu88u"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="3_ptpxd"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="4_27kle"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="5_oibu7"]
@@ -847,168 +847,168 @@ material = SubResource("StandardMaterial3D_ptgr5")
 flip_faces = true
 size = Vector2(1, 2)
 
-[node name="MirandaHouse1F" type="Node3D"]
+[node name="MirandaHouse1F" type="Node3D" unique_id=1278316283]
 
-[node name="Env" type="WorldEnvironment" parent="."]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=440499373]
 environment = ExtResource("1_ff10n")
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_t628p")
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=888054569]
+stream = ExtResource("2_tu88u")
 pitch_scale = 0.8
 autoplay = true
 
-[node name="MirandaHouse1F" type="MeshInstance3D" parent="."]
+[node name="MirandaHouse1F" type="MeshInstance3D" parent="." unique_id=635131501]
 mesh = SubResource("ArrayMesh_vbepd")
 skeleton = NodePath("")
 
-[node name="COLLIDERS" type="StaticBody3D" parent="MirandaHouse1F"]
+[node name="COLLIDERS" type="StaticBody3D" parent="MirandaHouse1F" unique_id=97971015]
 collision_mask = 0
 
-[node name="roomshape" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="roomshape" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=1962706017]
 visible = false
 shape = SubResource("ConcavePolygonShape3D_3wqck")
 
-[node name="toilet" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="toilet" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=316029549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 0.5, -2.5)
 shape = SubResource("CylinderShape3D_oclj4")
 
-[node name="sink" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="sink" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=765802680]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3488, 0.5, -2.88732)
 shape = SubResource("CylinderShape3D_oclj4")
 
-[node name="bath" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="bath" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=1768471037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6087, 0.5, 0.519531)
 shape = SubResource("BoxShape3D_c47k3")
 
-[node name="table" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="table" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=2063537890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50114, 0.211067, -4.00153)
 shape = SubResource("BoxShape3D_ipsof")
 
-[node name="couch01" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="couch01" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=408686585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53304, 0.435589, -4.92866)
 shape = SubResource("BoxShape3D_d3vqr")
 
-[node name="couch02" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="couch02" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=736454336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.47626, 0.435589, -4.94136)
 shape = SubResource("BoxShape3D_d3vqr")
 
-[node name="chair" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="chair" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=575275420]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.25, -0.441)
 shape = SubResource("CylinderShape3D_hn13s")
 
-[node name="nightstand" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="nightstand" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=586214761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94123, 0.5, 4.20237)
 shape = SubResource("CylinderShape3D_oclj4")
 
-[node name="bed" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS"]
+[node name="bed" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=713447380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.22739, 0.435589, 5.01286)
 shape = SubResource("BoxShape3D_8uyvm")
 
-[node name="props" type="Node3D" parent="."]
+[node name="props" type="Node3D" parent="." unique_id=242262460]
 
-[node name="nightstandMesh" type="MeshInstance3D" parent="props"]
+[node name="nightstandMesh" type="MeshInstance3D" parent="props" unique_id=1121814532]
 transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 2.84699, 0, 4.36456)
 mesh = SubResource("ArrayMesh_lhtic")
 skeleton = NodePath("")
 
-[node name="bedMesh" type="MeshInstance3D" parent="props"]
+[node name="bedMesh" type="MeshInstance3D" parent="props" unique_id=1066806669]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 4.12626, 0, 5.12614)
 mesh = SubResource("ArrayMesh_qod03")
 skeleton = NodePath("")
 
-[node name="toiletMesh" type="MeshInstance3D" parent="props"]
+[node name="toiletMesh" type="MeshInstance3D" parent="props" unique_id=658313621]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, -12.5, 0, -3)
 mesh = SubResource("ArrayMesh_q20hp")
 skeleton = NodePath("")
 
-[node name="sinkMesh" type="MeshInstance3D" parent="props"]
+[node name="sinkMesh" type="MeshInstance3D" parent="props" unique_id=865941815]
 transform = Transform3D(0.93, 0, 0, 0, 0.93, 0, 0, 0, 0.93, -10.5, 0, -3)
 mesh = SubResource("ArrayMesh_fnmys")
 skeleton = NodePath("")
 
-[node name="mirror" type="MeshInstance3D" parent="props/sinkMesh"]
+[node name="mirror" type="MeshInstance3D" parent="props/sinkMesh" unique_id=1207978851]
 transform = Transform3D(1, 0, 0, 0, 0.898794, 0.438371, 0, -0.438371, 0.898794, 0, 1.47273, -0.70206)
 mesh = SubResource("QuadMesh_vafo8")
 skeleton = NodePath("")
 
-[node name="bathtubMesh" type="MeshInstance3D" parent="props"]
+[node name="bathtubMesh" type="MeshInstance3D" parent="props" unique_id=108855114]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.4891, 0, 0.525598)
 mesh = SubResource("ArrayMesh_2wkuj")
 skeleton = NodePath("")
 
-[node name="bathSurfaceMesh" type="MeshInstance3D" parent="props/bathtubMesh"]
+[node name="bathSurfaceMesh" type="MeshInstance3D" parent="props/bathtubMesh" unique_id=813699991]
 transform = Transform3D(0.895, 0, 0, 0, 0.389, 0, 0, 0, 0.94, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6f28g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_o6iij")
 
-[node name="tableMesh" type="MeshInstance3D" parent="props"]
+[node name="tableMesh" type="MeshInstance3D" parent="props" unique_id=310549280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4)
 mesh = SubResource("ArrayMesh_unep7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xetqb")
 
-[node name="tableMesh2" type="MeshInstance3D" parent="props"]
+[node name="tableMesh2" type="MeshInstance3D" parent="props" unique_id=425487346]
 transform = Transform3D(0.489891, 0, 0.100035, 0, 1.5, 0, -0.100035, 0, 0.489891, 4.19079, 0, -6.37378)
 mesh = SubResource("ArrayMesh_unep7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xetqb")
 
-[node name="tableMesh3" type="MeshInstance3D" parent="props"]
+[node name="tableMesh3" type="MeshInstance3D" parent="props" unique_id=897205385]
 transform = Transform3D(0.499668, 0, -0.0182259, 0, 1.5, 0, 0.0182259, 0, 0.499668, -1.52135, 0, -6.37378)
 mesh = SubResource("ArrayMesh_unep7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xetqb")
 
-[node name="chairMesh00" type="MeshInstance3D" parent="props"]
+[node name="chairMesh00" type="MeshInstance3D" parent="props" unique_id=1023614848]
 transform = Transform3D(3.12914e-08, -0.715864, -0.698241, -1, -4.37114e-08, 7.73053e-16, -3.05211e-08, 0.698241, -0.715864, -0.485069, 0.222576, -0.708958)
 mesh = SubResource("ArrayMesh_otoil")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_m5y63")
 
-[node name="couchMesh00" type="MeshInstance3D" parent="props"]
+[node name="couchMesh00" type="MeshInstance3D" parent="props" unique_id=1414032474]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -1.5, 0, -4.34811)
 mesh = SubResource("ArrayMesh_ck6q8")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_cxw07")
 
-[node name="couchMesh01" type="MeshInstance3D" parent="props"]
+[node name="couchMesh01" type="MeshInstance3D" parent="props" unique_id=991329910]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 4.5, 0, -4.34811)
 mesh = SubResource("ArrayMesh_ck6q8")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_cxw07")
 
-[node name="paintingMesh" type="MeshInstance3D" parent="props"]
+[node name="paintingMesh" type="MeshInstance3D" parent="props" unique_id=313390997]
 transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, 1.5, 1.32393, -7.66003)
 mesh = SubResource("ArrayMesh_mpymp")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_4t5v7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="props"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="props" unique_id=1979524648]
 transform = Transform3D(0.681015, -0.73227, -3.20085e-08, -2.05428e-15, -4.37114e-08, 1, -0.73227, -0.681015, -2.97681e-08, 1.51065, 0.0341424, -4.08949)
 mesh = SubResource("QuadMesh_sksy8")
 
-[node name="exits" type="Node3D" parent="."]
+[node name="exits" type="Node3D" parent="." unique_id=1466262809]
 
-[node name="Door" parent="exits" instance=ExtResource("3_ptpxd")]
+[node name="Door" parent="exits" unique_id=167051949 instance=ExtResource("3_ptpxd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, -0.5)
 newPosition = Vector3(18.5, -1, -75.25)
 newMap = "uid://cnqovkmyuiyoa"
 
-[node name="hole" type="MeshInstance3D" parent="exits/Door"]
+[node name="hole" type="MeshInstance3D" parent="exits/Door" unique_id=1022768050]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_k8tyj")
 
-[node name="Door2" parent="exits" instance=ExtResource("3_ptpxd")]
+[node name="Door2" parent="exits" unique_id=366881229 instance=ExtResource("3_ptpxd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 2, -6.5)
 newPosition = Vector3(-15.5, 0, 5.5)
 newMap = "uid://devcj660ww73a"
 
-[node name="hole" type="MeshInstance3D" parent="exits/Door2"]
+[node name="hole" type="MeshInstance3D" parent="exits/Door2" unique_id=561211434]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_k8tyj")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1293853974]
 transform = Transform3D(0.93418, 1.55964e-08, -0.356803, 0.356803, -4.08343e-08, 0.93418, 1.55817e-15, -1, -4.37114e-08, -13.5649, 2.58587, -1)
 light_color = Color(1, 0.948, 0.87, 1)
 light_energy = 1.5

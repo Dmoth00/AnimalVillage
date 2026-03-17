@@ -1,10 +1,11 @@
 extends CharacterBody3D
 
 const SPEED = 3.0
-@export var grav = 980
 var runMod = 1.0
+var gravity= ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var state=2
+@onready var inputOff=false
 var can_move=false
 
 #gun variables
@@ -67,11 +68,16 @@ func _physics_process(delta):
 	
 	# fall detection
 	if not is_on_floor():
-		velocity.y -= grav * delta
+		velocity.y -= gravity * delta
 	
 	# Input detection for direction
-	input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down")
+	
+	if !inputOff: input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down")
+	else: input_dir=Vector2.ZERO
+	
 	direction = Vector3(input_dir.x,0,input_dir.y)
+
+		
 	
 	#voluntary movement
 	if direction.length()>0.5 and state==0:
@@ -121,11 +127,13 @@ func _process(delta):
 			#AWAKE ANIM
 	
 	#interact sign
-	if can_move and interactables.size()>0:
+	if !inputOff and state==0 and interactables.size()>0:
 		act_sign.scale=act_sign.scale.lerp(Vector3.ONE,delta*12)
 	else: act_sign.scale=act_sign.scale.lerp(Vector3.ZERO,delta*12)
 
 func _input(event):
+	if inputOff: return
+	
 	if can_move:
 		#flashlight input
 		if event.is_action_pressed("gp_fl"): flashlight()
@@ -265,10 +273,10 @@ func _on_collision_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Harm"): _hurt(body)
 	if body.is_in_group("Item"): body.act()
 
-func _on_act_detect_in(area: Area3D) -> void:
+func _on_act_detect_in(area: Node3D) -> void:
 	if area.is_in_group("Act"): interactables.push_back(area)
 
-func _on_act_detect_out(area: Area3D) -> void:
+func _on_act_detect_out(area: Node3D) -> void:
 	if interactables.has(area): interactables.erase(area)
 
 #timers
