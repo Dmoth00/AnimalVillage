@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://03pdrwthguwm"]
+[gd_scene format=4 uid="uid://03pdrwthguwm"]
 
 [ext_resource type="ArrayMesh" uid="uid://c2h5le5d5g7l6" path="res://Assets/Mesh/Maps/Debug/singleRoom.obj" id="1_vyfoy"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="2_xst0b"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="11_uwouh"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="12_badp0"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="13_n75cd"]
-[ext_resource type="Script" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
+[ext_resource type="Script" uid="uid://dxmru5qmvq3te" path="res://Core/Scene/DEBUG/daynight_lever.gd" id="13_tpkao"]
 [ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="14_5cl2f"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="14_einu1"]
 [ext_resource type="AudioStream" uid="uid://c27obx0y23k6g" path="res://Assets/Sounds/SONG/radioCallingAllLines.mp3" id="16_xftri"]
@@ -54,8 +54,9 @@ ambient_light_color = Color(0.0481484, 0.0499156, 0.0980453, 1)
 ambient_light_energy = 4.7
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xs2rb"]
-transparency = 1
-blend_mode = 4
+transparency = 2
+alpha_scissor_threshold = 0.596
+alpha_antialiasing_mode = 0
 cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3
@@ -220,13 +221,13 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ob0y6"]
 _data = {
-"RESET": SubResource("Animation_n5e5v"),
-"act": SubResource("Animation_e0f26")
+&"RESET": SubResource("Animation_n5e5v"),
+&"act": SubResource("Animation_e0f26")
 }
 
-[node name="StartRoom" type="Node3D"]
+[node name="StartRoom" type="Node3D" unique_id=1292223134]
 
-[node name="meshSingleRoom" type="MeshInstance3D" parent="."]
+[node name="meshSingleRoom" type="MeshInstance3D" parent="." unique_id=1372098709]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh = ExtResource("1_vyfoy")
 skeleton = NodePath("")
@@ -234,88 +235,88 @@ surface_material_override/0 = SubResource("StandardMaterial3D_p8o2w")
 surface_material_override/1 = SubResource("StandardMaterial3D_5wwdi")
 surface_material_override/2 = SubResource("StandardMaterial3D_37178")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="meshSingleRoom"]
+[node name="StaticBody3D" type="StaticBody3D" parent="meshSingleRoom" unique_id=1908849749]
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D" unique_id=2047945317]
 shape = SubResource("ConcavePolygonShape3D_8yrnk")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="meshSingleRoom"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="meshSingleRoom" unique_id=528384854]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.49406, 0.936155, -6.53076e-08)
 collision_layer = 129
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshSingleRoom/StaticBody3D2" unique_id=590237613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137939, 0, 0.51683)
 shape = SubResource("BoxShape3D_rxu6s")
 
-[node name="env" type="WorldEnvironment" parent="."]
+[node name="env" type="WorldEnvironment" parent="." unique_id=769945427]
 environment = SubResource("Environment_dgbts")
 
-[node name="Door" parent="." instance=ExtResource("6_hwt6c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.5, 0, -1.96701e-07)
+[node name="Door" parent="." unique_id=1671262642 instance=ExtResource("6_hwt6c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 0, 0)
 newPosition = Vector3(-15.5, 0, -6.5)
 newMap = "uid://devcj660ww73a"
 
-[node name="hole" type="MeshInstance3D" parent="Door"]
-transform = Transform3D(1, 3.77122e-08, -8.55243e-09, -3.77122e-08, 0.902172, -0.431377, -8.55243e-09, 0.431377, 0.902172, 1.13232e-08, 0.646516, 0.800663)
+[node name="hole" type="MeshInstance3D" parent="Door" unique_id=531531476]
+transform = Transform3D(1, 3.77122e-08, -8.55243e-09, -3.77122e-08, 0.902172, -0.431377, -8.55243e-09, 0.431377, 0.902172, 3.31559e-08, 0.646516, 0.30118942)
 mesh = SubResource("QuadMesh_7kjky")
 
-[node name="props" type="Node3D" parent="."]
+[node name="props" type="Node3D" parent="." unique_id=1285033787]
 
-[node name="grafitti_moon" type="MeshInstance3D" parent="props"]
+[node name="grafitti_moon" type="MeshInstance3D" parent="props" unique_id=1285427001]
 transform = Transform3D(1, 0, 0, 0, 0.891006, 0.45399, 0, -0.45399, 0.891006, -1.99899, 1.08572, -4.53073)
 mesh = SubResource("QuadMesh_2tle8")
 skeleton = NodePath("../..")
 
-[node name="grafitti_sun" type="MeshInstance3D" parent="props"]
+[node name="grafitti_sun" type="MeshInstance3D" parent="props" unique_id=1864282243]
 transform = Transform3D(1, 0, 0, 0, 0.891006, 0.45399, 0, -0.45399, 0.891006, 2.00269, 1.08572, -4.53073)
 mesh = SubResource("QuadMesh_6fyin")
 skeleton = NodePath("../..")
 
-[node name="chainlink" type="MeshInstance3D" parent="props"]
+[node name="chainlink" type="MeshInstance3D" parent="props" unique_id=1150466579]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.936155, 1.49406)
 mesh = SubResource("QuadMesh_rxusf")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_yl05q")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="props/chainlink"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="props/chainlink" unique_id=954158245]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0.951275, 0)
 mesh = SubResource("BoxMesh_f3vci")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgn4x")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="props/chainlink"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="props/chainlink" unique_id=253458633]
 transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, -0.879224, 0)
 mesh = SubResource("BoxMesh_f3vci")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_tgn4x")
 
-[node name="barrelMesh00" type="MeshInstance3D" parent="props"]
+[node name="barrelMesh00" type="MeshInstance3D" parent="props" unique_id=384387865]
 transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 3.67416, 0, 3.63858)
 mesh = SubResource("ArrayMesh_x18no")
 skeleton = NodePath("")
 
-[node name="barrelMesh01" type="MeshInstance3D" parent="props"]
+[node name="barrelMesh01" type="MeshInstance3D" parent="props" unique_id=2094466770]
 transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 3.67416, 0, 2.63858)
 mesh = SubResource("ArrayMesh_x18no")
 skeleton = NodePath("")
 
-[node name="barrelMesh02" type="MeshInstance3D" parent="props"]
+[node name="barrelMesh02" type="MeshInstance3D" parent="props" unique_id=547028257]
 transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 2.67416, 0, 3.63858)
 mesh = SubResource("ArrayMesh_x18no")
 skeleton = NodePath("")
 
-[node name="barrelMesh03" type="MeshInstance3D" parent="props"]
+[node name="barrelMesh03" type="MeshInstance3D" parent="props" unique_id=58612292]
 transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, -3.51239, 0, 3.63858)
 mesh = SubResource("ArrayMesh_x18no")
 skeleton = NodePath("")
 
-[node name="Radio" parent="props/barrelMesh03" instance=ExtResource("14_einu1")]
+[node name="Radio" parent="props/barrelMesh03" unique_id=962898937 instance=ExtResource("14_einu1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59417, 0)
 stream = ExtResource("16_xftri")
 
-[node name="activator" type="Area3D" parent="." groups=["Act"]]
+[node name="activator" type="Area3D" parent="." unique_id=1574153089 groups=["Act"]]
 transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.942021, -4.42915)
 collision_layer = 8
 collision_mask = 0
@@ -323,33 +324,36 @@ monitoring = false
 script = ExtResource("13_tpkao")
 sound = ExtResource("14_5cl2f")
 
-[node name="lever" type="Node3D" parent="activator"]
-transform = Transform3D(1, 0, 0, 0, -3.61999e-06, 1, 0, -1, -3.61999e-06, 0, 0, 0)
+[node name="lever" type="Node3D" parent="activator" unique_id=1725097046]
+transform = Transform3D(1, 0, 0, 0, -3.6199901e-06, 1, 0, -1, -3.6199901e-06, 0, 0, 0)
 
-[node name="base" type="MeshInstance3D" parent="activator/lever"]
+[node name="base" type="MeshInstance3D" parent="activator/lever" unique_id=1270426997]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("CylinderMesh_dtiy4")
 skeleton = NodePath("../../..")
 
-[node name="stick" type="MeshInstance3D" parent="activator/lever"]
+[node name="stick" type="MeshInstance3D" parent="activator/lever" unique_id=1371047822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00573111, 0.38177)
 mesh = SubResource("BoxMesh_w2rbr")
 
-[node name="light" type="MeshInstance3D" parent="activator"]
+[node name="light" type="MeshInstance3D" parent="activator" unique_id=742007079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.5, -0.3)
 mesh = SubResource("QuadMesh_i654e")
 
-[node name="col" type="CollisionShape3D" parent="activator"]
+[node name="col" type="CollisionShape3D" parent="activator" unique_id=331458979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269753, 0.0769799, -0.196437)
 shape = SubResource("BoxShape3D_ll0vh")
 
-[node name="anim" type="AnimationPlayer" parent="activator"]
-libraries = {
-"": SubResource("AnimationLibrary_ob0y6")
-}
+[node name="anim" type="AnimationPlayer" parent="activator" unique_id=403875201]
+libraries/ = SubResource("AnimationLibrary_ob0y6")
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
+[node name="t" type="Timer" parent="activator" unique_id=1159897496]
+one_shot = true
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=645739629]
 stream = ExtResource("17_h2u1h")
 volume_db = -20.0
 pitch_scale = 0.5
 autoplay = true
+
+[connection signal="timeout" from="activator/t" to="activator" method="_on_t"]

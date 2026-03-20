@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="14_ploh8"]
 [ext_resource type="Texture2D" uid="uid://dgsxakhcspft2" path="res://Assets/Sprites/BloodAnim/bloodstain00.png" id="15_hsi6s"]
 [ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="16_if7jo"]
-[ext_resource type="AudioStream" uid="uid://mx00qtru1px1" path="res://Assets/Sounds/BGM/bgm_deep2.wav" id="17_imlu4"]
+[ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="17_imlu4"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="17_wmjwy"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="18_imlu4"]
 [ext_resource type="Texture2D" uid="uid://pytubnchn32o" path="res://Assets/Textures/ChainlinkTex00.png" id="19_t1l0l"]
@@ -620,6 +620,7 @@ environment = ExtResource("5_vyb4u")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1742106016]
 stream = ExtResource("17_imlu4")
+volume_db = -10.0
 pitch_scale = 0.5
 autoplay = true
 

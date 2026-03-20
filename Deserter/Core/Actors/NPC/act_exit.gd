@@ -10,7 +10,7 @@ var p
 func act(player : CharacterBody3D):
 	p=player
 	#stop the player
-	p.anim.play("CharAnim_Stand",0.5,1.0)
+	p.anim.play("CharAnim_Lever",0.5,3)
 	p.state=2
 	p.can_move=false
 	#make them invulnerable

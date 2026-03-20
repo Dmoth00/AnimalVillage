@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://b6d8nvjnktr0"]
+[gd_scene format=4 uid="uid://b6d8nvjnktr0"]
 
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="1_vly2k"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="2_7f5i8"]
@@ -8,9 +8,10 @@
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="6_dwpxu"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="7_7cxsk"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="8_wyxtb"]
-[ext_resource type="Script" path="res://Core/System/camera_trigger.gd" id="9_f0fnk"]
-[ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="10_5vwlp"]
+[ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="9_f0fnk"]
+[ext_resource type="Shader" uid="uid://c63hxwrudxyjo" path="res://Assets/Shaders/ghost.gdshader" id="10_5vwlp"]
 [ext_resource type="Texture2D" uid="uid://70fnj7tuj2ig" path="res://Assets/Mesh/Enemies/textures/DHeadTex00.png" id="11_v1deh"]
+[ext_resource type="PackedScene" uid="uid://ctx66gk5ueifc" path="res://Core/Actors/NPC/sign_NPC.tscn" id="12_442h1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_30uhi"]
 resource_name = "BrickMat00"
@@ -237,13 +238,13 @@ bind/6/pose = Transform3D(1, -1.50996e-07, -3.56026e-08, 1.50996e-07, 1, 2.38419
 render_priority = 0
 shader = ExtResource("10_5vwlp")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("11_v1deh")
 shader_parameter/specular = 0.0
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 1.0
 shader_parameter/alpha = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/texture_albedo = ExtResource("11_v1deh")
 
 [sub_resource type="Animation" id="Animation_e3oer"]
 resource_name = "Dhead_0"
@@ -733,86 +734,86 @@ tracks/10/keys = PackedFloat32Array(0, 1, 1, 1, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u4vww"]
 _data = {
-"Dhead_0": SubResource("Animation_e3oer"),
-"Dhead_1": SubResource("Animation_kupgu"),
-"Dhead_2": SubResource("Animation_kevmb"),
-"Dhead_3": SubResource("Animation_5k8wr"),
-"Dhead_4": SubResource("Animation_eve8m"),
-"Dhead_5": SubResource("Animation_au1nl")
+&"Dhead_0": SubResource("Animation_e3oer"),
+&"Dhead_1": SubResource("Animation_kupgu"),
+&"Dhead_2": SubResource("Animation_kevmb"),
+&"Dhead_3": SubResource("Animation_5k8wr"),
+&"Dhead_4": SubResource("Animation_eve8m"),
+&"Dhead_5": SubResource("Animation_au1nl")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kk1o3"]
 size = Vector3(1, 2, 1.5)
 
-[node name="DebugHallwayMap" type="Node3D"]
+[node name="DebugHallwayMap" type="Node3D" unique_id=404733760]
 
-[node name="meshWindowCorridor00" type="MeshInstance3D" parent="."]
+[node name="meshWindowCorridor00" type="MeshInstance3D" parent="." unique_id=879249505]
 mesh = SubResource("ArrayMesh_ad6ix")
 skeleton = NodePath("")
 surface_material_override/4 = SubResource("StandardMaterial3D_r5ive")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="meshWindowCorridor00"]
+[node name="StaticBody3D" type="StaticBody3D" parent="meshWindowCorridor00" unique_id=1376490810]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="meshWindowCorridor00/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meshWindowCorridor00/StaticBody3D" unique_id=971255737]
 shape = SubResource("ConcavePolygonShape3D_7wb1a")
 
-[node name="Env" type="WorldEnvironment" parent="."]
+[node name="Env" type="WorldEnvironment" parent="." unique_id=266388906]
 environment = ExtResource("6_dwpxu")
 
-[node name="prop" type="Node3D" parent="."]
+[node name="prop" type="Node3D" parent="." unique_id=505906185]
 
-[node name="window" type="MeshInstance3D" parent="prop"]
+[node name="window" type="MeshInstance3D" parent="prop" unique_id=2007896799]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2.5, -1.25)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="window2" type="MeshInstance3D" parent="prop"]
+[node name="window2" type="MeshInstance3D" parent="prop" unique_id=1549514549]
 transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2, 2.5, -1.25)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="window3" type="MeshInstance3D" parent="prop"]
+[node name="window3" type="MeshInstance3D" parent="prop" unique_id=768126994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -1.25)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="window4" type="MeshInstance3D" parent="prop"]
+[node name="window4" type="MeshInstance3D" parent="prop" unique_id=2060678564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -1.25)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="exit" type="Node3D" parent="."]
+[node name="exit" type="Node3D" parent="." unique_id=117256104]
 
-[node name="Door" parent="exit" instance=ExtResource("8_wyxtb")]
+[node name="Door" parent="exit" unique_id=738742873 instance=ExtResource("8_wyxtb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 0.5)
 newPosition = Vector3(14.5, 0, -6.5)
 newMap = "uid://devcj660ww73a"
 
-[node name="BGM" type="AudioStreamPlayer" parent="."]
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=247984874]
 stream = ExtResource("7_7cxsk")
 autoplay = true
 
-[node name="CameraTrigger" type="Area3D" parent="."]
+[node name="CameraTrigger" type="Area3D" parent="." unique_id=1032579480]
 script = ExtResource("9_f0fnk")
 cameraAngle = -25.0
 cameraZoom = 5.0
 cameraOffset = Vector2(0, 2)
 
-[node name="col" type="CollisionShape3D" parent="CameraTrigger"]
+[node name="col" type="CollisionShape3D" parent="CameraTrigger" unique_id=1560516061]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0402222, 1.66675, 0.503296)
 shape = SubResource("BoxShape3D_xw5hf")
 
-[node name="DeadHead" type="StaticBody3D" parent="." groups=["Harm"]]
+[node name="DeadHead" type="StaticBody3D" parent="." unique_id=71582158 groups=["Harm"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8.3938)
 
-[node name="DheadArm" type="Node3D" parent="DeadHead"]
+[node name="DheadArm" type="Node3D" parent="DeadHead" unique_id=937233636]
 
-[node name="Skeleton3D" type="Skeleton3D" parent="DeadHead/DheadArm"]
+[node name="Skeleton3D" type="Skeleton3D" parent="DeadHead/DheadArm" unique_id=818941440]
 bones/0/name = "Base"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, -1.50996e-07, -1.50996e-07, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -863,21 +864,23 @@ bones/6/position = Vector3(0, 1.42155e-14, 3.41061e-13)
 bones/6/rotation = Quaternion(-0.707107, 1.25874e-08, -1.25874e-08, 0.707107)
 bones/6/scale = Vector3(0, 0, 0)
 
-[node name="DHeadMesh" type="MeshInstance3D" parent="DeadHead/DheadArm/Skeleton3D"]
+[node name="DHeadMesh" type="MeshInstance3D" parent="DeadHead/DheadArm/Skeleton3D" unique_id=350971373]
 mesh = SubResource("ArrayMesh_pn84i")
 skin = SubResource("Skin_0hf38")
 surface_material_override/0 = SubResource("ShaderMaterial_sxiqp")
 
-[node name="anim" type="AnimationPlayer" parent="DeadHead"]
-libraries = {
-"": SubResource("AnimationLibrary_u4vww")
-}
-autoplay = "Dhead_0"
+[node name="anim" type="AnimationPlayer" parent="DeadHead" unique_id=934543134]
+libraries/ = SubResource("AnimationLibrary_u4vww")
+autoplay = &"Dhead_0"
 
-[node name="col" type="CollisionShape3D" parent="DeadHead"]
+[node name="col" type="CollisionShape3D" parent="DeadHead" unique_id=426134814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00605, 0)
 visible = false
 shape = SubResource("BoxShape3D_kk1o3")
+
+[node name="sign" parent="." unique_id=1198047267 instance=ExtResource("12_442h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011207089, 0.0407851, -0.66563773)
+texts = Array[String](["Warning: Ghosts ahead. Go forward at your own peril."])
 
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraTrigger" to="CameraTrigger" method="_on_body_exited"]

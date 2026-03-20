@@ -1,28 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cltkr1bsqgxau"]
+[gd_scene format=3 uid="uid://cltkr1bsqgxau"]
 
-[ext_resource type="Script" path="res://Core/Actors/NPC/act_exit.gd" id="1_amw21"]
+[ext_resource type="Script" uid="uid://dmcm212co6237" path="res://Core/Actors/NPC/act_exit.gd" id="1_amw21"]
 [ext_resource type="AudioStream" uid="uid://dp3f8krjn8v6e" path="res://Assets/Sounds/SFX/snd_door.wav" id="3_tju4a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3qqvh"]
 size = Vector3(2.04254, 2.46472, 1)
 
-[node name="Door" type="Area3D" groups=["Act"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.56639)
+[node name="Door" type="Area3D" unique_id=444387764 groups=["Act"]]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_amw21")
 newMap = "uid://se806ctw63n1"
 sound = ExtResource("3_tju4a")
 
-[node name="col" type="CollisionShape3D" parent="."]
+[node name="col" type="CollisionShape3D" parent="." unique_id=449765736]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123596, 0.732361, 0.569127)
 shape = SubResource("BoxShape3D_3qqvh")
 
-[node name="t" type="Timer" parent="."]
+[node name="t" type="Timer" parent="." unique_id=1569185718]
 wait_time = 0.5
 one_shot = true
 
-[node name="sound" type="AudioStreamPlayer" parent="."]
+[node name="sound" type="AudioStreamPlayer" parent="." unique_id=541624427]
 volume_db = -10.0
 
 [connection signal="timeout" from="t" to="." method="_on_t"]
