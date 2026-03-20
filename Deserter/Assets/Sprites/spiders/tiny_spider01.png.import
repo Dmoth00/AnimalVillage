@@ -2,21 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0gfqqav411g5"
-path.s3tc="res://.godot/imported/Rabbit_CharTex01.png-7d3a70fb508375024f3b5755f5231649.s3tc.ctex"
-path.etc2="res://.godot/imported/Rabbit_CharTex01.png-7d3a70fb508375024f3b5755f5231649.etc2.ctex"
+uid="uid://0auoh5t6dlsa"
+path.s3tc="res://.godot/imported/tiny_spider01.png-022a8a27b9cfc20154c571df05eff108.s3tc.ctex"
+path.etc2="res://.godot/imported/tiny_spider01.png-022a8a27b9cfc20154c571df05eff108.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "9572ba8b505157e16c968780382cb47a"
-}
 
 [deps]
 
-source_file="res://Assets/Mesh/Player/Rabbit_CharTex01.png"
-dest_files=["res://.godot/imported/Rabbit_CharTex01.png-7d3a70fb508375024f3b5755f5231649.s3tc.ctex", "res://.godot/imported/Rabbit_CharTex01.png-7d3a70fb508375024f3b5755f5231649.etc2.ctex"]
+source_file="res://Assets/Sprites/spiders/tiny_spider01.png"
+dest_files=["res://.godot/imported/tiny_spider01.png-022a8a27b9cfc20154c571df05eff108.s3tc.ctex", "res://.godot/imported/tiny_spider01.png-022a8a27b9cfc20154c571df05eff108.etc2.ctex"]
 
 [params]
 
@@ -28,7 +25,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
