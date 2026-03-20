@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://b384gp0diw5i7" path="res://Assets/Sprites/GlareTex.png" id="2_d8q1e"]
 [ext_resource type="AudioStream" uid="uid://boq5qiay7jonv" path="res://Assets/Sounds/SFX/snd_ladder00a.wav" id="5_1lhkq"]
-[ext_resource type="PackedScene" uid="uid://dopgvlequ3b0a" path="res://Core/Scene/town/townOutside_area01.tscn" id="6_lb6qx"]
-[ext_resource type="PackedScene" uid="uid://chp5ef6805i3t" path="res://Core/Scene/town/townOutside_area02.tscn" id="7_v86cq"]
-[ext_resource type="PackedScene" uid="uid://buf5fr7pfsjf5" path="res://Core/Scene/town/townOutside_area03.tscn" id="8_na1uu"]
-[ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/town/day_night.gd" id="45_hy35r"]
+[ext_resource type="PackedScene" uid="uid://dopgvlequ3b0a" path="res://Core/Scene/town/townOutside/townOutside_area01.tscn" id="6_lb6qx"]
+[ext_resource type="PackedScene" uid="uid://chp5ef6805i3t" path="res://Core/Scene/town/townOutside/townOutside_area02.tscn" id="7_v86cq"]
+[ext_resource type="PackedScene" uid="uid://buf5fr7pfsjf5" path="res://Core/Scene/town/townOutside/townOutside_area03.tscn" id="8_na1uu"]
+[ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/town/townOutside/day_night.gd" id="45_hy35r"]
 [ext_resource type="AudioStream" uid="uid://cw6bbnff2jvaw" path="res://Assets/Sounds/BGM/bgm_wind.wav" id="47_htxhq"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="49_76bhm"]
 

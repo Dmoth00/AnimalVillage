@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="16_kebmt"]
 [ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/PaintingTex00.png" id="17_tt05a"]
 [ext_resource type="Texture2D" uid="uid://swjwu6tm0441" path="res://Assets/Textures/Leather00.png" id="18_a6hfk"]
-[ext_resource type="Shader" uid="uid://cllyfxpbjdfes" path="res://Assets/Shaders/waterShader.tres" id="19_ytdwn"]
+[ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="19_tu88u"]
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="21_p1de7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yjf7"]
@@ -602,10 +602,10 @@ shadow_mesh = SubResource("ArrayMesh_xef1a")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6iij"]
 render_priority = 0
-shader = ExtResource("19_ytdwn")
-shader_parameter/ColorParameter = Color(0.43, 0.375605, 0.3311, 1)
-shader_parameter/Alpha = 0.778
-shader_parameter/current_speed = 0.5
+shader = ExtResource("19_tu88u")
+shader_parameter/ColorParameter = Color(0.37, 0.31129333, 0.2664, 1)
+shader_parameter/Alpha = 0.800000038
+shader_parameter/current_speed = 0.250000011875
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layaa"]
 resource_name = "Material"
@@ -854,6 +854,7 @@ environment = ExtResource("1_ff10n")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=888054569]
 stream = ExtResource("2_tu88u")
+volume_db = -8.0
 pitch_scale = 0.8
 autoplay = true
 

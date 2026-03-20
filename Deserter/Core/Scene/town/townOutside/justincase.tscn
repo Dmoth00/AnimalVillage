@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cs7stibf1tlnc"]
+[gd_scene format=4 uid="uid://cs7stibf1tlnc"]
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="1_enbl1"]
 [ext_resource type="Texture2D" uid="uid://cw60ayuicrvxn" path="res://Assets/Textures/mossTex00.png" id="2_ev40l"]
@@ -115,9 +115,8 @@ metallic_specular = 0.0
 albedo_color = Color(0.73, 0.63145, 0.3358, 1)
 albedo_texture = ExtResource("4_x7yrt")
 
-[node name="homebaseMesh" type="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.114121, 0.269438, -0.329643)
-visible = false
+[node name="homebaseMesh" type="MeshInstance3D" unique_id=464384458]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_b78mm")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_bijie")
