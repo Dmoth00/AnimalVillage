@@ -449,6 +449,63 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_eu55w")
 size = Vector2(0.4, 0.4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eur5v"]
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+depth_draw_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0, 0, 1)
+albedo_texture = ExtResource("16_d2n7a")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_vltma"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7534247, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gfk4e"]
+curve = SubResource("Curve_vltma")
+
+[sub_resource type="Curve" id="Curve_omt63"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 4.0763226), 0.0, 0.0, 0, 0, Vector2(0.8744293, 0.60364246), -15.520752, -15.520752, 0, 0, Vector2(1, 0), 2.8219597, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_q5xim"]
+curve = SubResource("Curve_omt63")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y3qx7"]
+particle_flag_rotate_y = true
+emission_shape_offset = Vector3(0, -1, 0)
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 4.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+angle_min = -360.0
+angle_max = 360.00003
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -4.0000024
+radial_accel_max = -4.0000024
+damping_min = 2.0
+damping_max = 2.0
+attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_q5xim")
+alpha_curve = SubResource("CurveTexture_gfk4e")
+
+[sub_resource type="QuadMesh" id="QuadMesh_re3q7"]
+material = SubResource("StandardMaterial3D_eur5v")
+
 [sub_resource type="Theme" id="Theme_txcvb"]
 default_font = ExtResource("5_br8mc")
 default_font_size = 32
@@ -661,10 +718,11 @@ light_color = Color(0.98, 0.914667, 0.735, 1)
 light_energy = 0.0
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
+light_specular = 0.0
 light_bake_mode = 0
 shadow_enabled = true
-spot_range = 12.0
-spot_attenuation = 4.0
+spot_range = 16.0
+spot_attenuation = 3.0
 spot_angle = 25.0
 spot_angle_attenuation = 0.25
 
@@ -775,13 +833,13 @@ script = ExtResource("17_mrb3d")
 [node name="fl_spot" type="SpotLight3D" parent="Player" unique_id=1715717609]
 transform = Transform3D(1, 6.3573e-08, 2.77886e-15, 0, -4.37114e-08, 1, 6.3573e-08, -1, -4.37114e-08, 0, 5, 0)
 light_color = Color(0.960784, 0.984314, 0.737255, 1)
-light_energy = 0.05
+light_energy = 0.2
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 spot_range = 8.0
 spot_attenuation = 0.0
-spot_angle = 25.0
+spot_angle = 10.0
 spot_angle_attenuation = 5.0
 
 [node name="can_move_timer" type="Timer" parent="Player" unique_id=226126968]
@@ -800,6 +858,17 @@ one_shot = true
 transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 1.3157965, 0.00568676)
 target_position = Vector3(0, -1.5, 0)
 collision_mask = 5
+
+[node name="bloodGet" type="GPUParticles3D" parent="Player" unique_id=793457635]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.54836917, 0)
+material_override = SubResource("StandardMaterial3D_eur5v")
+emitting = false
+amount = 6
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.78
+process_material = SubResource("ParticleProcessMaterial_y3qx7")
+draw_pass_1 = SubResource("QuadMesh_re3q7")
 
 [node name="gp_cam" type="Node3D" parent="." unique_id=1273085979 groups=["Camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, -4.76837e-07, 0)

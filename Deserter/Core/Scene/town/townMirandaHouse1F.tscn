@@ -863,6 +863,7 @@ mesh = SubResource("ArrayMesh_vbepd")
 skeleton = NodePath("")
 
 [node name="COLLIDERS" type="StaticBody3D" parent="MirandaHouse1F" unique_id=97971015]
+visible = false
 collision_mask = 0
 
 [node name="roomshape" type="CollisionShape3D" parent="MirandaHouse1F/COLLIDERS" unique_id=1962706017]

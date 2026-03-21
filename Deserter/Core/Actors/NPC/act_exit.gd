@@ -3,6 +3,7 @@ extends Area3D
 @export var newMap : String
 @export var sound : AudioStream
 @export var playBefore : bool = false
+@export var timeToWarp = 0.75
 
 @onready var cam : Node3D
 var p
@@ -19,19 +20,20 @@ func act(player : CharacterBody3D):
 	#fade out the camera
 	cam=get_tree().get_first_node_in_group("Camera")
 	cam.fade_out(0.25)
-	get_node("t").start(0.75)
+	get_node("t").start(timeToWarp)
 	#play noise
 	if playBefore: doorSound()
 
 func _on_t() -> void:
-	var g=get_tree().get_first_node_in_group("GM")
-	var keep=get_tree().get_first_node_in_group("Keep")
-	g.remove_child(keep)
-	for i in g.get_children(): i.queue_free()
-	g.add_child(keep)
-	var new=load(newMap).instantiate()
-	g.add_child(new)
-	get_tree().get_first_node_in_group("Camera").kill_list(new)
+	if newMap!="":
+		var g=get_tree().get_first_node_in_group("GM")
+		var keep=get_tree().get_first_node_in_group("Keep")
+		g.remove_child(keep)
+		for i in g.get_children(): i.queue_free()
+		g.add_child(keep)
+		var new=load(newMap).instantiate()
+		g.add_child(new)
+		get_tree().get_first_node_in_group("Camera").kill_list(new)
 	p.transform.origin=newPosition
 	p.can_move=true
 	cam.global_position=p.global_position

@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var t = 0.0
 
 @onready var text_queue : Array
+@onready var rec : Node3D
 
 
 func _ready() -> void:
@@ -33,19 +34,23 @@ func _process(delta: float) -> void:
 			box.scale.x=1.0-t
 			if t>=1.0:
 				refresh()
+				if rec: rec.talking=false
 				player.can_move=true
 		
 
 	pass
 
-func act(display_text : Array):
+func act(display_text : Array, reciever : Node3D = null):
 	if state==-1:
 		t=0.0
 		text_queue=display_text.duplicate()
 		if !text_queue.is_empty(): 
 			if typeof(text_queue[0])==TYPE_STRING: tbox.text=text_queue.pop_front()
+		rec=reciever
+		if rec: rec.talking=true
 		state=0
 		player.inputOff=true
+	
 
 func refresh():
 	box.scale.x=0.0

@@ -152,6 +152,7 @@ newPosition = Vector3(-1.5, 0, -9.5)
 newMap = "uid://r4glbon2f20k"
 sound = ExtResource("5_1lhkq")
 playBefore = true
+timeToWarp = 1.0
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1115292933]
 environment = SubResource("Environment_vlxxc")

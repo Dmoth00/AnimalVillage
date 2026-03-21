@@ -43,20 +43,22 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-		#actual movement
+	#actual movement
 	if not is_on_floor():
 		velocity.y -= gvars.gravity * delta
 	velocity.x=ldir.x*vel
 	velocity.z=ldir.z*vel
 	
 	move_and_slide()
-		
+	
 	#walk animation
 	anim.speed_scale=velocity.length()
 
 func _hurt(dmg : float):
 	health -= dmg
 	gvars.hatred+=0.01
+	gvars.bloodBag+=0.1+gvars.hatred
+	get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()
 	if health>0:
 		vel=0
 		target=null

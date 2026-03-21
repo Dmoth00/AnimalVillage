@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	pass
 
 func act (on : bool):
-	if on: light=0.2
+	if on: light=0.3
 	else: light=0.0
 
 func flash():

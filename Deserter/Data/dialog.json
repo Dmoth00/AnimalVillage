@@ -8,5 +8,9 @@
 	"butcher_00":[
 		"Welcome child, this is my butchery.",
 		"It's not open for business just yet, but do please come back tomorrow."	
-		]
+		],
+	"demons":[
+		"[color=red]Demons[/color], all of them. How could they do this to us?",
+		"I will never, ever forgive them."
+	]
 }

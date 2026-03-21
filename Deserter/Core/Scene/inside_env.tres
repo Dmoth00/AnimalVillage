@@ -4,7 +4,7 @@
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_source = 2
-ambient_light_color = Color(0.0384, 0.05712, 0.08, 1)
+ambient_light_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
 ambient_light_energy = 4.5
 reflected_light_source = 1
 tonemap_white = 2.0

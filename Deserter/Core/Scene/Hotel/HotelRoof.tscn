@@ -19,12 +19,13 @@
 [ext_resource type="Texture2D" uid="uid://cr0xojiywmyv2" path="res://Assets/Sprites/spiders/tiny_spider00.png" id="17_ae31y"]
 [ext_resource type="Texture2D" uid="uid://0auoh5t6dlsa" path="res://Assets/Sprites/spiders/tiny_spider01.png" id="18_cuwdm"]
 [ext_resource type="Script" uid="uid://bgylgwv2nb4xv" path="res://Core/Scene/Hotel/roof_spiders.gd" id="19_cuwdm"]
+[ext_resource type="PackedScene" uid="uid://cbrrijo1s75qc" path="res://Core/Actors/NPC/Villagers/hare.tscn" id="20_1um6r"]
 
 [sub_resource type="Environment" id="Environment_uj8b1"]
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_source = 2
-ambient_light_color = Color(0.0384, 0.05712, 0.08, 1)
+ambient_light_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
 ambient_light_energy = 2.5
 reflected_light_source = 1
 fog_enabled = true
@@ -380,7 +381,7 @@ data = PackedVector3Array(4.9997997, -8.0001, 0, 5.9997997, -8.0001, -1, 5.99979
 size = Vector3(0.5, 7, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nvxna"]
-size = Vector3(0.5, 3.4628906, 2)
+size = Vector3(0.5, 4.2889404, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wd7i0"]
 resource_name = "rod"
@@ -485,14 +486,14 @@ curve = SubResource("Curve_ae31y")
 
 [sub_resource type="Curve" id="Curve_1um6r"]
 _limits = [0.0, 8.0, 0.0, 1.0]
-_data = [Vector2(0, 8), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 6.022187), 0.0, 0.0, 0, 0]
 point_count = 1
 
 [sub_resource type="CurveTexture" id="CurveTexture_g17u2"]
 curve = SubResource("Curve_1um6r")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e2g37"]
-lifetime_randomness = 0.3
+lifetime_randomness = 0.45
 particle_flag_align_y = true
 particle_flag_disable_z = true
 emission_shape_offset = Vector3(2, 0, 0)
@@ -512,11 +513,6 @@ radial_accel_min = 0.19999775
 radial_accel_max = 0.49999776
 radial_accel_curve = SubResource("CurveTexture_cuwdm")
 alpha_curve = SubResource("CurveTexture_ae31y")
-anim_speed_min = 0.099999994
-anim_speed_max = 0.19999999
-turbulence_noise_strength = 0.0
-turbulence_noise_scale = 1.0
-turbulence_noise_speed_random = 0.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ae31y"]
 frames = 2
@@ -564,6 +560,7 @@ newPosition = Vector3(26, -1.4, -91)
 newMap = "uid://cnqovkmyuiyoa"
 sound = ExtResource("15_61ecf")
 playBefore = true
+timeToWarp = 1.0
 
 [node name="doorIn" parent="." unique_id=649292278 instance=ExtResource("14_dbdi5")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 4.5, 0, -3)
@@ -584,7 +581,6 @@ surface_material_override/2 = SubResource("StandardMaterial3D_ms2t5")
 surface_material_override/5 = SubResource("StandardMaterial3D_x271s")
 
 [node name="col" type="StaticBody3D" parent="meshHotelRoof00" unique_id=1506178715]
-visible = false
 
 [node name="roof" type="CollisionShape3D" parent="meshHotelRoof00/col" unique_id=1382165190]
 shape = SubResource("ConcavePolygonShape3D_vt3t1")
@@ -594,7 +590,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.396347, -0.99999994)
 shape = SubResource("BoxShape3D_e2g37")
 
 [node name="fence2" type="CollisionShape3D" parent="meshHotelRoof00/col" unique_id=1994842293]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 3.4850287, 5.856074, -1)
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 3.8980536, 5.856074, -1)
 shape = SubResource("BoxShape3D_nvxna")
 
 [node name="chainlink" type="MeshInstance3D" parent="." unique_id=1221621115]
@@ -610,7 +606,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cuwdm")
 
 [node name="chainlink3" type="MeshInstance3D" parent="." unique_id=1240303299]
-transform = Transform3D(0.8, 0, -2.1175824e-22, -1.6940658e-22, -4.371139e-08, -1, -3.5527137e-15, 1, -4.371139e-08, 3.5820246, 0, 3.8452883)
+transform = Transform3D(1, 4.440892e-15, -1.9411757e-22, 0, -4.371139e-08, -1, -4.440892e-15, 1, -4.371139e-08, 3.992775, 0, 3.8369684)
 mesh = SubResource("ArrayMesh_hhuyk")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1um6r")
@@ -623,13 +619,19 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 7.505106, 0, -2.4930189
 
 [node name="spiders" type="GPUParticles3D" parent="." unique_id=2000766430]
 transform = Transform3D(-0.50000006, -0.86602527, 3.7855166e-08, 3.3868204e-22, -4.371138e-08, -0.9999999, 0.8660254, -0.49999997, 2.1855692e-08, -1.5, 0.5, -9.5)
+emitting = false
 amount = 10
 lifetime = 3.0
+one_shot = true
+preprocess = 0.4
 explosiveness = 1.0
 randomness = 0.25
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_e2g37")
 draw_pass_1 = SubResource("QuadMesh_nvxna")
 script = ExtResource("19_cuwdm")
+
+[node name="Hare" parent="." unique_id=1046704636 instance=ExtResource("20_1um6r")]
+transform = Transform3D(1.3113416e-07, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 1.3113416e-07, 2.6946626, 0.0151498765, 1.3505864)
 
 [connection signal="finished" from="spiders" to="spiders" method="_on_finished"]

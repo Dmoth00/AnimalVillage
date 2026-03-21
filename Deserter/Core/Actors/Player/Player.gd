@@ -39,6 +39,7 @@ var fl=true
 @onready var vul_timer=$vul_timer
 @onready var can_move_timer=$can_move_timer
 @onready var death_timer=$death_timer
+var bldt = 0.0
 
 #sounds
 @onready var snd_step=$anim/sndStep
@@ -76,8 +77,6 @@ func _physics_process(delta):
 	else: input_dir=Vector2.ZERO
 	
 	direction = Vector3(input_dir.x,0,input_dir.y)
-
-		
 	
 	#voluntary movement
 	if direction.length()>0.5 and state==0:
@@ -88,7 +87,18 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x,0,16*delta)
 		velocity.z = move_toward(velocity.z,0,16*delta)
 	
+	#movement finalization
 	move_and_slide()
+	
+	#blood ministration
+	if state==0 and can_move and !inputOff:
+		if gvars.blood<gvars.bloodMax and gvars.bloodBag>0.0:
+			bldt+=delta
+			if bldt>=6.0:
+				bldt=4.0
+				gvars.bloodBag=max(gvars.bloodBag-0.2,0.0)
+				gvars.blood=min(gvars.bloodMax,gvars.blood+0.2)
+	else: bldt=0.0
 
 func _process(delta):
 	
