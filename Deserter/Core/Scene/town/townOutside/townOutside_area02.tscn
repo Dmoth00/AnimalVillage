@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cplw7ml8j6hvg" path="res://Assets/Textures/GrassTex.png" id="1_1oax3"]
 [ext_resource type="Texture2D" uid="uid://cw60ayuicrvxn" path="res://Assets/Textures/mossTex00.png" id="2_6mky0"]
-[ext_resource type="Shader" uid="uid://cllyfxpbjdfes" path="res://Assets/Shaders/waterShader.tres" id="3_5340w"]
+[ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="3_74gu6"]
 [ext_resource type="Texture2D" uid="uid://dh56wdnssuo7b" path="res://Assets/Textures/BarkTex01.png" id="4_ko45s"]
 [ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="5_sw76h"]
 [ext_resource type="AudioStream" uid="uid://divedqmi4pvcj" path="res://Assets/Sounds/BGM/bgm_cicadas.wav" id="6_54q4e"]
@@ -86,16 +86,37 @@ metallic_specular = 0.0
 albedo_texture = ExtResource("2_6mky0")
 metallic_specular = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mhpej"]
-render_priority = 0
-shader = ExtResource("3_5340w")
-shader_parameter/ColorParameter = Color(0.153, 0.3, 0.2657, 1)
-shader_parameter/Alpha = 0.75
-shader_parameter/current_speed = 0.67
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dr4f4"]
+noise_type = 2
+seed = 2
+frequency = 0.012
+cellular_distance_function = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ywuv1"]
+noise = SubResource("FastNoiseLite_dr4f4")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gum6g"]
+render_priority = -1
+shader = ExtResource("3_74gu6")
+shader_parameter/primary_color = Color(0.59000003, 0.8155001, 1, 1)
+shader_parameter/secondary_color = Color(0, 0.18000002, 0.2, 1)
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_ywuv1")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_ywuv1")
+shader_parameter/roughness = 0.5
+shader_parameter/normalmap_a_strength = 0.2999999932944
+shader_parameter/normalmap_b_strength = 0.499999988824
+shader_parameter/wave_direction = Vector2(0.1, 0.1)
+shader_parameter/wave_speed = 0.5
+shader_parameter/uv_scale = 1.0
+shader_parameter/depth_distance = 1.0000000149012
+shader_parameter/beers_law = 20.0
+shader_parameter/water_transparency = 0.10000000149012
 
 [sub_resource type="QuadMesh" id="QuadMesh_7ivji"]
 lightmap_size_hint = Vector2i(102, 102)
-material = SubResource("ShaderMaterial_mhpej")
+material = SubResource("ShaderMaterial_gum6g")
 size = Vector2(20, 20)
 orientation = 1
 

@@ -1,21 +1,10 @@
 [gd_resource type="VisualShader" format=3 uid="uid://cllyfxpbjdfes"]
 
-[sub_resource type="FastNoiseLite" id="9"]
-noise_type = 2
-frequency = 0.0061
-cellular_distance_function = 1
-cellular_return_type = 6
-
-[sub_resource type="NoiseTexture2D" id="10"]
-generate_mipmaps = false
-noise = SubResource("9")
-seamless = true
-normalize = false
-bump_strength = 29.7
+[ext_resource type="Texture2D" uid="uid://bebm5ntvw6td" path="res://Assets/Shaders/waterTexture.tres" id="1_4cn5m"]
 
 [sub_resource type="VisualShaderNodeTexture" id="18"]
 output_port_for_preview = 0
-texture = SubResource("10")
+texture = ExtResource("1_4cn5m")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeVectorOp" id="21"]
@@ -61,7 +50,7 @@ function = 1
 
 [sub_resource type="VisualShaderNodeTexture" id="11"]
 output_port_for_preview = 0
-texture = SubResource("10")
+texture = ExtResource("1_4cn5m")
 texture_type = 1
 
 [sub_resource type="VisualShaderNodeInput" id="13"]

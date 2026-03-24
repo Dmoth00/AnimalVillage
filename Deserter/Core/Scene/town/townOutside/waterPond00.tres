@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://blujk52ay6abd"]
+
+[ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="1_xhlst"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xhlst")
+shader_parameter/ColorParameter = Color(0.153, 0.3, 0.2657, 1)
+shader_parameter/Alpha = 0.75
+shader_parameter/UV_Scale = 6.0
+shader_parameter/current_speed = 0.800000038
