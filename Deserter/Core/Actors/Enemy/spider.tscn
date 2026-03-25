@@ -1,11 +1,11 @@
-[gd_scene load_steps=21 format=4 uid="uid://cxinr3rqbem3j"]
+[gd_scene format=4 uid="uid://cxinr3rqbem3j"]
 
-[ext_resource type="Script" path="res://Core/Actors/Enemy/spider.gd" id="1_u1usa"]
-[ext_resource type="Shader" path="res://Assets/Shaders/ghost.gdshader" id="2_7rdk4"]
+[ext_resource type="Script" uid="uid://00t3kv0be3oa" path="res://Core/Actors/Enemy/spider.gd" id="1_u1usa"]
+[ext_resource type="Shader" uid="uid://c63hxwrudxyjo" path="res://Assets/Shaders/ghost.gdshader" id="2_7rdk4"]
 [ext_resource type="Texture2D" uid="uid://dspr8u0bflwct" path="res://Assets/Textures/StairsTex00.png" id="3_8mpsf"]
-[ext_resource type="Script" path="res://Core/ghostfade.gd" id="4_0b4tr"]
+[ext_resource type="Script" uid="uid://bvjpd7s2yily8" path="res://Core/ghostfade.gd" id="4_0b4tr"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="5_pxilg"]
-[ext_resource type="Script" path="res://Core/System/sfx_common.gd" id="6_yoctl"]
+[ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="6_yoctl"]
 [ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="7_o44b0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ue700"]
@@ -97,13 +97,13 @@ bind/19/pose = Transform3D(-1.98839e-07, -6.87062e-07, 1, 0.960582, -0.277998, 5
 render_priority = 0
 shader = ExtResource("2_7rdk4")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("3_8mpsf")
 shader_parameter/specular = 1.0
-shader_parameter/metallic = null
+shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.0
 shader_parameter/alpha = 1.0
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("3_8mpsf")
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_3crxm"]
 resource_name = "SpiderArmAction"
@@ -350,7 +350,7 @@ tracks/33/keys = PackedFloat32Array(0, 1, -0.281394, 9.91542e-08, -3.27926e-07, 
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mtbek"]
 _data = {
-"SpiderArmAction": SubResource("Animation_3crxm")
+&"SpiderArmAction": SubResource("Animation_3crxm")
 }
 
 [sub_resource type="Curve" id="Curve_cs4r7"]
@@ -361,8 +361,7 @@ point_count = 2
 curve = SubResource("Curve_cs4r7")
 
 [sub_resource type="Curve" id="Curve_esrmn"]
-min_value = 0.01
-max_value = 4.0
+_limits = [0.01, 4.0, 0.0, 1.0]
 _data = [Vector2(0, 0.0976925), 0.142535, 25.6061, 0, 0, Vector2(0.0593607, 3.25462), 7.68185, 7.68185, 0, 0, Vector2(0.995434, 0.0538464), -0.129761, 0.0, 0, 0]
 point_count = 3
 
@@ -407,18 +406,18 @@ particles_anim_loop = false
 [sub_resource type="QuadMesh" id="QuadMesh_nkw6j"]
 material = SubResource("StandardMaterial3D_xkn4d")
 
-[node name="Spider" type="CharacterBody3D" groups=["Harm", "Id", "Mortal"]]
+[node name="Spider" type="CharacterBody3D" unique_id=1192178173 groups=["Harm", "Id", "Mortal"]]
 collision_layer = 7
 script = ExtResource("1_u1usa")
 
-[node name="col" type="CollisionShape3D" parent="."]
+[node name="col" type="CollisionShape3D" parent="." unique_id=954146343]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_ue700")
 
-[node name="SpiderArm" type="Node3D" parent="."]
+[node name="SpiderArm" type="Node3D" parent="." unique_id=1820976254]
 transform = Transform3D(1, 0, 0, 0, 1.5, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="SpiderArm"]
+[node name="Skeleton3D" type="Skeleton3D" parent="SpiderArm" unique_id=386704362]
 bones/0/name = "base"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, -3.89414e-07, -3.89414e-07, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -560,30 +559,28 @@ bones/19/position = Vector3(-9.0661e-10, 0.56602, -5.43239e-10)
 bones/19/rotation = Quaternion(-0.281394, 9.91542e-08, -3.27926e-07, 0.959592)
 bones/19/scale = Vector3(1, 1, 1)
 
-[node name="SpiderMesh" type="MeshInstance3D" parent="SpiderArm/Skeleton3D" groups=["Fade"]]
+[node name="SpiderMesh" type="MeshInstance3D" parent="SpiderArm/Skeleton3D" unique_id=1509230806 groups=["Fade"]]
 mesh = SubResource("ArrayMesh_58g0j")
 skin = SubResource("Skin_bfd8t")
 surface_material_override/0 = SubResource("ShaderMaterial_g7we5")
 script = ExtResource("4_0b4tr")
 
-[node name="SpiderMesh2" type="MeshInstance3D" parent="SpiderArm/Skeleton3D"]
+[node name="SpiderMesh2" type="MeshInstance3D" parent="SpiderArm/Skeleton3D" unique_id=986489323]
 cast_shadow = 3
 mesh = SubResource("ArrayMesh_58g0j")
 skin = SubResource("Skin_bfd8t")
 
-[node name="anim" type="AnimationPlayer" parent="."]
+[node name="anim" type="AnimationPlayer" parent="." unique_id=510380386]
 root_motion_track = NodePath("SpiderArm/Skeleton3D:base")
-libraries = {
-"": SubResource("AnimationLibrary_mtbek")
-}
-autoplay = "SpiderArmAction"
+libraries/ = SubResource("AnimationLibrary_mtbek")
+autoplay = &"SpiderArmAction"
 playback_auto_capture = false
 
-[node name="re_target" type="Timer" parent="."]
+[node name="re_target" type="Timer" parent="." unique_id=2144553099]
 wait_time = 0.2
 autostart = true
 
-[node name="bloodSFX" type="GPUParticles3D" parent="."]
+[node name="bloodSFX" type="GPUParticles3D" parent="." unique_id=2087029474]
 process_mode = 3
 gi_mode = 0
 emitting = false
@@ -595,7 +592,7 @@ process_material = SubResource("ParticleProcessMaterial_sq3ao")
 draw_pass_1 = SubResource("QuadMesh_nkw6j")
 script = ExtResource("6_yoctl")
 
-[node name="snd" type="AudioStreamPlayer3D" parent="bloodSFX"]
+[node name="snd" type="AudioStreamPlayer3D" parent="bloodSFX" unique_id=779403740]
 stream = ExtResource("7_o44b0")
 
 [connection signal="timeout" from="re_target" to="." method="_on_re_target"]
