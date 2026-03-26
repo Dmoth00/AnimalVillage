@@ -5,7 +5,7 @@ uniform vec4 secondary_color : source_color;
 
 uniform sampler2D normalmap_a : hint_normal, filter_nearest;
 uniform float roughness : hint_range(0.0, 1.0, 0.1) = 0.2;
-uniform float wave_speed = 0.2;
+uniform float wave_speed :hint_range(0.0, 10.0, 0.1) = 0.2;
 uniform float uv_scale=1.0;
 
 uniform sampler2D depth_texture : hint_depth_texture, repeat_disable, filter_nearest;
@@ -22,8 +22,8 @@ uniform float refraction_strength : hint_range(0.0, 1.0, 0.05) = 0.5;
 void fragment()
 	{
 		vec2 uv = UV*uv_scale;
-		vec2 uv_move_a = vec2(-1.0,0.0)*wave_speed*TIME;
-		vec2 uv_move_b = vec2(0.5,0.5)*wave_speed*TIME;
+		vec2 uv_move_a = vec2(-1.0,0.0)*wave_speed*TIME*0.1;
+		vec2 uv_move_b = vec2(0.5,0.5)*wave_speed*TIME*0.1;
 		
 		//normal normalmaps
 		vec3 normalmap = normalize(texture(normalmap_a,uv+uv_move_a).rgb+texture(normalmap_a,uv*1.5+uv_move_b).rgb*0.8)+0.1;
@@ -38,7 +38,6 @@ void fragment()
 		//get depth and screen textures
 		float depth_clean = textureLod(depth_texture, SCREEN_UV, 0.0).r;
 		float depth = textureLod(depth_texture, ref_ofs, 0.0).r;
-		vec3 screen = textureLod(screen_texture, ref_ofs, 0.0).rgb;
 		
 		//get depth in world position
 		vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
@@ -72,7 +71,6 @@ void fragment()
 		
 		ALBEDO = final_color;
 		ROUGHNESS = roughness;
-		SPECULAR = 1.0;
 		NORMAL_MAP = normalmap;
 	}
 	

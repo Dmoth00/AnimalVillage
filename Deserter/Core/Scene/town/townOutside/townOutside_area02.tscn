@@ -87,9 +87,7 @@ albedo_texture = ExtResource("2_6mky0")
 metallic_specular = 0.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_dr4f4"]
-seed = 6
-fractal_octaves = 2
-fractal_lacunarity = 4.0
+frequency = 0.0146
 fractal_weighted_strength = 0.5
 fractal_ping_pong_strength = 1.5
 cellular_distance_function = 1
@@ -97,34 +95,27 @@ cellular_jitter = 0.75
 domain_warp_fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_74gu6"]
+width = 256
+height = 256
+generate_mipmaps = false
 noise = SubResource("FastNoiseLite_dr4f4")
 seamless = true
 as_normal_map = true
-seamless_blend_skirt = 0.5
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ywuv1"]
-noise = SubResource("FastNoiseLite_dr4f4")
-seamless = true
-as_normal_map = true
-seamless_blend_skirt = 0.5
+bump_strength = 32.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gum6g"]
 render_priority = -1
 shader = ExtResource("3_74gu6")
-shader_parameter/primary_color = Color(0, 0.47058824, 0.6, 1)
-shader_parameter/secondary_color = Color(0, 0.15738946, 0.2832171, 1)
+shader_parameter/primary_color = Color(0.7612392, 0.8804613, 1, 1)
+shader_parameter/secondary_color = Color(0, 0.16481587, 0.25041264, 1)
 shader_parameter/normalmap_a = SubResource("NoiseTexture2D_74gu6")
-shader_parameter/normalmap_b = SubResource("NoiseTexture2D_ywuv1")
-shader_parameter/roughness = 0.5000000074506
-shader_parameter/normalmap_a_pow = 0.3
-shader_parameter/normalmap_b_pow = 0.2
-shader_parameter/wave_direction = Vector2(0.1, 0.2)
+shader_parameter/roughness = 0.2
 shader_parameter/wave_speed = 0.2
 shader_parameter/uv_scale = 2.0
-shader_parameter/depth_distance = 2.500000037253
+shader_parameter/depth_distance = 0.5000000074506
 shader_parameter/beers_law = 20.0
-shader_parameter/water_transparency = 0.05000000074506
-shader_parameter/refraction_strength = 0.20000000298024
+shader_parameter/water_transparency = 0.15000000223518
+shader_parameter/refraction_strength = 0.10000000149012
 
 [sub_resource type="QuadMesh" id="QuadMesh_7ivji"]
 lightmap_size_hint = Vector2i(102, 102)
@@ -317,6 +308,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_usd3r")
 
 [node name="water" type="MeshInstance3D" parent="." unique_id=622787073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44649887, -1.76067, -0.32239914)
+layers = 2
 visibility_range_end = 50.0
 mesh = SubResource("QuadMesh_7ivji")
 skeleton = NodePath("")

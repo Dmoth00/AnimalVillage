@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="10_r33gu"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="11_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="12_7xjuy"]
+[ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="13_kjrh6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq4la"]
 resource_name = "MatBumper"
@@ -268,6 +269,17 @@ material = SubResource("StandardMaterial3D_imlu4")
 flip_faces = true
 size = Vector2(1, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqh65"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("13_kjrh6")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_rwe0r"]
+material = SubResource("StandardMaterial3D_mqh65")
+size = Vector2(2, 2)
+
 [node name="DebugSewer" type="Node3D" unique_id=2125396539]
 
 [node name="SewerHallA" type="MeshInstance3D" parent="." unique_id=484247883]
@@ -305,7 +317,13 @@ newMap = "uid://devcj660ww73a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_kjrh6")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=554236489]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48404956, -8.5)
-omni_range = 10.0
-omni_shadow_mode = 0
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1724548074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2872663, 0)
+light_color = Color(1, 0.976, 0.76, 1)
+light_energy = 1.5
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 1.0
+
+[node name="glare" type="MeshInstance3D" parent="OmniLight3D" unique_id=1975273469]
+mesh = SubResource("QuadMesh_rwe0r")
