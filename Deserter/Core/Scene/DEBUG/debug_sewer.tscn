@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://0saa5nswgyqo" path="res://Assets/Textures/BrickTex01.png" id="5_kjrh6"]
 [ext_resource type="Texture2D" uid="uid://dspr8u0bflwct" path="res://Assets/Textures/StairsTex00.png" id="6_mqh65"]
 [ext_resource type="Texture2D" uid="uid://c3u6kc4n03grg" path="res://Assets/Textures/LQtreadTex00.png" id="7_rwe0r"]
-[ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="8_enl6q"]
+[ext_resource type="Material" uid="uid://b4n5u2a44n5qg" path="res://Core/Scene/DEBUG/SewerWaterMat.tres" id="8_7xjuy"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="9_10bpy"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="10_r33gu"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="11_7xjuy"]
@@ -17,43 +17,43 @@
 resource_name = "MatBumper"
 cull_mode = 2
 albedo_texture = ExtResource("1_xxtcp")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fbxc"]
 resource_name = "MatRust"
 cull_mode = 2
 albedo_texture = ExtResource("2_r33gu")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5r2l"]
 resource_name = "MatGravel"
 cull_mode = 2
 albedo_texture = ExtResource("3_51tch")
-roughness = 0.5
+metallic_specular = 0.0
+roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shnq5"]
 resource_name = "MatAsphalt"
-cull_mode = 2
 albedo_texture = ExtResource("4_7xjuy")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k40sa"]
 resource_name = "MatBricks"
 cull_mode = 2
 albedo_texture = ExtResource("5_kjrh6")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wo1qr"]
 resource_name = "MatStairs"
 cull_mode = 2
 albedo_texture = ExtResource("6_mqh65")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7ndf"]
 resource_name = "MatGrid"
-cull_mode = 2
 albedo_texture = ExtResource("7_rwe0r")
-roughness = 0.5
+metallic_specular = 0.0
+roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_mbhab"]
 _surfaces = [{
@@ -260,39 +260,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xcceo")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_dr4f4"]
-noise_type = 2
-seed = 2
-frequency = 0.012
-cellular_distance_function = 1
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n3h2a"]
-noise = SubResource("FastNoiseLite_dr4f4")
-seamless = true
-as_normal_map = true
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_08xri"]
-noise = SubResource("FastNoiseLite_dr4f4")
-seamless = true
-as_normal_map = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_acjuq"]
-render_priority = 0
-shader = ExtResource("8_enl6q")
-shader_parameter/primary_color = Color(1, 0.6706667, 0.48000002, 1)
-shader_parameter/secondary_color = Color(0, 0, 0, 1)
-shader_parameter/normalmap_a = SubResource("NoiseTexture2D_n3h2a")
-shader_parameter/normalmap_b = SubResource("NoiseTexture2D_08xri")
-shader_parameter/roughness = 0.4
-shader_parameter/normalmap_a_strength = 0.3
-shader_parameter/normalmap_b_strength = 0.2
-shader_parameter/wave_direction = Vector2(1, 1)
-shader_parameter/wave_speed = 0.2
-shader_parameter/uv_scale = 1.0
-shader_parameter/depth_distance = 2.0000000298024
-shader_parameter/beers_law = 10.000000149012
-shader_parameter/water_transparency = 0.60000000894072
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imlu4"]
 albedo_texture = ExtResource("12_7xjuy")
 
@@ -307,17 +274,18 @@ size = Vector2(1, 2)
 mesh = SubResource("ArrayMesh_peq06")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="SewerHallA" unique_id=853509757 groups=["Water"]]
+[node name="col" type="StaticBody3D" parent="SewerHallA" unique_id=853509757 groups=["Water"]]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SewerHallA/StaticBody3D" unique_id=986709841]
+[node name="sewer" type="CollisionShape3D" parent="SewerHallA/col" unique_id=986709841]
 shape = SubResource("ConcavePolygonShape3D_vew2p")
 
 [node name="SewerHallAWater" type="MeshInstance3D" parent="." unique_id=173626067]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_75bt8")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("ShaderMaterial_acjuq")
+surface_material_override/0 = ExtResource("8_7xjuy")
 
 [node name="env" type="WorldEnvironment" parent="." unique_id=1085267319]
 environment = ExtResource("9_10bpy")
@@ -336,3 +304,8 @@ newMap = "uid://devcj660ww73a"
 [node name="hole" type="MeshInstance3D" parent="Door" unique_id=1597025643]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_kjrh6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=554236489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48404956, -8.5)
+omni_range = 10.0
+omni_shadow_mode = 0

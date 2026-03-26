@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b4n5u2a44n5qg"]
+
+[ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="1_qvq6e"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dr4f4"]
+noise_type = 2
+seed = 1
+offset = Vector3(0, -30, 0)
+fractal_lacunarity = 2.4
+fractal_weighted_strength = 0.4
+domain_warp_frequency = 0.055
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n3h2a"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_dr4f4")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 0.2
+
+[resource]
+render_priority = -1
+shader = ExtResource("1_qvq6e")
+shader_parameter/primary_color = Color(1, 0.6706667, 0.48000002, 1)
+shader_parameter/secondary_color = Color(0.12, 0.03, 0, 1)
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_n3h2a")
+shader_parameter/roughness = 0.20000000298024
+shader_parameter/wave_speed = 0.1
+shader_parameter/uv_scale = 1.0
+shader_parameter/depth_distance = 3.0000000447036
+shader_parameter/beers_law = 20.0
+shader_parameter/water_transparency = 0.2500000037253
+shader_parameter/refraction_strength = 0.10000000149012
