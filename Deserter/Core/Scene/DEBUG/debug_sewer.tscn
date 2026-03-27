@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="11_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="12_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="13_kjrh6"]
+[ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="14_mqh65"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq4la"]
 resource_name = "MatBumper"
@@ -280,6 +281,46 @@ billboard_keep_scale = true
 material = SubResource("StandardMaterial3D_mqh65")
 size = Vector2(2, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
+resource_name = "chain"
+transparency = 2
+alpha_scissor_threshold = 0.153
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("14_mqh65")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e63j0"]
+_surfaces = [{
+"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "chain",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//87z/v8AAP7/AAD//wAAAADO8wAAAAAAADAM//8AAP7///8AAAAA//8wDAAAAAAAAP///v8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_34qpu"]
+resource_name = "curtains_chain"
+_surfaces = [{
+"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
+"attribute_data": PackedByteArray("/3//////8n///////3/yf/9///////J///////9/8n8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_gerqw"),
+"name": "chain",
+"primitive": 3,
+"uv_scale": Vector4(2, 19.992188, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAA/5///87z/v//n/7/AAD///+fAADO8wAA/58AADAM////n/7///8AAP+f//8wDAAA/58AAP///v//n/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e63j0")
+
 [node name="DebugSewer" type="Node3D" unique_id=2125396539]
 
 [node name="SewerHallA" type="MeshInstance3D" parent="." unique_id=484247883]
@@ -327,3 +368,8 @@ light_specular = 1.0
 
 [node name="glare" type="MeshInstance3D" parent="OmniLight3D" unique_id=1975273469]
 mesh = SubResource("QuadMesh_rwe0r")
+
+[node name="chain" type="MeshInstance3D" parent="OmniLight3D/glare" unique_id=852840792]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_34qpu")
+skeleton = NodePath("")

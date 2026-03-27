@@ -15,17 +15,20 @@
 resource_name = "WallMat00"
 cull_mode = 2
 albedo_texture = ExtResource("4_gd1r8")
+metallic_specular = 0.0
 uv1_offset = Vector3(0, -0.01, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a21t"]
 resource_name = "BrickMat00"
 cull_mode = 2
 albedo_texture = ExtResource("5_q6vm2")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwyf6"]
 resource_name = "CarpetMat"
 cull_mode = 2
 albedo_texture = ExtResource("6_mkonh")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4fml"]
 resource_name = "DoorMat00"

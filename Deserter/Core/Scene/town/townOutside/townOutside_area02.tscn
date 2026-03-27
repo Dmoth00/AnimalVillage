@@ -121,6 +121,8 @@ shader_parameter/refraction_strength = 0.10000000149012
 lightmap_size_hint = Vector2i(102, 102)
 material = SubResource("ShaderMaterial_gum6g")
 size = Vector2(20, 20)
+subdivide_width = 16
+subdivide_depth = 16
 orientation = 1
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_aei86"]

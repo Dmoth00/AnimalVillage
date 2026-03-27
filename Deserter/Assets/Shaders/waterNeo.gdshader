@@ -1,3 +1,8 @@
+//Hi Rara! This is Rara from the past.
+//Are you thinking of fucking with this shader more?
+//Can I please ask you to reconsider?
+//You could sink 1000 yrs into this, best to leave it be.
+
 shader_type spatial;
 
 uniform vec4 primary_color : source_color;
@@ -16,6 +21,7 @@ uniform float beers_law : hint_range(0.0, 20.0, 0.1) = 12.0;
 uniform float water_transparency : hint_range(0.0, 1.0, 0.05)= 0.1;
 
 uniform float refraction_strength : hint_range(0.0, 1.0, 0.05) = 0.5;
+
 
 
 
@@ -66,11 +72,11 @@ void fragment()
 		vec3 refraction_texture = textureLod(screen_texture,ref_ofs,roughness).rgb;
 		vec3 final_color = mix(depth_color.rgb, refraction_texture, water_transparency);
 		
-		
-		
-		
+
 		ALBEDO = final_color;
 		ROUGHNESS = roughness;
 		NORMAL_MAP = normalmap;
-	}
+		}
+	
+	
 	
