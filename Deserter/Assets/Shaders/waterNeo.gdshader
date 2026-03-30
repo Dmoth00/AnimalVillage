@@ -4,6 +4,7 @@
 //You could sink 1000 yrs into this, best to leave it be.
 
 shader_type spatial;
+render_mode blend_mix, depth_draw_always, cull_disabled, diffuse_burley, specular_schlick_ggx;
 
 uniform vec4 primary_color : source_color;
 uniform vec4 secondary_color : source_color;
@@ -76,6 +77,7 @@ void fragment()
 		ALBEDO = final_color;
 		ROUGHNESS = roughness;
 		NORMAL_MAP = normalmap;
+		ALPHA=1.0;
 		}
 	
 	
