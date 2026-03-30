@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="12_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="13_kjrh6"]
 [ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="14_mqh65"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="14_rwe0r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq4la"]
 resource_name = "MatBumper"
@@ -273,13 +274,59 @@ size = Vector2(1, 2)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqh65"]
 transparency = 1
 shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
 albedo_texture = ExtResource("13_kjrh6")
 billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_rwe0r"]
 material = SubResource("StandardMaterial3D_mqh65")
-size = Vector2(2, 2)
+
+[sub_resource type="Curve" id="Curve_enl6q"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4963768, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_10bpy"]
+curve = SubResource("Curve_enl6q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vew2p"]
+emission_shape = 2
+emission_sphere_radius = 2.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.0000021
+radial_accel_max = -2.0000021
+tangential_accel_min = -1.0000023
+tangential_accel_max = 0.99999774
+damping_min = 1.0
+damping_max = 1.0
+attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_10bpy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwe0r"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("14_rwe0r")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_enl6q"]
+material = SubResource("StandardMaterial3D_rwe0r")
+size = Vector2(0.2, 0.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
 resource_name = "chain"
@@ -321,6 +368,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e63j0")
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_acjuq"]
+material = SubResource("StandardMaterial3D_3fbxc")
+top_radius = 0.01
+bottom_radius = 0.2
+height = 0.05
+radial_segments = 12
+
 [node name="DebugSewer" type="Node3D" unique_id=2125396539]
 
 [node name="SewerHallA" type="MeshInstance3D" parent="." unique_id=484247883]
@@ -358,7 +412,7 @@ newMap = "uid://devcj660ww73a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_kjrh6")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1724548074]
+[node name="lamp" type="OmniLight3D" parent="." unique_id=1724548074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2872663, 0)
 light_color = Color(1, 0.976, 0.76, 1)
 light_energy = 1.5
@@ -366,10 +420,22 @@ light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.0
 light_specular = 1.0
 
-[node name="glare" type="MeshInstance3D" parent="OmniLight3D" unique_id=1975273469]
+[node name="glare" type="MeshInstance3D" parent="lamp" unique_id=1975273469]
 mesh = SubResource("QuadMesh_rwe0r")
 
-[node name="chain" type="MeshInstance3D" parent="OmniLight3D/glare" unique_id=852840792]
+[node name="flies" type="GPUParticles3D" parent="lamp" unique_id=603954215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.023708224, 0)
+amount = 16
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_vew2p")
+draw_pass_1 = SubResource("QuadMesh_enl6q")
+
+[node name="chain" type="MeshInstance3D" parent="lamp" unique_id=852840792]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("ArrayMesh_34qpu")
 skeleton = NodePath("")
+
+[node name="lampshade" type="MeshInstance3D" parent="lamp" unique_id=937925626]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.25756907, 0)
+mesh = SubResource("CylinderMesh_acjuq")
+skeleton = NodePath("../chain")
