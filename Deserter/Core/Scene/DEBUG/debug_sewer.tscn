@@ -263,6 +263,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xcceo")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rwe0r"]
+data = PackedVector3Array(-3, 0, 23.5, 3, 0, -23.5, 3, 0, 23.5, -3, 0, 23.5, -3, 0, -23.5, 3, 0, -23.5, -17, 0, -7.5006, -3, 0, -9.4914, -3, 0, -7.5006, -17, 0, -7.5006, -17, 0, -9.5, -3, 0, -9.4914, -17, 0, 9.4993, -3, 0, 7.5084996, -3, 0, 9.4993, -17, 0, 9.4993, -17, 0, 7.4997997, -3, 0, 7.5084996, 17, 0, 7.5042, 2.9995, 0, 9.495, 3, 0, 7.5042, 17, 0, 7.5042, 17, 0, 9.5043, 2.9995, 0, 9.495, 17, 0, -9.4957, 3, 0, -7.5049, 3, 0, -9.4957, 17, 0, -9.4957, 17, 0, -7.4954996, 3, 0, -7.5049)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imlu4"]
 albedo_texture = ExtResource("12_7xjuy")
 
@@ -381,8 +384,9 @@ radial_segments = 12
 mesh = SubResource("ArrayMesh_peq06")
 skeleton = NodePath("")
 
-[node name="col" type="StaticBody3D" parent="SewerHallA" unique_id=853509757 groups=["Water"]]
+[node name="col" type="StaticBody3D" parent="SewerHallA" unique_id=853509757]
 visible = false
+collision_mask = 0
 
 [node name="sewer" type="CollisionShape3D" parent="SewerHallA/col" unique_id=986709841]
 shape = SubResource("ConcavePolygonShape3D_vew2p")
@@ -393,6 +397,13 @@ layers = 2
 mesh = SubResource("ArrayMesh_75bt8")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("8_7xjuy")
+
+[node name="watercol" type="StaticBody3D" parent="SewerHallAWater" unique_id=1996270299 groups=["Water"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="water" type="CollisionShape3D" parent="SewerHallAWater/watercol" unique_id=1463080876]
+shape = SubResource("ConcavePolygonShape3D_rwe0r")
 
 [node name="env" type="WorldEnvironment" parent="." unique_id=1085267319]
 environment = ExtResource("9_10bpy")

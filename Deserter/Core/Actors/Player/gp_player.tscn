@@ -477,6 +477,7 @@ scale_curve = SubResource("CurveTexture_svj0i")
 alpha_curve = SubResource("CurveTexture_y3qx7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfk4e"]
+render_priority = 10
 transparency = 1
 specular_mode = 2
 vertex_color_use_as_albedo = true
@@ -899,16 +900,18 @@ one_shot = true
 one_shot = true
 
 [node name="StepRay" type="RayCast3D" parent="Player" unique_id=727824333]
-transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 1.3157965, 0.00568676)
-target_position = Vector3(0, -1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0.000733038, 0, -0.000733038, 1, 0, 1.4485624, 0.00568676)
+target_position = Vector3(0, -1.2, 0)
 collision_mask = 5
 script = ExtResource("21_gfk4e")
 
 [node name="ripples" type="GPUParticles3D" parent="Player/StepRay" unique_id=79893673]
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -1.2848049, -0.019409)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0.0007330379, 0, -0.0007330379, 0.9999999, 0, 1.4485697, 0.01568676)
+top_level = true
 layers = 4
 cast_shadow = 0
 gi_mode = 0
+emitting = false
 amount = 6
 randomness = 0.25
 process_material = SubResource("ParticleProcessMaterial_62du3")

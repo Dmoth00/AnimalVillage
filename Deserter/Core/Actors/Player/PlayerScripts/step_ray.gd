@@ -12,7 +12,8 @@ func _on_check() -> void:
 		if other.is_in_group("Water"):
 			player.in_water=true
 			speed=player.velocity.length()
-			sfx.global_position.y=get_collision_point().y+0.01
+			sfx.global_position=player.global_position
+			sfx.global_position.y=get_collision_point().y
 			if speed>1.0:
 				sfx.emitting=true
 
