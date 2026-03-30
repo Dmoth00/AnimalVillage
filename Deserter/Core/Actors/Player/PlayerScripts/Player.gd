@@ -53,9 +53,12 @@ var bldt = 0.0
 var interactables : Array
 @onready var act_sign=$act_sign
 
+#when you walkin
+var in_water=false
+
 #miscelaneous variables
 var t=0.0
-@onready var step_ray=$StepRay
+
 
 #main processes
 
@@ -269,11 +272,11 @@ func _hurt(other : Node3D):
 			anim.play("CharAnim_Hurt")
 
 func step():
-	if is_on_floor() and step_ray.is_colliding():
-		var other = step_ray.get_collider()
-		if other.is_in_group("Water"):
+	if is_on_floor():
+		if in_water:
 			snd_step.stream=load("res://Assets/Sounds/SFX/snd_stepWater.wav")
-		else: snd_step.stream=load("res://Assets/Sounds/SFX/snd_step2.wav")
+		else:
+			snd_step.stream=load("res://Assets/Sounds/SFX/snd_step2.wav")
 		snd_step.pitch_scale=0.5+randf()
 		snd_step.play()
 
