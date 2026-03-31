@@ -20,7 +20,7 @@ func _ready() -> void:
 func act(player : CharacterBody3D) -> void:
 	get_tree().get_first_node_in_group("TXT").act(texts,self)
 	dir=-global_transform.basis.z
-	target_dir=(player.global_position-global_position).normalized()
+	target_dir=(player.global_position-global_position+Vector3.UP*0.001).normalized()
 
 func store_dir(): stored_dir=-global_transform.basis.z
 
@@ -29,4 +29,4 @@ func _process(delta: float) -> void:
 	
 	if dir!=target_dir:
 		dir=dir.slerp(target_dir,delta*10).normalized()
-		look_at(global_position+dir)
+		look_at(global_position+dir,Vector3.UP)

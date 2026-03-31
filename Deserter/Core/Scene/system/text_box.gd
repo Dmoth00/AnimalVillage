@@ -22,10 +22,9 @@ func _process(delta: float) -> void:
 			if t>=1.0:
 				state=1
 				t=0.0
-			
 		1: 
 			t+=delta*4
-			if t>=0.1:
+			if t>=0.1 or Input.is_action_pressed("gp_run"):
 				t=0.0
 				tbox.visible_characters+=1
 				if tbox.visible_ratio==1.0: state=2
@@ -72,5 +71,4 @@ func _input(event: InputEvent) -> void:
 		else: state=3
 		
 		
-	if event.is_action("gp_run") and state==1: t+=0.1
 	

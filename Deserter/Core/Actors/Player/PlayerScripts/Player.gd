@@ -145,6 +145,11 @@ func _process(delta):
 	else: act_sign.scale=act_sign.scale.lerp(Vector3.ZERO,delta*12)
 
 func _input(event):
+	
+	#run input
+	if event.is_action_pressed("gp_run"): runMod=2.5
+	if event.is_action_released("gp_run"): runMod=1.0
+	
 	if inputOff: return
 	
 	if can_move:
@@ -159,10 +164,6 @@ func _input(event):
 			#reload imput
 			if event.is_action_pressed("gp_reload"): _reload()
 	
-	
-	#run input
-	if event.is_action_pressed("gp_run"): runMod=2.5
-	if event.is_action_released("gp_run"): runMod=1.0
 	
 	#aim input
 	if event.is_action_pressed("gp_aim"): aiming=true

@@ -1,0 +1,143 @@
+[gd_scene format=4 uid="uid://b88skphiui336"]
+
+[ext_resource type="Texture2D" uid="uid://b0aa8fw32vuod" path="res://Assets/Sprites/LightTex01.png" id="1_jkmfy"]
+[ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="2_22ige"]
+[ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="3_s04oj"]
+[ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="4_dojsn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqh65"]
+transparency = 1
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("1_jkmfy")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_rwe0r"]
+material = SubResource("StandardMaterial3D_mqh65")
+
+[sub_resource type="Curve" id="Curve_enl6q"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4963768, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_10bpy"]
+curve = SubResource("Curve_enl6q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vew2p"]
+emission_shape = 2
+emission_sphere_radius = 2.0
+angular_velocity_min = -1.6093254e-05
+angular_velocity_max = -1.6093254e-05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = -2.2351742e-05
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.0000021
+radial_accel_max = -2.0000021
+tangential_accel_min = -1.0000023
+tangential_accel_max = 0.99999774
+damping_min = 1.0
+damping_max = 1.0
+attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_10bpy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwe0r"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_22ige")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_enl6q"]
+material = SubResource("StandardMaterial3D_rwe0r")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
+resource_name = "chain"
+transparency = 2
+alpha_scissor_threshold = 0.153
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_s04oj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e63j0"]
+_surfaces = [{
+"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"name": "chain",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAD//87z/v8AAP7/AAD//wAAAADO8wAAAAAAADAM//8AAP7///8AAAAA//8wDAAAAAAAAP///v8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_34qpu"]
+resource_name = "curtains_chain"
+_surfaces = [{
+"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
+"attribute_data": PackedByteArray("/3//////8n///////3/yf/9///////J///////9/8n8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_gerqw"),
+"name": "chain",
+"primitive": 3,
+"uv_scale": Vector4(2, 19.992188, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAA/5///87z/v//n/7/AAD///+fAADO8wAA/58AADAM////n/7///8AAP+f//8wDAAA/58AAP///v//n/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e63j0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fbxc"]
+resource_name = "MatRust"
+cull_mode = 2
+albedo_texture = ExtResource("4_dojsn")
+metallic_specular = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_acjuq"]
+material = SubResource("StandardMaterial3D_3fbxc")
+top_radius = 0.01
+bottom_radius = 0.2
+height = 0.05
+radial_segments = 12
+
+[node name="lamp" type="OmniLight3D" unique_id=865691026]
+light_color = Color(1, 0.976, 0.76, 1)
+light_energy = 1.5
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 1.0
+
+[node name="glare" type="MeshInstance3D" parent="." unique_id=2101690909]
+mesh = SubResource("QuadMesh_rwe0r")
+
+[node name="flies" type="GPUParticles3D" parent="." unique_id=1356464663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.023708224, 0)
+amount = 16
+lifetime = 4.0
+process_material = SubResource("ParticleProcessMaterial_vew2p")
+draw_pass_1 = SubResource("QuadMesh_enl6q")
+
+[node name="chain" type="MeshInstance3D" parent="." unique_id=1872561027]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_34qpu")
+skeleton = NodePath("")
+
+[node name="lampshade" type="MeshInstance3D" parent="." unique_id=1776090048]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.25756907, 0)
+mesh = SubResource("CylinderMesh_acjuq")
+skeleton = NodePath("../chain")
