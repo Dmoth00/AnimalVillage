@@ -1901,6 +1901,9 @@ data = PackedVector3Array(-12.4021, 1.1764, -16.9597, -11.456, 1.1289, -14.2736,
 [sub_resource type="BoxShape3D" id="BoxShape3D_qigg3"]
 size = Vector3(3, 1.35449, 0.614258)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lyfix"]
+radius = 1.9130859
+
 [node name="Area03" type="Node3D" unique_id=30854685]
 
 [node name="TownWallMesh" type="MeshInstance3D" parent="." unique_id=765299730]
@@ -2300,6 +2303,10 @@ shape = SubResource("BoxShape3D_qigg3")
 [node name="hedgecol02" type="CollisionShape3D" parent="townMeshColiders" unique_id=825588771]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7069, -0.177246, -9.78361)
 shape = SubResource("BoxShape3D_qigg3")
+
+[node name="wellcol" type="CollisionShape3D" parent="townMeshColiders" unique_id=972293103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.388327, -2, -14.550414)
+shape = SubResource("CylinderShape3D_lyfix")
 
 [node name="bullets6" parent="." unique_id=62833065 instance=ExtResource("42_iow0p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.435358, -0.6799998, -19.029)

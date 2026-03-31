@@ -81,7 +81,6 @@ ambient_light_energy = 0.5
 
 [node name="floorcollision" type="StaticBody3D" parent="." unique_id=539018175]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.814, 1.656, -3.151)
-visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floorcollision" unique_id=791301067]
 shape = SubResource("ConcavePolygonShape3D_lb6qx")
@@ -106,7 +105,7 @@ sky_mode = 1
 [node name="Night" type="Node" parent="DayNight" unique_id=2017280555]
 
 [node name="Fireflies" type="GPUParticles3D" parent="DayNight/Night" unique_id=192178416]
-transform = Transform3D(0.9851603, 0, 0.1716368, 0, 1, 0, -0.1716368, 0, 0.9851603, 16.441402, -0.5087011, -42.92319)
+transform = Transform3D(0.9851603, 0, 0.1716368, 0, 1, 0, -0.1716368, 0, 0.9851603, 16.441402, 0.16930032, -42.92319)
 gi_mode = 0
 amount = 32
 lifetime = 6.0
