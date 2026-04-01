@@ -9,6 +9,7 @@ size = Vector3(2.04254, 2.46472, 1)
 [node name="Door" type="Area3D" unique_id=444387764 groups=["Act"]]
 collision_layer = 8
 collision_mask = 0
+monitoring = false
 script = ExtResource("1_amw21")
 newMap = "uid://se806ctw63n1"
 sound = ExtResource("3_tju4a")

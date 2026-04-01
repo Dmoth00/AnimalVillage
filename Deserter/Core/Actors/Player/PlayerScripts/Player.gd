@@ -108,8 +108,10 @@ func _process(delta):
 	#face direction
 	if direction and can_move:
 		#I don't know how this works but it works
-		var dire=(direction+Vector3(-0.01,0,0.01)).normalized()
-		ldir=ldir.slerp(dire,delta*10).normalized()
+		#var dire=(direction+Vector3(-0.01,0,0.01)).normalized()
+		#ldir=ldir.slerp(dire,delta*10).normalized()
+		#nevermind 2 years later I figured it out.
+		ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(direction,Vector3.UP)*delta*10).normalized()
 		mesh.look_at(transform.origin+ldir)
 	
 	match state:

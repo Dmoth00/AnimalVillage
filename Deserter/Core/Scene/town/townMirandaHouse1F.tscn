@@ -1013,7 +1013,7 @@ mesh = SubResource("ArrayMesh_mpymp")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_4t5v7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="props" unique_id=1979524648]
+[node name="carpet" type="MeshInstance3D" parent="props" unique_id=1979524648]
 transform = Transform3D(0.681015, -0.73227, -3.20085e-08, -2.05428e-15, -4.37114e-08, 1, -0.73227, -0.681015, -2.97681e-08, 1.51065, 0.0341424, -4.08949)
 mesh = SubResource("QuadMesh_sksy8")
 

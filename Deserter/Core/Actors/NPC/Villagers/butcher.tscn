@@ -2060,6 +2060,7 @@ bone_name = "head"
 bone = 14
 forward_axis = 2
 primary_rotation_axis = 2
+origin_offset = Vector3(0, 1, 0)
 duration = 0.5
 ease_type = 1
 use_angle_limitation = true

@@ -1,8 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://0ldarn4pkyvy"]
+[gd_scene format=4 uid="uid://0ldarn4pkyvy"]
 
 [ext_resource type="Texture2D" uid="uid://bcsulc2agm642" path="res://Assets/Textures/ConcreteTex00.png" id="1_uexqh"]
 [ext_resource type="Texture2D" uid="uid://drabgmet3t4f6" path="res://Assets/Textures/CuncreteTex01.png" id="2_ruj4g"]
-[ext_resource type="Shader" uid="uid://cllyfxpbjdfes" path="res://Assets/Shaders/waterShader.tres" id="3_5tver"]
+[ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="3_yu61h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3rex"]
 resource_name = "FountainMat"
@@ -80,9 +80,10 @@ uv1_scale = Vector3(2, 2, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrcaq"]
 render_priority = 0
-shader = ExtResource("3_5tver")
+shader = ExtResource("3_yu61h")
 shader_parameter/ColorParameter = Color(0.116704, 0.390957, 0.419128, 1)
-shader_parameter/Alpha = 0.704
+shader_parameter/Alpha = 0.850000040375
+shader_parameter/UV_Scale = 2.0
 shader_parameter/current_speed = 2.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ppsxd"]
@@ -93,18 +94,18 @@ radius = 2.21816
 height = 1.71543
 radius = 0.825635
 
-[node name="fountainMesh" type="MeshInstance3D"]
+[node name="fountainMesh" type="MeshInstance3D" unique_id=2097497352]
 mesh = SubResource("ArrayMesh_s6vdo")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_dbop3")
 surface_material_override/1 = SubResource("ShaderMaterial_wrcaq")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=538288065]
 
-[node name="col0" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="col0" type="CollisionShape3D" parent="StaticBody3D" unique_id=91189512]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.488835, 0)
 shape = SubResource("CylinderShape3D_ppsxd")
 
-[node name="col1" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="col1" type="CollisionShape3D" parent="StaticBody3D" unique_id=2118444327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71819, 0)
 shape = SubResource("CylinderShape3D_pi437")
