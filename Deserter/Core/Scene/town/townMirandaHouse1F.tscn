@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://cu8qvygdlydcg"]
 
-[ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="1_ff10n"]
 [ext_resource type="AudioStream" uid="uid://heylfjse1rfy" path="res://Assets/Sounds/BGM/bgm_closedspace.wav" id="2_tu88u"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="3_ptpxd"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="4_27kle"]
@@ -26,6 +25,17 @@
 [ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="19_tu88u"]
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="21_p1de7"]
 
+[sub_resource type="Environment" id="Environment_3x21f"]
+background_mode = 1
+background_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
+background_energy_multiplier = 0.5
+ambient_light_source = 2
+ambient_light_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
+ambient_light_energy = 2.5
+tonemap_mode = 2
+tonemap_exposure = 1.2
+tonemap_white = 2.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yjf7"]
 resource_name = "MatBricks"
 cull_mode = 2
@@ -41,7 +51,7 @@ albedo_texture = ExtResource("6_gwiin")
 resource_name = "MatWall"
 cull_mode = 2
 albedo_texture = ExtResource("7_8jyxw")
-roughness = 0.5
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_65jub"]
 resource_name = "MatRiging"
@@ -864,18 +874,18 @@ uv1_scale = Vector3(4, 4, 4)
 material = SubResource("StandardMaterial3D_2at5a")
 size = Vector2(4, 4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptgr5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3x21f"]
 albedo_texture = ExtResource("4_27kle")
 
 [sub_resource type="QuadMesh" id="QuadMesh_k8tyj"]
-material = SubResource("StandardMaterial3D_ptgr5")
+material = SubResource("StandardMaterial3D_3x21f")
 flip_faces = true
 size = Vector2(1, 2)
 
 [node name="MirandaHouse1F" type="Node3D" unique_id=1278316283]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=440499373]
-environment = ExtResource("1_ff10n")
+environment = SubResource("Environment_3x21f")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=888054569]
 stream = ExtResource("2_tu88u")
@@ -1028,22 +1038,14 @@ newMap = "uid://cnqovkmyuiyoa"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_k8tyj")
 
-[node name="Door2" parent="exits" unique_id=366881229 instance=ExtResource("3_ptpxd")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 2, -6.5)
-newPosition = Vector3(-15.5, 0, 5.5)
-newMap = "uid://devcj660ww73a"
-
-[node name="hole" type="MeshInstance3D" parent="exits/Door2" unique_id=561211434]
-transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
-mesh = SubResource("QuadMesh_k8tyj")
-
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1293853974]
-transform = Transform3D(0.93418, 1.55964e-08, -0.356803, 0.356803, -4.08343e-08, 0.93418, 1.55817e-15, -1, -4.37114e-08, -13.5649, 2.58587, -1)
+[node name="bathlight" type="SpotLight3D" parent="." unique_id=1293853974]
+transform = Transform3D(0.9415118, 1.4729872e-08, -0.33697993, 0.33697993, -4.1154816e-08, 0.9415118, 1.9838697e-16, -1, -4.3711417e-08, -13.5649, 2.58587, -1)
 light_color = Color(1, 0.948, 0.87, 1)
 light_energy = 1.5
+light_indirect_energy = 0.0
 light_bake_mode = 0
 shadow_enabled = true
+shadow_normal_bias = 0.0
 spot_range = 33.1291
-spot_attenuation = 0.71
-spot_angle = 62.31
-spot_angle_attenuation = 0.00837322
+spot_angle = 68.66
+spot_angle_attenuation = 0.082469225

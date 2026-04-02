@@ -32,4 +32,4 @@ func _process(delta: float) -> void:
 	#secondary meters
 	bbag=lerp(bbag,gvars.bloodBag,delta*4)
 	crs=lerp(crs,gvars.hatred,delta*4)
-	curse.text="IV bloodbag: "+str(snapped(bbag,0.01)).pad_decimals(2)+" Lts\nCurse: "+str(snapped(crs,0.01)).pad_decimals(2)+"%"
+	curse.text="Blood IV: "+str(snapped(bbag,0.01)).pad_decimals(2)+" Lts\nCurse: "+str(snapped(crs,0.01)).pad_decimals(2)+"%"
