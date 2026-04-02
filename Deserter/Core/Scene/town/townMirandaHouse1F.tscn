@@ -26,15 +26,14 @@
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="21_p1de7"]
 
 [sub_resource type="Environment" id="Environment_3x21f"]
-background_mode = 1
-background_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.0
 ambient_light_source = 2
 ambient_light_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
-ambient_light_energy = 2.5
-tonemap_mode = 2
-tonemap_exposure = 1.2
-tonemap_white = 2.0
+ambient_light_energy = 7.0
+tonemap_mode = 4
+tonemap_exposure = 0.75
+tonemap_white = 8.25
+tonemap_agx_white = 2.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yjf7"]
 resource_name = "MatBricks"
@@ -45,7 +44,12 @@ roughness = 0.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a6gx"]
 resource_name = "MatFloor"
 cull_mode = 2
+albedo_color = Color(0.97199994, 0.92, 1, 1)
 albedo_texture = ExtResource("6_gwiin")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_offset = Vector3(0, 0, -0.47)
+uv1_triplanar_sharpness = 0.2679436
+uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp0vb"]
 resource_name = "MatWall"
@@ -73,7 +77,8 @@ albedo_texture = ExtResource("10_nluac")
 resource_name = "MatWall02"
 cull_mode = 2
 albedo_texture = ExtResource("11_txqgy")
-roughness = 0.5
+metallic = 0.25
+metallic_specular = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_02mp6"]
 _surfaces = [{
@@ -686,20 +691,6 @@ shadow_mesh = SubResource("ArrayMesh_cqvq1")
 albedo_texture = ExtResource("14_h70i6")
 metallic_specular = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_7vgva"]
-_surfaces = [{
-"aabb": AABB(-0.200031, 0, -0.249984, 0.400077, 0.974599, 0.499984),
-"format": 34896613377,
-"index_count": 264,
-"index_data": PackedByteArray("GwAAACwAGwAmAAAAJwAEABwAJwAPAAQAGAAEAAEAGAAcAAQAFgANACIAFgACAA0ALQACAAEALQAAAAIABgAIAAUABgAHAAgAAQAGAC0AAQAHAAYABAAHAAEABAAIAAcAAwAIAAQAAwAFAAgADgARABUADgAQABEAJAAPACcAJAAMAA8ACwAsACEACwAbACwAEQATABIAEQAQABMADAARABIADAAVABEADwASABMADwAMABIADgATABAADgAPABMAJQAcABkAJQAnABwAFwAhAAoAFwALACEAFgAfABgAFgAeAB8AJAANAAwAJAAiAA0AHgAgAB8AHgAdACAACgAMAA0ACgAVAAwAHAAfACAAHAAYAB8AGQAgAB0AGQAcACAAFAACACMAFAANAAIAFgAlABkAFgAiACUAIgAqACkAIgAkACoAKQArACgAKQAqACsAGQAeABYAGQAdAB4AJwAqACQAJwArACoAJQArACcAJQAoACsAGwAjACYAGwAaACMACwAUAAkACwAXABQADQAXAAoADQAUABcAAAAjAAIAAAAmACMAGgALAAkAGgAbAAsADgAEAA8ADgADAAQAIQADAA4AIQAsAAMACgAOABUACgAhAA4AIwAJABQAIwAaAAkAKQAlACIAKQAoACUAGAACABYAGAABAAIALQAFAAMALQAGAAUALAAtAAMALAAAAC0A"),
-"name": "Material",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 46,
-"vertex_data": PackedByteArray("AABVgwAAAACuAjtpbUAAAAAAVYNtQAAAMz47aQAAAAAzPjtpbUAAAFQoAAAAAAAAFQoAAAAAAAAVCgAAsiYAAFQoAACyJgAAKNX//7YZAAD//1WDAAAAACjV//8AAAAAav07aW1AAAD//1WDbUAAAMvBO2kAAAAAy8E7aW1AAACq1wAAAAAAAOn1AAAAAAAA6fUAALImAACq1wAAsiYAAP//3+geIQAACP47aQAAAAAAAFWD//8AAP//9OcAAAAArgI7aY+/AAAzPjtpy/oAANYq//+2GQAA1ir//wAAAAAzPjtpj78AAFQoAAAb8wAAFQoAABvzAAAVCgAAcswAAFQoAAByzAAA5s5VgwAAAAD//1WD//8AAAAA3+geIQAAav07aY+/AADLwTtpy/oAAAAA9OcAAAAAy8E7aY+/AACq1wAAG/MAAOn1AAAb8wAA6fUAAHLMAACq1wAAcswAABgxVYMAAAAArgI7aQAAAAA=")
-}]
-blend_shape_mode = 0
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_otoil"]
 resource_name = "props00_Cube_014"
 _surfaces = [{
@@ -716,7 +707,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AABVgwAAAAAAAFWDAAA2AQAAVYMAAAAArgI7aW1AFYWuAjtpbUD/P64CO2ltQDYBrgI7aW1A1QAAAFWDbUBjhgAAVYNtQP+/AABVg21ANgEAAFWDbUAAADM+O2kAAAAAMz47aQAA/z8zPjtpAAASwDM+O2ltQBWFMz47aW1A/z8zPjtpbUASwFQoAAAAAAAAVCgAAAAA/z9UKAAAAAASwBUKAAAAAAAAFQoAAAAA/z8VCgAAAADVABUKAACyJhWFFQoAALIm/z8VCgAAsibVAFQoAACyJhWFVCgAALIm/z9UKAAAsiYSwCjV//+2GaKGKNX//7YZ/78o1f//thnMxP//VYMAAAAA//9VgwAA2r///1WDAAD/vyjV//8AAAAAKNX//wAA/78o1f//AACzxGr9O2ltQBWFav07aW1A/z9q/TtpbUADwGr9O2ltQNq/av07aW1Az7///1WDbUBjhv//VYNtQP+///9Vg21AA8D//1WDbUDav///VYNtQP+/y8E7aQAAAADLwTtpAAD/P8vBO2kAAHMCy8E7aW1AFYXLwTtpbUD/P8vBO2ltQHMCqtcAAAAAAACq1wAAAAD/P6rXAAAAAHMC6fUAAAAAAADp9QAAAAD/P+n1AAAAAM+/6fUAALImFYXp9QAAsib/P+n1AACyJs+/qtcAALImFYWq1wAAsib/P6rXAACyJnMC///f6B4hY4b//9/oHiGihv//3+geIf/E///f6B4h/78I/jtpAAAAAAj+O2kAANq/CP47aQAAz78AAFWD////vwAAVYP//yaEAABVg///b4IAAFWD//82AQAAVYP//98A///05wAAAAD///TnAADqxP//9OcAAP+/rgI7aY+/jgKuAjtpj7//P64CO2mPvzYBrgI7aY+/3wAzPjtpy/omhDM+O2nL+v8/Mz47acv6b4IzPjtpy/oSwNYq//+2GaKG1ir//7YZ/7/WKv//thlQEtYq//8AAAAA1ir//wAA/7/WKv//AAAYEjM+O2mPv44CMz47aY+//z8zPjtpj78SwFQoAAAb8/8/VCgAABvzb4JUKAAAG/MSwBUKAAAb8/8/FQoAABvzb4IVCgAAG/PfABUKAAByzI4CFQoAAHLM/z8VCgAAcszfAFQoAAByzI4CVCgAAHLM/z9UKAAAcswSwObOVYMAAAAA//9Vg////7///1WD//8mhP//VYP//wPA//9Vg///NcD//1WD//9vggAA3+geIWOGAADf6B4hooYAAN/oHiHFEgAA3+geIQAAav07aY+/jgJq/Ttpj7//P2r9O2mPvwPAav07aY+/NcDLwTtpy/omhMvBO2nL+v8/y8E7acv6b4LLwTtpy/pzAgAA9OcAAAAAAAD05wAAlRIAAPTnAAAAAMvBO2mPv44Cy8E7aY+//z/LwTtpj79zAqrXAAAb8/8/qtcAABvzb4Kq1wAAG/NzAun1AAAb8/8/6fUAABvzNcDp9QAAG/Nvgun1AAByzI4C6fUAAHLM/z/p9QAAcsw1wKrXAAByzI4CqtcAAHLM/z+q1wAAcsxzAhgxVYMAAAAArgI7aQAAAACuAjtpAAA2Aa4CO2kAANUA////f6pAqn7/P/9/AAD/fwAA/3+qQKp+dUAUf////3////9/qkCqfv8//3////9/AAD/f/l6CwoAAP9/AAD/f/l6Cwr///9/AAD/f/l6Cwr///9/AAD/f3VAFH8AAP9/AAD/f3VAFH8AAP9/AAD/f/l6Cwr///9/////f6yyRBn///9/yn1rBP9/AAD///9/////f7eylhkAAP9/AAD/f4B9/gTGfWsEEX7VA////3////9/gH3+BMh9awT/fwAA////fwAA/39VQVR9AAD/fwAA/39VQVR9////fwAA/39VQVR9////fwAA/38VftUDAAD/fwAA/38VftUDAAD/fwAA/39VQVR9////f////3+VspcY/38AAP///3/IfWsEEX7VA////38AAP9/jDzQRapAqn5LQAp/////f56y3hj/fwAAAAD/fwAA/3+qQKp+S0AKfwAA/38AAP9/dzy/Rfl6Cwr///9/////f9vtgDf///9/////f6ztVjcAAP9/AAD/f/l6CwoAAP9/kToORPl6CwoAAP9/2TpeREtACX8AAP9/AAD/f0xACH8AAP9/AAD/f/l6Cwr///9/////fwAA/3+Aff4EHn7HAy86i7z///9/////f0Du2Tf/P/9/AAD/fwAA/3+Aff4EHn7HAwAA/38AAP9/QDp3vFVBVH3///9/F+61N/8//38AAP9/AAD/f1VBVH0AAP9/8TuRulVBVH0AAP9/G37HA6A72boAAP9/AAD/fxl+xwMAAP9/AAD/f1VBVH3///9/////f6pAqn51QBR/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_7vgva")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m5y63"]
 albedo_texture = ExtResource("14_h70i6")
@@ -1005,6 +995,12 @@ mesh = SubResource("ArrayMesh_otoil")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_m5y63")
 
+[node name="chairMesh01" type="MeshInstance3D" parent="props/chairMesh00" unique_id=1148600794]
+transform = Transform3D(1, -1.2789769e-13, 0, -1.7763568e-15, 1, 2.9802322e-08, 1.7763568e-15, -2.9802322e-08, 1, 0.33595705, 0.15829232, 0.13695574)
+cast_shadow = 3
+mesh = SubResource("ArrayMesh_otoil")
+skeleton = NodePath("")
+
 [node name="couchMesh00" type="MeshInstance3D" parent="props" unique_id=1414032474]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -1.5, 0, -4.34811)
 mesh = SubResource("ArrayMesh_ck6q8")
@@ -1039,13 +1035,15 @@ transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 
 mesh = SubResource("QuadMesh_k8tyj")
 
 [node name="bathlight" type="SpotLight3D" parent="." unique_id=1293853974]
-transform = Transform3D(0.9415118, 1.4729872e-08, -0.33697993, 0.33697993, -4.1154816e-08, 0.9415118, 1.9838697e-16, -1, -4.3711417e-08, -13.5649, 2.58587, -1)
+transform = Transform3D(0.95369077, 1.3147901e-08, -0.30078873, 0.30078873, -4.1687176e-08, 0.95369077, 1.9838697e-16, -1, -4.3711417e-08, -13.698826, 1.9716785, -1)
 light_color = Color(1, 0.948, 0.87, 1)
-light_energy = 1.5
+light_energy = 2.0
 light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
 light_bake_mode = 0
 shadow_enabled = true
 shadow_normal_bias = 0.0
 spot_range = 33.1291
+spot_attenuation = 0.25
 spot_angle = 68.66
-spot_angle_attenuation = 0.082469225
+spot_angle_attenuation = 0.14358811
