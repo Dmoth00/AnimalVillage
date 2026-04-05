@@ -1960,7 +1960,7 @@ skeleton = NodePath("")
 
 [node name="leaves" type="MeshInstance3D" parent="wellMesh/tree00" unique_id=857691819]
 transform = Transform3D(1.2, 0, 0, 0, 0.584558, 0.270492, 0, -0.135246, 1.16912, 0, 1.56593, 0.0773239)
-visibility_range_end = 20.0
+visibility_range_end = 30.0
 mesh = SubResource("ArrayMesh_jxnfn")
 skeleton = NodePath("")
 
