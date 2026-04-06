@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://swjwu6tm0441" path="res://Assets/Textures/Leather00.png" id="18_a6hfk"]
 [ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="19_tu88u"]
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="21_p1de7"]
+[ext_resource type="AudioStream" uid="uid://dqx00k8io4fys" path="res://Assets/Sounds/BGM/sfx_UhOh.mp3" id="25_7jbu7"]
+[ext_resource type="Script" uid="uid://w8oxvj8s4bcm" path="res://Core/System/call_on_t.gd" id="26_pufji"]
 
 [sub_resource type="Environment" id="Environment_3x21f"]
 background_energy_multiplier = 0.0
@@ -1047,3 +1049,17 @@ spot_range = 33.1291
 spot_attenuation = 0.25
 spot_angle = 68.66
 spot_angle_attenuation = 0.14358811
+
+[node name="uh_oh" type="AudioStreamPlayer" parent="." unique_id=293111588]
+stream = ExtResource("25_7jbu7")
+volume_db = -20.0
+max_polyphony = 2
+script = ExtResource("26_pufji")
+functionName = "play"
+
+[node name="t" type="Timer" parent="uh_oh" unique_id=1640655021]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="uh_oh/t" to="uh_oh" method="_on_timeout"]
