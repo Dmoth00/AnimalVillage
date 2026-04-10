@@ -140,7 +140,7 @@ newMap = "uid://c73wl1pxbk20f"
 [node name="DoorMiranda" parent="Exits" unique_id=667849493 instance=ExtResource("49_76bhm")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 18, -0.5, -75.25)
 newPosition = Vector3(5.5, 0, -0.5)
-newMap = "uid://cu8qvygdlydcg"
+newMap = "uid://x8ot4rqpjwhs"
 
 [node name="DoorButcher" parent="Exits" unique_id=1282352934 instance=ExtResource("49_76bhm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 37.5, -0.5, -102)

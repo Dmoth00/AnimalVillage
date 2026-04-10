@@ -455,14 +455,14 @@ size = Vector2(0.4, 0.4)
 _data = [Vector2(0, 1), 0.0, -2.7682583, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_y3qx7"]
+[sub_resource type="CurveTexture" id="CurveTexture_omt63"]
 curve = SubResource("Curve_q5xim")
 
 [sub_resource type="Curve" id="Curve_re3q7"]
 _data = [Vector2(0.004032254, 0.19725561), 0.0, 1.6483165, 0, 0, Vector2(0.9999999, 1), 0.42673174, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_svj0i"]
+[sub_resource type="CurveTexture" id="CurveTexture_y3qx7"]
 curve = SubResource("Curve_re3q7")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_62du3"]
@@ -473,10 +473,10 @@ spread = 0.0
 angular_velocity_min = -6.0000157
 angular_velocity_max = 5.999984
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_svj0i")
-alpha_curve = SubResource("CurveTexture_y3qx7")
+scale_curve = SubResource("CurveTexture_y3qx7")
+alpha_curve = SubResource("CurveTexture_omt63")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfk4e"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_re3q7"]
 render_priority = 10
 transparency = 1
 specular_mode = 2
@@ -488,7 +488,7 @@ disable_receive_shadows = true
 grow_amount = 1.116
 
 [sub_resource type="QuadMesh" id="QuadMesh_omt63"]
-material = SubResource("StandardMaterial3D_gfk4e")
+material = SubResource("StandardMaterial3D_re3q7")
 size = Vector2(3.8, 4)
 orientation = 1
 
