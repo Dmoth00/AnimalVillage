@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="3_dh2yy"]
 [ext_resource type="Texture2D" uid="uid://cx7q8gbb6glt5" path="res://Assets/Textures/TrashTex01.png" id="4_8lqkj"]
 [ext_resource type="Texture2D" uid="uid://b1bnrjxqkh13w" path="res://Assets/Textures/garbageNMap01.png" id="5_lmybl"]
-[ext_resource type="Script" uid="uid://dwtvlfgra3byn" path="res://Core/Scene/town/bag.gd" id="6_i75x7"]
+[ext_resource type="Script" uid="uid://dwtvlfgra3byn" path="res://Core/Scene/town/townSubscenes/bag.gd" id="6_i75x7"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="7_c30ug"]
 [ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="8_cajl5"]
 [ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="9_jjnxh"]

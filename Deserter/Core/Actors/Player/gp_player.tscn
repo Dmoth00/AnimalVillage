@@ -913,7 +913,6 @@ cast_shadow = 0
 gi_mode = 0
 emitting = false
 amount = 6
-randomness = 0.25
 process_material = SubResource("ParticleProcessMaterial_62du3")
 draw_pass_1 = SubResource("QuadMesh_omt63")
 
