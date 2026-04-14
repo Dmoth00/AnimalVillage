@@ -48,7 +48,7 @@ func var_init():
 	event_list = []
 	items=[]
 	
-	night=true
+	night=false
 	day=0
 	
 	debug_mode=false
