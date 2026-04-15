@@ -32,7 +32,6 @@
 [ext_resource type="Texture2D" uid="uid://dcb2n4letnj2m" path="res://Assets/Textures/WindowTex02Emission.png" id="28_usm4k"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="29_mphxj"]
 [ext_resource type="Texture2D" uid="uid://l3e33832jpoh" path="res://Assets/Mesh/Props/CalendarTex.png" id="30_usm4k"]
-[ext_resource type="PackedScene" uid="uid://dmowx2u304e0v" path="res://Core/Props/iteractibles/pot.tscn" id="33_vo1lt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hq553"]
 resource_name = "MatBricks"
@@ -1046,8 +1045,5 @@ transform = Transform3D(1, 0, 0, 0, 0.8788921, -0.4770207, 0, 0.4770207, 0.87889
 mesh = SubResource("QuadMesh_vo1lt")
 skeleton = NodePath("../../meshes")
 surface_material_override/0 = SubResource("StandardMaterial3D_wb638")
-
-[node name="Pot" parent="." unique_id=45205300 instance=ExtResource("33_vo1lt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.868939, 9.167001e-05, 0.078825355)
 
 [editable path="meshes/desk"]

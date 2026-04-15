@@ -16,6 +16,3 @@ func _on_check() -> void:
 			sfx.global_position.y=get_collision_point().y+0.001
 			if speed>1.0:
 				sfx.emitting=true
-
-
-	pass # Replace with function body.

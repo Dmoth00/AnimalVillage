@@ -54,7 +54,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pgrf5")
 
 [sub_resource type="Curve" id="Curve_n8xwf"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994382, 0.0014852285), -3.3076665, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -2.8570533, 0, 0, Vector2(0.994382, 0.0014852285), -0.05562734, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_bh3e7"]
@@ -99,20 +99,32 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_gg4ym")
 size = Vector2(2, 2)
 
+[sub_resource type="Curve" id="Curve_bh3e7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75376886, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -10.682891, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_s87b6"]
+curve = SubResource("Curve_bh3e7")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s87b6"]
 particle_flag_align_y = true
-angle_min = -44.99999
-angle_max = 45.00001
+particle_flag_damping_as_friction = true
+angle_min = -179.99998
+angle_max = 180.00002
 velocity_pivot = Vector3(0, 1, 0)
 direction = Vector3(0, 1, 0)
-initial_velocity_min = 8.0
-initial_velocity_max = 8.0
-angular_velocity_min = -90.000015
-angular_velocity_max = 89.999985
+spread = 60.0
+initial_velocity_min = 12.0
+initial_velocity_max = 12.0
+angular_velocity_min = -180.00002
+angular_velocity_max = 179.99998
 gravity = Vector3(0, -20, 0)
-damping_min = 4.0
-damping_max = 4.0
+radial_accel_min = 0.99999774
+radial_accel_max = 0.99999774
+damping_min = 8.0
+damping_max = 8.0
 attractor_interaction_enabled = false
+scale_curve = SubResource("CurveTexture_s87b6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5n8cx"]
 resource_name = "MatPottery"
@@ -157,7 +169,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r517l")
 
-[node name="Pot" type="StaticBody3D" unique_id=45205300 groups=["Mortal"]]
+[node name="Pot" type="StaticBody3D" unique_id=45205300 groups=["Id", "Mortal"]]
 collision_mask = 0
 script = ExtResource("1_n8xwf")
 
@@ -184,9 +196,10 @@ script = ExtResource("3_spmu5")
 [node name="xplod2" type="GPUParticles3D" parent="." unique_id=541540484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43206823, 0)
 emitting = false
-amount = 4
+amount = 5
+lifetime = 0.75
 one_shot = true
-explosiveness = 0.8
+explosiveness = 0.9
 trail_lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_s87b6")
 draw_pass_1 = SubResource("ArrayMesh_cujyl")

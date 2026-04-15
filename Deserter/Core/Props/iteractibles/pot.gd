@@ -7,14 +7,16 @@ extends StaticBody3D
 @onready var mesh=$PotMesh00
 
 
+#id for death & ressurection
 @onready var id : String
-
+##do not resurrect
+@export var dnr : bool = false
 
 func _hurt(dmg : float):
 	if dmg>0.0:
 		xplod.emitting=true
 		xplod2.emitting=true
-		gvars.kill_list.append(id)
+		gvars.event_list.append(id)
 		print(str(id)+" has died.")
 		mesh.queue_free()
 		col.disabled=true

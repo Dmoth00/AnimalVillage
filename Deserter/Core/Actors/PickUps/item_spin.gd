@@ -2,7 +2,10 @@ extends Node3D
 @export var goods : String
 @export var amount : int = 1
 
-@onready var id = ""
+#id for death & ressurection
+@onready var id : String
+##do not resurrect?
+@export var dnr : bool = false
 
 func _process(delta: float) -> void:
 	rotate_y(delta*PI)
@@ -14,5 +17,6 @@ func act():
 	var value = gvars.get(goods)
 	value+=amount
 	gvars.set(goods,value)
-	gvars.kill_list.append(id)
+	if dnr: gvars.event_list.append(id)
+	else: gvars.kill_list.append(id)
 	call_deferred("queue_free")

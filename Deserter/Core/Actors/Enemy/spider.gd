@@ -21,8 +21,10 @@ var dis : float = 0.0
 @onready var mesh = $SpiderArm/Skeleton3D/SpiderMesh
 @onready var anim = $anim
 
-#@onready var id = ""
+#id for death & ressurection
 @onready var id : String
+##do not ressurect?
+@export var dnr : bool = false
 
 func _process(delta):
 	
@@ -56,8 +58,8 @@ func _physics_process(delta):
 
 func _hurt(dmg : float):
 	health -= dmg
-	gvars.hatred+=0.01
-	gvars.bloodBag+=0.1+gvars.hatred
+	gvars.hatred+=randf_range(0.1,0.2)
+	gvars.bloodBag+=(1+gvars.hatred)*0.1
 	get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()
 	if health>0:
 		vel=0
@@ -68,7 +70,8 @@ func _hurt(dmg : float):
 		get_tree().get_first_node_in_group("GM").add_child(bld)
 		bld.transform=transform
 		bld.act()
-		gvars.kill_list.append(id)
+		if dnr: gvars.event_list.append(id)
+		else: gvars.kill_list.append(id)
 		print(str(id)+" has died.")
 		call_deferred("queue_free")
 

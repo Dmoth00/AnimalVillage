@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="11_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="12_7xjuy"]
 [ext_resource type="PackedScene" uid="uid://b88skphiui336" path="res://Core/Props/general/hanging_lamp.tscn" id="13_kjrh6"]
+[ext_resource type="PackedScene" uid="uid://dmowx2u304e0v" path="res://Core/Props/iteractibles/pot.tscn" id="14_mqh65"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq4la"]
 resource_name = "MatBumper"
@@ -316,3 +317,12 @@ collision_mask = 0
 
 [node name="water" type="CollisionShape3D" parent="watercol" unique_id=1463080876]
 shape = SubResource("ConcavePolygonShape3D_rwe0r")
+
+[node name="Pot" parent="." unique_id=45205300 instance=ExtResource("14_mqh65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -2, -10)
+
+[node name="Pot2" parent="." unique_id=706400116 instance=ExtResource("14_mqh65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, -10)
+
+[node name="Pot3" parent="." unique_id=1024280189 instance=ExtResource("14_mqh65")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -2, -10)

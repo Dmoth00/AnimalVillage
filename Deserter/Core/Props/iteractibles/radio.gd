@@ -7,7 +7,10 @@ extends StaticBody3D
 @onready var radio=$light/radio
 @export var stream : AudioStreamMP3
 var t = 0.0
+
+#id for death & ressurection
 @onready var id : String
+
 
 func _ready() -> void:
 	radio.stream=stream
@@ -23,11 +26,10 @@ func _hurt(dmg : float):
 	if dmg>0.0:
 		get_node("spark").play()
 		xplod.emitting=true
-		gvars.kill_list.append(id)
+		gvars.event_list.append(id)
 		print(str(id)+" has died.")
 		light.queue_free()
 		smoke.emitting=true
 		col.disabled=true
 		snd.play()
 		set_deferred("process_mode","PROCESS_MODE_DISABLED")
-		pass

@@ -2,6 +2,9 @@ extends StaticBody3D
 var hp=5.0
 var dmg=0.5
 
+var id
+@export var dnr : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
