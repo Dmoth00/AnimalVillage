@@ -63,7 +63,7 @@ curve = SubResource("Curve_n8xwf")
 
 [sub_resource type="Curve" id="Curve_s87b6"]
 _limits = [0.0, 2.0, 0.0, 1.0]
-_data = [Vector2(0, 0.2788031), 0.0, 5.2780614, 0, 0, Vector2(0.75, 2), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.2788031), 0.0, 15.384117, 0, 0, Vector2(0.26404494, 2), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_5n8cx"]
@@ -78,7 +78,6 @@ initial_velocity_min = 6.0
 initial_velocity_max = 6.0
 angular_velocity_min = -30.000015
 angular_velocity_max = 29.999983
-gravity = Vector3(0, -4, 0)
 damping_min = 5.0
 damping_max = 5.0
 attractor_interaction_enabled = false
@@ -101,8 +100,8 @@ material = SubResource("StandardMaterial3D_gg4ym")
 size = Vector2(2, 2)
 
 [sub_resource type="Curve" id="Curve_bh3e7"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75376886, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -10.682891, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0.7724719, 0.8124336), 0.0, 0.0, 0, 0, Vector2(1, 0), -10.682891, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_s87b6"]
 curve = SubResource("Curve_bh3e7")
@@ -115,15 +114,15 @@ angle_max = 180.00002
 velocity_pivot = Vector3(0, 1, 0)
 direction = Vector3(0, 1, 0)
 spread = 60.0
-initial_velocity_min = 12.0
-initial_velocity_max = 12.0
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
 angular_velocity_min = -180.00002
 angular_velocity_max = 179.99998
-gravity = Vector3(0, -20, 0)
+gravity = Vector3(0, -12, 0)
 radial_accel_min = 0.99999774
 radial_accel_max = 0.99999774
-damping_min = 8.0
-damping_max = 8.0
+damping_min = 6.0000005
+damping_max = 6.0000005
 attractor_interaction_enabled = false
 scale_curve = SubResource("CurveTexture_s87b6")
 
@@ -188,7 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008236647, 0)
 emitting = false
 amount = 6
 one_shot = true
-explosiveness = 0.8
+explosiveness = 1.0
 trail_lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_cujyl")
 draw_pass_1 = SubResource("QuadMesh_r7yas")
