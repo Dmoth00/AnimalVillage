@@ -15,6 +15,7 @@ func act(player : CharacterBody3D):
 	p.anim.play("CharAnim_Lever",0.1,1)
 	p.state=2
 	p.can_move=false
+	p.ltgt=NewFunc.flat(global_position-player.global_position).normalized()
 	p.col.set_deferred("disabled",true)
 	p.vul_timer.start(2.0)
 	p.can_move_timer.start(1.8)

@@ -21,6 +21,7 @@ func _ready() -> void:
 func act(player : CharacterBody3D) -> void:
 	get_tree().get_first_node_in_group("TXT").act(texts,self)
 	target_dir=(global_position-player.global_position).normalized()
+	player.ltgt=NewFunc.flat(global_position-player.global_position).normalized()
 
 func _process(delta: float) -> void:
 	if !talking: target_dir=stored_dir

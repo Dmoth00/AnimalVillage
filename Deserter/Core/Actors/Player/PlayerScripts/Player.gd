@@ -25,6 +25,7 @@ var firet=0.5
 var direction=Vector3.ZERO
 var input_dir=Vector2.ZERO
 var ldir=Vector3.BACK
+var ltgt=Vector3.BACK
 
 #flashlight stuff
 var fl=true
@@ -77,7 +78,7 @@ func _physics_process(delta):
 	# Input detection for direction
 	
 	if !inputOff: input_dir = Input.get_vector("gp_left", "gp_right", "gp_up", "gp_down")
-	else: input_dir=Vector2.ZERO
+	else: input_dir =Vector3.ZERO
 	
 	direction = Vector3(input_dir.x,0,input_dir.y)
 	
@@ -106,13 +107,10 @@ func _physics_process(delta):
 func _process(delta):
 	
 	#face direction
-	if direction and can_move:
-		#I don't know how this works but it works
-		#var dire=(direction+Vector3(-0.01,0,0.01)).normalized()
-		#ldir=ldir.slerp(dire,delta*10).normalized()
-		#nevermind 2 years later I figured it out.
-		ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(direction,Vector3.UP)*delta*10).normalized()
-		mesh.look_at(transform.origin+ldir)
+	if direction and can_move: ltgt=direction
+	if ldir!=ltgt:
+			ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(ltgt,Vector3.UP)*delta*10).normalized()
+			mesh.look_at(transform.origin+ldir)
 	
 	match state:
 		0:
