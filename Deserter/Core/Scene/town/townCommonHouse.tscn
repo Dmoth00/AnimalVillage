@@ -32,7 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://dcb2n4letnj2m" path="res://Assets/Textures/WindowTex02Emission.png" id="28_usm4k"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="29_mphxj"]
 [ext_resource type="Texture2D" uid="uid://l3e33832jpoh" path="res://Assets/Mesh/Props/CalendarTex.png" id="30_usm4k"]
+[ext_resource type="Texture2D" uid="uid://crjgyq5g41hdl" path="res://Assets/Textures/WindowTex01.png" id="33_ocsws"]
 [ext_resource type="Script" uid="uid://dsm7y8cry1qho" path="res://Core/Props/iteractibles/calendar.gd" id="33_vo1lt"]
+[ext_resource type="Texture2D" uid="uid://vjr441un7klu" path="res://Assets/Textures/WindowTex01Emission.png" id="35_543sv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
 height = 1.03426
@@ -928,6 +930,16 @@ material = SubResource("StandardMaterial3D_cuey7")
 flip_faces = true
 size = Vector2(2, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0wf8"]
+albedo_texture = ExtResource("33_ocsws")
+emission_texture = ExtResource("28_usm4k")
+uv1_scale = Vector3(2, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7fg86"]
+material = SubResource("StandardMaterial3D_d0wf8")
+flip_faces = true
+size = Vector2(2, 0.6)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptgr5"]
 albedo_texture = ExtResource("29_mphxj")
 
@@ -965,6 +977,18 @@ disable_fog = true
 disable_specular_occlusion = true
 albedo_color = Color(0.9766667, 1, 0.9, 1)
 albedo_texture = ExtResource("28_usm4k")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6u4s"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0.9766667, 1, 0.9, 1)
+albedo_texture = ExtResource("35_543sv")
+uv1_scale = Vector3(2, 1, 1)
 
 [node name="CommonHouse" type="Node3D" unique_id=1940296731]
 script = ExtResource("1_ksh3w")
@@ -1153,6 +1177,10 @@ mesh = SubResource("QuadMesh_vo1lt")
 transform = Transform3D(1, 0, 0, 0, 0.89415425, -0.44775906, 0, 0.44775906, 0.89415425, 7.6202044, 1.3078885, 1.6321247)
 mesh = SubResource("QuadMesh_vo1lt")
 
+[node name="window3" type="MeshInstance3D" parent="meshes" unique_id=1036964784]
+transform = Transform3D(-4.371139e-08, -0.44775906, -0.89415425, 0, 0.89415425, -0.44775906, 1, -1.957217e-08, -3.9084725e-08, -13.778702, 1.5623903, -2.2181375)
+mesh = SubResource("QuadMesh_7fg86")
+
 [node name="door2" type="MeshInstance3D" parent="meshes" unique_id=132983186]
 transform = Transform3D(-4.37114e-08, 0.447759, 0.894154, 0, 0.894154, -0.447759, -1, -1.9572173e-08, -3.908472e-08, -4.559147, 2.91602, -7.5)
 mesh = SubResource("QuadMesh_usm4k")
@@ -1217,6 +1245,12 @@ light_indirect_energy = 0.0
 omni_range = 8.0
 omni_attenuation = 1.8
 
+[node name="daylight3" type="OmniLight3D" parent="Day" unique_id=1587371349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.352392, 1.9658476, -2.189249)
+light_indirect_energy = 0.0
+omni_range = 8.0
+omni_attenuation = 1.8
+
 [node name="daylight1Window" type="MeshInstance3D" parent="Day" unique_id=1686597407]
 transform = Transform3D(1, 0, 0, 0, 0.8783336, -0.47804812, 0, 0.47804812, 0.8783336, 2.6202044, 1.3078885, 1.6107085)
 mesh = SubResource("QuadMesh_vo1lt")
@@ -1228,5 +1262,10 @@ transform = Transform3D(1, 0, 0, 0, 0.8788921, -0.4770207, 0, 0.4770207, 0.87889
 mesh = SubResource("QuadMesh_vo1lt")
 skeleton = NodePath("../../meshes")
 surface_material_override/0 = SubResource("StandardMaterial3D_wb638")
+
+[node name="daylight3Window" type="MeshInstance3D" parent="Day" unique_id=1965509807]
+transform = Transform3D(-4.371139e-08, -0.44775906, -0.89415425, 0, 0.89415425, -0.44775906, 1, -1.957217e-08, -3.9084725e-08, -13.770154, 1.5623903, -2.2181375)
+mesh = SubResource("QuadMesh_7fg86")
+surface_material_override/0 = SubResource("StandardMaterial3D_e6u4s")
 
 [editable path="meshes/desk"]
