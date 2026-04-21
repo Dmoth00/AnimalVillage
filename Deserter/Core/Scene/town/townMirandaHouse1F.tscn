@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://ba7vdqj4xscaf" path="res://Assets/Mesh/Props/pillowTex.png" id="15_7lfnw"]
 [ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="16_a8xjl"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="16_kebmt"]
-[ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/PaintingTex00.png" id="17_tt05a"]
+[ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/posters/PaintingTex00.png" id="17_tt05a"]
 [ext_resource type="Texture2D" uid="uid://cqnds7ho13mhp" path="res://Assets/Sprites/ringMaskTex00.png" id="17_wcnw4"]
 [ext_resource type="Texture2D" uid="uid://swjwu6tm0441" path="res://Assets/Textures/Leather00.png" id="18_a6hfk"]
 [ext_resource type="AudioStream" uid="uid://dmwjbgauo3jq8" path="res://Assets/Sounds/SFX/snd_waterdrop.wav" id="19_56vay"]

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="4_jubwu"]
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="4_r14dx"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="5_vyb4u"]
-[ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/newspaperTex00.png" id="6_6oa3a"]
+[ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="6_6oa3a"]
 [ext_resource type="Texture2D" uid="uid://dj1hj4oe5lrtf" path="res://Assets/Textures/shutterTex00.png" id="7_x5ayt"]
 [ext_resource type="Texture2D" uid="uid://3qayps03fd0w" path="res://Assets/Textures/woodFenceTex00a.png" id="8_ploh8"]
 [ext_resource type="Texture2D" uid="uid://ct7btdrw0xqq5" path="res://Assets/Textures/mattressTex00.png" id="9_hsi6s"]

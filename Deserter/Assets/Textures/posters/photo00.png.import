@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c80rk8ipqvfnj"
-path.bptc="res://.godot/imported/photo00.png-777e6f78f248fb0db7471e48aab0c932.bptc.ctex"
-path.astc="res://.godot/imported/photo00.png-777e6f78f248fb0db7471e48aab0c932.astc.ctex"
+path.bptc="res://.godot/imported/photo00.png-89fff71cda1d7ae12251f955d6ab9b12.bptc.ctex"
+path.astc="res://.godot/imported/photo00.png-89fff71cda1d7ae12251f955d6ab9b12.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/photo00.png"
-dest_files=["res://.godot/imported/photo00.png-777e6f78f248fb0db7471e48aab0c932.bptc.ctex", "res://.godot/imported/photo00.png-777e6f78f248fb0db7471e48aab0c932.astc.ctex"]
+source_file="res://Assets/Textures/posters/photo00.png"
+dest_files=["res://.godot/imported/photo00.png-89fff71cda1d7ae12251f955d6ab9b12.bptc.ctex", "res://.godot/imported/photo00.png-89fff71cda1d7ae12251f955d6ab9b12.astc.ctex"]
 
 [params]
 

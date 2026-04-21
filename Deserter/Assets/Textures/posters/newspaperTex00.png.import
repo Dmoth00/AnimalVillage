@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://183fqi88g8qo"
-path.s3tc="res://.godot/imported/newspaperTex00.png-e589d2a88ebeb6b71d32a6c622e02d61.s3tc.ctex"
-path.etc2="res://.godot/imported/newspaperTex00.png-e589d2a88ebeb6b71d32a6c622e02d61.etc2.ctex"
+path.s3tc="res://.godot/imported/newspaperTex00.png-2e2589ff09061f329226471b61a1f5a1.s3tc.ctex"
+path.etc2="res://.godot/imported/newspaperTex00.png-2e2589ff09061f329226471b61a1f5a1.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/newspaperTex00.png"
-dest_files=["res://.godot/imported/newspaperTex00.png-e589d2a88ebeb6b71d32a6c622e02d61.s3tc.ctex", "res://.godot/imported/newspaperTex00.png-e589d2a88ebeb6b71d32a6c622e02d61.etc2.ctex"]
+source_file="res://Assets/Textures/posters/newspaperTex00.png"
+dest_files=["res://.godot/imported/newspaperTex00.png-2e2589ff09061f329226471b61a1f5a1.s3tc.ctex", "res://.godot/imported/newspaperTex00.png-2e2589ff09061f329226471b61a1f5a1.etc2.ctex"]
 
 [params]
 

@@ -203,7 +203,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v0exy")
 
 [node name="Door3F" parent="Stairs" unique_id=1370542237 instance=ExtResource("8_un4rw")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.5, 0, 3)
-newPosition = Vector3(0, 0, 9.5)
+newPosition = Vector3(-0.5, 0, 9.5)
 newMap = "uid://dbc1w5r5ghn7a"
 
 [node name="hole" type="MeshInstance3D" parent="Stairs/Door3F" unique_id=1662884025]

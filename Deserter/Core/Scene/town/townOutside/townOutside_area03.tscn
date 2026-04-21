@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://dximf18y3hlh5" path="res://Assets/Textures/BikeTex.png" id="22_x7dcg"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="23_agw0f"]
 [ext_resource type="Texture2D" uid="uid://butqks4tdlhms" path="res://Assets/Textures/BarkTex00.png" id="24_ij1ea"]
-[ext_resource type="Texture2D" uid="uid://4624e6oyla7j" path="res://Assets/Textures/MissingTex01.png" id="25_anq1k"]
+[ext_resource type="Texture2D" uid="uid://4624e6oyla7j" path="res://Assets/Textures/posters/MissingTex01.png" id="25_anq1k"]
 [ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="26_cqlhm"]
 [ext_resource type="Script" uid="uid://d2npe00ic1abd" path="res://Core/Scene/town/townOutside/anim_curtains.gd" id="27_awasg"]
 [ext_resource type="Texture2D" uid="uid://dacvt1e3aff5i" path="res://Assets/Textures/soccerTex.png" id="28_0kors"]

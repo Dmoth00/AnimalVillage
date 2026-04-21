@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnntnajkpi265"
-path.s3tc="res://.godot/imported/GraffitiSphinxTex.png-5025219e6f66b8fdb75f90ee1795ae85.s3tc.ctex"
-path.etc2="res://.godot/imported/GraffitiSphinxTex.png-5025219e6f66b8fdb75f90ee1795ae85.etc2.ctex"
+uid="uid://bvujrdo5en34c"
+path.s3tc="res://.godot/imported/PaintingTex00.png-80a78e5e453ae9cb57d38a5c876a47f2.s3tc.ctex"
+path.etc2="res://.godot/imported/PaintingTex00.png-80a78e5e453ae9cb57d38a5c876a47f2.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/GraffitiSphinxTex.png"
-dest_files=["res://.godot/imported/GraffitiSphinxTex.png-5025219e6f66b8fdb75f90ee1795ae85.s3tc.ctex", "res://.godot/imported/GraffitiSphinxTex.png-5025219e6f66b8fdb75f90ee1795ae85.etc2.ctex"]
+source_file="res://Assets/Textures/posters/PaintingTex00.png"
+dest_files=["res://.godot/imported/PaintingTex00.png-80a78e5e453ae9cb57d38a5c876a47f2.s3tc.ctex", "res://.godot/imported/PaintingTex00.png-80a78e5e453ae9cb57d38a5c876a47f2.etc2.ctex"]
 
 [params]
 
