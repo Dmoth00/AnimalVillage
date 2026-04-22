@@ -110,7 +110,8 @@ func _process(delta):
 	if direction and can_move: ltgt=direction
 	if ldir!=ltgt:
 			ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(ltgt,Vector3.UP)*delta*10).normalized()
-			mesh.look_at(transform.origin+ldir)
+			ldir=NewFunc.flat(ldir)
+			mesh.look_at(global_position+ldir)
 	
 	match state:
 		0:
@@ -247,13 +248,16 @@ func _death():
 
 func _hurt(other : Node3D):
 	gvars.blood=max(gvars.blood-other.damage,0.0)
+	gvars.hatred+=randf_range(0.1,other.damage+0.1)
 	print(gvars.blood)
 	snd_hit.play()
 	hit_sfx.restart()
 	state=2
 	can_move=false
 	col.set_deferred("disabled",true)
-	mesh.look_at(other.global_position)
+	var tgt_temp = other.global_position
+	tgt_temp.y=global_position.y
+	mesh.look_at(tgt_temp)
 	ldir=(other.global_position-global_position).normalized()
 	var d = other.global_position.direction_to(global_position)
 	var hspd = 12

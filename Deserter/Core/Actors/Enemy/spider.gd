@@ -5,13 +5,13 @@ extends CharacterBody3D
 @export var damage = 0.0
 @export var alertDistance = 4.0
 @export var maxVelocity = 6.0
-@export var knockdown = false
+
 @export var attack = false
 
 var vel = 0.0
 var state : int = 0
-var dir = Vector3.ZERO
-var ldir = Vector3.FORWARD
+var dir = -transform.basis.z
+var ldir = -transform.basis.z
 
 @onready var target = null
 @onready var re_target = $re_target
@@ -27,6 +27,10 @@ var dis : float = 0.0
 @export var dnr : bool = false
 
 func _process(delta):
+		#turns to where its going
+	ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*10).normalized()
+	ldir=NewFunc.flat(ldir)
+	look_at(global_position-ldir)
 	
 	if target!=null:
 		dis=global_position.distance_to(target.global_position)
@@ -36,9 +40,6 @@ func _process(delta):
 		#direction to go
 			dir = NewFunc.flat(target.global_position-global_position).normalized()
 			if attack==false: dir*=-1
-		#turns to where its going
-			ldir=ldir.slerp(dir,delta*10)
-			look_at(global_position-ldir-gvars.wigl,Vector3.UP)
 		else:
 		#deaccel
 			vel=max(vel-maxVelocity*delta*4,0.0)
@@ -60,16 +61,16 @@ func _hurt(dmg : float):
 	health -= dmg
 	gvars.hatred+=randf_range(0.1,0.2)
 	gvars.bloodBag+=(1+gvars.hatred)*0.1
-	get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()
+	var bld=get_node("bloodSFX").duplicate()
+	get_tree().get_first_node_in_group("GM").add_child(bld)
+	bld.transform=transform
+	bld.act()
 	if health>0:
 		vel=0
 		target=null
 		re_target.start(1.0)
 	else:
-		var bld=get_node("bloodSFX").duplicate()
-		get_tree().get_first_node_in_group("GM").add_child(bld)
-		bld.transform=transform
-		bld.act()
+		get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()
 		if dnr: gvars.event_list.append(id)
 		else: gvars.kill_list.append(id)
 		print(str(id)+" has died.")
