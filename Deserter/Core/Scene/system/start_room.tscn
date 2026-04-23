@@ -148,7 +148,10 @@ shape = SubResource("ConcavePolygonShape3D_pcuhw")
 environment = ExtResource("5_4f57o")
 
 [node name="Spider" parent="." unique_id=2128765651 instance=ExtResource("5_ck5n0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99225, 1.18779, -1.68732)
+transform = Transform3D(0.75887364, 0, -0.6512379, 0, 1, 0, 0.6512379, 0, 0.75887364, 1.7449918, 0.18779004, -0.9764567)
+
+[node name="Spider2" parent="." unique_id=1192178173 instance=ExtResource("5_ck5n0")]
+transform = Transform3D(0.18455169, 0, 0.98282284, 0, 1, 0, -0.98282284, 0, 0.18455169, -1.6568003, 0.18779004, -0.32740766)
 
 [node name="Door" parent="." unique_id=733084732 instance=ExtResource("6_4aggo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.0003543)

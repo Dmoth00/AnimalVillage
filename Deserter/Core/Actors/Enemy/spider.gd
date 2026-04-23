@@ -10,8 +10,8 @@ extends CharacterBody3D
 
 var vel = 0.0
 var state : int = 0
-var dir = -transform.basis.z
-var ldir = -transform.basis.z
+@onready var dir = NewFunc.flat(transform.basis.z)
+@onready var ldir = NewFunc.flat(transform.basis.z)
 
 @onready var target = null
 @onready var re_target = $re_target
@@ -27,9 +27,8 @@ var dis : float = 0.0
 @export var dnr : bool = false
 
 func _process(delta):
-		#turns to where its going
-	ldir=ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*10).normalized()
-	ldir=NewFunc.flat(ldir)
+	#turns to where its going
+	ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*10)).normalized()
 	look_at(global_position-ldir)
 	
 	if target!=null:

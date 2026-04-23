@@ -1687,8 +1687,11 @@ _data = {
 &"ButcherWalk": SubResource("Animation_nxa67")
 }
 
-[node name="Butcher" type="StaticBody3D" unique_id=1046704636]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ilfx"]
+
+[node name="Butcher" type="Area3D" unique_id=107790188 groups=["Act"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_5ilfx")
 key = "butcher_00"
@@ -2083,6 +2086,12 @@ shape = SubResource("SphereShape3D_5ilfx")
 [node name="anim" type="AnimationPlayer" parent="." unique_id=11775321]
 libraries/ = SubResource("AnimationLibrary_dtul7")
 autoplay = &"ButcherStand"
+
+[node name="wallColider" type="StaticBody3D" parent="." unique_id=211739335]
+
+[node name="col" type="CollisionShape3D" parent="wallColider" unique_id=1061608547]
+transform = Transform3D(0.9999908, 0, 0, 0, 1, 0, 0, 0, 0.9999908, 0, 0.9944315, 0)
+shape = SubResource("CapsuleShape3D_5ilfx")
 
 [connection signal="body_entered" from="ButcherArm/Skeleton3D/eyesArea" to="ButcherArm/Skeleton3D/lookAt" method="_on_eyes_area_body_entered"]
 [connection signal="body_exited" from="ButcherArm/Skeleton3D/eyesArea" to="ButcherArm/Skeleton3D/lookAt" method="_on_eyes_area_body_exited"]

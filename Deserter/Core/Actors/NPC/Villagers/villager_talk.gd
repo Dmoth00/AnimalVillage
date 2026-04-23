@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends Area3D
 @export var key=""
 @onready var texts : Array
 @export var turnToLook = true
