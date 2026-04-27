@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://mbnwdtf3k4vx" path="res://Assets/Mesh/Props/CorpseTex00.png" id="24_4ja0e"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="24_c7sbl"]
 [ext_resource type="Texture2D" uid="uid://cslm4xewmf02t" path="res://Assets/Sprites/DotTex00.png" id="25_yto3p"]
+[ext_resource type="AudioStream" uid="uid://bwstlsq885g2r" path="res://Assets/Sounds/SFX/snd_flies.wav" id="26_4ja0e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
 albedo_texture = ExtResource("7_matn3")
@@ -604,7 +605,8 @@ bind/5/bone = -1
 bind/5/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="Curve" id="Curve_4ja0e"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4963768, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4963768, 2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_10bpy"]
@@ -612,7 +614,7 @@ curve = SubResource("Curve_4ja0e")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e7sha"]
 emission_shape = 2
-emission_sphere_radius = 2.0
+emission_sphere_radius = 4.0
 angular_velocity_min = -1.6093254e-05
 angular_velocity_max = -1.6093254e-05
 orbit_velocity_min = 9.49949e-08
@@ -1359,11 +1361,18 @@ mesh = SubResource("ArrayMesh_pl6sa")
 skin = SubResource("Skin_spgp6")
 
 [node name="flies" type="GPUParticles3D" parent="Room07_08/hotelbathroomL/corpse" unique_id=729267713]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5450077, 0)
-amount = 16
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.788857, 1.8807143, 0.67427635)
+amount = 20
 lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_e7sha")
 draw_pass_1 = SubResource("QuadMesh_yav85")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="Room07_08/hotelbathroomL/corpse/flies" unique_id=41105597]
+stream = ExtResource("26_4ja0e")
+attenuation_model = 1
+volume_db = -10.0
+autoplay = true
+max_polyphony = 2
 
 [node name="hotelbathroomR" parent="Room07_08" unique_id=2417046 instance=ExtResource("7_os43s")]
 transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -3, 0, -6)
