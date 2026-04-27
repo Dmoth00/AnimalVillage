@@ -64,8 +64,11 @@ func reset():
 func assign_id(obj : Node):
 	var obj_list : Array = get_tree().get_nodes_in_group("Id")
 	for i in len(obj_list):
-		var gen_id = obj.name+obj_list[i].name+str(i)
-		obj_list[i].set("id",gen_id)
+		
+		if obj_list[i].id.is_empty():
+			var gen_id = obj.name+obj_list[i].name+str(i)
+			obj_list[i].set("id",gen_id)
+		
 		if kill_list.has(obj_list[i].id) or event_list.has(obj_list[i].id):
 			obj_list[i].queue_free()
 

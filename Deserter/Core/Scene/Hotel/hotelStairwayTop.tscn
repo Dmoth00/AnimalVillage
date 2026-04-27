@@ -210,6 +210,15 @@ newMap = "uid://dbc1w5r5ghn7a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 1, 0.5)
 mesh = SubResource("QuadMesh_matn3")
 
+[node name="DebugDoor" parent="Stairs" unique_id=444387764 instance=ExtResource("8_un4rw")]
+transform = Transform3D(-4.3711378e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711378e-08, -4, 0, -4)
+newPosition = Vector3(7.5, 0, 0.5)
+newMap = "uid://b6d8nvjnktr0"
+
+[node name="hole" type="MeshInstance3D" parent="Stairs/DebugDoor" unique_id=1297557504]
+transform = Transform3D(1, 0, 0, 0, 0.9694451, -0.24530733, 0, 0.24530733, 0.9694451, 0, 1, 0.25)
+mesh = SubResource("QuadMesh_matn3")
+
 [node name="cols" type="StaticBody3D" parent="Stairs" unique_id=942252291]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 visible = false

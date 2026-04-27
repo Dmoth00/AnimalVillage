@@ -277,13 +277,13 @@ transform = Transform3D(1, 4.371139e-08, 1.0658141e-14, -4.371139e-08, 1, -1.910
 mesh = SubResource("ArrayMesh_l85ek")
 skeleton = NodePath("")
 
-[node name="curtain_rod" type="MeshInstance3D" parent="bathtubMesh" unique_id=375160630]
-transform = Transform3D(-5.92289e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1.355, -4.37114e-08, 1.91069e-15, -1, 0, 0)
+[node name="curtain_rod" type="MeshInstance3D" parent="." unique_id=375160630]
+transform = Transform3D(-5.9228885e-08, -1, 1.0658141e-14, -2.1175824e-21, -1.0658141e-14, -1, 1.355, -4.371139e-08, 3.8116483e-21, 0.19999981, 4.371139e-08, -0.5)
 mesh = SubResource("ArrayMesh_0jawk")
 skeleton = NodePath("")
 
-[node name="curtain_norod" type="MeshInstance3D" parent="bathtubMesh" unique_id=1621171488]
-transform = Transform3D(-2.6226834e-08, -1.2, 4.371139e-08, 2.1175824e-22, -5.2453668e-08, -1, 0.6, -5.2453668e-08, 1.9106855e-15, -1, 1.4210855e-14, 0.34994125)
+[node name="curtain_norod" type="MeshInstance3D" parent="." unique_id=1621171488]
+transform = Transform3D(-2.6226827e-08, -1.2, 2.0364356e-29, 0, 1.0022248e-22, -1, 0.6, -5.2453654e-08, -6.352747e-22, 0.19999981, 4.3711402e-08, -0.15005875)
 mesh = SubResource("ArrayMesh_64cw1")
 skeleton = NodePath("")
 

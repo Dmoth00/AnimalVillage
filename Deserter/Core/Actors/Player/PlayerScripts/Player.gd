@@ -73,7 +73,7 @@ func _physics_process(delta):
 	
 	# fall detection
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y += gravity * delta * -8
 	
 	# Input detection for direction
 	

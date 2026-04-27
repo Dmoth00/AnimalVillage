@@ -318,10 +318,15 @@ skeleton = NodePath("../..")
 
 [node name="exit" type="Node3D" parent="." unique_id=117256104]
 
-[node name="Door" parent="exit" unique_id=738742873 instance=ExtResource("8_wyxtb")]
+[node name="DoorBack" parent="exit" unique_id=738742873 instance=ExtResource("8_wyxtb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 0.5)
 newPosition = Vector3(14.5, 0, -6.5)
 newMap = "uid://devcj660ww73a"
+
+[node name="DoorForward" parent="exit" unique_id=444387764 instance=ExtResource("8_wyxtb")]
+transform = Transform3D(-4.3711378e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711378e-08, 8, 0, 0.5)
+newPosition = Vector3(-3.5, 0, -4)
+newMap = "uid://dx8tg3psyh0bm"
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=247984874]
 stream = ExtResource("7_7cxsk")
