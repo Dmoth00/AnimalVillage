@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://diydqciwuurwy"]
+
+[ext_resource type="Texture2D" uid="uid://de6tke0h16tf0" path="res://Assets/Sprites/BloodAnim/bloodstain01.png" id="1_nc4se"]
+[ext_resource type="Texture2D" uid="uid://bgin35yteec1w" path="res://Assets/Sprites/BloodAnim/bloodstain01orm.png" id="2_ailob"]
+
+[node name="blood01" type="Decal" unique_id=1755016828]
+layers = 33
+texture_albedo = ExtResource("1_nc4se")
+texture_orm = ExtResource("2_ailob")
+emission_energy = 0.0
+modulate = Color(0.62, 0, 0, 1)
+albedo_mix = 0.96
+normal_fade = 0.015
+upper_fade = 0.764736
+lower_fade = 0.00394171
+distance_fade_begin = 15.0
+cull_mask = 32

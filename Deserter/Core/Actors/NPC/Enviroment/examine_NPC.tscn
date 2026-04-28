@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cifoa1413chdy"]
 
-[ext_resource type="Script" uid="uid://dij84ulvpfks4" path="res://Core/Actors/NPC/act_sign.gd" id="1_56hbe"]
+[ext_resource type="Script" uid="uid://dij84ulvpfks4" path="res://Core/Actors/NPC/Enviroment/act_sign.gd" id="1_56hbe"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
 height = 1.03426

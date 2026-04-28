@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="4_8tmut"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="5_4f57o"]
 [ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="5_ck5n0"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="6_4aggo"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="6_4aggo"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="8_4f57o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0oxdp"]

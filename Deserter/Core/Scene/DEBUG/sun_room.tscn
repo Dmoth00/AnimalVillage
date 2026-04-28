@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="3_wu3jr"]
 [ext_resource type="Texture2D" uid="uid://dk3uhnlx3p6y7" path="res://Assets/Textures/DirtTex00.png" id="5_iycc5"]
 [ext_resource type="Texture2D" uid="uid://peanw7mahbvu" path="res://Assets/Textures/LQCobbleTex00.png" id="5_yledv"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="6_hwt6c"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="6_hwt6c"]
 [ext_resource type="Texture2D" uid="uid://bwtxx5i147146" path="res://Assets/Textures/LQCobbleNTex00.png" id="6_lsyfc"]
 [ext_resource type="Texture2D" uid="uid://dn31q7clfraoq" path="res://Assets/Textures/LQCobbleNTex01.png" id="7_kq6q3"]
 [ext_resource type="Texture2D" uid="uid://x3jkdg64ktir" path="res://Assets/Sprites/graffiti_moon.png" id="8_oxb1u"]

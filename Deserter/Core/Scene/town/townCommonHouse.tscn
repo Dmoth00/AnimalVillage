@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://q6uej0bvisg8" path="res://Assets/Mesh/Props/SinkTex00.png" id="13_2ytbt"]
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="14_8f0rn"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="16_wb638"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="18_543sv"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="18_543sv"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="19_d0wf8"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="19_y50mo"]
 [ext_resource type="Texture2D" uid="uid://ct7btdrw0xqq5" path="res://Assets/Textures/mattressTex00.png" id="20_in5y5"]

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="9_q8jdv"]
 [ext_resource type="Texture2D" uid="uid://bwtxx5i147146" path="res://Assets/Textures/LQCobbleNTex00.png" id="10_dgwid"]
 [ext_resource type="Texture2D" uid="uid://ct7btdrw0xqq5" path="res://Assets/Textures/mattressTex00.png" id="11_1ddw2"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="14_dbdi5"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="14_dbdi5"]
 [ext_resource type="AudioStream" uid="uid://boq5qiay7jonv" path="res://Assets/Sounds/SFX/snd_ladder00a.wav" id="15_61ecf"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="15_vt3t1"]
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="16_e2g37"]

@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://b4n5u2a44n5qg" path="res://Core/Scene/DEBUG/SewerWaterMat.tres" id="8_7xjuy"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="9_10bpy"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="10_r33gu"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="11_7xjuy"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="11_7xjuy"]
 [ext_resource type="Texture2D" uid="uid://cu8kdj8khvmoq" path="res://Assets/Textures/DoorTex02.png" id="12_7xjuy"]
 [ext_resource type="PackedScene" uid="uid://b88skphiui336" path="res://Core/Props/general/hanging_lamp.tscn" id="13_kjrh6"]
 [ext_resource type="PackedScene" uid="uid://dmowx2u304e0v" path="res://Core/Props/iteractibles/pot.tscn" id="14_mqh65"]

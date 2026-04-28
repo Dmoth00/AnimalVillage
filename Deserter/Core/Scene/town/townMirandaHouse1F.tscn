@@ -2,7 +2,7 @@
 
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="1_7jbu7"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="2_lvlcd"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="3_ptpxd"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="3_ptpxd"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="4_27kle"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="5_oibu7"]
 [ext_resource type="Texture2D" uid="uid://belp7cfl0iypv" path="res://Assets/Textures/WoodTex01b.png" id="6_gwiin"]

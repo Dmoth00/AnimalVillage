@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://3m5okrexcbui" path="res://Assets/Textures/LQmetalTex01.png" id="10_v3cja"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="12_yb4fs"]
 [ext_resource type="AudioStream" uid="uid://mx00qtru1px1" path="res://Assets/Sounds/BGM/bgm_deep2.wav" id="13_gtbxk"]
-[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/door.tscn" id="14_l84aw"]
+[ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="14_l84aw"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="15_utmpy"]
 [ext_resource type="Texture2D" uid="uid://c4ndml3bu0hcb" path="res://Assets/Textures/ConeTex00.png" id="16_1tuv0"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="17_dibnk"]
