@@ -37,7 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://hjyyrk7lo06x" path="res://Core/Props/general/mannequin.tscn" id="30_e7sha"]
 [ext_resource type="Script" uid="uid://drxuwd7ehkdku" path="res://Core/Actors/NPC/Enviroment/act_item.gd" id="30_jsmgo"]
 [ext_resource type="PackedScene" uid="uid://cifoa1413chdy" path="res://Core/Actors/NPC/Enviroment/examine_NPC.tscn" id="31_yav85"]
+[ext_resource type="PackedScene" uid="uid://cngiyskyvv4tb" path="res://Core/Actors/NPC/Enviroment/examine_NPC_snd.tscn" id="33_7ah02"]
 [ext_resource type="PackedScene" uid="uid://cs1jn5tbc63sx" path="res://Core/Props/general/barrel_01.tscn" id="33_m87jx"]
+[ext_resource type="AudioStream" uid="uid://m2d1275i2ekx" path="res://Assets/Sounds/SFX/snd_locked.wav" id="34_pjcug"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
 albedo_texture = ExtResource("7_matn3")
@@ -1309,6 +1311,10 @@ shape = SubResource("BoxShape3D_a56bk")
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 3.1730976, 0.42929077, 4.365365)
 shape = SubResource("BoxShape3D_a56bk")
 
+[node name="nightstand3" type="CollisionShape3D" parent="Room07_08/collisions" unique_id=637225135]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 7.1595764, 0.42929077, 10.073543)
+shape = SubResource("BoxShape3D_a56bk")
+
 [node name="bed" type="CollisionShape3D" parent="Room07_08/collisions" unique_id=160606121]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8193855, 0.4128723, 5.117279)
 shape = SubResource("BoxShape3D_1bvhy")
@@ -1376,7 +1382,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1bvhy")
 
 [node name="chairMesh2" type="MeshInstance3D" parent="Room07_08/mesh" unique_id=708290403]
-transform = Transform3D(-0.010731966, 0, -0.9999658, 0, 0.99999976, 0, 1.2999554, 0, -0.008255344, 6.401615, 0, 9.9864)
+transform = Transform3D(0.41925317, 0.9465646, -0.0026624184, 0.010731966, -4.3711378e-08, 0.9999659, 1.2304924, -0.32251343, -0.007814232, 6.7429333, 0.25661576, 10.219415)
 layers = 33
 mesh = SubResource("ArrayMesh_c7sbl")
 skeleton = NodePath("")
@@ -1388,15 +1394,8 @@ mesh = SubResource("ArrayMesh_1jm2t")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_7ah02")
 
-[node name="PottedPlantMesh" type="MeshInstance3D" parent="Room07_08/mesh" unique_id=1460844369]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1830235, 0.66350645, 4.45465)
-mesh = SubResource("ArrayMesh_8ei53")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_8ob81")
-surface_material_override/1 = SubResource("StandardMaterial3D_2277v")
-
 [node name="PottedPlantMesh2" type="MeshInstance3D" parent="Room07_08/mesh" unique_id=1990450172]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.860594, 0.664, 4.455)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.588806, 0.664, 9.973714)
 mesh = SubResource("ArrayMesh_8ei53")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_8ob81")
@@ -1487,11 +1486,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55104065, -0.09960747, 2.46
 shape = SubResource("BoxShape3D_m87jx")
 
 [node name="KeyPickup" parent="Room07_08" unique_id=1421949486 instance=ExtResource("31_yav85")]
-transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, -3.2497387, 0, 5.7560153)
+transform = Transform3D(-1, 0, -2.6226832e-07, 0, 1, 0, 2.6226832e-07, 0, -1, -3.4206161, 0, 4.630106)
 script = ExtResource("30_jsmgo")
 texts1 = Array[String](["There is a key at the bottom of the bathtub.", "Obtained the [color=yellow]Stairway Key[/color]."])
 texts2 = Array[String](["There is nothing else for you to take."])
 itemID = "Hotel00"
+
+[node name="col" parent="Room07_08/KeyPickup" index="0" unique_id=1794788135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06295395, 0.509007, -1.1575761)
+
+[node name="hole" type="MeshInstance3D" parent="Room07_08" unique_id=2031767739]
+transform = Transform3D(-4.371139e-08, -0.44775903, -0.894154, 0, 0.894154, -0.44775903, 1, -1.9572168e-08, -3.9084714e-08, -5.4167957, 0.91602, 12.019031)
+mesh = SubResource("QuadMesh_cpmhi")
+
+[node name="brokenDoor" parent="Room07_08" unique_id=2082957128 instance=ExtResource("33_7ah02")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.467123, 0, 12.020414)
+texts = Array[String](["The doorknob turns but the door won't open."])
+sound = ExtResource("34_pjcug")
+
+[node name="col" parent="Room07_08/brokenDoor" index="0" unique_id=1968002235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.509007, -0.4603386)
 
 [node name="Hallway" type="Node3D" parent="." unique_id=1273045251]
 
@@ -1614,6 +1628,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.608463, 0, 4.5525284)
 [editable path="Room05_06/meshHotelRoom05/hotelbathroomR"]
 [editable path="Room07_08/hotelbathroomL"]
 [editable path="Room07_08/hotelbathroomR"]
+[editable path="Room07_08/KeyPickup"]
+[editable path="Room07_08/brokenDoor"]
 [editable path="Hallway/barrelMesh00"]
 [editable path="Hallway/barrelMesh01"]
 [editable path="Hallway/barrelMesh03"]

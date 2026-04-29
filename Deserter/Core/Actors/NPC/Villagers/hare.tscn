@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de2bmbxch8nbp" path="res://Core/Actors/NPC/Villagers/villager_talk.gd" id="1_475gh"]
 [ext_resource type="Texture2D" uid="uid://jjouj82n27hh" path="res://Assets/Mesh/Npc/hare00_RabbitTex.png.png" id="2_475gh"]
+[ext_resource type="AudioStream" uid="uid://crlsllbxj7x71" path="res://Assets/Sounds/VOICE/snd_hare00.wav" id="2_gk7nu"]
 [ext_resource type="Texture2D" uid="uid://btjbecslismxm" path="res://Assets/Mesh/Npc/hare00_MetalTex.png" id="3_gk7nu"]
 [ext_resource type="AnimationLibrary" uid="uid://du6xpumfhds17" path="res://Assets/Mesh/Player/player_anim.res" id="5_1gk15"]
 [ext_resource type="Script" uid="uid://cttrjog15y3se" path="res://Core/Actors/NPC/Villagers/look_at.gd" id="5_4gktb"]
@@ -155,6 +156,12 @@ key = "demons"
 [node name="col" type="CollisionShape3D" parent="." unique_id=952390104]
 transform = Transform3D(0.9999908, 0, 0, 0, 1, 0, 0, 0, 0.9999908, 0, 0.9944315, 0)
 shape = SubResource("CapsuleShape3D_8yc4w")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="." unique_id=1185133831]
+stream = ExtResource("2_gk7nu")
+volume_db = -8.0
+max_db = 0.0
+pitch_scale = 0.9
 
 [node name="NPC" type="Node3D" parent="." unique_id=487808499]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)

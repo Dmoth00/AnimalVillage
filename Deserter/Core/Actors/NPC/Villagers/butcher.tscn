@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de2bmbxch8nbp" path="res://Core/Actors/NPC/Villagers/villager_talk.gd" id="1_5ilfx"]
 [ext_resource type="Texture2D" uid="uid://di28xpeldja7q" path="res://Assets/Mesh/Enemies/textures/SkullTex.png" id="1_8yc4w"]
+[ext_resource type="AudioStream" uid="uid://d0qv0f8tmw7hp" path="res://Assets/Sounds/VOICE/snd_butcher00.wav" id="2_6xgp4"]
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="2_58l47"]
 [ext_resource type="Texture2D" uid="uid://cbbgudjhhvtsc" path="res://Assets/Mesh/Enemies/textures/butcherTex00.png" id="3_5ilfx"]
 [ext_resource type="Script" uid="uid://cttrjog15y3se" path="res://Core/Actors/NPC/Villagers/look_at.gd" id="4_58l47"]
@@ -1695,6 +1696,12 @@ collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_5ilfx")
 key = "butcher_00"
+
+[node name="snd" type="AudioStreamPlayer3D" parent="." unique_id=769996200]
+stream = ExtResource("2_6xgp4")
+volume_db = -8.0
+max_db = -3.0
+pitch_scale = 0.88
 
 [node name="col" type="CollisionShape3D" parent="." unique_id=1219251765]
 transform = Transform3D(0.9999947, 0, 0, 0, 1, 0, 0, 0, 0.9999947, 0, 1.4279785, 0)
