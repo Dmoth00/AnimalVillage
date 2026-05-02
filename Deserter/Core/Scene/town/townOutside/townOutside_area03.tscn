@@ -1447,7 +1447,7 @@ cull_mode = 2
 albedo_texture = ExtResource("41_nndcj")
 roughness = 0.5
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_n23yb"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lyfix"]
 _surfaces = [{
 "aabb": AABB(-0.936015, -0.879925, -0.050439, 1.87682, 1.75749, 0.100854),
 "format": 34359742465,
@@ -1477,7 +1477,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("sJ5vvwCoYD8gmU69sJ5vvwCoYD8gmU69wChpPwCoYD9wJku9wChpPwCoYD9wJku9mNhwP8RCYb8wGUu9mNhwP8RCYb8wGUu94GJqvzwNYL8QW0694GJqvzwNYL8QW069ALxOvACoYD/Q30y9ALxOPACoYL8guky9ALxOvACoYD/QuUw9ALxOvACoYD/QuUw9wChpPwCoYD8wc049wChpPwCoYD8wc049wChpPwCoYD8wc049mNhwP8RCYb9wgE49mNhwP8RCYb9wgE49mNhwP8RCYb9wgE49ALxOPACoYL+A30w9ALxOPACoYL+A30w94GJqvzwNYL+QPks94GJqvzwNYL+QPks94GJqvzwNYL+QPks9sJ5vvwCoYD+AAEs9sJ5vvwCoYD+AAEs9sJ5vvwCoYD+AAEs9/3///////z96AYR+////P/9///////8/2P0mgv///z/Y/SaC////P61/UQD///8/rX9RAP///z96AYR+////P/9///////8/rX9RAP///z//f///////P/J//3/x//+//3///////z/Y/SaC////P/J//3/x//+/2P0mgv///z/yf/9/8f//v61/UQD///8/8n//f/H//7+tf1EA////P/J//3/x//+/rX9RAP///z96AYR+////P/9///////8/8n//f/H//796AYR+////Pw==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_n23yb")
+shadow_mesh = SubResource("ArrayMesh_lyfix")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qstn7"]
 transparency = 2

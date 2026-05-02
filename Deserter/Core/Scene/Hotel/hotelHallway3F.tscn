@@ -1435,6 +1435,10 @@ shape = SubResource("ConcavePolygonShape3D_p1snp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.153297, 0.4128723, -6.882721)
 shape = SubResource("BoxShape3D_1bvhy")
 
+[node name="bed4" type="CollisionShape3D" parent="Room05_06/collisions" unique_id=1886524950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6722245, 0.4128723, -2.0639343)
+shape = SubResource("BoxShape3D_1bvhy")
+
 [node name="bed2" type="CollisionShape3D" parent="Room05_06/collisions" unique_id=383486586]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.8467026, 0.4128723, -7.353363)
 shape = SubResource("BoxShape3D_1bvhy")
@@ -1459,8 +1463,16 @@ shape = SubResource("BoxShape3D_52hpr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.923645, 1.0066681, -4.0109863)
 shape = SubResource("BoxShape3D_ebej7")
 
+[node name="curtainSmall2" type="CollisionShape3D" parent="Room05_06/collisions" unique_id=1469545093]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.923645, 1.0066681, 3.5510445)
+shape = SubResource("BoxShape3D_ebej7")
+
 [node name="table" type="CollisionShape3D" parent="Room05_06/collisions" unique_id=987525876]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -11.593059, 0.4371338, -7.087036)
+shape = SubResource("BoxShape3D_2cdk4")
+
+[node name="table2" type="CollisionShape3D" parent="Room05_06/collisions" unique_id=2132200034]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -5.4777675, 0.4371338, -1.9429226)
 shape = SubResource("BoxShape3D_2cdk4")
 
 [node name="mesh" type="Node3D" parent="Room05_06" unique_id=718232117]
@@ -1516,6 +1528,13 @@ mesh = SubResource("ArrayMesh_sia8l")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_idsak")
 
+[node name="tableMesh2" type="MeshInstance3D" parent="Room05_06/mesh/Room05" unique_id=1505117711]
+transform = Transform3D(-1.5, 8.742278e-08, 8.7422784e-08, 1.3113417e-07, 1, 4.371139e-08, -1.3113416e-07, 4.3711395e-08, -1, 2.5063825, 0, 2.0479794)
+layers = 33
+mesh = SubResource("ArrayMesh_sia8l")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_idsak")
+
 [node name="paintingMesh" type="MeshInstance3D" parent="Room05_06/mesh/Room05" unique_id=1282137114]
 transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 3.5527137e-15, -0.317793, 0.623705, -3.4397125, 0.64557266, -4.271118)
 mesh = SubResource("ArrayMesh_1jm2t")
@@ -1564,6 +1583,12 @@ layers = 32
 mesh = SubResource("ArrayMesh_a56bk")
 skeleton = NodePath("")
 
+[node name="bedMesh4" type="MeshInstance3D" parent="Room05_06/mesh/Room06" unique_id=1510015674]
+transform = Transform3D(-0.7000001, 0, 6.119595e-08, 0, 0.70000005, 0, -6.1195955e-08, 0, -0.70000005, -6.3238134, 0, 4.9369526)
+layers = 32
+mesh = SubResource("ArrayMesh_a56bk")
+skeleton = NodePath("")
+
 [node name="curtain_big" type="MeshInstance3D" parent="Room05_06/mesh/Room06" unique_id=411997329]
 transform = Transform3D(-4.371139e-08, -1, 0, 0, 0, -1, 1, -4.371139e-08, 0, -1, 0, 1)
 mesh = SubResource("ArrayMesh_cy36p")
@@ -1591,8 +1616,11 @@ transform = Transform3D(-0.5687773, 0, -0.8224915, 0, 1, 0, 0.8224915, 0, -0.568
 [node name="mannequin04" parent="Room05_06/mesh/Room06" unique_id=1747005372 instance=ExtResource("30_e7sha")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -5.894087, 0, -0.5466919)
 
-[node name="mannequin" parent="Room05_06/mesh/Room06" unique_id=150504175 instance=ExtResource("30_e7sha")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 7)
+[node name="mannequin05" parent="Room05_06/mesh/Room06" unique_id=150504175 instance=ExtResource("30_e7sha")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1, 0, 9)
+
+[node name="mannequin06" parent="Room05_06/mesh/Room06" unique_id=2009195175 instance=ExtResource("30_e7sha")]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, 0.99999994, -2.695867e-15, 0.99999994, 2.9802322e-08, -1, 8.5684667e-16, -4.371139e-08, -1.3770313, 0, 10.5)
 
 [node name="hotelbathroomL" parent="Room05_06/mesh/Room06" unique_id=79037606 instance=ExtResource("7_os43s")]
 transform = Transform3D(-1, -3.821371e-15, 8.742278e-08, 3.821371e-15, 1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, -5, -2.1855695e-07, 10)
