@@ -9,10 +9,10 @@ func _on_check() -> void:
 	sfx.emitting=false
 	if is_colliding():
 		var other = get_collider()
-		if other.is_in_group("Water"):
-			player.in_water=true
-			speed=player.velocity.length()
-			sfx.global_position=player.global_position
-			sfx.global_position.y=get_collision_point().y+0.001
-			if speed>1.0:
-				sfx.emitting=true
+		if other!=null:
+			if other.is_in_group("Water"):
+				player.in_water=true
+				speed=player.velocity.length()
+				sfx.global_position=player.global_position
+				sfx.global_position.y=get_collision_point().y+0.001
+				if speed>1.0: sfx.emitting=true

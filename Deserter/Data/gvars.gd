@@ -21,6 +21,8 @@ var items : Array
 var night : bool
 var day :int
 
+var map : String
+
 #constants
 const wigl=Vector3(0.01,0,0.01)
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -66,7 +68,7 @@ func assign_id(obj : Node):
 	for i in len(obj_list):
 		
 		if obj_list[i].id.is_empty():
-			var gen_id = obj.name+obj_list[i].name+str(i)
+			var gen_id = obj.name+obj_list[i].name
 			obj_list[i].set("id",gen_id)
 		
 		if kill_list.has(obj_list[i].id) or event_list.has(obj_list[i].id):

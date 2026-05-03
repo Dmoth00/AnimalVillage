@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://0auoh5t6dlsa" path="res://Assets/Sprites/spiders/tiny_spider01.png" id="18_cuwdm"]
 [ext_resource type="Script" uid="uid://bgylgwv2nb4xv" path="res://Core/Scene/Hotel/roof_spiders.gd" id="19_cuwdm"]
 [ext_resource type="PackedScene" uid="uid://cbrrijo1s75qc" path="res://Core/Actors/NPC/Villagers/hare.tscn" id="20_1um6r"]
+[ext_resource type="Script" uid="uid://cak2576q6mq7x" path="res://Core/Actors/NPC/Enviroment/event_generic.gd" id="21_g17u2"]
 
 [sub_resource type="Environment" id="Environment_uj8b1"]
 background_mode = 1
@@ -679,5 +680,11 @@ script = ExtResource("19_cuwdm")
 
 [node name="Hare" parent="." unique_id=1046704636 instance=ExtResource("20_1um6r")]
 transform = Transform3D(1.3113416e-07, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 1.3113416e-07, 2.6946626, 0.0151498765, 1.3505864)
+
+[node name="event02" type="Node" parent="." unique_id=22487896 node_paths=PackedStringArray("exit_list")]
+script = ExtResource("21_g17u2")
+exit_list = [NodePath("../Hare")]
+event = "Hotel00"
+is_item = true
 
 [connection signal="finished" from="spiders" to="spiders" method="_on_finished"]

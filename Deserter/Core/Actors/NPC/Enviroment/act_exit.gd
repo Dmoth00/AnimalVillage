@@ -25,7 +25,7 @@ func act(player : CharacterBody3D):
 	if playBefore: doorSound()
 
 func _on_t() -> void:
-	if newMap!="":
+	if newMap.is_empty()==false:
 		var g=get_tree().get_first_node_in_group("GM")
 		var keep=get_tree().get_first_node_in_group("Keep")
 		g.remove_child(keep)
