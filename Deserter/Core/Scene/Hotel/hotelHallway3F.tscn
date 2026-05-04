@@ -456,12 +456,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.608463, 0, 4.5525284)
 
 [node name="event02" type="Node" parent="." unique_id=146952650 node_paths=PackedStringArray("enter_list", "exit_list")]
 script = ExtResource("44_kepfw")
-enter_list = [NodePath("../Spider2")]
+enter_list = [NodePath("../Spider")]
 exit_list = [NodePath("../Hallway/examine")]
 event = "Hotel00"
 is_item = true
 
-[node name="Spider2" parent="." unique_id=1931520190 instance=ExtResource("43_pc2hv")]
+[node name="Spider" parent="." unique_id=1931520190 instance=ExtResource("43_pc2hv")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -13, 0, -7)
 damage = 0.5
 alertDistance = 6.0

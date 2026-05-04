@@ -21,5 +21,5 @@ void fragment() {
 	METALLIC = metallic;
 	ROUGHNESS = roughness;
 	SPECULAR = specular;
-	ALPHA = alpha;
+	ALPHA = alpha*albedo_tex.a;
 }

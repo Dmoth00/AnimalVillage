@@ -100,7 +100,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("ZombArm/Skeleton3D:root")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/0/keys = PackedFloat32Array()
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_orr76"]
 _data = {
@@ -108,7 +108,7 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ue700"]
-radius = 0.25
+radius = 0.35
 height = 1.5
 
 [sub_resource type="Curve" id="Curve_cs4r7"]
@@ -165,14 +165,14 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_gbksj")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dklx3"]
-radius = 0.34583724
+radius = 0.35
 
-[node name="Zombo" type="CharacterBody3D" unique_id=1361586636 groups=["Id", "Mortal"]]
+[node name="zombo" type="CharacterBody3D" unique_id=1361586636 groups=["Id", "Mortal"]]
 collision_layer = 2
 script = ExtResource("1_orr76")
 
 [node name="ZombArm" type="Node3D" parent="." unique_id=245546504]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ZombArm" unique_id=1353197071]
 bones/0/name = "Base"
@@ -186,7 +186,7 @@ bones/1/name = "root"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, -1.8460183e-09, -2.1031805e-05, 2.5897862e-07, 0.9999252, 0.012225901, 2.103021e-05, -0.0122259, 0.99992526, -2.1271023e-07, -0.67819667, -1.4087162)
 bones/1/enabled = true
-bones/1/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(-2.1271023e-07, -0.67819667, -1.4087162)
 bones/1/rotation = Quaternion(-0.006113065, -1.05157e-05, 6.5207374e-08, 0.9999813)
 bones/1/scale = Vector3(1, 0.99999994, 1)
 bones/2/name = "torso"
@@ -282,7 +282,6 @@ skin = SubResource("Skin_i5awp")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 stream = ExtResource("4_orr76")
 attenuation_model = 1
-volume_db = 5.0
 unit_size = 20.0
 pitch_scale = 0.75
 
@@ -292,7 +291,7 @@ libraries/ZombAnim = ExtResource("8_orr76")
 autoplay = &"ZombAnim/ZombAnimStand"
 
 [node name="col" type="CollisionShape3D" parent="." unique_id=954146343]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7432251, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CapsuleShape3D_ue700")
 
 [node name="re_target" type="Timer" parent="." unique_id=2144553099]
@@ -321,7 +320,7 @@ script = ExtResource("8_nvjvi")
 damage = 0.1
 
 [node name="col" type="CollisionShape3D" parent="TheHurter" unique_id=1204952307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007970333, 0.88602304, 0.05314827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.17)
 shape = SubResource("SphereShape3D_dklx3")
 
 [connection signal="timeout" from="re_target" to="." method="_on_re_target"]

@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="13_o017y"]
 [ext_resource type="Texture2D" uid="uid://spljdbm2yq37" path="res://Assets/Textures/ClayTex.png" id="15_uwi5v"]
 [ext_resource type="Texture2D" uid="uid://bymaalmx6fjqd" path="res://Assets/Textures/LeavesTex00.png" id="16_ndqoe"]
+[ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="24_q4gs6"]
 [ext_resource type="Texture2D" uid="uid://c80rk8ipqvfnj" path="res://Assets/Textures/posters/photo00.png" id="26_jqlgb"]
 [ext_resource type="Texture2D" uid="uid://swjwu6tm0441" path="res://Assets/Textures/Leather00.png" id="27_njf0p"]
 [ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="28_igicu"]
@@ -48,7 +49,6 @@
 [ext_resource type="Texture2D" uid="uid://pytubnchn32o" path="res://Assets/Textures/ChainlinkTex00.png" id="37_3gvrj"]
 [ext_resource type="AudioStream" uid="uid://m2d1275i2ekx" path="res://Assets/Sounds/SFX/snd_locked.wav" id="37_h1fgr"]
 [ext_resource type="PackedScene" uid="uid://c2ljudc0bx47e" path="res://Core/Actors/Enemy/dead_head.tscn" id="38_lmucl"]
-[ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="39_q4gs6"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="40_4ex4l"]
 [ext_resource type="ArrayMesh" uid="uid://ccu3kqp1n5rdq" path="res://Assets/Mesh/Props/saved_mesh/table_cloth.tres" id="40_tacsu"]
 [ext_resource type="Script" uid="uid://cak2576q6mq7x" path="res://Core/Actors/NPC/Enviroment/event_generic.gd" id="41_iv2g0"]
@@ -1347,19 +1347,11 @@ newMap = "uid://dbc1w5r5ghn7a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_tacsu")
 
-[node name="Spider2" parent="Room03_04" unique_id=1664410600 instance=ExtResource("39_q4gs6")]
+[node name="Zombo2" parent="Room03_04" unique_id=1361586636 instance=ExtResource("24_q4gs6")]
 transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -4, 0, -9)
-damage = 0.5
-alertDistance = 6.0
-maxVelocity = 4.0
-attack = true
 
-[node name="Spider3" parent="Room03_04" unique_id=74124395 instance=ExtResource("39_q4gs6")]
+[node name="Zombo3" parent="Room03_04" unique_id=1427501946 instance=ExtResource("24_q4gs6")]
 transform = Transform3D(0.8660255, 0, 0.49999985, 0, 1, 0, -0.49999985, 0, 0.8660255, -5, 0, 8)
-damage = 0.5
-alertDistance = 6.0
-maxVelocity = 4.0
-attack = true
 
 [node name="item_bullets1" parent="Room03_04" unique_id=133469543 instance=ExtResource("40_4ex4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4971924, 0, 4.454749)
@@ -1614,18 +1606,14 @@ newMap = "uid://dbc1w5r5ghn7a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_tacsu")
 
-[node name="Spider1" parent="Room05_06" unique_id=1192178173 instance=ExtResource("39_q4gs6")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 0, 1)
-damage = 0.5
-alertDistance = 6.0
-maxVelocity = 4.0
-attack = true
-
 [node name="item_bullets5" parent="Room05_06" unique_id=1151730038 instance=ExtResource("40_4ex4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.520397, 0, 2.4789925)
 
 [node name="item_bullets6" parent="Room05_06" unique_id=726228453 instance=ExtResource("40_4ex4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479603, 0, -6.5210075)
+
+[node name="Zombo1" parent="Room05_06" unique_id=1450995685 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 1, 1)
 
 [node name="event01" type="Area3D" parent="Room05_06" unique_id=1335411981 groups=["Id"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
@@ -1890,7 +1878,7 @@ mesh = SubResource("QuadMesh_cpmhi")
 
 [node name="event02" type="Node" parent="." unique_id=16308161 node_paths=PackedStringArray("enter_list")]
 script = ExtResource("41_iv2g0")
-enter_list = [NodePath("../Room05_06/Spider1"), NodePath("../Room03_04/Spider2"), NodePath("../Room03_04/Spider3")]
+enter_list = [NodePath("../Room05_06/Zombo1"), NodePath("../Room03_04/Zombo2"), NodePath("../Room03_04/Zombo3")]
 event = "Hotel00"
 is_item = true
 
