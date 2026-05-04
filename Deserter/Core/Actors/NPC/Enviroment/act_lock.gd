@@ -13,10 +13,27 @@ extends Area3D
 var p
 
 @export var closedDialog : Array [String] = ["The door is locked."]
+@export var unlockDialog : Array [String] = ["You unlocked it with the [color=yellow]Key[/color]"]
+
+var id : String
+
+
+func _ready() -> void:
+	id=name+key
+
 
 func act(player : CharacterBody3D):
-	get_tree().get_first_node_in_group("TXT").act(closedDialog)
-	pass
+	p=player
+	if gvars.event_list.has(id): open(p)
+	else:
+		if gvars.items.has(key):
+			gvars.event_list.append(id)
+			doorSound(unlockSound,p)
+			get_tree().get_first_node_in_group("TXT").act(unlockDialog)
+		else:
+			doorSound(lockedSound,p)
+			get_tree().get_first_node_in_group("TXT").act(closedDialog)
+
 
 
 func _on_t() -> void:
@@ -35,11 +52,11 @@ func _on_t() -> void:
 	cam.fade_in(0.5)
 	
 	#play the door's sound
-	if playBefore==false: doorSound(openSound)
+	if playBefore==false: doorSound(openSound,p)
 
-func doorSound(sound : AudioStream):
+func doorSound(sound : AudioStream, player : CharacterBody3D):
 	if sound:
-		var snd=p.get_node("SFX")
+		var snd=player.get_node("SFX")
 		snd.stream = sound
 		snd.play()
 
@@ -57,5 +74,5 @@ func open(player : CharacterBody3D):
 	cam.fade_out(0.25)
 	get_node("t").start(timeToWarp)
 	#play noise
-	if playBefore: doorSound(openSound)
+	if playBefore: doorSound(openSound,p)
 	pass

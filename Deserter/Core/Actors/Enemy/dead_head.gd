@@ -15,7 +15,7 @@ func _hurt(_dmg : float):
 	gvars.bloodBag+=(1+gvars.hatred)*0.1
 	var bld=get_node("bloodSFX").duplicate()
 	get_tree().get_first_node_in_group("GM").add_child(bld)
-	bld.transform=transform
+	bld.global_transform=global_transform
 	bld.act()
 	match health:
 		5: anim.play("Dhead_0")

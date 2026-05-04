@@ -293,11 +293,8 @@ albedo_texture = SubResource("GradientTexture1D_oa4gr")
 size = Vector3(1, 1, 1.62842)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ptv7y"]
-radius = 4.0
+radius = 5.0
 height = 15.0
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ke7wv"]
-radius = 3.44805
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvopy"]
 transparency = 1
@@ -809,12 +806,8 @@ collision_mask = 2
 script = ExtResource("12_uhhel")
 
 [node name="col" type="CollisionShape3D" parent="Player/CharArm/GhostDetect" unique_id=370555808]
-transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, -1.85034e-07, 0, 3.48942)
+transform = Transform3D(1, -1.4210855e-14, 6.352747e-22, 0, -4.37114e-08, -1, 1.4210855e-14, 1, -4.37114e-08, -1.85034e-07, 0, 3.4894202)
 shape = SubResource("CapsuleShape3D_ptv7y")
-
-[node name="col2" type="CollisionShape3D" parent="Player/CharArm/GhostDetect" unique_id=212096965]
-transform = Transform3D(1, -1.42109e-14, 6.35275e-22, 0, -4.37114e-08, -1, 1.42109e-14, 1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("SphereShape3D_ke7wv")
 
 [node name="fl_shad" type="OmniLight3D" parent="Player/CharArm" unique_id=1607696165]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.08014986, 2.008627, -1.5884559)

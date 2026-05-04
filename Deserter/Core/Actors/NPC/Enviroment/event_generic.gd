@@ -14,8 +14,8 @@ func act():
 	else: do=gvars.event_list.has(event)
 	
 	if do:
-		for a in exit_list: 
+		if exit_list.is_empty()==false: for a in exit_list: 
 			a.queue_free()
 	else:
-		for a in enter_list:
+		if enter_list.is_empty()==false: for a in enter_list:
 			a.queue_free()

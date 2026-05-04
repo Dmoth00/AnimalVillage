@@ -1,12 +1,11 @@
 extends CharacterBody3D
 
 #enemyvars
-@export var health = 1.0
-@export var damage = 0.0
-@export var alertDistance = 4.0
-@export var maxVelocity = 6.0
+@export var health = 3.0
+@export var damage = 0.8
+@export var alertDistance = 6.0
+@export var maxVelocity = 1.5
 
-@export var attack = false
 
 var vel = 0.0
 var state : int = 0
@@ -18,7 +17,7 @@ var state : int = 0
 
 var dis : float = 0.0
 
-@onready var mesh = $SpiderArm/Skeleton3D/SpiderMesh
+@onready var mesh = $ZombArm/Skeleton3D/ZombMesh
 @onready var anim = $anim
 
 #id for death & ressurection
@@ -38,10 +37,13 @@ func _process(delta):
 			vel=min(vel+maxVelocity*delta/2,maxVelocity)
 		#direction to go
 			dir = NewFunc.flat(target.global_position-global_position).normalized()
-			if attack==false: dir*=-1
 		else:
 		#deaccel
 			vel=max(vel-maxVelocity*delta*4,0.0)
+	
+		#walk animation
+	if vel>0.5: anim.play("ZombAnim/ZombAnimWalk",1.0)
+	else: anim.play("ZombAnim/ZombAnimStand",1.0)
 
 func _physics_process(delta):
 	
@@ -53,8 +55,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	#walk animation
-	anim.speed_scale=velocity.length()
+
 
 func _hurt(dmg : float):
 	health -= dmg
@@ -65,7 +66,7 @@ func _hurt(dmg : float):
 	bld.global_transform=global_transform
 	bld.act()
 	if health>0:
-		vel=0
+		vel=-12.0
 		target=null
 		re_target.start(1.0)
 	else:

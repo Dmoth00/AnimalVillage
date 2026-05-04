@@ -223,7 +223,7 @@ func flashlight(mute = false):
 		fl_mat.emission_energy_multiplier=0
 		fl_glare.visible=false
 		#this affects ghost detection range
-		set_deferred("gDetect.disabled",true)
+		gDetect.shape.height=10.0
 		#and set the flashlight to off
 		fl=false
 	else:
@@ -232,7 +232,7 @@ func flashlight(mute = false):
 		fl_mat.emission_energy_multiplier=1
 		fl_glare.visible=true
 		#this affects ghost detection range
-		gDetect.disabled=false
+		gDetect.shape.height=15.0
 		#and set the flashlight to on
 		fl=true
 	pass

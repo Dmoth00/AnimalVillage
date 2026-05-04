@@ -1,0 +1,40 @@
+[gd_resource type="ArrayMesh" format=4 uid="uid://sugnmnciq0jo"]
+
+[ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="1_553m0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j4kd"]
+resource_name = "WoodMat"
+cull_mode = 2
+albedo_texture = ExtResource("1_553m0")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jqlgb"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
+"format": 34896613377,
+"index_count": 264,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAAAAIABAACAAUAAgAGAAUAAgAHAAYAAgADAAcACAAFAAYABwAIAAYACAAJAAUABAAFAAkABwAKAAgACgAJAAgABwADAAoACgAEAAkACwAKAAMACwAEAAoACwADAAwAAQAMAAMACwANAAQADQAOAAQABAAOAAAADQALAA8ACwAQAA8ADQAPABEAEAARAA8AEAASABEAEwANABEAEwARABIAFAASABAACwAUABAAFAATABIAFQAUAAsAFQATABQAFQALAAwAEwAWAA0ADQAWAA4AEwAVABcAFwAVAAwAEwAYABYAEwAXABgAGAAZABYAFgAZABoAGAAbABkAFgAaABwAHAAOABYAHQAaABkAHQAZABsAHAAaAB0AHgAbABgAHgAdABsAFwAeABgAHAAdAB4AHAAeABcAHAAXAB8AFwAMAB8AHAAgAA4AHwAMACEAIgAcAB8AIgAgABwAIAAjAA4AJAAiAB8ADgAjACUAIAAmACMAJgAlACMADgAlAAAAJgAnACUAAAAlACcAAAAiACQAKAAnACYAKAAmACAAAAAnACgAKAAgACIAAAAoACIAAAAkAAEAAQAhAAwAJAAfACkAHwAhACkAAQAkACoAKQAqACQAIQABACsAAQAqACsALAApACEAKQAsACoALAAhAC0AIQArAC0AKgAsAC0AKgAtACsA"),
+"name": "WoodMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 46,
+"vertex_data": PackedByteArray("2xn/f///AAAj5jCb//8AACPm/3///wAA//8wm///AAAj5v9/zOUAACPmAAD//wAA//8AAP//AAD///9///8AAP//AADM5QAAI+YAAMzlAAD///9/zOUAAP///3/pGAAA////////AAAj5v9/6RgAANsZ/3/M5QAA//8AAOkYAAD//wAAAAAAACPmAADpGAAAI+YAAAAAAAAj5v9/AAAAAP///38AAAAA/////wAAAADbGf9/6RgAAAAA//8AAAAA2xn/fwAAAADbGQAA6RgAAAAAAADpGAAA2xkAAAAAAAAAAP9/6RgAAAAAAAAAAAAAAAD/fwAAAAAAAP////8AAAAA/3/M5QAAI+ZM6f//AAAAADCb//8AANsZAADM5QAA2xkwm///AADbGQAA//8AAAAAAADM5QAAAAAAAP//AAAAAP9///8AANsZTOn//wAA2xkwmzQYAAAj5jCbNBgAANsZTOk0GAAAI+ZM6TQYAAA=")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "props00_Cube_010"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 1, 1),
+"attribute_data": PackedByteArray("M6ZW4a/hnNiv4VbhN+mc2DfpVuE36UG4r+GKv6yeQbgzpoq/M6ac2KyenNisnlbhap6LwNzalrdqnr7huOm+4bjplrenrZa3ap6Wt+Patr4AplzkAKa2vuPaXOSZ22Wmj80y84/NZaaZ2zLzMInm1omko/UwiaP1/3/m1v9/o/WJpP//MIn//4mk5tYwicvMiaTLzLqt5ta6raP10OKX6vepe7jQ4nu496mX6jnaZaZezDLzXsxlpjnaMvOyng7ijq3ntwDqDuKynue3AOrbwMPa57cA6ue3w6Q9j5KbmJmSmz2Pw6SYmajSlJSiyUqKqNJKiqLJlJQEv2WmKbEy8ymxZaYEvzLzqrFlps+jMvPPo2WmqrEy87S/ZaaqsTLzqrFlprS/MvNezGWmBL8y8wS/ZaZezDLzKbFlps+jMvPPo2WmKbEy84/NZaa0vzLztL9lpo/NMvOn4nm3vKls6rypeben4mzqPONr57KudLo843S6sq5r58+jZabZsTLzz6My89mxZaZO2m63I56W4Uatbrcjnm63cemW4XHpbrfPo2WmqrEy88+jMvOqsWWm3JYyk1LymPnclpj5UvIyk832PY///5iZzfaYmf//PY975KCJddvrk3XboIl75OuTBL9lpt/MMvMEvzLz38xlpr7NZaaZ2zLzvs0y85nbZaa0v2Wmvs0y87S/MvO+zWWmqrFlpgS/MvOqsTLzBL9lpt/MZaY52jLz38wy8znaZabZsWWmtL8y89mxMvO0v2Wmsq7/5zzjB7s84//nsq4Huw=="),
+"format": 34896613399,
+"index_count": 264,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQAAQAFAAMAAQAGAAUABwAFAAYABwAGAAgACQAHAAgAAAAJAAEACQAKAAcAAAAKAAkAAAALAAoADAANAA4ADQAPAA4ADQAQAA8ADAARAA0AEgARAAwAEwAUABUAEwAWABQAFwAYABkAFwAaABgAGwAcAB0AHgAbAB0AHgAdAB8AHQAcACAAHQAgACEAGwAiABwAIwAiABsAIwAkACIAJQAcACIAJQAmABwAJwAoACkAJwAqACgAKwAsAC0AKwAuACwALwAwADEALwAyADAAMAAzADEAMAA0ADMANQAzADQANgA3ADgANgA5ADcAOgA7ADwAOgA9ADsAPgA/AEAAPgBBAD8AQgBDAEQAQgBFAEMARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMAVgBXAFgAVgBZAFcAWgBbAFwAWgBdAFsAXgBfAGAAXgBhAF8AYgBjAGQAYwBlAGQAYgBmAGMAZgBiAGcAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAiACJAIoAiACLAIkAjACNAI4AjACPAI0AkACRAJIAkACTAJEA"),
+"material": SubResource("StandardMaterial3D_0j4kd"),
+"name": "WoodMat",
+"primitive": 3,
+"uv_scale": Vector4(1.8659995, 1.6666667, 0, 0),
+"vertex_count": 148,
+"vertex_data": PackedByteArray("2xn/f///AIAj5jCb//8AgCPm/3///wCA//8wm///AID///9///8AgP///////wCAI+ZM6f//AIAAAP////8AgNsZTOn//wCA2xkwm///AIAAADCb//8AgAAA/3///wCAAAAwm/////8AAP9/6Rj//wAA////////AAD//wAA//8AAP9/AAD//wAA/3/M5f//AAD/f//////bGTCbNBj//yPmTOk0GP//I+YwmzQY///bGUzpNBj//9sZ/3/M5f+/2xkAAP///7/bGf9/////v9sZAADM5f+/I+b/f+kY///bGf9/zOX//yPm/3/M5f//////f+kY//////9/zOX//9sZ/3//////I+b/f//////bGf9/6Rj//yPm/38AAP//2xn/fwAA//8AAP9/6Rj//wAA/3/M5f//I+Ywm////7/bGTCbNBj/vyPmMJs0GP+/2xkwm////7/bGf9/6RgAgAAAAADpGACAAAD/f+kYAIDbGQAA6RgAgP////8AAP//////f+kY/////////////////38AAP////8wm/////////9/zOX//////3//////AAAAAMzl///bGQAA/////9sZAADM5f//AAAAAP////8AAAAAAABU1dsZAADpGFTV2xkAAAAAVNUAAAAA6RhU1QAA/38AAP//2xkAAAAA///bGf9/AAD//wAAAAAAAP//AAD/f8zl///bGQAAzOX//9sZ/3/M5f//AAAAAMzl//8AAP9/////vwAAAADM5f+/AAD/f8zl/78AAAAA////vwAA/3/pGP+/AAAAAAAA/78AAP9/AAD/vwAAAADpGP+/2xn/fwAA/7/bGQAA6Rj/v9sZ/3/pGP+/2xkAAAAA/7/bGf9///8AgAAAAAD//wCAAAD/f///AIDbGQAA//8AgNsZTOk0GP//I+ZM6f////8j5kzpNBj//9sZTOn/////2xlM6f/////bGTCbNBj//9sZMJv/////2xlM6TQY//8j5v9/zOX/vyPmAAD///+/I+YAAMzl/78j5v9/////vyPm/38AAP//AAD//wAA///bGf9/AAD//wAA/38AAP///////wAA//////9/AAD//yPm/3/pGACA//8AAOkYAIAj5gAA6RgAgP///3/pGACAAAD//wAA/7//////////vwAA//////+//////wAA/7///wAAzOX//yPmAAD///////8AAP////8j5gAAzOX/////AAAAAFTVI+YAAOkYVNX//wAA6RhU1SPmAAAAAFTV////fwAA//8j5gAAAAD/////AAAAAP//I+b/fwAA//////9/zOX//yPmAADM5f////8AAMzl//8j5v9/zOX//////3////+///8AAMzl/7///wAA////v////3/M5f+/////f+kY/7///wAAAAD/v///AADpGP+/////fwAA/78j5v9/AAD/vyPmAADpGP+/I+YAAAAA/78j5v9/6Rj/vyPm/3///wCA//8AAP//AIAj5gAA//8AgP///3///wCAI+ZM6f////8j5jCbNBj//yPmTOk0GP//I+Ywm///////f////3////9/////f////3////9/////f////3////9/////f////3////9/////P/9//z//f/8//3//P/9//z//f/8//3//P/9//3//f/9//3//f/9//3//f/9/AAD/fwAA/38AAP9/AAD/f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z////9/////f////3////9//3////9/////f////3////+//3//v/9//7//f/+//3//v/9//7//f/+//3//f/8//3//P/9//z//f/8/VFVUVVRVVFVUVVRVVFVUVf9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9//z//f/8//3//P/9//z//v/9//7//f/+//3//v/9//3////9/////f////3///////3////9/////f////3////9/////f/9/////f////3////9///////9/////f////3////9//3//P/9//z//f/8//3//P1RVVFVUVVRVVFVUVVRVVFX/f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9/////P/9//z//f/8//3//P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jqlgb")

@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci2qefqra6guk"
-path.s3tc="res://.godot/imported/Rabbit_CharTex01.png-7fa2c33aae2eee1b15c608fb847d68b6.s3tc.ctex"
-path.etc2="res://.godot/imported/Rabbit_CharTex01.png-7fa2c33aae2eee1b15c608fb847d68b6.etc2.ctex"
+uid="uid://c01t6gkx643hw"
+path.s3tc="res://.godot/imported/zombo_CharTex01.png-ff6cf37fd166c2d5f840846ef613bbfb.s3tc.ctex"
+path.etc2="res://.godot/imported/zombo_CharTex01.png-ff6cf37fd166c2d5f840846ef613bbfb.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9572ba8b505157e16c968780382cb47a"
+}
 
 [deps]
 
-source_file="res://Assets/Mesh/Enemies/textures/Rabbit_CharTex01.png"
-dest_files=["res://.godot/imported/Rabbit_CharTex01.png-7fa2c33aae2eee1b15c608fb847d68b6.s3tc.ctex", "res://.godot/imported/Rabbit_CharTex01.png-7fa2c33aae2eee1b15c608fb847d68b6.etc2.ctex"]
+source_file="res://Assets/Mesh/Enemies/zombo_CharTex01.png"
+dest_files=["res://.godot/imported/zombo_CharTex01.png-ff6cf37fd166c2d5f840846ef613bbfb.s3tc.ctex", "res://.godot/imported/zombo_CharTex01.png-ff6cf37fd166c2d5f840846ef613bbfb.etc2.ctex"]
 
 [params]
 

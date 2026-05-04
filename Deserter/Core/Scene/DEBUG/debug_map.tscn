@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cwap4irwt087p" path="res://Assets/Sounds/SONG/radio01.mp3" id="9_cc1w7"]
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="9_w4sne"]
 [ext_resource type="AudioStream" uid="uid://mx00qtru1px1" path="res://Assets/Sounds/BGM/bgm_deep2.wav" id="10_v6xxr"]
+[ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="11_kikrb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybnut"]
 resource_name = "WallMat00"
@@ -194,3 +195,6 @@ stream = ExtResource("10_v6xxr")
 volume_db = -5.0
 pitch_scale = 0.3
 autoplay = true
+
+[node name="Zombo" parent="." unique_id=1361586636 instance=ExtResource("11_kikrb")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, 5, 0, -13)
