@@ -227,7 +227,7 @@ func flashlight(mute = false):
 		#and set the flashlight to off
 		fl=false
 	else:
-		fl_l.light_energy=15
+		fl_l.light_energy=10
 		fl_shad.act(true)
 		fl_mat.emission_energy_multiplier=1
 		fl_glare.visible=true

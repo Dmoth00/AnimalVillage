@@ -5,7 +5,7 @@ extends Area3D
 @onready var xplod=$xplod
 
 
-func _on_body_entered(player: Node3D) -> void:
+func _on_body_entered(_player: Node3D) -> void:
 	gvars.event_list.append(id)
 	xplod.act()
 	xplod.reparent(get_parent(),true)

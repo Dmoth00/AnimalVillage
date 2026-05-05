@@ -1,7 +1,7 @@
 shader_type spatial;
 render_mode blend_mix,depth_draw_always,cull_back,diffuse_lambert,specular_schlick_ggx;
 uniform vec4 albedo : source_color;
-uniform sampler2D texture_albedo : source_color;
+uniform sampler2D texture_albedo : filter_nearest, source_color;
 uniform float specular : hint_range(0,1);
 uniform float metallic : hint_range(0,1);
 uniform float roughness : hint_range(0,1);

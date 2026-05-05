@@ -3,7 +3,7 @@ extends CharacterBody3D
 #enemyvars
 @export var health = 3.0
 @export var damage = 0.8
-@export var alertDistance = 6.0
+@export var alertDistance = 8.0
 @export var maxVelocity = 1.0
 
 
@@ -44,7 +44,7 @@ func _process(delta):
 			vel=max(vel-delta*6,0)
 			#walk animation
 		if vel>0.1:
-			anim.play("ZombAnim/ZombAnimWalk",1.0,vel*1.2)
+			anim.play("ZombAnim/ZombAnimWalk",1.0,velocity.length()*1.2)
 		else: anim.play("ZombAnim/ZombAnimStand",1.0,1.0)
 	else:
 		vel=max(vel-delta*8,0)
@@ -89,7 +89,7 @@ func _on_re_target() -> void:
 	if target==null: go=false
 	else:
 		var adis = alertDistance
-		if !target.fl: adis*=0.5
+		if !target.fl: adis*=0.4
 		tarpos=target.global_position
 		dis=global_position.distance_to(tarpos)
 		if dis>0.3 && dis<adis: go=true
