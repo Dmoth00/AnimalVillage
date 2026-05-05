@@ -13,12 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://6er2k5vaish5" path="res://Assets/Mesh/Props/hangerTex.png" id="16_7knaa"]
 [ext_resource type="PackedScene" uid="uid://dljrho8gmerox" path="res://Core/Props/general/queen_bed.tscn" id="17_akd4p"]
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="17_rd1t7"]
+[ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="19_akd4p"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="24_c7sbl"]
 [ext_resource type="AudioStream" uid="uid://bwstlsq885g2r" path="res://Assets/Sounds/SFX/snd_flies.wav" id="26_4ja0e"]
 [ext_resource type="PackedScene" uid="uid://hjyyrk7lo06x" path="res://Core/Props/general/mannequin.tscn" id="30_e7sha"]
 [ext_resource type="PackedScene" uid="uid://cifoa1413chdy" path="res://Core/Actors/NPC/Enviroment/examine_NPC.tscn" id="31_yav85"]
 [ext_resource type="PackedScene" uid="uid://cs1jn5tbc63sx" path="res://Core/Props/general/barrel_01.tscn" id="33_m87jx"]
-[ext_resource type="PackedScene" uid="uid://cxinr3rqbem3j" path="res://Core/Actors/Enemy/spider.tscn" id="43_pc2hv"]
 [ext_resource type="Script" uid="uid://cak2576q6mq7x" path="res://Core/Actors/NPC/Enviroment/event_generic.gd" id="44_kepfw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m87jx"]
@@ -454,19 +454,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.608463, 0, 4.5525284)
 [node name="item_bullets4" parent="Items" unique_id=1731754274 instance=ExtResource("24_c7sbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.608463, 0, 4.5525284)
 
-[node name="event02" type="Node" parent="." unique_id=146952650 node_paths=PackedStringArray("enter_list", "exit_list")]
-script = ExtResource("44_kepfw")
-enter_list = [NodePath("../Spider")]
-exit_list = [NodePath("../Hallway/examine")]
-event = "Hotel00"
-is_item = true
-
-[node name="Spider" parent="." unique_id=1931520190 instance=ExtResource("43_pc2hv")]
+[node name="zombo" parent="." unique_id=1361586636 instance=ExtResource("19_akd4p")]
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -13, 0, -7)
-damage = 0.5
-alertDistance = 6.0
-maxVelocity = 4.0
-attack = true
 
 [node name="snd" type="AudioStreamPlayer3D" parent="." unique_id=41105597]
 transform = Transform3D(-2.1855695e-07, 0, 1, -0.41470915, 0.9099541, -9.0637556e-08, -0.9099541, -0.41470915, -1.9887676e-07, 21.406975, 1.3882784, 5.5158205)
@@ -476,6 +465,13 @@ max_db = -8.0
 autoplay = true
 max_distance = 20.0
 max_polyphony = 2
+
+[node name="event02" type="Node" parent="." unique_id=146952650 node_paths=PackedStringArray("enter_list", "exit_list")]
+script = ExtResource("44_kepfw")
+enter_list = [NodePath("../zombo")]
+exit_list = [NodePath("../Hallway/examine")]
+event = "Hotel00"
+is_item = true
 
 [editable path="Hallway/barrelMesh00"]
 [editable path="Hallway/barrelMesh01"]

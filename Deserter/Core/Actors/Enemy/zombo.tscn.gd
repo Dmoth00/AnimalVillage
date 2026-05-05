@@ -3,8 +3,8 @@ extends CharacterBody3D
 #enemyvars
 @export var health = 3.0
 @export var damage = 0.8
-@export var alertDistance = 8.0
-@export var maxVelocity = 1.5
+@export var alertDistance = 6.0
+@export var maxVelocity = 1.0
 
 
 var vel = 0.0
@@ -29,9 +29,9 @@ var dis : float = 0.0
 @onready var go : bool = false
 
 func _process(delta):
+	
 	if state==0:
 		if go:
-		
 			#direction to go
 			dir = NewFunc.flat(tarpos-global_position).normalized()
 			#turns to where its going
@@ -44,10 +44,10 @@ func _process(delta):
 			vel=max(vel-delta*6,0)
 			#walk animation
 		if vel>0.1:
-			anim.play("ZombAnim/ZombAnimWalk",1.0,vel)
+			anim.play("ZombAnim/ZombAnimWalk",1.0,vel*1.2)
 		else: anim.play("ZombAnim/ZombAnimStand",1.0,1.0)
 	else:
-		vel=max(vel-delta*24,0)
+		vel=max(vel-delta*8,0)
 
 func _physics_process(delta):
 	
@@ -58,8 +58,6 @@ func _physics_process(delta):
 	velocity.z=ldir.z*vel
 	
 	move_and_slide()
-	
-
 
 func _hurt(dmg : float):
 	if state!=0: return
@@ -72,7 +70,7 @@ func _hurt(dmg : float):
 	bld.act()
 	if health>0:
 		anim.play("ZombAnim/ZombAnimHurt")
-		vel=-12.0
+		vel=-24.0
 		target=null
 		re_target.start(1.0)
 		state=1
@@ -94,6 +92,5 @@ func _on_re_target() -> void:
 		if !target.fl: adis*=0.5
 		tarpos=target.global_position
 		dis=global_position.distance_to(tarpos)
-		if dis>0.3 && dis<adis:
-			go=true
+		if dis>0.3 && dis<adis: go=true
 		else: go=false

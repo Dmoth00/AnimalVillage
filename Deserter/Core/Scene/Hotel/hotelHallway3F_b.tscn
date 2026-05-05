@@ -1613,7 +1613,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.520397, 0, 2.4789925)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.479603, 0, -6.5210075)
 
 [node name="Zombo1" parent="Room05_06" unique_id=1450995685 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 1, 1)
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 0.07503283, 1)
 
 [node name="event01" type="Area3D" parent="Room05_06" unique_id=1335411981 groups=["Id"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
