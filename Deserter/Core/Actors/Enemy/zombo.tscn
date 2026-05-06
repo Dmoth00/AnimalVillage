@@ -214,6 +214,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.17)
 shape = SubResource("SphereShape3D_dklx3")
 
 [node name="ZombArm" type="Node3D" parent="." unique_id=1095801271]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="ZombArm" unique_id=1262814901]
 bones/0/name = "Base"

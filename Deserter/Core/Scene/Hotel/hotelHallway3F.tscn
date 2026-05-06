@@ -455,9 +455,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.608463, 0, 4.5525284)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.608463, 0, 4.5525284)
 
 [node name="zombo" parent="." unique_id=1361586636 instance=ExtResource("19_akd4p")]
-transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, -13, 0, -7)
+transform = Transform3D(1.3311836e-07, 0, 1, 0, 1, 0, -1, 0, 1.3311836e-07, -13, 0, -13)
 
-[node name="snd" type="AudioStreamPlayer3D" parent="." unique_id=41105597]
+[node name="flies" type="AudioStreamPlayer3D" parent="." unique_id=41105597]
 transform = Transform3D(-2.1855695e-07, 0, 1, -0.41470915, 0.9099541, -9.0637556e-08, -0.9099541, -0.41470915, -1.9887676e-07, 21.406975, 1.3882784, 5.5158205)
 stream = ExtResource("26_4ja0e")
 volume_db = -15.0
