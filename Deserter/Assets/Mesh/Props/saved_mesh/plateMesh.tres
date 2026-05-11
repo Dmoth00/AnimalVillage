@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="1_nmaj8"]
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="2_vbu3v"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyqio"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmaj8"]
 resource_name = "Material"
 cull_mode = 2
 albedo_texture = ExtResource("1_nmaj8")
@@ -33,7 +33,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 60,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUA"),
-"material": SubResource("StandardMaterial3D_iyqio"),
+"material": SubResource("StandardMaterial3D_nmaj8"),
 "name": "Material",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

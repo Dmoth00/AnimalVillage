@@ -315,9 +315,8 @@ one_shot = true
 
 [node name="chainlinkCol" type="StaticBody3D" parent="." unique_id=528384854]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4921397e-13, 0.936155, 1.49406)
-visible = false
-collision_layer = 129
-collision_mask = 0
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="chainlinkCol" unique_id=590237613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.137939, 0, 0.51683)
@@ -395,7 +394,6 @@ skeleton = NodePath("../../Door")
 
 [node name="Coliders" type="StaticBody3D" parent="." unique_id=1908849749]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Coliders" unique_id=2047945317]

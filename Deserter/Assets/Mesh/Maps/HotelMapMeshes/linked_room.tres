@@ -36,6 +36,8 @@ albedo_texture = ExtResource("5_712qt")
 resource_name = "WallMat00a"
 cull_mode = 2
 albedo_texture = ExtResource("6_vr04n")
+uv1_scale = Vector3(0.9, 1, 1)
+uv1_offset = Vector3(0.01, 0, 0)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ogxuc"]
 _surfaces = [{

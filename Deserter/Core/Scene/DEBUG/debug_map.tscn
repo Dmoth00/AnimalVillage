@@ -1,29 +1,34 @@
 [gd_scene format=4 uid="uid://devcj660ww73a"]
 
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="3_40i1d"]
-[ext_resource type="Texture2D" uid="uid://igabhdlmnegf" path="res://Assets/Textures/WallTex00.png" id="4_gd1r8"]
+[ext_resource type="Texture2D" uid="uid://cxv8kvqt7cy8b" path="res://Assets/Mesh/Props/potsTex.png" id="3_oyq8v"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="4_mworf"]
-[ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="5_q6vm2"]
-[ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="6_mkonh"]
+[ext_resource type="Texture2D" uid="uid://td3lpmel5hph" path="res://Assets/Textures/AsphaltTex.png" id="4_npi8g"]
+[ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="5_d516p"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="7_y30fo"]
 [ext_resource type="AudioStream" uid="uid://mx00qtru1px1" path="res://Assets/Sounds/BGM/bgm_deep2.wav" id="10_v6xxr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybnut"]
 resource_name = "WallMat00"
 cull_mode = 2
-albedo_texture = ExtResource("4_gd1r8")
+albedo_texture = ExtResource("3_oyq8v")
 metallic_specular = 0.0
+uv1_offset = Vector3(0, -0.01, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0a21t"]
 resource_name = "BrickMat00"
 cull_mode = 2
-albedo_texture = ExtResource("5_q6vm2")
+albedo_texture = ExtResource("4_npi8g")
 metallic_specular = 0.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwyf6"]
 resource_name = "CarpetMat"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("6_mkonh")
+albedo_texture = ExtResource("5_d516p")
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4fml"]
