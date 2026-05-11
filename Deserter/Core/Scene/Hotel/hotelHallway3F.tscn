@@ -454,8 +454,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.608463, 0, 4.5525284)
 [node name="item_bullets4" parent="Items" unique_id=1731754274 instance=ExtResource("24_c7sbl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.608463, 0, 4.5525284)
 
-[node name="zombo" parent="." unique_id=1361586636 instance=ExtResource("19_akd4p")]
+[node name="zombo1" parent="." unique_id=1361586636 instance=ExtResource("19_akd4p")]
 transform = Transform3D(1.3311836e-07, 0, 1, 0, 1, 0, -1, 0, 1.3311836e-07, -13, 0, -13)
+
+[node name="zombo2" parent="." unique_id=1215880962 instance=ExtResource("19_akd4p")]
+transform = Transform3D(-1, 0, 8.9406974e-08, 0, 1, 0, -8.9406974e-08, 0, -1, -14.369271, 0, 12.533393)
 
 [node name="flies" type="AudioStreamPlayer3D" parent="." unique_id=41105597]
 transform = Transform3D(-2.1855695e-07, 0, 1, -0.41470915, 0.9099541, -9.0637556e-08, -0.9099541, -0.41470915, -1.9887676e-07, 21.406975, 1.3882784, 5.5158205)
@@ -468,7 +471,7 @@ max_polyphony = 2
 
 [node name="event02" type="Node" parent="." unique_id=146952650 node_paths=PackedStringArray("enter_list", "exit_list")]
 script = ExtResource("44_kepfw")
-enter_list = [NodePath("../zombo")]
+enter_list = [NodePath("../zombo1"), NodePath("../zombo2")]
 exit_list = [NodePath("../Hallway/examine")]
 event = "Hotel00"
 is_item = true

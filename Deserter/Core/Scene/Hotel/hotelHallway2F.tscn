@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="12_susnb"]
 [ext_resource type="Texture2D" uid="uid://ba7vdqj4xscaf" path="res://Assets/Mesh/Props/pillowTex.png" id="12_ype5r"]
 [ext_resource type="Texture2D" uid="uid://cp6kpt0ess18i" path="res://Assets/Textures/BedsheetTex.png" id="13_fe1d3"]
+[ext_resource type="PackedScene" uid="uid://bofdbi8pb8vhl" path="res://Core/Props/general/shadowman.tscn" id="13_ob7wn"]
 [ext_resource type="PackedScene" uid="uid://do2eey476nql3" path="res://Core/Scene/Hotel/hotelSubscenes/hotelbathroomL.tscn" id="14_0bkq5"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="15_lqp2n"]
 [ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="16_17vbh"]
@@ -136,13 +137,14 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("10_gxubu")
-uv1_scale = Vector3(0.5, 1, 1)
+uv1_scale = Vector3(0.25, 1, 1)
+uv1_offset = Vector3(0.45, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fwtqs"]
 size = Vector3(28.066101, 2.1776733, 3.778778)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8ida"]
-size = Vector3(17.181103, 2.1776733, 3.778778)
+size = Vector3(17.56906, 2.1776733, 3.8628998)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_susnb"]
 size = Vector3(18.453236, 2.1776733, 5.698988)
@@ -709,77 +711,106 @@ mesh = ExtResource("20_fttr7")
 surface_material_override/0 = SubResource("StandardMaterial3D_fwtqs")
 
 [node name="chainlink00" type="MeshInstance3D" parent="room_locked" unique_id=1519865556]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -11, -0.005485177, 5.2384567)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -11, -0.005485177, 5.4973106)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink01" type="MeshInstance3D" parent="room_locked" unique_id=1567497589]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6, -0.005485177, 5.2384567)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6, -0.005485177, 5.4973106)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink02" type="MeshInstance3D" parent="room_locked" unique_id=1462606508]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6, -0.005485177, 5.2384567)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6, -0.005485177, 5.4973106)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink03" type="MeshInstance3D" parent="room_locked" unique_id=777167095]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 11, -0.005485177, 5.2384567)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 11, -0.005485177, 5.4973106)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink04" type="MeshInstance3D" parent="room_locked" unique_id=1518957116]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -8.516132, -0.005485177, 1.6666718)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, -8.516132, -0.005485177, 1.5817261)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink05" type="MeshInstance3D" parent="room_locked" unique_id=950668835]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6, -0.005485177, 3.5888176)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -6, -0.005485177, 3.503872)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink06" type="MeshInstance3D" parent="room_locked" unique_id=57689363]
-transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6, -0.005485177, 3.5888176)
+transform = Transform3D(1.25, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6, -0.005485177, 3.503872)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlink07" type="MeshInstance3D" parent="room_locked" unique_id=1927274638]
-transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 8.483868, -0.005485177, 1.6666718)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 8.483868, -0.005485177, 1.5817261)
 mesh = SubResource("ArrayMesh_gr2xu")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlinkCol" type="StaticBody3D" parent="room_locked" unique_id=1406004889]
-visible = false
 collision_layer = 128
 collision_mask = 128
 
 [node name="box00" type="CollisionShape3D" parent="room_locked/chainlinkCol" unique_id=1076845437]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02017212, 0.8417053, 7.028702)
+transform = Transform3D(1, 0, 0, 0, 0.99728113, 0.07369076, 0, -0.07369076, 0.99728113, -0.02017212, 0.8417053, 7.028702)
 shape = SubResource("BoxShape3D_fwtqs")
 
 [node name="box01" type="CollisionShape3D" parent="room_locked/chainlinkCol" unique_id=1442966639]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.033136368, 0.8417053, 1.812706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036421776, 0.8417053, 1.8547668)
 shape = SubResource("BoxShape3D_r8ida")
 
 [node name="box02" type="CollisionShape3D" parent="room_locked/chainlinkCol" unique_id=220370272]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008422852, 0.8417053, -3.525673)
 shape = SubResource("BoxShape3D_susnb")
+
+[node name="man00" parent="room_locked" unique_id=1744641001 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 5, 0, 6.239456)
+
+[node name="man10" parent="room_locked" unique_id=2087530588 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 7, 0, 7.239456)
+
+[node name="man11" parent="room_locked" unique_id=701780584 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 10, 0, 6.239456)
+
+[node name="man12" parent="room_locked" unique_id=1335863493 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 12, 0, 6.239456)
+
+[node name="man13" parent="room_locked" unique_id=2124874393 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 11, 0, 7.239456)
+
+[node name="man01" parent="room_locked" unique_id=1116276799 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -12, 0, 6.239456)
+
+[node name="man14" parent="room_locked" unique_id=1746976891 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -10, 0, 7.239456)
+
+[node name="man15" parent="room_locked" unique_id=784608512 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -7, 0, 6.239456)
+
+[node name="man16" parent="room_locked" unique_id=325157881 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -5, 0, 6.239456)
+
+[node name="man17" parent="room_locked" unique_id=866015719 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, -6, 0, 7.239456)
 
 [node name="room_blood" type="Node3D" parent="." unique_id=582174861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
@@ -974,7 +1005,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gxubu")
 transform = Transform3D(0.22256958, 0, 0.97491693, 0, 1, 0, -0.97491693, 0, 0.22256958, -10.042566, -9.536743e-07, 11.30272)
 script = ExtResource("23_3u0eh")
 texts1 = Array[String](["The skin is missing.", "...?", "A key is embedded in its fingers.", "Obtained the [color=yellow]Hotel Room Key[/color]."])
-texts2 = Array[String](["The kill is fresh, the meat is still edible."])
+texts2 = Array[String](["It's very fresh. The meat is still edible."])
 itemID = "Hotel01"
 
 [node name="blood00" parent="Hallway" unique_id=943009011 instance=ExtResource("18_2i3b2")]

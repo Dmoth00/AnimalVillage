@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="33_7bnb8"]
 [ext_resource type="ArrayMesh" uid="uid://f21u15m4xck6" path="res://Assets/Mesh/Props/saved_mesh/painting.tres" id="33_83bpk"]
 [ext_resource type="PackedScene" uid="uid://dljrho8gmerox" path="res://Core/Props/general/queen_bed.tscn" id="33_i8mby"]
+[ext_resource type="Script" uid="uid://co2lmg5eg8y01" path="res://Core/Scene/Hotel/mannequin_corpse.gd" id="33_tacsu"]
 [ext_resource type="PackedScene" uid="uid://cifoa1413chdy" path="res://Core/Actors/NPC/Enviroment/examine_NPC.tscn" id="34_bp257"]
 [ext_resource type="PackedScene" uid="uid://hjyyrk7lo06x" path="res://Core/Props/general/mannequin.tscn" id="34_yeflp"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="35_jpvth"]
@@ -162,13 +163,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ndfe2")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwgdr"]
-load_path = "res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3y5ra"]
 resource_name = "ClayMat"
 cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_kwgdr")
+albedo_texture = ExtResource("15_uwi5v")
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2buol"]
@@ -371,6 +369,46 @@ shadow_mesh = SubResource("ArrayMesh_3lcs6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iv2g0"]
 size = Vector3(2.144287, 1, 2.2050781)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orvug"]
+resource_name = "woodMat"
+cull_mode = 2
+albedo_texture = ExtResource("11_83bpk")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yk05c"]
+_surfaces = [{
+"aabb": AABB(-0.16433208, -0.027720746, -0.35614565, 0.47752142, 0.2816799, 0.8934909),
+"format": 34359742465,
+"index_count": 540,
+"index_data": PackedByteArray("NQAJADYANQATAAkAEwA1AB8AHwA1ADYAEwAfAB4ACQATAB4AHwA2ADcAHgAfADcAHgA3ACAACQAeACAANgA4ADcAIAA3ADgACQAUADYANgAUADgAOQAJACAAIAA4ADkACQAhABQAOQAhAAkAOgA4ABQAIQAFABQAOgAUAAUAIQAIAAUAIQA5ADsAIQA7AAgAPAA5ADgAPAA7ADkAPAA4AD0APQA4ADoAPgAFAAgAPgAIADsAFQA8AD0APAAVADsAFQA9ACIAPQA6ACIAFQAiAD8APwAiADoAQAA7ABUAFQA/AEAAPgA7ABYAQAAWADsAQAA/ACQAQAAkABYAPwA6ACQAOgAFACMAPgAjAAUAOgAjACQAFgAGAD4ABgAjAD4AJQAWACQAFgAlAAYAQQAkACMABgBBACMAJQAkAEIAQQBCACQABgAlAAcABwAlAEIAJgBCAEEABwBCACYAJgBBAEMAQwBBAAYAQwAGAEQABgAHAEQAQwBEACcAJwBEAAcAJgBDABcAQwAnABcABwAmABgAJgAXABgAJwAHAEUABwAYAEUAKQAXACcACgAnAEUAKQAnAAoACgBFABkARQAqABkACgAZACoARQAYACoACgAqACkAFwAoABgAKgAYACgAFwAEACgAKQAEABcAKgAoAEYAKQAqAEYARgAoAAQAKQBHAAQARgAEAEcAKQBGAEcADgBIABoASABJABoASQAOABoADgArAEgAKwAsAEgASAAsAEkADgAbACsAKwAbACwADgBKABsASQBKAA4ASgAuABsALwBJACwADABKAEkALwAMAEkADAALAEoASgALAC4ADAAuAAsADAAvAC4ALAAbAC0ALgAtABsALwAsAA0ALAAtAA0ALgBLAC0ALwBLAC4ASwANAC0ALwANAEwASwBMAA0ALwBMAEsATQBOAE8ATwBOAFAATQABAE4ATwBQAFEAHQABAE0AAgBNAE8AAgAdAE0AAgBPAFIAUgBPAFEAAgAAAB0AAgA0AAAAHQAAADQAAgBSADQAHQBTAAEAAQBTAFQAAQBUAE4AUwAdAFUAHQA0AFUAUwBVAFQATgBUAFYAVgBUAFUATgBWAFAAUQBQAFYAVgBVADMAUQBWADMAMwBVADQAMwA0AFcAUQAzAFcAUgBXADQAUQBXAAMAUgADAFcAUgBRAAMAHAAQAFgAWAAQADAAHABZABAAEABZAFoAEABaADAAWQBbAFoAWQAcAFsAMABaAFwAXABaAFsAMABcAF0AWAAwAF4AXgAwAF0AXwBdAFwAXgBdAF8AXABbADEAXwBcADEAMQBbADIAHAAyAFsAXwAxAGAAMQAyAGAAXwBgABEAYQARAGAAYQBfABEAYQBgADIAYQBeAF8AHAASADIADwBeAGEADwBhADIADwAyABIADwASABwADwBYAF4ADwAcAFgA"),
+"lods": [0.108956665, PackedByteArray("EwAJABQACQATAB4AEwAfAB4AHwATABQAHgAfACAACQAeACAAIAAfABQAIQAJACAACQAhABQAIAAUACEAIQAFABQAIgAUAAUAFQAhABQAFQAUACIAIQAIAAUAFQAIACEACAAjAAUAIgAFACMAFQAiACQAIgAjACQAFQAWAAgAFQAkABYABgAjAAgAFgAGAAgAJQAWACQAFgAlAAYABwAlACQABgAlAAcAJgAkACMABwAkACYAFwAjAAYAJgAjABcAJwAGAAcAFwAGACcABwAmABgAJgAXABgABwAYABkAJwAHABkAFwAoABgACgAnABkAFwAEACgAKQAXACcAKQAEABcAKQAnAAoAKgAoAAQAKgAEACkAKgAYACgACgAqACkAGQAYACoACgAZACoADgArABoAKwAsABoADAAOABoAGgAsAAwADgAbACsAKwAbACwADgALABsADAALAA4ALAAbAC0ACwAuABsADAAuAAsALgAtABsALwAMACwADAAvAC4ALAAtAA0ALwAsAA0ALgANAC0ALgAvAA0ADwAwABEAEQAwADEAEAAxADAADwAQADAAEQAxADIADwARADIAEAAcADEADwAcABAAHAAyADEADwAyABIAHAASADIADwASABwAHQABAAIAAgABAAMAAQAdADMAAQAzAAMAAgAAAB0AHQA0ADMAAwAzADQAHQAAADQAAgADADQAAgA0AAAA"), 0.21575962, PackedByteArray("EwAJABQACQATABQACQAUAAgACQAIABQAFQAIABQAFQAWAAgAFQAUAAUAFQAFABYACAAFABQAFgAGAAgABgAFAAgABgAWAAUABwAGAAUAFwAFAAYABwAFABgAGAAFABcABwAYABkAFwAEABgAGQAYAAQAFwAGAAoACgAGAAcACgAEABcACgAHABkAGQAEAAoAGgANAAwACwAMAA0ADAAOABoADAALAA4ADgANABoACwANABsADgAbAA0ADgALABsADwAQABEAEQAQABwADwAcABAAEQAcABIADwASABwADwARABIAHQABAAIAAgABAAMAAQAdAAMAAgAAAB0AAwAdAAAAAgADAAAA"), 0.32363942, PackedByteArray("CQAFAAgACQAIAAUACAAFAAYABgAFAAgABwAGAAUABAAFAAYABwAFAAQABAAGAAoACgAGAAcACgAHAAQACwAMAA0ADgANAAwADgALAA0ADAALAA4ADwAQABEAEQAQABIADwASABAADwARABIAAAABAAIAAgABAAMAAQAAAAMAAgADAAAA"), 0.4854591, PackedByteArray("BAAFAAYABwAFAAQABAAGAAcABwAGAAUABgAFAAgACAAFAAYAAAABAAIAAgABAAMAAQAAAAMAAgADAAAA"), 0.72818863, PackedByteArray("AAABAAIAAgABAAMAAQAAAAMAAgADAAAA")],
+"name": "woodMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 98,
+"vertex_data": PackedByteArray("Zl8FvQSSQDwyfau+9HPmPTfz9D39sqy+IFn5u15FBT4jbJS+qpWoPd8kPz1XlQK+pAV8ve8Ggj5JftY+dqAfPXxc/T2pSBE+FIjAu5Dv5DwrxSg+R4m2vYAdMjzZ9nY+1ZUfPeBXRjxFVBE+SROOPZDv5DwnaTo+mBlmvQCIDjnvXuM+nWeXPUmzBDx1jwk/nWeXPTbh7j346QM/+ryePur5sT27vtg+gKnsPJQxfjs5ubI+MKoQvKKmxj3caAi9J3PKvZ14tj2Q+hE7zRacvSwSDT2HsB6+8K0hPIynBzwARe85YnNEPYAdMjwhjYs+u6yQPYRE9D1DWyc+umZ+PYD6WTyRKCc9PEdtvQDHNDzScps9VHs/vfquAz6NLbg+P34EvvquAz7Hfa4+FRUovgCIDjktt9Y+gKnsPHH2iT1JHqw+J34wPhDdITrgPdY+8vsMvcLIhTxC6oU8/mvZPAJOuDy5WLa+SI7jPYAdMjwS9JI+01XhPaSw6T2xPpM+xFsKPjAD9zxEbUc+VseVPeAbWTzpfh4+Rnt/PYquBT6VcCI90DGNOoRE9D1hDBc+5gk0vQ4sED6Cu6U9AJeQvTAD9zxXMxc+Swu1vaSw6T3h+Hc+opQ6vUBz2Dum1bc+scMRvu8Ggj4gBc0+4ABivTwn7z3r7uM+q0Yovjwn7z14I9c+ufkCPvjjhrqL96M+J34wPkRpqz0Smc0++ryePrI7uTvMMuE+QT4+PkiKxjrcQwE/QT4+Ps/X4z3mHPc+lG0AvhNigD1BwE6989+0vaSdAbz5ab69Zo/UvLJ9rrxPgIO9QqnJPcBuIbwCTVe+8Jd5PJ4W47w9nH6+nCxHPaSw6T09DIw+b3uNPbR96j05Mj0++DgGPvzi7T25i0k+aoUPPg4sED5CDvw9kaQePgDHNDxoP/89KmFCPQZkHz7WqtY9MBdCPXDytLxmTNc9O2gIPnAUqzxKjYw94bcHPqT89j1YLYw9KEMqO+AbWTy79Q0+7ldavKT89j31kg89bpJlvHAUqzzRDA89DMTeu7R96j0/aCs+WPyKvfzi7T1r6Bo+Gy/dvKSw6T3mLoM+u9LUvIAdMjxe4oI+YUgEvkBz2DsiCK4+bJkbvjaTfz69Ktk+qLp+vTaTfz5DsOM+ufkCPrWeeD1yi50+9rxiPe6Kuz111N4+9rxiPRqw9TvNk+c+WlqgPlqv3DsGYu4+WlqgPhSbxj16/uQ+0tdQPVQBAD52Q6C+cIcXPgXFrD1IsIi+OvHDPT9+qj1bsGy+VyodPopwfD1a+lS+pwP7PQogSj0MFCG+WmEaPZlqtD1aF1W+fIa4PfsUgz32Qba+gfX+PRLu/zzqJJK+52GXPTrXhbxDRo2+PoQFPvY5lzyAsW2+sBxdPZofrrw4+Da+hQRYvVXCvj2a2YK8wQiovRRKQj1W2YQ8M9Dcvcp0uzwmERa94DKPvZw7UbyEQjO9aNzlvYj+WTy/2py9z6YEvqQAOz0u5cG95JawvcBafT0gXJ69dtvZvbRMFT2d1ge+GDZhvVTNhrxQ3u69yjQvvfkchj22ucG9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iv2g0"]
+resource_name = "corpse_Cube_003"
+_surfaces = [{
+"aabb": AABB(-0.16433208, -0.027720746, -0.35614565, 0.47752142, 0.2816799, 0.8934909),
+"attribute_data": PackedByteArray("22OiPuCqWT2SruY7xBG+PojxMDngqlk9ZRkHPwAAMTkOnVc/wItFPWUZBz9Q7P8+RwMHP/H0fz+47TA5Wkh3P8khrT4APr4+REBYP0cMAD8/q1Y/8fR/P2UZBz9GDAA/LhqzPk7kZT/e9Qc/mHpCPrzjIz/W1MU+6kM4P6hvmT449kk+kj75Po22kD2wKKE+5TjWOPwVgz6NtpA9sCihPt71Bz+YekI+5TjWOPwVgz684yM/1tTFPupDOD+ob5k+GYMCPiIDWz8yKQg+UPl/Py4asz5O5GU/OPZJPpI++T4RRNY45PROPzkDEj/+fWA/OQMSP/59YD8RRNY45PROP2UZBz8AADE5Dp1XP8CLRT1lGQc/UOz/PkRAWD9HDAA/P6tWP/H0fz9lGQc/RgwAP8khrT4APr4+RwMHP/H0fz+47TA5Wkh3P4jxMDngqlk922OiPuCqWT2SruY7xBG+PuELDj9Z1gk/Ulv2PtANhT5q6Co98KVbPeELDj9Z1gk/SB2kPbqP9T4qRpc+s4A5P2Zh0T4+vTw/KkaXPrOAOT8ZgwI+IgNbPzIpCD5Q+X8/wS0sPigvRj5q6Co98KVbPYzykD6MvFI+n2UjPh6Sfj+fZSM+HpJ+P4zykD6MvFI+exkwP4ZHtj6/faI+qO7+PtLX2T4AQNY4Tfl+PZT5hj4xsT0+REabPjj2ST6SPvk+SB2kPbqP9T71siA+aP0/P1hPJT4yBYA+tPfwPmj9Pz/3siA+aP0/P4Sp7j4yBYA+svfwPmj9Pz8XAGg+MlJcP52ufD49R34/046bPpjxXj9mYdE+Pr08P0+F7T4YxWQ/v32iPqju/j5SW/Y+0A2FPiHUCT9ZGDs/0tfZPgBA1jhPhe0+GMVkP5hysj6Q0DE+v32iPqju/j7Tjps+mPFePxcAaD4yUlw/na58Pj1Hfj+9zH89FcwrPzGxPT5ERps+brBVP/IYhT4C+ow+8jUcP1cnjz0tfTQ/iRQJP8fNQj+JFAk/x81CP+rxBj8QLEU/AvqMPvI1HD9XJ489LX00P7+q4T7Q/gI//2XxPig8nj4Fa60+Ki2cPuPw+j7Q5Nw9mHKyPpDQMT7B0aI+2FimPbGXHz54tNg9wS0sPigvRj7mvTI5JNYsPkxROD9P+X8/u8hbP37bTT9MUTg/jCVJPwcJXD9OfHw/9NLuPjIFgD50/CQ+MgWAPr58JD6sTjI/vcx/PRXMKz+/quE+0P4CPzV8kz6S/GE/5zWyPiQZbz8h1Ak/WRg7P5oZvD77oGw/v6rhPtD+Aj/hCw4/WdYJP/9l8T4oPJ4+mhm8PvugbD97GTA/hke2PuPw+j7Q5Nw9BWutPiotnD7B0aI+2FimPbGXHz54tNg95r0yOSTWLD5N+X49lPmGPkgdpD26j/U+vnwkPqxOMj81fJM+kvxhP+c1sj4kGW8/TFE4P0/5fz+7yFs/fttNPwcJXD9OfHw/TFE4P4wlST/cXi4/oGzBPG6wVT/yGIU+YQIuP3aOjD4FvUY/MgvPPqxMJj90CPc+CRoHP5L2gD618Gc79ElVPnu9Ij68iLA+CRoHP5L2gD6sTCY/dAj3PmECLj92jow+Bb1GPzILzz7cXi4/oGzBPAr1vj7FnSk/FMX8PoebGz/lz9Y+ZhLwPl0/wT7yGEo/o7+3PvH0fz+Ob2M+b35CP271Lj4xVAY/tfBnO/RJVT57vSI+vIiwPurxBj8QLEU/CvW+PsWdKT8Uxfw+h5sbP+XP1j5mEvA+XT/BPvIYSj+jv7c+8fR/P45vYz5vfkI/bvUuPjFUBj88dFc/SXtAP7PbID9nR28/PHRXP0l7QD+z2yA/Z0dvPw=="),
+"format": 34359742487,
+"index_count": 540,
+"index_data": PackedByteArray("YgAWAGMAYgAsABYAPQBiAGMAFgAtAGMAFgA8AC0APQBjAGQAQQA9AGQAPAAUAC0APAAXABQAZQAtABQAYwAtAGYAZQBmAC0AYwBmAGQAZwBlAD4AZwBmAGUAaABmAGcAQABkAGYAQQBkAEAAEwBBAEAAEwBCAEEAQABmAGkAaQATAEAAaABpAGYAaQA/ABMAaABqAGkAPwBpAGoAaAAuAGoAPwBqABUAawBsAG0AawBuAGwAQwBvAEUAQwBEAG8ARgBHAEgARgBwAEcAcQBJADEAGwBxADEAcgBxABsAcgAbADAAHABxAHIAHAAYAHEAcQAYAEkAGwAxAE4AGQBJABgAGQBKAEkATgAxAEwATgBMAHMASQBLADEATAAxAEsASgB0AEkASQB0AEsASgB1AHQAdAB1ABoAdAAaAEsATABLABoAcwBMAHYAcwB2AC8ATQBMABoATQB2AEwATQAaAHcATQAdAHYAeAAOAHkAeAB5AFAAUgBQAB4AeABQADIAUgAyAFAAeAB6AA4AUgB7AAwAUgAMADIAVAB4ADIAVAB6AHgADgB6AE8ADgBPAHwAfABPAA0AfAANAA8AfQANAE8AegBTAE8AfQBPAFMAVAB+AHoAegB+AFMAfwBRAH0AfwB9AFMAgAB/AFMAEAB+AFQAgACBADcAWQBTAH4AEABZAH4AgABTADYAWQA2AFMAgAA2AIEANgBZABEAEQBZABAAggCBADYANgARAIIAggASAIEAEQAQAIMAWACDABAAWAAQAIQAHwBYAIQAHwCEADQAEAAzAIQAEABUADMAVAAyADMAhABWADQAhAAzAFYANQA0AFYANQBWAFcAMgBVADMAVgAzAFUAMgAMAFUAVwBWAIUAVgBVAIUAhQBVAAwAVwCFAIYAhQAMAIYAhwCIAIkAhwCKAIgAiwCMAI0AiwAEAIwAjQCMAI4AAwCLAI0AjQCOAI8AAwCNAJAAkACNAI8AkACPAAUAOwArAJEAOwCSACsAKQA7AJEAKQAqADsAkwCUACIAkwCVAJQAlQCWAJQAIACVAJMAlQBaAJYAIACXAJUAlwBaAJUAlwAhAFoAXwCYAJkAmgCZAJgAXwCbAJgAJwCbAF8AJwCcAJsAnACdAJsAmACbAJ0AnAA6AJ0AOgBhAJ0AOgAoAGEAmACdAGAAYACdAGEAmgCYAGAAYABhAJ4AmgBgAJ4AmgCeACYAOAABAJ8AOACgAAEAAgA4AJ8AAgAAADgAoQCiAKMApACjAKIAoQClAKIABgClAKEABgCmAKUApgCnAKUAogClAKcApgA5AKcAOQBcAKcAOQAHAFwAogCnAFsAWwCnAFwApACiAFsAWwBcAKgApABbAKgApACoAAgAqQCqAF4AqQAKAKoACQCpAF4ACQBeAAsAqwCsAF0AqwAkAKwAIwCrAF0AIwBdACUA"),
+"lods": [0.108956665, PackedByteArray("LAAWAC0AFgA8AC0APQAsAC0APAAXABQAPAAUAC0APgAtABQALgAtAD4ALgA/AC0ALgAVAD8AQAA9AC0AQAAtAD8AQQA9AEAAPwATAEAAEwBBAEAAEwBCAEEAQwBEAEUARgBHAEgAGABJADEAGQBJABgAGQBKAEkASQBKABoASQAaAEsASQBLADEATABLABoATAAxAEsATQBMABoATQAdAEwALwBMAB0ATgBMAC8ATgAxAEwAGwAxAE4AGwAYADEAHAAYABsAHAAbADAAMgBPAA4ADgBPAA8AMgAOAFAADwBPAA0AUQANAE8AUgBQAB4AUgAyAFAAUgAMADIAUQBPAFMANwBRAFMAVABPADIAVABTAE8AMgAMAFUAVAAyADMAMgBVADMAVgBVAAwAVgAzAFUAVgAMAFcANQBWAFcANQA0AFYANAAzAFYAEABUADMAEAAzADQAEABTAFQAWAAQADQAHwBYADQAWAARABAAEABZAFMAEQBZABAAWQA2AFMANgBZABEANwBTADYANgARABIANwA2ABIAIABaACIAIAAhAFoAOAABAAIAAgAAADgAAwAEAAUABgBbAAgACABbAFwABgA5AFsAOQBcAFsAOQAHAFwAIwAkAF0AIwBdACUACQBeAAsACQAKAF4AJgBfAGAAJwBgAF8AJgBgAGEAJwA6AGAAOgBhAGAAOgAoAGEAKQA7ACsAKQAqADsA"), 0.21575962, PackedByteArray("LAAWAC0AFgAXAC0AEwAsAC0AFwAUAC0AEwAtABUALgAtABQALgAVAC0ALwAaAB0AGwAaAC8AHAAbADAAHAAYABsAGAAZABoAGwAxABoAGAAaADEAGwAYADEAMgANAA4AMgAOAB4ADgANAA8AHgAMADIAMgAMADMAMwANADIANAAzAAwANAAMADUAEAAzADQAEAANADMAHwAQADQAHwARABAAEAARAA0AEQA2AA0ANwANADYANgARABIANwA2ABIAIAAhACIAOAABAAIAAgAAADgAAwAEAAUABgA5AAgACAA5AAcAIwAkACUACQAKAAsAJgAnADoAJgA6ACgAKQA7ACsAKQAqADsA"), 0.32363942, PackedByteArray("EwAUABUAFgAXABQAGAAZABoAGwAYABoAHAAYABsAGwAaAB0ADAANAA4ADAAOAB4ADgANAA8AEAANAAwAHwAQAAwAHwARABAAEAARAA0AEgANABEAIAAhACIAAAABAAIAAwAEAAUABgAHAAgAIwAkACUACQAKAAsAJgAnACgAKQAqACsA"), 0.4854591, PackedByteArray("DAANAA4ADgANAA8AEAANAAwADAARABAAEAARAA0AEgANABEAAAABAAIAAwAEAAUABgAHAAgACQAKAAsA"), 0.72818863, PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsA")],
+"material": SubResource("StandardMaterial3D_orvug"),
+"name": "woodMat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 173,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_yk05c")
 
 [sub_resource type="Curve" id="Curve_83bpk"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.6956522, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -817,13 +855,10 @@ albedo_texture = ExtResource("26_jqlgb")
 uv1_scale = Vector3(1, 0.8, 1)
 uv1_offset = Vector3(0, 0.1, 0)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ob81"]
-load_path = "res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.s3tc.ctex"
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ob81"]
 resource_name = "ClayMat"
 cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_8ob81")
+albedo_texture = ExtResource("15_uwi5v")
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2277v"]
@@ -986,6 +1021,15 @@ size = Vector2(0.2, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_m87jx"]
 size = Vector3(3.5429993, 4.532715, 4.9291077)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iv2g0"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_83bpk"]
+material = SubResource("StandardMaterial3D_iv2g0")
+size = Vector2(31, 18)
+orientation = 1
+
 [node name="Hotel3F_side" type="Node3D" unique_id=1613485242]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1386254940]
@@ -999,6 +1043,7 @@ autoplay = true
 
 [node name="Room01_02" type="Node3D" parent="." unique_id=144137106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45)
+visibility_parent = NodePath("../vis1")
 
 [node name="collision" type="StaticBody3D" parent="Room01_02" unique_id=2014478598]
 visible = false
@@ -1221,10 +1266,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4916625, 0, 4.608383)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6601706, 0, -2.3524132)
 
 [node name="item_bullets7" parent="Room01_02" unique_id=1410417916 instance=ExtResource("40_4ex4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3398294, 0, -2.3524132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.625324, 0, -2.3524132)
 
 [node name="Room03_04" type="Node3D" parent="." unique_id=1161134176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45, 0, 0)
+visibility_parent = NodePath("../vis2")
 
 [node name="collisions" type="StaticBody3D" parent="Room03_04" unique_id=1572150492]
 visible = false
@@ -1428,6 +1474,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4540634, 0, -4.414877)
 
 [node name="Room05_06" type="Node3D" parent="." unique_id=1103763327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+visibility_parent = NodePath("../vis0")
 
 [node name="collisions" type="StaticBody3D" parent="Room05_06" unique_id=1504658507]
 visible = false
@@ -1493,35 +1540,6 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -5.4777675, 0.4371338, -7.94
 shape = SubResource("BoxShape3D_d1k0g")
 
 [node name="mesh" type="Node3D" parent="Room05_06" unique_id=2042497712]
-
-[node name="meshHotelRoom05" type="MeshInstance3D" parent="Room05_06/mesh" unique_id=422789330]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
-mesh = ExtResource("6_3gvrj")
-skeleton = NodePath("")
-
-[node name="hotelbathroomR" parent="Room05_06/mesh/meshHotelRoom05" unique_id=1970873852 instance=ExtResource("5_8pp5t")]
-transform = Transform3D(-1, -3.821371e-15, 8.742278e-08, -8.742278e-08, 4.371139e-08, -1, 0, -1, -4.371139e-08, -6, 5, 0)
-
-[node name="toiletMesh" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR" index="0" unique_id=324110741]
-transform = Transform3D(1.5, 0, 0, 0, 1, 6.556708e-08, 0, -4.371139e-08, 1.5, 0.4168105, 0.013155103, -2.1751995)
-
-[node name="sinkMesh" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR" index="1" unique_id=1976167704]
-transform = Transform3D(0.93000007, 0, 0, 0, 0.93000007, 4.0651592e-08, 0, -4.0651592e-08, 0.93000007, 1.4616046, -0.17519939, -1.9320183)
-
-[node name="bathtubMesh" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR" index="2" unique_id=1873474902]
-transform = Transform3D(1, 4.371139e-08, 1.0658141e-14, -4.371139e-08, 1, -3.5527137e-15, -1.0658141e-14, 3.5527137e-15, 1, -1.2, 0, -0.5)
-
-[node name="curtain_rod" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR" index="3" unique_id=375160630]
-transform = Transform3D(-5.9228896e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1.355, -4.3711402e-08, 7.1054274e-15, -0.22396088, 8.7422904e-08, 0)
-
-[node name="curtain_norod" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR" index="4" unique_id=1621171488]
-transform = Transform3D(-2.6226832e-08, -1.2, 4.371139e-08, 0, -5.2453657e-08, -1, 0.6, -5.245367e-08, 7.1054274e-15, -0.22396088, 1.8155902e-07, -1.2265244)
-
-[node name="toilet" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1970873852, 1025233909) index="0" unique_id=1934155096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9795761, 0.38568115, -1.6485558)
-
-[node name="bath" parent="Room05_06/mesh/meshHotelRoom05/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1970873852, 1025233909) index="1" unique_id=1636433385]
-transform = Transform3D(0.99999297, -1.6402475e-10, -0.003752449, 1.6402475e-10, 1, -3.090861e-13, 0.003752449, -3.090861e-13, 0.99999297, -1.2831197, 0.4999999, -0.5002842)
 
 [node name="Room05" type="Node3D" parent="Room05_06/mesh" unique_id=939054967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, -1.4210855e-14, -4)
@@ -1700,6 +1718,13 @@ shape = SubResource("BoxShape3D_iv2g0")
 [node name="mannequin02" parent="Room05_06/event01" unique_id=1381010512 instance=ExtResource("34_yeflp")]
 transform = Transform3D(0.55774504, 0, -0.8300122, 0, 1, 0, 0.8300122, 0, 0.55774504, -4.5931873, 0, -8.307831)
 
+[node name="mannequinCorpse" type="MeshInstance3D" parent="Room05_06/event01" unique_id=249906315]
+transform = Transform3D(-8.742278e-08, 0, -2, 0, 0.01, 0, 2, 0, -8.742278e-08, 8.63, -0.01, -51.405)
+top_level = true
+mesh = SubResource("ArrayMesh_iv2g0")
+skeleton = NodePath("../..")
+script = ExtResource("33_tacsu")
+
 [node name="xplod" type="GPUParticles3D" parent="Room05_06/event01" unique_id=1490265278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.571184, 0.53497314, -8.285877)
 emitting = false
@@ -1714,14 +1739,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14807129, -1.5716248, 1.01
 size = Vector3(6.9748535, 2, 5.620117)
 
 [node name="snd" type="AudioStreamPlayer3D" parent="Room05_06/event01/xplod" unique_id=171047483]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.428816, -0.53497314, 51.285877)
 stream = ExtResource("30_4ex4l")
-volume_db = 12.0
-unit_size = 20.0
-max_db = 5.0
+unit_size = 8.0
+
+[node name="meshHotelRoom05" type="MeshInstance3D" parent="Room05_06" unique_id=422789330]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
+visibility_range_begin = 1.0
+visibility_range_end = 40.0
+mesh = ExtResource("6_3gvrj")
+skeleton = NodePath("")
+
+[node name="hotelbathroomR" parent="Room05_06/meshHotelRoom05" unique_id=1970873852 instance=ExtResource("5_8pp5t")]
+transform = Transform3D(-1, -3.821371e-15, 8.742278e-08, -8.742278e-08, 4.371139e-08, -1, 0, -1, -4.371139e-08, -6, 5, 0)
+
+[node name="toiletMesh" parent="Room05_06/meshHotelRoom05/hotelbathroomR" index="0" unique_id=324110741]
+transform = Transform3D(1.5, 0, 0, 0, 1, 6.556708e-08, 0, -4.371139e-08, 1.5, 0.4168105, 0.013155103, -2.1751995)
+
+[node name="sinkMesh" parent="Room05_06/meshHotelRoom05/hotelbathroomR" index="1" unique_id=1976167704]
+transform = Transform3D(0.93000007, 0, 0, 0, 0.93000007, 4.0651592e-08, 0, -4.0651592e-08, 0.93000007, 1.4616046, -0.17519939, -1.9320183)
+
+[node name="bathtubMesh" parent="Room05_06/meshHotelRoom05/hotelbathroomR" index="2" unique_id=1873474902]
+transform = Transform3D(1, 4.371139e-08, 1.0658141e-14, -4.371139e-08, 1, -3.5527137e-15, -1.0658141e-14, 3.5527137e-15, 1, -1.2, 0, -0.5)
+
+[node name="curtain_rod" parent="Room05_06/meshHotelRoom05/hotelbathroomR" index="3" unique_id=375160630]
+transform = Transform3D(-5.9228896e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1.355, -4.3711402e-08, 7.1054274e-15, -0.22396088, 8.7422904e-08, 0)
+
+[node name="curtain_norod" parent="Room05_06/meshHotelRoom05/hotelbathroomR" index="4" unique_id=1621171488]
+transform = Transform3D(-2.6226832e-08, -1.2, 4.371139e-08, 0, -5.2453657e-08, -1, 0.6, -5.245367e-08, 7.1054274e-15, -0.22396088, 1.8155902e-07, -1.2265244)
+
+[node name="toilet" parent="Room05_06/meshHotelRoom05/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1970873852, 1025233909) index="0" unique_id=1934155096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9795761, 0.38568115, -1.6485558)
+
+[node name="bath" parent="Room05_06/meshHotelRoom05/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1970873852, 1025233909) index="1" unique_id=1636433385]
+transform = Transform3D(0.99999297, -1.6402475e-10, -0.003752449, 1.6402475e-10, 1, -3.090861e-13, 0.003752449, -3.090861e-13, 0.99999297, -1.2831197, 0.4999999, -0.5002842)
 
 [node name="Room07_08" type="Node3D" parent="." unique_id=180482682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
+visibility_parent = NodePath("../vis3")
 
 [node name="collisions" type="StaticBody3D" parent="Room07_08" unique_id=596564796]
 visible = false
@@ -2084,13 +2138,33 @@ enter_list = [NodePath("../Room05_06/Zombo1"), NodePath("../Room03_04/Zombo2"), 
 event = "Hotel00"
 is_item = true
 
+[node name="vis0" type="MeshInstance3D" parent="." unique_id=1900508247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46.43131)
+visibility_range_begin = 40.0
+mesh = SubResource("QuadMesh_83bpk")
+
+[node name="vis1" type="MeshInstance3D" parent="." unique_id=94032947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 46.56869)
+visibility_range_begin = 40.0
+mesh = SubResource("QuadMesh_83bpk")
+
+[node name="vis2" type="MeshInstance3D" parent="." unique_id=403869200]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -47.51161, 0, -0.02202034)
+visibility_range_begin = 40.0
+mesh = SubResource("QuadMesh_83bpk")
+
+[node name="vis3" type="MeshInstance3D" parent="." unique_id=87844683]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 47.48839, 0, -0.02202034)
+visibility_range_begin = 40.0
+mesh = SubResource("QuadMesh_83bpk")
+
 [connection signal="body_entered" from="Room05_06/event01" to="Room05_06/event01" method="_on_body_entered"]
 [connection signal="body_entered" from="Room07_08/CameraTrigger" to="Room07_08/CameraTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="Room07_08/CameraTrigger" to="Room07_08/CameraTrigger" method="_on_body_exited"]
 
 [editable path="Room01_02/hotelbathroomR"]
 [editable path="Room03_04/hotelbathroomR"]
-[editable path="Room05_06/mesh/meshHotelRoom05/hotelbathroomR"]
+[editable path="Room05_06/meshHotelRoom05/hotelbathroomR"]
 [editable path="Room07_08/hotelbathroomL"]
 [editable path="Room07_08/hotelbathroomR"]
 [editable path="Room07_08/KeyPickup"]
