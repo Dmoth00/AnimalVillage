@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="12_2cdk4"]
 [ext_resource type="Texture2D" uid="uid://6er2k5vaish5" path="res://Assets/Mesh/Props/hangerTex.png" id="16_7knaa"]
 [ext_resource type="PackedScene" uid="uid://dljrho8gmerox" path="res://Core/Props/general/queen_bed.tscn" id="17_akd4p"]
+[ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="17_cxkhk"]
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="17_rd1t7"]
+[ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="18_27bk4"]
 [ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="19_akd4p"]
 [ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="24_c7sbl"]
 [ext_resource type="AudioStream" uid="uid://bwstlsq885g2r" path="res://Assets/Sounds/SFX/snd_flies.wav" id="26_4ja0e"]
@@ -297,6 +299,11 @@ albedo_color = Color(0.623, 0.6846, 0.7, 1)
 albedo_texture = ExtResource("10_7knaa")
 metallic_specular = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7sbl"]
+albedo_texture = ExtResource("18_27bk4")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_offset = Vector3(0.5, 0, 0)
+
 [node name="Hotel3F" type="Node3D" unique_id=1613485242]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1386254940]
@@ -439,6 +446,16 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 3.4969112e-08, 0, -3.4969112e-08, 0.8
 [node name="examine" parent="Hallway" unique_id=1168567967 instance=ExtResource("31_yav85")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.626654, 0, 1.4108219)
 texts = Array[String](["A wooden mannequin. The cloth is there to protect it from humidity.", "It didn't work, the wood is rotting."])
+
+[node name="floorsign" type="MeshInstance3D" parent="Hallway" unique_id=1408581401]
+transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, -6.5057244, 1.430188, 9.327645)
+mesh = ExtResource("17_cxkhk")
+surface_material_override/0 = SubResource("StandardMaterial3D_c7sbl")
+
+[node name="floorsign2" type="MeshInstance3D" parent="Hallway" unique_id=941917871]
+transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, 5.4942756, 1.430188, 9.327645)
+mesh = ExtResource("17_cxkhk")
+surface_material_override/0 = SubResource("StandardMaterial3D_c7sbl")
 
 [node name="Items" type="Node3D" parent="." unique_id=219928632]
 

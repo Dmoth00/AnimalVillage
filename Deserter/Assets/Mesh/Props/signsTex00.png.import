@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://spljdbm2yq37"
-path.s3tc="res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.s3tc.ctex"
-path.etc2="res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.etc2.ctex"
+uid="uid://dt5papi2ifeum"
+path.s3tc="res://.godot/imported/signsTex00.png-d13e5c3bf3c319d9ff7dcb83b60d74b7.s3tc.ctex"
+path.etc2="res://.godot/imported/signsTex00.png-d13e5c3bf3c319d9ff7dcb83b60d74b7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/ClayTex.png"
-dest_files=["res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.s3tc.ctex", "res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.etc2.ctex"]
+source_file="res://Assets/Mesh/Props/signsTex00.png"
+dest_files=["res://.godot/imported/signsTex00.png-d13e5c3bf3c319d9ff7dcb83b60d74b7.s3tc.ctex", "res://.godot/imported/signsTex00.png-d13e5c3bf3c319d9ff7dcb83b60d74b7.etc2.ctex"]
 
 [params]
 
