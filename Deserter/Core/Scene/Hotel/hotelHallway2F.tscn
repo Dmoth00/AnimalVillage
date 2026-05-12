@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://clx5dv4nefan1" path="res://Core/Props/general/barrel_00.tscn" id="21_n6f6c"]
 [ext_resource type="PackedScene" uid="uid://cngiyskyvv4tb" path="res://Core/Actors/NPC/Enviroment/examine_NPC_snd.tscn" id="22_7d7ur"]
 [ext_resource type="Script" uid="uid://drxuwd7ehkdku" path="res://Core/Actors/NPC/Enviroment/act_item.gd" id="23_3u0eh"]
+[ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="25_fwtqs"]
+[ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="26_r8ida"]
 [ext_resource type="ArrayMesh" uid="uid://b2y81i4l46oky" path="res://Assets/Mesh/Maps/HotelMapMeshes/hallway.tres" id="31_pg7cw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
@@ -523,6 +525,13 @@ data = PackedVector3Array(-9, 13, 0, -10, 14, -2, -10, 13, 0, -9, 13, 0, -9, 14,
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7hfm"]
 size = Vector3(1.1908264, 1, 6.3984375)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ubl85"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("25_fwtqs")
+normal_enabled = true
+normal_texture = ExtResource("26_r8ida")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ofc"]
 resource_name = "Material"
 cull_mode = 2
@@ -928,14 +937,17 @@ size = Vector3(12.220459, 4.1073, 10.107239)
 [node name="Hallway" type="Node3D" parent="." unique_id=1273045251]
 
 [node name="collisions" type="StaticBody3D" parent="Hallway" unique_id=2070098538]
-visible = false
 
 [node name="hallway" type="CollisionShape3D" parent="Hallway/collisions" unique_id=2074386407]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_os43s")
 
 [node name="wall1" type="CollisionShape3D" parent="Hallway/collisions" unique_id=1579959170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47825623, 0, 11.115234)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44418335, 0, 7.2820225)
+shape = SubResource("BoxShape3D_y7hfm")
+
+[node name="wall3" type="CollisionShape3D" parent="Hallway/collisions" unique_id=104177798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44418335, 0, 14.702782)
 shape = SubResource("BoxShape3D_y7hfm")
 
 [node name="wall2" type="CollisionShape3D" parent="Hallway/collisions" unique_id=1981594472]
@@ -950,10 +962,17 @@ layers = 33
 mesh = ExtResource("31_pg7cw")
 skeleton = NodePath("")
 
-[node name="plate" type="MeshInstance3D" parent="Hallway/mesh" unique_id=72716870]
-transform = Transform3D(-1.3113416e-07, 0, -6, 0, 1, 0, 3, 0, -2.6226832e-07, -0.46209908, 0.98755145, 11.004901)
+[node name="plate01" type="MeshInstance3D" parent="Hallway/mesh" unique_id=1959545478]
+transform = Transform3D(-5.4639237e-08, 0, -3, 0, 1, 0, 1.25, 0, -1.3113416e-07, -0.46209908, 0.98755145, 12.759154)
 mesh = ExtResource("20_fttr7")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubl85")
+
+[node name="plate02" type="MeshInstance3D" parent="Hallway/mesh" unique_id=52698513]
+transform = Transform3D(-5.4639237e-08, 0, -3, 0, 1, 0, 1.25, 0, -1.3113416e-07, -0.46209908, 0.98755145, 9.235289)
+mesh = ExtResource("20_fttr7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ubl85")
 
 [node name="plate2" type="MeshInstance3D" parent="Hallway/mesh" unique_id=1304913758]
 transform = Transform3D(-1.3113416e-07, 0, -6, 0, 1, 0, 3, 0, -2.6226832e-07, -8, 0.98755145, 11.604529)
