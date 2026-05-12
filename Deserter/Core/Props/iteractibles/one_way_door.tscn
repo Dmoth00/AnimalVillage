@@ -41,7 +41,7 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("doormesh")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, -0.15955514, 0, 0.987189, 0.8666667, 1, 0, -0.7071067, 0, 0.70710677, 1.4333333, 1, 0, -0.7933533, 0, 0.6087614)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0, -0.15955514, 0, 0.987189, 0.8666667, 1, 0, -0.7071067, 0, 0.70710677, 1.4, 1, 0, -0.7071067, 0, 0.7071068)
 
 [sub_resource type="Animation" id="Animation_ioqxm"]
 resource_name = "anim_rattle"
@@ -138,7 +138,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, 0)
 shape = SubResource("BoxShape3D_1xpxg")
 
 [node name="col2" type="CollisionShape3D" parent="." unique_id=2073750200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5147376, 0.509007, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0)
 shape = SubResource("CylinderShape3D_yl5ye")
 
 [node name="anim" type="AnimationPlayer" parent="." unique_id=384858529]
