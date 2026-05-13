@@ -32,7 +32,7 @@ func act(player : CharacterBody3D):
 		gvars.event_list.append(id)
 		#the collision is destroyed
 		col.queue_free()
-		#the colider's shape is disabled.
+		#the colider's shape is disabled....
 		col2.set_deferred("disabled",true)
 
 
