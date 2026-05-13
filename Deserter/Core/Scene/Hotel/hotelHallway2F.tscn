@@ -1064,7 +1064,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4943, 1.22389, -12.551578)
 stream = ExtResource("20_y7hfm")
 
 [node name="OneWayDoor" parent="Hallway" unique_id=979245015 instance=ExtResource("36_ubl85")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.5, 0, 11.5)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.41830492, 0, 11.5)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=1044268975]
 
