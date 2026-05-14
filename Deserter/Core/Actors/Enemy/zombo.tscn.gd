@@ -89,7 +89,7 @@ func _on_re_target() -> void:
 	if target==null: go=false
 	else:
 		var adis = alertDistance
-		if !target.fl: adis*=0.4
+		if !target.fl: adis*=0.25
 		tarpos=target.global_position
 		dis=global_position.distance_to(tarpos)
 		if dis>0.3 && dis<adis: go=true
