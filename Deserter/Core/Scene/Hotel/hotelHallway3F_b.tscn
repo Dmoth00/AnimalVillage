@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="28_igicu"]
 [ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="28_s3hak"]
 [ext_resource type="PackedScene" uid="uid://bulbumhh1ttn7" path="res://Core/Props/gore/corpse_posable.tscn" id="29_0bq7j"]
-[ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/Hotel/event_01.gd" id="29_4ex4l"]
+[ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/Hotel/scripts/event_01.gd" id="29_4ex4l"]
 [ext_resource type="Texture2D" uid="uid://de6tke0h16tf0" path="res://Assets/Sprites/BloodAnim/bloodstain01.png" id="29_48q6i"]
 [ext_resource type="ArrayMesh" uid="uid://cw0ankw3itvpe" path="res://Assets/Mesh/Props/saved_mesh/bed_single.tres" id="29_lmucl"]
 [ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="29_q4gs6"]
@@ -44,7 +44,7 @@
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="33_7bnb8"]
 [ext_resource type="ArrayMesh" uid="uid://f21u15m4xck6" path="res://Assets/Mesh/Props/saved_mesh/painting.tres" id="33_83bpk"]
 [ext_resource type="PackedScene" uid="uid://dljrho8gmerox" path="res://Core/Props/general/queen_bed.tscn" id="33_i8mby"]
-[ext_resource type="Script" uid="uid://co2lmg5eg8y01" path="res://Core/Scene/Hotel/mannequin_corpse.gd" id="33_tacsu"]
+[ext_resource type="Script" uid="uid://co2lmg5eg8y01" path="res://Core/Scene/Hotel/scripts/mannequin_corpse.gd" id="33_tacsu"]
 [ext_resource type="PackedScene" uid="uid://cifoa1413chdy" path="res://Core/Actors/NPC/Enviroment/examine_NPC.tscn" id="34_bp257"]
 [ext_resource type="PackedScene" uid="uid://hjyyrk7lo06x" path="res://Core/Props/general/mannequin.tscn" id="34_yeflp"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="35_jpvth"]
@@ -1980,9 +1980,6 @@ newMap = "uid://dbc1w5r5ghn7a"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_tacsu")
 
-[node name="Zombo3" parent="Room03" unique_id=1427501946 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, 4.5139847, 0, -1.3275452)
-
 [node name="item_bullets1" parent="Room03" unique_id=133469543 instance=ExtResource("40_4ex4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9971924, 0, -3.545251)
 
@@ -2063,9 +2060,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6698875, 0, 3.7647028)
 
 [node name="item_bullets4" parent="Room04" unique_id=230009308 instance=ExtResource("40_4ex4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4384308, 0, 3.7647028)
-
-[node name="Zombo2" parent="Room04" unique_id=1361586636 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -1.1075058, 0, -0.82042027)
 
 [node name="Room04out" parent="Room04" unique_id=219280023 instance=ExtResource("3_yeflp")]
 transform = Transform3D(-4.37114e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.37114e-08, -41, 0, -12)
@@ -2324,11 +2318,7 @@ mesh = SubResource("QuadMesh_tacsu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.520397, 0, 2.4789925)
 
 [node name="item_bullets6" parent="Room05_06" unique_id=726228453 instance=ExtResource("40_4ex4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.739578, 0, -6.5210075)
-
-[node name="Zombo1" parent="Room05_06" unique_id=1450995685 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 0.07503283, 0)
-alertDistance = 12.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.920379, 0, -6.5772705)
 
 [node name="event01" type="Area3D" parent="Room05_06" unique_id=1335411981 groups=["Id"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
@@ -2756,9 +2746,25 @@ mesh = SubResource("QuadMesh_cpmhi")
 
 [node name="event02" type="Node" parent="." unique_id=16308161 node_paths=PackedStringArray("enter_list")]
 script = ExtResource("41_iv2g0")
-enter_list = [NodePath("../Room05_06/Zombo1"), NodePath("../Room04/Zombo2"), NodePath("../Room03/Zombo3")]
+enter_list = [NodePath("../Zombo1"), NodePath("../Zombo2"), NodePath("../Zombo3"), NodePath("../Zombo4"), NodePath("../Zombo5")]
 event = "Hotel00"
 is_item = true
+
+[node name="Zombo1" parent="." unique_id=1450995685 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, -12, 0.07503283, -45)
+alertDistance = 12.0
+
+[node name="Zombo2" parent="." unique_id=1361586636 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, -49, 0, -12)
+
+[node name="Zombo3" parent="." unique_id=1427501946 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, -42.986015, 0, 6.672455)
+
+[node name="Zombo4" parent="." unique_id=816568170 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(0.7071069, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071069, -51, 0, 7.000001)
+
+[node name="Zombo5" parent="." unique_id=91366463 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(1.1920929e-07, 0, 1, 0, 1, 0, -1, 0, 1.1920929e-07, -52, 0, -7.999999)
 
 [connection signal="body_entered" from="Room05_06/event01" to="Room05_06/event01" method="_on_body_entered"]
 [connection signal="body_entered" from="Room07_08/CameraTrigger" to="Room07_08/CameraTrigger" method="_on_body_entered"]

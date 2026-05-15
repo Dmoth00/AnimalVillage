@@ -67,6 +67,7 @@ func _hurt(dmg : float):
 	var bld=get_node("bloodSFX").duplicate()
 	get_tree().get_first_node_in_group("GM").add_child(bld)
 	bld.global_transform=global_transform
+	bld.global_position.y+=0.5
 	bld.act()
 	if health>0:
 		anim.play("ZombAnim/ZombAnimHurt")

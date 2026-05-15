@@ -16,6 +16,7 @@ func _hurt(_dmg : float):
 	var bld=get_node("bloodSFX").duplicate()
 	get_tree().get_first_node_in_group("GM").add_child(bld)
 	bld.global_transform=global_transform
+	bld.global_position.y+=0.5
 	bld.act()
 	match health:
 		5: anim.play("Dhead_0")
