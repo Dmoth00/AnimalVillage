@@ -458,7 +458,7 @@ newMap = "uid://crl1a264itjbg"
 
 [node name="Room03in" parent="exits" unique_id=1945809569 instance=ExtResource("6_2wk1q")]
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -15, 0, 5.5)
-newPosition = Vector3(-41.5, 0, 12)
+newPosition = Vector3(-41.5, 0, 42)
 newMap = "uid://by1tee0ip6gca"
 
 [node name="Room04in" parent="exits" unique_id=1493786779 instance=ExtResource("6_2wk1q")]

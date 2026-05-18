@@ -35,7 +35,7 @@ func _process(delta):
 			#direction to go
 			dir = NewFunc.flat(tarpos-global_position).normalized()
 			#turns to where its going
-			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*10)).normalized()
+			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta)).normalized()
 			look_at(global_position-ldir)
 			#accel
 			vel=min(vel+delta/2,maxVelocity)
@@ -73,7 +73,7 @@ func _hurt(dmg : float):
 		anim.play("ZombAnim/ZombAnimHurt")
 		vel=-24.0
 		target=null
-		re_target.start(1.0)
+		re_target.start(2.0)
 		state=1
 	else:
 		get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()
@@ -84,7 +84,7 @@ func _hurt(dmg : float):
 
 func _on_re_target() -> void:
 	state=0
-	re_target.wait_time=0.2
+	re_target.wait_time=0.5
 	target=NewFunc.nearest_in_group("Player",transform.origin)
 	
 	if target==null: go=false

@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dqhlqtit3fx7t" path="res://Core/Props/gore/blood_00.tscn" id="18_2i3b2"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="19_2i3b2"]
 [ext_resource type="PackedScene" uid="uid://diydqciwuurwy" path="res://Core/Props/gore/blood_01.tscn" id="19_y7hfm"]
+[ext_resource type="Script" uid="uid://b7y0ya6f0hpag" path="res://Core/System/act_call_once.gd" id="20_3jbj5"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="20_fttr7"]
 [ext_resource type="PackedScene" uid="uid://bulbumhh1ttn7" path="res://Core/Props/gore/corpse_posable.tscn" id="20_rfwvm"]
 [ext_resource type="AudioStream" uid="uid://cwap4irwt087p" path="res://Assets/Sounds/SONG/radio01.mp3" id="20_y7hfm"]
@@ -262,6 +263,56 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ogxuc")
+
+[sub_resource type="Animation" id="Animation_3jbj5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.34906584, -1.5707964, 3.3161256)]
+}
+
+[sub_resource type="Animation" id="Animation_8xnsb"]
+resource_name = "anim_swing"
+length = 5.5333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.97, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.34906584, -1.5707964, 3.1241393), Vector3(-0.34906584, -1.5707964, 3.1764991), Vector3(-0.34906584, -1.5707964, 3.1241393)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("corpseMesh01:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.98, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.20943952, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ltk81"]
+_data = {
+&"RESET": SubResource("Animation_3jbj5"),
+&"anim_swing": SubResource("Animation_8xnsb")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwtqs"]
 transparency = 2
@@ -1206,6 +1257,35 @@ skeleton = NodePath("../meshHotelRoom02")
 [node name="hotelbathroomL" parent="room_locked" unique_id=235636298 instance=ExtResource("14_0bkq5")]
 transform = Transform3D(1, 7.642742e-15, -1.7484555e-07, 0, 1, 4.371139e-08, 1.7484555e-07, -4.371139e-08, 1, -5.9999995, 0, -3)
 
+[node name="bathtubMesh" parent="room_locked/hotelbathroomL" index="2" unique_id=1873474902]
+transform = Transform3D(1, 3.4969112e-08, 1.0658141e-14, -4.371139e-08, 0.8, -1.910686e-15, -1.0658141e-14, 1.5285486e-15, 1, 1.1999998, 0, -0.5)
+
+[node name="curtain_norod" parent="room_locked/hotelbathroomL" index="4" unique_id=1621171488]
+transform = Transform3D(-6.1195937e-09, -1.2, 4.371139e-08, 0, -5.2453675e-08, -1, 0.14, -5.245367e-08, 3.5527137e-15, 0.20000029, 1.2377313e-07, -1.9816589)
+
+[node name="collisions" parent="room_locked/hotelbathroomL" index="5" unique_id=1025233909]
+visible = false
+
+[node name="corpsePosable" parent="room_locked/hotelbathroomL" unique_id=1641615159 instance=ExtResource("20_rfwvm")]
+transform = Transform3D(-0.023756457, -0.13472962, -0.04698463, -0.06527039, -0.37016663, 0.017101007, -0.3939231, 0.06945928, -2.0537634e-09, 2.934, 3.163, -0.524)
+bones/0/scale = Vector3(1, 1.975, 1)
+bones/2/rotation = Quaternion(-0.405911, 0, 0, 0.999028)
+bones/2/scale = Vector3(0.415, 1.13, 0.6)
+bones/3/position = Vector3(-0.332, 0.552, 0.001)
+bones/3/rotation = Quaternion(-1.464223, 10.340638, 0.96919, -4.519653)
+bones/3/scale = Vector3(0.295, 2, 1)
+bones/4/position = Vector3(0.327, 0.582, 0.001)
+bones/4/rotation = Quaternion(1.744224, 16.725637, 0.96919, 4.979653)
+bones/4/scale = Vector3(1, 2, 1)
+
+[node name="corpseMesh01" parent="room_locked/hotelbathroomL/corpsePosable" index="0" unique_id=826075015]
+transform = Transform3D(0.9999996, 0, 0, 0, 0.9999994, 0, 0, 0, 0.9999992, 0, 1.695, 0)
+cast_shadow = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="room_locked/hotelbathroomL/corpsePosable" unique_id=1918977999]
+libraries/ = SubResource("AnimationLibrary_ltk81")
+autoplay = &"anim_swing"
+
 [node name="hotelbathroomR" parent="room_locked" unique_id=1214027558 instance=ExtResource("14_0bkq5")]
 transform = Transform3D(1, 7.642742e-15, -1.7484555e-07, 0, 1, 4.371139e-08, 1.7484555e-07, -4.371139e-08, 1, 6.0000005, 0, -23)
 
@@ -1216,7 +1296,7 @@ transform = Transform3D(1.5, 0, 0, 8.4703295e-22, 1, 6.556708e-08, 0, -4.371139e
 transform = Transform3D(0.93000007, 0, 0, 8.4703295e-22, 0.93000007, 4.0651592e-08, 0, -4.0651592e-08, 0.93000007, 1.4616084, -0.17520027, 18.067984)
 
 [node name="bathtubMesh" parent="room_locked/hotelbathroomR" index="2" unique_id=1873474902]
-transform = Transform3D(1, 4.371139e-08, 1.4210855e-14, -4.371139e-08, 1, -3.5527137e-15, -1.4210855e-14, 3.5527137e-15, 1, -1.1999965, -8.742277e-07, 19.500002)
+transform = Transform3D(1, 3.4969112e-08, 1.4210855e-14, -4.371139e-08, 0.8, -3.5527145e-15, -1.4210855e-14, 2.8421714e-15, 1, -1.1999965, -8.742277e-07, 19.500002)
 
 [node name="curtain_rod" parent="room_locked/hotelbathroomR" index="3" unique_id=375160630]
 transform = Transform3D(-5.922891e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1.355, -4.3711395e-08, 3.5527137e-15, -0.29850435, -7.868049e-07, 20.000002)
@@ -1224,10 +1304,13 @@ transform = Transform3D(-5.922891e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1.3
 [node name="curtain_norod" parent="room_locked/hotelbathroomR" index="4" unique_id=1621171488]
 transform = Transform3D(-2.6226836e-08, -1.2, 4.371139e-08, 0, -5.245368e-08, -1, 0.6, -5.245367e-08, 3.5527137e-15, -0.29850435, -7.4312175e-07, 19.350588)
 
-[node name="toilet" parent="room_locked/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1214027558, 1025233909) index="0" unique_id=1934155096]
+[node name="collisions" parent="room_locked/hotelbathroomR" index="5" unique_id=1025233909]
+visible = false
+
+[node name="toilet" parent="room_locked/hotelbathroomR/collisions" index="0" unique_id=1934155096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9795799, 0.3856803, 18.351446)
 
-[node name="bath" parent="room_locked/hotelbathroomR/collisions" parent_id_path=PackedInt32Array(1214027558, 1025233909) index="1" unique_id=1636433385]
+[node name="bath" parent="room_locked/hotelbathroomR/collisions" index="1" unique_id=1636433385]
 transform = Transform3D(0.99999297, -1.6402475e-10, -0.003752449, 1.6402474e-10, 1, -3.090861e-13, 0.003752449, -3.090861e-13, 0.99999297, -1.2831163, 0.49999902, 19.49972)
 
 [node name="ironbars00" type="MeshInstance3D" parent="room_locked" unique_id=1636478282]
@@ -1297,6 +1380,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ob7wn")
 surface_material_override/1 = SubResource("StandardMaterial3D_susnb")
 
 [node name="chainlinkCol" type="StaticBody3D" parent="room_locked" unique_id=1406004889]
+visible = false
 collision_layer = 128
 collision_mask = 128
 
@@ -1319,10 +1403,11 @@ transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1
 transform = Transform3D(1.5, 0, -3.576279e-07, 0, 1.5, 0, 3.576279e-07, 0, 1.5, 6, 0, 2.2394562)
 
 [node name="man03" parent="room_locked" unique_id=687282967 instance=ExtResource("13_ob7wn")]
-transform = Transform3D(1.5, 0, -3.576279e-07, 0, 1.5, 0, 3.576279e-07, 0, 1.5, -6, 0, 1.1255455)
-
-[node name="man04" parent="room_locked" unique_id=882964025 instance=ExtResource("13_ob7wn")]
-transform = Transform3D(-4.23195e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, -4.23195e-07, -6.570925, 1.0836065, -3.218792)
+transform = Transform3D(1.5, 0, -3.5762793e-07, 0, 1.5, 0, 3.5762793e-07, 0, 1.5, -5.4, 0, 46.428394)
+top_level = true
+script = ExtResource("20_3jbj5")
+action = &"look_at_from_position"
+arguments = [Vector3(-8, 0, 47), Vector3(-9, 0, 47), Vector3(0, 1, 0), true]
 
 [node name="man10" parent="room_locked" unique_id=2087530588 instance=ExtResource("13_ob7wn")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 7, 0, 7.239456)
@@ -1539,8 +1624,8 @@ skeleton = NodePath("")
 transform = Transform3D(-4.36975e-08, -0.44532284, 0.8953698, -1.1015238e-09, 0.8953698, 0.44532284, -1, 1.847323e-08, -3.9615966e-08, -15.504374, 0.7926173, 5.506091)
 mesh = SubResource("QuadMesh_gryow")
 
-[node name="corpsePosable" parent="Hallway/mesh" unique_id=1641615159 instance=ExtResource("20_rfwvm")]
-transform = Transform3D(0.24999999, 0, 0.43301272, 0, 0.5, 0, -0.43301272, 0, 0.24999999, -9.967375, -0.54, 11.282757)
+[node name="corpsePosable" parent="Hallway/mesh" unique_id=1278053693 instance=ExtResource("20_rfwvm")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.967375, -0.54, 11.282757)
 bones/0/rotation = Quaternion(1.35, -0.495, 0.18, -1)
 bones/1/rotation = Quaternion(1, 0, 0, 0.999028)
 bones/2/rotation = Quaternion(-0.070911, -0.55, 0, 0.999028)
@@ -1588,20 +1673,17 @@ stream = ExtResource("20_y7hfm")
 [node name="OneWayDoor" parent="Hallway" unique_id=979245015 instance=ExtResource("36_ubl85")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.41830492, 0, 11.5)
 
-[node name="Enemies" type="Node3D" parent="." unique_id=1044268975]
-
-[node name="Items" type="Node3D" parent="." unique_id=219928632]
-
 [node name="event03" type="Area3D" parent="." unique_id=23131282 node_paths=PackedStringArray("actors") groups=["Id"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 45)
 collision_layer = 0
 collision_mask = 4096
 script = ExtResource("41_rsgxe")
 id = "Hotel_event03"
-actors = [NodePath("xplod")]
+actors = [NodePath("xplod"), NodePath("../room_locked/man03")]
 
 [node name="col" type="CollisionShape3D" parent="event03" unique_id=1044393136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016052246, 0.74329305, 0.22827148)
+visible = false
 shape = SubResource("BoxShape3D_ltk81")
 
 [node name="xplod" type="GPUParticles3D" parent="event03" unique_id=1151902552]
@@ -1622,6 +1704,8 @@ pitch_scale = 0.9
 
 [connection signal="body_entered" from="event03" to="event03" method="_on_body_entered"]
 
+[editable path="room_locked/hotelbathroomL"]
+[editable path="room_locked/hotelbathroomL/corpsePosable"]
 [editable path="room_locked/hotelbathroomR"]
 [editable path="room_blood/hotelbathroomR"]
 [editable path="Hallway/mesh/corpsePosable"]

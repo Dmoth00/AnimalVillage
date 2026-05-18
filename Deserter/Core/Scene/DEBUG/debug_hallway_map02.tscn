@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="1_ey11i"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="2_lvfjj"]
 [ext_resource type="Texture2D" uid="uid://cie6qbg6e4q2r" path="res://Assets/Textures/ConcreteTex01.png" id="3_6ur7u"]
+[ext_resource type="Texture2D" uid="uid://b66ukwxgpdddm" path="res://Assets/Textures/WindowTex00b.png" id="4_ey11i"]
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="4_oefhk"]
 [ext_resource type="Texture2D" uid="uid://cqv7f0gawi267" path="res://Assets/Textures/WindowTex00.png" id="5_f1mw2"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="6_56a2a"]
@@ -23,6 +24,10 @@ albedo_texture = ExtResource("5_f1mw2")
 
 [sub_resource type="QuadMesh" id="QuadMesh_5n230"]
 size = Vector2(1.65, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1mw2"]
+transparency = 1
+albedo_texture = ExtResource("4_ey11i")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51ldc"]
 resource_name = "BrickMat00"
@@ -338,19 +343,25 @@ material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
+[node name="window1" type="MeshInstance3D" parent="mesh" unique_id=1035007904]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 2, 2.5, 2.3675194)
+material_override = SubResource("StandardMaterial3D_f1mw2")
+mesh = SubResource("QuadMesh_5n230")
+skeleton = NodePath("../..")
+
 [node name="window2" type="MeshInstance3D" parent="mesh" unique_id=1549514549]
 transform = Transform3D(1, -2.1316282e-14, -1.7484554e-07, 2.1316282e-14, 1, 1.5285484e-14, 1.7484554e-07, -1.5285487e-14, 1, -2.0000002, 2.5, 2.367519)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="window4" type="MeshInstance3D" parent="mesh" unique_id=2060678564]
+[node name="window3" type="MeshInstance3D" parent="mesh" unique_id=2060678564]
 transform = Transform3D(-1, -8.742278e-08, -1.7484554e-07, 8.742278e-08, -1, 1.5285484e-14, -1.7484554e-07, 0, 1, 6.0000005, 2.5, 2.3675175)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
-[node name="window3" type="MeshInstance3D" parent="mesh" unique_id=722555511]
+[node name="window4" type="MeshInstance3D" parent="mesh" unique_id=722555511]
 transform = Transform3D(1, 0, 1.7484555e-07, -1.397632e-09, 0.99996805, 0.007993523, -1.7483997e-07, -0.007993523, 0.99996805, 2, -3.4991488, 2.388486)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
@@ -365,6 +376,12 @@ skeleton = NodePath("../..")
 [node name="window6" type="MeshInstance3D" parent="mesh" unique_id=1776535212]
 transform = Transform3D(-1, -8.742278e-08, -1.7484555e-07, 8.6022354e-08, -0.99996805, 0.007993523, -1.7553874e-07, 0.007993523, 0.99996805, 6.0000005, -3.4991488, 2.3884835)
 material_override = SubResource("StandardMaterial3D_h3x0l")
+mesh = SubResource("QuadMesh_5n230")
+skeleton = NodePath("../..")
+
+[node name="window7" type="MeshInstance3D" parent="mesh" unique_id=929007477]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -6, -3.5, 2.3675194)
+material_override = SubResource("StandardMaterial3D_f1mw2")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 

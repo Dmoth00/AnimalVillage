@@ -1481,7 +1481,7 @@ pitch_scale = 0.9
 autoplay = true
 
 [node name="Room03" type="Node3D" parent="." unique_id=2076503373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 0, 38)
 
 [node name="meshHotelRoom01" type="MeshInstance3D" parent="Room03" unique_id=1866211992]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.5, 0, 1)
@@ -1560,7 +1560,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_vlgpw")
 
 [node name="Room03out" parent="Room03" unique_id=444387764 instance=ExtResource("3_yeflp")]
-transform = Transform3D(-4.37114e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.37114e-08, -41, 0, 12)
+transform = Transform3D(-4.37114e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -4.37114e-08, -41, 0, 42)
 top_level = true
 newPosition = Vector3(-14.5, 0, 5.5)
 newMap = "uid://dbc1w5r5ghn7a"
@@ -2347,14 +2347,14 @@ alertDistance = 12.0
 [node name="Zombo2" parent="." unique_id=1361586636 instance=ExtResource("24_q4gs6")]
 transform = Transform3D(5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, 5.9604645e-08, -49, 0, -12)
 
-[node name="Zombo3" parent="." unique_id=1427501946 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, -42.986015, 0, 6.672455)
-
-[node name="Zombo4" parent="." unique_id=816568170 instance=ExtResource("24_q4gs6")]
-transform = Transform3D(0.7071069, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071069, -51, 0, 7.000001)
-
 [node name="Zombo5" parent="." unique_id=91366463 instance=ExtResource("24_q4gs6")]
 transform = Transform3D(1.1920929e-07, 0, 1, 0, 1, 0, -1, 0, 1.1920929e-07, -52, 0, -7.999999)
+
+[node name="Zombo3" parent="." unique_id=1427501946 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(1, 0, -1.7881393e-07, 0, 1, 0, 1.7881393e-07, 0, 1, -42.986015, 0, 36.672455)
+
+[node name="Zombo4" parent="." unique_id=816568170 instance=ExtResource("24_q4gs6")]
+transform = Transform3D(0.7071069, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071069, -51, 0, 37)
 
 [connection signal="body_entered" from="Room05_06/event01" to="Room05_06/event01" method="_on_body_entered"]
 [connection signal="body_entered" from="Room07_08/CameraTrigger" to="Room07_08/CameraTrigger" method="_on_body_entered"]

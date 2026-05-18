@@ -1193,6 +1193,7 @@ mesh = SubResource("QuadMesh_usm4k")
 skeleton = NodePath("../../Door2")
 
 [node name="collisions" type="StaticBody3D" parent="." unique_id=819917702]
+visible = false
 
 [node name="room" type="CollisionShape3D" parent="collisions" unique_id=2036699413]
 shape = SubResource("ConcavePolygonShape3D_23r1d")

@@ -4,5 +4,5 @@ extends Node
 
 func _on_timeout() -> void:
 	if arguments.is_empty(): call(functionName)
-	else: call(functionName,arguments)
+	else: callv(functionName,arguments)
 	pass # Replace with function body.

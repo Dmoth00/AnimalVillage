@@ -28,7 +28,7 @@ var dis : float = 0.0
 
 func _process(delta):
 	#turns to where its going
-	ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*10)).normalized()
+	ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*5)).normalized()
 	look_at(global_position-ldir)
 	
 	if target!=null:
