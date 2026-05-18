@@ -3,6 +3,7 @@ extends Area3D
 @export var opensound : AudioStream
 @export var lockedSound : AudioStream
 var closedDialog : Array [String] = ["It doesn't open from this side."]
+var openDialog : Array [String] = ["You unlocked it."]
 var closed=true
 var over=false
 
@@ -24,6 +25,7 @@ func act(player : CharacterBody3D):
 		over=true
 		
 		#all this is just bells and whistles
+		get_tree().get_first_node_in_group("TXT").act(openDialog)
 		anim.play("anim_door")
 		doorSound(opensound,p)
 		

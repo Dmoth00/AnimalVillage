@@ -262,7 +262,7 @@ newMap = "uid://2hwexkxmvyvk"
 [node name="DebugDoor" parent="exits" unique_id=444387764 instance=ExtResource("8_5ytye")]
 transform = Transform3D(-4.3711378e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711378e-08, -3.0356555, 0, -4)
 newPosition = Vector3(7.5, 0, 0.5)
-newMap = "uid://b6d8nvjnktr0"
+newMap = "uid://fp16w8ltkjp"
 
 [node name="mesh" type="Node" parent="." unique_id=1807266034]
 
