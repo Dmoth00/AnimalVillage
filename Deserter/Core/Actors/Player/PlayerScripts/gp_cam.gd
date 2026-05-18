@@ -43,9 +43,9 @@ func _physics_process(delta: float) -> void:
 	#position
 	global_position=global_position.lerp(target+offset,delta*12)
 	#rotation
-	rotation.x=lerpf(rotation.x,deg_to_rad(camangl),delta)
+	rotation.x=lerpf(rotation.x,deg_to_rad(camangl),delta*6)
 	#zoom
-	cam.position=cam.position.lerp(Vector3(camoff.x,camoff.y,camdist),delta*2)
+	cam.position=cam.position.lerp(Vector3(camoff.x,camoff.y,camdist),delta*6)
 	
 func _input(event: InputEvent) -> void:
 	

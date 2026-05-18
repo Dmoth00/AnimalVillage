@@ -448,13 +448,13 @@ mesh = SubResource("QuadMesh_cpmhi")
 
 [node name="Room01in" parent="exits" unique_id=444387764 instance=ExtResource("6_2wk1q")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 5.5, 0, 13)
-newPosition = Vector3(12, 0, 40)
-newMap = "uid://by1tee0ip6gca"
+newPosition = Vector3(12, 0, -5)
+newMap = "uid://crl1a264itjbg"
 
 [node name="Room02in" parent="exits" unique_id=1382839187 instance=ExtResource("6_2wk1q")]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -6.5, 0, 13)
-newPosition = Vector3(-12, 0, 40)
-newMap = "uid://by1tee0ip6gca"
+newPosition = Vector3(-12, 0, -5)
+newMap = "uid://crl1a264itjbg"
 
 [node name="Room03in" parent="exits" unique_id=1945809569 instance=ExtResource("6_2wk1q")]
 transform = Transform3D(-4.3711392e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, -4.3711392e-08, -15, 0, 5.5)

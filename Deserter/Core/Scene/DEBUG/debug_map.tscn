@@ -187,6 +187,11 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -16, 0
 newPosition = Vector3(-5.5, 2, -7.5)
 newMap = "uid://dm7usxkrodt3x"
 
+[node name="return7" parent="exits" unique_id=517991984 instance=ExtResource("4_mworf")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 15, 0, 5.5)
+newPosition = Vector3(-7.5, 0, 0.5)
+newMap = "uid://fp16w8ltkjp"
+
 [node name="meshHotelRoom00" type="MeshInstance3D" parent="." unique_id=277386271]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_mfx8j")

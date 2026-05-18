@@ -40,6 +40,10 @@
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="26_r8ida"]
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="31_r8ida"]
 [ext_resource type="PackedScene" uid="uid://1bhffbpyvms6" path="res://Core/Props/iteractibles/one_way_door.tscn" id="36_ubl85"]
+[ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/Hotel/scripts/event_01.gd" id="41_rsgxe"]
+[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="42_qk0cc"]
+[ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="43_3jbj5"]
+[ext_resource type="AudioStream" uid="uid://dlk2tpvrqh1or" path="res://Assets/Sounds/SFX/snd_locked01.wav" id="44_8xnsb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
 albedo_texture = ExtResource("4_n5f65")
@@ -1022,6 +1026,86 @@ albedo_texture = ExtResource("31_r8ida")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_offset = Vector3(0.25, 0, 0)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltk81"]
+size = Vector3(2.0377197, 2, 1.456543)
+
+[sub_resource type="Curve" id="Curve_o27m6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.010989), -1.56952, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vgoir"]
+curve = SubResource("Curve_o27m6")
+
+[sub_resource type="Curve" id="Curve_od1gm"]
+_limits = [0.0, 7.5, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 15.7205, 0, 0, Vector2(1, 7.5), 0.155599, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vsflr"]
+curve = SubResource("Curve_od1gm")
+
+[sub_resource type="Curve" id="Curve_ype5r"]
+_limits = [-30.0, 0.0, 0.0, 1.0]
+_data = [Vector2(0, -29.84119), 0.0, 963.0487, 0, 0, Vector2(0.052500002, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fe1d3"]
+curve = SubResource("Curve_ype5r")
+
+[sub_resource type="Gradient" id="Gradient_5sew4"]
+offsets = PackedFloat32Array(0, 0.701571)
+colors = PackedColorArray(1, 1, 1, 1, 0.081, 0.0936667, 0.1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_c230f"]
+gradient = SubResource("Gradient_5sew4")
+
+[sub_resource type="Curve" id="Curve_x5m2u"]
+_limits = [0.01, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 1.23769), 0.142535, 14.7323, 0, 0, Vector2(0.255708, 4), -0.514409, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_cpitq"]
+curve = SubResource("Curve_x5m2u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0bkq5"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.5, 0)
+angle_min = -90.0
+angle_max = 90.0
+angle_curve = SubResource("CurveTexture_vsflr")
+direction = Vector3(0, 0, 1)
+spread = 10.0
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+angular_velocity_curve = SubResource("CurveTexture_fe1d3")
+gravity = Vector3(0, 3, 0)
+damping_min = 4.0
+damping_max = 4.0
+scale_curve = SubResource("CurveTexture_cpitq")
+scale_over_velocity_min = 1.0
+scale_over_velocity_max = 1.0
+color_ramp = SubResource("GradientTexture1D_c230f")
+alpha_curve = SubResource("CurveTexture_vgoir")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu55w"]
+transparency = 1
+shading_mode = 2
+diffuse_mode = 3
+specular_mode = 2
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("42_qk0cc")
+disable_receive_shadows = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_lqp2n"]
+material = SubResource("StandardMaterial3D_eu55w")
+size = Vector2(0.4, 0.4)
+
 [node name="Hotel2F" type="Node3D" unique_id=1613485242]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1386254940]
@@ -1230,6 +1314,15 @@ shape = SubResource("BoxShape3D_susnb")
 
 [node name="man00" parent="room_locked" unique_id=1744641001 instance=ExtResource("13_ob7wn")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 5, 0, 6.239456)
+
+[node name="man02" parent="room_locked" unique_id=116576235 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(1.5, 0, -3.576279e-07, 0, 1.5, 0, 3.576279e-07, 0, 1.5, 6, 0, 2.2394562)
+
+[node name="man03" parent="room_locked" unique_id=687282967 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(1.5, 0, -3.576279e-07, 0, 1.5, 0, 3.576279e-07, 0, 1.5, -6, 0, 1.1255455)
+
+[node name="man04" parent="room_locked" unique_id=882964025 instance=ExtResource("13_ob7wn")]
+transform = Transform3D(-4.23195e-07, 0, -1.5, 0, 1.5, 0, 1.5, 0, -4.23195e-07, -6.570925, 1.0836065, -3.218792)
 
 [node name="man10" parent="room_locked" unique_id=2087530588 instance=ExtResource("13_ob7wn")]
 transform = Transform3D(-1.5, 0, 2.2649371e-07, 0, 1.5, 0, -2.2649371e-07, 0, -1.5, 7, 0, 7.239456)
@@ -1498,6 +1591,36 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4
 [node name="Enemies" type="Node3D" parent="." unique_id=1044268975]
 
 [node name="Items" type="Node3D" parent="." unique_id=219928632]
+
+[node name="event03" type="Area3D" parent="." unique_id=23131282 node_paths=PackedStringArray("actors") groups=["Id"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 45)
+collision_layer = 0
+collision_mask = 4096
+script = ExtResource("41_rsgxe")
+id = "Hotel_event03"
+actors = [NodePath("xplod")]
+
+[node name="col" type="CollisionShape3D" parent="event03" unique_id=1044393136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016052246, 0.74329305, 0.22827148)
+shape = SubResource("BoxShape3D_ltk81")
+
+[node name="xplod" type="GPUParticles3D" parent="event03" unique_id=1151902552]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.9296541, 0.88949203, 2.028305)
+emitting = false
+amount = 6
+lifetime = 4.0
+one_shot = true
+explosiveness = 0.95
+process_material = SubResource("ParticleProcessMaterial_0bkq5")
+draw_pass_1 = SubResource("QuadMesh_lqp2n")
+script = ExtResource("43_3jbj5")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="event03/xplod" unique_id=2033376058]
+stream = ExtResource("44_8xnsb")
+unit_size = 8.0
+pitch_scale = 0.9
+
+[connection signal="body_entered" from="event03" to="event03" method="_on_body_entered"]
 
 [editable path="room_locked/hotelbathroomR"]
 [editable path="room_blood/hotelbathroomR"]

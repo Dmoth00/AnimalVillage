@@ -15,48 +15,30 @@
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="13_xqfl4"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="14_a57dp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkars"]
-cull_mode = 2
-albedo_texture = ExtResource("9_q21e6")
-
-[sub_resource type="QuadMesh" id="QuadMesh_matn3"]
-material = SubResource("StandardMaterial3D_kkars")
-flip_faces = true
-size = Vector2(1, 2)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0exy"]
-albedo_texture = ExtResource("10_furuu")
-metallic_specular = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqfl4"]
-albedo_texture = ExtResource("9_q21e6")
-uv1_scale = Vector3(1, 1.2, 1)
-uv1_offset = Vector3(0, -0.1, 0)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51ldc"]
 resource_name = "BrickMat00"
-cull_mode = 2
 albedo_texture = ExtResource("3_qm143")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1tcj"]
 resource_name = "GravelMat"
-cull_mode = 2
 albedo_texture = ExtResource("4_xqfl4")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpwbq"]
 resource_name = "TileMat02"
-cull_mode = 2
 albedo_texture = ExtResource("5_a57dp")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kkhf"]
 resource_name = "StairsMat"
-cull_mode = 2
 albedo_texture = ExtResource("6_w2n64")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwkj5"]
 resource_name = "WallMat01"
-cull_mode = 2
 albedo_texture = ExtResource("7_5d8wr")
+metallic_specular = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_20w08"]
 _surfaces = [{
@@ -195,6 +177,24 @@ albedo_texture = ExtResource("13_xqfl4")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_offset = Vector3(0.5, 0, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un4rw"]
+cull_mode = 2
+albedo_texture = ExtResource("9_q21e6")
+
+[sub_resource type="QuadMesh" id="QuadMesh_matn3"]
+material = SubResource("StandardMaterial3D_un4rw")
+flip_faces = true
+size = Vector2(1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0exy"]
+albedo_texture = ExtResource("10_furuu")
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqfl4"]
+albedo_texture = ExtResource("9_q21e6")
+uv1_scale = Vector3(1, 1.2, 1)
+uv1_offset = Vector3(0, -0.1, 0)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_w2n64"]
 data = PackedVector3Array(-6.0002, 5.9968, -4, -6.0002, -6.9995, -0.0001, -6.0037, -6.9888997, -4, -6.0002, 5.9968, -4, -6, 6.0003, 0, -6.0002, -6.9995, -0.0001, 4.999, -6.9551, -4, -5.0038, -5.989, -4, -6.0037, -6.9888997, -4, -6.0002, 5.9968, -4, -6.0037, -6.9888997, -4, -5.0038, -5.989, -4, 4.999, -6.9551, -4, 4, -5.9616, -4, -5.0038, -5.989, -4, -6.0002, 5.9968, -4, -5.0038, -5.989, -4, -5.0000997, 5, -4, -6.0002, 5.9968, -4, -5.0000997, 5, -4, 4, 5.0383997, -4, 4.999, -6.9551, -4, 4, 5.0383997, -4, 4, -5.9616, -4, -6.0002, 5.9968, -4, 4, 5.0383997, -4, 4.9961, 6.0389, -4, 4, 5.0383997, -4, 4.9961, 5.0495, -4, 4.9961, 6.0389, -4, 4.999, -6.9551, -4, 4.9961, 5.0495, -4, 4, 5.0383997, -4, 4.9961, 5.0495, -4, 4.999, -6.9551, -4, 5, 3.0384998, -4, 4.9961, 5.0495, -4, 4.999, 6.0025, 0, 4.9961, 6.0389, -4, 5, 3.0384998, -4, 4.999, 6.0025, 0, 4.9961, 5.0495, -4, 5, 3.0384998, -4, 4.999, -6.9551, -4, 4.999, 6.0025, 0, 4.999, 6.0025, 0, 4.999, -6.9551, -4, 4.9988, -6.9972997, -0.0001, 4.9961, 6.0389, -4, -6, 6.0003, 0, -6.0002, 5.9968, -4, 4.9961, 6.0389, -4, 4.999, 6.0025, 0, -6, 6.0003, 0, -6.0037, -6.9888997, -4, 4.9988, -6.9972997, -0.0001, 4.999, -6.9551, -4, -6.0037, -6.9888997, -4, -6.0002, -6.9995, -0.0001, 4.9988, -6.9972997, -0.0001, -2.0037, -2.9889, 0, -2.0037, 3.011, 2, -2.0037, 3.011, 0, -2.0037, -2.9889, 0, -2.0037, 1.0109999, 2, -2.0037, 3.011, 2, -2.0037, -2.9889, 0, -2.0037, 3.011, 0, -2.0037, 4.003, -2.0061, -2.0037, -2.9889, 0, -2.0037, 4.003, -2.0061, -2.0037, 1.0109999, -2, -2.0037, 3.011, 0, -0.0037, 3.0253, 2, -0.0037, 3.0253, 0, -2.0037, 3.011, 0, -2.0037, 3.011, 2, -0.0037, 3.0253, 2, -0.0037, 3.0253, 0, -0.0037, 1.0253, 2, -0.0037, -2.9889, 0, -0.0037, 3.0253, 0, -0.0037, 3.0253, 2, -0.0037, 1.0253, 2, -0.0037, 3.0253, 2, -2.0037, 1.0110999, 2, -0.0037, 1.0253, 2, -0.0037, 3.0253, 2, -2.0037, 3.011, 2, -2.0037, 1.0110999, 2, -4.0037, -2.9889, 0, -4.0037, -4.9888997, 0, -2.0037, -2.9889, 0, -4.0037, -4.9888997, 0, -0.0037, -2.9889, 0, -2.0037, -2.9889, 0, -4.0037, -4.9888997, 0, 2.9963, -4.9888997, 0, -0.0037, -2.9889, 0, 2.9963, 3.011, 0, -0.0037, -2.9889, 0, 2.9963, -4.9888997, 0, 2.9963, 3.011, 0, -0.0037, 3.0253, 0, -0.0037, -2.9889, 0, -4.5037, 1.0110999, -2, -2.0037, 4.003, -2.0061, -4.5028, 4.003, -2.0061, -4.5037, 1.0110999, -2, -2.0037, 1.0110999, -2, -2.0037, 4.003, -2.0061, -4.0037, -2.9889, 0, -2.0037, 1.0110999, -2, -4.5037, 1.0110999, -2, -4.0037, -2.9889, 0, -2.0037, -2.9889, 0, -2.0037, 1.0110999, -2, -2.0037, 1.0110999, 2, -0.0037, -2.9889, 0, -0.0037, 1.0253999, 2, -2.0037, 1.0110999, 2, -2.0037, -2.9889, 0, -0.0037, -2.9889, 0, -5.0037, -5.9888997, -4, -4.0038, -2.9889998, 0, -4.5038, 1.0110999, -2, -5.0037, -5.9888997, -4, -4.0038, -4.989, 0, -4.0038, -2.9889998, 0, -0.0037999998, 3.0252, 0, -2.0037, 4.0029, -2.0061, -2.0037, 3.0110998, 0, -4.0038, -4.989, 0, 4, -5.9614997, -4, 2.9961998, -4.989, 0, -4.0038, -4.989, 0, -5.0037, -5.9888997, -4, 4, -5.9614997, -4, -2.0037, 4.0029, -2.0061, 2.9961998, 3.0110998, 0, 4, 5.0386, -4, -2.0037, 4.0029, -2.0061, -0.0037999998, 3.0252, 0, 2.9961998, 3.0110998, 0, 4, 5.0386, -4, -4.5028, 4.0029, -2.0061, -2.0037, 4.0029, -2.0061, 4, 5.0386, -4, -5.0000997, 4.9999, -4, -4.5028, 4.0029, -2.0061, -4.5038, 1.0110999, -2, -5.0000997, 4.9999, -4, -5.0037, -5.9888997, -4, -4.5038, 1.0110999, -2, -4.5028, 4.0029, -2.0061, -5.0000997, 4.9999, -4, 2.9961998, 3.0110998, 0, 4, -5.9614997, -4, 4, 5.0386, -4, 2.9961998, 3.0110998, 0, 2.9961998, -4.989, 0, 4, -5.9614997, -4)
 
@@ -216,28 +216,15 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -3.3, 2,
 newPosition = Vector3(4.5, 0, -2.5)
 newMap = "uid://r4glbon2f20k"
 
-[node name="hole" type="MeshInstance3D" parent="exits/DoorOut" unique_id=1183375135]
-transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
-mesh = SubResource("QuadMesh_matn3")
-surface_material_override/0 = SubResource("StandardMaterial3D_v0exy")
-
 [node name="Door3F" parent="exits" unique_id=1370542237 instance=ExtResource("8_un4rw")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 1.5, 0, 3)
 newPosition = Vector3(-0.5, 0, 9.5)
 newMap = "uid://dbc1w5r5ghn7a"
 
-[node name="hole" type="MeshInstance3D" parent="exits/Door3F" unique_id=1662884025]
-transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 1, 0.5)
-mesh = SubResource("QuadMesh_matn3")
-
 [node name="DebugDoor" parent="exits" unique_id=722165657 instance=ExtResource("8_un4rw")]
 transform = Transform3D(-4.3711378e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711378e-08, -4, 0, -4)
 newPosition = Vector3(7.5, 0, 0.5)
-newMap = "uid://b6d8nvjnktr0"
-
-[node name="hole" type="MeshInstance3D" parent="exits/DebugDoor" unique_id=1297557504]
-transform = Transform3D(1, 0, 0, 0, 0.9694451, -0.24530733, 0, 0.24530733, 0.9694451, 0, 1, 0.25)
-mesh = SubResource("QuadMesh_matn3")
+newMap = "uid://fp16w8ltkjp"
 
 [node name="Door2F" parent="exits" unique_id=444387764 instance=ExtResource("11_oktes")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -1, -2, 3)
@@ -245,12 +232,6 @@ newPosition = Vector3(1.5, 0, 9.5)
 newMap = "uid://2hwexkxmvyvk"
 key = "Hotel00"
 unlockDialog = Array[String](["You unlocked it with the the [color=yellow]Stairway Key[/color]."])
-
-[node name="plate" type="MeshInstance3D" parent="exits/Door2F" unique_id=823180485]
-transform = Transform3D(0.5, 0, 3.8963516e-20, 0, 1, 0, -1.9481758e-20, 0, 1, 0, 1.0060102, 0.10445547)
-mesh = ExtResource("12_qm143")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_xqfl4")
 
 [node name="mesh" type="Node" parent="." unique_id=334851500]
 
@@ -280,6 +261,28 @@ transform = Transform3D(-0.33, 0, -4.982861e-08, 0, 0.32999998, 0, 4.9828618e-08
 mesh = ExtResource("12_qm143")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_w2n64")
+
+[node name="hole" type="MeshInstance3D" parent="mesh" unique_id=1183375135]
+transform = Transform3D(1, 4.7722603e-15, 9.529983e-15, 0, 0.894154, -0.447759, -1.06581e-14, 0.447759, 0.894154, -3.3, 2.91602, 4.440853)
+mesh = SubResource("QuadMesh_matn3")
+skeleton = NodePath("../../exits/DoorOut")
+surface_material_override/0 = SubResource("StandardMaterial3D_v0exy")
+
+[node name="hole2" type="MeshInstance3D" parent="mesh" unique_id=1662884025]
+transform = Transform3D(1, 4.7722603e-15, 9.529983e-15, 0, 0.894154, -0.447759, -1.06581e-14, 0.447759, 0.894154, 1.5, 1, 3.5)
+mesh = SubResource("QuadMesh_matn3")
+skeleton = NodePath("../../exits/Door3F")
+
+[node name="hole3" type="MeshInstance3D" parent="mesh" unique_id=1297557504]
+transform = Transform3D(-4.3711378e-08, -0.24530733, -0.9694451, 0, 0.9694451, -0.24530733, 1, -1.0722721e-08, -4.237578e-08, -4.25, 1, -4)
+mesh = SubResource("QuadMesh_matn3")
+skeleton = NodePath("../../exits/DebugDoor")
+
+[node name="plate" type="MeshInstance3D" parent="mesh" unique_id=823180485]
+transform = Transform3D(0.5, 0, 1.0658139e-14, 0, 1, 0, -5.3290697e-15, 0, 1, -1, -0.9939898, 3.1044555)
+mesh = ExtResource("12_qm143")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_xqfl4")
 
 [node name="collision" type="StaticBody3D" parent="." unique_id=942252291]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
