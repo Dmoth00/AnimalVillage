@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="11_r8von"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="12_dr2ri"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="12_v4h5w"]
+[ext_resource type="Texture2D" uid="uid://r6287otvvpas" path="res://Assets/Sprites/stencils/sign_01.png" id="14_4n04y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
 resource_name = "chain"
@@ -338,6 +339,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_xqfl4")
 transform = Transform3D(-4.3711378e-08, -0.24530733, -0.9694451, 0, 0.9694451, -0.24530733, 1, -1.0722721e-08, -4.237578e-08, -3.2212484, 1, -4)
 mesh = SubResource("QuadMesh_bqp2e")
 skeleton = NodePath("../../exits/DebugDoor")
+
+[node name="floor_decal" type="Decal" parent="mesh" unique_id=972160506]
+transform = Transform3D(1, 0, 0, 0, 0.25881898, -0.9659258, 0, 0.9659258, 0.25881898, 0.86644423, 2.285286, -5.3284965)
+size = Vector3(4, 2, 3)
+texture_albedo = ExtResource("14_4n04y")
+modulate = Color(0.32, 0.20266666, 0, 0.65882355)
 
 [node name="collision" type="StaticBody3D" parent="." unique_id=942252291]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

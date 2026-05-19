@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 #enemyvars
 @export var health = 3.0
-@export var damage = 0.8
 @export var alertDistance = 8.0
 @export var maxVelocity = 1.0
 
@@ -35,7 +34,7 @@ func _process(delta):
 			#direction to go
 			dir = NewFunc.flat(tarpos-global_position).normalized()
 			#turns to where its going
-			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta)).normalized()
+			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*4)).normalized()
 			look_at(global_position-ldir)
 			#accel
 			vel=min(vel+delta/2,maxVelocity)
@@ -47,6 +46,7 @@ func _process(delta):
 			anim.play("ZombAnim/ZombAnimWalk",1.0,velocity.length()*1.2)
 		else: anim.play("ZombAnim/ZombAnimStand",1.0,1.0)
 	else:
+		#deacceleration is larger when zombo is hurt
 		vel=max(vel-delta*8,0)
 
 func _physics_process(delta):
@@ -65,15 +65,14 @@ func _hurt(dmg : float):
 	gvars.hatred+=randf_range(0.1,0.2)
 	gvars.bloodBag+=(1+gvars.hatred)*0.1
 	var bld=get_node("bloodSFX").duplicate()
-	get_tree().get_first_node_in_group("GM").add_child(bld)
-	bld.global_transform=global_transform
-	bld.global_position.y+=0.5
+	get_parent().add_child(bld)
+	bld.global_position=global_position
 	bld.act()
 	if health>0:
 		anim.play("ZombAnim/ZombAnimHurt")
 		vel=-24.0
 		target=null
-		re_target.start(2.0)
+		re_target.start(1.5)
 		state=1
 	else:
 		get_tree().get_first_node_in_group("Player").get_node("bloodGet").restart()

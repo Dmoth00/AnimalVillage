@@ -14,6 +14,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="12_qm143"]
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="13_xqfl4"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="14_a57dp"]
+[ext_resource type="Texture2D" uid="uid://c83f7r5q81mv0" path="res://Assets/Sprites/stencils/sign_03.png" id="15_w2n64"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51ldc"]
 resource_name = "BrickMat00"
@@ -283,6 +284,12 @@ transform = Transform3D(0.5, 0, 1.0658139e-14, 0, 1, 0, -5.3290697e-15, 0, 1, -1
 mesh = ExtResource("12_qm143")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_xqfl4")
+
+[node name="floor_decal" type="Decal" parent="mesh" unique_id=2026927767]
+transform = Transform3D(1, 0, 0, 0, 0.25881898, -0.9659258, 0, 0.9659258, 0.25881898, -0.4842869, 2.285286, -5.3284965)
+size = Vector3(4, 2, 3)
+texture_albedo = ExtResource("15_w2n64")
+modulate = Color(0.32, 0.20266666, 0, 0.65882355)
 
 [node name="collision" type="StaticBody3D" parent="." unique_id=942252291]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)

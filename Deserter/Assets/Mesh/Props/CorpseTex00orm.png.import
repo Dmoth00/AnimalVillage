@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rswldrtybt1v"
-path.s3tc="res://.godot/imported/LQgrateTex00a.png-e68912a5fd856893d659b0f3c30996ab.s3tc.ctex"
-path.etc2="res://.godot/imported/LQgrateTex00a.png-e68912a5fd856893d659b0f3c30996ab.etc2.ctex"
+uid="uid://b714fqhco4i83"
+path.s3tc="res://.godot/imported/CorpseTex00orm.png-02fea9b0798130aaddb7f9d518d77c84.s3tc.ctex"
+path.etc2="res://.godot/imported/CorpseTex00orm.png-02fea9b0798130aaddb7f9d518d77c84.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/LQgrateTex00a.png"
-dest_files=["res://.godot/imported/LQgrateTex00a.png-e68912a5fd856893d659b0f3c30996ab.s3tc.ctex", "res://.godot/imported/LQgrateTex00a.png-e68912a5fd856893d659b0f3c30996ab.etc2.ctex"]
+source_file="res://Assets/Mesh/Props/CorpseTex00orm.png"
+dest_files=["res://.godot/imported/CorpseTex00orm.png-02fea9b0798130aaddb7f9d518d77c84.s3tc.ctex", "res://.godot/imported/CorpseTex00orm.png-02fea9b0798130aaddb7f9d518d77c84.etc2.ctex"]
 
 [params]
 

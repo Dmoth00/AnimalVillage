@@ -1,25 +1,23 @@
-extends StaticBody3D
-@onready var health : int = 5
+extends CharacterBody3D
+@onready var health : int = 6
 @export var damage=0.5
 @onready var anim=$anim
 
 @onready var id : String
 @export var dnr : bool = false
 
-var knockdown = false
-
+var knockdown = true
 
 func _hurt(_dmg : float):
 	health -= 1
 	gvars.hatred+=randf_range(0.1,0.3)
 	gvars.bloodBag+=(1+gvars.hatred)*0.1
 	var bld=get_node("bloodSFX").duplicate()
-	get_tree().get_first_node_in_group("GM").add_child(bld)
-	bld.global_transform=global_transform
-	bld.global_position.y+=0.5
+	get_parent().add_child(bld)
+	bld.global_position=global_position
 	bld.act()
 	match health:
-		5: anim.play("Dhead_0")
+		5: anim.play("Dhead_1")
 		4: anim.play("Dhead_2")
 		3: anim.play("Dhead_3")
 		2: anim.play("Dhead_4")

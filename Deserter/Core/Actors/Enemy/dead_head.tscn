@@ -567,8 +567,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_kk1o3"]
 size = Vector3(1, 1.5, 1.2)
 
-[node name="DeadHead" type="StaticBody3D" unique_id=1444487344 groups=["Harm", "Id", "Mortal"]]
-collision_layer = 7
+[node name="DeadHead" type="CharacterBody3D" unique_id=687734863 groups=["Harm", "Id", "Mortal"]]
+collision_layer = 6
 script = ExtResource("1_1begv")
 
 [node name="DheadArm" type="Node3D" parent="." unique_id=832088429]
@@ -645,3 +645,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77368915, 0)
 shape = SubResource("BoxShape3D_kk1o3")
 
 [node name="bloodSFX" parent="." unique_id=602172997 instance=ExtResource("5_ft235")]
+top_level = true

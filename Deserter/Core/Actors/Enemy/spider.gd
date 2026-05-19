@@ -61,8 +61,8 @@ func _hurt(dmg : float):
 	gvars.hatred+=randf_range(0.1,0.2)
 	gvars.bloodBag+=(1+gvars.hatred)*0.1
 	var bld=get_node("bloodSFX").duplicate()
-	get_tree().get_first_node_in_group("GM").add_child(bld)
-	bld.global_transform=global_transform
+	get_parent().add_child(bld)
+	bld.global_position=global_position
 	bld.act()
 	if health>0:
 		vel=0

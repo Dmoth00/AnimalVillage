@@ -268,12 +268,13 @@ func _hurt(other : Node3D):
 	else:
 		print("Ouch!")
 		if other.knockdown:
-			can_move_timer.start(2.0)
+			can_move_timer.start(3.0)
 			vul_timer.start(4.0)
+			get_node("recover").start(1.0)
 			anim.play("CharAnim_KnockDown")
 		else:
 			can_move_timer.start(1.0)
-			vul_timer.start(3.0)
+			vul_timer.start(2.0)
 			anim.play("CharAnim_Hurt")
 
 func step():
@@ -309,3 +310,6 @@ func _on_awake_timer() -> void:
 	flashlight()
 
 func _on_death_timer() -> void: gvars.reset()
+
+#hey this one just exists cause I didn't wanna make a compound animation or an animation tree
+func _recover() -> void: anim.play("CharAnim_Recover")

@@ -1,11 +1,15 @@
 [gd_scene format=4 uid="uid://bulbumhh1ttn7"]
 
 [ext_resource type="Texture2D" uid="uid://mbnwdtf3k4vx" path="res://Assets/Mesh/Props/CorpseTex00.png" id="1_8ghp0"]
+[ext_resource type="Texture2D" uid="uid://b714fqhco4i83" path="res://Assets/Mesh/Props/CorpseTex00orm.png" id="2_22djf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_volp7"]
 resource_name = "corpseMat"
 cull_mode = 2
 albedo_texture = ExtResource("1_8ghp0")
+metallic_specular = 0.4
+roughness_texture = ExtResource("2_22djf")
+roughness_texture_channel = 4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_pl6sa"]
 resource_name = "corpse_ZombMesh_002_Cube_010"
