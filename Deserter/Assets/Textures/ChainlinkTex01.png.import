@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gpnjio7k1g6d"
-path.s3tc="res://.godot/imported/gridTex00.png-bdfbf6d09ba87d281aec496e42ca27c5.s3tc.ctex"
-path.etc2="res://.godot/imported/gridTex00.png-bdfbf6d09ba87d281aec496e42ca27c5.etc2.ctex"
+uid="uid://vrgompeg0dtq"
+path.s3tc="res://.godot/imported/ChainlinkTex01.png-e2472943bfe01605e9bc718632b71e09.s3tc.ctex"
+path.etc2="res://.godot/imported/ChainlinkTex01.png-e2472943bfe01605e9bc718632b71e09.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/gridTex00.png"
-dest_files=["res://.godot/imported/gridTex00.png-bdfbf6d09ba87d281aec496e42ca27c5.s3tc.ctex", "res://.godot/imported/gridTex00.png-bdfbf6d09ba87d281aec496e42ca27c5.etc2.ctex"]
+source_file="res://Assets/Textures/ChainlinkTex01.png"
+dest_files=["res://.godot/imported/ChainlinkTex01.png-e2472943bfe01605e9bc718632b71e09.s3tc.ctex", "res://.godot/imported/ChainlinkTex01.png-e2472943bfe01605e9bc718632b71e09.etc2.ctex"]
 
 [params]
 

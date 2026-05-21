@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="8_fosn7"]
 [ext_resource type="Texture2D" uid="uid://do4knmee0xpkn" path="res://Assets/Textures/WallTex00b.png" id="8_otslp"]
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="9_cyweg"]
+[ext_resource type="Texture2D" uid="uid://b4yibl526s0hd" path="res://Assets/Textures/mossNmap00.png" id="9_j38p6"]
+[ext_resource type="Texture2D" uid="uid://b08d75xmx86sj" path="res://Assets/Textures/CarpetTex00a.png" id="10_boc30"]
+[ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="12_boc30"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="16_bwocg"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="26_ky16c"]
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="36_scpfs"]
@@ -145,6 +148,14 @@ shadow_mesh = SubResource("ArrayMesh_a8584")
 albedo_texture = ExtResource("8_otslp")
 uv1_scale = Vector3(0.5, 1, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ra270"]
+albedo_color = Color(0.88, 0.91199994, 1, 1)
+albedo_texture = ExtResource("9_j38p6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8i24j"]
+albedo_texture = ExtResource("10_boc30")
+uv1_scale = Vector3(0.5, 0.5, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ofc"]
 resource_name = "Material"
 cull_mode = 2
@@ -184,11 +195,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lr7es")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5576r"]
+albedo_color = Color(0.616, 0.637, 0.7, 1)
+albedo_texture = ExtResource("12_boc30")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpxg"]
 albedo_texture = ExtResource("36_scpfs")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 
-[node name="Hotel2F" type="Node3D" unique_id=1613485242]
+[node name="Hotel1F" type="Node3D" unique_id=1613485242]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1386254940]
 environment = ExtResource("1_y6jr4")
@@ -203,46 +218,49 @@ autoplay = true
 
 [node name="StairwayLow" parent="exits" unique_id=444387764 instance=ExtResource("3_fwy6a")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5, 0, 9)
-newPosition = Vector3(3.2, 2, 3.5)
+newPosition = Vector3(-1.5, 0, 2.5)
 newMap = "uid://cmuyyi70u5iiw"
 
 [node name="hole" type="MeshInstance3D" parent="exits/StairwayLow" unique_id=151686937]
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_cpmhi")
 
-[node name="Hallway" type="Node3D" parent="." unique_id=1273045251]
+[node name="collisions" type="StaticBody3D" parent="." unique_id=2070098538]
+visible = false
 
-[node name="collisions" type="StaticBody3D" parent="Hallway" unique_id=2070098538]
-
-[node name="hallway" type="CollisionShape3D" parent="Hallway/collisions" unique_id=2074386407]
+[node name="hallway" type="CollisionShape3D" parent="collisions" unique_id=2074386407]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_swto2")
 
-[node name="mesh" type="Node3D" parent="Hallway" unique_id=790030261]
+[node name="mesh" type="Node3D" parent="." unique_id=790030261]
 
-[node name="meshHotelRoom00" type="MeshInstance3D" parent="Hallway/mesh" unique_id=1988017214]
+[node name="meshHotelRoom00" type="MeshInstance3D" parent="mesh" unique_id=1988017214]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.03671837, 0, 0)
 layers = 33
 mesh = SubResource("ArrayMesh_klk5d")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1w6xj")
+surface_material_override/1 = SubResource("StandardMaterial3D_ra270")
+surface_material_override/2 = SubResource("StandardMaterial3D_8i24j")
 
-[node name="boards0" type="MeshInstance3D" parent="Hallway/mesh" unique_id=1187537971]
+[node name="boards0" type="MeshInstance3D" parent="mesh" unique_id=1187537971]
 transform = Transform3D(-5.64192e-09, -0.89990824, 0.43607938, -1.9596733e-08, 0.43607938, 0.89990824, -1.1950002, -2.9025289e-09, -1.6816392e-08, 14.442012, 0.91417086, 5.5254483)
 mesh = SubResource("ArrayMesh_vgv1n")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5576r")
 
-[node name="boards4" type="MeshInstance3D" parent="Hallway/mesh" unique_id=845082395]
+[node name="boards4" type="MeshInstance3D" parent="mesh" unique_id=845082395]
 transform = Transform3D(1.10112154e-07, 0.89990824, -0.43607935, -1.9596733e-08, 0.43607935, 0.89990824, 1.1950002, -7.576995e-08, 5.493966e-08, -15.4451885, 0.91417086, -6.5045266)
 mesh = SubResource("ArrayMesh_vgv1n")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5576r")
 
-[node name="floorsign" type="MeshInstance3D" parent="Hallway/mesh" unique_id=365192449]
+[node name="floorsign" type="MeshInstance3D" parent="mesh" unique_id=365192449]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, -6.5057244, 1.430188, 9.327645)
 mesh = ExtResource("16_bwocg")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xpxg")
 
-[node name="floorsign2" type="MeshInstance3D" parent="Hallway/mesh" unique_id=1272089264]
+[node name="floorsign2" type="MeshInstance3D" parent="mesh" unique_id=1272089264]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, 5.4942756, 1.430188, 9.327645)
 mesh = ExtResource("16_bwocg")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xpxg")

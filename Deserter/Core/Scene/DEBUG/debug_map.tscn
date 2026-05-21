@@ -174,7 +174,7 @@ newMap = "uid://cnqovkmyuiyoa"
 
 [node name="return6" parent="exits" unique_id=444387764 instance=ExtResource("4_mworf")]
 transform = Transform3D(1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 5.5, 0, 14)
-newPosition = Vector3(0, -2, -21.5)
+newPosition = Vector3(0, -2, -21)
 newMap = "uid://b7krph161hddm"
 
 [node name="return4" parent="exits" unique_id=406543328 instance=ExtResource("4_mworf")]
