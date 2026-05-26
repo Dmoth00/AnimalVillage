@@ -270,6 +270,11 @@ transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, -1.5
 newPosition = Vector3(0.5, 0, 9.5)
 newMap = "uid://bbjaeh85axrbd"
 
+[node name="DoorGF" parent="exits" unique_id=1680122453 instance=ExtResource("8_5ytye")]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 1, -2, 3)
+newPosition = Vector3(-0.5, 0, 9.5)
+newMap = "uid://js26c8umnqjr"
+
 [node name="mesh" type="Node" parent="." unique_id=1807266034]
 
 [node name="chain" type="MeshInstance3D" parent="mesh" unique_id=1341719009]

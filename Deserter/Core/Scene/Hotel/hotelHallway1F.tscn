@@ -255,12 +255,12 @@ mesh = SubResource("ArrayMesh_vgv1n")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_5576r")
 
-[node name="floorsign" type="MeshInstance3D" parent="mesh" unique_id=365192449]
+[node name="floorsign00" type="MeshInstance3D" parent="mesh" unique_id=365192449]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, -6.5057244, 1.430188, 9.327645)
 mesh = ExtResource("16_bwocg")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xpxg")
 
-[node name="floorsign2" type="MeshInstance3D" parent="mesh" unique_id=1272089264]
+[node name="floorsign01" type="MeshInstance3D" parent="mesh" unique_id=1272089264]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, 5.4942756, 1.430188, 9.327645)
 mesh = ExtResource("16_bwocg")
 surface_material_override/0 = SubResource("StandardMaterial3D_1xpxg")
