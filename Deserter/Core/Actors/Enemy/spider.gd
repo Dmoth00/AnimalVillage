@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 #enemyvars
 @export var health = 1.0
-@export var damage = 0.0
 @export var alertDistance = 4.0
 @export var maxVelocity = 6.0
 
@@ -18,8 +17,8 @@ var state : int = 0
 
 var dis : float = 0.0
 
-@onready var mesh = $SpiderArm/Skeleton3D/SpiderMesh
-@onready var anim = $anim
+@export var mesh : MeshInstance3D
+@export var anim : AnimationPlayer
 
 #id for death & ressurection
 @onready var id : String
@@ -42,6 +41,7 @@ func _process(delta):
 		else:
 		#deaccel
 			vel=max(vel-maxVelocity*delta*4,0.0)
+	else: vel=max(vel-maxVelocity*delta*4,0.0)
 
 func _physics_process(delta):
 	
@@ -54,7 +54,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	#walk animation
-	anim.speed_scale=velocity.length()
+	anim.speed_scale=velocity.length()*0.5
 
 func _hurt(dmg : float):
 	health -= dmg
