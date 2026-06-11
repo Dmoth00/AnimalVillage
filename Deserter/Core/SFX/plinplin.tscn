@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1a1s8o0iq6io"]
+
+[ext_resource type="AudioStream" uid="uid://dmwjbgauo3jq8" path="res://Assets/Sounds/SFX/snd_waterdrop.wav" id="1_jq3g5"]
+[ext_resource type="Script" uid="uid://catguuiufj3rn" path="res://Core/SFX/plinplin.gd" id="2_xlcc8"]
+
+[node name="plinplin" type="AudioStreamPlayer" unique_id=2038828281]
+stream = ExtResource("1_jq3g5")
+volume_db = -20.0
+script = ExtResource("2_xlcc8")
+
+[node name="t" type="Timer" parent="." unique_id=581726338]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="t" to="." method="_on_t_timeout"]

@@ -39,7 +39,9 @@
 [ext_resource type="Script" uid="uid://drxuwd7ehkdku" path="res://Core/Actors/NPC/Enviroment/act_item.gd" id="23_3u0eh"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="25_fwtqs"]
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="26_r8ida"]
+[ext_resource type="Texture2D" uid="uid://d3vmjylrsde6k" path="res://Assets/Sprites/stencils/drown_graffiti.png" id="31_ltk81"]
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="31_r8ida"]
+[ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="32_ype5r"]
 [ext_resource type="PackedScene" uid="uid://1bhffbpyvms6" path="res://Core/Props/iteractibles/one_way_door.tscn" id="36_ubl85"]
 [ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/Hotel/scripts/event_01.gd" id="41_rsgxe"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="42_qk0cc"]
@@ -1072,6 +1074,10 @@ albedo_texture = ExtResource("21_i3cx6")
 metallic_specular = 0.4
 roughness = 0.29
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ltk81"]
+height = 1.03426
+radius = 1.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpxg"]
 albedo_texture = ExtResource("31_r8ida")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
@@ -1548,6 +1554,32 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1bvhy")
 transform = Transform3D(-0.8374423, 0, 0.54652584, 0.18037356, 0.94396806, 0.27638665, -0.51590294, 0.33003664, -0.7905188, -2.9579659, 0.24562275, 7.919122)
 size = Vector3(12.220459, 4.1073, 10.107239)
 
+[node name="blood01" type="Decal" parent="room_blood" unique_id=193468000]
+transform = Transform3D(-4.3711385e-08, 0.86602515, 0.49999997, 0, 0.49999985, -0.86602527, -0.99999994, -3.7855163e-08, -2.1855692e-08, -8.93087, 0.09893668, 11.401284)
+layers = 33
+size = Vector3(4.1934576, 0.82305145, 4.1940694)
+texture_albedo = ExtResource("31_ltk81")
+texture_orm = ExtResource("32_ype5r")
+modulate = Color(0.62, 0, 0, 1)
+normal_fade = 0.015
+upper_fade = 0.764736
+lower_fade = 0.00394171
+distance_fade_begin = 15.0
+cull_mask = 32
+
+[node name="blood02" type="Decal" parent="room_blood" unique_id=1579092128]
+transform = Transform3D(-4.3711385e-08, 0.86602515, 0.49999997, 0, 0.49999985, -0.86602527, -0.99999994, -3.7855163e-08, -2.1855692e-08, -9.787067, 1.7842035, 6.1537633)
+layers = 33
+size = Vector3(5.2907476, 0.61709213, 3.1200724)
+texture_albedo = ExtResource("31_ltk81")
+texture_orm = ExtResource("32_ype5r")
+modulate = Color(0.62, 0, 0, 1)
+normal_fade = 0.015
+upper_fade = 0.764736
+lower_fade = 0.00394171
+distance_fade_begin = 15.0
+cull_mask = 32
+
 [node name="Hallway" type="Node3D" parent="." unique_id=1273045251]
 
 [node name="collisions" type="StaticBody3D" parent="Hallway" unique_id=2070098538]
@@ -1642,6 +1674,10 @@ texts1 = Array[String](["The skin is missing.", "...?", "A key is embedded in it
 texts2 = Array[String](["It's very fresh. The meat is still edible."])
 itemID = "Hotel01"
 
+[node name="col" parent="Hallway/mesh/examine" index="0" unique_id=1968002235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24344349, 0.509007, 0.06726074)
+shape = SubResource("CylinderShape3D_ltk81")
+
 [node name="floorsign" type="MeshInstance3D" parent="Hallway/mesh" unique_id=365192449]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, -6.5057244, 1.430188, 9.327645)
 mesh = ExtResource("20_fttr7")
@@ -1709,3 +1745,4 @@ pitch_scale = 0.9
 [editable path="room_locked/hotelbathroomR"]
 [editable path="room_blood/hotelbathroomR"]
 [editable path="Hallway/mesh/corpsePosable"]
+[editable path="Hallway/mesh/examine"]

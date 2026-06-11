@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1103yfa6et0k"
-path.s3tc="res://.godot/imported/TileTex00.png-9e1a5d0a8250cfc4559aa07d806a3094.s3tc.ctex"
-path.etc2="res://.godot/imported/TileTex00.png-9e1a5d0a8250cfc4559aa07d806a3094.etc2.ctex"
+uid="uid://hiplwilwmrot"
+path.s3tc="res://.godot/imported/PoolTex00.png-79817251944df67c7f255527980e6431.s3tc.ctex"
+path.etc2="res://.godot/imported/PoolTex00.png-79817251944df67c7f255527980e6431.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/TileTex00.png"
-dest_files=["res://.godot/imported/TileTex00.png-9e1a5d0a8250cfc4559aa07d806a3094.s3tc.ctex", "res://.godot/imported/TileTex00.png-9e1a5d0a8250cfc4559aa07d806a3094.etc2.ctex"]
+source_file="res://Assets/Textures/PoolTex00.png"
+dest_files=["res://.godot/imported/PoolTex00.png-79817251944df67c7f255527980e6431.s3tc.ctex", "res://.godot/imported/PoolTex00.png-79817251944df67c7f255527980e6431.etc2.ctex"]
 
 [params]
 

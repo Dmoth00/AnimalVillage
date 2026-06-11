@@ -62,6 +62,19 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_rwe0r")
 size = Vector2(0.2, 0.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkmfy"]
+resource_name = "MatRust"
+cull_mode = 2
+albedo_texture = ExtResource("4_dojsn")
+metallic_specular = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_acjuq"]
+material = SubResource("StandardMaterial3D_jkmfy")
+top_radius = 0.01
+bottom_radius = 0.2
+height = 0.05
+radial_segments = 12
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
 resource_name = "chain"
 transparency = 2
@@ -70,7 +83,7 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("3_s04oj")
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_e63j0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_22ige"]
 _surfaces = [{
 "aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
 "format": 34896613377,
@@ -100,20 +113,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("AAAAAAAA/5///87z/v//n/7/AAD///+fAADO8wAA/58AADAM////n/7///8AAP+f//8wDAAA/58AAP///v//n/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_e63j0")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fbxc"]
-resource_name = "MatRust"
-cull_mode = 2
-albedo_texture = ExtResource("4_dojsn")
-metallic_specular = 0.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_acjuq"]
-material = SubResource("StandardMaterial3D_3fbxc")
-top_radius = 0.01
-bottom_radius = 0.2
-height = 0.05
-radial_segments = 12
+shadow_mesh = SubResource("ArrayMesh_22ige")
 
 [node name="lamp" type="OmniLight3D" unique_id=865691026]
 light_color = Color(1, 0.976, 0.76, 1)
@@ -132,12 +132,12 @@ lifetime = 4.0
 process_material = SubResource("ParticleProcessMaterial_vew2p")
 draw_pass_1 = SubResource("QuadMesh_enl6q")
 
-[node name="chain" type="MeshInstance3D" parent="." unique_id=1872561027]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
-mesh = SubResource("ArrayMesh_34qpu")
-skeleton = NodePath("")
-
 [node name="lampshade" type="MeshInstance3D" parent="." unique_id=1776090048]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.25756907, 0)
 mesh = SubResource("CylinderMesh_acjuq")
-skeleton = NodePath("../chain")
+skeleton = NodePath("chain")
+
+[node name="chain" type="MeshInstance3D" parent="lampshade" unique_id=1872561027]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12878454, 0)
+mesh = SubResource("ArrayMesh_34qpu")
+skeleton = NodePath("")
