@@ -32,7 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="31_h81d4"]
 [ext_resource type="Texture2D" uid="uid://dgsxakhcspft2" path="res://Assets/Sprites/BloodAnim/bloodstain00.png" id="32_tpi2x"]
 [ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="33_b83w6"]
-[ext_resource type="PackedScene" uid="uid://cysnj64n7hlau" path="res://Core/Scene/town/townSubscenes/prop_desk.tscn" id="34_elf5q"]
+[ext_resource type="PackedScene" uid="uid://cysnj64n7hlau" path="res://Core/Props/general/prop_desk.tscn" id="34_elf5q"]
 [ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="35_cqsy8"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="36_i0h2g"]
 [ext_resource type="Texture2D" uid="uid://de6tke0h16tf0" path="res://Assets/Sprites/BloodAnim/bloodstain01.png" id="37_v8kao"]

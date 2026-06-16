@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cp6kpt0ess18i" path="res://Assets/Textures/BedsheetTex.png" id="22_urcsk"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="23_in5y5"]
 [ext_resource type="Texture2D" uid="uid://6er2k5vaish5" path="res://Assets/Mesh/Props/hangerTex.png" id="24_c0x1m"]
-[ext_resource type="PackedScene" uid="uid://cysnj64n7hlau" path="res://Core/Scene/town/townSubscenes/prop_desk.tscn" id="24_oexgy"]
+[ext_resource type="PackedScene" uid="uid://cysnj64n7hlau" path="res://Core/Props/general/prop_desk.tscn" id="24_oexgy"]
 [ext_resource type="Texture2D" uid="uid://bxnl1aap6y1xf" path="res://Assets/Textures/SheetTex.png" id="25_cuey7"]
 [ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="25_urcsk"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="26_urcsk"]
