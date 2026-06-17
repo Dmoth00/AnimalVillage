@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://spljdbm2yq37" path="res://Assets/Textures/ClayTex.png" id="22_x0awq"]
 [ext_resource type="Texture2D" uid="uid://bymaalmx6fjqd" path="res://Assets/Textures/LeavesTex00.png" id="23_4kh1r"]
 [ext_resource type="PackedScene" uid="uid://c2ljudc0bx47e" path="res://Core/Actors/Enemy/dead_head.tscn" id="25_iso63"]
+[ext_resource type="ArrayMesh" uid="uid://1kxpt2sy62lb" path="res://Assets/Mesh/Props/saved_mesh/chair_wood.tres" id="25_x0awq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpe3v"]
 albedo_texture = ExtResource("18_x0awq")
@@ -1159,6 +1160,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2e081")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56v4i"]
+albedo_texture = ExtResource("19_yc6rr")
+metallic_specular = 0.0
+
 [node name="HotelHallwayGf" type="Node3D" unique_id=702840133]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=875151065]
@@ -1637,6 +1642,20 @@ surface_material_override/0 = SubResource("StandardMaterial3D_nmrnx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30089033, 0)
 mesh = SubResource("ArrayMesh_j3ne0")
 skeleton = NodePath("")
+
+[node name="chairMesh00" type="MeshInstance3D" parent="lobby" unique_id=453891241]
+transform = Transform3D(1.2732788, -7.0082544e-09, 0.20171021, -9.8147225e-08, 1, 4.013393e-07, -0.26222327, -4.083186e-07, 0.9794453, -2.7621398, 0.002792594, -1.6805096)
+layers = 33
+mesh = ExtResource("25_x0awq")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_56v4i")
+
+[node name="chairMesh01" type="MeshInstance3D" parent="lobby" unique_id=1416961573]
+transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, 1.2378602, 0.002792594, -1.6805096)
+layers = 33
+mesh = ExtResource("25_x0awq")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_56v4i")
 
 [node name="DeadHead" parent="." unique_id=687734863 instance=ExtResource("25_iso63")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -10)

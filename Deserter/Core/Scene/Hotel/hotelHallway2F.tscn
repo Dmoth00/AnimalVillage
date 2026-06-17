@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://bofdbi8pb8vhl" path="res://Core/Props/general/shadowman.tscn" id="13_ob7wn"]
 [ext_resource type="PackedScene" uid="uid://do2eey476nql3" path="res://Core/Scene/Hotel/hotelSubscenes/hotelbathroomL.tscn" id="14_0bkq5"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="15_lqp2n"]
-[ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="16_17vbh"]
 [ext_resource type="PackedScene" uid="uid://dqhlqtit3fx7t" path="res://Core/Props/gore/blood_00.tscn" id="18_2i3b2"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="19_2i3b2"]
 [ext_resource type="PackedScene" uid="uid://diydqciwuurwy" path="res://Core/Props/gore/blood_01.tscn" id="19_y7hfm"]
@@ -39,6 +38,8 @@
 [ext_resource type="Script" uid="uid://drxuwd7ehkdku" path="res://Core/Actors/NPC/Enviroment/act_item.gd" id="23_3u0eh"]
 [ext_resource type="Texture2D" uid="uid://ctdik112r7syv" path="res://Assets/Textures/BrickTex02.png" id="25_fwtqs"]
 [ext_resource type="Texture2D" uid="uid://cy5mypi5y7p8u" path="res://Assets/Textures/bricksNmap01.png" id="26_r8ida"]
+[ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="27_ype5r"]
+[ext_resource type="Texture2D" uid="uid://dn8jyte7eek5x" path="res://Assets/Textures/posters/PaintingTex02.png" id="30_fe1d3"]
 [ext_resource type="Texture2D" uid="uid://d3vmjylrsde6k" path="res://Assets/Sprites/stencils/drown_graffiti.png" id="31_ltk81"]
 [ext_resource type="Texture2D" uid="uid://dt5papi2ifeum" path="res://Assets/Mesh/Props/signsTex00.png" id="31_r8ida"]
 [ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="32_ype5r"]
@@ -47,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="42_qk0cc"]
 [ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="43_3jbj5"]
 [ext_resource type="AudioStream" uid="uid://dlk2tpvrqh1or" path="res://Assets/Sounds/SFX/snd_locked01.wav" id="44_8xnsb"]
+[ext_resource type="PackedScene" uid="uid://cifoa1413chdy" path="res://Core/Actors/NPC/Enviroment/examine_NPC.tscn" id="49_fe1d3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
 albedo_texture = ExtResource("4_n5f65")
@@ -712,6 +714,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_it42q")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rjjb"]
+albedo_texture = ExtResource("27_ype5r")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0bkq5"]
+material = SubResource("StandardMaterial3D_8rjjb")
+size = Vector2(0.5, 0.7)
+orientation = 1
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lign4"]
 resource_name = "MatFrame"
 cull_mode = 2
@@ -779,8 +789,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cdchy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pu02x"]
-albedo_texture = ExtResource("16_17vbh")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqp2n"]
+albedo_texture = ExtResource("30_fe1d3")
+uv1_scale = Vector3(0.9, 0.75, 0.75)
+uv1_offset = Vector3(0.05, 0.245, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layaa"]
 resource_name = "Material"
@@ -1519,6 +1531,16 @@ transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 0.8, -6.521637, 0, 4.45465)
 mesh = SubResource("ArrayMesh_cxkhk")
 skeleton = NodePath("")
 
+[node name="paper00" type="MeshInstance3D" parent="room_blood/nightstandMesh" unique_id=1930262199]
+transform = Transform3D(0.9935873, 0, -0.113064386, 0, 1.5384616, 0, 0.14133048, 0, 1.2419841, -0.01153183, 1.0096668, 0.051041126)
+mesh = SubResource("QuadMesh_0bkq5")
+skeleton = NodePath("../../tableMesh")
+
+[node name="paper01" type="MeshInstance3D" parent="room_blood/nightstandMesh" unique_id=584801699]
+transform = Transform3D(0.9479746, 0, -0.31834722, 0, 1.5384616, 0, 0.39793402, 0, 1.1849682, -0.0059394836, 1.0469451, 0.01091814)
+mesh = SubResource("QuadMesh_0bkq5")
+skeleton = NodePath("../../tableMesh")
+
 [node name="nightstandMesh2" type="MeshInstance3D" parent="room_blood" unique_id=768356588]
 transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 0.8, -4.521637, 0, 4.45465)
 layers = 33
@@ -1529,7 +1551,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, -5.5528297, 1.32393, 3.3399696)
 mesh = SubResource("ArrayMesh_1jm2t")
 skeleton = NodePath("")
-surface_material_override/1 = SubResource("StandardMaterial3D_pu02x")
+surface_material_override/1 = SubResource("StandardMaterial3D_lqp2n")
 
 [node name="tableMesh" type="MeshInstance3D" parent="room_blood" unique_id=208511759]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 12)
@@ -1554,7 +1576,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1bvhy")
 transform = Transform3D(-0.8374423, 0, 0.54652584, 0.18037356, 0.94396806, 0.27638665, -0.51590294, 0.33003664, -0.7905188, -2.9579659, 0.24562275, 7.919122)
 size = Vector3(12.220459, 4.1073, 10.107239)
 
-[node name="blood01" type="Decal" parent="room_blood" unique_id=193468000]
+[node name="she was" type="Decal" parent="room_blood" unique_id=193468000]
 transform = Transform3D(-4.3711385e-08, 0.86602515, 0.49999997, 0, 0.49999985, -0.86602527, -0.99999994, -3.7855163e-08, -2.1855692e-08, -8.93087, 0.09893668, 11.401284)
 layers = 33
 size = Vector3(4.1934576, 0.82305145, 4.1940694)
@@ -1567,8 +1589,8 @@ lower_fade = 0.00394171
 distance_fade_begin = 15.0
 cull_mask = 32
 
-[node name="blood02" type="Decal" parent="room_blood" unique_id=1579092128]
-transform = Transform3D(-4.3711385e-08, 0.86602515, 0.49999997, 0, 0.49999985, -0.86602527, -0.99999994, -3.7855163e-08, -2.1855692e-08, -9.787067, 1.7842035, 6.1537633)
+[node name="drowned" type="Decal" parent="room_blood/she was" unique_id=1579092128]
+transform = Transform3D(1, 0, -1.7763568e-15, -3.5527137e-15, 1.0000001, 8.2735124e-16, -1.7763568e-15, -2.9802322e-08, 1.0000001, 5.2475214, 0.10114288, -1.8875828)
 layers = 33
 size = Vector3(5.2907476, 0.61709213, 3.1200724)
 texture_albedo = ExtResource("31_ltk81")
@@ -1738,6 +1760,10 @@ stream = ExtResource("44_8xnsb")
 unit_size = 8.0
 pitch_scale = 0.9
 
+[node name="examine" parent="." unique_id=1421949486 instance=ExtResource("49_fe1d3")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -51.564568, 0, 4.774091)
+texts = Array[String](["An official looking memo. It's wet and hard to read.", "\"The unfortunate accidental drowning of an intruder who apparently entered the pool in the middle of the night\"...", "\"Rumours of foul play to be summarily supressed\"...", "\"The intruder's cadaver doesn't match any of our guests  and remains unidentified\"... ", "\"The Hotel urges police to move quickly to close the case\"..."])
+
 [connection signal="body_entered" from="event03" to="event03" method="_on_body_entered"]
 
 [editable path="room_locked/hotelbathroomL"]
@@ -1746,3 +1772,4 @@ pitch_scale = 0.9
 [editable path="room_blood/hotelbathroomR"]
 [editable path="Hallway/mesh/corpsePosable"]
 [editable path="Hallway/mesh/examine"]
+[editable path="examine"]
