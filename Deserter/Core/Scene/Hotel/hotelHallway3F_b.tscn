@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://t13s3neg8kfe" path="res://Assets/Textures/TileTex01.png" id="10_6vywg"]
 [ext_resource type="Texture2D" uid="uid://cp6kpt0ess18i" path="res://Assets/Textures/BedsheetTex.png" id="10_iv2g0"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="11_83bpk"]
+[ext_resource type="Texture2D" uid="uid://bj7jefjhayfma" path="res://Assets/Textures/posters/PaintingTex03.png" id="12_o017y"]
 [ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="12_tacsu"]
 [ext_resource type="ArrayMesh" uid="uid://c5fjfhq8a17pq" path="res://Assets/Mesh/Props/saved_mesh/potted_plant.tres" id="13_3gvrj"]
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="13_o017y"]
@@ -26,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="24_q4gs6"]
 [ext_resource type="Texture2D" uid="uid://c80rk8ipqvfnj" path="res://Assets/Textures/posters/photo00.png" id="26_jqlgb"]
 [ext_resource type="Texture2D" uid="uid://swjwu6tm0441" path="res://Assets/Textures/Leather00.png" id="27_njf0p"]
-[ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="28_igicu"]
 [ext_resource type="Shader" uid="uid://b4wifleaux582" path="res://Assets/Shaders/waterShader_copy.tres" id="28_s3hak"]
 [ext_resource type="PackedScene" uid="uid://bulbumhh1ttn7" path="res://Core/Props/gore/corpse_posable.tscn" id="29_0bq7j"]
 [ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/Hotel/scripts/event_01.gd" id="29_4ex4l"]
@@ -203,7 +203,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qkxqm")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ixp3"]
-albedo_texture = ExtResource("28_igicu")
+albedo_texture = ExtResource("12_o017y")
+uv1_scale = Vector3(1, 0.75, 1)
+uv1_offset = Vector3(0, 0.25, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqvyi"]
 albedo_texture = ExtResource("11_83bpk")
@@ -1535,7 +1537,7 @@ mesh = ExtResource("30_q4gs6")
 skeleton = NodePath("")
 
 [node name="paintingMesh" type="MeshInstance3D" parent="Room03" unique_id=852656577]
-transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, -3.0528297, 1.32393, -4.6600304)
+transform = Transform3D(1, 0, 0, 0, 0.6237051, 0.317793, 0, -0.317793, 0.6237051, -3.0528297, 1.32393, -4.663166)
 mesh = ExtResource("33_83bpk")
 skeleton = NodePath("")
 surface_material_override/1 = SubResource("StandardMaterial3D_4ixp3")

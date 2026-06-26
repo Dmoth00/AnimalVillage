@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="15_ygisf"]
 [ext_resource type="ArrayMesh" uid="uid://1kxpt2sy62lb" path="res://Assets/Mesh/Props/saved_mesh/chair_wood.tres" id="16_k86hh"]
 [ext_resource type="ArrayMesh" uid="uid://f21u15m4xck6" path="res://Assets/Mesh/Props/saved_mesh/painting.tres" id="17_q3txv"]
-[ext_resource type="Texture2D" uid="uid://183fqi88g8qo" path="res://Assets/Textures/posters/newspaperTex00.png" id="18_770wf"]
+[ext_resource type="Texture2D" uid="uid://bj7jefjhayfma" path="res://Assets/Textures/posters/PaintingTex03.png" id="18_6wdec"]
 [ext_resource type="Texture2D" uid="uid://spljdbm2yq37" path="res://Assets/Textures/ClayTex.png" id="19_6g6d3"]
 [ext_resource type="Texture2D" uid="uid://bymaalmx6fjqd" path="res://Assets/Textures/LeavesTex00.png" id="20_g6uej"]
 [ext_resource type="Texture2D" uid="uid://de6tke0h16tf0" path="res://Assets/Sprites/BloodAnim/bloodstain01.png" id="21_xol8j"]
@@ -264,8 +264,10 @@ metallic_specular = 0.0
 albedo_texture = ExtResource("15_ygisf")
 metallic_specular = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ixp3"]
-albedo_texture = ExtResource("18_770wf")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og0dm"]
+albedo_texture = ExtResource("18_6wdec")
+uv1_scale = Vector3(1.12, 0.615, 1)
+uv1_offset = Vector3(-0.025, 0.04, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bn7pq"]
 resource_name = "ClayMat"
@@ -507,7 +509,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vlgpw")
 transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 3.5527137e-15, -0.317793, 0.623705, -6.439713, 0.64557266, 0.72888184)
 mesh = ExtResource("17_q3txv")
 skeleton = NodePath("")
-surface_material_override/1 = SubResource("StandardMaterial3D_4ixp3")
+surface_material_override/1 = SubResource("StandardMaterial3D_og0dm")
 
 [node name="nightstandMesh3" type="MeshInstance3D" parent="mesh" unique_id=397409539]
 transform = Transform3D(-2.1855693e-07, 2.841241e-08, -0.8, 8.742277e-08, 0.65, 3.496911e-08, 1, -5.68248e-08, -1.7484555e-07, -6.899175, 0.012878537, 1.6229725)
