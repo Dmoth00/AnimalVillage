@@ -350,7 +350,7 @@ mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
 [node name="window2" type="MeshInstance3D" parent="mesh" unique_id=1549514549]
-transform = Transform3D(1, -2.1316282e-14, -1.7484554e-07, 2.1316282e-14, 1, 1.5285484e-14, 1.7484554e-07, -1.5285487e-14, 1, -2.0000002, 2.5, 2.367519)
+transform = Transform3D(-1, -2.1316279e-14, -1.7484554e-07, -2.1316282e-14, 1, 1.5285484e-14, -1.7484554e-07, -1.5285487e-14, 1, -2.0000002, 2.5, 2.367519)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
@@ -368,7 +368,7 @@ mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
 
 [node name="window5" type="MeshInstance3D" parent="mesh" unique_id=603771448]
-transform = Transform3D(1, -2.1316282e-14, -1.7484555e-07, 1.3976532e-09, 0.99996805, 0.007993523, 1.7483997e-07, -0.007993523, 0.99996805, -2.0000002, -3.4991488, 2.388485)
+transform = Transform3D(-1, 8.7420005e-08, 1.7554437e-07, -8.882043e-08, -0.99996805, -0.007993523, 1.7483997e-07, -0.007993523, 0.99996805, -2.0000002, -3.4991488, 2.388485)
 material_override = SubResource("StandardMaterial3D_h3x0l")
 mesh = SubResource("QuadMesh_5n230")
 skeleton = NodePath("../..")
