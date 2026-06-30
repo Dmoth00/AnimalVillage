@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c2ljudc0bx47e" path="res://Core/Actors/Enemy/dead_head.tscn" id="25_iso63"]
 [ext_resource type="ArrayMesh" uid="uid://1kxpt2sy62lb" path="res://Assets/Mesh/Props/saved_mesh/chair_wood.tres" id="25_x0awq"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="27_j3ne0"]
-[ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="28_1i6n4"]
+[ext_resource type="AudioStream" uid="uid://dbf7monp7371o" path="res://Assets/Sounds/SONG/radioDearlyDeparted.mp3" id="28_j3ne0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi6s"]
 albedo_texture = ExtResource("6_htd3p")
@@ -1726,4 +1726,4 @@ transform = Transform3D(0.83967674, 0, 0.5430865, 0, 1, 0, -0.5430865, 0, 0.8396
 
 [node name="Radio" parent="." unique_id=471549432 instance=ExtResource("27_j3ne0")]
 transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, 3.507, 0.82, 16.408)
-stream = ExtResource("28_1i6n4")
+stream = ExtResource("28_j3ne0")
