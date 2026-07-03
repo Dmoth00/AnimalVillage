@@ -1001,7 +1001,6 @@ script = ExtResource("1_ksh3w")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1475424259]
 stream = ExtResource("2_ksh3w")
-volume_db = -8.0
 pitch_scale = 0.5
 autoplay = true
 

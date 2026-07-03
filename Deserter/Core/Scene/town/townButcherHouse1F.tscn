@@ -29,12 +29,16 @@
 [ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="28_psqmg"]
 [ext_resource type="Texture2D" uid="uid://buktnrpn4ppxd" path="res://Assets/Textures/WoodSignTex00.png" id="29_myiyf"]
 [ext_resource type="PackedScene" uid="uid://ctu8liuuy3hip" path="res://Core/Props/iteractibles/radio.tscn" id="30_bfnuv"]
+[ext_resource type="Texture2D" uid="uid://bvujrdo5en34c" path="res://Assets/Textures/posters/PaintingTex00.png" id="30_h7sxr"]
 [ext_resource type="AudioStream" uid="uid://bsna36on5c2cp" path="res://Assets/Sounds/SONG/radioTheLoversVII.mp3" id="31_h81d4"]
 [ext_resource type="Texture2D" uid="uid://dgsxakhcspft2" path="res://Assets/Sprites/BloodAnim/bloodstain00.png" id="32_tpi2x"]
 [ext_resource type="Texture2D" uid="uid://dsoncj7tkx12b" path="res://Assets/Sprites/BloodAnim/bloodstain00orm.png" id="33_b83w6"]
 [ext_resource type="PackedScene" uid="uid://cysnj64n7hlau" path="res://Core/Props/general/prop_desk.tscn" id="34_elf5q"]
 [ext_resource type="Texture2D" uid="uid://b2lxhgo1h85f0" path="res://Assets/Textures/DocumentTex00.png" id="35_cqsy8"]
+[ext_resource type="Texture2D" uid="uid://cksdmimtbywjh" path="res://Assets/Textures/posters/PaintingTex01.png" id="35_ukws5"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="36_i0h2g"]
+[ext_resource type="Texture2D" uid="uid://b1bnrjxqkh13w" path="res://Assets/Textures/garbageNMap01.png" id="36_vij8d"]
+[ext_resource type="Texture2D" uid="uid://4624e6oyla7j" path="res://Assets/Textures/posters/MissingTex01.png" id="37_nxa67"]
 [ext_resource type="Texture2D" uid="uid://de6tke0h16tf0" path="res://Assets/Sprites/BloodAnim/bloodstain01.png" id="37_v8kao"]
 [ext_resource type="Texture2D" uid="uid://bgin35yteec1w" path="res://Assets/Sprites/BloodAnim/bloodstain01orm.png" id="38_dul7y"]
 [ext_resource type="PackedScene" uid="uid://bsv6andn65p8i" path="res://Core/Actors/NPC/Villagers/butcher.tscn" id="41_jxhvh"]
@@ -864,6 +868,37 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dh2yy")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dtul7"]
+load_path = "res://.godot/imported/garbageNMap01.png-cff4c4ca13e95426c9283fd4ab41352c.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fs08w"]
+albedo_texture = ExtResource("30_h7sxr")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = SubResource("CompressedTexture2D_dtul7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mvty"]
+albedo_texture = ExtResource("35_ukws5")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("36_vij8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kb3fs"]
+albedo_texture = ExtResource("37_nxa67")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("36_vij8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6rrd"]
+albedo_texture = ExtResource("35_ukws5")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("36_vij8d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5uwy7"]
+albedo_texture = ExtResource("23_kb3fs")
+metallic_specular = 0.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l8mb6"]
 resource_name = "WoodMat"
 cull_mode = 2
@@ -970,6 +1005,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lmybl")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae7rn"]
+albedo_texture = ExtResource("23_kb3fs")
+metallic_specular = 0.0
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layaa"]
 resource_name = "Material"
 cull_mode = 2
@@ -1009,6 +1048,14 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ccr4i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dlv6b"]
+albedo_texture = ExtResource("23_kb3fs")
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psqmg"]
+albedo_texture = ExtResource("23_kb3fs")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8rjjb"]
 albedo_texture = ExtResource("35_cqsy8")
@@ -1051,6 +1098,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j6xoi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myiyf"]
+albedo_texture = ExtResource("23_kb3fs")
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfnuv"]
+albedo_texture = ExtResource("35_ukws5")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("36_vij8d")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hyhg1"]
 resource_name = "sheet"
@@ -1481,11 +1538,12 @@ spot_angle = 38.679764
 [node name="mesh" type="Node" parent="." unique_id=1798208814]
 
 [node name="door" type="MeshInstance3D" parent="mesh" unique_id=1305492483]
-transform = Transform3D(1, 4.7722603e-15, 9.529983e-15, 0, 0.894154, -0.447759, -1.06581e-14, 0.447759, 0.894154, -9.5, 0.91602, 12.440853)
+transform = Transform3D(1, 4.7722603e-15, 9.529983e-15, 0, 0.894154, -0.447759, -1.06581e-14, 0.447759, 0.894154, -9.5, 0.91602, 12.410649)
 mesh = SubResource("QuadMesh_rp0xk")
 skeleton = NodePath("../../Door")
 
 [node name="ButcherHouse1F" type="MeshInstance3D" parent="mesh" unique_id=1917798931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017055035, 0.0020251274, -0.030766964)
 layers = 33
 mesh = SubResource("ArrayMesh_ib8py")
 skeleton = NodePath("")
@@ -1603,6 +1661,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, -10.782353, 1.32393, -8.66003)
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
+surface_material_override/1 = SubResource("StandardMaterial3D_fs08w")
 
 [node name="Radio" parent="mesh" unique_id=471549432 instance=ExtResource("30_bfnuv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.493, 0.82, -7.592)
@@ -1650,21 +1709,25 @@ omni_range = 8.1446
 transform = Transform3D(0.5, 0, 0, 0, 0.898794, 0.30686, 0, -0.438371, 0.629156, -9.62664, 1.04142, 6.47759)
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
+surface_material_override/1 = SubResource("StandardMaterial3D_7mvty")
 
 [node name="paintingMesh3" type="MeshInstance3D" parent="mesh" unique_id=2066087198]
 transform = Transform3D(0.4, 0, 0, 0, 0.623705, 0.317793, 0, -0.317793, 0.623705, -11.6583, 1.32393, 6.33997)
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
+surface_material_override/1 = SubResource("StandardMaterial3D_kb3fs")
 
 [node name="paintingMesh4" type="MeshInstance3D" parent="mesh" unique_id=1988365946]
 transform = Transform3D(0.5, 0, 0, 0, 0.898794, 0.30686, 0, -0.438371, 0.629156, 2.6, 1.041, 6.478)
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
+surface_material_override/1 = SubResource("StandardMaterial3D_q6rrd")
 
 [node name="nightstandMesh3" type="MeshInstance3D" parent="mesh" unique_id=138409138]
 transform = Transform3D(1.2, 0, 0, 0, 0.8, 0, 0, 0, 1.2, -4, 0, 7.67844)
 mesh = SubResource("ArrayMesh_mgrd0")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5uwy7")
 
 [node name="couchMesh00" type="MeshInstance3D" parent="mesh" unique_id=1758973646]
 transform = Transform3D(1.5, 0, 2.13163e-14, 0, 1.5, 0, -2.13163e-14, 0, 1.5, -6.5, 0, 7.65189)
@@ -1680,11 +1743,13 @@ skeleton = NodePath("")
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1.5, 1.10667, 0, 7.36535)
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ae7rn")
 
 [node name="chairMesh02" type="MeshInstance3D" parent="mesh" unique_id=1542169134]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1.5, 4.10667, 0, 7.36535)
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ae7rn")
 
 [node name="desk" parent="mesh" unique_id=796083523 instance=ExtResource("34_elf5q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1992, 0, 8.49124)
@@ -1709,42 +1774,49 @@ transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 1)
 layers = 33
 mesh = SubResource("ArrayMesh_np6r3")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dlv6b")
 
 [node name="chairMesh03" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=681432860]
 transform = Transform3D(-4.37114e-08, 0, 0.75, 0, 1, 0, -2, 0, -6.55671e-08, -1, 0, 0)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="chairMesh04" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=1955153477]
 transform = Transform3D(1.31134e-07, 0, -0.75, 0, 1, 0, 2, 0, 1.96701e-07, 1, 0, 0)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="chairMesh05" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=182838319]
 transform = Transform3D(-1, 0, -6.55671e-08, 0, 1, 0, 1.74846e-07, 0, -1.5, 0.5, 0, 1)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="chairMesh06" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=290469783]
 transform = Transform3D(-1, 0, -6.55671e-08, 0, 1, 0, 1.74846e-07, 0, -1.5, -0.5, 0, 1)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="chairMesh07" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=1501581952]
-transform = Transform3D(1, 0, 1.96701e-07, 0, 1, 0, -2.62268e-07, 0, 1.5, -0.5, 0, -1)
+transform = Transform3D(1, 0, 1.96701e-07, 0, 1, 0, -2.62268e-07, 0, 1.5, -0.5085275, 0.0020251274, -1.030767)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="chairMesh08" type="MeshInstance3D" parent="mesh/tableMesh" unique_id=1368522796]
 transform = Transform3D(1, 0, 1.96701e-07, 0, 1, 0, -2.62268e-07, 0, 1.5, 0.5, 0, -1)
 layers = 33
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_psqmg")
 
 [node name="desk2" type="Node3D" parent="mesh" unique_id=1380358581]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -2.5256, 0, -7.31034)
@@ -1763,11 +1835,13 @@ skeleton = NodePath("../tableMesh")
 transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_dlkp0")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_myiyf")
 
 [node name="chairMesh01" type="MeshInstance3D" parent="mesh/desk2" unique_id=1050802369]
 transform = Transform3D(-0.364953, 0, -1.47482, 0, 1, 0, 1.96642, 0, -0.273714, 0.5939, 0, 0.413617)
 mesh = SubResource("ArrayMesh_qf1pr")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_myiyf")
 
 [node name="couchMesh02" type="MeshInstance3D" parent="mesh" unique_id=1333166322]
 transform = Transform3D(1.5, 0, 2.84217e-14, 0, 1.5, 0, -2.84217e-14, 0, 1.5, 1.5, 0, -7.45506)
@@ -1783,6 +1857,7 @@ skeleton = NodePath("")
 transform = Transform3D(-0.5, 3.83236e-08, -5.50026e-08, 0, 0.898794, 0.30686, 4.37114e-08, 0.438371, -0.629156, -0.4, 1.041, 3.478)
 mesh = SubResource("ArrayMesh_dwp7f")
 skeleton = NodePath("")
+surface_material_override/1 = SubResource("StandardMaterial3D_bfnuv")
 
 [node name="curtains" type="Node3D" parent="mesh" unique_id=223553431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.64329, 0, -2.42136)
