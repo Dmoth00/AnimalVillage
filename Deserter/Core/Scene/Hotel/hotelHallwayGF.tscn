@@ -1228,6 +1228,11 @@ newMap = "uid://cmuyyi70u5iiw"
 transform = Transform3D(1, 0, 0, 0, 0.894154, -0.447759, 0, 0.447759, 0.894154, 0, 0.91602, 0.440853)
 mesh = SubResource("QuadMesh_1i6n4")
 
+[node name="Outside" parent="exits" unique_id=1063593828 instance=ExtResource("20_q6kxe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 38.184658)
+newPosition = Vector3(0, 0, -5.5)
+newMap = "uid://c4gqictyrpua0"
+
 [node name="cols" type="StaticBody3D" parent="." unique_id=1213170144]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 visible = false

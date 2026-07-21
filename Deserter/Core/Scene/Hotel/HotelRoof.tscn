@@ -583,7 +583,7 @@ distance_fade_max_distance = 5.0
 material = SubResource("StandardMaterial3D_nvxna")
 size = Vector2(0.75, 0.75)
 
-[node name="HotelRoof4f" type="Node3D" unique_id=133167069]
+[node name="HotelRoof4F" type="Node3D" unique_id=133167069]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=201464482]
 environment = SubResource("Environment_uj8b1")
