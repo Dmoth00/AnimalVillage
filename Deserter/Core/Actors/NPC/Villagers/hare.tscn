@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cbrrijo1s75qc"]
 
 [ext_resource type="Script" uid="uid://de2bmbxch8nbp" path="res://Core/Actors/NPC/Villagers/villager_talk.gd" id="1_475gh"]
+[ext_resource type="JSON" path="res://Data/dialog.json" id="2_1gk15"]
 [ext_resource type="Texture2D" uid="uid://jjouj82n27hh" path="res://Assets/Mesh/Npc/hare00_RabbitTex.png.png" id="2_475gh"]
 [ext_resource type="AudioStream" uid="uid://crlsllbxj7x71" path="res://Assets/Sounds/VOICE/snd_hare00.wav" id="2_gk7nu"]
 [ext_resource type="Texture2D" uid="uid://btjbecslismxm" path="res://Assets/Mesh/Npc/hare00_MetalTex.png" id="3_gk7nu"]
@@ -151,6 +152,7 @@ radius = 3.0
 collision_layer = 9
 collision_mask = 0
 script = ExtResource("1_475gh")
+filepath = ExtResource("2_1gk15")
 key = "demons"
 
 [node name="col" type="CollisionShape3D" parent="." unique_id=952390104]

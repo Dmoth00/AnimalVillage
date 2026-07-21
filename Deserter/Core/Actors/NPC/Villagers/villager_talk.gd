@@ -1,4 +1,5 @@
 extends Area3D
+@export var filepath : Resource
 @export var key=""
 @onready var texts : Array
 @export var turnToLook = true
@@ -13,7 +14,7 @@ var talking = false
 
 func _ready() -> void:
 	var txtfile=JSON.new
-	var file=FileAccess.open("res://Data/dialog.json", FileAccess.READ)
+	var file=FileAccess.open(filepath.resource_path, FileAccess.READ)
 	txtfile=JSON.parse_string(file.get_as_text())
 	file.close()
 	texts = txtfile[key]
