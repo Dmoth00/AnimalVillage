@@ -394,9 +394,9 @@ skeleton = NodePath("../meshHotelPool")
 [node name="drowner" parent="." unique_id=1913920601 instance=ExtResource("12_ek21y")]
 transform = Transform3D(1.2412515, 0, -1.0096014, 0, 1.6, 0, 1.0096014, 0, 1.2412515, -1, -2, -11.967)
 
-[node name="Skeleton3D" parent="drowner/ArmDrown" parent_id_path=PackedInt32Array(1913920601, 1451277907) index="0" unique_id=683835968]
-bones/1/position = Vector3(-2.1343925e-07, 0, -1.4135442)
-bones/1/rotation = Quaternion(-3.7722213e-05, 0.7070983, 0.70711523, -3.7829883e-05)
+[node name="Skeleton3D" parent="drowner/ArmDrown" parent_id_path=PackedInt32Array(1913920601, 1019943772) index="0" unique_id=686787304]
+bones/1/position = Vector3(-2.186154e-07, 0, -1.4478242)
+bones/1/rotation = Quaternion(-0.0018152494, 0.70709604, 0.70711285, -0.0018153994)
 bones/2/rotation = Quaternion(-0.009592942, 0.6326279, 0.7743699, -0.006423974)
 bones/3/rotation = Quaternion(-0.011186659, -2.1116202e-05, -0.00022472335, 0.9999374)
 bones/4/rotation = Quaternion(0.15176794, 0.00033363455, 0.0023220726, 0.9884134)
@@ -436,12 +436,14 @@ bones/26/position = Vector3(0.011298854, 0.38960764, 0.008419865)
 bones/26/rotation = Quaternion(-0.1732947, 0.6188895, 0.29929617, -0.7052422)
 bones/26/scale = Vector3(0.38512713, 0.38512695, 0.38512707)
 bones/27/rotation = Quaternion(0.001157904, -0.61108136, 0.7915648, 0.0018237927)
+bones/28/position = Vector3(0.14166193, 0.20363344, 0.00864608)
 bones/28/rotation = Quaternion(-0.18144378, -0.68890405, 0.086336195, 0.6964449)
 bones/29/rotation = Quaternion(-0.056176014, 0.004508333, -0.036681157, 0.99773675)
 bones/30/rotation = Quaternion(-0.0017642982, 0.0014914048, 0.17787004, 0.98405135)
 bones/31/position = Vector3(0.2592026, 0.18791397, 0.021741819)
 bones/31/rotation = Quaternion(0.26709712, 0.8106293, 0.11851302, 0.50743854)
 bones/31/scale = Vector3(0.31635785, 0.3163581, 0.31635797)
+bones/32/position = Vector3(-0.14166191, 0.20363347, 0.00864611)
 bones/32/rotation = Quaternion(-0.18144377, 0.688904, -0.0863362, 0.6964449)
 bones/33/rotation = Quaternion(-0.056176048, -0.0045083025, 0.036681097, 0.9977367)
 bones/34/rotation = Quaternion(-0.0017643096, -0.0014914046, -0.17786993, 0.98405135)
@@ -449,10 +451,10 @@ bones/35/position = Vector3(-0.25920266, 0.1879139, 0.021741789)
 bones/35/rotation = Quaternion(-0.26709715, 0.81062925, 0.11851298, -0.50743854)
 bones/35/scale = Vector3(0.31635797, 0.31635803, 0.31635797)
 
-[node name="DrownMesh" parent="drowner/ArmDrown/Skeleton3D" index="0" unique_id=958513890]
+[node name="DrownMesh" parent="drowner/ArmDrown/Skeleton3D" index="0" unique_id=137103243]
 surface_material_override/0 = SubResource("StandardMaterial3D_cs6v1")
 
-[node name="AnimationPlayer" parent="drowner" index="1" unique_id=1607985573]
+[node name="AnimationPlayer" parent="drowner" index="1" unique_id=1475927782]
 autoplay = &"ArmDrownDead"
 
 [node name="col" type="StaticBody3D" parent="." unique_id=512234686]
