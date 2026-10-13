@@ -309,7 +309,8 @@ uv1_scale = Vector3(0.25, 0.25, 0.25)
 
 [node name="CameraTrigger" type="Area3D" parent="." unique_id=1032579480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.31901264)
-visible = false
+collision_layer = 0
+collision_mask = 4096
 script = ExtResource("9_gxs5p")
 cameraAngle = -25.0
 cameraOffset = Vector2(0, 2)
