@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://q6uej0bvisg8" path="res://Assets/Mesh/Props/SinkTex00.png" id="13_e3lhs"]
 [ext_resource type="Texture2D" uid="uid://dsr8jbjr53f61" path="res://Assets/Textures/RoughTex03.png" id="14_oq1eg"]
 [ext_resource type="Texture2D" uid="uid://cx7q8gbb6glt5" path="res://Assets/Textures/TrashTex01.png" id="15_jxhvh"]
-[ext_resource type="Script" uid="uid://dwtvlfgra3byn" path="res://Core/Scene/town/townSubscenes/bag.gd" id="16_h7sxr"]
+[ext_resource type="Script" uid="uid://dwtvlfgra3byn" path="res://Core/Scene/00-town/townSubscenes/bag.gd" id="16_h7sxr"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="17_ukws5"]
 [ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="18_vij8d"]
 [ext_resource type="AudioStream" uid="uid://dxim4cj452u8a" path="res://Assets/Sounds/SFX/snd_hit00.wav" id="19_nxa67"]

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dm7usxkrodt3x"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_ke0dv"]
-[ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/town/townOutside/day_night.gd" id="1_ksh3w"]
+[ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/00-town/townOutside/day_night.gd" id="1_ksh3w"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="2_ksh3w"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="3_2yq1p"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="5_af4th"]
