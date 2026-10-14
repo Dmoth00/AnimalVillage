@@ -306,6 +306,7 @@ orientation = 1
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 albedo_texture = ExtResource("11_qotbm")
 
@@ -435,10 +436,10 @@ data = PackedVector3Array(3.1961788e-06, 0, -6.0394225, -4.018876, 0, -0.0054788
 size = Vector3(22, 3, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qotbm"]
-size = Vector3(0.39886475, 1.9987793, 4.295166)
+size = Vector3(0.3888855, 1.9987793, 4.213501)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6cnx5"]
-size = Vector3(2.6730957, 1, 1.3237305)
+size = Vector3(3.0685425, 1, 1.5666504)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tctkq"]
 size = Vector3(22.972828, 5, 30.772827)
@@ -502,7 +503,7 @@ mesh = SubResource("ArrayMesh_d1vem")
 skeleton = NodePath("")
 
 [node name="chainlink4" type="MeshInstance3D" parent="meshes" unique_id=1457469262]
-transform = Transform3D(1.9470718e-07, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, 1.9470718e-07, -8.510922e-15, 5.5, 0, 4)
+transform = Transform3D(1.9470718e-07, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, 1.9470718e-07, -8.510922e-15, 4.943396, 0, 4)
 mesh = SubResource("ArrayMesh_yohq1")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_vnkl0")
@@ -517,11 +518,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 6)
 shape = SubResource("BoxShape3D_ikbco")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="cols" unique_id=1056084886]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.504547, 1.0343018, 4.050171)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.940224, 1.0343018, 4.0910034)
 shape = SubResource("BoxShape3D_qotbm")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="cols" unique_id=1284278190]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.763214, 1.0343018, 5.212036)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6131754, 0.5110383, 5.032962)
 shape = SubResource("BoxShape3D_6cnx5")
 
 [node name="intoGF" parent="." unique_id=444387764 instance=ExtResource("12_6cnx5")]
@@ -531,6 +532,7 @@ newMap = "uid://js26c8umnqjr"
 
 [node name="CameraTrigger" type="Area3D" parent="." unique_id=1182428808]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.955454, 0, 0.31901264)
+visible = false
 collision_layer = 0
 collision_mask = 4096
 script = ExtResource("13_mt22e")
@@ -542,7 +544,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.
 shape = SubResource("BoxShape3D_tctkq")
 
 [node name="ladder" parent="." unique_id=1590888803 instance=ExtResource("12_6cnx5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4.619194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 0, 4.4385395)
 newPosition = Vector3(21.5, 0, -5.5)
 newMap = "uid://dly5lrpqvt7ot"
 sound = ExtResource("15_lloqu")
