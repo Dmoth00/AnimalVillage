@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="8_dxaqj"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="9_yohq1"]
 [ext_resource type="PackedScene" uid="uid://dqhlqtit3fx7t" path="res://Core/Props/gore/blood_00.tscn" id="10_vnkl0"]
+[ext_resource type="Texture2D" uid="uid://bpi4j3wdb5dl3" path="res://Assets/Textures/sewerTex00.png" id="11_lloqu"]
 [ext_resource type="Texture2D" uid="uid://dgyg7kcy7c2gl" path="res://Assets/Textures/ManholeTex.png" id="11_qotbm"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="12_6cnx5"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="12_bkdej"]
@@ -282,7 +283,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_14i3b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrguv"]
-albedo_texture = ExtResource("11_qotbm")
+albedo_texture = ExtResource("11_lloqu")
 uv1_scale = Vector3(2, 2, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_agfmc"]
@@ -290,6 +291,7 @@ material = SubResource("StandardMaterial3D_jrguv")
 top_radius = 0.75
 bottom_radius = 0.75
 height = 0.1
+radial_segments = 16
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex6lw"]
 transparency = 2
@@ -474,11 +476,11 @@ modulate = Color(0, 0, 0, 1)
 albedo_mix = 0.23
 
 [node name="manhole" type="MeshInstance3D" parent="meshes" unique_id=251788527]
-transform = Transform3D(0.9801745, -0.19813637, 0, 0.19813637, 0.9801745, 0, 0, 0, 1, 7.3834977, 0.2563312, 5.2079573)
+transform = Transform3D(0.94637334, -0.32307518, 0, 0.32307518, 0.94637334, 0, 0, 0, 1, 7.505897, 0.2563312, 5.2079573)
 mesh = SubResource("CylinderMesh_agfmc")
 
 [node name="manhole2" type="MeshInstance3D" parent="meshes" unique_id=1562794428]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.494177, 0.057400703, 5.093316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.494177, 0.0060679317, 5.093316)
 mesh = SubResource("QuadMesh_qah7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_ru0wc")
 
