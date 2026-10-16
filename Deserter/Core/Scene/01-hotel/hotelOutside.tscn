@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="9_yohq1"]
 [ext_resource type="PackedScene" uid="uid://dqhlqtit3fx7t" path="res://Core/Props/gore/blood_00.tscn" id="10_vnkl0"]
 [ext_resource type="Texture2D" uid="uid://bpi4j3wdb5dl3" path="res://Assets/Textures/sewerTex00.png" id="11_lloqu"]
-[ext_resource type="Texture2D" uid="uid://dgyg7kcy7c2gl" path="res://Assets/Textures/ManholeTex.png" id="11_qotbm"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="12_6cnx5"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="12_bkdej"]
+[ext_resource type="Texture2D" uid="uid://isuhmmhxcjmh" path="res://Assets/Textures/SewerTex00Nmap.png" id="12_lloqu"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="13_mt22e"]
 [ext_resource type="AudioStream" uid="uid://boq5qiay7jonv" path="res://Assets/Sounds/SFX/snd_ladder00a.wav" id="15_lloqu"]
 
@@ -284,6 +284,8 @@ shadow_mesh = SubResource("ArrayMesh_14i3b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jrguv"]
 albedo_texture = ExtResource("11_lloqu")
+normal_enabled = true
+normal_texture = ExtResource("12_lloqu")
 uv1_scale = Vector3(2, 2, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_agfmc"]
@@ -293,24 +295,16 @@ bottom_radius = 0.75
 height = 0.1
 radial_segments = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex6lw"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("11_qotbm")
+[sub_resource type="CylinderMesh" id="CylinderMesh_jrguv"]
+top_radius = 0.75
+bottom_radius = 0.0
+height = 0.001
+radial_segments = 16
+cap_bottom = false
 
-[sub_resource type="QuadMesh" id="QuadMesh_qah7s"]
-material = SubResource("StandardMaterial3D_ex6lw")
-size = Vector2(1.5, 1.5)
-orientation = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ru0wc"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-shading_mode = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_agfmc"]
 albedo_color = Color(0, 0, 0, 1)
-albedo_texture = ExtResource("11_qotbm")
+metallic_specular = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_h2snv"]
 size = Vector2(0.75, 2.5)
@@ -481,8 +475,8 @@ mesh = SubResource("CylinderMesh_agfmc")
 
 [node name="manhole2" type="MeshInstance3D" parent="meshes" unique_id=1562794428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.494177, 0.0060679317, 5.093316)
-mesh = SubResource("QuadMesh_qah7s")
-surface_material_override/0 = SubResource("StandardMaterial3D_ru0wc")
+mesh = SubResource("CylinderMesh_jrguv")
+surface_material_override/0 = SubResource("StandardMaterial3D_agfmc")
 
 [node name="ladder" type="MeshInstance3D" parent="meshes/manhole2" unique_id=985773110]
 transform = Transform3D(1, 0, 0, 0, 0.86602545, 0.50000006, 0, -0.50000006, 0.86602545, -0.0062274933, -0.5797417, -0.15150928)
