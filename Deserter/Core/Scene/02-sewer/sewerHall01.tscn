@@ -523,7 +523,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e63j0")
 
-[node name="SewerHall00" type="Node3D" unique_id=2125396539]
+[node name="SewerHall01" type="Node3D" unique_id=2125396539]
 
 [node name="env" type="WorldEnvironment" parent="." unique_id=1085267319]
 environment = SubResource("Environment_nk7x5")
@@ -537,6 +537,7 @@ autoplay = true
 [node name="plinplin" parent="." unique_id=2038828281 instance=ExtResource("2_n8j8x")]
 
 [node name="col" type="StaticBody3D" parent="." unique_id=711805933]
+visible = false
 collision_mask = 0
 
 [node name="roomShape" type="CollisionShape3D" parent="col" unique_id=938228043]
