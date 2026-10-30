@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="9_cyweg"]
 [ext_resource type="Texture2D" uid="uid://b4yibl526s0hd" path="res://Assets/Textures/mossNmap00.png" id="9_j38p6"]
 [ext_resource type="Texture2D" uid="uid://b08d75xmx86sj" path="res://Assets/Textures/CarpetTex00a.png" id="10_boc30"]
-[ext_resource type="Texture2D" uid="uid://cxwutjuh7vqk4" path="res://Assets/Textures/WoodEdge00.png" id="12_boc30"]
+[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/WoodTex03.png" id="12_l5e4a"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="16_bwocg"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="17_5576r"]
 [ext_resource type="PackedScene" uid="uid://b1a1s8o0iq6io" path="res://Core/SFX/plinplin.tscn" id="21_2poyr"]
@@ -197,9 +197,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lr7es")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5576r"]
-albedo_color = Color(0.616, 0.637, 0.7, 1)
-albedo_texture = ExtResource("12_boc30")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rih1"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("12_l5e4a")
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10rf3"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("12_l5e4a")
+metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xpxg"]
 albedo_texture = ExtResource("36_scpfs")
@@ -252,13 +260,13 @@ surface_material_override/2 = SubResource("StandardMaterial3D_8i24j")
 transform = Transform3D(-5.64192e-09, -0.89990824, 0.43607938, -1.9596733e-08, 0.43607938, 0.89990824, -1.1950002, -2.9025289e-09, -1.6816392e-08, 14.442012, 0.91417086, 5.5254483)
 mesh = SubResource("ArrayMesh_vgv1n")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_5576r")
+surface_material_override/0 = SubResource("StandardMaterial3D_0rih1")
 
 [node name="boards4" type="MeshInstance3D" parent="mesh" unique_id=845082395]
 transform = Transform3D(1.10112154e-07, 0.89990824, -0.43607935, -1.9596733e-08, 0.43607935, 0.89990824, 1.1950002, -7.576995e-08, 5.493966e-08, -15.4451885, 0.91417086, -6.5045266)
 mesh = SubResource("ArrayMesh_vgv1n")
 skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_5576r")
+surface_material_override/0 = SubResource("StandardMaterial3D_10rf3")
 
 [node name="floorsign00" type="MeshInstance3D" parent="mesh" unique_id=365192449]
 transform = Transform3D(0.5, 0, 0, 0, 0.44550326, 0.22699526, 0, -0.22699526, 0.44550326, -6.5057244, 1.430188, 9.327645)
