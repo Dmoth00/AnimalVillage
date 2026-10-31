@@ -1262,3 +1262,25 @@ transform = Transform3D(-0.49999997, 3.547526e-08, -7.8032315e-08, 0, 0.8033272,
 mesh = ExtResource("21_f7mib")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_nqsy4")
+
+[node name="Door01" parent="." unique_id=1679054954 instance=ExtResource("20_yvdje")]
+transform = Transform3D(-1, 0, 8.7422606e-08, 0, 1, 0, -8.7422606e-08, 0, -1, 2.5, 5, -14)
+newPosition = Vector3(4.5, 0, 5)
+newMap = "uid://cvbvah2yk6p7u"
+
+[node name="door00" type="MeshInstance3D" parent="Door01" unique_id=1317335217]
+transform = Transform3D(-0.49999997, -3.57202e-08, 7.789426e-08, 0, 0.8019058, 0.4539905, -4.3711385e-08, 0.40859142, -0.89100647, 0, 0.6999998, 0.44734478)
+mesh = ExtResource("21_f7mib")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_nqsy4")
+
+[node name="Door02" parent="." unique_id=2100583160 instance=ExtResource("20_yvdje")]
+transform = Transform3D(-1, 0, 8.7422606e-08, 0, 1, 0, -8.7422606e-08, 0, -1, -2.5, 5, -14)
+newPosition = Vector3(-4.5, 0, 5)
+newMap = "uid://cvbvah2yk6p7u"
+
+[node name="door00" type="MeshInstance3D" parent="Door02" unique_id=902475223]
+transform = Transform3D(-0.49999997, -3.57202e-08, 7.789426e-08, 0, 0.8019058, 0.4539905, -4.3711385e-08, 0.40859142, -0.89100647, 0, 0.6999998, 0.44734478)
+mesh = ExtResource("21_f7mib")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_nqsy4")
