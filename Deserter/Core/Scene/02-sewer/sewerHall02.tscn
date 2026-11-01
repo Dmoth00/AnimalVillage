@@ -845,6 +845,10 @@ size = Vector3(4, 2, 0.35)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vxn6m"]
 size = Vector3(2, 2, 1)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vxn6m"]
+height = 3.0
+radius = 2.0
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_nrrp7"]
 _surfaces = [{
 "aabb": AABB(-16.999935, 0, -18.996164, 34.018852, 1e-05, 33.078217),
@@ -1146,7 +1150,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 2.2869997, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 2.287, 6)
 
 [node name="col" type="StaticBody3D" parent="." unique_id=1724080816]
-visible = false
 collision_mask = 0
 
 [node name="room" type="CollisionShape3D" parent="col" unique_id=1305304482]
@@ -1175,6 +1178,14 @@ shape = SubResource("BoxShape3D_vxn6m")
 [node name="smlbox01" type="CollisionShape3D" parent="col" unique_id=1785533943]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.502717, 3, -10.9550295)
 shape = SubResource("BoxShape3D_vxn6m")
+
+[node name="pipe00" type="CollisionShape3D" parent="col" unique_id=1135994005]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1, -11.977871)
+shape = SubResource("CylinderShape3D_vxn6m")
+
+[node name="pipe01" type="CollisionShape3D" parent="col" unique_id=1754267211]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1, 20.466793)
+shape = SubResource("CylinderShape3D_vxn6m")
 
 [node name="Water" type="Node" parent="." unique_id=1617723299]
 
@@ -1284,3 +1295,8 @@ transform = Transform3D(-0.49999997, -3.57202e-08, 7.789426e-08, 0, 0.8019058, 0
 mesh = ExtResource("21_f7mib")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_nqsy4")
+
+[node name="Door03" parent="." unique_id=423472832 instance=ExtResource("20_yvdje")]
+transform = Transform3D(-1, 0, 8.7422606e-08, 0, 1, 0, -8.7422606e-08, 0, -1, 0, -2, -10.75)
+newPosition = Vector3(0, -2.8, 2)
+newMap = "uid://cvbvah2yk6p7u"

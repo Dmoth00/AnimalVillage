@@ -14,14 +14,19 @@
 [ext_resource type="Material" uid="uid://b4n5u2a44n5qg" path="res://Core/Scene/DEBUG/SewerWaterMat.tres" id="16_pxp0t"]
 [ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="17_gh4p8"]
 [ext_resource type="Texture2D" uid="uid://uetpx38445r0" path="res://Assets/Mesh/Props/doorMetalTex00.png" id="17_pl2gw"]
+[ext_resource type="Texture2D" uid="uid://btvsahntgosh0" path="res://Assets/Mesh/Props/leverTex00.png" id="17_vx3df"]
+[ext_resource type="Texture2D" uid="uid://beo7ojtw26a6v" path="res://Assets/Mesh/Props/signsTex01.png" id="18_1xo8v"]
+[ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="18_sokfi"]
 [ext_resource type="Texture2D" uid="uid://vrgompeg0dtq" path="res://Assets/Textures/ChainlinkTex01.png" id="18_v7uaw"]
 [ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="18_w1rpm"]
 [ext_resource type="AudioStream" uid="uid://c5akr2ll65us1" path="res://Assets/Sounds/BGM/bgm_water0.wav" id="19_e60ps"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="20_lwudr"]
 [ext_resource type="PackedScene" uid="uid://b88skphiui336" path="res://Core/Props/general/hanging_lamp.tscn" id="20_p6qva"]
+[ext_resource type="Script" uid="uid://c8r7rlaupu3la" path="res://Core/Scene/02-sewer/waterLever.gd" id="21_1xo8v"]
 [ext_resource type="Texture2D" uid="uid://dt3h4p5opb22t" path="res://Assets/Textures/LQsignTex00.png" id="21_amysv"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="21_dindt"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="22_pxp0t"]
+[ext_resource type="AudioStream" uid="uid://i2j5rxfatn8t" path="res://Assets/Sounds/SFX/snd_unlock.wav" id="22_sokfi"]
 
 [sub_resource type="Environment" id="Environment_nk7x5"]
 background_mode = 1
@@ -41,11 +46,18 @@ fog_height_density = 0.1
 fog_depth_begin = 20.0
 fog_depth_end = 120.0
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1xo8v"]
-data = PackedVector3Array(-3.0001, 0, 5, -4, 0, -3.9998, -3.0001, 0, -3.0031998, -3.0001, 0, 5, -4, 0, 5, -4, 0, -3.9998, -4, 0, -3.9998, -0.0001, 0, -3.0031998, -3.0001, 0, -3.0031998, -4, 0, -3.9998, -0.0001, 0, -3.9998, -0.0001, 0, -3.0031998, 3, 0, 5, 4, 0, -3.9998, 4, 0, 5, 3, 0, 5, 3, 0, -3.0031998, 4, 0, -3.9998, 4, 0, -3.9998, 3, 0, -3.0031998, -0.0001, 0, -3.0031998, 4, 0, -3.9998, -0.0001, 0, -3.0031998, -0.0001, 0, -3.9998, -2.0002, -2, 3.9998999, -3.0002, 0, -3.0031, -2.0002, -2, -2.0002, -2.0002, -2, 3.9998999, -3.0002, 0, 5, -3.0002, 0, -3.0031, -8, 0, -8, -8, -2, 8, -8, -2, -8, -8, 0, -8, -8, 0, 8, -8, -2, 8, -8, 0, 8, -0.0001, -2, 8, -8, -2, 8, -8, 0, 8, -0.0001, 0, 8, -0.0001, -2, 8, -2.0002, -2, -2.0002, -0.0001, 0, -2.9919, -0.0001, -2, -1.9919, -2.0002, -2, -2.0002, -3.0002, 0, -3.0031, -0.0001, 0, -2.9919, -2.0002, -2, 3.9998999, -0.0001, 0, 5, -3.0002, 0, 5, -2.0002, -2, 3.9998999, -0.0001, -2, 3.9998999, -0.0001, 0, 5, -8, 0, -8, -0.0001, -2, -8, -0.0001, 0, -8, -8, 0, -8, -8, -2, -8, -0.0001, -2, -8, 1.9999, -2, 3.9998999, 2.9998999, 0, -3.0031, 2.9998999, 0, 5, 1.9999, -2, 3.9998999, 1.9999, -2, -2.0002, 2.9998999, 0, -3.0031, 8, 0, -8, 8, -2, 8, 8, 0, 8, 8, 0, -8, 8, -2, -8, 8, -2, 8, 8, 0, 8, -0.0001, -2, 8, -0.0001, 0, 8, 8, 0, 8, 8, -2, 8, -0.0001, -2, 8, 1.9999, -2, -2.0002, -0.0001, 0, -2.9919, 2.9998999, 0, -3.0031, 1.9999, -2, -2.0002, -0.0001, -2, -1.9919, -0.0001, 0, -2.9919, 1.9999, -2, 3.9998999, -0.0001, 0, 5, -0.0001, -2, 3.9998999, 1.9999, -2, 3.9998999, 2.9998999, 0, 5, -0.0001, 0, 5, 8, 0, -8, -0.0001, -2, -8, 8, -2, -8, 8, 0, -8, -0.0001, 0, -8, -0.0001, -2, -8, -8, 2, 8, -6.0002, 2, -6.0002, -6.0002, 2, 6, -8, 2, 8, -6.0002, 2, 6, -0.0001, 2, 6, -8, 2, 8, -0.0001, 2, 6, -0.0001, 2, 8, -8, 2, 8, -8, 2, -8, -6.0002, 2, -6.0002, -8, 2, -8, -0.0001, 2, -6.0002, -6.0002, 2, -6.0002, -8, 2, -8, -0.0001, 2, -8, -0.0001, 2, -6.0002, -0.0001, -2, -1.9919, -2.0002, -2, 3.9998999, -2.0002, -2, -2.0002, -0.0001, -2, -1.9919, -0.0001, -2, 3.9998999, -2.0002, -2, 3.9998999, 8, 2, 8, 6, 2, -6.0002, 8, 2, -8, 8, 2, -8, 6, 2, -6.0002, -0.0001, 2, -6.0002, 8, 2, -8, -0.0001, 2, -6.0002, -0.0001, 2, -8, 8, 2, 8, 6, 2, 6, 6, 2, -6.0002, 8, 2, 8, -0.0001, 2, 6, 6, 2, 6, 8, 2, 8, -0.0001, 2, 8, -0.0001, 2, 6, -0.0001, -2, -1.9919, 1.9999, -2, 3.9998999, -0.0001, -2, 3.9998999, -0.0001, -2, -1.9919, 1.9999, -2, -2.0002, 1.9999, -2, 3.9998999, -5, 0, 5, -4.0001, 0, -3.9998999, -4.0001, 0, 5, -5, 0, 5, -5, 0, -5, -4.0001, 0, -3.9998999, -5, 0, -5, -0.0001, 0, -3.9998999, -4.0001, 0, -3.9998999, -5, 0, -5, -0.0001, 0, -5, -0.0001, 0, -3.9998999, 5, 0, 5, 3.9998999, 0, -3.9998999, 5, 0, -5, 5, 0, 5, 3.9998999, 0, 5, 3.9998999, 0, -3.9998999, 5, 0, -5, 3.9998999, 0, -3.9998999, -0.0001, 0, -3.9998999, 5, 0, -5, -0.0001, 0, -3.9998999, -0.0001, 0, -5, -6.0002, 2, -6.0002, -5.0002, 0, 5, -6.0002, 2, 6, -6.0002, 2, -6.0002, -5.0002, 0, -5.0002, -5.0002, 0, 5, -5.0002, 0, 5, -3.0002, 0, 5, -6.0002, 2, 6, -5.0002, 0, 5, -4.0002, 0, 5, -3.0002, 0, 5, -3.0002, 0, 5, -0.0001, 2, 6, -6.0002, 2, 6, -3.0002, 0, 5, -0.0001, 0, 5, -0.0001, 2, 6, -8, 2, 8, -8, 0, -8, -8, 2, -8, -8, 2, 8, -8, 0, 8, -8, 0, -8, -8, 2, 8, -0.0001, 0, 8, -8, 0, 8, -8, 2, 8, -0.0001, 2, 8, -0.0001, 0, 8, -6.0002, 2, -6.0002, -0.0001, 0, -5.0002, -5.0002, 0, -5.0002, -6.0002, 2, -6.0002, -0.0001, 2, -6.0002, -0.0001, 0, -5.0002, -8, 2, -8, -0.0001, 0, -8, -0.0001, 2, -8, -8, 2, -8, -8, 0, -8, -0.0001, 0, -8, 6, 2, -6.0002, 5, 0, 5, 5, 0, -5.0002, 6, 2, -6.0002, 6, 2, 6, 5, 0, 5, 5, 0, 5, 2.9998999, 0, 5, 3.9998999, 0, 5, 5, 0, 5, 6, 2, 6, 2.9998999, 0, 5, 2.9998999, 0, 5, 6, 2, 6, -0.0001, 2, 6, 2.9998999, 0, 5, -0.0001, 2, 6, -0.0001, 0, 5, 8, 2, 8, 8, 0, -8, 8, 0, 8, 8, 2, 8, 8, 2, -8, 8, 0, -8, 8, 2, 8, -0.0001, 0, 8, -0.0001, 2, 8, 8, 2, 8, 8, 0, 8, -0.0001, 0, 8, 6, 2, -6.0002, -0.0001, 0, -5.0002, -0.0001, 2, -6.0002, 6, 2, -6.0002, 5, 0, -5.0002, -0.0001, 0, -5.0002, 8, 2, -8, -0.0001, 0, -8, 8, 0, -8, 8, 2, -8, -0.0001, 2, -8, -0.0001, 0, -8)
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sokfi"]
+data = PackedVector3Array(-3.0001, 0, 5, -4, 0, -3.9998, -3.0001, 0, -3.0031998, -3.0001, 0, 5, -4, 0, 5, -4, 0, -3.9998, -4, 0, -3.9998, -0.0001, 0, -3.0031998, -3.0001, 0, -3.0031998, -4, 0, -3.9998, -0.0001, 0, -3.9998, -0.0001, 0, -3.0031998, 3, 0, 5, 4, 0, -3.9998, 4, 0, 5, 3, 0, 5, 3, 0, -3.0031998, 4, 0, -3.9998, 4, 0, -3.9998, 3, 0, -3.0031998, -0.0001, 0, -3.0031998, 4, 0, -3.9998, -0.0001, 0, -3.0031998, -0.0001, 0, -3.9998, -2.0002, -3, 3.9998999, -3.0002, 0, -3.0031, -2.0002, -3, -2.0002, -2.0002, -3, 3.9998999, -3.0002, 0, 5, -3.0002, 0, -3.0031, -8, 0, -8, -8, -3, 8, -8, -3, -8, -8, 0, -8, -8, 0, 8, -8, -3, 8, -8, 0, 8, -0.0001, -3, 8, -8, -3, 8, -8, 0, 8, -0.0001, 0, 8, -0.0001, -3, 8, -2.0002, -3, -2.0002, -0.0001, 0, -2.9919, -0.0001, -3, -1.9919, -2.0002, -3, -2.0002, -3.0002, 0, -3.0031, -0.0001, 0, -2.9919, -2.0002, -3, 3.9998999, -0.0001, 0, 5, -3.0002, 0, 5, -2.0002, -3, 3.9998999, -0.0001, -3, 3.9998999, -0.0001, 0, 5, -8, 0, -8, -0.0001, -3, -8, -0.0001, 0, -8, -8, 0, -8, -8, -3, -8, -0.0001, -3, -8, 1.9999, -3, 3.9998999, 2.9998999, 0, -3.0031, 2.9998999, 0, 5, 1.9999, -3, 3.9998999, 1.9999, -3, -2.0002, 2.9998999, 0, -3.0031, 8, 0, -8, 8, -3, 8, 8, 0, 8, 8, 0, -8, 8, -3, -8, 8, -3, 8, 8, 0, 8, -0.0001, -3, 8, -0.0001, 0, 8, 8, 0, 8, 8, -3, 8, -0.0001, -3, 8, 1.9999, -3, -2.0002, -0.0001, 0, -2.9919, 2.9998999, 0, -3.0031, 1.9999, -3, -2.0002, -0.0001, -3, -1.9919, -0.0001, 0, -2.9919, 1.9999, -3, 3.9998999, -0.0001, 0, 5, -0.0001, -3, 3.9998999, 1.9999, -3, 3.9998999, 2.9998999, 0, 5, -0.0001, 0, 5, 8, 0, -8, -0.0001, -3, -8, 8, -3, -8, 8, 0, -8, -0.0001, 0, -8, -0.0001, -3, -8, -8, 2, 8, -6.0002, 2, -6.0002, -6.0002, 2, 6, -8, 2, 8, -6.0002, 2, 6, -0.0001, 2, 6, -8, 2, 8, -0.0001, 2, 6, -0.0001, 2, 8, -8, 2, 8, -8, 2, -8, -6.0002, 2, -6.0002, -8, 2, -8, -0.0001, 2, -6.0002, -6.0002, 2, -6.0002, -8, 2, -8, -0.0001, 2, -8, -0.0001, 2, -6.0002, -0.0001, -3, -1.9919, -2.0002, -3, 3.9998999, -2.0002, -3, -2.0002, -0.0001, -3, -1.9919, -0.0001, -3, 3.9998999, -2.0002, -3, 3.9998999, 8, 2, 8, 6, 2, -6.0002, 8, 2, -8, 8, 2, -8, 6, 2, -6.0002, -0.0001, 2, -6.0002, 8, 2, -8, -0.0001, 2, -6.0002, -0.0001, 2, -8, 8, 2, 8, 6, 2, 6, 6, 2, -6.0002, 8, 2, 8, -0.0001, 2, 6, 6, 2, 6, 8, 2, 8, -0.0001, 2, 8, -0.0001, 2, 6, -0.0001, -3, -1.9919, 1.9999, -3, 3.9998999, -0.0001, -3, 3.9998999, -0.0001, -3, -1.9919, 1.9999, -3, -2.0002, 1.9999, -3, 3.9998999, -5, 0, 5, -4.0001, 0, -3.9998999, -4.0001, 0, 5, -5, 0, 5, -5, 0, -5, -4.0001, 0, -3.9998999, -5, 0, -5, -0.0001, 0, -3.9998999, -4.0001, 0, -3.9998999, -5, 0, -5, -0.0001, 0, -5, -0.0001, 0, -3.9998999, 5, 0, 5, 3.9998999, 0, -3.9998999, 5, 0, -5, 5, 0, 5, 3.9998999, 0, 5, 3.9998999, 0, -3.9998999, 5, 0, -5, 3.9998999, 0, -3.9998999, -0.0001, 0, -3.9998999, 5, 0, -5, -0.0001, 0, -3.9998999, -0.0001, 0, -5, -6.0002, 2, -6.0002, -5.0002, 0, 5, -6.0002, 2, 6, -6.0002, 2, -6.0002, -5.0002, 0, -5.0002, -5.0002, 0, 5, -5.0002, 0, 5, -3.0002, 0, 5, -6.0002, 2, 6, -5.0002, 0, 5, -4.0002, 0, 5, -3.0002, 0, 5, -3.0002, 0, 5, -0.0001, 2, 6, -6.0002, 2, 6, -3.0002, 0, 5, -0.0001, 0, 5, -0.0001, 2, 6, -8, 2, 8, -8, 0, -8, -8, 2, -8, -8, 2, 8, -8, 0, 8, -8, 0, -8, -8, 2, 8, -0.0001, 0, 8, -8, 0, 8, -8, 2, 8, -0.0001, 2, 8, -0.0001, 0, 8, -6.0002, 2, -6.0002, -0.0001, 0, -5.0002, -5.0002, 0, -5.0002, -6.0002, 2, -6.0002, -0.0001, 2, -6.0002, -0.0001, 0, -5.0002, -8, 2, -8, -0.0001, 0, -8, -0.0001, 2, -8, -8, 2, -8, -8, 0, -8, -0.0001, 0, -8, 6, 2, -6.0002, 5, 0, 5, 5, 0, -5.0002, 6, 2, -6.0002, 6, 2, 6, 5, 0, 5, 5, 0, 5, 2.9998999, 0, 5, 3.9998999, 0, 5, 5, 0, 5, 6, 2, 6, 2.9998999, 0, 5, 2.9998999, 0, 5, 6, 2, 6, -0.0001, 2, 6, 2.9998999, 0, 5, -0.0001, 2, 6, -0.0001, 0, 5, 8, 2, 8, 8, 0, -8, 8, 0, 8, 8, 2, 8, 8, 2, -8, 8, 0, -8, 8, 2, 8, -0.0001, 0, 8, -0.0001, 2, 8, 8, 2, 8, 8, 0, 8, -0.0001, 0, 8, 6, 2, -6.0002, -0.0001, 0, -5.0002, -0.0001, 2, -6.0002, 6, 2, -6.0002, 5, 0, -5.0002, -0.0001, 0, -5.0002, 8, 2, -8, -0.0001, 0, -8, 8, 0, -8, 8, 2, -8, -0.0001, 2, -8, -0.0001, 0, -8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dindt"]
 size = Vector3(6.2, 1, 9)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_swpnc"]
+height = 3.0
+radius = 2.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sokfi"]
+size = Vector3(34, 0.2, 33)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xq4la"]
 resource_name = "MatBumper"
@@ -659,6 +671,9 @@ normal_enabled = true
 normal_texture = SubResource("CompressedTexture2D_pxp0t")
 uv1_scale = Vector3(6, 2, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tum4l"]
+albedo_texture = ExtResource("18_1xo8v")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dindt"]
 resource_name = "MatGravel"
 cull_mode = 2
@@ -695,6 +710,197 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_b7fpm")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dr4f4"]
+noise_type = 2
+seed = 1
+frequency = 0.02
+offset = Vector3(0, -30, 0)
+fractal_octaves = 4
+fractal_lacunarity = 2.5
+fractal_weighted_strength = 0.4
+domain_warp_frequency = 0.055
+domain_warp_fractal_type = 2
+domain_warp_fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qvq6e"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_dr4f4")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 0.2
+bump_strength = 12.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swpnc"]
+render_priority = -1
+shader = ExtResource("18_sokfi")
+shader_parameter/primary_color = Color(1, 0.6706667, 0.48000002, 1)
+shader_parameter/secondary_color = Color(0.12, 0.03, 0, 1)
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_qvq6e")
+shader_parameter/roughness = 0.30000000447036
+shader_parameter/wave_speed = 2.0000000298024
+shader_parameter/uv_scale = 0.25
+shader_parameter/depth_distance = 0.5000000074506
+shader_parameter/beers_law = 20.0
+shader_parameter/water_transparency = 0.30000000447036
+shader_parameter/refraction_strength = 0.20000000298024
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pl2gw"]
+albedo_texture = ExtResource("22_pxp0t")
+uv1_scale = Vector3(-1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaf4t"]
+resource_name = "MatLever"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("17_vx3df")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qqnl1"]
+_surfaces = [{
+"aabb": AABB(-0.17025825, -0.39000005, -0.0004695058, 0.3405165, 0.7800001, 0.35384682),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CAALAAwACAANAAsABgANAAgADAAGAAgACwANAAEABgABAA0ACwABAA4AAwALAA4AAwACAAsADAALAAIADAACAAAABwAMAAAAAwAOAA8ADwAOAAEAAwAPAAQADwABAAoABgAKAAEACQAPAAoABgAJAAoAEAAEAA8ACQAQAA8AEAAJAAYAEAAFAAQABwAFABAAEAAGABEABwAQABEADAARAAYABwARAAwA"),
+"lods": [0.084967345, PackedByteArray("CAACAAAAAAAGAAgAAAAHAAYACAABAAIABgABAAgAAgABAAMABQAGAAcABQAJAAYABgAKAAEACgADAAEABgAJAAoACQAFAAoAAwAKAAQABQAEAAoA"), 0.18301563, PackedByteArray("AAABAAIAAgABAAMAAwABAAQABQAEAAEABgABAAAABgAFAAEAAAAHAAYABQAGAAcA")],
+"name": "MatLever",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("/////wAAAAAAAP9///8AAAAA//8AAAAAAAD/fwAAAAAAAAAAAAAAAP//AAAAAAAA////f///AAD///9/AAAAAP///7/H4wAA////P8fjAAAAAP8/x+MAAAAAXvC6hQAA//9e8LqFAAAAAP+/x+MAAAAA/3//fwAAAACgD7qFAAD//6APuoUAAP///3//fwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8sx6v"]
+resource_name = "props00_Cube_024"
+_surfaces = [{
+"aabb": AABB(-0.17025825, -0.39000005, -0.0004695058, 0.3405165, 0.7800001, 0.35384682),
+"attribute_data": PackedByteArray("Mv6gBn+NsaN/jaAGMv6xo1MCJANVgq6kUwKupFMCJANTAq6kVYKupDL+saMy/qAGf42xo3+NoAZTAq6kVYKupFMCJANTAiQDVYKupFMCrqQy/tFsnG0dSjL+0Wx/jdFsnG0dSpxtHUp/jZEpMv6RKX+N0WwyRl8SaUaupDJGXxJpRq6knG0dSjJGXxJpRq6kMkZfEmlGrqR/jZEpMv6RKTJGXxJpRq6kMkZfEmlGrqQyRl8SaUaupDJGXxJpRq6k"),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("FAAaABsAGwAaAAIAGwACAAAAFAAcABoAAwAcABQAAwABABwABgAdAB4ABgAEAB0AHwAFACAAHwAhAAUACAAiAAcACAAjACIAJAAJABUAJAAlAAkAFgAmABcACgAWABcACgAXAAwAFgAnACYAJwANACYAJwALAA0ADgAoABAADgApACgAKgAPABgAKgArAA8AEwAsAC0AEwARACwALgASAC8ALgAZABIA"),
+"lods": [0.084967345, PackedByteArray("FAACAAAAFAABAAIAAwABABQABAAFAAYABwAJABUABwAIAAkAFgALABcACwANABcACgAWABcACgAXAAwADgAYABAAGAAOAA8AEQASABMAEQAZABIA"), 0.18301563, PackedByteArray("AAABAAIAAwABAAAABAAFAAYABwAIAAkACgALAAwACwANAAwADgAPABAAEQASABMA")],
+"material": SubResource("StandardMaterial3D_xaf4t"),
+"name": "MatLever",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("/////wAAurUAAP9///8AgAAA//8AALq1////f///AIAAAP//AAAIwAAA/3////+/AAD/fwAAAMD/////AACvAf///38AAIgA////f///AAD///9////+f///AAAAAERKAAD/f////n8AAAAAAABESgAA/38AAP4/AAD/f////z8AAAAAAAD2P///AAAAAE/+////f/////////9/AAB2/////7/H476S////v8fjgwL///8/x+NAbQAA/z/H40BtAAD/P8fj6z////8/x+N7/QAAXvC6hZap//9e8LqFlqkAAP+/x+O+kgAAXvC6hQTAAAD/f/9//78AAF7wuoUpwAAA/3//fwXAAAD/v8fjE8D//17wuoU+Af///3//fwAA//9e8LqFpQP///9//39lAQAAoA+6hWhW//+gD7qFaFYAAKAPuoX6PwAA/3//f/8/AACgD7qF1T8AAP9//3/5P///oA+6hcD+////f/9//////6APuoVZ/P///3//f5n+////f/9///////9//3///3V86vj/f///1X6r/RK/Jn6zv2h//7//f/9///8AAP9//3///wAA/39SgtX+/3///xOHdPzYARM//7//f5YAtD////9/ob5DfQAA/38AAP9/SIra+rwCoT7///9/////f////39YfbH6/3///8t4l/EJfRL623q29VC/oX7/v/9/B74QfDq/dn4AAP9/AAD/f02FWP3/f///Z47L+OyFCP1eAVA//7//f+4DCD6IATs/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qqnl1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_207a0"]
+albedo_texture = ExtResource("17_vx3df")
+metallic_specular = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u01jd"]
+_surfaces = [{
+"aabb": AABB(-0.069120005, -0.09676801, 0.0019531846, 0.13824001, 0.19353601, 0.7772615),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("CAABAAkACAAAAAEAAwAJAAEABgAIAAkAAAAIAAoAAAAKAAUACgADAAUACAAHAAoACAAGAAcACgALAAMAAwALAAkABwALAAoABgAJAAIABwAGAAIACwACAAkABwACAAQACwAEAAIABwAEAAsA"),
+"lods": [0.044551365, PackedByteArray("AAABAAIAAwACAAEAAwAEAAIABQAEAAMABgAAAAIABwAEAAUAAAAHAAUAAAAGAAcABwACAAQABwAGAAIA")],
+"name": "MatLever",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/z//PwAAAAD/P/+/AAAAAAAA/////wAA/7//vwAAAAD///////8AAP+//z8AAAAAAAAAAP//AAD//wAA//8AABlPAj03ewAAGU/8wjd7AADlsAI9N3sAAOWw/MI3ewAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eo7fq"]
+resource_name = "props00_Cube_025"
+_surfaces = [{
+"aabb": AABB(-0.069120005, -0.09676801, 0.0019531846, 0.13824001, 0.19353601, 0.7772615),
+"attribute_data": PackedByteArray("iwAv3osAD8D5/Q/ABf4v3hX9Ut/iyoOp7vyDqe7KUt+LACWn+f0PwIsAD8Bp/wSniwAv3t79lPyLAKr/Bf4v3osAL975/Q/AiwAPwAX+L97JgS/eyYEPwMmB9abJgQ/AyYEPwMmB9abJgQ/AyYEv3smBn/3JgS/eyYEv3smBn/3JgS/eyYEPwMmBD8DJgS/e"),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("FAABABUAFAAAAAEABAAFAAYABAAHAAUAFgAJABcAFgALAAkACAAYAAoACAAZABgAAwAaAAIAAwAbABoADAAcAA4ADAAdABwAHgANAB8AHgAPAA0AIAASABAAIAAhABIAEwAiACMAEwARACIA"),
+"lods": [0.044551365, PackedByteArray("AAABAAIAAwAAAAIABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwARABAA")],
+"material": SubResource("StandardMaterial3D_xaf4t"),
+"name": "MatLever",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("/z//PwAAG7//P/+/AAAbvwAA/////1rEAAAAAP//asT//wAA//8AgAAA/////wCA////////AIAAAAAA//8AgP+//78AAA7VAAD/////L9b/P/+/AAD21P///////87V/z//PwAAptX//wAA///32f+//z8AALfVAAAAAP//Ydr/v/8/AAApAP///////xgC/7//vwAAHQD//wAA//8TAxlPAj03exu/GU/8wjd7G7/lsPzCN3tw2RlP/MI3e2HaGU/8wjd749XlsPzCN3sB1hlP/MI3e2rEGU8CPTd7UsTlsAI9N3sM1RlPAj03e/bUGU8CPTd7otblsAI9N3u81eWwAj03ex4A5bD8wjd7KQDlsPzCN3sTA+WwAj03e1wBnX85/75/e/9pe0j3cnmN8/9/////f////3////9///9Bq36q1K7lql+rb6per5yq3Cp21ZAtNtbmKovV1i271jS/zn8KwnV9PL/ff23BSnyGgLz/xYCd/3OqNa1DqdatP6oAqxqqEqtwjHL58oXd/H0qutRwKp/UOyvM0Y4qhdAgADw/MAA1P7QDbkGyAXxC")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_u01jd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tum4l"]
+size = Vector3(0.512546, 1.35666, 1.18469)
+
+[sub_resource type="Animation" id="Animation_kelg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x7j7g"]
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dyyfu"]
+resource_name = "pull_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.53333336, 1),
+"transitions": PackedFloat32Array(1, 0.4204479, 1, 3.24901),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(0, 0, 0), Vector3(-0.16522324, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7h5w7"]
+resource_name = "up"
+length = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5707964, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gh4p8"]
+_data = {
+&"RESET": SubResource("Animation_kelg3"),
+&"down": SubResource("Animation_x7j7g"),
+&"pull_down": SubResource("Animation_dyyfu"),
+&"up": SubResource("Animation_7h5w7")
+}
 
 [sub_resource type="Curve" id="Curve_p6qva"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -780,9 +986,258 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_08xri")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pl2gw"]
-albedo_texture = ExtResource("22_pxp0t")
-uv1_scale = Vector3(-1, 1, 1)
+[sub_resource type="Animation" id="Animation_v7uaw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pool:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.5, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pipe00:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.75, 1.5, 1.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pipe01:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.75, 1.5, 1.5)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pool/foam00:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pool/foam01:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pipe00:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("pipe01:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("watersound:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("watersound:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("watersound:pitch_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_s43cw"]
+resource_name = "lower"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pool:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -0.5, 1), Vector3(0, -3.1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pipe00:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.75, 1.5, 1.5), Vector3(0, 1.5, 1.3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pipe01:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.75, 1.5, 1.5), Vector3(0, 1.5, 1.3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("pool/foam00:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("pool/foam01:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("pipe00:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("pipe01:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.9, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("watersound:volume_db")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.70000005, 4.866667),
+"transitions": PackedFloat32Array(2.639015, 1),
+"update": 0,
+"values": [0.0, -40.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("watersound:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("watersound:pitch_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.1, 4.8333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lwudr"]
+_data = {
+&"RESET": SubResource("Animation_v7uaw"),
+&"lower": SubResource("Animation_s43cw")
+}
 
 [node name="SewerHallC" type="Node3D" unique_id=2125396539]
 
@@ -798,14 +1253,26 @@ autoplay = true
 [node name="plinplin" parent="." unique_id=2038828281 instance=ExtResource("2_pl2gw")]
 
 [node name="col" type="StaticBody3D" parent="." unique_id=2017254456]
-visible = false
 
 [node name="roomshape" type="CollisionShape3D" parent="col" unique_id=1801301306]
-shape = SubResource("ConcavePolygonShape3D_1xo8v")
+shape = SubResource("ConcavePolygonShape3D_sokfi")
 
 [node name="fences" type="CollisionShape3D" parent="col" unique_id=2103022439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.4)
 shape = SubResource("BoxShape3D_dindt")
+
+[node name="pipe00" type="CollisionShape3D" parent="col" unique_id=1142002902]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -2, 4.4282436)
+shape = SubResource("CylinderShape3D_swpnc")
+
+[node name="waterCol" type="StaticBody3D" parent="." unique_id=437783362 groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="wide" type="CollisionShape3D" parent="waterCol" unique_id=229295755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+shape = SubResource("BoxShape3D_sokfi")
 
 [node name="mesh" type="Node" parent="." unique_id=1721854324]
 
@@ -945,39 +1412,16 @@ transform = Transform3D(-3.496911e-07, 0, -8, 0, 1.5, 0, 8, 0, -3.496911e-07, 7.
 mesh = ExtResource("20_lwudr")
 surface_material_override/0 = SubResource("StandardMaterial3D_vx3df")
 
-[node name="water" type="Node" parent="." unique_id=559423092]
+[node name="plate" type="MeshInstance3D" parent="mesh" unique_id=809789759]
+transform = Transform3D(1.5, 0, 0, 0, 0.9396926, 0.34202015, 0, -0.34202015, 0.9396926, 0, -0.8968303, -2.617094)
+mesh = ExtResource("20_lwudr")
+surface_material_override/0 = SubResource("StandardMaterial3D_tum4l")
 
-[node name="pool" type="MeshInstance3D" parent="water" unique_id=1853672089]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1)
+[node name="pool" type="MeshInstance3D" parent="mesh" unique_id=1966300149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 1)
 mesh = SubResource("ArrayMesh_pxp0t")
 skeleton = NodePath("")
-surface_material_override/0 = ExtResource("16_pxp0t")
-
-[node name="foam00" type="GPUParticles3D" parent="water/pool" unique_id=1106776468]
-transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -1.6416113, 0, -1)
-process_material = SubResource("ParticleProcessMaterial_pxp0t")
-draw_pass_1 = SubResource("QuadMesh_pl2gw")
-
-[node name="foam01" type="GPUParticles3D" parent="water/pool" unique_id=2045993663]
-transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.50000006, 1.6525619, 0, -1)
-process_material = SubResource("ParticleProcessMaterial_pxp0t")
-draw_pass_1 = SubResource("QuadMesh_pl2gw")
-
-[node name="pipe00" type="MeshInstance3D" parent="water" unique_id=1032969468]
-transform = Transform3D(-3.278354e-08, 0, 1.5, 0, 1.5, 0, -0.75, 0, -6.556708e-08, -7, 3, 0)
-mesh = SubResource("ArrayMesh_gh4p8")
-skeleton = NodePath("")
-surface_material_override/0 = ExtResource("16_pxp0t")
-
-[node name="pipe01" type="MeshInstance3D" parent="water" unique_id=1141179047]
-transform = Transform3D(9.835062e-08, 0, -1.5, 0, 1.5, 0, 0.75, 0, 1.9670124e-07, 7, 3, 0)
-mesh = SubResource("ArrayMesh_gh4p8")
-skeleton = NodePath("")
-surface_material_override/0 = ExtResource("16_pxp0t")
-
-[node name="watersound" type="AudioStreamPlayer3D" parent="water" unique_id=1690857337]
-stream = ExtResource("19_e60ps")
-autoplay = true
+surface_material_override/0 = SubResource("ShaderMaterial_swpnc")
 
 [node name="lamp" parent="." unique_id=865691026 instance=ExtResource("20_p6qva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -2)
@@ -1004,3 +1448,81 @@ transform = Transform3D(-0.49999997, 3.547526e-08, -7.8032315e-08, 0, 0.8033272,
 mesh = ExtResource("20_lwudr")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pl2gw")
+
+[node name="Door02" parent="." unique_id=1074145445 instance=ExtResource("21_dindt")]
+transform = Transform3D(1, 0, -1.7484538e-07, 0, 1, 0, 1.7484538e-07, 0, 1, 0, -3, 3.125)
+newPosition = Vector3(0, -2, -10)
+newMap = "uid://c86nnxipscj7q"
+
+[node name="water_lever" type="Area3D" parent="." unique_id=702537407 node_paths=PackedStringArray("water") groups=["Act"]]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 0.942, -5.5)
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+script = ExtResource("21_1xo8v")
+event = "Sewer00"
+sound = ExtResource("22_sokfi")
+water = NodePath("water")
+
+[node name="base" type="MeshInstance3D" parent="water_lever" unique_id=1382980198]
+transform = Transform3D(1, 0, 0, 0, 0.8829475, 0.46947157, 0, -0.46947157, 0.8829475, 0, 0, 0)
+mesh = SubResource("ArrayMesh_8sx6v")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_207a0")
+
+[node name="lever" type="Node3D" parent="water_lever" unique_id=391511037]
+
+[node name="stick" type="MeshInstance3D" parent="water_lever/lever" unique_id=315939740]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0)
+mesh = SubResource("ArrayMesh_eo7fq")
+surface_material_override/0 = SubResource("StandardMaterial3D_207a0")
+
+[node name="col" type="CollisionShape3D" parent="water_lever" unique_id=1027075046]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0269753, 0.0769799, -0.196437)
+shape = SubResource("BoxShape3D_tum4l")
+
+[node name="anim" type="AnimationPlayer" parent="water_lever" unique_id=73787829]
+libraries/ = SubResource("AnimationLibrary_gh4p8")
+autoplay = &"up"
+
+[node name="t" type="Timer" parent="water_lever" unique_id=2114960660]
+one_shot = true
+
+[node name="water" type="Node" parent="water_lever" unique_id=559423092]
+
+[node name="pool" type="MeshInstance3D" parent="water_lever/water" unique_id=1853672089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 1)
+mesh = SubResource("ArrayMesh_pxp0t")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("16_pxp0t")
+
+[node name="foam00" type="GPUParticles3D" parent="water_lever/water/pool" unique_id=1106776468]
+transform = Transform3D(2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, 2.9802322e-08, -1.6416113, 0, -1)
+process_material = SubResource("ParticleProcessMaterial_pxp0t")
+draw_pass_1 = SubResource("QuadMesh_pl2gw")
+
+[node name="foam01" type="GPUParticles3D" parent="water_lever/water/pool" unique_id=2045993663]
+transform = Transform3D(0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, 0.50000006, 1.6525619, 0, -1)
+process_material = SubResource("ParticleProcessMaterial_pxp0t")
+draw_pass_1 = SubResource("QuadMesh_pl2gw")
+
+[node name="pipe00" type="MeshInstance3D" parent="water_lever/water" unique_id=1032969468]
+transform = Transform3D(-3.278354e-08, 0, 1.5, 0, 1.5, 0, -0.75, 0, -6.556708e-08, -7, 3, 0)
+mesh = SubResource("ArrayMesh_gh4p8")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("16_pxp0t")
+
+[node name="pipe01" type="MeshInstance3D" parent="water_lever/water" unique_id=1141179047]
+transform = Transform3D(5.6623428e-08, 0, -1.5, 0, 1.5, 0, 0.75, 0, 1.13246855e-07, 7, 3, 0)
+mesh = SubResource("ArrayMesh_gh4p8")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("16_pxp0t")
+
+[node name="watersound" type="AudioStreamPlayer3D" parent="water_lever/water" unique_id=1690857337]
+stream = ExtResource("19_e60ps")
+autoplay = true
+
+[node name="anim" type="AnimationPlayer" parent="water_lever/water" unique_id=1941414999]
+libraries/ = SubResource("AnimationLibrary_lwudr")
+
+[connection signal="timeout" from="water_lever/t" to="water_lever" method="_on_t"]
