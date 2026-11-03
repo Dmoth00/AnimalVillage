@@ -188,8 +188,8 @@ alpha_antialiasing_mode = 0
 cull_mode = 2
 albedo_texture = ExtResource("9_xb6fp")
 metallic_specular = 0.0
-uv1_scale = Vector3(0.335, 0.335, 0.335)
-uv1_offset = Vector3(0, 0.24, 0)
+uv1_scale = Vector3(0.67, 0.67, 0.67)
+uv1_offset = Vector3(0, 0.21, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3j3b"]
 albedo_texture = ExtResource("10_isg7r")
@@ -619,7 +619,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_fq3p7")
 surface_material_override/3 = SubResource("StandardMaterial3D_u3j3b")
 
 [node name="meshSewerWater" type="MeshInstance3D" parent="mesh/meshHotelRoom00" unique_id=535786929]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -0.022999993, 0.155, 0.35278845)
+transform = Transform3D(-1, 0, 0, 0, 1, 8.351872e-23, 0, -8.351872e-23, -1, -1.023, 0.15500005, 0.35278845)
 mesh = SubResource("ArrayMesh_fq3p7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_m0fon")
@@ -705,7 +705,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_86duw")
 
 [node name="pipes02" type="MeshInstance3D" parent="mesh" unique_id=395851834]
-transform = Transform3D(-9.059749e-07, 6, -2.6226834e-07, 2.6226846e-07, -2.6226832e-07, -6, -6, -9.059749e-07, -2.6226834e-07, 8.783737, 4.903078, -13.460878)
+transform = Transform3D(-9.059749e-07, 6, -2.6226834e-07, 2.6226846e-07, -2.6226832e-07, -6, -6, -9.059749e-07, -2.6226834e-07, 8.784, 4.6, -13.461)
 mesh = SubResource("ArrayMesh_fgwq3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_86duw")
