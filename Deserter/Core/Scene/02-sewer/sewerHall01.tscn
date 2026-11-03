@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://wtat04abkrxo" path="res://Assets/Textures/DoorTex01.png" id="6_xxmlt"]
 [ext_resource type="Texture2D" uid="uid://cxv8kvqt7cy8b" path="res://Assets/Mesh/Props/potsTex.png" id="7_isg7r"]
 [ext_resource type="Texture2D" uid="uid://dspr8u0bflwct" path="res://Assets/Textures/StairsTex00.png" id="8_uvxtn"]
+[ext_resource type="Texture2D" uid="uid://bwlekb8g05fx2" path="res://Assets/Textures/GrateTex02.png" id="9_xb6fp"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="10_isg7r"]
-[ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="11_bi01f"]
 [ext_resource type="Texture2D" uid="uid://vrgompeg0dtq" path="res://Assets/Textures/ChainlinkTex01.png" id="12_u5vyv"]
 [ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="12_xb6fp"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="13_fc6tj"]
@@ -186,10 +186,10 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_texture = ExtResource("11_bi01f")
+albedo_texture = ExtResource("9_xb6fp")
 metallic_specular = 0.0
-uv1_scale = Vector3(0.25, 0.25, 0.25)
-uv1_offset = Vector3(0.02, -0.3, 0)
+uv1_scale = Vector3(0.335, 0.335, 0.335)
+uv1_offset = Vector3(0, 0.24, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3j3b"]
 albedo_texture = ExtResource("10_isg7r")
@@ -576,10 +576,11 @@ autoplay = true
 [node name="plinplin" parent="." unique_id=2038828281 instance=ExtResource("2_n8j8x")]
 
 [node name="col" type="StaticBody3D" parent="." unique_id=711805933]
+visible = false
 collision_mask = 0
 
 [node name="roomShape" type="CollisionShape3D" parent="col" unique_id=938228043]
-transform = Transform3D(-4.371139e-08, -1, 0, 0, 0, -1, 1, -4.371139e-08, 0, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_fc6tj")
 
 [node name="box00" type="CollisionShape3D" parent="col" unique_id=515573545]
@@ -609,7 +610,7 @@ shape = SubResource("BoxShape3D_fgwq3")
 [node name="mesh" type="Node" parent="." unique_id=993476722]
 
 [node name="meshHotelRoom00" type="MeshInstance3D" parent="mesh" unique_id=1257770731]
-transform = Transform3D(-4.371139e-08, -1, 0, 0, 0, -1, 1, -4.371139e-08, 0, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
 mesh = SubResource("ArrayMesh_l16hl")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_klm02")

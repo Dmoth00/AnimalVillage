@@ -1111,8 +1111,13 @@ load_path = "res://.godot/imported/ClayTex.png-2d3125eef07567b508ec03874140c310.
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4iytr"]
 resource_name = "ClayMat"
 cull_mode = 2
+diffuse_mode = 1
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_color = Color(0.9372549, 0.9372549, 0.9372549, 1)
 albedo_texture = SubResource("CompressedTexture2D_c7sbl")
 metallic_specular = 0.0
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1jam"]
 resource_name = "leavesMat"

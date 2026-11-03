@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cqv7f0gawi267" path="res://Assets/Textures/WindowTex00.png" id="5_f1mw2"]
 [ext_resource type="Environment" uid="uid://cgqr7sbdj8r3m" path="res://Core/Scene/inside_env.tres" id="6_56a2a"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="7_ceuxk"]
-[ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="8_4ie3q"]
 [ext_resource type="AudioStream" uid="uid://byf602lwpa1fh" path="res://Assets/Sounds/BGM/bgm_waterDeep.wav" id="8_6ur7u"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="9_gxs5p"]
 
@@ -188,11 +187,6 @@ resource_name = "WallMat01"
 cull_mode = 2
 albedo_texture = ExtResource("2_lvfjj")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mibks"]
-resource_name = "CarpetMat"
-cull_mode = 2
-albedo_texture = ExtResource("8_4ie3q")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oefhk"]
 resource_name = "DoorMat00"
 cull_mode = 2
@@ -274,7 +268,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAABAAAAAUAAAAGAAUAAAAHAAYAAAAIAAkAAAAKAAgACwAMAA0ACwAOAAwADwAQABEADwASABAA"),
-"material": SubResource("StandardMaterial3D_mibks"),
+"material": SubResource("StandardMaterial3D_8n0mf"),
 "name": "CarpetMat",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -295,15 +289,6 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fga5e")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f1mw2"]
-load_path = "res://.godot/imported/ConcreteTex01.png-c98a5a3a1c9615155205987e2dfa60a4.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_56a2a"]
-resource_name = "CarpetMat"
-cull_mode = 2
-albedo_texture = SubResource("CompressedTexture2D_f1mw2")
-uv1_scale = Vector3(0.25, 0.25, 0.25)
 
 [node name="DebugHallwayMap" type="Node3D" unique_id=404733760]
 
@@ -396,7 +381,6 @@ surface_material_override/4 = SubResource("StandardMaterial3D_nwkj5")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, -6, 1)
 mesh = SubResource("ArrayMesh_6ba1w")
 skeleton = NodePath("")
-surface_material_override/2 = SubResource("StandardMaterial3D_56a2a")
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=266388906]
 environment = ExtResource("6_56a2a")

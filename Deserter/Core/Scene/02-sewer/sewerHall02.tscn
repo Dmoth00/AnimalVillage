@@ -882,7 +882,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nrrp7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yvdje"]
-size = Vector3(0.88391113, 0.37978515, 1.1140137)
+size = Vector3(0.9, 0.4, 1.2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0n1p"]
 resource_name = "MatAsphalt"
@@ -1150,6 +1150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 2.2869997, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 2.287, 6)
 
 [node name="col" type="StaticBody3D" parent="." unique_id=1724080816]
+visible = false
 collision_mask = 0
 
 [node name="room" type="CollisionShape3D" parent="col" unique_id=1305304482]
@@ -1196,17 +1197,15 @@ skeleton = NodePath("")
 surface_material_override/0 = ExtResource("12_ijwqd")
 
 [node name="waterCol" type="StaticBody3D" parent="Water/water_mesh" unique_id=2091478707 groups=["Water"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0013124645, -0.00016117096)
-visible = false
 collision_layer = 4
 collision_mask = 0
 
 [node name="shallow00" type="CollisionShape3D" parent="Water/water_mesh/waterCol" unique_id=174534843]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.496033, -0.05132927, -3.627038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, -0.05, -3.5)
 shape = SubResource("BoxShape3D_yvdje")
 
 [node name="shallow01" type="CollisionShape3D" parent="Water/water_mesh/waterCol" unique_id=187979838]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.503967, -0.05132927, -3.627038)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, -0.05, -3.5)
 shape = SubResource("BoxShape3D_yvdje")
 
 [node name="waterfall" type="MeshInstance3D" parent="Water" unique_id=1911377933]
