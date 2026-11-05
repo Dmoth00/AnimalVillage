@@ -1,7 +1,5 @@
-extends Area3D
-@export var filepath : Resource
-@export var key=""
-@onready var texts : Array
+extends Node3D
+@export var texts : Array[String] = ["Nothing Here.", "...And Yet..."]
 @export var turnToLook = true
 
 @onready var snd = $snd
@@ -13,19 +11,13 @@ var talking = false
 
 
 func _ready() -> void:
-	var txtfile=JSON.new
-	var file=FileAccess.open(filepath.resource_path, FileAccess.READ)
-	txtfile=JSON.parse_string(file.get_as_text())
-	file.close()
-	texts = txtfile[key]
-	
 	stored_dir=global_transform.basis.z
 	dir=stored_dir
 
 	
 func act(player : CharacterBody3D) -> void:
 	get_tree().get_first_node_in_group("TXT").act(texts,self)
-	target_dir=(global_position-player.global_position).normalized()
+	if turnToLook: target_dir=(global_position-player.global_position).normalized()
 	player.ltgt=NewFunc.flat(global_position-player.global_position).normalized()
 	if snd!=null: snd.play()
 

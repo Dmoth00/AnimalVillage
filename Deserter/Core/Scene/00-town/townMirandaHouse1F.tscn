@@ -912,12 +912,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2e081")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xhvq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i851l"]
 albedo_color = Color(0.75, 0.33749998, 0.44749987, 1)
 albedo_texture = ExtResource("27_37tfo")
 
 [sub_resource type="QuadMesh" id="QuadMesh_wf8yl"]
-material = SubResource("StandardMaterial3D_3xhvq")
+material = SubResource("StandardMaterial3D_i851l")
 size = Vector2(4, 4)
 orientation = 1
 
@@ -1102,6 +1102,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 
 newPosition = Vector3(18.5, -1, -75.25)
 newMap = "uid://cnqovkmyuiyoa"
 
+[node name="bedroom" parent="." unique_id=444387764 instance=ExtResource("3_ptpxd")]
+transform = Transform3D(-4.3711378e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711378e-08, -7, 2, -6)
+newPosition = Vector3(2.5, 0, -0.5)
+newMap = "uid://dcsbliaoht53k"
+
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1475424259]
 stream = ExtResource("2_lvlcd")
 volume_db = -8.0
@@ -1173,6 +1178,11 @@ autostart = true
 
 [node name="door" type="MeshInstance3D" parent="mesh" unique_id=1444917702]
 transform = Transform3D(-4.37114e-08, 0.447759, 0.894154, 0, 0.894154, -0.447759, -1, -1.9572173e-08, -3.908472e-08, 6.440853, 0.91602, -0.5)
+mesh = SubResource("QuadMesh_hf1h2")
+skeleton = NodePath("../../Door")
+
+[node name="door2" type="MeshInstance3D" parent="mesh" unique_id=387982003]
+transform = Transform3D(-4.3711378e-08, -0.44775903, -0.894154, 3.079058e-15, 0.894154, -0.44775903, 1, -1.957217e-08, -3.9084707e-08, -7.48, 3, -6)
 mesh = SubResource("QuadMesh_hf1h2")
 skeleton = NodePath("../../Door")
 
