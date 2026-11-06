@@ -1253,6 +1253,7 @@ autoplay = true
 [node name="plinplin" parent="." unique_id=2038828281 instance=ExtResource("2_pl2gw")]
 
 [node name="col" type="StaticBody3D" parent="." unique_id=2017254456]
+visible = false
 
 [node name="roomshape" type="CollisionShape3D" parent="col" unique_id=1801301306]
 shape = SubResource("ConcavePolygonShape3D_sokfi")
@@ -1267,6 +1268,7 @@ shape = SubResource("CylinderShape3D_swpnc")
 
 [node name="waterCol" type="StaticBody3D" parent="." unique_id=437783362 groups=["Water"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
+visible = false
 collision_layer = 4
 collision_mask = 0
 

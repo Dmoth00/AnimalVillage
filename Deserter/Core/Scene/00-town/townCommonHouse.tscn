@@ -35,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://crjgyq5g41hdl" path="res://Assets/Textures/WindowTex01.png" id="33_ocsws"]
 [ext_resource type="Script" uid="uid://dsm7y8cry1qho" path="res://Core/Props/iteractibles/calendar.gd" id="33_vo1lt"]
 [ext_resource type="Texture2D" uid="uid://vjr441un7klu" path="res://Assets/Textures/WindowTex01Emission.png" id="35_543sv"]
+[ext_resource type="PackedScene" uid="uid://elwmhd4pgmwf" path="res://Core/Actors/NPC/Villagers/spend_time.tscn" id="36_7pno4"]
+[ext_resource type="Script" uid="uid://de2bmbxch8nbp" path="res://Core/Actors/NPC/Villagers/villager_talk.gd" id="37_nh2bb"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
 height = 1.03426
@@ -991,6 +993,10 @@ albedo_color = Color(0.9766667, 1, 0.9, 1)
 albedo_texture = ExtResource("35_543sv")
 uv1_scale = Vector3(2, 1, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1j0c8"]
+radius = 0.45117188
+height = 1.729248
+
 [node name="CommonHouse" type="Node3D" unique_id=1940296731]
 script = ExtResource("1_ksh3w")
 
@@ -1266,5 +1272,27 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wb638")
 transform = Transform3D(-4.371139e-08, -0.44775906, -0.89415425, 0, 0.89415425, -0.44775906, 1, -1.957217e-08, -3.9084725e-08, -13.770154, 1.5623903, -2.2181375)
 mesh = SubResource("QuadMesh_7fg86")
 surface_material_override/0 = SubResource("StandardMaterial3D_e6u4s")
+
+[node name="SpendTime" parent="." unique_id=1722464194 instance=ExtResource("36_7pno4")]
+follow_viewport_enabled = true
+question = "Sleep here? (Items and enemies will return)"
+
+[node name="Bed" type="Area3D" parent="." unique_id=107790188 node_paths=PackedStringArray("react") groups=["Act"]]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.154829, 0, -6.768469)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("37_nh2bb")
+texts = Array[String](["It seems this is your bed now."])
+turnToLook = false
+react = NodePath("../SpendTime")
+
+[node name="col" type="CollisionShape3D" parent="Bed" unique_id=1219251765]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0.864624, 0.23330593)
+shape = SubResource("CapsuleShape3D_1j0c8")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="Bed" unique_id=668426033]
+volume_db = -8.0
+max_db = 0.0
+pitch_scale = 1.5
 
 [editable path="meshes/desk"]

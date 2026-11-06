@@ -1,8 +1,14 @@
 extends CanvasLayer
 
 @export var question : String
+
 @export var choice01 : String
+@export var choice01Call : Node
+
 @export var choice02 : String
+@export var choice02Call : Node
+
+@export var reverseDefault = false
 
 @onready var state : int
 
@@ -14,6 +20,10 @@ extends CanvasLayer
 
 @onready var c2 = $Choice02
 @onready var c2text = $Choice02/Text
+
+@onready var snd=$snd
+
+
 
 var select : bool
 var t : float
@@ -69,6 +79,7 @@ func _process(delta: float) -> void:
 		#Action! the intro is done and now it's active.
 		3:
 			if Input.is_action_just_pressed("gp_left") or Input.is_action_just_pressed("gp_right"):
+				snd.play()
 				select=!select
 				if select:
 					c1.modulate=Color.YELLOW
@@ -76,14 +87,40 @@ func _process(delta: float) -> void:
 				else:
 					c2.modulate=Color.YELLOW
 					c1.modulate=Color.WHITE
+			var press = false
 			if Input.is_action_just_pressed("gp_activate"):
-				if select:
-					pass
-				else:
-					refresh()
-					set_process(false)
-				pass
+				press=true
+			if Input.is_action_just_pressed("gp_run"):
+				press=true
+				select=reverseDefault
+			if press:
+				snd.play()
+				state=4
+				qtext.visible_characters=0
+				c1text.visible_characters=0
+				c2text.visible_characters=0
+		#closes the windows the selection is now decided
+		4:
+			t=min(t+delta*4,1.0)
+			q.scale.x=1.0-t
+			c1.scale.x=1.0-t
+			c2.scale.x=1.0-t
+			if t==1.0:
+				t=0.0
+				state=5
+		#activate the object linked to the selection
+		5:
+			var c : Node
+			if select: c=choice01Call
+			else: c=choice02Call
 			
+			if c!=null: c.act()
+			else:
+				player.inputOff=false
+				player.can_move=true
+			
+			refresh()
+			set_process(false)
 
 func act():
 	refresh()
