@@ -4,19 +4,25 @@ extends Node3D
 
 @onready var snd = $snd
 
+@export var react : Node
+
 var target_dir : Vector3
 var dir : Vector3
 var stored_dir : Vector3
 var talking = false
+var txt : Node
 
 
 func _ready() -> void:
 	stored_dir=global_transform.basis.z
 	dir=stored_dir
+	txt=get_tree().get_first_node_in_group("TXT")
 
 	
 func act(player : CharacterBody3D) -> void:
-	get_tree().get_first_node_in_group("TXT").act(texts,self)
+	txt.act(texts,self,react)
+	if react!=null:
+		pass
 	if turnToLook: target_dir=(global_position-player.global_position).normalized()
 	player.ltgt=NewFunc.flat(global_position-player.global_position).normalized()
 	if snd!=null: snd.play()

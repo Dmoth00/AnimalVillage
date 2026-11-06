@@ -394,12 +394,13 @@ shader_parameter/uv1_offset = Vector3(0, 0, 0)
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ilfx"]
 radius = 3.0
 
-[node name="Miranda" type="StaticBody3D" unique_id=1367203503 groups=["Act"]]
+[node name="Miranda" type="StaticBody3D" unique_id=1367203503 node_paths=PackedStringArray("react") groups=["Act"]]
 collision_layer = 15
 collision_mask = 0
 script = ExtResource("1_icwdu")
 texts = Array[String]([" . . .", "You know I'm not actually supossed to be here, right?", "It's not healthy to dwell so much on unhappy memories."])
 turnToLook = false
+react = NodePath("")
 
 [node name="col" type="CollisionShape3D" parent="." unique_id=952390104]
 transform = Transform3D(0.9999908, 0, 0, 0, 1, 0, 0, 0, 0.9999908, 0, 0.9944315, 0)

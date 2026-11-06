@@ -8,6 +8,7 @@ extends CanvasLayer
 
 @onready var text_queue : Array
 @onready var rec : Node3D
+@onready var ract : Node
 
 
 func _ready() -> void:
@@ -25,7 +26,7 @@ func _process(delta: float) -> void:
 		1: 
 			t+=delta*4
 			if t>=0.1 or Input.is_action_pressed("gp_run"):
-				t=0.0
+				t=max(t-0.1,0.0)
 				tbox.visible_characters+=1
 				if tbox.visible_ratio==1.0: state=2
 		3:
@@ -35,17 +36,21 @@ func _process(delta: float) -> void:
 				refresh()
 				if rec: rec.talking=false
 				player.can_move=true
+				if ract: 
+					print("I ressurect!")
+					ract.act()
 		
 
 	pass
 
-func act(display_text : Array, reciever : Node3D = null):
+func act(display_text : Array, reciever : Node3D = null, react : Node = null):
 	if state==-1:
 		t=0.0
 		text_queue=display_text.duplicate()
 		if !text_queue.is_empty(): 
 			if typeof(text_queue[0])==TYPE_STRING: tbox.text=text_queue.pop_front()
 		rec=reciever
+		ract=react
 		if rec: rec.talking=true
 		state=0
 		player.inputOff=true
