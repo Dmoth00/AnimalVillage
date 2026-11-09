@@ -13,6 +13,8 @@ var rot_a : Vector3
 var mid_point : Vector3
 var new_point : Vector3
 
+var fl_on : bool 
+
 #set up variables and deactivate
 func _ready() -> void:
 	refresh()
@@ -30,7 +32,9 @@ func _process(delta: float) -> void:
 			player.state=2
 			player.set_physics_process(false)
 			
-			if player.fl: player.flashlight()
+			if player.fl:
+				fl_on=true
+				player.flashlight()
 			player.anim.play("CharAnim_Bed")
 			player.ltgt=Vector3.RIGHT
 			
@@ -63,38 +67,49 @@ func _process(delta: float) -> void:
 					4:
 						stopper=6
 						gvars.day_forward()
+						gvars.kill_list.clear()
 						dayChanger.act()
 						cam.fade_in(2)
 					6:
 						player.anim.play("CharAnim_BedLeave")
-						stopper=9
-					7:
+						stopper=8
+					8:
 						state=3
 						stopper=0
 						t=0.0
 						player.ltgt=Vector3.RIGHT
+						pos_b=position
+						pos_a=mid_point
+		#now we animate the player leaving the bed
 		3:
 			t=min(t+delta*2,1.0)
 			player.position=pos_b.lerp(pos_a,t)
 			if t==1.0:
-				if stopper==0:
-					pos_b=mid_point
-					pos_a=new_point
-					stopper=1
-					t=0.0
-				else:
-					player.inputOff=false
-					player.set_physics_process(true)
-					player.can_move_timer=0.5
-					refresh()
-					set_process(false)
-
-	pass
+				match stopper:
+					0:
+						pos_b=mid_point
+						pos_a=new_point
+						stopper=1
+						t=0.0
+					1:
+						state=4
+						t=0.0
+		4:
+			t+=delta
+			if t>0.5:
+				player.inputOff=false
+				player.set_physics_process(true)
+				player.can_move=true
+				player.ltgt=Vector3.BACK
+				if fl_on: player.flashlight()
+				refresh()
+				set_process(false)
 
 func refresh():
 	t=0.0
 	stopper=0
 	state=0
+	fl_on = false
 	mid_point=get_node("midpoint").position
 	new_point=get_node("newpoint").position
 

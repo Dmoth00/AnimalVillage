@@ -82,5 +82,7 @@ func check_id(obj : Node,id : String):
 		
 
 func day_forward():
-	if night: day+=1
+	if night:
+		night=false
+		day+=1
 	else: night=true

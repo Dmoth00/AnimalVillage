@@ -4,14 +4,13 @@ var talking = false
 const weekdays=["Monday","Tuesday","Wendesday","Thursday","Friday","Saturday","Sunday"]
 @onready var texts
 
-func _ready() -> void:
-	var day = get_day()
-	texts =["A calendar hangs here.",day]
-	pass
-
 
 func act(player : CharacterBody3D) -> void:
 	player.ltgt=NewFunc.flat(global_position-player.global_position).normalized()
+	
+	var day = get_day()
+	texts =["A calendar hangs here.",day]
+	
 	get_tree().get_first_node_in_group("TXT").act(texts)
 	pass
 	
