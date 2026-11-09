@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dm7usxkrodt3x"]
 
 [ext_resource type="Texture2D" uid="uid://b6140nigs3ckp" path="res://Assets/Textures/LQgrateTex00.png" id="1_ke0dv"]
-[ext_resource type="Script" uid="uid://bqh5wlddo2xfq" path="res://Core/Scene/00-town/townOutside/day_night.gd" id="1_ksh3w"]
+[ext_resource type="Script" uid="uid://ohpparc5gsnw" path="res://Core/Scene/00-town/townOutside/day_night_switch.gd" id="1_nh2bb"]
 [ext_resource type="AudioStream" uid="uid://b6578jps62lfy" path="res://Assets/Sounds/BGM/bgm_closedspace2.wav" id="2_ksh3w"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="3_2yq1p"]
 [ext_resource type="Texture2D" uid="uid://iwdqlwxejsol" path="res://Assets/Textures/BrickTex03.png" id="5_af4th"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://vjr441un7klu" path="res://Assets/Textures/WindowTex01Emission.png" id="35_543sv"]
 [ext_resource type="PackedScene" uid="uid://elwmhd4pgmwf" path="res://Core/Actors/NPC/Villagers/spend_time.tscn" id="36_7pno4"]
 [ext_resource type="Script" uid="uid://de2bmbxch8nbp" path="res://Core/Actors/NPC/Villagers/villager_talk.gd" id="37_nh2bb"]
+[ext_resource type="Script" uid="uid://bk6ix1wdepn2" path="res://Core/Actors/NPC/Villagers/bed_time.gd" id="38_xq8q2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_0r147"]
 height = 1.03426
@@ -998,7 +999,7 @@ radius = 0.45117188
 height = 1.729248
 
 [node name="CommonHouse" type="Node3D" unique_id=1940296731]
-script = ExtResource("1_ksh3w")
+script = ExtResource("1_nh2bb")
 
 [node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1475424259]
 stream = ExtResource("2_ksh3w")
@@ -1234,9 +1235,9 @@ shape = SubResource("BoxShape3D_mphxj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.272556, 0.97634006, -7.5914607)
 shape = SubResource("BoxShape3D_mphxj")
 
-[node name="Night" type="Node" parent="." unique_id=1254732284]
+[node name="Night" type="Node3D" parent="." unique_id=424946189]
 
-[node name="Day" type="Node" parent="." unique_id=455225438]
+[node name="Day" type="Node3D" parent="." unique_id=801703271]
 
 [node name="daylight" type="OmniLight3D" parent="Day" unique_id=1980446324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5570903, 1.3413225, 1.4200335)
@@ -1273,10 +1274,6 @@ transform = Transform3D(-4.371139e-08, -0.44775906, -0.89415425, 0, 0.89415425, 
 mesh = SubResource("QuadMesh_7fg86")
 surface_material_override/0 = SubResource("StandardMaterial3D_e6u4s")
 
-[node name="SpendTime" parent="." unique_id=1722464194 instance=ExtResource("36_7pno4")]
-follow_viewport_enabled = true
-question = "Sleep here? (Items and enemies will return)"
-
 [node name="Bed" type="Area3D" parent="." unique_id=107790188 node_paths=PackedStringArray("react") groups=["Act"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.154829, 0, -6.768469)
 collision_layer = 8
@@ -1284,7 +1281,7 @@ collision_mask = 0
 script = ExtResource("37_nh2bb")
 texts = Array[String](["It seems this is your bed now."])
 turnToLook = false
-react = NodePath("../SpendTime")
+react = NodePath("SpendTime")
 
 [node name="col" type="CollisionShape3D" parent="Bed" unique_id=1219251765]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0.864624, 0.23330593)
@@ -1294,5 +1291,24 @@ shape = SubResource("CapsuleShape3D_1j0c8")
 volume_db = -8.0
 max_db = 0.0
 pitch_scale = 1.5
+
+[node name="SpendTime" parent="Bed" unique_id=1722464194 node_paths=PackedStringArray("choice01Call") instance=ExtResource("36_7pno4")]
+follow_viewport_enabled = true
+question = "Sleep here? (Items and enemies will return)"
+choice01Call = NodePath("../BedTime")
+
+[node name="BedTime" type="Node3D" parent="Bed" unique_id=1778383498 node_paths=PackedStringArray("dayChanger")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.154829, 0.8, -6.768469)
+top_level = true
+script = ExtResource("38_xq8q2")
+dayChanger = NodePath("../..")
+
+[node name="midpoint" type="Node3D" parent="Bed/BedTime" unique_id=968148270]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.48, 0.8, -6.5)
+top_level = true
+
+[node name="newpoint" type="Node3D" parent="Bed/BedTime" unique_id=1292222714]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, -6.5)
+top_level = true
 
 [editable path="meshes/desk"]

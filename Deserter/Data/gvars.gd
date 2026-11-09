@@ -79,3 +79,8 @@ func assign_id(obj : Node):
 func check_id(obj : Node,id : String):
 	if kill_list.has(id) or event_list.has(id):
 		obj.queue_free()
+		
+
+func day_forward():
+	if night: day+=1
+	else: night=true
