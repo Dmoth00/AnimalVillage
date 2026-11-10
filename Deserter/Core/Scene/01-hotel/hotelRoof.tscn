@@ -19,8 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cr0xojiywmyv2" path="res://Assets/Sprites/spiders/tiny_spider00.png" id="17_oo03e"]
 [ext_resource type="Texture2D" uid="uid://0auoh5t6dlsa" path="res://Assets/Sprites/spiders/tiny_spider01.png" id="18_0gj0l"]
 [ext_resource type="Script" uid="uid://bgylgwv2nb4xv" path="res://Core/Scene/01-hotel/scripts/roof_spiders.gd" id="19_fbpx7"]
-[ext_resource type="PackedScene" uid="uid://cbrrijo1s75qc" path="res://Core/Actors/NPC/Villagers/hare.tscn" id="20_3ug85"]
-[ext_resource type="Script" uid="uid://cak2576q6mq7x" path="res://Core/Actors/NPC/Enviroment/event_generic.gd" id="21_q8j2e"]
+[ext_resource type="PackedScene" uid="uid://c507kkemfblh5" path="res://Core/Actors/PickUps/item_bullets3.tscn" id="20_xutai"]
 
 [sub_resource type="Environment" id="Environment_uj8b1"]
 background_mode = 1
@@ -594,6 +593,65 @@ volume_db = -10.0
 pitch_scale = 0.5
 autoplay = true
 
+[node name="mesh" type="Node3D" parent="." unique_id=1108011233]
+
+[node name="meshHotelSign" type="MeshInstance3D" parent="mesh" unique_id=397453720]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 0.5, -0.2191896, -0.18148845, 6.637205)
+mesh = SubResource("ArrayMesh_ogy2y")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cpeoo")
+
+[node name="meshHotelRoof00" type="MeshInstance3D" parent="mesh" unique_id=1209114719]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
+mesh = SubResource("ArrayMesh_krvbr")
+skeleton = NodePath("")
+surface_material_override/2 = SubResource("StandardMaterial3D_ms2t5")
+surface_material_override/5 = SubResource("StandardMaterial3D_x271s")
+
+[node name="col" type="StaticBody3D" parent="mesh/meshHotelRoof00" unique_id=1506178715]
+visible = false
+
+[node name="roof" type="CollisionShape3D" parent="mesh/meshHotelRoof00/col" unique_id=1382165190]
+shape = SubResource("ConcavePolygonShape3D_1b3gd")
+
+[node name="fence" type="CollisionShape3D" parent="mesh/meshHotelRoof00/col" unique_id=1478677675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.396347, -0.99999994)
+shape = SubResource("BoxShape3D_e2g37")
+
+[node name="fence2" type="CollisionShape3D" parent="mesh/meshHotelRoof00/col" unique_id=1994842293]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 3.8980536, 5.856074, -1)
+shape = SubResource("BoxShape3D_nvxna")
+
+[node name="meshHotelLadder" type="MeshInstance3D" parent="mesh/meshHotelRoof00" unique_id=1333942206]
+transform = Transform3D(0.7, 0, 0, 0, 1.2, 3.059797e-08, 0, -5.2453668e-08, 0.7, -1.5, -8, -7.9)
+mesh = SubResource("ArrayMesh_rwwff")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_x271s")
+
+[node name="chainlink" type="MeshInstance3D" parent="mesh" unique_id=1221621115]
+transform = Transform3D(-3.934025e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 0.9, -4.371139e-08, 1.9106855e-15, 2, 0, -1.2)
+mesh = SubResource("ArrayMesh_hhuyk")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ae31y")
+
+[node name="chainlink2" type="MeshInstance3D" parent="mesh" unique_id=1211036786]
+transform = Transform3D(-3.4969112e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 0.8, -4.371139e-08, 1.9106855e-15, 2, 0, 2.2)
+mesh = SubResource("ArrayMesh_hhuyk")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_cuwdm")
+
+[node name="chainlink3" type="MeshInstance3D" parent="mesh" unique_id=1240303299]
+transform = Transform3D(1, 4.440892e-15, -1.9411757e-22, 0, -4.371139e-08, -1, -4.440892e-15, 1, -4.371139e-08, 3.992775, 0, 3.8369684)
+mesh = SubResource("ArrayMesh_hhuyk")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1um6r")
+
+[node name="barrelMesh00" parent="mesh" unique_id=862646089 instance=ExtResource("16_2rcnj")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 6.527575, 0, -2.4930189)
+
+[node name="barrelMesh01" parent="mesh" unique_id=1932128133 instance=ExtResource("16_2rcnj")]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 7.505106, 0, -2.4930189)
+
 [node name="ladder" parent="." unique_id=1642429582 instance=ExtResource("2_ei5v6")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5, 0, -10.159014)
 newPosition = Vector3(26, -1.4, -91)
@@ -606,63 +664,6 @@ timeToWarp = 1.0
 transform = Transform3D(-1, 0, 8.940697e-08, 0, 1, 0, -8.940697e-08, 0, -1, 4.5, 0, -3)
 newPosition = Vector3(-3.5, 2, 3.5)
 newMap = "uid://dx8tg3psyh0bm"
-
-[node name="meshHotelSign" type="MeshInstance3D" parent="." unique_id=397453720]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 0.5, -0.2191896, -0.18148845, 6.637205)
-mesh = SubResource("ArrayMesh_ogy2y")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cpeoo")
-
-[node name="meshHotelRoof00" type="MeshInstance3D" parent="." unique_id=1209114719]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -2)
-mesh = SubResource("ArrayMesh_krvbr")
-skeleton = NodePath("")
-surface_material_override/2 = SubResource("StandardMaterial3D_ms2t5")
-surface_material_override/5 = SubResource("StandardMaterial3D_x271s")
-
-[node name="col" type="StaticBody3D" parent="meshHotelRoof00" unique_id=1506178715]
-visible = false
-
-[node name="roof" type="CollisionShape3D" parent="meshHotelRoof00/col" unique_id=1382165190]
-shape = SubResource("ConcavePolygonShape3D_1b3gd")
-
-[node name="fence" type="CollisionShape3D" parent="meshHotelRoof00/col" unique_id=1478677675]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.396347, -0.99999994)
-shape = SubResource("BoxShape3D_e2g37")
-
-[node name="fence2" type="CollisionShape3D" parent="meshHotelRoof00/col" unique_id=1994842293]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, -1, -4.3711385e-08, 4.371139e-08, 4.371139e-08, 4.371139e-08, 1, 3.8980536, 5.856074, -1)
-shape = SubResource("BoxShape3D_nvxna")
-
-[node name="meshHotelLadder" type="MeshInstance3D" parent="meshHotelRoof00" unique_id=1333942206]
-transform = Transform3D(0.7, 0, 0, 0, 1.2, 3.059797e-08, 0, -5.2453668e-08, 0.7, -1.5, -8, -7.9)
-mesh = SubResource("ArrayMesh_rwwff")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_x271s")
-
-[node name="chainlink" type="MeshInstance3D" parent="." unique_id=1221621115]
-transform = Transform3D(-3.934025e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 0.9, -4.371139e-08, 1.9106855e-15, 2, 0, -1.2)
-mesh = SubResource("ArrayMesh_hhuyk")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_ae31y")
-
-[node name="chainlink2" type="MeshInstance3D" parent="." unique_id=1211036786]
-transform = Transform3D(-3.4969112e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 0.8, -4.371139e-08, 1.9106855e-15, 2, 0, 2.2)
-mesh = SubResource("ArrayMesh_hhuyk")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_cuwdm")
-
-[node name="chainlink3" type="MeshInstance3D" parent="." unique_id=1240303299]
-transform = Transform3D(1, 4.440892e-15, -1.9411757e-22, 0, -4.371139e-08, -1, -4.440892e-15, 1, -4.371139e-08, 3.992775, 0, 3.8369684)
-mesh = SubResource("ArrayMesh_hhuyk")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_1um6r")
-
-[node name="barrelMesh00" parent="." unique_id=862646089 instance=ExtResource("16_2rcnj")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 6.527575, 0, -2.4930189)
-
-[node name="barrelMesh01" parent="." unique_id=1932128133 instance=ExtResource("16_2rcnj")]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 7.505106, 0, -2.4930189)
 
 [node name="spiders" type="GPUParticles3D" parent="." unique_id=2000766430]
 transform = Transform3D(-0.50000006, -0.86602527, 3.7855166e-08, 3.3868204e-22, -4.371138e-08, -0.9999999, 0.8660254, -0.49999997, 2.1855692e-08, -1.5, 0.5, -9.5)
@@ -678,13 +679,13 @@ process_material = SubResource("ParticleProcessMaterial_e2g37")
 draw_pass_1 = SubResource("QuadMesh_nvxna")
 script = ExtResource("19_fbpx7")
 
-[node name="Hare" parent="." unique_id=1046704636 instance=ExtResource("20_3ug85")]
-transform = Transform3D(1.3113416e-07, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 1.3113416e-07, 2.6946626, 0.0151498765, 1.3505864)
+[node name="item_bullets" parent="." unique_id=62833065 instance=ExtResource("20_xutai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 5.5)
 
-[node name="event02" type="Node" parent="." unique_id=22487896 node_paths=PackedStringArray("exit_list")]
-script = ExtResource("21_q8j2e")
-exit_list = [NodePath("../Hare")]
-event = "Hotel00"
-is_item = true
+[node name="item_bullets2" parent="." unique_id=934980586 instance=ExtResource("20_xutai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 5.5)
+
+[node name="item_bullets3" parent="." unique_id=260360316 instance=ExtResource("20_xutai")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -9.5)
 
 [connection signal="finished" from="spiders" to="spiders" method="_on_finished"]

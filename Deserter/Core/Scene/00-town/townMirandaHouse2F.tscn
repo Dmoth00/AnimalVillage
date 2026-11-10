@@ -878,6 +878,7 @@ autoplay = true
 environment = ExtResource("2_n6x8p")
 
 [node name="collisions" type="StaticBody3D" parent="." unique_id=675939115]
+visible = false
 
 [node name="room" type="CollisionShape3D" parent="collisions" unique_id=117398657]
 shape = SubResource("ConcavePolygonShape3D_s0ekc")

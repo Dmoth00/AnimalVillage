@@ -11,7 +11,7 @@
 [ext_resource type="Material" uid="uid://b4n5u2a44n5qg" path="res://Core/Scene/DEBUG/SewerWaterMat.tres" id="12_08r85"]
 [ext_resource type="Texture2D" uid="uid://bn82xlxgi08bu" path="res://Assets/Textures/bumperTex00.png" id="13_wldgk"]
 [ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="14_23aei"]
-[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/WoodTex03.png" id="14_g78qa"]
+[ext_resource type="Texture2D" uid="uid://ckyjt71325jjo" path="res://Assets/Textures/WoodTex02b.png" id="14_cp8mu"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="14_q5a14"]
 [ext_resource type="Texture2D" uid="uid://0saa5nswgyqo" path="res://Assets/Textures/BrickTex01.png" id="15_25k4x"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="15_l4okl"]
@@ -704,10 +704,10 @@ shadow_mesh = SubResource("ArrayMesh_3t1ev")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp8mu"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("14_g78qa")
+albedo_texture = ExtResource("14_cp8mu")
 metallic_specular = 0.0
-uv1_scale = Vector3(2, 2, 2)
-uv1_offset = Vector3(0, 0.15, 0)
+uv1_scale = Vector3(1, 2, 2)
+uv1_offset = Vector3(0, 0.35, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wd7i0"]
 resource_name = "rod"
@@ -1057,6 +1057,7 @@ autoplay = true
 [node name="plinplin" parent="." unique_id=2038828281 instance=ExtResource("3_8cpyt")]
 
 [node name="col" type="StaticBody3D" parent="." unique_id=853509757]
+visible = false
 collision_mask = 0
 
 [node name="sewer" type="CollisionShape3D" parent="col" unique_id=986709841]
@@ -1081,6 +1082,7 @@ shape = SubResource("BoxShape3D_8mhkw")
 
 [node name="watercol" type="StaticBody3D" parent="." unique_id=1996270299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12583637, 0)
+visible = false
 collision_layer = 128
 collision_mask = 0
 

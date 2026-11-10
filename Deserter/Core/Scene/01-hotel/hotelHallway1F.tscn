@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://r51hru4n52" path="res://Assets/Textures/CarpetTex00.png" id="9_cyweg"]
 [ext_resource type="Texture2D" uid="uid://b4yibl526s0hd" path="res://Assets/Textures/mossNmap00.png" id="9_j38p6"]
 [ext_resource type="Texture2D" uid="uid://b08d75xmx86sj" path="res://Assets/Textures/CarpetTex00a.png" id="10_boc30"]
-[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/WoodTex03.png" id="12_l5e4a"]
+[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/BarkTex02.png" id="12_l5e4a"]
 [ext_resource type="ArrayMesh" uid="uid://dsn3gvm1ktqfe" path="res://Assets/Mesh/Props/saved_mesh/plateMesh.tres" id="16_bwocg"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="17_5576r"]
 [ext_resource type="PackedScene" uid="uid://b1a1s8o0iq6io" path="res://Core/SFX/plinplin.tscn" id="21_2poyr"]

@@ -3,8 +3,8 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cim0b368m4nq5"
-path.s3tc="res://.godot/imported/WoodTex03.png-a90fae1dcf0b5b128db7184fd85ff9ec.s3tc.ctex"
-path.etc2="res://.godot/imported/WoodTex03.png-a90fae1dcf0b5b128db7184fd85ff9ec.etc2.ctex"
+path.s3tc="res://.godot/imported/BarkTex02.png-fa82b89190a9aeb1c77136d06567f0e7.s3tc.ctex"
+path.etc2="res://.godot/imported/BarkTex02.png-fa82b89190a9aeb1c77136d06567f0e7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/WoodTex03.png"
-dest_files=["res://.godot/imported/WoodTex03.png-a90fae1dcf0b5b128db7184fd85ff9ec.s3tc.ctex", "res://.godot/imported/WoodTex03.png-a90fae1dcf0b5b128db7184fd85ff9ec.etc2.ctex"]
+source_file="res://Assets/Textures/BarkTex02.png"
+dest_files=["res://.godot/imported/BarkTex02.png-fa82b89190a9aeb1c77136d06567f0e7.s3tc.ctex", "res://.godot/imported/BarkTex02.png-fa82b89190a9aeb1c77136d06567f0e7.etc2.ctex"]
 
 [params]
 

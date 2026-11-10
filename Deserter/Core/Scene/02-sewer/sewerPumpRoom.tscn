@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://n7e1i4cp8wi2" path="res://Assets/Textures/GravelTex00.png" id="8_yh1fw"]
 [ext_resource type="Texture2D" uid="uid://dqlc7myjvsinq" path="res://Assets/Textures/GrateTex00.png" id="9_ksice"]
 [ext_resource type="Texture2D" uid="uid://cj0t6h3b1divo" path="res://Assets/Textures/WoodTex02.png" id="13_p6qva"]
-[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/WoodTex03.png" id="14_dindt"]
+[ext_resource type="Texture2D" uid="uid://cim0b368m4nq5" path="res://Assets/Textures/BarkTex02.png" id="14_dindt"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="15_dyyfu"]
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="16_7h5w7"]
 [ext_resource type="Material" uid="uid://b4n5u2a44n5qg" path="res://Core/Scene/DEBUG/SewerWaterMat.tres" id="16_pxp0t"]
