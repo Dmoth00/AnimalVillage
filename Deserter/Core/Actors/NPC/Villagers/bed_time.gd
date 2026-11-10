@@ -85,15 +85,14 @@ func _process(delta: float) -> void:
 			t=min(t+delta*2,1.0)
 			player.position=pos_b.lerp(pos_a,t)
 			if t==1.0:
-				match stopper:
-					0:
-						pos_b=mid_point
-						pos_a=new_point
-						stopper=1
-						t=0.0
-					1:
-						state=4
-						t=0.0
+				if stopper==0:
+					pos_b=mid_point
+					pos_a=new_point
+					stopper=1
+					t=0.0
+				else:
+					state=4
+					t=0.0
 		4:
 			t+=delta
 			if t>0.5:
