@@ -1597,7 +1597,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_puxc7")
 
 [node name="pipes03" type="MeshInstance3D" parent="mesh" unique_id=740280064]
-transform = Transform3D(-1.748456e-07, 4, 0, 0, 0, -4, -4, -1.7484555e-07, 0, -1.5281224, -4.1924486, -1.5893526)
+transform = Transform3D(-1.748456e-07, 4, 0, 0, 0, -4, -4, -1.7484555e-07, 0, -1.5281224, -4.431718, -1.5893526)
 mesh = SubResource("ArrayMesh_1eikc")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_puxc7")

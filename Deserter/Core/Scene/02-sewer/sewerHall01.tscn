@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="17_i4lwr"]
 [ext_resource type="Texture2D" uid="uid://4624e6oyla7j" path="res://Assets/Textures/posters/MissingTex01.png" id="21_rqr74"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="22_mtynw"]
+[ext_resource type="PackedScene" uid="uid://co2t7cswm0c77" path="res://Core/Actors/Enemy/zombo.tscn" id="24_m0fon"]
 
 [sub_resource type="Environment" id="Environment_nk7x5"]
 background_mode = 1
@@ -801,3 +802,14 @@ newMap = "uid://dly5lrpqvt7ot"
 transform = Transform3D(-1, 0, 8.742261e-08, 0, 1, 0, -8.742261e-08, 0, -1, 6.5, 0, -15.19)
 newPosition = Vector3(5, 0, 20.5)
 newMap = "uid://c86nnxipscj7q"
+
+[node name="enemies" type="Node" parent="." unique_id=1344611776]
+
+[node name="zombo1" parent="enemies" unique_id=1361586636 instance=ExtResource("24_m0fon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 1)
+
+[node name="zombo2" parent="enemies" unique_id=85778070 instance=ExtResource("24_m0fon")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -9)
+
+[node name="zombo3" parent="enemies" unique_id=469584717 instance=ExtResource("24_m0fon")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.674067, 0, -13)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://pwo4mqotp8t1" path="res://Core/Actors/NPC/Villagers/spend_time.gd" id="1_vitnc"]
 [ext_resource type="FontFile" uid="uid://fuwdqvbckrpc" path="res://Assets/System/VCR_Font.ttf" id="2_s61nf"]
-[ext_resource type="AudioStream" uid="uid://bhs50kxbp84jd" path="res://Assets/Sounds/SFX/snd_click.wav" id="3_s61nf"]
 
 [sub_resource type="Theme" id="Theme_upq0q"]
 default_font = ExtResource("2_s61nf")
@@ -190,8 +189,3 @@ pivot_offset = Vector2(415, 85)
 border_color = Color(1, 1, 1, 1)
 border_width = 4.0
 editor_only = false
-
-[node name="snd" type="AudioStreamPlayer" parent="." unique_id=1516619151]
-stream = ExtResource("3_s61nf")
-volume_db = -15.0
-pitch_scale = 0.8

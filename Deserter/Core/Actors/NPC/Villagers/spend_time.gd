@@ -21,7 +21,7 @@ extends CanvasLayer
 @onready var c2 = $Choice02
 @onready var c2text = $Choice02/Text
 
-@onready var snd=$snd
+
 
 
 
@@ -79,7 +79,6 @@ func _process(delta: float) -> void:
 		#Action! the intro is done and now it's active.
 		3:
 			if Input.is_action_just_pressed("gp_left") or Input.is_action_just_pressed("gp_right"):
-				snd.play()
 				select=!select
 				if select:
 					c1.modulate=Color.YELLOW
@@ -94,7 +93,6 @@ func _process(delta: float) -> void:
 				press=true
 				select=reverseDefault
 			if press:
-				snd.play()
 				state=4
 				qtext.visible_characters=0
 				c1text.visible_characters=0
