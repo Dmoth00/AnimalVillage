@@ -219,15 +219,15 @@ bump_strength = 4.9
 render_priority = -1
 shader = ExtResource("12_6k0ue")
 shader_parameter/primary_color = Color(0.49, 0.8469999, 1, 1)
-shader_parameter/secondary_color = Color(0.0546, 0.102353334, 0.13, 1)
+shader_parameter/secondary_color = Color(0.029904746, 0.029856889, 0.10557372, 1)
 shader_parameter/normalmap_a = SubResource("NoiseTexture2D_y72a1")
 shader_parameter/roughness = 0.20000000298024
 shader_parameter/wave_speed = 0.20000000298024
 shader_parameter/uv_scale = 2.0
 shader_parameter/depth_distance = 0.30000000447036
 shader_parameter/beers_law = 4.10000006109492
-shader_parameter/water_transparency = 0.70000001043084
-shader_parameter/refraction_strength = 0.5
+shader_parameter/water_transparency = 0.40000000596048
+shader_parameter/refraction_strength = 0.80000001192096
 
 [sub_resource type="QuadMesh" id="QuadMesh_esbtu"]
 material = SubResource("ShaderMaterial_kk21l")
@@ -399,8 +399,8 @@ cast_shadow = 0
 mesh = SubResource("QuadMesh_esbtu")
 skeleton = NodePath("../meshHotelPool")
 
-[node name="drowner" parent="." unique_id=1081244639 instance=ExtResource("13_shd4v")]
-transform = Transform3D(1.6, 0, 0, 0, 1.5999998, 0, 0, 0, 1.6, -1, -2, -9.4124)
+[node name="drowner" parent="." unique_id=2067495198 instance=ExtResource("13_shd4v")]
+transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -1, -3, -11.919788)
 
 [node name="col" type="StaticBody3D" parent="." unique_id=512234686]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
