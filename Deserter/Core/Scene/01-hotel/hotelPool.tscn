@@ -402,18 +402,18 @@ script = ExtResource("13_f3ywd")
 
 [node name="lamp1" parent="lamps" unique_id=1368252739 instance=ExtResource("17_440g2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
-omni_range = 6.0
-omni_attenuation = 0.0
+omni_range = 6.5
+omni_attenuation = 0.5
 
 [node name="lamp2" parent="lamps" unique_id=1334855984 instance=ExtResource("17_440g2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -5)
-omni_range = 6.0
-omni_attenuation = 0.0
+omni_range = 6.5
+omni_attenuation = 0.5
 
 [node name="lamp3" parent="lamps" unique_id=1870164594 instance=ExtResource("17_440g2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -5)
-omni_range = 6.0
-omni_attenuation = 0.0
+omni_range = 6.5
+omni_attenuation = 0.5
 
 [node name="meshHotelPool2" type="MeshInstance3D" parent="." unique_id=711402088]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
