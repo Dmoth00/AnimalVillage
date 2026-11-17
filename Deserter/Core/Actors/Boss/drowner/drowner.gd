@@ -6,8 +6,12 @@ extends CharacterBody3D
 
 @onready var sfx_hit=$drowner/ArmDrown/Skeleton3D/BoneHead/bloodSFX
 @onready var sfx_splash=$sfx_splash
+@onready var sfx_death=$drowner/ArmDrown/Skeleton3D/BoneChest/BleedOut
 
-@onready var deathFlag : Signal
+@onready var snd_splash=$snd_splash
+@onready var snd_hit=$snd_hit
+
+signal deathFlag
 
 @export var health : int = 6
 var vul = false
@@ -44,6 +48,7 @@ func _process(delta: float) -> void:
 				t=0.0
 				anim.play("ArmDrownRise",0.5)
 				sfx_splash.restart()
+				snd_splash.play()
 				setup=true
 			t+=delta
 			if t>1.25:
@@ -53,13 +58,20 @@ func _process(delta: float) -> void:
 				air.start(randf_range(2.0,5.0))
 				setup=false
 		2:#standing there menacingly
-			dir = NewFunc.flat(tarpos-global_position).normalized()
+			var tvec=NewFunc.flat(tarpos-global_position)
+			dir = tvec.normalized()
 			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*4)).normalized()
 			look_at(global_position-ldir)
+			
+			#if it's in range she bites
+			if tvec.length()<5.0:
+				state=6
 		3:#submerging
 			if !setup:
+				vul=false
 				anim.play("ArmDrownDive",0.5)
 				sfx_splash.restart()
+				snd_splash.play()
 				t=0.0
 				setup=true
 			t+=delta
@@ -70,6 +82,7 @@ func _process(delta: float) -> void:
 			if !setup:
 				setup=true
 				t=0.0
+				snd_hit.play()
 				anim.play("ArmDrownHit",0.1)
 			t+=delta
 			if t>2:
@@ -80,26 +93,35 @@ func _process(delta: float) -> void:
 				setup=true
 				deathFlag.emit()
 				t=0.0
+				sfx_death.restart()
 				anim.play("ArmDrownDeath",0.1)
 			t+=delta
 			if t>2.5:
 				mesh.scale.y=5-t
 			if t>5.0:
 				queue_free()
-
+		6:#SHARK BITE!
+			if !setup:
+				anim.play("ArmDrownBite")
+				setup=true
+				t=0.0
+			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*8)).normalized()
+			look_at(global_position-ldir)
+			t+=delta
+			if t>1.25:
+				setup=false
+				state=3
 
 func _physics_process(delta: float) -> void:
 	
-	match state:
-		0: #crawling underwater
-			var col= move_and_collide(delta*dir*speed)
-			if col: dir=dir.bounce(col.get_normal())
+	if state==0: #crawling underwater
+		var col= move_and_collide(delta*dir*speed)
+		if col: dir=dir.bounce(col.get_normal())
 
 func _on_seek_player_timeout() -> void:
 	target=NewFunc.nearest_in_group("Player",transform.origin)
 	if target:
 		tarpos=target.global_position
-	pass # Replace with function body.
 
 func _on_air_timeout() -> void:
 	match state:
