@@ -9,19 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://ddei2i7fcfchr" path="res://Assets/Textures/AsphaltTex00.png" id="8_5m42g"]
 [ext_resource type="Texture2D" uid="uid://hiplwilwmrot" path="res://Assets/Textures/PoolTex00.png" id="9_j4o7m"]
 [ext_resource type="Shader" uid="uid://c3pateri0aocu" path="res://Assets/Shaders/waterNeo.gdshader" id="12_6k0ue"]
+[ext_resource type="Script" uid="uid://cyxdoo25iwpb8" path="res://Core/Scene/01-hotel/lamps.gd" id="13_f3ywd"]
 [ext_resource type="PackedScene" uid="uid://b81rmsukgy8od" path="res://Core/Actors/Boss/drowner.tscn" id="13_shd4v"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="15_hkysj"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="16_ixtt7"]
 [ext_resource type="PackedScene" uid="uid://b88skphiui336" path="res://Core/Props/general/hanging_lamp.tscn" id="17_440g2"]
-[ext_resource type="Texture2D" uid="uid://2vmsvgnkrp8t" path="res://Assets/Textures/metalTex00.png" id="18_soo6r"]
-[ext_resource type="Texture2D" uid="uid://diedm7ddus4yo" path="res://Assets/Sprites/ChainlinkTex01.png" id="19_q5cb0"]
 
 [sub_resource type="Environment" id="Environment_lio0y"]
 background_mode = 1
 background_energy_multiplier = 0.0
 ambient_light_source = 2
 ambient_light_color = Color(0.039215688, 0.05882353, 0.078431375, 1)
-ambient_light_energy = 3.0
+ambient_light_energy = 2.0
 reflected_light_source = 1
 tonemap_white = 2.0
 
@@ -245,59 +244,6 @@ size = Vector3(22.753784, 7.330017, 7.8010254)
 [sub_resource type="BoxShape3D" id="BoxShape3D_y72a1"]
 size = Vector3(23.964527, 5, 29.761414)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fbxc"]
-resource_name = "MatRust"
-cull_mode = 2
-albedo_texture = ExtResource("18_soo6r")
-metallic_specular = 0.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_cs6v1"]
-material = SubResource("StandardMaterial3D_3fbxc")
-top_radius = 0.01
-bottom_radius = 0.2
-height = 0.05
-radial_segments = 12
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gerqw"]
-resource_name = "chain"
-transparency = 2
-alpha_scissor_threshold = 0.153
-alpha_antialiasing_mode = 0
-cull_mode = 2
-albedo_texture = ExtResource("19_q5cb0")
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_e63j0"]
-_surfaces = [{
-"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
-"format": 34896613377,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
-"name": "chain",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAAAAAAD//87z/v8AAP7/AAD//wAAAADO8wAAAAAAADAM//8AAP7///8AAAAA//8wDAAAAAAAAP///v8AAA==")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_y3xnr"]
-resource_name = "curtains_chain"
-_surfaces = [{
-"aabb": AABB(-0.07071074, -0.018888712, -0.07071075, 0.1414215, 2.1001914, 0.14142147),
-"attribute_data": PackedByteArray("/3//////8n///////3/yf/9///////J///////9/8n8="),
-"format": 34896613399,
-"index_count": 12,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
-"material": SubResource("StandardMaterial3D_gerqw"),
-"name": "chain",
-"primitive": 3,
-"uv_scale": Vector4(2, 19.992188, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAAAA/5///87z/v//n/7/AAD///+fAADO8wAA/58AADAM////n/7///8AAP+f//8wDAAA/58AAP///v//n/9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_e63j0")
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_q0qct"]
 resource_name = "HotelMaps_meshHallwayHotel_Plane003_002"
 _surfaces = [{
@@ -376,6 +322,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e8f8b")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yoaa4"]
+size = Vector3(2, 10, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jclcu"]
+size = Vector3(2, 10, 24)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rholt"]
+size = Vector3(22.751465, 6.1831665, 3.1799316)
+
 [node name="HotelPool" type="Node3D" unique_id=1207689969]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1567579824]
@@ -400,7 +355,7 @@ mesh = SubResource("QuadMesh_esbtu")
 skeleton = NodePath("../meshHotelPool")
 
 [node name="drowner" parent="." unique_id=2067495198 instance=ExtResource("13_shd4v")]
-transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -1, -3, -11.919788)
+transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -1, -3, -11.92)
 
 [node name="col" type="StaticBody3D" parent="." unique_id=512234686]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -442,39 +397,22 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.3
 shape = SubResource("BoxShape3D_y72a1")
 
 [node name="lamps" type="Node3D" parent="." unique_id=1934975153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
+script = ExtResource("13_f3ywd")
 
-[node name="lamp1" parent="lamps" unique_id=865691026 instance=ExtResource("17_440g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.073393, 2.0555618, 0)
+[node name="lamp1" parent="lamps" unique_id=1368252739 instance=ExtResource("17_440g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 omni_range = 6.0
 omni_attenuation = 0.0
 
-[node name="lamp2" parent="lamps" unique_id=1368252739 instance=ExtResource("17_440g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07339287, 2.0555618, 0)
+[node name="lamp2" parent="lamps" unique_id=1334855984 instance=ExtResource("17_440g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -5)
 omni_range = 6.0
 omni_attenuation = 0.0
 
-[node name="lamp3" parent="lamps" unique_id=2091103089 instance=ExtResource("17_440g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.926607, 2.0555618, 0)
+[node name="lamp3" parent="lamps" unique_id=1870164594 instance=ExtResource("17_440g2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -5)
 omni_range = 6.0
-omni_attenuation = 0.0
-
-[node name="lamp4" parent="lamps" unique_id=1334855984 instance=ExtResource("17_440g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.073393, 2.0555618, -12)
-omni_range = 6.0
-omni_attenuation = 0.0
-
-[node name="lamp5" type="MeshInstance3D" parent="lamps" unique_id=1534011532]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.06410551, 2.3181791, -12)
-mesh = SubResource("CylinderMesh_cs6v1")
-skeleton = NodePath("chain")
-
-[node name="chain" type="MeshInstance3D" parent="lamps/lamp5" unique_id=98837589]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12878454, 0)
-mesh = SubResource("ArrayMesh_y3xnr")
-skeleton = NodePath("")
-
-[node name="lamp6" parent="lamps" unique_id=1870164594 instance=ExtResource("17_440g2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.926607, 2.0555618, -12)
 omni_attenuation = 0.0
 
 [node name="meshHotelPool2" type="MeshInstance3D" parent="." unique_id=711402088]
@@ -482,6 +420,36 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 visible = false
 mesh = SubResource("ArrayMesh_q0qct")
 skeleton = NodePath("")
+
+[node name="drowner_col" type="StaticBody3D" parent="." unique_id=1234398370]
+visible = false
+collision_layer = 2048
+collision_mask = 0
+
+[node name="wall" type="CollisionShape3D" parent="drowner_col" unique_id=1553582682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.646759, 2, -6.5)
+shape = SubResource("BoxShape3D_yoaa4")
+
+[node name="wall3" type="CollisionShape3D" parent="drowner_col" unique_id=2145022614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.523081, 2, -6.5)
+shape = SubResource("BoxShape3D_yoaa4")
+
+[node name="wall2" type="CollisionShape3D" parent="drowner_col" unique_id=1468798046]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, 2.5)
+shape = SubResource("BoxShape3D_jclcu")
+
+[node name="wall4" type="CollisionShape3D" parent="drowner_col" unique_id=1390629646]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, -15.5)
+shape = SubResource("BoxShape3D_jclcu")
+
+[node name="emerge_block" type="Area3D" parent="." unique_id=594387281]
+visible = false
+collision_layer = 2048
+collision_mask = 0
+
+[node name="col" type="CollisionShape3D" parent="emerge_block" unique_id=1338907484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5778809, -1.7506409, -6.5206375)
+shape = SubResource("BoxShape3D_rholt")
 
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraTrigger" to="CameraTrigger" method="_on_body_exited"]
