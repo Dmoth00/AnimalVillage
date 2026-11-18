@@ -1,7 +1,7 @@
 extends Node3D
 
 func _ready() -> void:
-	#set_process(false)
+	set_process(false)
 	pass
 
 func _process(delta: float) -> void:

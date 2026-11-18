@@ -14,7 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://b81rmsukgy8od" path="res://Core/Actors/Boss/drowner/drowner.tscn" id="13_shd4v"]
 [ext_resource type="PackedScene" uid="uid://cltkr1bsqgxau" path="res://Core/Actors/NPC/Enviroment/door.tscn" id="15_hkysj"]
 [ext_resource type="Script" uid="uid://djpkidhlke2pa" path="res://Core/System/camera_trigger.gd" id="16_ixtt7"]
+[ext_resource type="Script" uid="uid://cgrayo775x0fu" path="res://Core/Actors/Boss/drowner/boss_event.gd" id="16_rholt"]
 [ext_resource type="PackedScene" uid="uid://b88skphiui336" path="res://Core/Props/general/hanging_lamp.tscn" id="17_440g2"]
+[ext_resource type="AudioStream" uid="uid://bjkpkgqqgh8h5" path="res://Assets/Sounds/BGM/bgm_drownedWoman.mp3" id="17_shd4v"]
+[ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/01-hotel/scripts/event_01.gd" id="18_shd4v"]
 
 [sub_resource type="Environment" id="Environment_lio0y"]
 background_mode = 1
@@ -241,17 +244,20 @@ data = PackedVector3Array(-15.9894, -6.5773997, -2, -14.999399, 6.0004, 0, -15.9
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8d2b"]
 size = Vector3(22.753784, 7.330017, 7.8010254)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y72a1"]
-size = Vector3(23.964527, 5, 29.761414)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_yoaa4"]
 size = Vector3(2, 10, 17)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jclcu"]
 size = Vector3(2, 10, 24)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y72a1"]
+size = Vector3(23.964527, 5, 29.761414)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_rholt"]
 size = Vector3(22.751465, 6.1831665, 3.1799316)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xt64j"]
+radius = 1.5
 
 [node name="HotelPool" type="Node3D" unique_id=1207689969]
 
@@ -279,9 +285,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_f3ywd")
 script = ExtResource("10_yoaa4")
 primaryColor = Color(0.86, 0.07739998, 0.07739998, 1)
 secondaryColor = Color(0.31, 0.0775, 0.0775, 1)
-
-[node name="drowner" parent="." unique_id=2067495198 instance=ExtResource("13_shd4v")]
-transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -1, -3, -11.92)
+id = "hotel_boss"
 
 [node name="col" type="StaticBody3D" parent="." unique_id=512234686]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
@@ -305,8 +309,30 @@ shape = SubResource("BoxShape3D_n8d2b")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4839478, -0.4131775, -11.000366)
 shape = SubResource("BoxShape3D_n8d2b")
 
+[node name="drowner_col" type="StaticBody3D" parent="." unique_id=1234398370]
+visible = false
+collision_layer = 2048
+collision_mask = 0
+
+[node name="wall" type="CollisionShape3D" parent="drowner_col" unique_id=1553582682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.646759, 2, -6.5)
+shape = SubResource("BoxShape3D_yoaa4")
+
+[node name="wall3" type="CollisionShape3D" parent="drowner_col" unique_id=2145022614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.523081, 2, -7)
+shape = SubResource("BoxShape3D_yoaa4")
+
+[node name="wall2" type="CollisionShape3D" parent="drowner_col" unique_id=1468798046]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, 3.5)
+shape = SubResource("BoxShape3D_jclcu")
+
+[node name="wall4" type="CollisionShape3D" parent="drowner_col" unique_id=1390629646]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, -16.5)
+shape = SubResource("BoxShape3D_jclcu")
+
 [node name="StairwayLow" parent="." unique_id=444387764 instance=ExtResource("15_hkysj")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -6.5, 0, 6)
+visible = false
 newPosition = Vector3(5.5, 0, -14.5)
 newMap = "uid://devcj660ww73a"
 
@@ -341,26 +367,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -5)
 omni_range = 6.5
 omni_attenuation = 0.5
 
-[node name="drowner_col" type="StaticBody3D" parent="." unique_id=1234398370]
-collision_layer = 2048
-collision_mask = 0
-
-[node name="wall" type="CollisionShape3D" parent="drowner_col" unique_id=1553582682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.646759, 2, -6.5)
-shape = SubResource("BoxShape3D_yoaa4")
-
-[node name="wall3" type="CollisionShape3D" parent="drowner_col" unique_id=2145022614]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.523081, 2, -7)
-shape = SubResource("BoxShape3D_yoaa4")
-
-[node name="wall2" type="CollisionShape3D" parent="drowner_col" unique_id=1468798046]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, 3.5)
-shape = SubResource("BoxShape3D_jclcu")
-
-[node name="wall4" type="CollisionShape3D" parent="drowner_col" unique_id=1390629646]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.5, 2, -16.5)
-shape = SubResource("BoxShape3D_jclcu")
-
 [node name="emerge_block" type="Area3D" parent="." unique_id=594387281]
 visible = false
 collision_layer = 2048
@@ -370,7 +376,32 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5778809, -1.7506409, -6.5206375)
 shape = SubResource("BoxShape3D_rholt")
 
-[connection signal="deathFlag" from="drowner" to="water" method="act"]
-[connection signal="deathFlag" from="drowner" to="lamps" method="act"]
+[node name="Boss_event" type="Node" parent="." unique_id=67446315]
+script = ExtResource("16_rholt")
+id = "hotel_boss"
+
+[node name="BGM_Boss" type="AudioStreamPlayer" parent="Boss_event" unique_id=1363726292]
+stream = ExtResource("17_shd4v")
+volume_db = -6.0
+parameters/looping = true
+
+[node name="trigger" type="Area3D" parent="Boss_event" unique_id=1017625170 node_paths=PackedStringArray("actors")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -6.5269103)
+collision_layer = 0
+collision_mask = 4096
+monitorable = false
+script = ExtResource("18_shd4v")
+actors = [NodePath("../drowner"), NodePath("../../lamps"), NodePath("..")]
+
+[node name="col" type="CollisionShape3D" parent="Boss_event/trigger" unique_id=945589266]
+shape = SubResource("SphereShape3D_xt64j")
+
+[node name="drowner" parent="Boss_event" unique_id=2067495198 instance=ExtResource("13_shd4v")]
+transform = Transform3D(1, 0, -6.3573026e-08, 0, 1, 0, 6.3573026e-08, 0, 1, -0.97872305, -3, -10.728507)
+
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraTrigger" to="CameraTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="Boss_event/trigger" to="Boss_event/trigger" method="_on_body_entered"]
+[connection signal="deathFlag" from="Boss_event/drowner" to="water" method="act"]
+[connection signal="deathFlag" from="Boss_event/drowner" to="lamps" method="act"]
+[connection signal="deathFlag" from="Boss_event/drowner" to="Boss_event" method="BossDeath"]

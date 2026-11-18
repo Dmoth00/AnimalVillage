@@ -5,6 +5,8 @@ extends MeshInstance3D
 
 @onready var mat : Material
 
+@export var id : String
+
 var t = 0.0
 
 var col1 : Color
@@ -16,13 +18,15 @@ var scol : Color
 func _ready() -> void:
 	mat = self.get_surface_override_material(0).duplicate(false)
 	self.set_surface_override_material(0,mat)
-	set_process(false)
-	
 	pcol=mat.get_shader_parameter("primary_color")
 	scol=mat.get_shader_parameter("secondary_color")
+	
+	if gvars.event_list.has(id): t=1.0
+	else: set_process(false)
+	
 
 func _process(delta: float) -> void:
-	t=min(t+delta/5,1.0)
+	t=min(t+delta/8,1.0)
 	mat.set_shader_parameter("water_transparency",0.4*(1.0-t))
 	col1=pcol.lerp(primaryColor,t)
 	col2=scol.lerp(secondaryColor,t)

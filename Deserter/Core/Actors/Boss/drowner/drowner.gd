@@ -16,12 +16,13 @@ signal deathFlag
 @export var health : int = 6
 var vul = false
 
-var state=0
+var state=7
 var t = 0.0
 var speed = 6.0
 
 var dir=basis.z
 var ldir=basis.z
+var tvec : Vector3
 
 var setup=false
 var emerge_ok=true
@@ -58,7 +59,6 @@ func _process(delta: float) -> void:
 				air.start(randf_range(2.0,5.0))
 				setup=false
 		2:#standing there menacingly
-			var tvec=NewFunc.flat(tarpos-global_position)
 			dir = tvec.normalized()
 			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*4)).normalized()
 			look_at(global_position-ldir)
@@ -96,9 +96,9 @@ func _process(delta: float) -> void:
 				sfx_death.restart()
 				anim.play("ArmDrownDeath",0.1)
 			t+=delta
-			if t>2.5:
-				mesh.scale.y=5-t
-			if t>5.0:
+			if t>5:
+				mesh.scale.y=7.5-t
+			if t>7.5:
 				queue_free()
 		6:#SHARK BITE!
 			if !setup:
@@ -108,9 +108,36 @@ func _process(delta: float) -> void:
 			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*8)).normalized()
 			look_at(global_position-ldir)
 			t+=delta
+			if t<0.5:
+				dir = tvec.normalized()
 			if t>1.25:
 				setup=false
 				state=3
+		7:#intro
+			if !setup:
+				anim.play("ArmDrownCrouch")
+				setup=true
+				t=0.0
+		8:#ambush!
+			if !setup:
+				t=0.0
+				anim.play("ArmDrownAmbush",0.2)
+				sfx_splash.restart()
+				snd_splash.play()
+				vul=true
+				setup=true
+			
+			t+=delta
+			if t<1.0: dir = tvec.normalized()
+			ldir=NewFunc.flat(ldir.rotated(Vector3.UP,ldir.signed_angle_to(dir,Vector3.UP)*delta*4)).normalized()
+			look_at(global_position-ldir)
+			
+			if t>2:
+				state=2
+				anim.play("ArmDrownStand")
+				air.start(randf_range(2.0,5.0))
+				setup=false
+			pass
 
 func _physics_process(delta: float) -> void:
 	
@@ -122,13 +149,16 @@ func _on_seek_player_timeout() -> void:
 	target=NewFunc.nearest_in_group("Player",transform.origin)
 	if target:
 		tarpos=target.global_position
+		tvec=NewFunc.flat(tarpos-global_position)
 
 func _on_air_timeout() -> void:
 	match state:
 		0:
 			if emerge_ok:
 				setup=false
-				state=1
+				if tvec.length()<4.5:
+					state=8
+				else: state=1
 			else:
 				air.start(1.0)
 		2:
@@ -148,4 +178,8 @@ func hurt(_damage : float):
 		sfx_hit.restart()
 		if health>0: state=4
 		else: state=5
-		
+
+func act():
+	state=0
+	setup=false
+	_on_air_timeout()
