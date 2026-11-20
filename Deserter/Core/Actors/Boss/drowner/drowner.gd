@@ -58,6 +58,7 @@ func _process(delta: float) -> void:
 				setup=true
 			t+=delta
 			if t>1.25:
+				t=0.0
 				state=2
 				setup=false
 		2:#standing there menacingly
@@ -94,7 +95,7 @@ func _process(delta: float) -> void:
 				setup=true
 				t=0.0
 				snd_hit.play()
-				snd_voice.stream=voices[1]
+				snd_voice.stream=voices[3]
 				snd_voice.play()
 				anim.play("ArmDrownHit",0.1)
 			t+=delta
@@ -118,6 +119,7 @@ func _process(delta: float) -> void:
 		6:#SHARK BITE!
 			if !setup:
 				anim.play("ArmDrownBite")
+				vul=true
 				setup=true
 				t=0.0
 			looker(delta,8)
@@ -149,6 +151,7 @@ func _process(delta: float) -> void:
 				state=2
 				air.start(randf_range(2.0,5.0))
 				setup=false
+				t=0.0
 			pass
 		9:#bubble spray
 			if !setup:
@@ -162,7 +165,7 @@ func _process(delta: float) -> void:
 			looker(delta,8)
 			
 			t+=delta
-			if t>1.7 and !attack:
+			if t>1.8 and !attack:
 				attack=true
 				bubbler.act()
 				snd_voice.stream=voices[1]

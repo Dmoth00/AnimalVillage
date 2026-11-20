@@ -65,6 +65,7 @@ billboard_keep_scale = true
 [node name="Bubble" type="CharacterBody3D" unique_id=661884095 groups=["Harm", "Item", "Mortal"]]
 top_level = true
 collision_layer = 6
+collision_mask = 32769
 motion_mode = 1
 script = ExtResource("1_6g55g")
 
@@ -100,8 +101,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_qltc4")
 [node name="death" type="Timer" parent="." unique_id=489805759]
 
 [node name="shadow" type="Decal" parent="." unique_id=1665858065]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.737535, 0)
-size = Vector3(1, 18, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.364588, 0)
+size = Vector3(1, 18.745895, 1)
 texture_albedo = ExtResource("7_qltc4")
 
 [connection signal="timeout" from="playerSeek" to="." method="_on_seek_player_timeout"]

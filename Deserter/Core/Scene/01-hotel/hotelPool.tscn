@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b1a1s8o0iq6io" path="res://Core/SFX/plinplin.tscn" id="2_2j0an"]
 [ext_resource type="Texture2D" uid="uid://mwdugr8b5vh3" path="res://Assets/Textures/WallTex01.png" id="3_jfi5j"]
 [ext_resource type="Texture2D" uid="uid://bs5yehc1vvx4u" path="res://Assets/Textures/BrickTex00.png" id="4_hqylu"]
-[ext_resource type="Texture2D" uid="uid://ofvg112o606s" path="res://Assets/Textures/AsphaltTex03.png" id="5_q0iiv"]
+[ext_resource type="Texture2D" uid="uid://vrd5ivoucto8" path="res://Assets/Textures/AsphaltTex02.png" id="5_2j0an"]
 [ext_resource type="Texture2D" uid="uid://bu2p50452e62a" path="res://Assets/Textures/DoorTex00b.png" id="6_asqhl"]
 [ext_resource type="Texture2D" uid="uid://ddei2i7fcfchr" path="res://Assets/Textures/AsphaltTex00.png" id="8_5m42g"]
 [ext_resource type="Texture2D" uid="uid://hiplwilwmrot" path="res://Assets/Textures/PoolTex00.png" id="9_j4o7m"]
@@ -20,6 +20,9 @@
 [ext_resource type="Script" uid="uid://er82nqagrm22" path="res://Core/Scene/01-hotel/scripts/event_01.gd" id="18_shd4v"]
 [ext_resource type="Texture2D" uid="uid://05w110jstb0m" path="res://Assets/Textures/metalTex02.png" id="19_2j0an"]
 [ext_resource type="Texture2D" uid="uid://dk86hrcscxwop" path="res://Assets/Textures/ChainlinkTex.png" id="20_jfi5j"]
+[ext_resource type="PackedScene" uid="uid://dnax4aig2bnkg" path="res://Assets/Mesh/Enemies/drowner.blend" id="21_q0iiv"]
+[ext_resource type="Texture2D" uid="uid://c3plthe1mxsk1" path="res://Assets/Mesh/Enemies/textures/drown00.png" id="22_asqhl"]
+[ext_resource type="Script" uid="uid://cak2576q6mq7x" path="res://Core/Actors/NPC/Enviroment/event_generic.gd" id="23_jbq0g"]
 
 [sub_resource type="Environment" id="Environment_lio0y"]
 background_mode = 1
@@ -43,7 +46,8 @@ albedo_texture = ExtResource("4_hqylu")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em2x7"]
 resource_name = "ConcMat01.001"
 cull_mode = 2
-albedo_texture = ExtResource("5_q0iiv")
+albedo_texture = ExtResource("5_2j0an")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iu4yi"]
 resource_name = "DoorMat01"
@@ -246,6 +250,9 @@ data = PackedVector3Array(-15.9894, -6.5773997, -2, -14.999399, 6.0004, 0, -15.9
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8d2b"]
 size = Vector3(22.753784, 7.330017, 7.8010254)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2j0an"]
+size = Vector3(24, 1.1408691, 18)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_yoaa4"]
 size = Vector3(2, 10, 17)
 
@@ -340,6 +347,14 @@ metallic_specular = 0.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_asqhl"]
 size = Vector3(2.5, 3, 6)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5m42g"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("22_asqhl")
+metallic_specular = 0.0
+
 [node name="HotelPool" type="Node3D" unique_id=1207689969]
 
 [node name="Env" type="WorldEnvironment" parent="." unique_id=1567579824]
@@ -389,6 +404,15 @@ shape = SubResource("BoxShape3D_n8d2b")
 [node name="pool2" type="CollisionShape3D" parent="poolcol" unique_id=119618560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4839478, -0.4131775, -11.000366)
 shape = SubResource("BoxShape3D_n8d2b")
+
+[node name="bubblecatcher" type="StaticBody3D" parent="." unique_id=907858236]
+visible = false
+collision_layer = 32768
+collision_mask = 0
+
+[node name="col" type="CollisionShape3D" parent="bubblecatcher" unique_id=1999725244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, -0.42956543, -6.5)
+shape = SubResource("BoxShape3D_2j0an")
 
 [node name="drowner_col" type="StaticBody3D" parent="." unique_id=1234398370]
 visible = false
@@ -472,7 +496,7 @@ collision_layer = 0
 collision_mask = 4096
 monitorable = false
 script = ExtResource("18_shd4v")
-actors = [NodePath("../drowner"), NodePath("../../lamps"), NodePath("..")]
+actors = [null, NodePath("../../lamps"), NodePath("..")]
 
 [node name="col" type="CollisionShape3D" parent="Boss_event/trigger" unique_id=945589266]
 shape = SubResource("SphereShape3D_xt64j")
@@ -616,9 +640,83 @@ shape = SubResource("BoxShape3D_asqhl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.5, -0.5)
 shape = SubResource("BoxShape3D_asqhl")
 
+[node name="drowner_inactive" parent="." unique_id=2016404134 instance=ExtResource("21_q0iiv")]
+transform = Transform3D(0.7175236, 0, 2.3948195, 0, 2.5, 0, -2.3948195, 0, 0.7175236, -1, -2.9, -11)
+
+[node name="Skeleton3D" parent="drowner_inactive/ArmDrown" parent_id_path=PackedInt32Array(2016404134, 603850980) index="0" unique_id=681851943]
+bones/1/position = Vector3(-2.2094687e-07, 0, -1.463265)
+bones/1/rotation = Quaternion(-7.677263e-05, 0.70709836, 0.7071152, -7.688119e-05)
+bones/2/rotation = Quaternion(-0.009592942, 0.6326279, 0.7743699, -0.006423974)
+bones/3/rotation = Quaternion(-0.011186659, -2.1116202e-05, -0.00022472335, 0.9999374)
+bones/4/rotation = Quaternion(0.15176794, 0.00033363455, 0.0023220726, 0.9884134)
+bones/4/scale = Vector3(0.99999994, 1, 1)
+bones/5/rotation = Quaternion(0.5288526, 0.0022701977, 0.012180926, 0.8486232)
+bones/5/scale = Vector3(1, 1.0000001, 1.0000005)
+bones/6/position = Vector3(-1.8626451e-09, 0.08234243, 0.061271347)
+bones/6/rotation = Quaternion(0.22347392, -4.8232446e-10, 6.060315e-10, 0.9747099)
+bones/7/position = Vector3(4.656613e-10, 0.15914565, 0.027273094)
+bones/7/rotation = Quaternion(-0.7067931, 1.237693e-10, -6.584895e-10, 0.7074203)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/position = Vector3(-1.3969839e-09, 0.2540532, 0.010590175)
+bones/8/rotation = Quaternion(0.74242777, 3.0351824e-10, 5.101394e-10, 0.66992617)
+bones/8/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
+bones/9/rotation = Quaternion(-0.46861687, -0.46750838, -0.52994823, 0.53008413)
+bones/10/rotation = Quaternion(-0.42887703, -0.0051467675, 0.08603999, 0.89924145)
+bones/11/rotation = Quaternion(0.056898423, -0.073415905, -0.30956218, 0.9463318)
+bones/12/rotation = Quaternion(-0.22173384, 0.6403684, -0.10856335, 0.7273077)
+bones/13/rotation = Quaternion(-0.1596865, 0.011352513, 0.019545482, 0.986909)
+bones/14/rotation = Quaternion(-0.22111948, 0.015719926, 0.0270648, 0.9747444)
+bones/15/position = Vector3(0.042882733, 0.07892634, -0.0063430704)
+bones/15/rotation = Quaternion(-0.20139642, 0.24241929, -0.70700085, 0.6331052)
+bones/16/rotation = Quaternion(-0.54305065, 0.061411858, -0.28020462, 0.7891831)
+bones/17/position = Vector3(-0.0112989545, 0.38960788, 0.008419817)
+bones/17/rotation = Quaternion(0.17329465, 0.61888945, 0.29929632, 0.7052422)
+bones/17/scale = Vector3(0.3851272, 0.38512695, 0.38512707)
+bones/18/rotation = Quaternion(-0.46861687, 0.46750838, 0.52994823, 0.53008413)
+bones/19/rotation = Quaternion(-0.42887712, 0.005146774, -0.08604003, 0.89924145)
+bones/20/rotation = Quaternion(0.05689842, 0.07341593, 0.30956218, 0.9463318)
+bones/21/rotation = Quaternion(-0.22173393, -0.64036846, 0.108563356, 0.7273076)
+bones/22/rotation = Quaternion(-0.15968654, -0.011352514, -0.019545468, 0.986909)
+bones/23/rotation = Quaternion(-0.2211196, -0.015719935, -0.027064819, 0.9747443)
+bones/24/position = Vector3(-0.042882703, 0.078926295, -0.0063431445)
+bones/24/rotation = Quaternion(-0.20139644, -0.24241935, 0.7070008, 0.63310534)
+bones/25/rotation = Quaternion(-0.54305065, -0.061411843, 0.28020456, 0.78918314)
+bones/26/position = Vector3(0.011298854, 0.38960764, 0.008419865)
+bones/26/rotation = Quaternion(-0.1732947, 0.6188895, 0.29929617, -0.7052422)
+bones/26/scale = Vector3(0.38512713, 0.38512695, 0.38512707)
+bones/27/rotation = Quaternion(0.001157904, -0.61108136, 0.7915648, 0.0018237927)
+bones/28/position = Vector3(0.14166193, 0.20363344, 0.00864608)
+bones/28/rotation = Quaternion(-0.18144378, -0.68890405, 0.086336195, 0.6964449)
+bones/29/rotation = Quaternion(-0.056176014, 0.004508333, -0.036681157, 0.99773675)
+bones/30/rotation = Quaternion(-0.0017642982, 0.0014914048, 0.17787004, 0.98405135)
+bones/31/position = Vector3(0.2592026, 0.18791397, 0.021741819)
+bones/31/rotation = Quaternion(0.26709712, 0.8106293, 0.11851302, 0.50743854)
+bones/31/scale = Vector3(0.31635785, 0.3163581, 0.31635797)
+bones/32/position = Vector3(-0.14166191, 0.20363347, 0.00864611)
+bones/32/rotation = Quaternion(-0.18144377, 0.688904, -0.0863362, 0.6964449)
+bones/33/rotation = Quaternion(-0.056176048, -0.0045083025, 0.036681097, 0.9977367)
+bones/34/rotation = Quaternion(-0.0017643096, -0.0014914046, -0.17786993, 0.98405135)
+bones/35/position = Vector3(-0.25920266, 0.1879139, 0.021741789)
+bones/35/rotation = Quaternion(-0.26709715, 0.81062925, 0.11851298, -0.50743854)
+bones/35/scale = Vector3(0.31635797, 0.31635803, 0.31635797)
+
+[node name="DrownMesh" parent="drowner_inactive/ArmDrown/Skeleton3D" index="0" unique_id=472496927]
+surface_material_override/0 = SubResource("StandardMaterial3D_5m42g")
+
+[node name="AnimationPlayer" parent="drowner_inactive" index="1" unique_id=1095206951]
+autoplay = &"ArmDrownDead"
+
+[node name="event_generator" type="Node" parent="." unique_id=82251142 node_paths=PackedStringArray("enter_list", "exit_list")]
+script = ExtResource("23_jbq0g")
+enter_list = [NodePath("../Boss_event")]
+exit_list = [NodePath("../drowner_inactive")]
+event = "hotel_generator"
+
 [connection signal="body_entered" from="CameraTrigger" to="CameraTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="CameraTrigger" to="CameraTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="Boss_event/trigger" to="Boss_event/trigger" method="_on_body_entered"]
 [connection signal="deathFlag" from="Boss_event/drowner" to="water" method="act"]
 [connection signal="deathFlag" from="Boss_event/drowner" to="lamps" method="act"]
 [connection signal="deathFlag" from="Boss_event/drowner" to="Boss_event" method="BossDeath"]
+
+[editable path="drowner_inactive"]
