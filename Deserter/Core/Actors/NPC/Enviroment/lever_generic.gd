@@ -26,6 +26,7 @@ func act(player : CharacterBody3D):
 	t.start(1.0)
 	#can no longer act
 	remove_from_group("Act")
+	get_node("col").disabled=true
 	#set flag
 	gvars.event_list.append(event)
 

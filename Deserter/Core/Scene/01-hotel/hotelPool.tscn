@@ -1129,7 +1129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.5, -0.5)
 shape = SubResource("BoxShape3D_asqhl")
 
 [node name="drowner_inactive" parent="." unique_id=2016404134 instance=ExtResource("21_q0iiv")]
-transform = Transform3D(0.57401884, 0, 1.9158555, 0, 2, 0, -1.9158555, 0, 0.57401884, -1, -2.6, -11)
+transform = Transform3D(0.57401884, 0, 1.9158555, 0, 2, 0, -1.9158555, 0, 0.57401884, -1, -2.6, -12)
 
 [node name="Skeleton3D" parent="drowner_inactive/ArmDrown" parent_id_path=PackedInt32Array(2016404134, 1076741754) index="0" unique_id=779952226]
 bones/1/position = Vector3(-2.2094687e-07, 0, -1.463265)
