@@ -1728,10 +1728,10 @@ mesh = ExtResource("25_x0awq")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_56v4i")
 
-[node name="DeadHead" parent="." unique_id=687734863 instance=ExtResource("25_iso63")]
+[node name="DeadHead00" parent="." unique_id=687734863 instance=ExtResource("25_iso63")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -10)
 
-[node name="DeadHead2" parent="." unique_id=36591272 instance=ExtResource("25_iso63")]
+[node name="DeadHead01" parent="." unique_id=36591272 instance=ExtResource("25_iso63")]
 transform = Transform3D(0.83967674, 0, 0.5430865, 0, 1, 0, -0.5430865, 0, 0.83967674, -24, 0, 8)
 
 [node name="Radio" parent="." unique_id=471549432 instance=ExtResource("27_j3ne0")]
@@ -1739,7 +1739,7 @@ transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.965
 stream = ExtResource("28_j3ne0")
 
 [node name="radio" parent="Radio/light" parent_id_path=PackedInt32Array(471549432, 1944907016) index="0" unique_id=1256445509]
-transform = Transform3D(2.0000002, 0, 5.9604645e-08, 0, 2, 1.7763568e-15, -5.9604645e-08, 5.3290705e-15, 2.0000002, 0, 6.000001, 0)
+transform = Transform3D(2.0000002, 0, 5.9604645e-08, 0, 2, -1.7763568e-15, -5.9604645e-08, 7.1054274e-15, 2.0000002, 0, 1.0728836e-06, 0)
 unit_size = 3.0
 
 [editable path="Radio"]
