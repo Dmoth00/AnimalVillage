@@ -1131,7 +1131,7 @@ shape = SubResource("BoxShape3D_asqhl")
 [node name="drowner_inactive" parent="." unique_id=2016404134 instance=ExtResource("21_q0iiv")]
 transform = Transform3D(0.57401884, 0, 1.9158555, 0, 2, 0, -1.9158555, 0, 0.57401884, -1, -2.6, -12)
 
-[node name="Skeleton3D" parent="drowner_inactive/ArmDrown" parent_id_path=PackedInt32Array(2016404134, 1076741754) index="0" unique_id=779952226]
+[node name="Skeleton3D" parent="drowner_inactive/ArmDrown" parent_id_path=PackedInt32Array(2016404134, 603850980) index="0" unique_id=681851943]
 bones/1/position = Vector3(-2.2094687e-07, 0, -1.463265)
 bones/1/rotation = Quaternion(-7.677263e-05, 0.70709836, 0.7071152, -7.688119e-05)
 bones/2/rotation = Quaternion(-0.009592942, 0.6326279, 0.7743699, -0.006423974)
@@ -1188,10 +1188,10 @@ bones/35/position = Vector3(-0.25920266, 0.1879139, 0.021741789)
 bones/35/rotation = Quaternion(-0.26709715, 0.81062925, 0.11851298, -0.50743854)
 bones/35/scale = Vector3(0.31635797, 0.31635803, 0.31635797)
 
-[node name="DrownMesh" parent="drowner_inactive/ArmDrown/Skeleton3D" index="0" unique_id=1890071456]
+[node name="DrownMesh" parent="drowner_inactive/ArmDrown/Skeleton3D" index="0" unique_id=472496927]
 surface_material_override/0 = SubResource("StandardMaterial3D_5m42g")
 
-[node name="AnimationPlayer" parent="drowner_inactive" index="1" unique_id=909742862]
+[node name="AnimationPlayer" parent="drowner_inactive" index="1" unique_id=1095206951]
 autoplay = &"ArmDrownDead"
 
 [node name="event_generator" type="Node" parent="." unique_id=82251142 node_paths=PackedStringArray("enter_list", "exit_list")]
@@ -1213,8 +1213,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5, 0, -16.5)
 [node name="HallwayGF" parent="exit" unique_id=444387764 instance=ExtResource("15_hkysj")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -6.5, 0, 6)
 visible = false
-newPosition = Vector3(5.5, 0, -14.5)
-newMap = "uid://devcj660ww73a"
+newPosition = Vector3(-6.5, 0, -14.5)
+newMap = "uid://js26c8umnqjr"
 
 [node name="GeneratorRoom" parent="exit" unique_id=1316735442 instance=ExtResource("15_hkysj")]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -15, 0, -6.5)

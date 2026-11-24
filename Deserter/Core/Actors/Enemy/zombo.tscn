@@ -266,6 +266,5 @@ autoplay = &"ZombAnim/ZombAnimStand"
 
 [node name="bloodSFX" parent="." unique_id=602172997 instance=ExtResource("8_d3pr3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-top_level = true
 
 [connection signal="timeout" from="re_target" to="." method="_on_re_target"]

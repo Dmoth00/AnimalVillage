@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://cfqydlne05vkt"]
+
+[ext_resource type="Script" uid="uid://cf2khgemfeggr" path="res://Core/Actors/Enemy/bubble_enemy.gd" id="1_1lm62"]
+[ext_resource type="Texture2D" uid="uid://b0tsbgwhdfc2r" path="res://Assets/Sprites/SmokeTex00.png" id="2_lh7k8"]
+[ext_resource type="Script" uid="uid://bnea3xdhcp7my" path="res://Core/System/sfx_common.gd" id="3_72ah6"]
+[ext_resource type="AudioStream" uid="uid://dmwjbgauo3jq8" path="res://Assets/Sounds/SFX/snd_waterdrop.wav" id="4_idhv7"]
+[ext_resource type="ArrayMesh" uid="uid://bxfemmfe5mv35" path="res://Assets/Mesh/Effects/hemi.obj" id="5_spu2n"]
+[ext_resource type="Texture2D" uid="uid://6vp8vclr6keu" path="res://Assets/Sprites/BubbleTex.png" id="6_1tmbf"]
+[ext_resource type="Texture2D" uid="uid://bje7fqkehklpf" path="res://Assets/Sprites/ShadowTex.png" id="7_rhhee"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1c07o"]
+
+[sub_resource type="Curve" id="Curve_8dkr7"]
+_data = [Vector2(0, 1), 0.0, -1.2191008, 0, 0, Vector2(0.994832, 0.012000084), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_i6dn2"]
+curve = SubResource("Curve_8dkr7")
+
+[sub_resource type="Curve" id="Curve_fivpy"]
+_data = [Vector2(0, 0.52808994), 0.0, 2.9461608, 0, 0, Vector2(0.5064935, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ir6jf"]
+curve = SubResource("Curve_fivpy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4nym7"]
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_ir6jf")
+alpha_curve = SubResource("CurveTexture_i6dn2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_evsil"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_lh7k8")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_wyew2"]
+material = SubResource("StandardMaterial3D_evsil")
+size = Vector2(3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qltc4"]
+transparency = 1
+albedo_texture = ExtResource("6_1tmbf")
+metallic = 0.5
+roughness = 0.7
+uv1_scale = Vector3(1, 0.84, 1)
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Animation" id="Animation_64kxy"]
+resource_name = "bubbleStand"
+length = 3.95
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mesh02")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1, 0, 2, 1, 0, 1.15, 0, 4, 1, 0, 1, 0)
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mesh02")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.5, 0.5, 0.1, 1.5, 1, 0.55, 0.45, 0.1, 2, 1, 0.5, 0.5, 0.1, 3.5, 1, 0.55, 0.45, 0.1, 4, 1, 0.5, 0.5, 0.1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w0p22"]
+_data = {
+&"bubbleStand": SubResource("Animation_64kxy")
+}
+
+[node name="Bubble" type="CharacterBody3D" unique_id=1588116756 groups=["Harm", "Id", "Item", "Mortal"]]
+top_level = true
+collision_layer = 6
+collision_mask = 32769
+motion_mode = 1
+script = ExtResource("1_1lm62")
+
+[node name="col" type="CollisionShape3D" parent="." unique_id=15265035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_1c07o")
+
+[node name="popSfx" type="GPUParticles3D" parent="." unique_id=1997036340]
+transform = Transform3D(0.9999998, 0, 0, 0, 1.0000007, 0, 0, 0, 1.0000004, 0, 1, 0)
+emitting = false
+amount = 4
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_4nym7")
+draw_pass_1 = SubResource("QuadMesh_wyew2")
+script = ExtResource("3_72ah6")
+
+[node name="snd" type="AudioStreamPlayer3D" parent="popSfx" unique_id=1446877709]
+stream = ExtResource("4_idhv7")
+volume_db = 3.0
+pitch_scale = 0.5
+
+[node name="mesh02" type="MeshInstance3D" parent="." unique_id=222369789]
+transform = Transform3D(0.517406, 0, 0, 0, 0.482594, 0, 0, 0, 0.100000024, 0, 1.0032818, 0)
+mesh = ExtResource("5_spu2n")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_qltc4")
+
+[node name="shadow" type="Decal" parent="mesh02" unique_id=1394141349]
+transform = Transform3D(1, 0, 0, 0, -2.6226832e-07, 1, 0, -6, -4.371139e-08, 0, -2.1751833, -4.180115e-08)
+size = Vector3(1, 1, 4)
+texture_albedo = ExtResource("7_rhhee")
+emission_energy = 0.0
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=493525361]
+libraries/ = SubResource("AnimationLibrary_w0p22")
+autoplay = &"bubbleStand"

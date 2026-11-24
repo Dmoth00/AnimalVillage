@@ -945,7 +945,6 @@ _surfaces = [{
 "vertex_data": PackedByteArray("3bicNP7/49L//8MBAADj0sXxnDT+/+PSo6rDAQAA49LF8SbN//8bLaOq/v8AABst3bgmzf//Gy3/////AAAbLf//Js0AABstxfFNmv//Gy3//02a//8bLf//nDQAAAkfxfGcNP7/CR///8MBAAAJH8XxdWf+/wkfo6r+/wAA9eDduJw0/v/14N24Js3///Xgo6rDAQAA9eDF8XVn/v/j0v//nDQAAOPS//91Z/7/49L//ybNAAAJH8XxJs3//wkfxfFNmv//CR//////AAAJHyFH2DL+/wAAAAAAAAAAAABbVQAAAAAAADkO2DL+/wAAOQ5iy/////9bVTv+AAD//wAAO/4AAP//IUdiy/////8AAGLLAAD//wAAiZj/////OQ6JmP7///8AANgyAAD14DkO2DL+//XgOQ6xZf7/9eAAAAAAAAD14FtVO/4AAAkfIUfYMv7/CR9bVQAAAAAJHyFHYsv//wkfOQ6xZf7/AAAAALFl/v8AAAAA2DIAAAAAAABiywAA9eA5DmLL///14AAAO/4AAPXgOQ6JmP7/9eD///9/////f////3////9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fxtP47AbT+OwG0/jsBtP47DjsBtP47AbT+OwG0/jsBtP////f////3////9/G0/jsBtP47AbT+OwG0/jsP9/Gs//fxrP/38az/9/Gs/jsP//47D//+Ow///jsP//47D//+Ow///jsP//47AbT+OwG0/jsBtP47AbTxtP47AbT+OwG0/jsBtP47D/fxrP/38az/9/Gs/jsBtP47AbT+OwG0/jsBtP")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ogxuc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6j5m"]
 resource_name = "BarrelMat"
