@@ -1989,7 +1989,7 @@ shape = SubResource("CylinderShape3D_lyfix")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.435358, -0.6799998, -19.029)
 
 [node name="bullets7" parent="." unique_id=125288119 instance=ExtResource("42_iow0p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.564642, -0.6799998, -19.029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.555457, -0.6799998, -19.029)
 
 [node name="mesh" type="Node3D" parent="." unique_id=1748410783]
 

@@ -544,8 +544,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -9)
 [node name="Bubble06" parent="enemy" unique_id=915557243 instance=ExtResource("16_l5e4a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12)
 
-[node name="zombo1" parent="enemy" unique_id=1361586636 instance=ExtResource("21_qkamb")]
+[node name="zombo00" parent="enemy" unique_id=1361586636 instance=ExtResource("21_qkamb")]
 transform = Transform3D(0.96592575, 0, -0.25881916, 0, 1, 0, 0.25881916, 0, 0.96592575, -12.548537, 0, -12.516291)
+
+[node name="zombo01" parent="enemy" unique_id=507031948 instance=ExtResource("21_qkamb")]
+transform = Transform3D(0.99999994, 0, -1.3411045e-07, 0, 1, 0, 1.3411045e-07, 0, 0.99999994, 12.451463, 0, 7.4837093)
 
 [node name="Items" type="Node3D" parent="." unique_id=1550799707]
 
